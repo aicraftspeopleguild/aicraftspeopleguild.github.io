@@ -7,6 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+    
     <style>
         :root {
             --color-parchment: #F5F1E8;
@@ -347,6 +358,209 @@
             color: var(--color-rust);
         }
 
+        /* Signature Section */
+        .signature-section {
+            margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow: 
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+        }
+
+        .signature-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-ink);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .signature-section > p {
+            text-align: center;
+            color: var(--color-graphite);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .signature-form {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            padding: 2rem;
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-bronze);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--color-ink);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: var(--color-rust);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid rgba(26, 22, 20, 0.1);
+            background: white;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--color-bronze);
+            box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.1);
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 0.25rem;
+            color: var(--color-graphite);
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .btn-sign {
+            width: 100%;
+            background: var(--color-rust);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            margin-top: 1rem;
+        }
+
+        .btn-sign:hover:not(:disabled) {
+            background: var(--color-graphite);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.4);
+        }
+
+        .btn-sign:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-status {
+            margin-top: 1rem;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .form-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .form-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        /* Signatories Display */
+        .signatories-display {
+            margin-top: 3rem;
+        }
+
+        .signatories-display h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-rust);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .signatories-count {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--color-graphite);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .signatories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .signatory-card {
+            background: var(--color-parchment);
+            padding: 1.5rem;
+            border-left: 3px solid var(--color-bronze);
+            transition: all 0.3s ease;
+        }
+
+        .signatory-card:hover {
+            transform: translateX(5px);
+            border-left-color: var(--color-rust);
+            box-shadow: 0 4px 8px var(--color-shadow);
+        }
+
+        .signatory-name {
+            font-weight: 600;
+            color: var(--color-ink);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .signatory-title {
+            color: var(--color-graphite);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .signatory-org {
+            color: var(--color-bronze);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-graphite);
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
         /* Call to Action */
         .cta-section {
             margin: 6rem auto;
@@ -514,7 +728,8 @@
             }
 
             .context-section,
-            .cta-section {
+            .cta-section,
+            .signature-section {
                 padding: 2rem 1.5rem;
             }
 
@@ -530,6 +745,14 @@
             .btn {
                 width: 100%;
                 max-width: 300px;
+            }
+
+            .signature-form {
+                padding: 1.5rem;
+            }
+
+            .signatories-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -577,7 +800,7 @@
                     <span class="icon">🚀</span>
                     <h3>Embracing Innovation</h3>
                     <p>
-                        We, software development professionals, are exploring the <strong>innovations made available</strong> 
+                        We, software development professionals, are embracing the <strong>innovations made available</strong> 
                         by the development in the Artificial Intelligence space.
                     </p>
                 </div>
@@ -611,6 +834,52 @@
             </div>
         </section>
 
+        <!-- Signature Section -->
+        <section id="sign" class="signature-section">
+            <h2>Sign the Manifesto</h2>
+            <p>Join fellow professionals committed to excellence in AI-assisted development</p>
+            
+            <form id="signatureForm" class="signature-form" action="YOUR_GOOGLE_FORM_ACTION_URL" method="POST" target="hidden_iframe">
+                <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="entry.NAME_FIELD_ID" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title / Role</label>
+                    <input type="text" id="title" name="entry.TITLE_FIELD_ID" placeholder="e.g., Senior Software Engineer">
+                    <small>Optional - helps others understand your perspective</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="organization">Organization</label>
+                    <input type="text" id="organization" name="entry.ORG_FIELD_ID" placeholder="e.g., Company name or Independent">
+                    <small>Optional</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="entry.EMAIL_FIELD_ID" placeholder="For verification (not displayed publicly)">
+                    <small>Optional - only for preventing spam</small>
+                </div>
+
+                <button type="submit" class="btn-sign" id="submitBtn">
+                    Sign the Manifesto
+                </button>
+
+                <div id="formStatus" class="form-status"></div>
+            </form>
+
+            <!-- Display Signatories -->
+            <div class="signatories-display">
+                <h3>Signatories</h3>
+                <div id="signatoriesCount" class="signatories-count">Loading signatures...</div>
+                <div id="signatoriesList" class="signatories-grid">
+                    <div class="loading">Loading signatories</div>
+                </div>
+            </div>
+        </section>
+
         <section class="cta-section">
             <h2>Join the Movement</h2>
             <p>
@@ -620,8 +889,8 @@
                 <a href="https://github.com/aicraftspeopleguild" class="btn btn-primary">
                     <span>Visit Our GitHub</span>
                 </a>
-                <a href="#manifesto" class="btn btn-secondary">
-                    <span>Read Full Manifesto</span>
+                <a href="#sign" class="btn btn-secondary">
+                    <span>Sign the Manifesto</span>
                 </a>
             </div>
         </section>
@@ -635,11 +904,147 @@
             <span>github.com/aicraftspeopleguild</span>
         </a>
         <p style="margin-top: 2rem; font-size: 0.85rem;">
-            © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+            © 2024 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
         </p>
     </footer>
 
+    <!-- Hidden iframe for form submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
     <script>
+        // Configuration - UPDATE THESE VALUES
+        const CONFIG = {
+            SHEET_ID: 'YOUR_GOOGLE_SHEET_ID',  // Get this from the Sheet URL
+            SHEET_NAME: 'Form Responses 1',     // Usually this is the default name
+            API_KEY: 'YOUR_GOOGLE_API_KEY'      // Optional - for public sheets you may not need this
+        };
+
+        // Handle form submission
+        const form = document.getElementById('signatureForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+
+        form.addEventListener('submit', function(e) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Show success message after a delay (form submits to iframe)
+            setTimeout(() => {
+                formStatus.className = 'form-status success';
+                formStatus.textContent = 'Thank you for signing the manifesto! Your signature will appear below shortly.';
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Sign the Manifesto';
+                
+                // Reload signatures after 2 seconds
+                setTimeout(() => {
+                    loadSignatories();
+                }, 2000);
+            }, 1000);
+        });
+
+        // Function to load signatories from Google Sheets
+        async function loadSignatories() {
+            const signatoriesList = document.getElementById('signatoriesList');
+            const signatoriesCount = document.getElementById('signatoriesCount');
+            
+            try {
+                // For public sheets, you can use the published CSV URL
+                const csvUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(CONFIG.SHEET_NAME)}`;
+                
+                const response = await fetch(csvUrl);
+                const csvText = await response.text();
+                
+                // Parse CSV
+                const rows = parseCSV(csvText);
+                
+                // Skip header row and reverse to show newest first
+                const signatories = rows.slice(1).reverse();
+                
+                // Update count
+                signatoriesCount.textContent = `${signatories.length} ${signatories.length === 1 ? 'signatory' : 'signatories'}`;
+                
+                // Display signatories
+                if (signatories.length === 0) {
+                    signatoriesList.innerHTML = '<div class="loading">Be the first to sign!</div>';
+                } else {
+                    signatoriesList.innerHTML = signatories.map(row => {
+                        // Assuming columns: Timestamp, Name, Title, Organization, Email
+                        const name = row[1] || 'Anonymous';
+                        const title = row[2] || '';
+                        const org = row[3] || '';
+                        
+                        return `
+                            <div class="signatory-card">
+                                <div class="signatory-name">${escapeHtml(name)}</div>
+                                ${title ? `<div class="signatory-title">${escapeHtml(title)}</div>` : ''}
+                                ${org ? `<div class="signatory-org">${escapeHtml(org)}</div>` : ''}
+                            </div>
+                        `;
+                    }).join('');
+                }
+            } catch (error) {
+                console.error('Error loading signatories:', error);
+                signatoriesList.innerHTML = '<div class="loading">Unable to load signatories. Please check back later.</div>';
+                signatoriesCount.textContent = '';
+            }
+        }
+
+        // Simple CSV parser
+        function parseCSV(csv) {
+            const rows = [];
+            let currentRow = [];
+            let currentField = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < csv.length; i++) {
+                const char = csv[i];
+                const nextChar = csv[i + 1];
+                
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        currentField += '"';
+                        i++;
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } else if (char === ',' && !inQuotes) {
+                    currentRow.push(currentField);
+                    currentField = '';
+                } else if ((char === '\n' || char === '\r') && !inQuotes) {
+                    if (currentField || currentRow.length > 0) {
+                        currentRow.push(currentField);
+                        rows.push(currentRow);
+                        currentRow = [];
+                        currentField = '';
+                    }
+                    if (char === '\r' && nextChar === '\n') i++;
+                } else {
+                    currentField += char;
+                }
+            }
+            
+            if (currentField || currentRow.length > 0) {
+                currentRow.push(currentField);
+                rows.push(currentRow);
+            }
+            
+            return rows;
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Load signatories on page load
+        loadSignatories();
+
+        // Refresh signatories every 30 seconds
+        setInterval(loadSignatories, 30000);
+
         // Scroll reveal animation
         const observerOptions = {
             threshold: 0.1,
@@ -654,7 +1059,6 @@
             });
         }, observerOptions);
 
-        // Observe elements for scroll animations
         document.querySelectorAll('.scroll-reveal').forEach(el => {
             observer.observe(el);
         });

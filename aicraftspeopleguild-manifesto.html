@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACG Manifesto - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+    
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--color-rust) 0%, 
+                var(--color-bronze) 50%, 
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .subtitle {
+            font-family: 'Work Sans', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Manifesto Content */
+        .manifesto-content {
+            margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow: 
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .manifesto-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-rust);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .manifesto-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+        }
+
+        .manifesto-intro {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-graphite);
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-rust);
+        }
+
+        .manifesto-section {
+            margin-bottom: 3rem;
+        }
+
+        .manifesto-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-ink);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .manifesto-section .icon {
+            font-size: 2rem;
+        }
+
+        .manifesto-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-graphite);
+            margin-bottom: 1rem;
+        }
+
+        .manifesto-section strong {
+            color: var(--color-rust);
+            font-weight: 600;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2::after {
+            display: none;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .manifesto-content,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .manifesto-intro {
+                padding: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <h1>ACG Manifesto</h1>
+        <p class="subtitle">Professional Code of Conduct for Engineers Using AI to Create Automated Solutions</p>
+        <div class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="manifesto-content">
+            <h2>The Full Manifesto</h2>
+
+            <div class="manifesto-intro">
+                The recent rapid advancement of AI/LLM technology has introduced considerable confusion, disorientation, and 
+                with it alarming amounts of <strong>false promises</strong>, <strong>snake oil sales tactics</strong>, and 
+                <strong>sleazy shilling</strong>. Our duty as software professionals is to prevent such degradation of quality 
+                by insisting on a high watermark professional code of ethics.
+            </div>
+
+            <div class="manifesto-section">
+                <h3><span class="icon">🚀</span> Embracing Innovation</h3>
+                <p>
+                    We, software development professionals, are embracing the <strong>innovations made available</strong> 
+                    by the development in the Artificial Intelligence space. We recognize the transformative potential of 
+                    AI technologies to improve lives, enhance productivity, and solve complex problems.
+                </p>
+            </div>
+
+            <div class="manifesto-section">
+                <h3><span class="icon">⚠️</span> Demanding Quality</h3>
+                <p>
+                    We are concerned about the proliferation of <strong>half-baked, barely verified and tested content</strong> 
+                    that current AI/LLM technology is notorious for delivering. We commit to maintaining rigorous standards 
+                    for verification, testing, and validation of AI-assisted outputs before they reach production environments.
+                </p>
+            </div>
+
+            <div class="manifesto-section">
+                <h3><span class="icon">🛡️</span> Ensuring Safety & Security</h3>
+                <p>
+                    We insist that a <strong>proper harness be provided</strong> to ensure engineering quality, safety, 
+                    security, and legal liability for all products delivered with the assistance of AI technology. Every 
+                    AI-assisted system must be held to the same standards of reliability and accountability as traditional 
+                    software systems.
+                </p>
+            </div>
+
+            <div class="manifesto-section">
+                <h3><span class="icon">🧠</span> Protecting Humans</h3>
+                <p>
+                    We advocate the need for <strong>psychological safety</strong> of humans who are exposed to any 
+                    products and content generated by AI. We recognize that AI systems can have profound impacts on human 
+                    well-being, decision-making, and autonomy, and we prioritize the protection of human interests above 
+                    technological convenience.
+                </p>
+            </div>
+
+            <div class="manifesto-section">
+                <h3><span class="icon">👁️</span> Respecting User Agency and Informed Consent</h3>
+                <p>
+                    We respect user agency and informed consent. We ensure that the use of AI is not hidden or deceptive, 
+                    that users are made aware when AI materially influences outcomes, and that they retain the ability to 
+                    understand, question, and contest AI-assisted decisions. Transparency is not optional—it is a fundamental 
+                    requirement for ethical AI deployment.
+                </p>
+            </div>
+
+            <div class="manifesto-section">
+                <h3><span class="icon">⚖️</span> The Right and Duty to Refuse</h3>
+                <p>
+                    We affirm the right and duty of software professionals to refuse the design, deployment, or operation 
+                    of AI-assisted systems that are unsafe, deceptive, unverifiable, or that undermine human dignity, autonomy, 
+                    or trust. Ethical refusal is a professional obligation, not a personal failing. We stand together in 
+                    supporting colleagues who make principled decisions to protect the public interest.
+                </p>
+            </div>
+            <div class="manifesto-section">
+              <p>
+                AI Craftspeople Guild (ACG) was originally created by <a href="https://alexbunardzic.com/">Alex Bunardzic</a>. ACG Manifesto was created by Alex Bunardzic in collaboration with <a href="https://www.linkedin.com/in/woodyzuill/">Woody Zuill</a>, <a href="https://www.linkedin.com/in/jona-heidsick-218aa01b7/">Jona Heidsixck</a>, <a href="https://www.linkedin.com/in/burchmatt/">Matt Burch</a>, and <a href="https://www.linkedin.com/in/alexthurow/">Alex Thurow</a>.
+              </p>
+            </div>
+        </div>
+
+        <section class="cta-section">
+            <h2>Join the Movement</h2>
+            <p>
+                Stand with us in championing integrity, transparency, and professional excellence in AI-assisted development.
+            </p>
+            <div class="cta-buttons">
+                <a href="index.html#sign" class="btn btn-primary">
+                    <span>Sign the Manifesto</span>
+                </a>
+                <a href="index.html" class="btn btn-secondary">
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            © 2024 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

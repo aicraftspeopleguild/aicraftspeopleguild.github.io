@@ -104,6 +104,35 @@
             50% { opacity: 1; }
         }
 
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        .top-nav a {
+            color: var(--color-parchment);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.7rem 1rem;
+            border: 1px solid rgba(166, 124, 82, 0.3);
+            background: rgba(166, 124, 82, 0.08);
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+
+        .top-nav a:hover {
+            color: var(--color-highlight);
+            background: rgba(166, 124, 82, 0.18);
+            transform: translateY(-2px);
+        }
+
         .guild-mark {
             text-align: center;
             margin-bottom: 1rem;
@@ -754,10 +783,40 @@
             transform: translateY(-2px);
         }
 
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            padding: 0.35rem 0.8rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 999px;
+        }
+
+        .footer-links a:hover {
+            background: rgba(166, 124, 82, 0.2);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             header {
                 padding: 3rem 1.5rem 2rem;
+            }
+
+            .top-nav {
+                gap: 0.65rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .top-nav a {
+                width: calc(50% - 0.5rem);
+                text-align: center;
+                font-size: 0.85rem;
+                padding: 0.75rem 0.8rem;
             }
 
             .context-section,
@@ -806,6 +865,13 @@
 </head>
 <body>
     <header>
+        <nav class="top-nav" aria-label="Primary">
+            <a href="#manifesto">Manifesto</a>
+            <a href="white-papers.html">White Papers</a>
+            <a href="#sign">Sign</a>
+            <a href="charter.html">Charter</a>
+            <a href="code-of-conduct.html">Conduct</a>
+        </nav>
         <div class="guild-mark">
             <div class="emblem">⚒ ACG ⚒</div>
         </div>
@@ -823,7 +889,7 @@
             </p>
         </section>
 
-        <section class="manifesto-section">
+        <section id="manifesto" class="manifesto-section">
             <div class="manifesto-header">
                 <h2>ACG Manifesto</h2>
             </div>

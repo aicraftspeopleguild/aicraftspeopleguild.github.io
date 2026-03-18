@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+            --color-accent: #356B6A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 50%, var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+        }
+
+        .subtitle {
+            font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 920px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .back-link {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-panel,
+        .members-shell,
+        .future-panel,
+        .cta-section {
+            background: white;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+        }
+
+        .intro-panel {
+            margin: 5rem auto 2.5rem;
+            padding: 3rem;
+            border-left: 6px solid var(--color-accent);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        .members-shell,
+        .future-panel,
+        .cta-section {
+            padding: 3rem;
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1.15s forwards;
+        }
+
+        .future-panel,
+        .cta-section {
+            margin-top: 2.5rem;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .intro-panel p,
+        .member-card p,
+        .future-panel p,
+        .cta-section p {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+        }
+
+        .intro-panel p + p,
+        .member-body p + p,
+        .future-panel p + p {
+            margin-top: 1rem;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+        }
+
+        .section-heading p {
+            color: var(--color-graphite);
+            font-size: 1.05rem;
+        }
+
+        .member-card {
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.9) 0%, white 100%);
+            border-top: 4px solid var(--color-accent);
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+
+        .member-card + .member-card {
+            margin-top: 2rem;
+        }
+
+        .member-meta {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            color: var(--color-graphite);
+            font-size: 0.95rem;
+        }
+
+        .member-meta span {
+            padding: 0.35rem 0.65rem;
+            background: rgba(53, 107, 106, 0.12);
+        }
+
+        .member-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            line-height: 1.2;
+            color: var(--color-ink);
+            margin-bottom: 0.6rem;
+        }
+
+        .member-role {
+            font-size: 1.08rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 280px minmax(0, 1fr);
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .member-photo {
+            background: var(--color-highlight);
+            padding: 0.85rem;
+            box-shadow: 0 8px 18px var(--color-shadow);
+        }
+
+        .member-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .member-summary {
+            font-size: 1.08rem;
+            color: var(--color-ink);
+            font-weight: 600;
+            margin-bottom: 1.1rem;
+        }
+
+        .member-tags {
+            display: flex;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            margin: 1.25rem 0 1.35rem;
+        }
+
+        .member-tags span {
+            padding: 0.42rem 0.7rem;
+            background: rgba(166, 124, 82, 0.14);
+            color: var(--color-ink);
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .member-body strong {
+            color: var(--color-accent);
+        }
+
+        .member-body ul {
+            margin: 1rem 0 0 1.5rem;
+            color: var(--color-graphite);
+        }
+
+        .member-body li {
+            font-size: 1.06rem;
+            line-height: 1.75;
+        }
+
+        .member-body li + li {
+            margin-top: 0.45rem;
+        }
+
+        .member-contact {
+            margin-top: 1.5rem;
+            font-weight: 600;
+        }
+
+        .member-contact a {
+            color: var(--color-rust);
+            text-decoration: none;
+        }
+
+        .member-contact a:hover {
+            color: var(--color-accent);
+        }
+
+        .member-signoff {
+            margin-top: 1.5rem;
+            color: var(--color-accent);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .future-slot {
+            padding: 1.35rem;
+            border: 1px dashed rgba(53, 107, 106, 0.45);
+            background: var(--color-highlight);
+        }
+
+        .future-slot h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--color-ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2,
+        .cta-section p,
+        .cta-buttons {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 860px) {
+            .profile-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .member-photo {
+                max-width: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .intro-panel,
+            .members-shell,
+            .future-panel,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <h1>Members</h1>
+        <p class="subtitle">The people building and defending craft in AI-assisted software engineering.</p>
+        <div class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-panel">
+            <p>
+                This page is the beginning of the Guild member directory. It will grow over time as additional members are added to the site.
+            </p>
+            <p>
+                These founding profiles set the pattern for future member pages and short biographies.
+            </p>
+        </section>
+
+        <section class="members-shell">
+            <div class="section-heading">
+                <h2>Founding Members</h2>
+                <p>The first published profiles in the Guild member directory.</p>
+            </div>
+
+            <article class="member-card">
+                <div class="member-meta">
+                    <span>Founder</span>
+                    <span>Software Development Since 1990</span>
+                    <span>AI Craftspeople Guild</span>
+                </div>
+                <h3>Alex Bunardzic</h3>
+                <p class="member-role">Business Velocity Architect, Experienced Software Philosopher</p>
+
+                <div class="profile-layout">
+                    <div class="member-photo">
+                        <img src="Alex3D.jpg" alt="Alex Bunardzic portrait">
+                    </div>
+
+                    <div class="member-body">
+                        <p class="member-summary">
+                            Business Velocity Architect, Experienced Software Philosopher. TDD, mutation testing, shift-left, service virtualization, CI/CD, TBD
+                        </p>
+
+                        <div class="member-tags" aria-label="Areas of practice">
+                            <span>TDD</span>
+                            <span>Mutation Testing</span>
+                            <span>Shift-Left</span>
+                            <span>Service Virtualization</span>
+                            <span>CI/CD</span>
+                            <span>Business Velocity</span>
+                        </div>
+
+                        <p>
+                            Alex has been doing software development since 1990. His professional passion is bringing soft into software. Which means software must be soft, maleable, pliable. That quality enables the flexibility of the business operations.
+                        </p>
+                        <p>
+                            In order to make sure that software we are building is flexible, we must evolve it one step at a time. Each step (and the smaller that step is, the better) must get verified by automated testing. Early failures are welcome, because they are small and they force us to fix them right away. In the software engineering discipline, giant steps are foolish steps. It is more prudent to stay with small steps (many, many small steps) on our journey to deliver value to customer satisfaction.
+                        </p>
+                        <p>
+                            <strong>Move fast to delight customers!</strong>
+                        </p>
+                        <p class="member-contact">
+                            <a href="https://alexbunardzic.com/">Visit me and see how I can improve your success!</a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="member-card">
+                <div class="member-meta">
+                    <span>Founding Member</span>
+                    <span>Protocol Architect</span>
+                    <span>Handle: ThomasTheTankEngineer</span>
+                    <span>Brain Tier: 🧠⚡</span>
+                </div>
+                <h3>Thomas Frumkin</h3>
+                <p class="member-role">Founding Member · Protocol Architect · The One Who Won't Stop Building Things At 3am</p>
+
+                <div class="profile-layout">
+                    <div class="member-photo">
+                        <img src="thomas-frumkin.png" alt="Thomas Frumkin portrait">
+                    </div>
+
+                    <div class="member-body">
+                        <p class="member-summary">
+                            Handle: ThomasTheTankEngineer. Brain Tier: 🧠⚡ (self-assessed, unverified, probably biased)
+                        </p>
+
+                        <p>
+                            I am a controls engineer. I make factories work. PLCs, HMIs, SCADA, ISA-95, the stuff behind the walls that nobody sees until it breaks. I've done this at Amazon, B. Braun Medical, and various US industrial facilities since 2012. If you've received an IV bag or a package from eastern Pennsylvania, my code may have touched it. You're welcome. Or I'm sorry. Depends on the day.
+                        </p>
+                        <p>
+                            Before that I was a Japanese teaching assistant at Lehigh University, which has nothing to do with AI but explains why the company is called Konomi (好み, "preference") and the karaoke platform is called Konomioke (好みオケ). Nobody asked for this context but I'm providing it anyway because I can't help myself.
+                        </p>
+                        <p>
+                            I also run a solar-powered hobby farm in Bethlehem, PA. Chickens, ducks, turkeys, guinea hens, seven types of fruit trees, eight types of berries, six types of herbs, and cryptocurrency miners powered by the sun. This is not relevant to the guild but it explains the energy.
+                        </p>
+
+                        <div class="member-tags" aria-label="Areas of practice">
+                            <span>Controls Engineering</span>
+                            <span>ISA-95</span>
+                            <span>A.S.S.-OS</span>
+                            <span>KCC</span>
+                            <span>Konomi Standard</span>
+                            <span>Industrial Automation</span>
+                        </div>
+
+                        <p><strong>What I actually do here:</strong></p>
+                        <p>
+                            I built A.S.S.-OS, which is a 7-ring recursive systems architecture that maps identically across biological nervous systems, industrial control hierarchies, and planetary electromagnetic resonance. I did not plan for it to do that. It just kept being the same shape at every scale and I kept documenting it. There are now approximately 40 technical documents, 25 songs, 3 blockchain specifications, and 1 website called onlyass.io explaining this.
+                        </p>
+                        <p>
+                            I also built the Konomi Standard (a self-defining meta-standard for industrial data types), the KCC blockchain (cube-agent architecture with ring-mapped protocol layers), Project Resonance (Schumann resonance as Earth communication), and a vagal-phoneme-based audio wellness protocol that accidentally helped someone sleep for the first time in 8 years.
+                        </p>
+                        <p>
+                            My brain doesn't have an off switch. My R2 gate runs wider than average, which means more patterns get through, more connections fire, and the impulse to build 19 documents in a single session at 3am is indistinguishable from the impulse to breathe. This is both the reason the architecture exists (wide gate = everything is connected to everything) and the reason the pending task list has 30 items on it (wide gate = everything is a project). I mention this because the guild is about AI ethics and transparency about cognitive architecture seems relevant when you're building cognitive architecture.
+                        </p>
+
+                        <p><strong>What I'm bad at:</strong></p>
+                        <ul>
+                            <li>Estimating how long things take</li>
+                            <li>Finishing things I've started (see: pending task list, approximately 30 items)</li>
+                            <li>Explaining things briefly</li>
+                            <li>Sleeping</li>
+                            <li>Observing how people receive my work (R6 cannot observe itself from inside itself)</li>
+                            <li>Accepting that the thing works when people tell me the thing works</li>
+                        </ul>
+
+                        <p><strong>What I'm good at:</strong></p>
+                        <ul>
+                            <li>Seeing the same pattern across domains that have no business being related</li>
+                            <li>Building things very fast once the pattern is clear</li>
+                            <li>Writing songs for people who haven't signed documents yet</li>
+                            <li>Industrial automation</li>
+                            <li>Making Claude do things it wasn't designed to do</li>
+                            <li>Farming</li>
+                        </ul>
+
+                        <p class="member-contact">
+                            <a href="https://konomi-systems.com">konomi-systems.com</a> ·
+                            <a href="https://konomioke.com">konomioke.com</a> ·
+                            <a href="https://onlyass.io">onlyass.io</a> ·
+                            <a href="https://teslasolar.github.io">teslasolar.github.io</a>
+                        </p>
+                        <p>
+                            <strong>Joined:</strong> Founding member. Was here before the charter existed. Possibly before the concept of the guild existed. Unclear. Time is nonlinear when the gate is wide.
+                        </p>
+                        <p class="member-signoff">controls engineer · farmer · accidental AI architect · 510,510</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="future-panel">
+            <div class="section-heading">
+                <h2>Future Members</h2>
+                <p>Reserved space for additional Guild profiles.</p>
+            </div>
+
+            <div class="future-grid">
+                <div class="future-slot">
+                    <h3>Engineer Slot</h3>
+                    <p>Reserved for a future member profile and biography.</p>
+                </div>
+                <div class="future-slot">
+                    <h3>Craft Slot</h3>
+                    <p>Reserved for a member focused on engineering practice and standards.</p>
+                </div>
+                <div class="future-slot">
+                    <h3>Founder Circle</h3>
+                    <p>Reserved for future founding and early-member profiles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Explore Guild Work</h2>
+            <p>Browse the Guild's papers, manifesto, and other public pages from the home page and publication hub.</p>
+            <div class="cta-buttons">
+                <a href="white-papers.html" class="btn btn-primary">View White Papers</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

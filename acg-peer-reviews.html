@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACG Review Forge - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+            --color-knowledge: #3F6C8E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--color-knowledge) 0%,
+                var(--color-bronze) 50%,
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        .eyebrow {
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-bronze);
+            margin-bottom: 0.85rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.45s forwards;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+        }
+
+        .subtitle {
+            font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 920px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            color: var(--color-parchment);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+        }
+
+        .article-meta span {
+            padding: 0.35rem 0.85rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: rgba(166, 124, 82, 0.08);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1.2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.95s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-shell {
+            margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .article-nav {
+            display: flex;
+            gap: 0.9rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .article-nav a {
+            text-decoration: none;
+            color: var(--color-rust);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            padding: 0.8rem 1.1rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: var(--color-highlight);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .article-nav a:hover {
+            color: var(--color-ink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px var(--color-shadow);
+        }
+
+        .lead,
+        .callout,
+        .closing-statement {
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .lead {
+            background: linear-gradient(180deg, var(--color-highlight) 0%, white 100%);
+            border-left: 4px solid var(--color-knowledge);
+        }
+
+        .lead p {
+            font-size: 1.16rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+        }
+
+        .lead p + p,
+        .callout p + p {
+            margin-top: 1rem;
+        }
+
+        .callout {
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-bronze);
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-rust);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 110px;
+            height: 4px;
+            background: var(--color-bronze);
+            margin-top: 0.8rem;
+        }
+
+        .section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            color: var(--color-ink);
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .section p,
+        .section li,
+        .callout p {
+            font-size: 1.06rem;
+            line-height: 1.82;
+            color: var(--color-graphite);
+        }
+
+        .section p + p {
+            margin-top: 1rem;
+        }
+
+        .section ul,
+        .section ol {
+            margin: 1rem 0 0 1.5rem;
+        }
+
+        .section li + li {
+            margin-top: 0.65rem;
+        }
+
+        strong {
+            color: var(--color-rust);
+        }
+
+        pre {
+            margin: 1.5rem 0;
+            padding: 1.25rem 1.4rem;
+            background: var(--color-ink);
+            color: var(--color-parchment);
+            overflow-x: auto;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            box-shadow: inset 0 0 0 1px rgba(166, 124, 82, 0.2);
+            white-space: pre;
+        }
+
+        code {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        .closing-statement {
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing-statement::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(63, 108, 142, 0.22), transparent 55%);
+        }
+
+        .closing-statement p {
+            position: relative;
+            color: var(--color-parchment);
+            font-size: 1.14rem;
+            line-height: 1.9;
+        }
+
+        .closing-statement p + p {
+            margin-top: 1rem;
+        }
+
+        .paper-mark {
+            margin-top: 2.2rem;
+            text-align: center;
+            color: var(--color-bronze);
+            letter-spacing: 0.06em;
+        }
+
+        .cta-section {
+            margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.18rem;
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4);
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .article-shell,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .lead,
+            .callout,
+            .closing-statement {
+                padding: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <div class="eyebrow">Knowledge About Knowledge</div>
+        <h1>ACG Review Forge</h1>
+        <p class="subtitle">Bloom Prompt - Gamified Peer Review + AI Evaluation System</p>
+        <div class="article-meta">
+            <span>Peer Review</span>
+            <span>AI Evaluation</span>
+            <span>Gamified Progression</span>
+            <span>510,510</span>
+        </div>
+        <div class="back-link">
+            <a href="white-papers.html">&larr; Back to White Papers</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article-shell">
+            <nav class="article-nav" aria-label="Article sections">
+                <a href="#problem">Problem</a>
+                <a href="#lifecycle">Lifecycle</a>
+                <a href="#rubric">Rubric</a>
+                <a href="#reviewers">Reviewers</a>
+                <a href="#points">Points</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#integration">Integration</a>
+                <a href="#implementation">Implementation</a>
+            </nav>
+
+            <section class="lead" id="problem">
+                <p><strong>Make reviewing as rewarding as publishing.</strong></p>
+                <p>
+                    The Guild charter says peer reviews are mandatory, but peer review is usually invisible labor. Publishing gets recognition. Reviewing gets silence. This document reframes review as a first-class guild activity with visible progression, measurable skill, feedback loops, and earned status for the reviewer as well as the author.
+                </p>
+            </section>
+
+            <section class="callout">
+                <p>
+                    The core move is simple: make the review itself a quantified artifact. Every stage produces data. Every data point feeds progression, recognition, queue management, and charter-aligned evaluation.
+                </p>
+            </section>
+
+            <section class="section" id="lifecycle">
+                <h2>The Review Lifecycle</h2>
+                <pre><code>SUBMIT    author submits work to guild
+ASSIGN    system matches reviewers by skill and domain
+REVIEW    reviewer evaluates against rubric
+SCORE     review produces structured assessment
+REVISE    author responds to review
+ACCEPT    work passes review threshold
+REWARD    both author and reviewer earn points</code></pre>
+                <p>
+                    The lifecycle is deliberately explicit. The proposal treats each stage as a data-producing event so review can be tracked, improved, and made visible across the network.
+                </p>
+            </section>
+
+            <section class="section" id="rubric">
+                <h2>Review Rubric</h2>
+                <pre><code>DIMENSION          WHAT IT MEASURES                    WEIGHT
+----------------------------------------------------------------
+Accuracy           Are claims factually correct?         20%
+Evidence           Are claims supported by evidence?     20%
+Novelty            Does this add something new?          15%
+Reproducibility    Can someone else do this?             15%
+Clarity            Is it understandable?                 10%
+Ethics             Does it align with charter values?    10%
+Practicality       Can it be applied in the real world?  10%
+----------------------------------------------------------------
+TOTAL                                                     100%</code></pre>
+                <p>
+                    Each dimension is scored from 1 to 5. The overall result is a weighted score out of 5.0. Acceptance requires a minimum total of 3.5 and no single dimension below 2.0.
+                </p>
+                <p>
+                    Reviewers must provide a written justification for each score. One line minimum. The author sees the justifications, either anonymized or named at the reviewer's choice.
+                </p>
+
+                <h3>Submission Categories</h3>
+                <pre><code>CATEGORY              DESCRIPTION                          REVIEW MIN
+---------------------------------------------------------------------------
+Research              Original research, analysis, study    3 reviewers
+Specification         Technical spec, standard, protocol    2 reviewers
+Tool                  Software tool, app, utility           2 reviewers
+Position Paper        Opinion, policy recommendation        2 reviewers
+Tutorial              Educational content, how-to guide     1 reviewer
+Case Study            Real-world application report         2 reviewers
+Ethical Review        Refusal report, harm analysis         3 reviewers
+AI Evaluation         Testing an AI claim or product        2 reviewers</code></pre>
+                <p>
+                    AI Evaluation is treated as a charter-core category. The paper breaks it into claim testing, tool comparison, risk assessment, adoption reporting, and failure analysis.
+                </p>
+            </section>
+
+            <section class="section" id="reviewers">
+                <h2>Reviewer Skill System</h2>
+
+                <h3>Reviewer Tiers</h3>
+                <pre><code>TIER   NAME         REQUIREMENT                         BADGE
+--------------------------------------------------------------
+R0     Apprentice   Guild member (any)                 [checklist]
+R1     Reviewer     3 completed reviews                [lens]
+R2     Trusted      10 reviews + quality > 3.5        [book]
+R3     Senior       25 reviews + domain depth         [target]
+R4     Lead         50 reviews + mentored 3           [scales]
+R5     Master       100 reviews + 5 domains           [hall]</code></pre>
+
+                <h3>Review Quality Score</h3>
+                <pre><code>After the author receives a review, they rate:
+- Was the review helpful?        (1-5)
+- Was the feedback specific?     (1-5)
+- Was the tone constructive?     (1-5)
+- Did it improve the work?       (1-5)</code></pre>
+                <p>
+                    The average becomes the Review Quality Score, or RQS. Volume alone is not enough. A reviewer who produces vague, unhelpful feedback does not advance.
+                </p>
+
+                <h3>Domain Expertise Tags</h3>
+                <pre><code>DOMAIN TAGS
+- ai-safety          - architecture        - security
+- data-science       - automation          - healthcare
+- finance            - industrial          - ethics
+- education          - research-methods    - nlp
+- creative           - blockchain          - iot</code></pre>
+                <p>
+                    Tags are self-declared at first and then earned through repeated review work. The paper proposes awarding a domain tag after three reviewed submissions in that area and using those tags for reviewer-submission matching.
+                </p>
+
+                <h3>Author Progression</h3>
+                <pre><code>TIER   NAME           REQUIREMENT                         BADGE
+---------------------------------------------------------------
+A0     Contributor    1 submission (any status)          [pencil]
+A1     Published      1 accepted submission              [page]
+A2     Established    5 accepted submissions             [stack]
+A3     Prolific       15 accepted + 3 categories         [trophy]
+A4     Distinguished  30 accepted + high impact          [star]
+A5     Fellow         50 accepted + mentored 5           [medal]</code></pre>
+            </section>
+
+            <section class="section" id="points">
+                <h2>Point System</h2>
+
+                <h3>Earning Points</h3>
+                <pre><code>ACTION                                    POINTS    NOTES
+----------------------------------------------------------------
+Submit for review                           10      any category
+Pass review (accepted)                      50      per submission
+Pass review first round (no revision)      +25      bonus
+Complete a review                           30      per review completed
+Review quality > 4.0                       +15      bonus
+Review quality > 4.5                       +10      additional bonus
+Revise based on feedback                    15      responsiveness
+Review an ethical refusal                   50      hardest review type
+Mentor a new reviewer                       40      per mentored reviewer
+Submit AI evaluation                        20      charter core function
+AI evaluation accepted                      75      highest publication value
+Recruit member who publishes                25      network growth
+Serve as lead reviewer                      40      assign + oversee</code></pre>
+
+                <h3>Activity and Decay</h3>
+                <p>
+                    Points do not expire, but activity still matters. Members with no review or submission activity in 90 days are flagged as dormant and removed from the active leaderboard until they return.
+                </p>
+
+                <h3>The 510,510 Cap</h3>
+                <p>
+                    The proposal caps total available points across the guild at 510,510. As activity grows, the relative value of each point adjusts, echoing the KCC token logic and the A.S.S.-OS fold.
+                </p>
+            </section>
+
+            <section class="section" id="achievements">
+                <h2>Achievements</h2>
+
+                <h3>Review Achievements</h3>
+                <pre><code>ACHIEVEMENT         RARITY      TRIGGER
+---------------------------------------------------------------
+First Review        common      Complete 1 review
+Helpful Critic      common      RQS > 4.0 on 3 reviews
+Speed Reader        uncommon    Complete review within 48 hours
+Deep Dive           uncommon    Review > 2000 words
+Cross Domain        uncommon    Review in 3 different domains
+Quality Control     rare        RQS > 4.5 on 10 reviews
+Gatekeep            rare        Correctly reject 3 submissions
+The Mentor          rare        Mentor 3 new reviewers to R1
+Iron Reviewer       epic        50 reviews, RQS > 4.0
+The Standard        epic        100 reviews, all domains
+Founding Reviewer   legendary   Reviewed in the first month</code></pre>
+
+                <h3>Author Achievements</h3>
+                <pre><code>ACHIEVEMENT         RARITY      TRIGGER
+---------------------------------------------------------------
+First Blood         common      Submit anything
+Clean Shot          uncommon    Accepted first round, no revision
+Polymath            uncommon    Accepted in 3+ categories
+AI Auditor          rare        5 accepted AI evaluations
+Harm Spotter        rare        Published AI risk assessment later validated
+The Spec            rare        Published spec adopted by 3+ members
+Peer Magnet         epic        Submission attracted 5+ reviewers
+Fellow              legendary   50 accepted submissions</code></pre>
+
+                <h3>Dual Achievements</h3>
+                <pre><code>ACHIEVEMENT         RARITY      TRIGGER
+---------------------------------------------------------------
+Both Sides          uncommon    10 reviews and 5 publications
+The Cycle           rare        Reviewed work that cited your work
+Renaissance         epic        R3+ reviewer and A3+ author
+The Guild           legendary   All of the above + mentored + recruited</code></pre>
+            </section>
+
+            <section class="section">
+                <h2>Leaderboards and Anti-Gaming</h2>
+
+                <h3>Active Leaderboards</h3>
+                <pre><code>BOARD             METRIC                   REFRESH
+--------------------------------------------------------
+Top Reviewers     Review count + RQS      Weekly
+Top Authors       Accepted + score        Weekly
+Most Helpful      RQS ranking             Monthly
+Domain Leaders    Per domain tag          Monthly
+Speed Reviewers   Average review time     Monthly
+Overall           Combined points         Monthly
+Rising            Most improved           Monthly</code></pre>
+
+                <h3>Anti-Gaming Rules</h3>
+                <pre><code>RULE                                      WHY
+-------------------------------------------------------------------
+Min review length 200 words               No drive-by reviews
+Min 3 dimensions scored per review        No blanket approvals
+Self-review impossible                    Obvious
+Review swapping detected and flagged      Catch reciprocal gaming
+Rejection must be justified               No gatekeeping by fiat
+Author can appeal rejection               Keeps reviewers honest
+Appeal reviewed by lead reviewer          Not the original reviewer</code></pre>
+            </section>
+
+            <section class="section" id="integration">
+                <h2>Integration with ACG-NET</h2>
+                <pre><code>manifest.json additions:
+  member.stats.reviews_completed: int
+  member.stats.review_quality_avg: float
+  member.stats.submissions_total: int
+  member.stats.submissions_accepted: int
+  member.stats.reviewer_tier: "R0"-"R5"
+  member.stats.author_tier: "A0"-"A5"
+  member.stats.domains: ["ai-safety", "automation", ...]
+  member.achievements: [...existing + review achievements]
+
+brain_tier_integration:
+  Review activity  -> counts toward R2 ring
+  Publishing       -> counts toward R1 ring
+  AI evaluation    -> counts toward R6 ring
+  Ethical review   -> counts toward R3 ring
+
+hub_display:
+  Review activity on member profile
+  Review queue on hub dashboard
+  "Needs Reviewers" section on hub index
+  Domain-matched reviewer suggestions</code></pre>
+                <p>
+                    The paper's most important integration rule is that upper-tier brain rankings require both review and publication. You cannot reach the highest guild tiers by only shipping or only judging. The system is designed to reward members who do both.
+                </p>
+
+                <h3>The Review Queue</h3>
+                <pre><code>display:
+  Submissions awaiting review, sorted by:
+  - Age (oldest first)
+  - Category (AI evaluations highlighted)
+  - Reviewer match
+
+submission card:
+  - Title + category + author
+  - Required reviewers: X of Y assigned
+  - Domain tags needed
+  - "Claim this review" button
+
+reviewer can:
+  - Browse queue and claim reviews
+  - Get auto-matched suggestions
+  - Set availability
+
+author can:
+  - Track review status
+  - See which reviews are complete
+  - Respond to individual reviews
+  - Resubmit revised version</code></pre>
+            </section>
+
+            <section class="section" id="implementation">
+                <h2>Implementation</h2>
+                <pre><code>phase_1_manual:
+  Reviews happen in GitHub issues or markdown files
+  Scoring is self-reported in structured template
+  Points tracked in JSON in the hub repo
+  Leaderboard computed by hub GitHub Action
+
+review_template.md:
+  Submission: [title]
+  Reviewer: [handle]
+  Date: [date]
+  Scores:
+    Accuracy: [1-5] - [justification]
+    Evidence: [1-5] - [justification]
+    Novelty: [1-5] - [justification]
+    Reproducibility: [1-5] - [justification]
+    Clarity: [1-5] - [justification]
+    Ethics: [1-5] - [justification]
+    Practicality: [1-5] - [justification]
+  Overall: [weighted average]
+  Recommendation: [accept / revise / reject]
+  Summary: [paragraph]
+
+phase_2_app:
+  GitHub Pages app for review submission and tracking
+  Form-based review submission
+  Auto-computed scores
+  Dashboard with leaderboards
+  Notifications when reviews are needed
+  Lives at: guild hub site /reviews/
+
+phase_3_chain:
+  Reviews recorded on ACG-KCC chain
+  Review hashes as immutable proof
+  Reviewer reputation on-chain
+  Achievement NFTs as non-transferable proof of contribution</code></pre>
+            </section>
+
+            <section class="section">
+                <h2>The Charter Connection</h2>
+                <pre><code>CHARTER SAYS:                      SYSTEM PROVIDES:
+-------------------------------------------------------------------
+"peer reviews are mandatory"      -> structured review process
+"scientific approach"             -> 7-dimension rubric with scoring
+"evaluated by real effects"       -> reproducibility + practicality
+"not novelty alone"               -> novelty is only 15% of score
+"experimentation and learning"    -> AI evaluation category
+"approached with discernment"     -> ethics dimension on every review
+"tested in practice"              -> case study category
+"judged by real effects"          -> impact tracking over time</code></pre>
+                <p>
+                    The gamification is not decorative. The document's thesis is that the charter becomes real when its principles are instrumented. Review, scoring, progression, appeals, and visible contributions are the system by which the guild turns values into enforceable practice.
+                </p>
+            </section>
+
+            <section class="closing-statement">
+                <p><strong>Reviewing is as valuable as publishing. The system makes that visible.</strong></p>
+                <p>
+                    The points make it real. The tiers make it progressive. The achievements make it fun. The charter already said peer review is mandatory; Review Forge makes peer review desirable, legible, and measurable.
+                </p>
+                <p class="paper-mark">ACG Review Forge / Knowledge About Knowledge / 510,510</p>
+            </section>
+        </article>
+
+        <section class="cta-section">
+            <h2>Explore More Guild Papers</h2>
+            <p>Return to the white papers hub for the full set of Guild white papers, position papers, experimental papers, research notes, and knowledge-about-knowledge publications.</p>
+            <div class="cta-buttons">
+                <a href="white-papers.html" class="btn btn-primary">Back to White Papers</a>
+                <a href="index.html" class="btn btn-secondary">Visit Home Page</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild</p>
+        <p>Knowledge-about-knowledge publications and long-form technical writing for AI-assisted engineering.</p>
+        <a href="https://github.com/alexbunardzic-1/aicraftspeopleguild.github.io" target="_blank" rel="noopener noreferrer" class="github-link">
+            View on GitHub
+        </a>
+    </footer>
+</body>
+</html>

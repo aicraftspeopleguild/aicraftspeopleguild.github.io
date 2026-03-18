@@ -288,6 +288,10 @@
             border-top-color: #6B5CA5;
         }
 
+        .paper-card.knowledge-paper {
+            border-top-color: #3F6C8E;
+        }
+
         .paper-card:hover {
             transform: translateY(-6px);
             box-shadow:
@@ -319,6 +323,11 @@
 
         .paper-card.research-note .paper-type {
             background: #6B5CA5;
+            color: var(--color-parchment);
+        }
+
+        .paper-card.knowledge-paper .paper-type {
+            background: #3F6C8E;
             color: var(--color-parchment);
         }
 
@@ -467,7 +476,7 @@
             <div class="emblem">⚒ ACG ⚒</div>
         </div>
         <h1>White Papers</h1>
-        <p class="subtitle">A home for the Guild's white papers, position papers, experimental papers, review drafts, research notes, and technical publications on AI-assisted software engineering.</p>
+        <p class="subtitle">A home for the Guild's white papers, position papers, experimental papers, research notes, knowledge-about-knowledge papers, and technical publications on AI-assisted software engineering.</p>
         <div class="back-link">
             <a href="index.html">← Back to Home</a>
         </div>
@@ -476,17 +485,17 @@
     <main class="container">
         <section class="intro-panel">
             <p>
-                This page hosts long-form Guild publications. It begins with <strong>AI Harness</strong>, <strong>The Harm Equation</strong>, <strong>The Prediction Trap</strong>, <strong>Lightning Factory</strong>, <strong>Grid Brain</strong>, <strong>The Pattern That Wasn't There</strong>, <strong>S.A.D.</strong>, <strong>ACG-KCC: Guild Chain</strong>, <strong>ACG-NET: Decentralized Guild Web</strong>, and <strong>The Konomi Standard</strong>, and it will expand as new papers and position statements are published on the site.
+                This page hosts long-form Guild publications. It begins with <strong>AI Harness</strong>, <strong>The Harm Equation</strong>, <strong>The Prediction Trap</strong>, <strong>Lightning Factory</strong>, <strong>Grid Brain</strong>, <strong>ACG Review Forge</strong>, <strong>The Pattern That Wasn't There</strong>, <strong>S.A.D.</strong>, <strong>ACG-KCC: Guild Chain</strong>, <strong>ACG-NET: Decentralized Guild Web</strong>, and <strong>The Konomi Standard</strong>, and it will expand as new papers and position statements are published on the site.
             </p>
             <p>
-                Each paper is intended to be durable, practical, and grounded in professional software engineering concerns rather than hype. Experimental papers and research notes are labeled explicitly so speculative, exploratory, or validation-stage work remains visibly distinct from established guidance.
+                Each paper is intended to be durable, practical, and grounded in professional software engineering concerns rather than hype. Experimental papers, research notes, and knowledge-about-knowledge publications are labeled explicitly so speculative, exploratory, or systems-thinking work remains visibly distinct from established guidance.
             </p>
         </section>
 
         <section class="papers-shell">
             <div class="section-heading">
                 <h2>Available Papers</h2>
-                <p>Current white papers, position papers, experimental papers, and research notes available on the site, including review drafts.</p>
+                <p>Current white papers, position papers, experimental papers, research notes, and knowledge-about-knowledge publications available on the site, including review drafts.</p>
             </div>
 
             <div class="papers-grid">
@@ -567,6 +576,23 @@
                     </p>
                     <div class="paper-actions">
                         <a href="grid-brain.html" class="btn btn-primary">Read Research Note</a>
+                    </div>
+                </article>
+
+                <article class="paper-card knowledge-paper">
+                    <div class="paper-type">Knowledge About Knowledge</div>
+                    <div class="paper-meta">
+                        <span>Peer Review</span>
+                        <span>AI Evaluation</span>
+                        <span>Gamified System</span>
+                        <span>510,510</span>
+                    </div>
+                    <h3>ACG Review Forge</h3>
+                    <p>
+                        A knowledge-about-knowledge system proposal for making <strong>reviewing as visible and rewarding as publishing</strong>. It defines reviewer tiers, author tiers, rubric scoring, achievements, leaderboards, anti-gaming rules, and a charter-aligned review queue centered on peer review and AI evaluation.
+                    </p>
+                    <div class="paper-actions">
+                        <a href="acg-peer-reviews.html" class="btn btn-primary">Read Knowledge Paper</a>
                     </div>
                 </article>
 
@@ -663,6 +689,10 @@
                 <div class="future-slot">
                     <h3>Research Note</h3>
                     <p>Reserved for shorter essays or supporting papers.</p>
+                </div>
+                <div class="future-slot">
+                    <h3>Knowledge About Knowledge</h3>
+                    <p>Reserved for system-thinking papers about evaluation, epistemics, and review.</p>
                 </div>
                 <div class="future-slot">
                     <h3>Experimental Paper</h3>

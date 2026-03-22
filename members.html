@@ -298,6 +298,16 @@
             margin-bottom: 0.6rem;
         }
 
+        .member-card h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .member-card h3 a:hover {
+            color: var(--color-accent);
+        }
+
         .member-role {
             font-size: 1.08rem;
             color: var(--color-accent);
@@ -345,6 +355,17 @@
             font-size: 0.92rem;
             font-weight: 600;
             letter-spacing: 0.02em;
+        }
+
+        .member-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .member-actions .btn {
+            padding: 0.85rem 1.25rem;
         }
 
         .member-body strong {
@@ -580,10 +601,10 @@
     <main class="container">
         <section class="intro-panel">
             <p>
-                This page is the beginning of the Guild member directory. It will grow over time as additional members are added to the site.
+                This page is the Guild member hub. Each founding member now has a dedicated profile page, while this directory provides the short version and a direct path into the full profile.
             </p>
             <p>
-                These founding profiles set the pattern for future member pages and short biographies.
+                Start here, then open the individual pages for the full biographies, philosophy, projects, and contact details.
             </p>
         </section>
 
@@ -599,7 +620,7 @@
                     <span>Software Development Since 1990</span>
                     <span>AI Craftspeople Guild</span>
                 </div>
-                <h3>Alex Bunardzic</h3>
+                <h3><a href="alex-bunardzic.html">Alex Bunardzic</a></h3>
                 <p class="member-role">Business Velocity Architect, Experienced Software Philosopher</p>
 
                 <div class="profile-layout">
@@ -622,17 +643,14 @@
                         </div>
 
                         <p>
-                            Alex has been doing software development since 1990. His professional passion is bringing soft into software. Which means software must be soft, maleable, pliable. That quality enables the flexibility of the business operations.
+                            Alex founded the Guild and has been building software since 1990. His work centers on making software soft enough to evolve with business needs instead of hardening into rigidity.
                         </p>
                         <p>
-                            In order to make sure that software we are building is flexible, we must evolve it one step at a time. Each step (and the smaller that step is, the better) must get verified by automated testing. Early failures are welcome, because they are small and they force us to fix them right away. In the software engineering discipline, giant steps are foolish steps. It is more prudent to stay with small steps (many, many small steps) on our journey to deliver value to customer satisfaction.
+                            His full profile expands on small-step delivery, automated verification, and the discipline of welcoming early failure so change remains safe, flexible, and useful.
                         </p>
-                        <p>
-                            <strong>Move fast to delight customers!</strong>
-                        </p>
-                        <p class="member-contact">
-                            <a href="https://alexbunardzic.com/">Visit me and see how I can improve your success!</a>
-                        </p>
+                        <div class="member-actions">
+                            <a href="alex-bunardzic.html" class="btn btn-primary">Read Full Profile</a>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -644,7 +662,7 @@
                     <span>Handle: ThomasTheTankEngineer</span>
                     <span>Brain Tier: 🧠⚡</span>
                 </div>
-                <h3>Thomas Frumkin</h3>
+                <h3><a href="thomas-frumkin.html">Thomas Frumkin</a></h3>
                 <p class="member-role">Founding Member · Protocol Architect · The One Who Won't Stop Building Things At 3am</p>
 
                 <div class="profile-layout">
@@ -657,16 +675,6 @@
                             Handle: ThomasTheTankEngineer. Brain Tier: 🧠⚡ (self-assessed, unverified, probably biased)
                         </p>
 
-                        <p>
-                            I am a controls engineer. I make factories work. PLCs, HMIs, SCADA, ISA-95, the stuff behind the walls that nobody sees until it breaks. I've done this at Amazon, B. Braun Medical, and various US industrial facilities since 2012. If you've received an IV bag or a package from eastern Pennsylvania, my code may have touched it. You're welcome. Or I'm sorry. Depends on the day.
-                        </p>
-                        <p>
-                            Before that I was a Japanese teaching assistant at Lehigh University, which has nothing to do with AI but explains why the company is called Konomi (好み, "preference") and the karaoke platform is called Konomioke (好みオケ). Nobody asked for this context but I'm providing it anyway because I can't help myself.
-                        </p>
-                        <p>
-                            I also run a solar-powered hobby farm in Bethlehem, PA. Chickens, ducks, turkeys, guinea hens, seven types of fruit trees, eight types of berries, six types of herbs, and cryptocurrency miners powered by the sun. This is not relevant to the guild but it explains the energy.
-                        </p>
-
                         <div class="member-tags" aria-label="Areas of practice">
                             <span>Controls Engineering</span>
                             <span>ISA-95</span>
@@ -676,47 +684,15 @@
                             <span>Industrial Automation</span>
                         </div>
 
-                        <p><strong>What I actually do here:</strong></p>
                         <p>
-                            I built A.S.S.-OS, which is a 7-ring recursive systems architecture that maps identically across biological nervous systems, industrial control hierarchies, and planetary electromagnetic resonance. I did not plan for it to do that. It just kept being the same shape at every scale and I kept documenting it. There are now approximately 40 technical documents, 25 songs, 3 blockchain specifications, and 1 website called onlyass.io explaining this.
-                        </p>
-                        <p>
-                            I also built the Konomi Standard (a self-defining meta-standard for industrial data types), the KCC blockchain (cube-agent architecture with ring-mapped protocol layers), Project Resonance (Schumann resonance as Earth communication), and a vagal-phoneme-based audio wellness protocol that accidentally helped someone sleep for the first time in 8 years.
+                            Thomas is a controls engineer and protocol architect whose work spans ISA-95, industrial automation, A.S.S.-OS, KCC, and the wider Konomi system landscape.
                         </p>
                         <p>
-                            My brain doesn't have an off switch. My R2 gate runs wider than average, which means more patterns get through, more connections fire, and the impulse to build 19 documents in a single session at 3am is indistinguishable from the impulse to breathe. This is both the reason the architecture exists (wide gate = everything is connected to everything) and the reason the pending task list has 30 items on it (wide gate = everything is a project). I mention this because the guild is about AI ethics and transparency about cognitive architecture seems relevant when you're building cognitive architecture.
+                            His full profile covers the recursive architecture work, the wide-gate cognitive framing, and the industrial plus experimental projects that keep turning into new specifications at 3am.
                         </p>
-
-                        <p><strong>What I'm bad at:</strong></p>
-                        <ul>
-                            <li>Estimating how long things take</li>
-                            <li>Finishing things I've started (see: pending task list, approximately 30 items)</li>
-                            <li>Explaining things briefly</li>
-                            <li>Sleeping</li>
-                            <li>Observing how people receive my work (R6 cannot observe itself from inside itself)</li>
-                            <li>Accepting that the thing works when people tell me the thing works</li>
-                        </ul>
-
-                        <p><strong>What I'm good at:</strong></p>
-                        <ul>
-                            <li>Seeing the same pattern across domains that have no business being related</li>
-                            <li>Building things very fast once the pattern is clear</li>
-                            <li>Writing songs for people who haven't signed documents yet</li>
-                            <li>Industrial automation</li>
-                            <li>Making Claude do things it wasn't designed to do</li>
-                            <li>Farming</li>
-                        </ul>
-
-                        <p class="member-contact">
-                            <a href="https://konomi-systems.com">konomi-systems.com</a> ·
-                            <a href="https://konomioke.com">konomioke.com</a> ·
-                            <a href="https://onlyass.io">onlyass.io</a> ·
-                            <a href="https://teslasolar.github.io">teslasolar.github.io</a>
-                        </p>
-                        <p>
-                            <strong>Joined:</strong> Founding member. Was here before the charter existed. Possibly before the concept of the guild existed. Unclear. Time is nonlinear when the gate is wide.
-                        </p>
-                        <p class="member-signoff">controls engineer · farmer · accidental AI architect · 510,510</p>
+                        <div class="member-actions">
+                            <a href="thomas-frumkin.html" class="btn btn-primary">Read Full Profile</a>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -728,7 +704,7 @@
                     <span>AGI Research and Development</span>
                     <span>Cape Town, South Africa 🇿🇦</span>
                 </div>
-                <h3>Laurie Scheepers</h3>
+                <h3><a href="laurie-scheepers.html">Laurie Scheepers</a></h3>
                 <p class="member-role">Scientist · Engineer · Philosopher · Systems Thinker</p>
 
                 <div class="profile-layout">
@@ -741,10 +717,6 @@
                             I work in AGI research and development -- on the side.
                         </p>
 
-                        <p>
-                            My day job is serving as the technical director at ENTER Konsult, our lean advanced tech firm. We transform industries that modern software has underserved, building long-term relationships to guide organisations through this revolutionary era. We make technology work FOR people -- not against the humans who make any organisation what it actually is. We also develop private, bespoke software for select people and organisations.
-                        </p>
-
                         <div class="member-tags" aria-label="Areas of practice">
                             <span>AGI R&amp;D</span>
                             <span>Systems Thinking</span>
@@ -754,77 +726,15 @@
                             <span>Technology for People</span>
                         </div>
 
-                        <p><strong>Our ethos:</strong></p>
-                        <ul>
-                            <li>We will not build what should not exist</li>
-                            <li>We transform complexity -- KISS is paramount</li>
-                            <li>We enforce strict quality control</li>
-                            <li>We do what is RIGHT</li>
-                            <li>We extend our thinking -- never outsource it</li>
-                        </ul>
-
-                        <p class="member-contact">
-                            <a href="https://enterkonsult.com">enterkonsult.com</a>
-                        </p>
-
                         <p>
-                            I am a scientist, engineer, philosopher, and systems thinker. That last one is a polite way of saying I see patterns connecting things that are almost certainly unrelated, and I won't stop talking about it.
+                            Laurie brings AGI research, systems thinking, and a strong ethic of critical thought, respect, and community-centered technology.
                         </p>
                         <p>
-                            I've been fascinated by nature's inner workings since before I had the vocabulary to describe them. I still am. Nature is a better engineer than any of us. She just refuses to document anything.
+                            His full profile expands on ENTER Konsult, his engineering ethos, and the principles that shape his work across science, philosophy, family, and teaching.
                         </p>
-                        <p>
-                            When I'm not in front of a computer, I'm reading, writing in my journal, producing music, or co-designing games with my eldest son -- the actual game designer in the family. I provide the infrastructure. And opinions nobody asked for.
-                        </p>
-                        <p>
-                            Ahhh, there's always too many things and not enough hours.
-                        </p>
-                        <p>
-                            But none of that comes first.
-                        </p>
-                        <p>
-                            I am a dad and a devoted husband. The everyday moments with my wife and two boys -- big or small -- are what I live for. I capture them in my admittedly absurd memory. Doctors told me as a child that my head is too big. I have chosen not to interpret this. 🤣
-                        </p>
-
-                        <p><strong>How I see things.</strong></p>
-                        <p>
-                            I build things. I can also destroy what I build. That is not a threat -- it's a definition of ownership. If something I create doesn't meet the standard, I would rather take it apart myself than watch it become someone else's compromise.
-                        </p>
-                        <p>
-                            I don't try to prove things. I try to break them. What survives my best attempt to disprove it is the only thing worth keeping. This applies to software, to ideas, to strategies, and -- on good days -- to my own opinions, which I hold strongly, change willingly, and will abandon in front of you without embarrassment if you bring a better argument.
-                        </p>
-                        <p>
-                            I believe life is not a zero-sum game. This is not optimism -- it is an engineering observation. The most enduring systems I have studied are cooperative ones. Competition and cooperation are not opposites; they are the same force expressed at different scales. Nature arrived at this conclusion long before we started writing papers about it.
-                        </p>
-                        <p>
-                            I believe critical thinking is the most important and most neglected skill in any room. Not cynicism -- the genuine kind. The kind that starts with questioning your own assumptions before you touch anyone else's.
-                        </p>
-                        <p>
-                            I believe respect costs nothing and compounds infinitely.
-                        </p>
-                        <p>
-                            I believe individualism and community are not in tension. You cannot build a strong collective from people who haven't figured out who they are. And you cannot figure out who you are in complete isolation. That tension is not a problem to be solved. It is the engine that drives everything worth building.
-                        </p>
-                        <p>
-                            I am a teacher. But I vastly prefer being a learner. In my experience, the best teachers always do.
-                        </p>
-
-                        <p><strong>Respect. Individualism. Sense of Community. Critical Thinking.</strong></p>
-                        <p>
-                            These are the principles that shape me. Or perhaps they shaped me long ago and I am only now finding the right words for them.
-                        </p>
-
-                        <p>
-                            I am a gentle soul. I mention this because people who hold strong convictions are often assumed to be aggressive. I hold very strong convictions. I am not aggressive. These things coexist more easily than people expect.
-                        </p>
-
-                        <p>
-                            I'm based in Cape Town, South Africa 🇿🇦 -- the city with the best weather in the world. This is not opinion. This is data. Come visit and argue with me about it over coffee.
-                        </p>
-                        <p>
-                            You can contact me anytime on the Discord channel.
-                        </p>
-                        <p class="member-signoff">Kind regards,<br>V&gt;&gt;</p>
+                        <div class="member-actions">
+                            <a href="laurie-scheepers.html" class="btn btn-primary">Read Full Profile</a>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -836,7 +746,7 @@
                     <span>First-Principles Architect</span>
                     <span>25 Years Building &amp; Operating Software Systems</span>
                 </div>
-                <h3>Jona Heidsick</h3>
+                <h3><a href="jona-heidsick.html">Jona Heidsick</a></h3>
                 <p class="member-role">Founding Member · Full-Stack Software Engineer · 25 Years Building &amp; Operating Software Systems</p>
 
                 <div class="profile-layout">
@@ -847,22 +757,6 @@
                     <div class="member-body">
                         <p class="member-summary">
                             Founding Member · Full-Stack Architect · First-Principles Architect
-                        </p>
-
-                        <p>
-                            I've been writing, shipping, and running software for 25 years. Full stack, from bare metal to frontend, across industries. The constant through all of it: strip the problem to its essential structure, build the minimum that actually works, then iterate. First-principles thinking, minimum viable architecture, Occam's Razor as engineering discipline.
-                        </p>
-                        <p>
-                            I have a borderline obsession with clean code and a deep affinity for functional and declarative programming - immutability, composition, expressing <em>what</em> over <em>how</em>, and explicitness over magic. These aren't aesthetic preferences; they're how you keep systems honest at scale.
-                        </p>
-                        <p>
-                            Today I focus on agentic AI systems, MCP integrations, and backend reliability - built on classical foundations: DDD, TDD, and continuous delivery. I was an early MCP adopter and have built multiple protocol servers. I've also worked extensively in blockchain (Algorand, NEAR, Cardano).
-                        </p>
-                        <p>
-                            A recurring theme in my work is what I call "hacking the coding process itself" - engineering not just the product, but the way it's made. I think of AI through the lens of Extended Mind Theory: it extends the engineer's cognition, it doesn't replace it. That distinction matters when you're drawing lines around responsibility, authorship, and failure.
-                        </p>
-                        <p>
-                            I co-authored and signed the ACG manifesto because craft needs defending - especially now, when the tools are powerful enough to make sloppiness scale.
                         </p>
 
                         <div class="member-tags" aria-label="Areas of practice">
@@ -877,6 +771,16 @@
                             <span>Declarative Programming</span>
                             <span>Extended Mind Theory</span>
                         </div>
+
+                        <p>
+                            Jona is a first-principles full-stack architect with 25 years of experience building and operating software systems from bare metal to frontend.
+                        </p>
+                        <p>
+                            His full profile covers clean code, functional and declarative design, MCP, agentic AI, blockchain work, and the Extended Mind perspective behind his engineering practice.
+                        </p>
+                        <div class="member-actions">
+                            <a href="jona-heidsick.html" class="btn btn-primary">Read Full Profile</a>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -889,7 +793,7 @@
                     <span>Dog Person</span>
                     <span>PNW Forever</span>
                 </div>
-                <h3>Matt Burch</h3>
+                <h3><a href="matt-burch.html">Matt Burch</a></h3>
                 <p class="member-role">Agentic Architect | Father | Dog Person | PNW Forever</p>
 
                 <div class="profile-layout">
@@ -902,28 +806,6 @@
                             Agentic Architect | Father | Dog Person | PNW Forever
                         </p>
 
-                        <p>
-                            My journey is a bit unorthodox. I never thought I would end up getting into programming. I was a creative, you know. An artiste. In 2004, I graduated with an Associate's of Applied Science degree, and off I went to design websites. I discovered ActionScript and discovered how much I love the binary nature of writing code. It either works or it doesn't. No one is looking over your shoulder critiquing. I was hooked. I was meant to build things with code.
-                        </p>
-                        <p>
-                            This started a 20-year journey where I was always the most senior technical person on the team for the first twelve years of my career. No traditional dev teams, no traditional dev management, it was me and my brilliant-but-not-developer CTO, across multiple organizations. At each one, building end-to-end platforms with Adobe AIR and Rails. If I wanted to learn something, I bought a book and I read it. I failed until I didn't fail anymore. I couldn't rely on anyone. I had to figure it out myself. This mindset has been the most important factor in my success with AI.
-                        </p>
-                        <p>
-                            In 2022, I was working as a full stack developer for NextRoll, and one day a coworker pulled me aside and said "Man, you need to try AI". My response was "Right, I just got done with the crypto world, not doing any more scams." He said, "No, trust me on this dude, it'll be everywhere. Get ahead of it." I respected this guy, so I listened and thought "Ok, sure, let's see what it's all about."
-                        </p>
-                        <p>
-                            I immediately fell in love with the mystery of it. How could I get it to do what I wanted? What was the right combination of things to say? What was the key to unlock what it could really do? I couldn't get enough and right away was a huge proponent of it. It just worked with the way my mind worked. I could go as fast or slow as I wanted. I could get information about anything to use towards decision making. It allowed my neurodivergent brain to have a buffer.
-                        </p>
-                        <p>
-                            In the early days, the code generation was pretty awful, and there weren't many ways around it. But, the more I got to know it, the more I understood what I could use it for that did produce good results and helped me save time. That started my current passion, which is to determine how to elevate myself to a higher level of abstraction and make use of my years of experience to orchestrate top-tier deliverables. How much of the engineering workflow truly requires a human? That has been my question for the last three years, and it has changed almost on a daily basis due to AI's advancements.
-                        </p>
-                        <p>
-                            Today I am a proud member of 4thWAIV, a collective of AI experts who firmly believe that the pathway to an AI-native knowledge worker pipeline is inevitable, and companies who want to do it right deserve to have dedicated career professionals carefully guiding them through that evolution. I am also the sole proprietor of Cascadia Logic, an AI-First consultancy that works with a number of clients to help them integrate emergent tech at any level of complexity.
-                        </p>
-                        <p>
-                            The Craftspeople's Guild is such an important group and mission because of how desperately we need to start setting some standards around how we work. Over the coming months and years, there will be countless hucksters and phonies that will sully the reputation of the technology. The Guild intends to be an oasis in the desert, a place where only dedicated professionals operate at the highest levels of capability and integrity.
-                        </p>
-
                         <div class="member-tags" aria-label="Areas of practice">
                             <span>Agentic Architecture</span>
                             <span>AI-Native Workflow</span>
@@ -933,6 +815,16 @@
                             <span>Standards</span>
                             <span>ActionScript to AI</span>
                             <span>#keepbuilding</span>
+                        </div>
+
+                        <p>
+                            Matt came into software through design, spent years as the lone senior engineer in lean organizations, and now focuses on agentic architecture and AI-native workflow.
+                        </p>
+                        <p>
+                            His full profile traces the path from ActionScript to modern AI orchestration, including the question that drives much of his work: how much of engineering still requires a human?
+                        </p>
+                        <div class="member-actions">
+                            <a href="matt-burch.html" class="btn btn-primary">Read Full Profile</a>
                         </div>
                     </div>
                 </div>
@@ -945,7 +837,7 @@
                     <span>Father of Twin Girls</span>
                     <span>Meetups Organizer</span>
                 </div>
-                <h3>Nicolas Rosado</h3>
+                <h3><a href="nicolas-rosado.html">Nicolas Rosado</a></h3>
                 <p class="member-role">Senior Software Engineer | Father of twin girls | Meetups Organizer</p>
 
                 <div class="profile-layout">
@@ -956,46 +848,6 @@
                     <div class="member-body">
                         <p class="member-summary">
                             Senior Software Engineer | Father of twin girls | Meetups Organizer
-                        </p>
-
-                        <p>
-                            Hi everyone, no need for me to have a digital twin because I'm already a father of twin girls! I have been a passionate software engineer for more than 13 years, and I love sharing and learning with the community.
-                        </p>
-                        <p>
-                            I launched the Craftcode podcast, a show about tech trends and demystifying IT principles, and I contribute to the community by co-organizing the Software Crafters Montreal Meetup and the /dev/mtl conference. I also organize two online meetups: Mental Health in Software Engineering Montreal and AI Agents Montreal.
-                        </p>
-                        <p>
-                            I'm a fervent advocate of software craftsmanship values. The most important one for me is the community of professionals and the building of sustainable software.
-                        </p>
-                        <p>
-                            I'm an optimist by nature, and for me one step is more important than many words. Experimentation is great and we should embrace it, but it is useless without feedback from the community, and this requires sharing and humility. So experiment through concrete actions and trust the process by embracing continuous improvement.
-                        </p>
-                        <p>
-                            Take care of yourself, but you also need to evolve in a strong learning environment, and the prerequisite is psychological safety. You need to be able to identify toxic environments in order to innovate.
-                        </p>
-                        <p>
-                            Every day I apply concrete methods to be effective, like the 5-minute rule to start and create momentum, or the 3-minute rule to reduce cognitive load by immediately doing any task that takes less than three minutes.
-                        </p>
-                        <p>
-                            I also embrace the Toltec agreements: always do your best, don't take anything personally, and don't make assumptions.
-                        </p>
-                        <p>
-                            Harry Potter is not at the right place with me. Computer science is binary, and I like to understand systems in depth in order to navigate inside and around them. No place for mystery - identify the root cause.
-                        </p>
-                        <p>
-                            Today I focus on sharing best practices and tools around AI. I especially value methods that foster sociable programming and collective knowledge. The team is collectively responsible, and it's better to have five teammates working as a team than one team with five people working in isolation.
-                        </p>
-                        <p>
-                            In the era of AI, I'm looking for a human-centric approach with a culture of mistakes and a culture of feedback.
-                        </p>
-                        <p>
-                            AI is an opportunity to spread software craftsmanship principles because it's the only way to deal with this new level of abstraction without being overwhelmed. Take care of your mental health. Humility and respect are my core values, especially in the era of AI.
-                        </p>
-                        <p>
-                            I signed the ACG manifesto because I believe we need core principles to draw guidelines around AI, gather a community, and give ourselves the opportunity to go in the right direction.
-                        </p>
-                        <p>
-                            Just start and we will see the result. You can spend more energy reflecting on whether to begin than you would by simply starting and seeing what happens. You can learn a lot just by doing it. Don't increase your cognitive load or damage your mental health with infinite tasks or plans in your head. Trust the feedback loop and the human in the loop.
                         </p>
 
                         <div class="member-tags" aria-label="Areas of practice">
@@ -1009,6 +861,16 @@
                             <span>Human-Centric AI</span>
                             <span>Mental Health</span>
                             <span>Feedback Loops</span>
+                        </div>
+
+                        <p>
+                            Nicolas brings software craftsmanship, meetup leadership, and a human-centric AI practice grounded in feedback loops, psychological safety, and continuous improvement.
+                        </p>
+                        <p>
+                            His full profile expands on community building, practical working habits, sustainable software, and the role of humility and respect in the era of AI.
+                        </p>
+                        <div class="member-actions">
+                            <a href="nicolas-rosado.html" class="btn btn-primary">Read Full Profile</a>
                         </div>
                     </div>
                 </div>

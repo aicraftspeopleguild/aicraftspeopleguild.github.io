@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Rituals - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+            --color-accent: #356B6A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 50%, var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+        }
+
+        .subtitle {
+            font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 960px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .back-link {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-panel,
+        .rituals-shell,
+        .contribution-shell,
+        .cta-section {
+            background: white;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+        }
+
+        .intro-panel {
+            margin: 5rem auto 2.5rem;
+            padding: 3rem;
+            border-left: 6px solid var(--color-accent);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        .rituals-shell,
+        .contribution-shell,
+        .cta-section {
+            padding: 3rem;
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1.15s forwards;
+        }
+
+        .contribution-shell,
+        .cta-section {
+            margin-top: 2.5rem;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .intro-panel p,
+        .ritual-card p,
+        .contribution-shell p,
+        .contribution-shell li,
+        .cta-section p {
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+        }
+
+        .intro-panel p + p,
+        .ritual-card p + p,
+        .contribution-shell p + p,
+        .contribution-shell li + li {
+            margin-top: 1rem;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+        }
+
+        .section-heading p {
+            color: var(--color-graphite);
+            font-size: 1.05rem;
+        }
+
+        .rituals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ritual-card {
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.92) 0%, white 100%);
+            border-top: 4px solid var(--color-accent);
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+
+        .ritual-number {
+            display: inline-block;
+            margin-bottom: 0.9rem;
+            padding: 0.3rem 0.65rem;
+            font-family: 'Courier Prime', monospace;
+            background: rgba(53, 107, 106, 0.12);
+            color: var(--color-accent);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .ritual-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            line-height: 1.2;
+            color: var(--color-ink);
+            margin-bottom: 0.8rem;
+        }
+
+        .ritual-prompt {
+            margin-top: 1.2rem;
+            padding: 1rem 1.1rem;
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-rust);
+        }
+
+        .ritual-prompt strong {
+            display: block;
+            margin-bottom: 0.45rem;
+            color: var(--color-rust);
+        }
+
+        .ritual-prompt code {
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            color: var(--color-ink);
+            white-space: pre-wrap;
+        }
+
+        .contribution-shell ul {
+            margin: 1rem 0 0 1.5rem;
+        }
+
+        .contribution-shell strong {
+            color: var(--color-accent);
+        }
+
+        .cta-section {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2,
+        .cta-section p,
+        .cta-buttons {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .intro-panel,
+            .rituals-shell,
+            .contribution-shell,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <h1>AI Rituals</h1>
+        <p class="subtitle">Repeatable prompting and review habits Guild members use to represent working knowledge and keep AI work grounded, inspectable, and useful.</p>
+        <div class="back-link">
+            <a href="index.html">&larr; Back to Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-panel">
+            <p>
+                This page begins the Guild's collection of rituals for working with AI. A ritual is not a magic phrase and not a superstition. It is a repeatable habit that shapes how a human approaches an AI system before, during, and after prompting.
+            </p>
+            <p>
+                The Guild cares deeply about knowledge representation: how working knowledge gets stored, transmitted, tested, and reused. One way to represent that knowledge is through rituals. A good ritual compresses experience into a form that another craftsperson can repeat without losing the important structure.
+            </p>
+            <p>
+                The point is not to sound clever. The point is to reduce drift, surface assumptions, improve verification, and keep human judgement active. Prompting without ritual easily turns into vague delegation. Prompting with ritual keeps the craftsperson in the loop.
+            </p>
+        </section>
+
+        <section class="rituals-shell">
+            <div class="section-heading">
+                <h2>Starter Rituals</h2>
+                <p>The first six rituals in the Guild archive. This list is expected to grow as members contribute their working practices.</p>
+            </div>
+
+            <div class="rituals-grid">
+                <article class="ritual-card">
+                    <div class="ritual-number">Ritual 01</div>
+                    <h3>Name The Job</h3>
+                    <p>
+                        Start by telling the model exactly what role it is playing and what job it is doing right now. Not "help me with this." Name the task boundary clearly.
+                    </p>
+                    <p>
+                        This reduces fuzzy assistance and improves the odds of getting an artifact you can inspect instead of a cloud of adjacent words.
+                    </p>
+                    <div class="ritual-prompt">
+                        <strong>Prompt pattern</strong>
+                        <code>You are helping me as a reviewer / debugger / spec editor. The job is: [one concrete job]. Do only that job.</code>
+                    </div>
+                </article>
+
+                <article class="ritual-card">
+                    <div class="ritual-number">Ritual 02</div>
+                    <h3>Declare Non-Negotiables First</h3>
+                    <p>
+                        State the constraints before you ask for ideas: architecture boundaries, safety constraints, style limits, files that must not change, evidence requirements, business rules.
+                    </p>
+                    <p>
+                        AI tends to fill empty space. Constraints should arrive before generation, not after cleanup.
+                    </p>
+                    <div class="ritual-prompt">
+                        <strong>Prompt pattern</strong>
+                        <code>Constraints:
+- do not change X
+- stay within Y
+- preserve Z
+Now propose the smallest valid approach.</code>
+                    </div>
+                </article>
+
+                <article class="ritual-card">
+                    <div class="ritual-number">Ritual 03</div>
+                    <h3>Ask For The Failure Mode</h3>
+                    <p>
+                        Before accepting the happy path, ask the model how its own answer could fail. This shifts the interaction from affirmation to examination.
+                    </p>
+                    <p>
+                        Guild work improves when the model is used to surface breakpoints, missing assumptions, and likely regressions before implementation.
+                    </p>
+                    <div class="ritual-prompt">
+                        <strong>Prompt pattern</strong>
+                        <code>Before you continue, tell me the top 3 ways this answer could be wrong, incomplete, or risky.</code>
+                    </div>
+                </article>
+
+                <article class="ritual-card">
+                    <div class="ritual-number">Ritual 04</div>
+                    <h3>Separate Generation From Judgment</h3>
+                    <p>
+                        Use one pass to generate options and a second pass to evaluate them. Do not ask the model to invent and certify in the same breath.
+                    </p>
+                    <p>
+                        This is the prompting equivalent of separating implementation from review.
+                    </p>
+                    <div class="ritual-prompt">
+                        <strong>Prompt pattern</strong>
+                        <code>Pass 1: generate 3 options.
+Pass 2: critique each option against these criteria.
+Do not merge the two passes.</code>
+                    </div>
+                </article>
+
+                <article class="ritual-card">
+                    <div class="ritual-number">Ritual 05</div>
+                    <h3>Force Explicit Assumptions</h3>
+                    <p>
+                        If the model is making assumptions, make it say them out loud. Hidden assumptions are where most prompt drift begins.
+                    </p>
+                    <p>
+                        Once assumptions are visible, you can confirm, reject, or narrow them before they contaminate the rest of the exchange.
+                    </p>
+                    <div class="ritual-prompt">
+                        <strong>Prompt pattern</strong>
+                        <code>List the assumptions you are making. Mark each as confirmed, inferred, or unknown.</code>
+                    </div>
+                </article>
+
+                <article class="ritual-card">
+                    <div class="ritual-number">Ritual 06</div>
+                    <h3>End With Verification</h3>
+                    <p>
+                        Every meaningful prompting sequence should end with a verification question: what changed, how do we test it, what would falsify it, what still needs human review.
+                    </p>
+                    <p>
+                        The ritual is complete only when the output is tied back to reality.
+                    </p>
+                    <div class="ritual-prompt">
+                        <strong>Prompt pattern</strong>
+                        <code>Summarize:
+1. what changed
+2. how to verify it
+3. what remains uncertain
+4. what a human must still check</code>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contribution-shell">
+            <div class="section-heading">
+                <h2>How To Add A Ritual</h2>
+                <p>The archive should grow by contribution, not by random accumulation.</p>
+            </div>
+
+            <p>
+                A Guild ritual should be specific enough to repeat and concrete enough to test. If a ritual cannot be demonstrated in practice, it does not belong here yet.
+            </p>
+            <p>
+                In that sense, a ritual is a knowledge artifact. It captures not just what to type, but how to think, what to check, and where failure usually hides.
+            </p>
+            <p><strong>Suggested contribution format:</strong></p>
+            <ul>
+                <li><strong>Name:</strong> short, memorable, operational.</li>
+                <li><strong>Intent:</strong> what failure mode does it reduce?</li>
+                <li><strong>Trigger:</strong> when do you use it?</li>
+                <li><strong>Pattern:</strong> the actual wording or sequence.</li>
+                <li><strong>Evidence:</strong> what improvement have you observed?</li>
+                <li><strong>Failure mode:</strong> how can the ritual itself be misused?</li>
+            </ul>
+            <p>
+                Over time this page can evolve from a simple list of prompting habits into a real Guild practice manual for human-AI collaboration.
+            </p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Continue The Archive</h2>
+            <p>Use this page as the beginning of a shared Guild vocabulary for prompting discipline, review habits, and human-in-the-loop AI practice.</p>
+            <div class="cta-buttons">
+                <a href="members.html" class="btn btn-primary">View Members</a>
+                <a href="white-papers.html" class="btn btn-secondary">View White Papers</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

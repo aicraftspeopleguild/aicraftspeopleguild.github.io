@@ -503,13 +503,13 @@
             <p>
                 The point is not to sound clever. The point is to reduce drift, surface assumptions, improve verification, and keep human judgement active. Prompting without ritual easily turns into vague delegation. Prompting with ritual keeps the craftsperson in the loop.
             </p>
-            <p>Here are the first seven rituals in the archive. The initial seed set came from <a href="alex-bunardzic.html">Alex Bunardzic</a>, and the archive now grows through member contribution, including Ritual 07 from <a href="kelly-hohman.html">Kelly Hohman</a>.</p>
+            <p>Here are the first eight rituals in the archive. The initial seed set came from <a href="alex-bunardzic.html">Alex Bunardzic</a>, and the archive now grows through member contribution, including Ritual 07 from <a href="kelly-hohman.html">Kelly Hohman</a> and Ritual 08 from <a href="jona-heidsick.html">Jona Heidsick</a>.</p>
         </section>
 
         <section class="rituals-shell">
             <div class="section-heading">
                 <h2>Starter Rituals</h2>
-                <p>The first seven rituals in the Guild archive. This list is expected to grow as members contribute their working practices.</p>
+                <p>The first eight rituals in the Guild archive. This list is expected to grow as members contribute their working practices.</p>
             </div>
 
             <div class="rituals-grid">
@@ -644,6 +644,33 @@ Do not merge the two passes.</code>
                         <code>User: "I need a way to sort these records"
 AI: "Stop. What problem are we actually solving? Just sorting? What's the minimum viable solution? A simple sort function? What would make this fail - wrong data types? Now propose the simplest version that meets core requirements."</code>
                     </div>
+                </article>
+
+                <article class="ritual-card">
+                    <div class="ritual-number">Ritual 08</div>
+                    <h3>Overshoot The Ask</h3>
+                    <p>
+                        <strong>Submitted by <a href="jona-heidsick.html">Jona Heidsick</a>.</strong> Do not ask only for implementation. Ask for the implementation and the evidence that it works, with the proof artifact defined as part of the task.
+                    </p>
+                    <p>
+                        <strong>Intent:</strong> Prevent half-finished delivery. When the task boundary is "implement X", the model often stops at the first plausible state. When the boundary is "implement X and prove it", the full cycle has to be completed: build, verify, document.
+                    </p>
+                    <p>
+                        <strong>Trigger:</strong> Use it for any task you intend to walk away from, especially agentic workflows, long-running sessions, or delegated coding work where you return later.
+                    </p>
+                    <div class="ritual-prompt">
+                        <strong>Pattern</strong>
+                        <code>Implement [feature]. Then produce evidence that it works: [tests passing, screenshots, curl output, log output, before/after diff, ...]</code>
+                    </div>
+                    <p>
+                        The evidence type must be concrete and inspectable. "Make sure it works" is not overshooting. It is wishful thinking. Name the artifact.
+                    </p>
+                    <p>
+                        <strong>Evidence:</strong> Tasks framed this way tend to arrive complete on return. Tasks framed as pure implementation frequently stall at partial completion and need another round of prompting to finish.
+                    </p>
+                    <p>
+                        <strong>Failure mode:</strong> Overshooting too far - asking for implementation, tests, documentation, benchmarks, and a demo in one shot. The ritual works because it extends the boundary one step past done, not because it piles on scope.
+                    </p>
                 </article>
             </div>
         </section>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Statement - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #191614;
+            --color-graphite: #222A2F;
+            --color-accent: #2B7A78;
+            --color-bronze: #C28E50;
+            --color-rust: #C84B31;
+            --color-highlight: #FFF6E6;
+            --color-card: rgba(255, 255, 255, 0.95);
+            --color-shadow: rgba(25, 22, 20, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(43, 122, 120, 0.08), transparent 28%),
+                radial-gradient(circle at top right, rgba(200, 75, 49, 0.08), transparent 24%),
+                var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px);
+            background-size: 42px 42px;
+            opacity: 0;
+            animation: fadeInPattern 1.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(34, 42, 47, 0.96) 0%, rgba(25, 22, 20, 0.98) 100%);
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 52%, var(--color-rust) 100%);
+        }
+
+        .guild-mark,
+        h1,
+        .subtitle {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .guild-mark {
+            margin-bottom: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: var(--color-bronze);
+            text-shadow: 0 2px 20px rgba(194, 142, 80, 0.24);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--color-parchment);
+            margin-bottom: 0.9rem;
+        }
+
+        .subtitle {
+            max-width: 880px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: rgba(245, 241, 232, 0.88);
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .intro-panel,
+        .section-shell,
+        .directive-shell,
+        .closing-shell,
+        .cta-section {
+            background: var(--color-card);
+            border: 1px solid rgba(43, 122, 120, 0.08);
+            box-shadow: 0 10px 30px var(--color-shadow);
+        }
+
+        .intro-panel {
+            margin-top: -2.25rem;
+            padding: 2rem;
+        }
+
+        .section-shell,
+        .directive-shell,
+        .closing-shell,
+        .cta-section {
+            margin-top: 2rem;
+            padding: 2rem 2.1rem;
+        }
+
+        .section-heading {
+            margin-bottom: 1.2rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            line-height: 1.12;
+            margin-bottom: 0.35rem;
+        }
+
+        .section-shell p + p,
+        .intro-panel p + p,
+        .closing-shell p + p {
+            margin-top: 1rem;
+        }
+
+        .directive-shell {
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.1), rgba(194, 142, 80, 0.1));
+        }
+
+        .directive-label {
+            font-family: 'Courier Prime', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--color-rust);
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .directive-shell h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+        }
+
+        .directive-shell p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            max-width: 820px;
+        }
+
+        .closing-shell {
+            border-left: 4px solid var(--color-rust);
+            background: var(--color-highlight);
+        }
+
+        .closing-shell p {
+            font-size: 1.08rem;
+        }
+
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.4rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--color-graphite);
+            color: var(--color-parchment);
+            box-shadow: 0 12px 22px rgba(34, 42, 47, 0.18);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-graphite);
+            border: 1px solid rgba(25, 22, 20, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2.5rem;
+            }
+
+            .container {
+                padding: 0 1rem 3rem;
+            }
+
+            .intro-panel,
+            .section-shell,
+            .directive-shell,
+            .closing-shell,
+            .cta-section {
+                padding-left: 1.35rem;
+                padding-right: 1.35rem;
+            }
+
+            .directive-shell p {
+                font-size: 1.08rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">⚒ ACG ⚒</div>
+        <h1>Mission Statement</h1>
+        <p class="subtitle">Why the Guild exists, whom AI should serve, and what obligations follow from that answer.</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="intro-panel">
+                <p>The AI Craftspeople Guild exists to advance the disciplined, ethical, and masterful use of artificial intelligence in service of the individual human being.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>The Mission</h2>
+                </div>
+                <p>We believe the great question of this age is not whether AI will transform human life, but whom it will serve. In a world increasingly shaped by systems of extraction, surveillance, dependency, and centralized control, we hold that AI must not become merely another instrument by which institutions consolidate power over individuals. It must also become a means by which individuals reclaim agency, dignity, and creative sovereignty over their own lives and work.</p>
+                <p>The Guild exists to cultivate that possibility.</p>
+                <p>We gather those who wish to master AI not as passive consumers of systems designed by others, but as skilled craftspeople capable of shaping systems worthy of human trust. We seek to develop the knowledge, practices, standards, and habits of mind required to build AI that serves human flourishing rather than human diminishment.</p>
+                <p>We affirm a simple but consequential distinction: the future should not belong solely to concierge systems that mediate life on behalf of remote institutions. It should also belong to personal systems — loyal, trustworthy, and governed in the interests of the person they serve.</p>
+                <p>For this reason, the Guild is devoted to the craft of building AI that strengthens the individual, protects the individual, and enlarges the individual's practical freedom in the world.</p>
+                <p>This is not merely a technical undertaking. It is a moral one.</p>
+                <p>It is not merely a matter of capability. It is a matter of allegiance.</p>
+                <p>And it is not merely about building better tools. It is about helping secure a more human future.</p>
+            </section>
+
+            <section class="directive-shell">
+                <div class="directive-label">Prime Directive</div>
+                <h2>Build and advance AI that is loyal to the individual human being, expands that person's agency, and protects that person from exploitation.</h2>
+            </section>
+
+            <section class="closing-shell">
+                <p>Our work is to ensure that the emerging intelligence of machines remains in faithful service to the freedom, dignity, and sovereignty of the human person.</p>
+            </section>
+
+            <section class="cta-section">
+                <h2>Continue Reading</h2>
+                <p>The mission sets the direction. The manifesto, charter, rituals, and white papers define how the Guild tries to live up to it.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#manifesto" class="btn btn-primary">View Manifesto</a>
+                    <a href="charter.html" class="btn btn-secondary">View Charter</a>
+                    <a href="ai-rituals.html" class="btn btn-secondary">View AI Rituals</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

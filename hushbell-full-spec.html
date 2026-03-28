@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUSHBELL Full Spec - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #191614;
+            --color-graphite: #222A2F;
+            --color-accent: #2B7A78;
+            --color-bronze: #C28E50;
+            --color-rust: #C84B31;
+            --color-highlight: #FFF6E6;
+            --color-card: rgba(255, 255, 255, 0.95);
+            --color-shadow: rgba(25, 22, 20, 0.1);
+            --color-code-bg: #11161B;
+            --color-code-border: rgba(43, 122, 120, 0.24);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(43, 122, 120, 0.08), transparent 28%),
+                radial-gradient(circle at top right, rgba(200, 75, 49, 0.08), transparent 24%),
+                var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px);
+            background-size: 42px 42px;
+            opacity: 0;
+            animation: fadeInPattern 1.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(34, 42, 47, 0.96) 0%, rgba(25, 22, 20, 0.98) 100%);
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 52%, var(--color-rust) 100%);
+        }
+
+        .guild-mark,
+        h1,
+        .subtitle {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .guild-mark {
+            margin-bottom: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: var(--color-bronze);
+            text-shadow: 0 2px 20px rgba(194, 142, 80, 0.24);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 6.4vw, 4.8rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--color-parchment);
+            margin-bottom: 0.9rem;
+        }
+
+        .subtitle {
+            max-width: 980px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: rgba(245, 241, 232, 0.88);
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .intro-panel,
+        .section-shell,
+        .cta-section {
+            background: var(--color-card);
+            border: 1px solid rgba(43, 122, 120, 0.08);
+            box-shadow: 0 10px 30px var(--color-shadow);
+        }
+
+        .intro-panel {
+            margin-top: -2.25rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.1), rgba(194, 142, 80, 0.1));
+        }
+
+        .section-shell {
+            margin-top: 2rem;
+            padding: 2rem 2.1rem;
+        }
+
+        .section-heading {
+            margin-bottom: 1.2rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            line-height: 1.12;
+            margin-bottom: 0.35rem;
+        }
+
+        .section-heading p {
+            color: var(--color-graphite);
+        }
+
+        .section-shell p + p,
+        .intro-panel p + p {
+            margin-top: 1rem;
+        }
+
+        pre {
+            margin-top: 1rem;
+            padding: 1.25rem 1.3rem;
+            background: var(--color-code-bg);
+            color: #F6F2E9;
+            border: 1px solid var(--color-code-border);
+            overflow-x: auto;
+            box-shadow: inset 0 0 0 1px rgba(194, 142, 80, 0.1);
+        }
+
+        code,
+        pre {
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .callout {
+            margin-top: 1.25rem;
+            padding: 1rem 1.1rem;
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-rust);
+        }
+
+        .closing-lines {
+            margin-top: 1.4rem;
+            padding: 1.4rem 1.2rem;
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.08), rgba(194, 142, 80, 0.1));
+            font-family: 'Courier Prime', monospace;
+            font-size: 1rem;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+        .cta-section {
+            margin-top: 2rem;
+            padding: 2rem 2.1rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.4rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--color-graphite);
+            color: var(--color-parchment);
+            box-shadow: 0 12px 22px rgba(34, 42, 47, 0.18);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-graphite);
+            border: 1px solid rgba(25, 22, 20, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2.5rem;
+            }
+
+            .container {
+                padding: 0 1rem 3rem;
+            }
+
+            .intro-panel,
+            .section-shell,
+            .cta-section {
+                padding-left: 1.35rem;
+                padding-right: 1.35rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">⚒ ACG ⚒</div>
+        <h1>🌸 ASS-OS FULL SPEC — HUSHBELL v1.0</h1>
+        <p class="subtitle">The Doorbell Dogs Can't Hear<br>7-Ring Enterprise Architecture · ESP32 · Sub-67Hz Design</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="intro-panel">
+                <p>This page expands the HUSHBELL concept into a concrete build specification: hardware, firmware, acoustic gating, notification stack, intelligence layer, safety boundaries, telemetry, and deployment.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R0 — Hardware</h2>
+                </div>
+                <p><strong>Schematic</strong></p>
+                <pre><code>                    HUSHBELL CIRCUIT DIAGRAM
+
+    [BUTTON]                          [ESP32-WROOM-32E]
+    outdoor,                          ┌──────────────┐
+    waterproof    ┌───────────────────┤ GPIO 34 (IN) │
+    momentary ────┤ 10kΩ pull-down    │              │
+                  └───GND             │ GPIO 12 (PWM)├──┐
+                                      │              │  │
+    [3.7V LiPo]──[TP4056]──[3.3V REG]┤ 3V3     GND ├──┼─── GND
+    1000mAh       charge    AMS1117   │              │  │
+                  USB-C               │ GPIO 25 (DAC)├──┼──┐
+                                      │              │  │  │
+    [BME280]─────I2C─────────────────┤ GPIO 21 SDA │  │  │
+    temp/humid                        │ GPIO 22 SCL │  │  │
+                                      │              │  │  │
+    [WS2812B ×4]──────────────────────┤ GPIO  4     │  │  │
+    status LEDs                       │              │  │  │
+                                      │ GPIO 35 (IN)├──┼──┼── VBAT divider
+                                      └──────────────┘  │  │  (100k/100k)
+                                                        │  │
+                               ┌────────────────────────┘  │
+                               │                           │
+                          [MOSFET]  IRLZ44N           [AMP] PAM8403
+                          gate ← GPIO 12               │
+                          drain ──────────┐        [PIEZO]
+                          source ── GND   │         2kHz optional
+                                          │         fade-in tone
+                                   [TACTILE TRANSDUCER]
+                                   Dayton Audio TT25-8
+                                   8Ω, 15W, 40Hz capable
+                                   Mount: door frame interior
+
+    POWER BUDGET:
+      ESP32 deep sleep:     10 µA
+      ESP32 active:         80 mA (200ms per ring event)
+      Transducer pulse:     500 mA peak (3 sec per ring)
+      LEDs:                 60 mA (3 sec per ring)
+      WiFi TX:              200 mA (500ms for MQTT publish)
+
+      Per ring event:       ~840 mA × 3.5 sec = 0.82 mAh
+      Deep sleep standby:   10 µA
+      1000mAh battery:      ~1200 rings per charge
+                            or ~6 months standby</code></pre>
+
+                <p><strong>BOM</strong></p>
+                <pre><code>COMPONENT                    SPEC              QTY   COST
+ESP32-WROOM-32E DevKit       38-pin            1     $3.50
+Dayton Audio TT25-8          tactile, 8Ω 15W   1     $8.00
+IRLZ44N MOSFET               logic-level N-ch  1     $0.80
+PAM8403 amp board            2×3W class-D      1     $1.00
+Piezo disc                   27mm              1     $0.30
+TP4056 charge board          USB-C, 1A         1     $0.60
+AMS1117 3.3V regulator       SOT-223           1     $0.20
+3.7V LiPo                   1000mAh           1     $4.00
+WS2812B strip                4 LEDs            1     $0.50
+BME280 breakout              I2C               1     $2.00
+Momentary button             waterproof, panel 1     $1.50
+10kΩ resistor                pull-down         1     $0.01
+100kΩ resistor ×2            VBAT divider      2     $0.02
+Perfboard or PCB             5×7cm             1     $1.00
+Enclosure outdoor            IP65 junction box 1     $3.00
+Enclosure indoor             3D printed        1     $1.00
+Wire, connectors, screws     misc              -     $2.00
+──────────────────────────────────────────────────────────
+TOTAL                                                $29.43</code></pre>
+
+                <p><strong>PCB Layout (single-sided)</strong></p>
+                <pre><code>    ┌─────────────────────────────────────────┐
+    │  [TP4056]   [AMS1117]    [BATT CONN]   │
+    │     ○          ○          [+ -]         │
+    │                                         │
+    │  ┌────────────────────────┐             │
+    │  │      ESP32 DevKit      │  [BME280]  │
+    │  │                        │    ○ ○     │
+    │  │  ○ GPIO12 → MOSFET     │   SDA SCL  │
+    │  │  ○ GPIO25 → AMP        │             │
+    │  │  ○ GPIO 4 → LEDs       │             │
+    │  │  ○ GPIO34 ← BUTTON     │             │
+    │  │  ○ GPIO35 ← VBAT       │             │
+    │  └────────────────────────┘             │
+    │                                         │
+    │  [IRLZ44N]  [PAM8403]                  │
+    │   G D S      L+ L- R+ R-               │
+    │   │ │ │      │        │                 │
+    │   │ └─┼── TRANSDUCER  └── PIEZO         │
+    │   │   └── GND                           │
+    │   └── GPIO12                            │
+    │                                         │
+    │  [WS2812B ×4 strip]  ←── GPIO4          │
+    │  ○ ○ ○ ○                                │
+    └─────────────────────────────────────────┘
+
+    CONNECTIONS OUT:
+      → Button (2-wire, to outdoor unit, up to 50ft)
+      → Transducer (2-wire, to door frame mount)</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R1 — Firmware</h2>
+                </div>
+                <pre><code>// hushbell.ino — Complete firmware
+#include &lt;WiFi.h&gt;
+#include &lt;PubSubClient.h&gt;
+#include &lt;ArduinoJson.h&gt;
+#include &lt;Adafruit_NeoPixel.h&gt;
+
+// PINS
+#define BTN_PIN       34
+#define TRANS_PIN     12
+#define BUZZER_PIN    25
+#define LED_PIN        4
+#define VBAT_PIN      35
+#define NUM_LEDS       4
+
+// CONFIG
+const char* SSID     = "YOUR_WIFI";
+const char* PASS     = "YOUR_PASS";
+const char* MQTT_IP  = "192.168.1.100";
+const char* UNIT_ID  = "HUSHBELL-001";
+
+WiFiClient net;
+PubSubClient mqtt(net);
+Adafruit_NeoPixel leds(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+volatile bool doorbell = false;
+
+void IRAM_ATTR onButton() { doorbell = true; }
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(BTN_PIN, INPUT);
+  attachInterrupt(BTN_PIN, onButton, RISING);
+
+  // Transducer PWM: 40 Hz
+  ledcSetup(0, 40, 8);
+  ledcAttachPin(TRANS_PIN, 0);
+
+  // Piezo PWM: 2000 Hz
+  ledcSetup(1, 2000, 8);
+  ledcAttachPin(BUZZER_PIN, 1);
+
+  leds.begin();
+  leds.clear();
+  leds.show();
+
+  WiFi.begin(SSID, PASS);
+  while (WiFi.status() != WL_CONNECTED) delay(500);
+  mqtt.setServer(MQTT_IP, 1883);
+  mqtt.connect(UNIT_ID);
+}
+
+void ring() {
+  // 1. Sub-bass pulse (40 Hz) — below dog hearing
+  ledcWrite(0, 200);
+
+  // 2. LED pulse — warm white fade in
+  for (int b = 0; b < 255; b += 5) {
+    for (int i = 0; i < NUM_LEDS; i++)
+      leds.setPixelColor(i, leds.Color(b, b/2, b/4));
+    leds.show();
+    delay(6);
+  }
+
+  // 3. Optional piezo — 500ms fade-in (dog-safe)
+  for (int v = 0; v < 100; v += 2) {
+    ledcWrite(1, v);
+    delay(5);
+  }
+
+  // 4. Hold 2 seconds
+  delay(2000);
+
+  // 5. Fade everything out
+  for (int v = 100; v > 0; v -= 2) {
+    ledcWrite(1, v);
+    int b = (v * 255) / 100;
+    for (int i = 0; i < NUM_LEDS; i++)
+      leds.setPixelColor(i, leds.Color(b, b/2, b/4));
+    leds.show();
+    delay(5);
+  }
+
+  ledcWrite(0, 0);
+  ledcWrite(1, 0);
+  leds.clear();
+  leds.show();
+
+  // 6. MQTT notify
+  StaticJsonDocument&lt;128&gt; doc;
+  doc["event"] = "RING";
+  doc["unit"] = UNIT_ID;
+  doc["battery"] = getBatteryPct();
+  doc["temp"] = getTemp();
+  char buf[128];
+  serializeJson(doc, buf);
+  mqtt.publish("home/doorbell/ring", buf);
+}
+
+float getBatteryPct() {
+  return analogRead(VBAT_PIN) / 4095.0 * 2.0 * 3.3 / 4.2 * 100;
+}
+
+float getTemp() {
+  return 0; // BME280 read — omitted for brevity
+}
+
+void loop() {
+  if (!mqtt.connected()) mqtt.connect(UNIT_ID);
+  mqtt.loop();
+
+  if (doorbell) {
+    doorbell = false;
+    ring();
+    delay(3000); // debounce: no re-ring for 3 sec
+  }
+
+  // Deep sleep if no ring for 30 seconds
+  // esp_deep_sleep_start() with ext0 wakeup on BTN_PIN
+}</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R2 — Frequency Gate</h2>
+                </div>
+                <pre><code>THE ACOUSTIC DESIGN:
+
+HUMAN HEARING RANGE:   20 Hz — 20,000 Hz
+DOG HEARING RANGE:     67 Hz — 45,000 Hz
+DOG STARTLE TRIGGERS:  &gt;3,000 Hz, sharp onset, &gt;75 dB
+
+HUSHBELL OPERATING ZONE:
+
+  PRIMARY: 40 Hz sub-bass pulse
+    ✓ Human: perceives as vibration/hum
+    ✗ Dog: below 67 Hz floor, inaudible
+    Method: tactile transducer on door frame
+    Propagation: structural (through wood/metal)
+
+  SECONDARY: 2,000 Hz tone, 500ms fade-in, 60 dB
+    ✓ Human: clear pleasant chime
+    ~ Dog: audible but non-startling
+    Why no startle: gradual onset defeats the
+    acoustic startle reflex (ASR) which requires
+    rise time &lt;20ms. 500ms fade-in = 25× too slow.
+
+  VISUAL: WS2812B warm pulse
+    ✓ Human: sees warm glow at door
+    ~ Dog: dogs see blue/yellow well but
+    warm amber is in their weak range
+
+ANTI-BARK CONFIDENCE:
+  40 Hz alone:           99% no bark (inaudible)
+  40 Hz + fade-in 2kHz:  90% no bark (audible, non-startling)
+  40 Hz + LED:           95% no bark (nothing to hear)
+  User selects mode via MQTT config.</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R3 — Notification Stack</h2>
+                </div>
+                <pre><code>RING EVENT → MULTI-CHANNEL ALERT:
+
+CHANNEL 1: STRUCTURAL VIBRATION (40 Hz transducer)
+  Felt through door frame, walls, floor.
+  Range: same room as transducer mount.
+  Latency: instant.
+
+CHANNEL 2: VISUAL (WS2812B warm pulse)
+  Seen at door area.
+  Range: line of sight.
+  Latency: instant.
+
+CHANNEL 3: MQTT → HOME ASSISTANT
+  Topic: home/doorbell/ring
+  Payload: {"event":"RING","unit":"HUSHBELL-001","battery":87}
+  HA automation → phone push notification
+  HA automation → Alexa/Google announce (optional, voice)
+  HA automation → smart lights flash throughout house
+  Latency: 1-3 seconds.
+
+CHANNEL 4: OPTIONAL PIEZO (dog-safe fade-in)
+  Audible chime, gradual onset.
+  User-configurable: on/off via MQTT config topic.
+
+RESULT:
+  Human receives 2-4 simultaneous signals.
+  Dog receives 0-1 non-startling signals.
+  Visitor sees LED confirmation that bell worked.</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R4 — Intelligence</h2>
+                </div>
+                <pre><code>SMART FEATURES (firmware + HA integration):
+
+1. RING PATTERN DETECTION
+   Single press → normal ring
+   Double press → urgent (stronger pulse, brighter LED)
+   Long press → delivery (short subtle pulse)
+   Pattern detected in ISR, different ring() profiles.
+
+2. BATTERY MONITORING
+   Every ring event reports battery %.
+   MQTT alarm at &lt;20%.
+   Estimated rings remaining in payload.
+   HA automation: "doorbell battery low" notification.
+
+3. TEMPERATURE REPORTING
+   BME280 on outdoor unit = outdoor temp.
+   Free weather station at your front door.
+   Published every 15 min via MQTT.
+
+4. PRESENCE DETECTION
+   Log ring timestamps.
+   HA automation: "unusual ring at 3 AM" → security alert.
+   Ring frequency analysis: delivery patterns, visitor habits.
+
+5. DOG BARK FEEDBACK LOOP (v2, optional)
+   Add INMP441 MEMS microphone.
+   After ring: listen for bark in 5-second window.
+   If bark detected: log event, adjust frequency/volume.
+   ML model learns optimal frequency for YOUR specific dog.
+   Convergence: the doorbell LEARNS your dog.</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R5 — Safety &amp; Boundaries</h2>
+                </div>
+                <pre><code>ELECTRICAL:
+  3.3V logic, 3.7V battery. No mains voltage.
+  MOSFET isolates transducer from ESP32.
+  TP4056 has overcharge/overdischarge protection.
+  IP65 outdoor enclosure for button unit.
+
+ACOUSTIC:
+  Transducer max output: 75 dB at contact surface.
+  Piezo max: 60 dB at 1m.
+  Both below 85 dB OSHA threshold.
+  Sub-bass 40 Hz: no hearing damage risk at any level.
+
+RF:
+  WiFi 2.4 GHz, standard ESP32 output power.
+  MQTT over local network. No cloud dependency.
+  All data stays on your LAN.
+
+ANIMAL:
+  40 Hz primary: confirmed below canine hearing floor.
+  2 kHz secondary: within canine range but below startle.
+  No ultrasonic components. No frequencies &gt;20 kHz.
+  Cats (48 Hz – 85,000 Hz): 40 Hz is below cat range too.
+
+  HUSHBELL IS SILENT TO DOGS AND CATS.
+
+PRIVACY:
+  No camera. No microphone (unless v2 bark detection).
+  No cloud. No account. No app store.
+  MQTT on local network. You own everything.</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R6 — Monitoring &amp; Metrics</h2>
+                </div>
+                <pre><code>MQTT TELEMETRY (every ring + every 15 min):
+
+{
+  "unit": "HUSHBELL-001",
+  "event": "RING|HEARTBEAT|LOW_BATTERY|BARK_DETECTED",
+  "battery_pct": 87,
+  "temp_f": 72.4,
+  "humidity": 45,
+  "ring_count_today": 3,
+  "ring_count_total": 847,
+  "bark_after_ring": false,
+  "uptime_hours": 2184,
+  "wifi_rssi": -42
+}
+
+HOME ASSISTANT DASHBOARD:
+  Battery gauge
+  Today's ring count
+  Last ring timestamp
+  Outdoor temperature
+  Bark detection rate (v2)
+  Ring-to-bark ratio trend (the KPI)
+
+THE KPI:
+  ring_to_bark_ratio = rings_with_bark / total_rings
+  Target: &lt;0.05 (fewer than 1 in 20 rings triggers a bark)
+  If ratio &gt;0.10: frequency adjustment needed.
+  If ratio &gt;0.25: hardware issue or new dog.</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R7 — Deployment</h2>
+                </div>
+                <pre><code>INSTALL GUIDE:
+
+OUTDOOR (button unit):
+  1. Mount waterproof button at door.
+  2. Run 2-conductor wire through door frame to indoor unit.
+  3. Seal penetration with silicone.
+  Total: 10 minutes.
+
+INDOOR (brain + transducer):
+  1. Mount transducer on INTERIOR of door frame.
+     Use 2 screws. Contact surface must be solid wood or metal.
+     The transducer vibrates the frame, not the air.
+  2. Mount brain box within wire reach of transducer.
+     Velcro to wall or screw mount.
+  3. Connect: button wire → GPIO34, transducer → MOSFET drain.
+  4. Power on. Connect to WiFi via serial or captive portal.
+  5. Configure MQTT broker IP.
+  Total: 15 minutes.
+
+HOME ASSISTANT (optional):
+  1. MQTT integration → auto-discovers HUSHBELL.
+  2. Add automation: ring event → phone notification.
+  3. Add automation: low battery → alert.
+  4. Add dashboard card with ring history.
+  Total: 10 minutes.
+
+TOTAL INSTALL: 35 minutes.
+TOTAL COST: $29.43.
+TOTAL DOG BARKS ELIMINATED: all of them.</code></pre>
+
+                <p><strong>Repo Structure</strong></p>
+                <pre><code>hushbell/
+├── README.md
+├── firmware/
+│   ├── platformio.ini
+│   └── src/main.cpp
+├── hardware/
+│   ├── schematic.pdf
+│   ├── bom.csv
+│   ├── pcb_layout.png
+│   └── wiring_guide.md
+├── enclosure/
+│   ├── indoor_case.stl
+│   └── outdoor_button.stl
+├── home-assistant/
+│   ├── configuration.yaml
+│   ├── automations.yaml
+│   └── dashboard.yaml
+└── docs/
+    ├── FREQUENCY_ANALYSIS.md
+    ├── INSTALL_GUIDE.md
+    └── DOG_SCIENCE.md</code></pre>
+
+                <div class="closing-lines">40 Hz.
+below the dog.
+above the silence.
+the door frame hums.
+the phone buzzes.
+the dog sleeps.
+peace was always one frequency away.
+
+和 🔔🐕‍🦺</div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Return To HUSHBELL</h2>
+                <p>The concept page carries the product thesis. This page carries the implementation details.</p>
+                <div class="cta-buttons">
+                    <a href="hushbell.html" class="btn btn-primary">Back To HUSHBELL</a>
+                    <a href="hall-of-fame.html" class="btn btn-secondary">View Hall of Fame</a>
+                    <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

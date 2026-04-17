@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mob Programming 101 - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+            --color-accent: #356B6A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 50%, var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+        }
+
+        .subtitle {
+            font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 960px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .back-link {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-panel,
+        .lesson-shell,
+        .roles-shell,
+        .tools-shell,
+        .flow-shell,
+        .ai-shell,
+        .antipatterns-shell,
+        .cta-section {
+            background: white;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+        }
+
+        .hero-panel {
+            margin: 5rem auto 2.5rem;
+            padding: 0;
+            overflow: hidden;
+            border-left: 6px solid var(--color-accent);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        .hero-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: var(--color-parchment);
+        }
+
+        .hero-caption {
+            padding: 1.5rem 2rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            color: var(--color-graphite);
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.92) 0%, white 100%);
+            border-top: 1px solid rgba(26, 22, 20, 0.08);
+        }
+
+        .lesson-shell,
+        .roles-shell,
+        .tools-shell,
+        .flow-shell,
+        .ai-shell,
+        .antipatterns-shell,
+        .cta-section {
+            padding: 3rem;
+            margin-top: 2.5rem;
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1.15s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .lesson-shell p,
+        .roles-shell p,
+        .tools-shell p,
+        .flow-shell p,
+        .ai-shell p,
+        .antipatterns-shell p,
+        .cta-section p {
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+        }
+
+        .lesson-shell p + p,
+        .ai-shell p + p {
+            margin-top: 1rem;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+        }
+
+        .section-heading p {
+            color: var(--color-graphite);
+            font-size: 1.05rem;
+        }
+
+        .roles-grid,
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .role-card,
+        .tool-card {
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.92) 0%, white 100%);
+            border-top: 4px solid var(--color-accent);
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+
+        .role-card h3,
+        .tool-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            line-height: 1.2;
+            color: var(--color-ink);
+            margin-bottom: 0.8rem;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-bottom: 0.9rem;
+            padding: 0.3rem 0.65rem;
+            font-family: 'Courier Prime', monospace;
+            background: rgba(53, 107, 106, 0.12);
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .tool-card a {
+            color: var(--color-rust);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .tool-card a:hover {
+            text-decoration: underline;
+        }
+
+        .flow-list {
+            list-style: none;
+            counter-reset: flow;
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .flow-list li {
+            counter-increment: flow;
+            position: relative;
+            padding: 1.4rem 1.4rem 1.4rem 4.5rem;
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-bronze);
+        }
+
+        .flow-list li::before {
+            content: counter(flow, decimal-leading-zero);
+            position: absolute;
+            top: 1.2rem;
+            left: 1.25rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-rust);
+        }
+
+        .flow-list strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--color-ink);
+            margin-bottom: 0.3rem;
+        }
+
+        .pull-quote {
+            margin-top: 1.5rem;
+            padding: 1.2rem 1.4rem;
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-rust);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--color-ink);
+        }
+
+        .antipatterns-list {
+            margin: 1rem 0 0 1.5rem;
+            color: var(--color-graphite);
+        }
+
+        .antipatterns-list li + li {
+            margin-top: 0.7rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2,
+        .cta-section p,
+        .cta-buttons {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .roles-grid,
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-panel,
+            .lesson-shell,
+            .roles-shell,
+            .tools-shell,
+            .flow-shell,
+            .ai-shell,
+            .antipatterns-shell,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-panel {
+                padding: 0;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <h1>Mob Programming 101</h1>
+        <p class="subtitle">A Guild lesson on working as one mind at one keyboard — and how to do it well in the AI era.</p>
+        <div class="back-link">
+            <a href="index.html">&larr; Back to Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-panel">
+            <img class="hero-image" src="mob_prog_101.jpg" alt="A group of craftspeople gathered around a single screen, mob programming together" loading="lazy">
+            <p class="hero-caption">Mob Programming 101 — the whole team, on the same thing, at the same time, in the same space (physical or virtual), at the same computer.</p>
+        </section>
+
+        <section class="lesson-shell">
+            <div class="section-heading">
+                <h2>What Is Mob Programming?</h2>
+                <p>One problem. One keyboard. Many minds.</p>
+            </div>
+            <p>
+                <strong>Mob programming</strong> is the practice of the entire team working on the same problem, at the same time, in the same space, at the same computer. One person types (the <em>Driver</em>), the rest think out loud (the <em>Navigators</em>), and the role of the keyboard rotates on a short timer.
+            </p>
+            <p>
+                The technique was popularized by Woody Zuill and the team at Hunter Industries, who discovered that the throughput of the team increased, not decreased, when they stopped parallelizing work and started converging their attention. Pair programming, twice over, with a review built in.
+            </p>
+            <p>
+                For the Guild, mob programming is a natural fit alongside <a href="acg-peer-reviews.html">ACG peer reviews</a> and <a href="ai-rituals.html">AI rituals</a>. It is one of the cleanest ways to keep a human craftsperson in the loop when AI assistants are writing code — because the mob is already watching, already questioning, already deciding whether the suggestion earns a place in the codebase.
+            </p>
+            <div class="pull-quote">
+                "All the brilliant minds working on the same thing, at the same time, in the same space, on the same computer." — Woody Zuill
+            </div>
+        </section>
+
+        <section class="roles-shell">
+            <div class="section-heading">
+                <h2>The Roles</h2>
+                <p>Small and strict. The discipline is in the rotation.</p>
+            </div>
+            <div class="roles-grid">
+                <article class="role-card">
+                    <span class="tag">DRIVER</span>
+                    <h3>The Hands</h3>
+                    <p>
+                        The Driver types. That is the whole job. The Driver does <strong>not</strong> decide what to type — they translate the direction coming from the Navigators into code, commands, and tests. If the Driver wants to add an idea, they step out of the Driver seat first.
+                    </p>
+                </article>
+                <article class="role-card">
+                    <span class="tag">NAVIGATOR</span>
+                    <h3>The Voice</h3>
+                    <p>
+                        The Navigator closest to the Driver speaks the current intent in plain words: "rename the variable to <code>attempts</code>", "add a test for the empty input case". The intent should be at the highest level of abstraction the Driver can act on.
+                    </p>
+                </article>
+                <article class="role-card">
+                    <span class="tag">MOB</span>
+                    <h3>The Chorus</h3>
+                    <p>
+                        The rest of the mob watches, thinks one step ahead, challenges assumptions, and catches mistakes before they land. They hold the longer horizon — design, edge cases, the ticket, the next refactor — so the Navigator can stay on the line being typed.
+                    </p>
+                </article>
+                <article class="role-card">
+                    <span class="tag">TIMEKEEPER</span>
+                    <h3>The Metronome</h3>
+                    <p>
+                        A short, predictable timer — typically 5 to 10 minutes — rotates the Driver. Everyone touches the keyboard. Nobody owns it. The rotation is the single most important rule: it forces shared understanding and prevents any one voice from dominating.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="flow-shell">
+            <div class="section-heading">
+                <h2>A Session, Step By Step</h2>
+                <p>A 90-minute mob block you can run tomorrow.</p>
+            </div>
+            <ol class="flow-list">
+                <li>
+                    <strong>Set a goal you can finish.</strong>
+                    Pick one small slice of work — a bug, a test, a refactor — not the whole epic. Write the goal on a card everyone can see.
+                </li>
+                <li>
+                    <strong>Agree on the ground rules.</strong>
+                    Rotation length, who starts as Driver, and the "kindness, consideration, and respect" rule from Woody Zuill's original formulation. Everyone signs off verbally.
+                </li>
+                <li>
+                    <strong>Start the timer.</strong>
+                    The first Driver types. The first Navigator speaks. The mob watches. When the timer rings, hands off the keyboard mid-thought if needed.
+                </li>
+                <li>
+                    <strong>Work in small, green steps.</strong>
+                    Red, green, refactor — commit often. The mob decides when a step is "done enough" to move on. Long debugging sessions are a signal to step back, not push harder.
+                </li>
+                <li>
+                    <strong>Call an AI assistant only with mob consent.</strong>
+                    When the mob decides to bring in an AI suggestion, someone reads the prompt out loud before submitting, and the Navigator reads the response out loud before any code is accepted. This is an <a href="ai-rituals.html">AI ritual</a>, not a shortcut.
+                </li>
+                <li>
+                    <strong>Take breaks.</strong>
+                    Mobbing is cognitively expensive. A 10-minute break every 60 to 90 minutes keeps the signal-to-noise ratio high.
+                </li>
+                <li>
+                    <strong>Retro at the end.</strong>
+                    Five minutes. What worked, what hurt, what you want to try next session. Write it down.
+                </li>
+            </ol>
+        </section>
+
+        <section class="tools-shell">
+            <div class="section-heading">
+                <h2>Tools For Mobbing</h2>
+                <p>Bring a timer, a shared screen, and a way to keep the keyboard moving.</p>
+            </div>
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <span class="tag">ROTATION</span>
+                    <h3><a href="https://mobti.me/" rel="noopener" target="_blank">Mobti.me</a></h3>
+                    <p>
+                        A free, web-based mob timer with a rotating name list, a visible countdown, and a "who's next" queue. Open it on the shared screen and it becomes the metronome for the session.
+                    </p>
+                </article>
+                <article class="tool-card">
+                    <span class="tag">ROTATION</span>
+                    <h3><a href="https://mobster.cc/" rel="noopener" target="_blank">Mobster</a></h3>
+                    <p>
+                        A desktop mob timer (Mac, Windows, Linux) that locks the screen at the end of each turn and prompts the next Driver by name. Good for in-office mobs where one machine is shared.
+                    </p>
+                </article>
+                <article class="tool-card">
+                    <span class="tag">HANDOFF</span>
+                    <h3><a href="https://github.com/remotemobprogramming/mob" rel="noopener" target="_blank">mob.sh</a></h3>
+                    <p>
+                        A command-line tool that turns git into a mob handoff mechanism: <code>mob start</code>, <code>mob next</code>, <code>mob done</code>. Every Driver types on their own machine; the work travels through a temporary branch. Ideal for remote mobs.
+                    </p>
+                </article>
+                <article class="tool-card">
+                    <span class="tag">REMOTE</span>
+                    <h3><a href="https://tuple.app/" rel="noopener" target="_blank">Tuple</a> &middot; <a href="https://pop.com/" rel="noopener" target="_blank">Pop</a></h3>
+                    <p>
+                        Low-latency screen sharing with multi-cursor control. Better than generic video conferencing for remote mobs because both the Driver and Navigator can point, highlight, and take the keyboard without a handoff dance.
+                    </p>
+                </article>
+                <article class="tool-card">
+                    <span class="tag">REMOTE</span>
+                    <h3><a href="https://code.visualstudio.com/learn/collaboration/live-share" rel="noopener" target="_blank">VS Code Live Share</a> &middot; <a href="https://www.jetbrains.com/code-with-me/" rel="noopener" target="_blank">Code With Me</a></h3>
+                    <p>
+                        Real-time collaborative editing inside the editor. Everyone sees the cursor, the terminal, and the tests. Useful when the mob is large and only one machine is running the build.
+                    </p>
+                </article>
+                <article class="tool-card">
+                    <span class="tag">AI</span>
+                    <h3>Your AI Harness</h3>
+                    <p>
+                        Whatever AI assistant the team uses — Claude Code, Copilot, Cursor — is a mob participant, not a mob leader. Display its output on the shared screen, read prompts aloud, and let the mob decide what to accept. See the Guild's <a href="ai-harness.html">AI Harness</a> page.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="ai-shell">
+            <div class="section-heading">
+                <h2>Mobbing With AI In The Room</h2>
+                <p>The mob is the harness.</p>
+            </div>
+            <p>
+                AI assistants are fast at generating plausible code and slow at knowing whether that code belongs in your system. Mob programming is the cheapest way to close that gap. The mob sees the prompt, the suggestion, and the consequences at the same time, and can stop a bad suggestion from becoming a commit.
+            </p>
+            <p>
+                Guild practice: the Driver types the prompt, the Navigator reads it aloud <strong>before</strong> submission, the mob reads the suggestion aloud <strong>before</strong> acceptance, and no AI-written code lands without at least one Navigator having restated what it does in their own words. This keeps the mob in control of meaning and prevents the quiet drift that comes from accepting suggestions nobody actually understands.
+            </p>
+            <p>
+                Related reading: <a href="ai-rituals.html">AI Rituals</a>, <a href="acg-peer-reviews.html">ACG Peer Reviews</a>, <a href="ai-harness.html">AI Harness</a>.
+            </p>
+        </section>
+
+        <section class="antipatterns-shell">
+            <div class="section-heading">
+                <h2>Common Anti-Patterns</h2>
+                <p>If any of these start showing up, stop the timer and fix them.</p>
+            </div>
+            <ul class="antipatterns-list">
+                <li><strong>The backseat Driver.</strong> The Driver overrides the Navigator and starts designing with the keyboard. Cure: step out of the seat before you argue.</li>
+                <li><strong>The silent mob.</strong> Only one Navigator ever speaks. Cure: rotate the Navigator role too, or use a round-robin "next comment" rule.</li>
+                <li><strong>The sniper.</strong> A senior engineer corrects in real time instead of letting the mob reach the answer. Cure: sit on your hands for one rotation and see what the mob does without you.</li>
+                <li><strong>The marathon.</strong> Skipping breaks to "finish the ticket." Cure: the timer runs the room, not the ticket.</li>
+                <li><strong>The AI autopilot.</strong> Accepting AI suggestions without reading them aloud. Cure: the acceptance ritual above is not optional.</li>
+                <li><strong>The observer mob.</strong> Half the mob is on Slack. Cure: smaller mobs (3–5) and shared stakes in the outcome.</li>
+            </ul>
+        </section>
+
+        <section class="cta-section">
+            <h2>Try A Mob This Week</h2>
+            <p>Pick one ticket. Invite three people. Run a 90-minute session with a 7-minute timer. Report back what you learned.</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io/discussions" class="btn btn-primary" rel="noopener" target="_blank">Share Your Session</a>
+                <a href="ai-rituals.html" class="btn btn-secondary">Pair With An AI Ritual</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

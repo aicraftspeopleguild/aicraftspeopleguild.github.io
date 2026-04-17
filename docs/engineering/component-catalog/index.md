@@ -738,9 +738,9 @@ The outermost page wrapper that every view uses.
   "udtType": "Component",
   "parameters": {
     "name": "PageShell",
-    "tag": "html",
+    "tag": "fragment",
     "cssClass": "",
-    "description": "Root page shell including doctype, head (fonts, analytics, stylesheets), body with class, and footer. Every view is wrapped in this.",
+    "description": "Logical page body wrapper. Emits <header> with guild-mark/title/subtitle/back-link, then <main class=\"container\">children</main>, then <footer>. The build.js wraps this with <!DOCTYPE html><html><head>...</head><body>[shell]</body></html>. The 'fragment' tag is a sentinel telling the renderer not to wrap output in an element.",
     "category": "page-level",
     "props": {
       "title":       { "type": "String",      "required": true },
@@ -753,13 +753,75 @@ The outermost page wrapper that every view uses.
       "meta":        { "type": "StringArray", "required": false }
     },
     "slots": ["default"],
-    "template": "<!-- PageShell: head (fonts + analytics + CSS) → PageHeader → slot:default → PageFooter -->"
+    "template": "<header><div class=\"guild-mark\"><div class=\"emblem\">⚒ ACG ⚒</div></div>{{ #eyebrow }}<p class=\"eyebrow\">{{ eyebrow }}</p>{{ /eyebrow }}<h1>{{ title }}</h1>{{ #subtitle }}<p class=\"subtitle\">{{ subtitle }}</p>{{ /subtitle }}{{ #backHref }}<div class=\"back-link\"><a href=\"{{ backHref }}\">← {{ backLabel }}</a></div>{{ /backHref }}</header>\n<main class=\"container\">{{ slot:default }}</main>\n<footer><p>© 2026 AI Craftspeople Guild. Built by practitioners, not evangelists.</p><p><a href=\"https://github.com/aicraftspeopleguild\">GitHub</a></p></footer>"
   },
   "tags": {
     "id": "page-shell",
     "file_path": "guild/web/components/page-shell.json",
     "dependencies": ["page-header", "page-footer", "guild-mark"],
     "used_by_views": ["home", "white-paper-index", "white-paper-article", "members-index", "member-profile", "charter", "flywheel", "mob-programming", "hall-of-fame", "hall-of-shame"],
+    "schema_version": "1.0.0"
+  }
+}
+```
+
+### RawHTML
+
+Emits pre-rendered HTML content verbatim. Used as a bridge component while
+page bodies are still authored as HTML strings (in views/data/*.data.json)
+rather than fully decomposed component trees.
+
+```json:udt:Component
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "RawHTML",
+    "tag": "fragment",
+    "cssClass": "",
+    "description": "Emits a pre-rendered HTML string verbatim using the {{{ html }}} triple-brace (unescaped) syntax. Content lives in data files, not in HTML files.",
+    "category": "layout",
+    "props": {
+      "html": { "type": "String", "required": true }
+    },
+    "slots": [],
+    "template": "{{{ html }}}"
+  },
+  "tags": {
+    "id": "raw-html",
+    "file_path": "guild/web/components/raw-html.json",
+    "dependencies": [],
+    "used_by_views": ["charter", "flywheel", "mob-programming", "hall-of-fame", "hall-of-shame", "hushbell", "showcases"],
+    "schema_version": "1.0.0"
+  }
+}
+```
+
+### StaticHTMLFrame
+
+Embeds a pre-rendered HTML page as an iframe. Fallback for routes that have
+not yet been decomposed.
+
+```json:udt:Component
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "StaticHTMLFrame",
+    "tag": "iframe",
+    "cssClass": "static-html-frame",
+    "description": "Embeds a pre-rendered HTML page as an iframe.",
+    "category": "layout",
+    "props": {
+      "src":   { "type": "URL",    "required": true },
+      "title": { "type": "String", "required": false }
+    },
+    "slots": [],
+    "template": ""
+  },
+  "tags": {
+    "id": "static-html-frame",
+    "file_path": "guild/web/components/static-html-frame.json",
+    "dependencies": [],
+    "used_by_views": ["static-page"],
     "schema_version": "1.0.0"
   }
 }
@@ -779,7 +841,7 @@ The outermost page wrapper that every view uses.
     "version": "1.0.0",
     "authors": ["Thomas Frumkin"],
     "status": "draft",
-    "summary": "Full catalog of 20 reusable UI components extracted from the ACG site, each defined as a parseable Component UDT instance with typed props, slots, CSS classes, and HTML templates.",
+    "summary": "Full catalog of 22 reusable UI components extracted from the ACG site, each defined as a parseable Component UDT instance with typed props, slots, CSS classes, and HTML templates.",
     "tags": ["components", "catalog", "udt", "ui"]
   },
   "tags": {

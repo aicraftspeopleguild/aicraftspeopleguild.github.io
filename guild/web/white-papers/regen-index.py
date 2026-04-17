@@ -10,7 +10,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
 INSTANCES = REPO / "guild" / "web" / "white-papers" / "udts" / "instances"
-OUT = REPO / "guild" / "web" / "static" / "white-papers.html"
+OUT = REPO / "guild" / "web" / "dist" / "white-papers.html"
 
 def load_instances():
     papers = []

@@ -1,6 +1,3 @@
-# Build output
-guild/web/dist/
-
 # Python
 __pycache__/
 *.pyc

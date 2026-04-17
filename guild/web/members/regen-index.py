@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
 INSTANCES = REPO / "guild" / "web" / "members" / "udts" / "instances"
-OUT = REPO / "guild" / "web" / "static" / "members.html"
+OUT = REPO / "guild" / "web" / "dist" / "members.html"
 
 def load_instances():
     return [json.loads(f.read_text(encoding="utf-8"))

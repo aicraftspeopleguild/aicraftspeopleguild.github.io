@@ -5,7 +5,7 @@
     "slug": "white-papers",
     "route": "/white-papers",
     "view": "views/white-paper-index.view.json",
-    "staticSrc": "static/white-papers.html",
+    "staticSrc": "dist/white-papers.html",
     "stylesheets": ["style/main.css"],
     "section": "resources",
     "parent_slug": "home",

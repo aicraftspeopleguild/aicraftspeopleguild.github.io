@@ -1,0 +1,30 @@
+{
+  "udtType": "WhitePaper",
+  "parameters": {
+    "title": "The Prediction Trap",
+    "authors": [
+      "Alex Bunardzic"
+    ],
+    "publication_date": "2026-02-18",
+    "doc_number": "ACG-WP-002-2026",
+    "source_medium": "site-only",
+    "summary": "Why point-forecast culture collapses under AI-assisted delivery and what replaces it.",
+    "tags": [
+      "prediction",
+      "uncertainty",
+      "forecasting"
+    ],
+    "status": "published",
+    "site_href": "the-prediction-trap.html"
+  },
+  "tags": {
+    "id": "the-prediction-trap",
+    "original_path": "originals/seed-batch.csv",
+    "original_format": "csv",
+    "original_hash_sha256": "58533770288070e2047bcca8b112e9c5157ee15efe242c5b436d053738ff7813",
+    "body": "",
+    "instance_path": "udts/instances/the-prediction-trap.json",
+    "ingested_at": "2026-04-17T17:41:05Z",
+    "schema_version": "1.0.0"
+  }
+}

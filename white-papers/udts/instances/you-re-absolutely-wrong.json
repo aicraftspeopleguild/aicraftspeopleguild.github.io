@@ -1,0 +1,30 @@
+{
+  "udtType": "WhitePaper",
+  "parameters": {
+    "title": "You're Absolutely Wrong!",
+    "authors": [
+      "LC Scheepers"
+    ],
+    "publication_date": "2026-02-02",
+    "doc_number": "ACG-WP-001-2026",
+    "source_medium": "Medium",
+    "summary": "The Anthropic paradox: training for expressed uncertainty created a self-reinforcing loop that reads as evidence.",
+    "tags": [
+      "uncertainty",
+      "training",
+      "anthropic"
+    ],
+    "status": "published",
+    "site_href": "youre-absolutely-wrong.html"
+  },
+  "tags": {
+    "id": "you-re-absolutely-wrong",
+    "original_path": "originals/seed-batch.csv",
+    "original_format": "csv",
+    "original_hash_sha256": "58533770288070e2047bcca8b112e9c5157ee15efe242c5b436d053738ff7813",
+    "body": "",
+    "instance_path": "udts/instances/you-re-absolutely-wrong.json",
+    "ingested_at": "2026-04-17T17:41:05Z",
+    "schema_version": "1.0.0"
+  }
+}

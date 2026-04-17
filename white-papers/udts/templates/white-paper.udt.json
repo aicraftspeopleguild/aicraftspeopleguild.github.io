@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "WhitePaper",
+  "version": "1.0.0",
+  "description": "AI Craftspeople Guild white-paper UDT (User Defined Type) template. Each ingested white paper becomes an instance of this UDT. Modeled on Ignition-style UDTs: a type definition with parameters (authored metadata) and tags (system-derived fields).",
+  "parameters": {
+    "title":            { "dataType": "String",      "required": true,  "description": "Full title of the paper" },
+    "authors":          { "dataType": "StringArray", "required": true,  "description": "Ordered list of author names" },
+    "publication_date": { "dataType": "String",      "required": false, "description": "ISO date or free-form date string" },
+    "doc_number":       { "dataType": "String",      "required": false, "description": "e.g. ACG-WP-001-2026" },
+    "source_medium":    { "dataType": "String",      "required": false, "description": "e.g. Medium, arXiv, site-only" },
+    "summary":          { "dataType": "String",      "required": false, "description": "1-3 sentence abstract" },
+    "tags":             { "dataType": "StringArray", "required": false, "description": "Topic tags, e.g. [ai-harness, governance]" },
+    "status":           { "dataType": "String",      "required": false, "description": "published | draft | experimental | research-note | knowledge-about-knowledge", "default": "published" },
+    "site_href":        { "dataType": "String",      "required": false, "description": "Existing rendered page on the site, if any, e.g. ai-harness.html" }
+  },
+  "tags": [
+    { "name": "id",                   "dataType": "String", "description": "Stable slug identifier, derived from title if not provided" },
+    { "name": "original_path",        "dataType": "String", "description": "Path to the untouched source file under white-papers/originals/" },
+    { "name": "original_format",      "dataType": "String", "description": "md | csv | html | txt" },
+    { "name": "original_hash_sha256", "dataType": "String", "description": "Content hash used to detect re-ingest" },
+    { "name": "body",                 "dataType": "String", "description": "Normalized markdown body (may be empty for csv rows)" },
+    { "name": "instance_path",        "dataType": "String", "description": "Path to the JSON instance file under white-papers/udts/instances/" },
+    { "name": "ingested_at",          "dataType": "String", "description": "UTC ISO timestamp when the instance was produced" },
+    { "name": "schema_version",       "dataType": "String", "description": "UDT template version this instance conforms to" }
+  ]
+}

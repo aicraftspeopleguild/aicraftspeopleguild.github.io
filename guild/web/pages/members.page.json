@@ -5,8 +5,9 @@
     "slug": "members",
     "route": "/members",
     "view": "views/members-index.view.json",
-    "staticSrc": "dist/members.html",
-    "stylesheets": ["style/main.css"],
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "community",
     "parent_slug": "home",
     "status": "published"

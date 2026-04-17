@@ -239,32 +239,42 @@ const ACGRenderer = (function () {
       _siteMap = results[0];
       _registry = results[1].components || {};
 
-      // Navigate to current path
-      navigate(window.location.pathname);
+      // Navigate to current route (hash takes priority over pathname)
+      navigate(currentRoute());
     }).catch(function (err) {
       console.error('ACGRenderer init failed:', err);
       _mountPoint.innerHTML = '<p>Failed to load site configuration.</p>';
     });
 
-    // Handle SPA navigation
-    document.addEventListener('click', function (e) {
-      var link = e.target.closest('[data-route]');
-      if (!link) return;
-      e.preventDefault();
-      var href = link.getAttribute('href');
-      history.pushState(null, '', href);
-      navigate(href);
+    // Hash route navigation — href="#/charter" triggers hashchange
+    window.addEventListener('hashchange', function () {
+      navigate(currentRoute());
     });
 
     window.addEventListener('popstate', function () {
-      navigate(window.location.pathname);
+      navigate(currentRoute());
     });
   }
 
+  // Resolve the active route. Hash form "#/slug" takes priority over pathname.
+  function currentRoute() {
+    var h = window.location.hash || '';
+    if (h.indexOf('#/') === 0) return h.substring(1);        // "#/charter" → "/charter"
+    if (h.length > 1) return '/' + h.substring(1);           // "#charter" → "/charter"
+    return window.location.pathname;
+  }
+
   function navigate(pathname) {
+    // Home route: hide #app, show static landing
+    if (!pathname || pathname === '/' || pathname === '') {
+      document.body.classList.remove('has-route');
+      return;
+    }
+    document.body.classList.add('has-route');
+
     var match = matchRoute(pathname);
     if (!match) {
-      _mountPoint.innerHTML = '<div class="loading"><h2>Page Not Found</h2><p><a href="/">Back to Home</a></p></div>';
+      _mountPoint.innerHTML = '<div class="loading"><h2>Page Not Found</h2><p><a href="#/">Back to Home</a></p></div>';
       return;
     }
 

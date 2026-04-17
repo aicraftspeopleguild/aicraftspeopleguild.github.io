@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:18:44Z",
+  "generated_at": "2026-04-17T20:22:50Z",
   "tags": {
     "atomic": {
       "udtType": "Tag",
@@ -23,7 +23,7 @@
           "section-heading"
         ],
         "count": 11,
-        "last_updated": "2026-04-17T20:18:44Z"
+        "last_updated": "2026-04-17T20:22:50Z"
       }
     },
     "composite": {
@@ -48,7 +48,7 @@
           "paper-card"
         ],
         "count": 11,
-        "last_updated": "2026-04-17T20:18:44Z"
+        "last_updated": "2026-04-17T20:22:50Z"
       }
     },
     "layout": {
@@ -61,11 +61,10 @@
       "tags": {
         "component_ids": [
           "card-grid",
-          "raw-html",
-          "static-html-frame"
+          "raw-html"
         ],
-        "count": 3,
-        "last_updated": "2026-04-17T20:18:44Z"
+        "count": 2,
+        "last_updated": "2026-04-17T20:22:50Z"
       }
     },
     "page-level": {
@@ -80,7 +79,7 @@
           "page-shell"
         ],
         "count": 1,
-        "last_updated": "2026-04-17T20:18:44Z"
+        "last_updated": "2026-04-17T20:22:50Z"
       }
     }
   }

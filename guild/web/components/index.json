@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-04-17T20:18:44Z",
+  "generated_at": "2026-04-17T20:22:50Z",
   "schema_version": "1.0.0",
   "counts": {
-    "components": 26,
+    "components": 25,
     "categories": 4
   },
   "components": [
@@ -156,12 +156,6 @@
       "name": "SectionHeading",
       "category": "atomic",
       "instance_path": "udts/instances/section-heading.json"
-    },
-    {
-      "id": "static-html-frame",
-      "name": "StaticHTMLFrame",
-      "category": "layout",
-      "instance_path": "udts/instances/static-html-frame.json"
     }
   ]
 }

@@ -11,7 +11,7 @@
         "bodyClass": "page-member-profile",
         "stylesheets": ["style/main.css", "style/member-profile.css"],
         "eyebrow": "ACG Member",
-        "backHref": "../dist/members.html",
+        "backHref": "#/members",
         "backLabel": "Back to Members"
       },
       "children": [
@@ -38,7 +38,7 @@
           "props": {
             "heading": "Explore More",
             "primaryText": "Back to Members",
-            "primaryHref": "../dist/members.html",
+            "primaryHref": "#/members",
             "secondaryText": "Back to Home",
             "secondaryHref": "../../../index.html"
           }

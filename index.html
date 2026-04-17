@@ -906,17 +906,17 @@
     <header>
         <nav class="top-nav" aria-label="Primary">
             <a href="#manifesto">Manifesto</a>
-            <a href="guild/web/dist/white-papers.html">White Papers</a>
-            <a href="guild/web/dist/ai-rituals.html">AI Rituals</a>
-            <a href="guild/web/dist/mob-programming.html">Mob Programming</a>
-            <a href="guild/web/dist/flywheel.html">Flywheel</a>
-            <a href="guild/web/dist/showcases.html">Showcases</a>
-            <a href="guild/web/dist/members.html">Members</a>
-            <a href="guild/web/dist/hall-of-fame.html">Hall of Fame</a>
-            <a href="guild/web/dist/hall-of-shame.html">Hall of Shame</a>
-            <a href="guild/web/dist/mission-statement.html">Mission Statement</a>
-            <a href="guild/web/dist/charter.html">Charter</a>
-            <a href="guild/web/dist/code-of-conduct.html">Conduct</a>
+            <a href="#/white-papers">White Papers</a>
+            <a href="#/rituals">AI Rituals</a>
+            <a href="#/mob-programming">Mob Programming</a>
+            <a href="#/flywheel">Flywheel</a>
+            <a href="#/showcases">Showcases</a>
+            <a href="#/members">Members</a>
+            <a href="#/hall-of-fame">Hall of Fame</a>
+            <a href="#/hall-of-shame">Hall of Shame</a>
+            <a href="#/mission">Mission Statement</a>
+            <a href="#/charter">Charter</a>
+            <a href="#/code-of-conduct">Conduct</a>
         </nav>
         <div class="guild-mark">
             <div class="emblem">⚒ ACG ⚒</div>
@@ -977,7 +977,7 @@
                     </p>
                 </div>
 
-                <a href="guild/web/dist/aicraftspeopleguild-manifesto.html" class="manifesto-card manifesto-card-link">
+                <a href="#/manifesto" class="manifesto-card manifesto-card-link">
                     <span class="icon">📜</span>
                     <h3>Read Full Manifesto</h3>
                     <p>
@@ -1046,10 +1046,10 @@
                 <a href="#sign" class="btn btn-secondary">
                     <span>Sign the Manifesto</span>
                 </a>
-                <a href="guild/web/dist/aicraftspeopleguild-manifesto.html" class="btn btn-secondary">
+                <a href="#/manifesto" class="btn btn-secondary">
                     <span>Read Full Manifesto</span>
                 </a>
-                <a href="guild/web/dist/charter.html" class="btn btn-secondary">
+                <a href="#/charter" class="btn btn-secondary">
                     <span>Read the Charter</span>
                 </a>
             </div>
@@ -1063,8 +1063,15 @@
         </section>
     </main>
 
-    <!-- Dynamic renderer mount point (hidden when static content present) -->
-    <div id="app" style="display:none;"></div>
+    <!-- Dynamic renderer mount point. Shown when a hash route is active
+         (e.g., #/charter); the static landing sections above hide via .has-route. -->
+    <div id="app"></div>
+    <style>
+      body:not(.has-route) #app { display: none; }
+      body.has-route > header,
+      body.has-route > main,
+      body.has-route > footer { display: none; }
+    </style>
 
     <footer>
         <p>AI Craftspeople Guild (ACG)</p>
@@ -1074,8 +1081,8 @@
             <span>github.com/aicraftspeopleguild</span>
         </a>
         <div class="footer-links">
-            <a href="guild/web/dist/charter.html">Charter</a>
-            <a href="guild/web/dist/code-of-conduct.html">Code of Conduct</a>
+            <a href="#/charter">Charter</a>
+            <a href="#/code-of-conduct">Code of Conduct</a>
         </div>
         <p style="margin-top: 2rem; font-size: 0.85rem;">
             © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.

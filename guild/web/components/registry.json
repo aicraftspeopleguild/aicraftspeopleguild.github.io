@@ -73,9 +73,6 @@
     "FutureSlot": {
       "src": "components/udts/instances/future-slot.json"
     },
-    "StaticHTMLFrame": {
-      "src": "components/udts/instances/static-html-frame.json"
-    },
     "RawHTML": {
       "src": "components/udts/instances/raw-html.json"
     }

@@ -1,3 +1,6 @@
+# Build output — regenerate with: bash guild/web/build.sh
+guild/web/dist/
+
 # Python
 __pycache__/
 *.pyc

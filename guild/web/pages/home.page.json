@@ -5,8 +5,9 @@
     "slug": "home",
     "route": "/",
     "view": "views/home.view.json",
-    "staticSrc": "../../index.html",
-    "stylesheets": ["style/main.css"],
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "home",
     "status": "published"
   },

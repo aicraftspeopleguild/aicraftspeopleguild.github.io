@@ -5,11 +5,13 @@
     "slug": "member-profile",
     "route": "/members/:slug",
     "view": "views/member-profile.view.json",
-    "staticSrc": "members/:slug/index.html",
     "data": {
       "member": "members/udts/instances/:slug.json"
     },
-    "stylesheets": ["style/main.css", "style/member-profile.css"],
+    "stylesheets": [
+      "style/main.css",
+      "style/member-profile.css"
+    ],
     "section": "community",
     "parent_slug": "members",
     "status": "published"

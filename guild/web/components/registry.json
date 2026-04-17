@@ -25,6 +25,7 @@
     "ClosingStatement": { "src": "components/closing-statement.json" },
     "CTASection":       { "src": "components/cta-section.json" },
     "FutureSlot":       { "src": "components/future-slot.json" },
-    "StaticHTMLFrame":  { "src": "components/static-html-frame.json" }
+    "StaticHTMLFrame":  { "src": "components/static-html-frame.json" },
+    "RawHTML":          { "src": "components/raw-html.json" }
   }
 }

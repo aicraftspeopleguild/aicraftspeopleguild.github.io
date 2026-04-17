@@ -1,0 +1,22 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "RawHTML",
+    "tag": "fragment",
+    "cssClass": "",
+    "description": "Emits a pre-rendered HTML string verbatim. Used for page content that has not yet been decomposed into typed component trees. Content lives in data files, not in HTML files.",
+    "category": "layout",
+    "props": {
+      "html": { "type": "String", "required": true }
+    },
+    "slots": [],
+    "template": "{{{ html }}}"
+  },
+  "tags": {
+    "id": "raw-html",
+    "file_path": "guild/web/components/raw-html.json",
+    "dependencies": [],
+    "used_by_views": ["static-page", "charter", "flywheel", "mob-programming", "hall-of-fame", "hall-of-shame"],
+    "schema_version": "1.0.0"
+  }
+}

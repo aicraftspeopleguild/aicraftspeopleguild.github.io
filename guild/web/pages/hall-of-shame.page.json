@@ -4,16 +4,20 @@
     "title": "Hall of Shame",
     "slug": "hall-of-shame",
     "route": "/hall-of-shame",
-    "view": "views/static-page.view.json",
-    "staticSrc": "static/hall-of-shame.html",
-    "stylesheets": ["style/main.css"],
+    "view": "views/hall-of-shame.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "recognition",
     "parent_slug": "home",
-    "status": "published"
+    "status": "published",
+    "data": {
+      "page": "views/data/hall-of-shame.data.json"
+    }
   },
   "tags": {
     "id": "hall-of-shame",
-    "view_id": "static-page",
+    "view_id": "hall-of-shame",
     "schema_version": "1.0.0"
   }
 }

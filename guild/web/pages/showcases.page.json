@@ -4,16 +4,20 @@
     "title": "Showcases",
     "slug": "showcases",
     "route": "/showcases",
-    "view": "views/static-page.view.json",
-    "staticSrc": "static/showcases.html",
-    "stylesheets": ["style/main.css"],
+    "view": "views/showcases.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "community",
     "parent_slug": "home",
-    "status": "published"
+    "status": "published",
+    "data": {
+      "page": "views/data/showcases.data.json"
+    }
   },
   "tags": {
     "id": "showcases",
-    "view_id": "static-page",
+    "view_id": "showcases",
     "schema_version": "1.0.0"
   }
 }

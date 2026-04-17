@@ -1,19 +1,23 @@
 {
   "udtType": "Page",
   "parameters": {
-    "title": "Hushbell Full Spec",
+    "title": "🌸 ASS-OS FULL SPEC — HUSHBELL v1.0",
     "slug": "hushbell-full-spec",
     "route": "/hushbell-full-spec",
-    "view": "views/static-page.view.json",
-    "staticSrc": "static/hushbell-full-spec.html",
-    "stylesheets": ["style/main.css"],
+    "view": "views/hushbell-full-spec.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "resources",
     "parent_slug": "home",
-    "status": "published"
+    "status": "published",
+    "data": {
+      "page": "views/data/hushbell-full-spec.data.json"
+    }
   },
   "tags": {
     "id": "hushbell-full-spec",
-    "view_id": "static-page",
+    "view_id": "hushbell-full-spec",
     "schema_version": "1.0.0"
   }
 }

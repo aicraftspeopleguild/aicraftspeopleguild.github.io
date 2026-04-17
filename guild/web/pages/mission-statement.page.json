@@ -4,16 +4,20 @@
     "title": "Mission Statement",
     "slug": "mission-statement",
     "route": "/mission-statement",
-    "view": "views/static-page.view.json",
-    "staticSrc": "static/mission-statement.html",
-    "stylesheets": ["style/main.css"],
+    "view": "views/mission-statement.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "about",
     "parent_slug": "home",
-    "status": "published"
+    "status": "published",
+    "data": {
+      "page": "views/data/mission-statement.data.json"
+    }
   },
   "tags": {
     "id": "mission-statement",
-    "view_id": "static-page",
+    "view_id": "mission-statement",
     "schema_version": "1.0.0"
   }
 }

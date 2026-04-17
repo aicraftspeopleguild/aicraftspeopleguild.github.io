@@ -1,0 +1,37 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "hall-of-fame",
+    "description": "Decomposed view for hall-of-fame",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "{{ page.title }}",
+        "subtitle": "{{ page.subtitle }}",
+        "eyebrow": "{{ page.eyebrow }}",
+        "bodyClass": "{{ page.bodyClass }}",
+        "backHref": "{{ page.backHref }}",
+        "backLabel": "{{ page.backLabel }}"
+      },
+      "children": [
+        {
+          "type": "RawHTML",
+          "props": {
+            "html": "{{ page.body }}"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "hall-of-fame",
+    "component_ids": [
+      "page-shell",
+      "raw-html"
+    ],
+    "data_sources": [
+      "views/data/hall-of-fame.data.json"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

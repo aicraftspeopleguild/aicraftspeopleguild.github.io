@@ -507,7 +507,7 @@
             <p>
                 The point is not to sound clever. The point is to reduce drift, surface assumptions, improve verification, and keep human judgement active. Prompting without ritual easily turns into vague delegation. Prompting with ritual keeps the craftsperson in the loop.
             </p>
-            <p>Here are the first ten rituals in the archive. The initial seed set came from <a href="../members/alex-bunardzic/">Alex Bunardzic</a>, and the archive now grows through member contribution, including Ritual 07 from <a href="../members/kelly-hohman/">Kelly Hohman</a>, Ritual 08 from <a href="../members/jona-heidsick/">Jona Heidsick</a>, and Rituals 09 and 10 from <a href="../members/laurie-scheepers/">Laurie Scheepers</a>.</p>
+            <p>Here are the first ten rituals in the archive. The initial seed set came from <a href="../members/originals/alex-bunardzic.md">Alex Bunardzic</a>, and the archive now grows through member contribution, including Ritual 07 from <a href="../members/originals/kelly-hohman.md">Kelly Hohman</a>, Ritual 08 from <a href="../members/originals/jona-heidsick.md">Jona Heidsick</a>, and Rituals 09 and 10 from <a href="../members/originals/laurie-scheepers.md">Laurie Scheepers</a>.</p>
         </section>
 
         <section class="rituals-shell">
@@ -621,7 +621,7 @@ Do not merge the two passes.</code>
                     <div class="ritual-number">Ritual 07</div>
                     <h3>Constraint First Generation</h3>
                     <p>
-                        <strong>Submitted by <a href="../members/kelly-hohman/">Kelly Hohman</a>.</strong> This ritual starts by forcing the model back to the actual problem boundary before it races into oversized solutions.
+                        <strong>Submitted by <a href="../members/originals/kelly-hohman.md">Kelly Hohman</a>.</strong> This ritual starts by forcing the model back to the actual problem boundary before it races into oversized solutions.
                     </p>
                     <p>
                         <strong>Intent:</strong> Reduce scope creep and prevent AI from over-engineering beyond requirements.
@@ -654,7 +654,7 @@ AI: "Stop. What problem are we actually solving? Just sorting? What's the minimu
                     <div class="ritual-number">Ritual 08</div>
                     <h3>Overshoot The Ask</h3>
                     <p>
-                        <strong>Submitted by <a href="../members/jona-heidsick/">Jona Heidsick</a>.</strong> Do not ask only for implementation. Ask for the implementation and the evidence that it works, with the proof artifact defined as part of the task.
+                        <strong>Submitted by <a href="../members/originals/jona-heidsick.md">Jona Heidsick</a>.</strong> Do not ask only for implementation. Ask for the implementation and the evidence that it works, with the proof artifact defined as part of the task.
                     </p>
                     <p>
                         <strong>Intent:</strong> Prevent half-finished delivery. When the task boundary is "implement X", the model often stops at the first plausible state. When the boundary is "implement X and prove it", the full cycle has to be completed: build, verify, document.
@@ -681,7 +681,7 @@ AI: "Stop. What problem are we actually solving? Just sorting? What's the minimu
                     <div class="ritual-number">Ritual 09</div>
                     <h3>Falsify Before You Ship</h3>
                     <p>
-                        <strong>Submitted by <a href="../members/laurie-scheepers/">Laurie Scheepers</a>.</strong> Before publishing any technical claim, run it through adversarial review. The goal is not to confirm your work is good -- it is to find out where it is wrong.
+                        <strong>Submitted by <a href="../members/originals/laurie-scheepers.md">Laurie Scheepers</a>.</strong> Before publishing any technical claim, run it through adversarial review. The goal is not to confirm your work is good -- it is to find out where it is wrong.
                     </p>
                     <p>
                         <strong>Intent:</strong> Prevent publishing overclaims. Addresses the failure mode where AI-assisted work sounds rigorous but has never been stress-tested. Most AI output optimises for plausibility, not truth. This ritual forces the distinction.
@@ -724,7 +724,7 @@ application of known mathematics." Credibility preserved.</code>
                     <div class="ritual-number">Ritual 10</div>
                     <h3>Cost-Aware Retrieval</h3>
                     <p>
-                        <strong>Submitted by <a href="../members/laurie-scheepers/">Laurie Scheepers</a>.</strong> Before searching, pause and ask: do I already know this? AI agents and humans alike default to the most expensive tool when a cheaper one would suffice. This is the software equivalent of a cache hierarchy (L1, L2, RAM, disk) -- the pattern dates to the 1960s; the application to LLM token budgets is recent.
+                        <strong>Submitted by <a href="../members/originals/laurie-scheepers.md">Laurie Scheepers</a>.</strong> Before searching, pause and ask: do I already know this? AI agents and humans alike default to the most expensive tool when a cheaper one would suffice. This is the software equivalent of a cache hierarchy (L1, L2, RAM, disk) -- the pattern dates to the 1960s; the application to LLM token budgets is recent.
                     </p>
                     <p>
                         <strong>Intent:</strong> Prevent the "reach for the biggest tool first" failure mode. Expensive operations (full codebase scans, web searches, agent delegation) consume context budget that cannot be recovered. Cheap operations (recalling from conversation, checking a known file) cost almost nothing. The ritual creates a habit of checking cheap sources first.

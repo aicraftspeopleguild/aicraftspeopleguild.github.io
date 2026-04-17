@@ -1,0 +1,28 @@
+{
+  "udtType": "Member",
+  "parameters": {
+    "name": "Alex Bunardzic",
+    "role": "founding member",
+    "title": "Business Velocity Architect, Experienced Software Philosopher",
+    "bio": "Alex is the founder of the Guild and one of its clearest voices on sustainable software delivery, business flexibility, and small-step engineering discipline.\n\nFounder\nSoftware Development Since 1990\nAI Craftspeople Guild\n\n## Alex Bunardzic\n\nBusiness Velocity Architect, Experienced Software Philosopher\n\nBusiness Velocity Architect, Experienced Software Philosopher. TDD, mutation testing, shift-left, service virtualization, CI/CD, TBD\n\nTDD\nMutation Testing\nShift-Left\nService Virtualization\nCI/CD\nBusiness Velocity\n\nAlex has been doing software development since 1990. His professional passion is bringing soft into software. Which means software must be soft, maleable, pliable. That quality enables the flexibility of the business operations.\n\nIn order to make sure that software we are building is flexible, we must evolve it one step at a time. Each step (and the smaller that step is, the better) must get verified by automated testing. Early failures are welcome, because they are small and they force us to fix them right away. In the software engineering discipline, giant steps are foolish steps. It is more prudent to stay with small steps (many, many small steps) on our journey to deliver value to customer satisfaction.\n\n**Move fast to delight customers!**\n\n[Visit me and see how I can improve your success!](https://alexbunardzic.com/)",
+    "avatar_href": "Alex3D.jpg",
+    "expertise_tags": [
+      "TDD",
+      "Mutation Testing",
+      "Shift-Left",
+      "Service Virtualization",
+      "CI/CD",
+      "Business Velocity"
+    ],
+    "links": {},
+    "joined_date": ""
+  },
+  "tags": {
+    "id": "alex-bunardzic",
+    "slug": "alex-bunardzic",
+    "paper_ids": [],
+    "instance_path": "udts/instances/alex-bunardzic.json",
+    "ingested_at": "2026-04-17T20:08:45Z",
+    "schema_version": "1.0.0"
+  }
+}

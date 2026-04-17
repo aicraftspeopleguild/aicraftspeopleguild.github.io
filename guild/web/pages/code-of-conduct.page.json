@@ -4,16 +4,20 @@
     "title": "Code of Conduct",
     "slug": "code-of-conduct",
     "route": "/code-of-conduct",
-    "view": "views/static-page.view.json",
-    "staticSrc": "static/code-of-conduct.html",
-    "stylesheets": ["style/main.css"],
+    "view": "views/code-of-conduct.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "about",
     "parent_slug": "home",
-    "status": "published"
+    "status": "published",
+    "data": {
+      "page": "views/data/code-of-conduct.data.json"
+    }
   },
   "tags": {
     "id": "code-of-conduct",
-    "view_id": "static-page",
+    "view_id": "code-of-conduct",
     "schema_version": "1.0.0"
   }
 }

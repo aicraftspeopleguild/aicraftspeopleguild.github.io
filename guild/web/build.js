@@ -89,7 +89,12 @@ function interpolate(tpl, props) {
     /\{\{\s*\^(\w+)\s*\}\}([\s\S]*?)\{\{\s*\/\1\s*\}\}/g,
     (_, k, inner) => isFalsy(props[k]) ? inner : ''
   );
-  // Simple: {{ key }}
+  // Unescaped: {{{ key }}} — emits raw string (for pre-rendered HTML content)
+  out = out.replace(/\{\{\{\s*(\w+)\s*\}\}\}/g, (_, k) => {
+    const v = props[k];
+    return v == null ? '' : String(v);
+  });
+  // Simple escaped: {{ key }}
   out = out.replace(/\{\{\s*(\w+)\s*\}\}/g, (_, k) => {
     const v = props[k];
     return v == null ? '' : escapeHtml(String(v));

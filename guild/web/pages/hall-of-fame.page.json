@@ -4,16 +4,20 @@
     "title": "Hall of Fame",
     "slug": "hall-of-fame",
     "route": "/hall-of-fame",
-    "view": "views/static-page.view.json",
-    "staticSrc": "static/hall-of-fame.html",
-    "stylesheets": ["style/main.css"],
+    "view": "views/hall-of-fame.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "recognition",
     "parent_slug": "home",
-    "status": "published"
+    "status": "published",
+    "data": {
+      "page": "views/data/hall-of-fame.data.json"
+    }
   },
   "tags": {
     "id": "hall-of-fame",
-    "view_id": "static-page",
+    "view_id": "hall-of-fame",
     "schema_version": "1.0.0"
   }
 }

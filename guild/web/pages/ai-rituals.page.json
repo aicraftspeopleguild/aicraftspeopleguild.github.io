@@ -4,16 +4,20 @@
     "title": "AI Rituals",
     "slug": "ai-rituals",
     "route": "/ai-rituals",
-    "view": "views/static-page.view.json",
-    "staticSrc": "static/ai-rituals.html",
-    "stylesheets": ["style/main.css"],
+    "view": "views/ai-rituals.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "resources",
     "parent_slug": "home",
-    "status": "published"
+    "status": "published",
+    "data": {
+      "page": "views/data/ai-rituals.data.json"
+    }
   },
   "tags": {
     "id": "ai-rituals",
-    "view_id": "static-page",
+    "view_id": "ai-rituals",
     "schema_version": "1.0.0"
   }
 }

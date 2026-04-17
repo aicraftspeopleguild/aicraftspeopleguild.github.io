@@ -1,0 +1,222 @@
+---
+title: The Shield of All Knights Against Bounded Rationality
+slug: shield-of-all-knights
+authors: [Public, Draft for Review]
+publication_date: April 2026
+summary: An inclusive governance framework for the Guild
+status: published
+site_href: shield-of-all-knights.html
+---
+
+A governance white paper on how the AI Craftspeople Guild can include every member - synchronous and asynchronous - in its decisions. The central claim: **async participation is not a courtesy. It is a structural right.** Without it, the Guild becomes a theatre for the few.
+
+## Abstract
+
+The AI Craftspeople Guild operates on a foundation of strong values - quality, human judgment, and professional integrity - codified in the ACG Manifesto. What the Manifesto does not yet address is how the Guild governs itself: how decisions are made, recorded, challenged, and owned collectively by a membership that is distributed, asynchronous, and growing.
+
+This paper identifies three structural gaps in the Guild's current governance mode: the absence of a canonical decision record, the absence of a formal async participation mechanism, and the absence of explicit psychological safety norms that make challenge structurally safe rather than socially risky. Together, these gaps produce a predictable outcome - decisions made by those present, invisible to those absent, and effectively unchallengeable by either.
+
+### Central claim
+
+> Async participation is not a courtesy extended to absent members. It is a structural right held equally by all Guild members - and the minimum condition for collective ownership of Guild decisions.
+
+To address these gaps, this paper proposes the Shield of All Knights Against Bounded Rationality: a three-layer governance framework combining psychological safety infrastructure, an async decision mechanism built on Guild Decision Records (GDRs) inspired by Architecture Decision Records, and measurable health checks that distinguish real participation from performative theatre.
+
+The framework does not replace Mode B - the Guild's generative, low-friction build-and-ship mode that is essential to Guild innovation. It introduces Mode C: Emergence through Visibility, a governance layer that makes decisions written, stored, challengeable, and open to async input from every Guild member - with a protected veto window and a permanent searchable record hosted on GitHub. The long-term target state remains Mode A: coordinated, pre-approved, high-alignment builds. Mode C is the bridge that makes that transition possible without sacrificing the speed and creativity that define the Guild today.
+
+The framework is grounded in Amy Edmondson's model of psychological safety, mapped to four shield tiers - Gold, Silver, Bronze, and Wood - that serve as both diagnostic and governance prerequisite. Below Silver, the framework should not be deployed. The culture must be ready before the structure can work.
+
+This paper is submitted for Guild validation. It is not a final answer. It is the first GDR.
+
+**Keywords:** Governance, Async participation, Psychological safety, Guild Decision Records, Bounded rationality, Mode C, Collective ownership.
+
+## 1. Introduction
+
+The AI Craftspeople Guild was founded on a clear set of values: quality over speed, human judgment over automation, and professional integrity over commercial convenience. These values are codified in the ACG Manifesto. What the Manifesto does not yet codify is how the Guild itself is governed - how decisions are made, who holds authority, how dissent is registered, and how members who cannot be present in every conversation still belong to the community that shapes those decisions.
+
+This paper addresses that gap directly. It is not written because the Guild has failed. It is written because the Guild is growing, and growth without governance design does not produce alignment - it produces invisible hierarchies, silent exclusions, and a community that gradually becomes a performance of itself.
+
+> "A guild without governance is not a guild. It is a group of talented individuals who happen to share a name."
+
+The current operating mode of the Guild - which this paper calls Mode B - is not a failure. It is a necessary founding condition. Mode B asks members to build what they believe the Guild needs, ship it, present it, and iterate based on feedback. It is low-friction, fast, and generative. It produced the ACG Manifesto, the white paper series, the review forge, and the technical specifications that now define Guild standards. Mode B built the house.
+
+The problem is not Mode B. The problem is what happens when Mode B is the only mode. Without a mechanism for visibility and structured participation, asynchronous members - those who cannot attend every synchronous conversation, every build session, every real-time decision - progressively lose their footing. They fall behind, lose context, and face a choice between silence and the exhausting work of catching up. Most choose silence. And silence, over time, reads as disengagement. What is actually bounded rationality - the cognitive impossibility of tracking every decision made at speed - becomes invisible attrition.
+
+This paper proposes a governance framework called the Shield of All Knights Against Bounded Rationality, grounded in the emergence of Mode C: Emergence through Visibility. The core claim is simple: async members do not need a seat at every synchronous table. They need a window, a voice, and a protected period in which that voice carries weight. Visibility transforms observers into participants. A structured validation window with justified veto power transforms passive members into active ones - without requiring them to be present in real time.
+
+### Current state
+
+| Mode | Label | Description | Role |
+| --- | --- | --- | --- |
+| Mode B | Solo + Showcase | Build, ship, present, iterate. Low friction. Fast. Generative. No pre-approval required. | Foundation |
+| Mode C | Emergence through Visibility | Visibility + async validation window + justified veto. Momentum without blocking gates. | Momentum |
+| Mode A | Coordinated Builds | Public priority list, pre-discussion, integration gates. High alignment, earned trust. | Target state |
+
+Mode C is not a compromise between A and B. It is a distinct governance layer designed for the specific challenge of distributed, asynchronous communities: how do you build fast without leaving people behind? The answer is not to slow down the builders. The answer is to make what is being built visible, to give all members a structured opportunity to engage with it, and to ensure that disagreement - when it occurs - is expressed with reasons rather than silence.
+
+The psychological stakes of this design are not incidental. A guild that moves fast and stays opaque will retain its most engaged synchronous members and lose everyone else. Research on psychological safety consistently shows that the highest level of contribution - the willingness to challenge the status quo, propose alternatives, and take creative risks - requires members to feel that their voice is not only heard but structurally protected. The shield of all knights is not metaphor. It is the minimum infrastructure required for a community to function as a community rather than as a coordinated group of individuals who happen to share a Discord channel.
+
+This paper does not prescribe a finished governance system. It describes a direction, a set of principles, and a framework for the structural decisions that follow. The Guild has always built in public. This paper asks the Guild to govern in public too.
+
+## 2. The problem with sync-only governance
+
+The AI Craftspeople Guild does not lack good intentions. It does not lack talented members, clear values, or strong work. What it currently lacks is a governance structure that includes everyone - not just those who happen to be online at the right time.
+
+Under Mode B, the Guild's default operating mode, decisions emerge from synchronous conversations. A roundtable happens. Ideas are discussed. Directions are chosen. Then the meeting ends, and what was decided lives in the memory of those who attended. Members who were unavailable - because of timezone, work, family, or simply cognitive overload - have no structured way to participate in or even understand what was decided on their behalf.
+
+> "If decisions only happen in sync meetings, you have built a system that excludes async contributors by design."
+
+This is not a failure of commitment. It is a structural consequence of bounded rationality - the cognitive impossibility of tracking every decision made at speed, in every channel, by every sub-group of the Guild. No member, however engaged, can attend everything. And the Guild is growing. What is manageable as a small synchronous cohort becomes exclusionary at scale.
+
+The consequences are predictable and already visible in comparable communities. Async members - those with real expertise, genuine commitment, and valuable perspective - progressively disengage. Not because they lost interest, but because the cost of re-entering a fast-moving conversation they missed becomes too high. Silence follows. And silence, over time, reads as absence. What is actually structural exclusion becomes indistinguishable from voluntary withdrawal.
+
+Three specific gaps define the current governance failure:
+
+### Gap 1 - No decision record
+
+Decisions made in synchronous meetings are rarely written down in a structured, retrievable, challengeable form. The Guild has no canonical place where "here is what was decided, why, and by whom" is stored and versioned. Without this, the Guild has no memory - only the recollection of those present.
+
+### Gap 2 - No async participation mechanism
+
+Members who miss a roundtable have no formal way to engage with the decisions made there. They can read a summary if one is posted, but they cannot challenge, vote, or veto. Their participation is informational at best, invisible at worst.
+
+### Gap 3 - No psychological safety infrastructure
+
+Governance is not only structural. It is cultural. A member who feels that their challenge will be dismissed, ignored, or resented will not challenge - regardless of what mechanisms exist on paper. The absence of explicit psychological safety norms means that disagreement is implicitly risky, and the status quo is implicitly protected.
+
+These three gaps compound each other. No record makes challenge impossible. No async mechanism makes challenge inaccessible. No safety norms make challenge feel dangerous. The result is a guild that formally values dissent and structurally prevents it.
+
+## 3. Core governance principles
+
+The framework proposed in this paper rests on four principles. They are not aspirations - they are design constraints. Any governance mechanism that violates one of them is rejected, regardless of its other merits.
+
+### Principle 1 - Async participation is the default, not the exception
+
+Synchronous meetings are valuable. They are not sufficient. Every decision produced in a synchronous meeting must pass through an async participation window before it becomes final. This is not a courtesy extended to absent members. It is a structural right held by all Guild members equally, regardless of their availability at any given moment.
+
+### Principle 2 - Visibility precedes legitimacy
+
+A decision that has not been made visible cannot claim legitimacy. Visibility means: written, structured, stored, searchable, and linked. A decision communicated verbally in a meeting, summarised informally in a thread, or shared only with attendees does not meet this standard. Decisions that are not visible do not count.
+
+### Principle 3 - Challenge is structural, not personal
+
+Disagreement with a Guild decision must be treated as a governance act, not a social risk. The framework must make challenge structurally safe - by requiring reasoning rather than allowing dismissal, by recording objections permanently alongside the decision, and by mandating that substantive challenges trigger re-engagement rather than being outvoted. Challenge is how the Guild learns. A guild that discourages challenge does not improve - it hardens.
+
+### Principle 4 - Governance must be measurable
+
+A governance framework that cannot be tested is a belief system, not a system. The Shield of All Knights must produce observable outcomes: decisions are challenged, challenges change outcomes, participation is distributed across members, and safety is measurable. If the metrics show the framework is not working, the framework is revised - not the metrics.
+
+## 4. Structural framework - the three layers
+
+The Shield of All Knights Against Bounded Rationality is built on three interdependent layers. Each layer is necessary. None is sufficient alone.
+
+| Layer | Name | What it does | Role |
+| --- | --- | --- | --- |
+| Layer 1 | Psychological safety | The load-bearing wall. Without it, all other structure is theatre. | Foundation |
+| Layer 2 | Async decision framework | GDRs, storage, workflow. The mechanism that makes inclusion real. | Structure |
+| Layer 3 | Health checks | Measurable signals that prove the framework works or demand revision. | Proof |
+
+## 5. Layer 1 - Psychological safety & the shield tiers
+
+Psychological safety, as defined by Amy Edmondson, is the shared belief that the team is safe for interpersonal risk-taking. It is not comfort. It is not agreement. It is the condition under which members can speak up, challenge, and be wrong - without fear of humiliation, exclusion, or retaliation.
+
+This framework maps Edmondson's four stages of team psychological safety to four shield tiers. The tiers are not aspirational labels. They are diagnostic tools. The Guild's current tier determines which governance mechanisms are functional and which are theatre.
+
+| Shield tier | Safety stage | What it means | Governance effect |
+| --- | --- | --- | --- |
+| Gold shield | Challenger safety - highest | Challenge is expected and welcomed. Mistakes are discussed openly. Innovation happens because members risk being wrong. | The async framework works fully here. |
+| Silver shield | Contributor safety - medium-high | Members are mostly comfortable. Some hesitation on controversial topics. Questions happen, but carefully. | The framework works, with friction. |
+| Bronze shield | Learner safety - medium | Members feel included but cautious. Disagreement is implicitly risky. Challenge is rare. | The framework exists but is not used. Innovation stalls. |
+| Wood shield | No safety - lowest | Fear dominates. Silence is survival. Challenge is a career risk. No innovation. | Any governance framework is meaningless at this level. |
+
+The target state for the Guild is Gold. The minimum viable state - where the async decision framework produces real outcomes rather than performative ones - is Silver. Below Silver, the framework should not be launched. The culture must be addressed first.
+
+The observable proxies for shield level are: do members challenge decisions async? Do challenges name specific disagreements with reasoning? Do challenges actually change outcomes? Are challengers distributed across the membership, or concentrated in one or two individuals? A Guild where challenge is distributed, reasoned, and consequential is a Gold Shield Guild.
+
+## 6. Layer 2 - The async decision framework
+
+### 6.1 The roundtable - synchronous anchor
+
+The Guild roundtable is the synchronous decision point. It is not where decisions are finalised - it is where decisions are proposed, debated, and drafted. The roundtable produces a Guild Decision Record. What it does not produce is a final outcome. That requires the async window.
+
+The roundtable is structured around three questions: What problem are we solving? What are we deciding? What did we consider and reject? These questions map directly to the GDR template. A roundtable that cannot answer all three has not produced a decision - it has produced a discussion.
+
+### 6.2 The Guild Decision Record (GDR)
+
+The GDR is the canonical unit of Guild governance. It is inspired by the Architecture Decision Record (ADR) format - structured, versioned, challengeable, and permanent. Every substantive Guild decision must have a GDR. Decisions without GDRs do not count.
+
+```
+GDR-XXX: [Decision title]
+Status: Proposed -> Accepted -> Superseded -> Rejected
+Date: YYYY-MM-DD
+Owned by: @username
+Roundtable attendees: @name1, @name2, ...
+Context: What problem are we solving? What is the current state?
+Decision: What are we doing? One sentence, then expand.
+Rationale: Why this, not something else?
+Alternatives considered: Option A - why rejected. Option B - why rejected.
+Consequences: If this works: [...]. If this fails: [...]. Reversible? Yes/No.
+Async feedback window closes: [Date + time UTC] - 48h minimum
+How to challenge: Reply in thread with reasoning. Veto requires explanation.
+Resolution: Challenges received, how resolved. Status updated.
+```
+
+The Alternatives Considered section is the anti-sycophancy mechanism built into the template. A GDR that does not name what was rejected and why has not been completed. The Consequences section forces the author to name failure modes before they occur. The Reversible field prevents lock-in decisions from being treated as permanent when they are not.
+
+Existing Guild decisions - GRIP, the Triad Engine, and others - will be retroactively documented as GDRs with status Accepted. This is not revision history. It is the Guild establishing its memory.
+
+### 6.3 The decision workflow
+
+1. **Roundtable - propose & draft.** Synchronous discussion. Decision is named explicitly. GDR is drafted by the decision owner.
+2. **Post to #decisions - async window opens.** GDR posted to the Guild decisions channel. 48h minimum feedback window. All members notified.
+3. **Async participation - comment or veto.** Any member may comment. Veto requires written reasoning. No reasoning, no veto. Silence counts as no objection.
+4. **Resolution.** No veto means decision accepted and GDR status updated. Veto received means the roundtable reconvenes to address it. Both sync and async hold real veto power.
+5. **Archive - Guild memory.** GDR stored permanently in GitHub Pages as markdown: versioned, searchable, and linked. The Guild's history becomes readable.
+
+### 6.4 Storage and versioning
+
+GDRs are stored in a dedicated GitHub repository as markdown files. GitHub provides version history, authorship tracking, diff visibility, and the ability to challenge a decision by opening a pull request or an issue against the GDR itself. The storage is not a graveyard - it is the Guild's living memory. New decisions must cite relevant existing GDRs. Superseded GDRs remain visible with their full history intact.
+
+## 7. Layer 3 - Measuring whether it works
+
+A governance framework that cannot be tested is a belief system. The Shield of All Knights produces four observable health signals. These are measured after every three-week cycle and reviewed at the roundtable.
+
+| Metric | Target | Signal if failing |
+| --- | --- | --- |
+| Challenge rate | 40%+ of GDRs challenged | Below 20% means Bronze or Wood shield. |
+| Named dissent | Objections include reasoning | Silence or vague objections means a safety gap. |
+| Decision changes | Challenges shift outcomes | 100% accepted unchanged means theatre. |
+| Distributed challengers | Multiple members challenging | Only 1-2 people always challenging means a silo. |
+
+If challenge rate stays below 20% after three cycles, the framework is not working - and the cause is almost certainly not structural. It is cultural. The Guild is in Bronze or Wood. The response is not to add more governance mechanism. It is to address psychological safety directly before continuing.
+
+If challenges never change outcomes, async participation is theatre. The roundtable is rubber-stamping its own decisions. The veto mechanism must be enforced: a substantive veto requires reconvening, not outvoting.
+
+## 8. Evolution & amendment
+
+The governance framework described in this paper is not final. It is v1.0 - a starting point designed to be tested, challenged, and revised by the Guild it serves. The amendment process follows the same structure as any other Guild decision: a GDR is drafted, posted, and subject to the async window. No part of this framework is exempt from challenge, including the amendment process itself.
+
+The transition path is explicit. The Guild currently operates in Mode B. This paper introduces Mode C - Emergence through Visibility - as the immediate next state. Mode A, coordinated builds with pre-approval and integration gates, is the long-term goal. The transition from C to A happens when the Guild has demonstrated - through three or more cycles of measured GDR activity - that it operates at Gold or Silver shield level consistently.
+
+One structural protection is non-negotiable in any revision: the async participation window cannot be shortened below 48 hours, and the requirement for written reasoning on any veto cannot be removed. These are the load-bearing elements of the framework. Remove them and the Shield becomes decoration.
+
+The Guild will know the framework is working not when everyone agrees, but when everyone disagrees - and does so in writing, with reasoning, and with the expectation that their challenge will be read, considered, and answered.
+
+## Conclusion - Build the house. Keep the doors open.
+
+The AI Craftspeople Guild has built something worth governing. It has a Manifesto, a body of technical work, a growing membership, and a shared commitment to quality over speed. What it has not yet built is the infrastructure that allows all of its members - synchronous and asynchronous, highly engaged and occasionally present - to participate in the decisions that shape it.
+
+The Shield of All Knights Against Bounded Rationality is that infrastructure. It does not slow the Guild down. It does not replace Mode B - and it must not. Mode B is the engine of Guild innovation: the freedom to build, ship, and iterate without pre-approval is what keeps the Guild generative, experimental, and ahead. Governance exists to protect that freedom for everyone, not to constrain it for the few who happen to be present. Mode C adds the visibility layer that Mode B lacks - the written decision, the async window, the protected veto, the permanent record - so that building fast does not mean leaving people behind.
+
+> "Build the house. But keep the doors open. That is the only way to have a guild, and not just a group."
+
+The framework is tested in three steps. First, the roundtable validates and locks the workflow. Second, the first five GDRs are written - including retroactive records for GRIP, the Triad Engine, and other existing decisions - to establish Guild memory. Third, after three cycles of operation, the health metrics are reviewed: which shield are we in?
+
+If the Guild is Gold, the framework is working. If it is Silver, it is working with friction. If it is Bronze or below, the culture must be addressed before the structure can serve its purpose.
+
+The Guild has always built in public. This paper asks the Guild to govern in public too - with the same rigour, the same transparency, and the same willingness to be wrong that it brings to its technical work.
+
+## Notes
+
+1. Amy Edmondson, *The Fearless Organization* (2018). The four stages of psychological safety referenced in this paper are inclusion safety, learner safety, contributor safety, and challenger safety - mapped here to Wood, Bronze, Silver, and Gold shields respectively.
+2. Herbert Simon, "A Behavioral Model of Rational Choice" (1955). Bounded rationality is the cognitive limit on decision-making under incomplete information and time pressure.

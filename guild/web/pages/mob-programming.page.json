@@ -4,16 +4,20 @@
     "title": "Mob Programming 101",
     "slug": "mob-programming",
     "route": "/mob-programming",
-    "view": "views/static-page.view.json",
-    "staticSrc": "static/mob-programming.html",
-    "stylesheets": ["style/main.css"],
+    "view": "views/mob-programming.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
     "section": "resources",
     "parent_slug": "home",
-    "status": "published"
+    "status": "published",
+    "data": {
+      "page": "views/data/mob-programming.data.json"
+    }
   },
   "tags": {
     "id": "mob-programming",
-    "view_id": "static-page",
+    "view_id": "mob-programming",
     "schema_version": "1.0.0"
   }
 }

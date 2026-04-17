@@ -1,0 +1,37 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "chief-ai-skeptic-officer",
+    "description": "Decomposed view for chief-ai-skeptic-officer",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "{{ page.title }}",
+        "subtitle": "{{ page.subtitle }}",
+        "eyebrow": "{{ page.eyebrow }}",
+        "bodyClass": "{{ page.bodyClass }}",
+        "backHref": "{{ page.backHref }}",
+        "backLabel": "{{ page.backLabel }}"
+      },
+      "children": [
+        {
+          "type": "RawHTML",
+          "props": {
+            "html": "{{ page.body }}"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "chief-ai-skeptic-officer",
+    "component_ids": [
+      "page-shell",
+      "raw-html"
+    ],
+    "data_sources": [
+      "views/data/chief-ai-skeptic-officer.data.json"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

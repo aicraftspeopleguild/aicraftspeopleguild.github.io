@@ -13,7 +13,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const WEB_ROOT = path.resolve(__dirname);
+// __dirname is guild/web/scripts — web root is one level up
+const WEB_ROOT = path.resolve(__dirname, '..');
 const REPO_ROOT = path.resolve(WEB_ROOT, '..', '..');
 
 // ── Load JSON with error context ────────────────────────────────────

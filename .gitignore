@@ -1,6 +1,11 @@
-# Build output — regenerate with: bash guild/web/build.sh
+# Build output — regenerate with: bash guild/web/scripts/build.sh
 guild/web/dist/
 
-# Python
+# Paper auto-index transient summary (PR-comment step)
+.paper-index-summary.json
+
+# Python / Node
 __pycache__/
 *.pyc
+node_modules/
+package-lock.json

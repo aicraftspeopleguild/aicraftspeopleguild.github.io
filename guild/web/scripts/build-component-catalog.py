@@ -14,9 +14,10 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 HERE = Path(__file__).resolve().parent
-INSTANCES_DIR = HERE / "udts" / "instances"
-TAGS_DIR = HERE / "tags"
-TEMPLATE_FILE = HERE / "udts" / "templates" / "component.udt.json"
+COMPONENTS_DIR = HERE.parent / "components"
+INSTANCES_DIR = COMPONENTS_DIR / "udts" / "instances"
+TAGS_DIR = COMPONENTS_DIR / "tags"
+TEMPLATE_FILE = COMPONENTS_DIR / "udts" / "templates" / "component.udt.json"
 
 def load_template_version():
     if TEMPLATE_FILE.exists():
@@ -84,7 +85,7 @@ def main():
         },
         "components": components
     }
-    (HERE / "index.json").write_text(
+    (COMPONENTS_DIR / "index.json").write_text(
         json.dumps(manifest, indent=2), encoding="utf-8"
     )
 

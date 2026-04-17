@@ -9,7 +9,7 @@ guild/web/components/.
 import json, re, os
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[3]
 DOCS = REPO / "docs" / "engineering"
 OUT_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances"
 

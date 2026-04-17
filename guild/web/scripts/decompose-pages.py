@@ -16,7 +16,7 @@ import json, re, sys
 from pathlib import Path
 from bs4 import BeautifulSoup
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[3]
 STATIC_DIR = REPO / "guild" / "web" / "static"
 VIEWS_DIR = REPO / "guild" / "web" / "views"
 DATA_DIR = VIEWS_DIR / "data"

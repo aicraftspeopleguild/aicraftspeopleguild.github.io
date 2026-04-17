@@ -1,0 +1,85 @@
+name: Paper Auto-Index
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+    paths:
+      - '**/*.html'
+      - '**/*.md'
+      - '**/*.meta.yml'
+      - '**/*.meta.yaml'
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install js-yaml
+        run: npm install --no-save js-yaml
+
+      - name: Parse papers
+        run: node .github/scripts/parse-papers.js
+
+      - name: Validate index
+        run: node .github/scripts/validate-index.js
+
+      - name: Generate HTML index
+        run: node .github/scripts/generate-html.js
+
+      - name: Commit updated index
+        run: |
+          git config user.name  "guild-bot"
+          git config user.email "bot@aicraftspeopleguild.com"
+          git add papers.json guild/web/dist/white-papers.html
+          if git diff --cached --quiet; then
+            echo "No index changes to commit."
+          else
+            git commit -m "auto-index: update paper listing"
+            git push
+          fi
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let summary;
+            try {
+              summary = JSON.parse(fs.readFileSync('.paper-index-summary.json', 'utf8'));
+            } catch (e) {
+              console.log('No summary file — nothing to report.');
+              return;
+            }
+            const lines = [`## 📚 Paper Auto-Index`, ''];
+            lines.push(`Indexed **${summary.total}** paper${summary.total === 1 ? '' : 's'} total.`);
+            if (summary.newPapers && summary.newPapers.length) {
+              lines.push('', '### New this PR', '');
+              for (const p of summary.newPapers) {
+                lines.push(`- ✓ **${p.title}** (${p.id})`);
+                lines.push(`  Type: ${p.type} · Tags: ${(p.tags || []).join(', ') || '—'}`);
+              }
+            }
+            if (summary.warnings && summary.warnings.length) {
+              lines.push('', '### ⚠️ Warnings', '');
+              for (const w of summary.warnings) {
+                lines.push(`- \`${w.file}\`: ${w.issue}`);
+              }
+            }
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: lines.join('\n')
+            });

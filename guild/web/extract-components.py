@@ -11,7 +11,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 DOCS = REPO / "docs" / "engineering"
-OUT_DIR = REPO / "guild" / "web" / "components"
+OUT_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances"
 
 # Pattern: ```json:udt:Component ... ```
 BLOCK_RE = re.compile(

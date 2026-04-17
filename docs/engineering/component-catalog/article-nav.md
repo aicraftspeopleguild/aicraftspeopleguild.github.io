@@ -1,0 +1,28 @@
+# ArticleNav
+
+In-page section navigation for white papers.
+
+```json:udt:Component
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "ArticleNav",
+    "tag": "nav",
+    "cssClass": "article-nav",
+    "description": "Horizontal navigation bar linking to article sections within a white paper.",
+    "category": "composite",
+    "props": {
+      "sections": { "type": "JSON", "required": true, "description": "Array of { id, label } objects" }
+    },
+    "slots": [],
+    "template": "<nav class=\"article-nav\" aria-label=\"Article sections\">{{ #sections }}<a href=\"#{{ id }}\">{{ label }}</a>{{ /sections }}</nav>"
+  },
+  "tags": {
+    "id": "article-nav",
+    "file_path": "guild/web/components/article-nav.json",
+    "dependencies": [],
+    "used_by_views": ["white-paper-article"],
+    "schema_version": "1.0.0"
+  }
+}
+```

@@ -1,0 +1,29 @@
+# SectionHeading
+
+Section title with decorative underline.
+
+```json:udt:Component
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "SectionHeading",
+    "tag": "div",
+    "cssClass": "section-heading",
+    "description": "Section title with bronze underline and optional subtitle.",
+    "category": "atomic",
+    "props": {
+      "title":    { "type": "String", "required": true },
+      "subtitle": { "type": "String", "required": false }
+    },
+    "slots": [],
+    "template": "<div class=\"section-heading\"><h2>{{ title }}</h2><p>{{ subtitle }}</p></div>"
+  },
+  "tags": {
+    "id": "section-heading",
+    "file_path": "guild/web/components/section-heading.json",
+    "dependencies": [],
+    "used_by_views": ["white-paper-index", "members-index", "home"],
+    "schema_version": "1.0.0"
+  }
+}
+```

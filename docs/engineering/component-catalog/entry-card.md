@@ -1,0 +1,30 @@
+# EntryCard
+
+Generic card for lists (Hall of Fame, Hall of Shame).
+
+```json:udt:Component
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "EntryCard",
+    "tag": "article",
+    "cssClass": "entry-card",
+    "description": "Generic list entry card with metadata, title, and description.",
+    "category": "composite",
+    "props": {
+      "title":    { "type": "String",      "required": true },
+      "content":  { "type": "String",      "required": false },
+      "meta":     { "type": "StringArray", "required": false }
+    },
+    "slots": [],
+    "template": "<article class=\"entry-card\"><div class=\"entry-meta\">{{ #meta }}<span>{{ . }}</span>{{ /meta }}</div><h3>{{ title }}</h3><p>{{ content }}</p></article>"
+  },
+  "tags": {
+    "id": "entry-card",
+    "file_path": "guild/web/components/entry-card.json",
+    "dependencies": [],
+    "used_by_views": ["hall-of-fame", "hall-of-shame"],
+    "schema_version": "1.0.0"
+  }
+}
+```

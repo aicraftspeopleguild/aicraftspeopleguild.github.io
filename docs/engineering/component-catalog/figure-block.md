@@ -1,0 +1,31 @@
+# FigureBlock
+
+Image or media with caption.
+
+```json:udt:Component
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "FigureBlock",
+    "tag": "figure",
+    "cssClass": "figure-block",
+    "description": "Image or media figure with optional caption, parchment background.",
+    "category": "atomic",
+    "props": {
+      "src":     { "type": "URL",    "required": true },
+      "alt":     { "type": "String", "required": true },
+      "caption": { "type": "String", "required": false },
+      "type":    { "type": "Enum",   "required": false, "default": "image", "options": ["image", "video"] }
+    },
+    "slots": [],
+    "template": "<figure class=\"figure-block\"><img src=\"{{ src }}\" alt=\"{{ alt }}\"><figcaption>{{ caption }}</figcaption></figure>"
+  },
+  "tags": {
+    "id": "figure-block",
+    "file_path": "guild/web/components/figure-block.json",
+    "dependencies": [],
+    "used_by_views": ["white-paper-article"],
+    "schema_version": "1.0.0"
+  }
+}
+```

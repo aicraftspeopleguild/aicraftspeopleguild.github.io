@@ -1,0 +1,30 @@
+# Button
+
+Primary and secondary action buttons.
+
+```json:udt:Component
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "Button",
+    "tag": "a",
+    "cssClass": "btn",
+    "description": "Action button with primary/secondary variants.",
+    "category": "atomic",
+    "props": {
+      "text":    { "type": "String",  "required": true },
+      "href":    { "type": "URL",     "required": true },
+      "variant": { "type": "Enum",    "required": false, "default": "primary", "options": ["primary", "secondary"] }
+    },
+    "slots": [],
+    "template": "<a href=\"{{ href }}\" class=\"btn btn-{{ variant }}\">{{ text }}</a>"
+  },
+  "tags": {
+    "id": "button",
+    "file_path": "guild/web/components/button.json",
+    "dependencies": [],
+    "used_by_views": ["page-shell", "white-paper-index", "member-profile", "home"],
+    "schema_version": "1.0.0"
+  }
+}
+```

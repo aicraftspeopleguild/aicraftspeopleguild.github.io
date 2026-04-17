@@ -1,31 +1,83 @@
 {
   "version": "1.0.0",
   "components": {
-    "GuildMark":        { "src": "components/guild-mark.json" },
-    "Eyebrow":          { "src": "components/eyebrow.json" },
-    "Button":           { "src": "components/button.json" },
-    "Badge":            { "src": "components/badge.json" },
-    "BadgeRow":         { "src": "components/badge-row.json" },
-    "BackLink":         { "src": "components/back-link.json" },
-    "SectionHeading":   { "src": "components/section-heading.json" },
-    "Callout":          { "src": "components/callout.json" },
-    "PullQuote":        { "src": "components/pull-quote.json" },
-    "CodeBlock":        { "src": "components/code-block.json" },
-    "FigureBlock":      { "src": "components/figure-block.json" },
-    "PageHeader":       { "src": "components/page-header.json" },
-    "PageFooter":       { "src": "components/page-footer.json" },
-    "PageShell":        { "src": "components/page-shell.json" },
-    "IntroPanel":       { "src": "components/intro-panel.json" },
-    "PaperCard":        { "src": "components/paper-card.json" },
-    "MemberCard":       { "src": "components/member-card.json" },
-    "EntryCard":        { "src": "components/entry-card.json" },
-    "CardGrid":         { "src": "components/card-grid.json" },
-    "ArticleNav":       { "src": "components/article-nav.json" },
-    "ArticleSection":   { "src": "components/article-section.json" },
-    "ClosingStatement": { "src": "components/closing-statement.json" },
-    "CTASection":       { "src": "components/cta-section.json" },
-    "FutureSlot":       { "src": "components/future-slot.json" },
-    "StaticHTMLFrame":  { "src": "components/static-html-frame.json" },
-    "RawHTML":          { "src": "components/raw-html.json" }
+    "GuildMark": {
+      "src": "components/udts/instances/guild-mark.json"
+    },
+    "Eyebrow": {
+      "src": "components/udts/instances/eyebrow.json"
+    },
+    "Button": {
+      "src": "components/udts/instances/button.json"
+    },
+    "Badge": {
+      "src": "components/udts/instances/badge.json"
+    },
+    "BadgeRow": {
+      "src": "components/udts/instances/badge-row.json"
+    },
+    "BackLink": {
+      "src": "components/udts/instances/back-link.json"
+    },
+    "SectionHeading": {
+      "src": "components/udts/instances/section-heading.json"
+    },
+    "Callout": {
+      "src": "components/udts/instances/callout.json"
+    },
+    "PullQuote": {
+      "src": "components/udts/instances/pull-quote.json"
+    },
+    "CodeBlock": {
+      "src": "components/udts/instances/code-block.json"
+    },
+    "FigureBlock": {
+      "src": "components/udts/instances/figure-block.json"
+    },
+    "PageHeader": {
+      "src": "components/udts/instances/page-header.json"
+    },
+    "PageFooter": {
+      "src": "components/udts/instances/page-footer.json"
+    },
+    "PageShell": {
+      "src": "components/udts/instances/page-shell.json"
+    },
+    "IntroPanel": {
+      "src": "components/udts/instances/intro-panel.json"
+    },
+    "PaperCard": {
+      "src": "components/udts/instances/paper-card.json"
+    },
+    "MemberCard": {
+      "src": "components/udts/instances/member-card.json"
+    },
+    "EntryCard": {
+      "src": "components/udts/instances/entry-card.json"
+    },
+    "CardGrid": {
+      "src": "components/udts/instances/card-grid.json"
+    },
+    "ArticleNav": {
+      "src": "components/udts/instances/article-nav.json"
+    },
+    "ArticleSection": {
+      "src": "components/udts/instances/article-section.json"
+    },
+    "ClosingStatement": {
+      "src": "components/udts/instances/closing-statement.json"
+    },
+    "CTASection": {
+      "src": "components/udts/instances/cta-section.json"
+    },
+    "FutureSlot": {
+      "src": "components/udts/instances/future-slot.json"
+    },
+    "StaticHTMLFrame": {
+      "src": "components/udts/instances/static-html-frame.json"
+    },
+    "RawHTML": {
+      "src": "components/udts/instances/raw-html.json"
+    }
   }
 }

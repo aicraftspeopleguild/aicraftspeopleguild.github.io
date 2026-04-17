@@ -1,0 +1,66 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "members-index",
+    "description": "Members directory page with profile cards",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "Guild Members",
+        "subtitle": "{{ page.subtitle }}",
+        "bodyClass": "page-members",
+        "stylesheets": ["style/main.css"],
+        "backHref": "../../index.html",
+        "backLabel": "Back to Home"
+      },
+      "children": [
+        {
+          "type": "IntroPanel",
+          "props": { "content": "{{ page.intro }}" }
+        },
+        {
+          "type": "CardGrid",
+          "props": {
+            "heading": "Current Members",
+            "gridClass": "members-list",
+            "shellClass": "members-shell"
+          },
+          "repeat": {
+            "source": "members",
+            "as": "member",
+            "template": {
+              "type": "MemberCard",
+              "props": {
+                "name": "{{ member.parameters.name }}",
+                "role": "{{ member.parameters.role }}",
+                "title": "{{ member.parameters.title }}",
+                "bio": "{{ member.parameters.bio }}",
+                "summary": "{{ member.parameters.summary }}",
+                "avatarSrc": "{{ member.parameters.avatar_href }}",
+                "avatarAlt": "{{ member.parameters.name }} portrait",
+                "profileHref": "members/{{ member.tags.slug }}/",
+                "expertiseTags": "{{ member.parameters.expertise_tags }}"
+              }
+            }
+          }
+        },
+        {
+          "type": "CTASection",
+          "props": {
+            "heading": "Join the Guild",
+            "primaryText": "Read the Charter",
+            "primaryHref": "charter.html",
+            "secondaryText": "Back to Home",
+            "secondaryHref": "../../index.html"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "members-index",
+    "component_ids": ["page-shell", "intro-panel", "card-grid", "member-card", "cta-section"],
+    "data_sources": ["members/index.json"],
+    "schema_version": "1.0.0"
+  }
+}

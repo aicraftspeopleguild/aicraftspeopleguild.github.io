@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "base": "/guild/web/",
+  "routes": [
+    { "path": "/",                        "page": "pages/home.page.json",                    "label": "Home" },
+    { "path": "/white-papers",            "page": "pages/white-paper-index.page.json",       "label": "White Papers" },
+    { "path": "/white-papers/:slug",      "page": "pages/white-paper-article.page.json",     "label": "Paper",          "dynamic": true },
+    { "path": "/members",                 "page": "pages/members-index.page.json",           "label": "Members" },
+    { "path": "/members/:slug",           "page": "pages/member-profile.page.json",          "label": "Member Profile", "dynamic": true },
+    { "path": "/charter",                 "page": "pages/charter.page.json",                 "label": "Charter" },
+    { "path": "/code-of-conduct",         "page": "pages/code-of-conduct.page.json",         "label": "Code of Conduct" },
+    { "path": "/manifesto",               "page": "pages/manifesto.page.json",               "label": "Manifesto" },
+    { "path": "/mission",                 "page": "pages/mission.page.json",                 "label": "Mission Statement" },
+    { "path": "/rituals",                 "page": "pages/rituals.page.json",                 "label": "AI Rituals" },
+    { "path": "/mob-programming",         "page": "pages/mob-programming.page.json",         "label": "Mob Programming" },
+    { "path": "/flywheel",               "page": "pages/flywheel.page.json",                "label": "Flywheel" },
+    { "path": "/showcases",              "page": "pages/showcases.page.json",               "label": "Showcases" },
+    { "path": "/hall-of-fame",           "page": "pages/hall-of-fame.page.json",            "label": "Hall of Fame" },
+    { "path": "/hall-of-shame",          "page": "pages/hall-of-shame.page.json",           "label": "Hall of Shame" }
+  ],
+  "sections": {
+    "about":      ["manifesto", "charter", "code-of-conduct", "mission"],
+    "resources":  ["white-papers", "rituals", "mob-programming"],
+    "community":  ["members", "showcases", "flywheel"],
+    "recognition":["hall-of-fame", "hall-of-shame"]
+  }
+}

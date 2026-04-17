@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Tag",
+  "version": "1.0.0",
+  "description": "UDT for a single tag entry in the Guild tag catalog. Each tag groups white papers and, in time, other Guild artefacts.",
+  "parameters": {
+    "name":        { "dataType": "String", "required": true,  "description": "Canonical tag slug, lower-kebab-case, e.g. ai-harness" },
+    "label":       { "dataType": "String", "required": false, "description": "Human-readable label, e.g. 'AI Harness'" },
+    "description": { "dataType": "String", "required": false, "description": "Short definition of the tag" }
+  },
+  "tags": [
+    { "name": "paper_ids",   "dataType": "StringArray", "description": "IDs of white-paper instances carrying this tag" },
+    { "name": "count",       "dataType": "Int",         "description": "Cached number of papers carrying this tag" },
+    { "name": "last_updated","dataType": "String",      "description": "UTC ISO timestamp of last recount" }
+  ]
+}

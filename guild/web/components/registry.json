@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "components": {
+    "GuildMark":        { "src": "components/guild-mark.json" },
+    "Eyebrow":          { "src": "components/eyebrow.json" },
+    "Button":           { "src": "components/button.json" },
+    "Badge":            { "src": "components/badge.json" },
+    "BadgeRow":         { "src": "components/badge-row.json" },
+    "BackLink":         { "src": "components/back-link.json" },
+    "SectionHeading":   { "src": "components/section-heading.json" },
+    "Callout":          { "src": "components/callout.json" },
+    "PullQuote":        { "src": "components/pull-quote.json" },
+    "CodeBlock":        { "src": "components/code-block.json" },
+    "FigureBlock":      { "src": "components/figure-block.json" },
+    "PageHeader":       { "src": "components/page-header.json" },
+    "PageFooter":       { "src": "components/page-footer.json" },
+    "PageShell":        { "src": "components/page-shell.json" },
+    "IntroPanel":       { "src": "components/intro-panel.json" },
+    "PaperCard":        { "src": "components/paper-card.json" },
+    "MemberCard":       { "src": "components/member-card.json" },
+    "EntryCard":        { "src": "components/entry-card.json" },
+    "CardGrid":         { "src": "components/card-grid.json" },
+    "ArticleNav":       { "src": "components/article-nav.json" },
+    "ArticleSection":   { "src": "components/article-section.json" },
+    "ClosingStatement": { "src": "components/closing-statement.json" },
+    "CTASection":       { "src": "components/cta-section.json" },
+    "FutureSlot":       { "src": "components/future-slot.json" }
+  }
+}

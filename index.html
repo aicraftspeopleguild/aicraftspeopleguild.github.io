@@ -906,16 +906,17 @@
     <header>
         <nav class="top-nav" aria-label="Primary">
             <a href="#manifesto">Manifesto</a>
-            <a href="white-papers.html">White Papers</a>
-            <a href="ai-rituals.html">AI Rituals</a>
-            <a href="flywheel.html">Flywheel</a>
-            <a href="showcases.html">Showcases</a>
-            <a href="members.html">Members</a>
-            <a href="hall-of-fame.html">Hall of Fame</a>
-            <a href="hall-of-shame.html">Hall of Shame</a>
-            <a href="mission-statement.html">Mission Statement</a>
-            <a href="charter.html">Charter</a>
-            <a href="code-of-conduct.html">Conduct</a>
+            <a href="guild/web/white-papers.html">White Papers</a>
+            <a href="guild/web/ai-rituals.html">AI Rituals</a>
+            <a href="guild/web/mob-programming.html">Mob Programming</a>
+            <a href="guild/web/flywheel.html">Flywheel</a>
+            <a href="guild/web/showcases.html">Showcases</a>
+            <a href="guild/web/members.html">Members</a>
+            <a href="guild/web/hall-of-fame.html">Hall of Fame</a>
+            <a href="guild/web/hall-of-shame.html">Hall of Shame</a>
+            <a href="guild/web/mission-statement.html">Mission Statement</a>
+            <a href="guild/web/charter.html">Charter</a>
+            <a href="guild/web/code-of-conduct.html">Conduct</a>
         </nav>
         <div class="guild-mark">
             <div class="emblem">⚒ ACG ⚒</div>
@@ -976,7 +977,7 @@
                     </p>
                 </div>
 
-                <a href="aicraftspeopleguild-manifesto.html" class="manifesto-card manifesto-card-link">
+                <a href="guild/web/aicraftspeopleguild-manifesto.html" class="manifesto-card manifesto-card-link">
                     <span class="icon">📜</span>
                     <h3>Read Full Manifesto</h3>
                     <p>
@@ -1045,10 +1046,10 @@
                 <a href="#sign" class="btn btn-secondary">
                     <span>Sign the Manifesto</span>
                 </a>
-                <a href="aicraftspeopleguild-manifesto.html" class="btn btn-secondary">
+                <a href="guild/web/aicraftspeopleguild-manifesto.html" class="btn btn-secondary">
                     <span>Read Full Manifesto</span>
                 </a>
-                <a href="charter.html" class="btn btn-secondary">
+                <a href="guild/web/charter.html" class="btn btn-secondary">
                     <span>Read the Charter</span>
                 </a>
             </div>
@@ -1057,10 +1058,13 @@
         <section class="worship-zone">
             <h2>AI Craftspeople Guild is a worship free zone</h2>
             <figure>
-                <img src="worship-free-zone.png" alt="AI Craftspeople Guild is a worship free zone">
+                <img src="guild/web/assets/worship-free-zone.png" alt="AI Craftspeople Guild is a worship free zone">
             </figure>
         </section>
     </main>
+
+    <!-- Dynamic renderer mount point (hidden when static content present) -->
+    <div id="app" style="display:none;"></div>
 
     <footer>
         <p>AI Craftspeople Guild (ACG)</p>
@@ -1070,8 +1074,8 @@
             <span>github.com/aicraftspeopleguild</span>
         </a>
         <div class="footer-links">
-            <a href="charter.html">Charter</a>
-            <a href="code-of-conduct.html">Code of Conduct</a>
+            <a href="guild/web/charter.html">Charter</a>
+            <a href="guild/web/code-of-conduct.html">Code of Conduct</a>
         </div>
         <p style="margin-top: 2rem; font-size: 0.85rem;">
             © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
@@ -1246,6 +1250,23 @@
                 }
             });
         });
+    </script>
+
+    <!-- ACG View Renderer — progressive enhancement -->
+    <!-- Loads site-map.json and component registry, enables SPA navigation -->
+    <script src="guild/web/renderer.js"></script>
+    <script>
+        // The renderer enhances index.html with dynamic routing.
+        // All static HTML pages remain functional without JS.
+        if (typeof ACGRenderer !== 'undefined') {
+            ACGRenderer.init({
+                siteMap:    'guild/web/site-map.json',
+                components: 'guild/web/components/registry.json',
+                mountPoint: '#app',
+                basePath:   '/',
+                analyticsId:'G-Z1CEF69ZSH'
+            });
+        }
     </script>
 </body>
 </html>

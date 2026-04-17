@@ -1,0 +1,67 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "white-paper-index",
+    "description": "White papers listing page with card grid",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "White Papers",
+        "subtitle": "{{ page.subtitle }}",
+        "bodyClass": "page-white-papers",
+        "stylesheets": ["style/main.css"],
+        "backHref": "../../index.html",
+        "backLabel": "Back to Home"
+      },
+      "children": [
+        {
+          "type": "IntroPanel",
+          "props": { "content": "{{ page.intro }}" }
+        },
+        {
+          "type": "CardGrid",
+          "props": {
+            "heading": "Available Papers",
+            "subheading": "{{ page.grid_subheading }}",
+            "gridClass": "papers-grid",
+            "shellClass": "papers-shell"
+          },
+          "repeat": {
+            "source": "papers",
+            "as": "paper",
+            "template": {
+              "type": "PaperCard",
+              "props": {
+                "title": "{{ paper.parameters.title }}",
+                "authors": "{{ paper.parameters.authors }}",
+                "date": "{{ paper.parameters.publication_date }}",
+                "docNumber": "{{ paper.parameters.doc_number }}",
+                "summary": "{{ paper.parameters.summary }}",
+                "href": "{{ paper.parameters.site_href }}",
+                "status": "{{ paper.parameters.status }}",
+                "tags": "{{ paper.parameters.tags }}"
+              }
+            }
+          }
+        },
+        {
+          "type": "CTASection",
+          "props": {
+            "heading": "Contribute a Paper",
+            "description": "Drop a Markdown or CSV file in white-papers/originals/ and run the ingest pipeline.",
+            "primaryText": "Back to White Papers",
+            "primaryHref": "#",
+            "secondaryText": "Back to Home",
+            "secondaryHref": "../../index.html"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "white-paper-index",
+    "component_ids": ["page-shell", "intro-panel", "card-grid", "paper-card", "cta-section"],
+    "data_sources": ["white-papers/index.json"],
+    "schema_version": "1.0.0"
+  }
+}

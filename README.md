@@ -10,6 +10,10 @@
 
 ---
 
+<div align="center"><img src="terminal.svg" alt="ACG CLI terminal demo" width="720"/></div>
+
+---
+
 ## ▣ STATUS BOARD
 
 **`REPO`**  

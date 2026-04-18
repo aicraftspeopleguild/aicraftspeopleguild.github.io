@@ -9,15 +9,26 @@ SCADA-instrumented chat mesh — as a Guild app under `guild/apps/p2p/`.
 
 | Path        | Purpose                                          |
 |-------------|--------------------------------------------------|
-| `index.html` + `index/` | Entry point: P2P chat landing          |
-| `controls/` | ISA-95 controls architecture for the app         |
-| `controls/db/tags.json`     | Live runtime tag database        |
-| `controls/docs/standards/konomi/` | Konomi standards (already imported at repo `docs/templates/konomi/`) |
-| `controls/hmi/`   | Human-Machine Interface templates          |
-| `controls/scada/` | SCADA gateway, errors, providers           |
-| `controls/plc/`   | Programmable logic                         |
-| `controls/sandbox/` | Experiments (web-llm, etc.)              |
-| `.github/`  | Upstream's own CI — inert here (not root)        |
+| `index.html` + `index/` | Entry point: P2P chat landing + subsystem sitemap |
+
+The control-plane (SCADA, HMI, PLC, DB, sandbox, docs) that used to live
+under `guild/apps/p2p/controls/` was moved to
+[`guild/Enterprise/controls/`](../../Enterprise/controls/) so it can be
+shared across Guild apps. See [`guild/Enterprise/README.md`](../../Enterprise/README.md)
+for the ISA-95 level mapping of those assets.
+
+## Cross-tree wiring
+
+After the move, this app's pages reach the controls tree at
+`../../Enterprise/controls/…`. Updated references live in:
+
+- `index.html` — landing cards + script imports
+- `index/index.html` — sitemap (`ctrlRoot` constant)
+- `index/renderer.js` — `mesh-bridge.js` import + `SHELL_LINKS[0].href`
+
+`guild/Enterprise/controls/index.html` and `controls/db/index.html`
+reach back to this app via relative `../../apps/p2p/` links for the
+"⚒ mesh" home shortcut.
 
 ## Relation to the main Guild site
 
@@ -25,9 +36,8 @@ SCADA-instrumented chat mesh — as a Guild app under `guild/apps/p2p/`.
   under `/guild/apps/p2p/` on GitHub Pages
 - **Shares Konomi**: both use Konomi base primitives (Value, Quality,
   Timestamp, …). Upstream repo is the source of truth for Konomi
-- **Shares ISA-95 ethos**: ACGP2P is an L0–L4 controls stack of its
-  own, nested within our larger Guild enterprise (which treats this
-  app itself as an L4 ERP-catalogued asset)
+- **Shares ISA-95 controls**: now via `guild/Enterprise/controls/` rather
+  than a private copy
 
 ## Upstream sync
 
@@ -36,8 +46,12 @@ commit. To pull future changes:
 
 ```
 cd /tmp && git clone https://github.com/teslasolar/ACGP2P.git
-cp -r /tmp/ACGP2P/. /path/to/aicraftspeopleguild.github.io/guild/apps/p2p/
-rm -rf /path/to/aicraftspeopleguild.github.io/guild/apps/p2p/.git
+# copy app-shell pieces:
+cp -r /tmp/ACGP2P/index.html      /path/to/repo/guild/apps/p2p/
+cp -r /tmp/ACGP2P/index/          /path/to/repo/guild/apps/p2p/
+# copy controls into the Enterprise layer:
+cp -r /tmp/ACGP2P/controls/.      /path/to/repo/guild/Enterprise/controls/
+# re-apply the path fixes documented in the "Cross-tree wiring" section.
 ```
 
 Consider a future submodule or subtree merge when upstream stabilizes.
@@ -47,3 +61,15 @@ Consider a future submodule or subtree merge when upstream stabilizes.
 See `guild/apps/p2p/acg-app.json` for the App UDT instance that
 registers this app in the Guild catalog, and
 `guild/web/components/udts/instances/paths/p2p.json` for the route.
+
+## Known stale references
+
+The following files still reference the old `controls/…` path as
+documentation (not runtime-critical):
+
+- `index/README.md` — example path strings in prose
+- `index/docks/*.template.html` — reference-shape template documents
+- `index/page.template.html` — reference-shape template document
+
+Update these opportunistically; they do not affect runtime.
+

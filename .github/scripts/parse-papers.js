@@ -42,10 +42,18 @@ const TAG_VOCABULARY = new Set([
   'triad-engine','toast','occam','indexing','white-papers'
 ]);
 
-// Skip these directories entirely
+// Skip these directories entirely. The Guild's own docs/engineering/standards
+// files carry acg-paper frontmatter and ARE meant to be indexed. But copies
+// of those standards (test fixtures, app snapshots, node_modules) must be
+// excluded so the validator doesn't see duplicate IDs.
 const SKIP_DIRS = new Set([
   '.git', 'node_modules', 'guild/web/dist', '__pycache__',
-  'guild/web/components/udts', 'guild/web/components/tags'
+  'guild/web/components/udts', 'guild/web/components/tags',
+  'guild/apps/test',         // test-app snapshots duplicate standard IDs
+  'guild/apps/p2p',          // p2p guild app (upstream ACGP2P snapshot)
+  'guild/Enterprise',        // controls tree (contains its own standards)
+  'guild/web/views/data',    // body content for route views
+  'guild/apps/whitepapers/data'
 ]);
 
 // ── File walking ────────────────────────────────────────────────

@@ -29,7 +29,7 @@ export const SUBSYSTEMS=[
 ];
 
 const SHELL_LINKS=[
-  {href:'',                                        label:'⚒ home'},
+  {href:'../apps/p2p/',                            label:'⚒ mesh'},
   {href:'controls/hmi/chat/',                      label:'💬 chat'},
   {href:'controls/scada/gateway/gateway-log.html', label:'⚠ log'},
   {href:'controls/scada/gateway/health.html',      label:'⚕ health'},

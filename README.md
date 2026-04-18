@@ -58,9 +58,15 @@
 ![apiVersion](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.identity.apiVersion.value&label=api&color=8d95a0&style=flat-square)
 ![latest paper](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.catalog.latestPaperTitle.value&label=latest+paper&color=c47a20&style=flat-square)
 
-**`DYNAMIC · GitHub-Issue tags`** — issue-body JSON read live via the terminal's `watch` command · SVG regenerated on every bump.
+**`DYNAMIC · GitHub-Issue tags`** — issue-body JSON read live via the terminal's `watch` command · SVG widgets regenerated on every bump.
 
 <a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L4/svg/heartbeat.svg" alt="💓 demo.heartbeat — click to open the terminal" width="720"/></a>
+
+<div align="center"><img src="guild/Enterprise/L4/svg/status-dashboard.svg" alt="Status dashboard · CATALOG · ENTERPRISE · PIPELINE · HEARTBEAT" width="960"/></div>
+
+<div align="center"><img src="guild/Enterprise/L4/svg/pipeline-pulse.svg" alt="Pipeline pulse · complete / aborted / sparkline / success rate" width="720"/></div>
+
+<div align="center"><img src="guild/Enterprise/L4/svg/tag-grid.svg" alt="Open GitHub-Issue tags grid" width="920"/></div>
 
 [![heartbeat](https://img.shields.io/github/issues-search?query=repo%3Ateslasolar%2Faicraftspeopleguild.github.io%20label%3Atag%20in%3Atitle%20%22tag%3Ademo.heartbeat%22&label=💓%20demo.heartbeat&color=1a5c4c&style=flat-square)](https://github.com/teslasolar/aicraftspeopleguild.github.io/issues?q=is:issue+label:tag+%22tag:demo.heartbeat%22)
 [![terminal-cmd](https://img.shields.io/github/issues-search?query=repo%3Ateslasolar%2Faicraftspeopleguild.github.io%20label%3Atag%20in%3Atitle%20%22tag%3Ademo.terminal-cmd%22&label=⌘%20demo.terminal-cmd&color=6f42c1&style=flat-square)](https://github.com/teslasolar/aicraftspeopleguild.github.io/issues?q=is:issue+label:tag+%22tag:demo.terminal-cmd%22)

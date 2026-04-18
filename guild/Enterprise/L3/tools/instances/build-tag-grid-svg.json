@@ -1,0 +1,16 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:tag-grid-svg",
+    "name": "Render tag-grid.svg",
+    "description": "Grid of every open GitHub-Issue tag. Each card shows path, latest value, pulse dot, and edit count. Regenerated on each heartbeat.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-tag-grid.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"svg","type":"file"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","tag","grid","render"]
+  },
+  "tags": { "id": "build-tag-grid-svg", "schema_version": "1.0.0" }
+}

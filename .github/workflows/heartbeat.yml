@@ -46,19 +46,23 @@ jobs:
           print(json.dumps(out, indent=2))
           PY
 
-      - name: Regenerate heartbeat SVG
+      - name: Regenerate live SVG widgets
         env:
           GH_TAG_REPO: ${{ github.repository }}
-        run: python guild/Enterprise/L4/svg/build-heartbeat.py
+        run: |
+          python guild/Enterprise/L4/svg/build-heartbeat.py
+          python guild/Enterprise/L4/svg/build-status-dashboard.py
+          python guild/Enterprise/L4/svg/build-tag-grid.py
+          python guild/Enterprise/L4/svg/build-pipeline-pulse.py
 
-      - name: Commit SVG if changed
+      - name: Commit SVG widgets if changed
         run: |
           git config user.name  "acg-heartbeat-bot"
           git config user.email "acg-heartbeat-bot@users.noreply.github.com"
-          git add guild/Enterprise/L4/svg/heartbeat.svg
+          git add guild/Enterprise/L4/svg/*.svg
           if git diff --cached --quiet; then
             echo "no SVG change"
           else
-            git commit -m "heartbeat: regenerate SVG frame"
+            git commit -m "heartbeat: regenerate SVG widget frames"
             git push
           fi

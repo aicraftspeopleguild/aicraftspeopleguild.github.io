@@ -3,7 +3,7 @@
   "parameters": {
     "path": "/submit",
     "label": "Submit an Article",
-    "page": "guild/web/submit/index.html",
+    "page": "guild/l1-sensing/forms/submit/index.html",
     "section": "meta",
     "parent": "home",
     "order": 90,
@@ -16,7 +16,7 @@
   },
   "tags": {
     "id": "submit",
-    "full_url": "https://aicraftspeopleguild.github.io/guild/web/submit/",
+    "full_url": "https://aicraftspeopleguild.github.io/guild/l1-sensing/forms/submit/",
     "children": [],
     "breadcrumb": ["home", "submit"],
     "depth": 1,

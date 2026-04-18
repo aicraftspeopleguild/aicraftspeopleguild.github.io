@@ -13,7 +13,9 @@ except ImportError:
                                ABORTING, ABORTED, HELD)
     from packml_checks import CheckFailed
 
-STATE_DIR = Path(__file__).resolve().parents[1] / "state"
+# File at guild/web/scripts/lib/packml_process.py
+# parents[0]=lib, parents[1]=scripts, parents[2]=web, parents[3]=guild
+STATE_DIR = Path(__file__).resolve().parents[3] / "l2-scada" / "state"
 
 def _now():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

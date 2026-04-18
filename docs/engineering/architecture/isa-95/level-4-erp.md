@@ -10,7 +10,7 @@
 | Membership roster | `guild/web/members/udts/instances/*.json` + Google Sheet signatories |
 | Paper catalog     | `guild/web/white-papers/udts/instances/*.json`   |
 | Governance        | Charter, Code of Conduct, Mission Statement      |
-| Public API        | `guild/web/api/{papers,members,health}.json`     |
+| Public API        | `guild/l4-erp/api/{papers,members,health}.json`     |
 | Taxonomy          | `guild/web/white-papers/tags/index.json`         |
 
 ## The Guild enterprise schema
@@ -18,7 +18,7 @@
 ERP data lives in two parallel forms:
 
 1. **UDT instances** — JSON files, git-versioned, source of truth.
-2. **SQLite mirror** — `guild/web/database/acg.db`, rebuilt from the JSON
+2. **SQLite mirror** — `guild/l4-erp/database/acg.db`, rebuilt from the JSON
    on every build. Supports queries, joins, reports.
 
 Tables:

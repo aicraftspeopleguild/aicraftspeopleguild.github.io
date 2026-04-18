@@ -14,7 +14,8 @@ from datetime import datetime, timezone
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent.parent
-STATE_DIR = HERE / "state"
+# State logs moved to L2 SCADA layer (ISA-95)
+STATE_DIR = HERE.parent.parent / "l2-scada" / "state"
 INSTANCES_DIR = HERE / "udts" / "instances"
 TAGS_DIR = HERE / "tags"
 TEMPLATE = HERE / "udts" / "templates" / "program.udt.json"

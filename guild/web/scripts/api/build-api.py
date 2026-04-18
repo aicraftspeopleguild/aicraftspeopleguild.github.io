@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build the static JSON API at guild/web/api/ from the SQLite database.
+Build the static JSON API at guild/l4-erp/api/ from the SQLite database.
 
 Endpoints produced:
   /api/papers.json   Paper[]   — UDT-shaped with id/type/title/author/date/tags/slug
@@ -17,8 +17,8 @@ from datetime import datetime, timezone
 HERE    = Path(__file__).resolve()
 SCRIPTS = HERE.parents[1]
 REPO    = HERE.parents[4]
-DB_LIB  = REPO / "guild" / "web" / "database" / "lib"
-API_DIR = REPO / "guild" / "web" / "api"
+DB_LIB  = REPO / "guild" / "l4-erp" / "database" / "lib"
+API_DIR = REPO / "guild" / "l4-erp" / "api"
 
 sys.path.insert(0, str(SCRIPTS / "lib"))
 sys.path.insert(0, str(DB_LIB))
@@ -126,7 +126,7 @@ def main():
 if __name__ == "__main__":
     with Process(
         "api--build-api_py",
-        pre_checks=[path_exists(REPO / "guild" / "web" / "database" / "acg.db")],
+        pre_checks=[path_exists(REPO / "guild" / "l4-erp" / "database" / "acg.db")],
         post_checks=[
             path_exists(API_DIR / "papers.json"),
             path_exists(API_DIR / "members.json"),

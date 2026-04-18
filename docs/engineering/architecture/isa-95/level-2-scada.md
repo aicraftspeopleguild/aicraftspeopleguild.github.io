@@ -22,7 +22,7 @@ See [ACG-TS-PackML](../../../standards/packml.md) for the full spec. Implementat
 ## State artefacts
 
 - `guild/web/scripts/state/<program>.state.json` — latest run per program
-- `guild/web/database/acg.db`, table `packml_runs` — full run history
+- `guild/l4-erp/database/acg.db`, table `packml_runs` — full run history
 
 Every run produces a `PackMLState` UDT instance with:
 - `run_id` (epoch + uuid shard)

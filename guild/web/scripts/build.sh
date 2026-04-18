@@ -41,7 +41,7 @@ node guild/web/scripts/perspective-build.js
 
 echo ""
 echo "[build] 9/11 Initialize SQLite database from UDT instances"
-python guild/web/database/init-db.py
+python guild/l4-erp/database/init-db.py
 
 echo ""
 echo "[build] 10/11 Build static JSON API (/api/*.json)"

@@ -36,7 +36,7 @@
           { "meta": { "name": "n10"}, "type": "acg.display.link", "props": { "href": "#/mission",         "text": "Mission Statement" } },
           { "meta": { "name": "n11"}, "type": "acg.display.link", "props": { "href": "#/charter",         "text": "Charter" } },
           { "meta": { "name": "n12"}, "type": "acg.display.link", "props": { "href": "#/code-of-conduct", "text": "Conduct" } },
-          { "meta": { "name": "n13"}, "type": "acg.display.link", "props": { "href": "guild/web/submit/", "text": "Submit" } }
+          { "meta": { "name": "n13"}, "type": "acg.display.link", "props": { "href": "guild/l1-sensing/forms/submit/", "text": "Submit" } }
         ]
       },
       { "meta": { "name": "Emblem",   "slot": "head" }, "type": "acg.display.emblem",  "props": { "text": "⚒ ACG ⚒" }, "children": [] },

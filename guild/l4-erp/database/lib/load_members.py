@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-INSTANCES = Path(__file__).resolve().parents[2] / "members" / "udts" / "instances"
+INSTANCES = Path(__file__).resolve().parents[3] / "web" / "members" / "udts" / "instances"
 
 def load(conn):
     conn.execute("DELETE FROM member_papers")

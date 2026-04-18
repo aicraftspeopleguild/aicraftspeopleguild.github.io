@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Initialize guild/web/database/acg.db from UDT instances.
+"""Initialize guild/l4-erp/database/acg.db from UDT instances.
 
 Creates (or refreshes) the schema, then seeds papers + members + programs +
 packml_runs from the canonical JSON source. Idempotent: running it again
 reloads from the latest instance files.
 
-Usage:  python guild/web/database/init-db.py
+Usage:  python guild/l4-erp/database/init-db.py
 """
 import sys
 from pathlib import Path

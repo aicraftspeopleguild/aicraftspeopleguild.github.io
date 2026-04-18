@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 140" width="720" height="140" role="img" aria-label="ACG heartbeat · 2026-04-18 09:03Z">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 140" width="720" height="140" role="img" aria-label="ACG heartbeat · 2026-04-18 09:22Z">
   <defs>
     <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#0d1117"/>
@@ -36,10 +36,10 @@
   </g>
 
   <text x="100" y="68" class="t em">💓</text>
-  <text x="146" y="68" class="t va">2026-04-18 09:03Z</text>
+  <text x="146" y="68" class="t va">2026-04-18 09:22Z</text>
 
   <text x="100" y="92" class="t lb">demo.heartbeat</text>
-  <text x="100" y="108" class="t lo">updated 2026-04-18T09:03:59Z</text>
+  <text x="100" y="108" class="t lo">updated 2026-04-18T09:22:29Z</text>
 
-  <text x="700" y="108" text-anchor="end" class="t lo">bumped at 2026-04-18T09:03:59.193356+00:00 by heartbeat work</text>
+  <text x="700" y="108" text-anchor="end" class="t lo">bumped at 2026-04-18T09:22:29.051428+00:00 by heartbeat work</text>
 </svg>

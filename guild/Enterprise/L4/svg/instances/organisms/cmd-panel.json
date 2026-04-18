@@ -1,0 +1,21 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "CmdPanel",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-cmd-panel.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/cmd-panel.svg",
+    "sources": ["issues/new pre-filled URLs"],
+    "trigger_tag": "demo.heartbeat",
+    "composes": ["Panel", "PulseDot", "WindowChrome"],
+    "size": { "w": 1016, "h": 250 },
+    "description": "Clickable README control panel. 6 buttons, each an anchor inside the SVG pointing at a pre-filled issues/new URL. Submitting the issue fires .github/workflows/cmd.yml which dispatches the matching action (bump heartbeat / rebuild SVGs / rebuild API / clear faults / write tag) and auto-closes with a receipt."
+  },
+  "tags": {
+    "id": "cmd-panel",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/cmd-panel.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/cmd-panel.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

@@ -14,6 +14,18 @@
 
 One SVG reads every public endpoint + `state.db` + the GitHub-Issue tag bus on every `demo.heartbeat` bump. The workflow regenerates and commits it back so the dashboard above stays current without a viewer-side script.
 
+### ⌨ cmd panel · click a button
+
+<div align="center"><img src="guild/Enterprise/L2/hmi/web/assets/svg/cmd-panel.svg" alt="ACG cmd panel · click to file a pre-filled issue that runs an action" width="1016"/></div>
+
+Each button is an `<a href>` inside the SVG pointing at a **pre-filled `issues/new` URL**. Click → GitHub opens the new-issue form with title/body/labels already set → click *Submit*. The [`cmd` workflow](.github/workflows/cmd.yml) catches the opened issue (must carry the `cmd` label), runs the matching action, comments the receipt back on the issue, and auto-closes it. Recognized cmds:
+
+- `cmd:bump-heartbeat` — fresh 💓 timestamp + dashboard rerender
+- `cmd:rebuild-svgs` — regenerate every SvgOrganism
+- `cmd:rebuild-api` — init-db + build-api + runtime-tags + state
+- `cmd:clear-faults` — clear every active fault in state.db
+- `cmd:tag-write path=... value=...` — update any gh-tag
+
 <details><summary>repo badges (GitHub-side stats)</summary>
 
 ![Pages](https://img.shields.io/github/deployments/aicraftspeopleguild/aicraftspeopleguild.github.io/github-pages?label=pages&color=1a5c4c&style=flat-square)

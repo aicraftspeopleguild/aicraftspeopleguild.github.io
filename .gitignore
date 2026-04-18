@@ -9,3 +9,7 @@ __pycache__/
 *.pyc
 node_modules/
 package-lock.json
+
+# SQLite databases (regenerable from UDT instances)
+guild/web/database/*.db
+guild/web/database/*.db-journal

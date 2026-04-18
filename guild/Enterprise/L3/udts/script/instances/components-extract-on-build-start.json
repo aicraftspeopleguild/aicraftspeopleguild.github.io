@@ -1,0 +1,29 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "components-extract-on-build-start",
+  "parameters": {
+    "id": "components-extract:on-build-start",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L3/scripts/components/extract.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "pipeline.build.status",
+    "listens_from": "IDLE",
+    "listens_to": "RUNNING",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [
+      "docs.engineering.component-catalog"
+    ],
+    "writes": [
+      "components.extracted.count",
+      "components.extracted.at"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

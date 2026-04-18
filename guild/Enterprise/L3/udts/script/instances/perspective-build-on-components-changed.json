@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "perspective-build-on-components-changed",
+  "parameters": {
+    "id": "perspective-build:on-components-changed",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L3/scripts/perspective-build.js",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "components.registry.changed",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "perspective.rebuilt_at"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

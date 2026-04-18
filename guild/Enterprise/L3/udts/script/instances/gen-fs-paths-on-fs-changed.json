@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "gen-fs-paths-on-fs-changed",
+  "parameters": {
+    "id": "gen-fs-paths:on-fs-changed",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L3/scripts/paths/gen-fs-paths.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "fs.structure.changed",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "fs.paths.rebuilt_at"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

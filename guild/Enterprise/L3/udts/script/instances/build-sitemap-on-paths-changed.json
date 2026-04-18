@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "build-sitemap-on-paths-changed",
+  "parameters": {
+    "id": "build-sitemap:on-paths-changed",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L4/api/scripts/build-sitemap.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "paths.graph.rebuilt_at",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "sitemap.xml.rebuilt_at"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

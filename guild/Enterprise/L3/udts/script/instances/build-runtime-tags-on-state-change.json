@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "build-runtime-tags-on-state-change",
+  "parameters": {
+    "id": "build-runtime-tags:on-state-change",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L4/api/scripts/build-runtime-tags.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "state.db.updated",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "runtime.tags.json.rebuilt_at"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

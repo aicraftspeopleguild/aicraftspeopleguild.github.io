@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "split-udt-spec-on-docs-changed",
+  "parameters": {
+    "id": "split-udt-spec:on-docs-changed",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L3/scripts/docs/split-udt-spec.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "docs.engineering.tech-spec.changed",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "docs.udt-spec.split_at"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

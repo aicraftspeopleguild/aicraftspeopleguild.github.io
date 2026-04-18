@@ -79,6 +79,28 @@ async function loadInstance(udt, inst) {
     return { udtType: udt, instance: inst, parameters: {} };
   }
 }
+async function loadInstanceIndex(udt) {
+  try {
+    return await fetch(`${TPL_BASE}/${udt}/instances/_index.json`, { cache: 'no-store' }).then(r => r.json());
+  } catch {
+    return { instances: [] };
+  }
+}
+async function populateInstanceSelect(udt, selected) {
+  const sel = $('sel-inst');
+  const idx = await loadInstanceIndex(udt);
+  sel.innerHTML = '';
+  const items = idx.instances && idx.instances.length ? idx.instances : [{ slug: 'line-1', id: 'line-1' }];
+  for (const it of items) {
+    const o = document.createElement('option');
+    o.value = it.slug;
+    const label = it.name || it.id || it.slug;
+    o.textContent = label.length > 48 ? label.slice(0, 46) + '…' : label;
+    if (it.slug === selected) o.selected = true;
+    sel.appendChild(o);
+  }
+  if (!sel.value && items[0]) sel.value = items[0].slug;
+}
 
 // ─── form renderer ───────────────────────────────────────────────────
 const state = {
@@ -220,9 +242,9 @@ async function boot() {
 
   const q = new URLSearchParams(location.hash.slice(1));
   const udtName = q.get('udt') || $('sel-udt').value;
-  const inst = q.get('instance') || $('sel-inst').value;
   $('sel-udt').value = udtName;
-  $('sel-inst').value = inst;
+  await populateInstanceSelect(udtName, q.get('instance'));
+  const inst = $('sel-inst').value;
 
   try {
     state.udt = await loadTemplate(udtName);

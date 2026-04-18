@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "test-browser-on-release-request",
+  "parameters": {
+    "id": "test-browser:on-release-request",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L3/scripts/test-browser.js",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "release.request",
+    "listens_from": "*",
+    "listens_to": "RAISED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "qa.browser.ok"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

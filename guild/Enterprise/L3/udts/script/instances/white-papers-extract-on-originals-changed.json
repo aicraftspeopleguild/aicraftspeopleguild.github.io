@@ -1,0 +1,27 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "white-papers-extract-on-originals-changed",
+  "parameters": {
+    "id": "white-papers-extract:on-originals-changed",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L3/scripts/white-papers/extract.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "white-papers.originals.changed",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "white-papers.extracted.at",
+      "papers.count"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

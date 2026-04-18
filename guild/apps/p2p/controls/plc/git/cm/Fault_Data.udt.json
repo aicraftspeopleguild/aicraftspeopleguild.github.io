@@ -1,0 +1,15 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Fault_Data",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "active", "type": "BOOL"},
+    {"name": "code", "type": "DINT"},
+    {"name": "msg", "type": "STRING", "length": 80},
+    {"name": "timestamp", "type": "DT"},
+    {"name": "ack", "type": "BOOL"},
+    {"name": "reset", "type": "BOOL"}
+  ],
+  "meta": {"desc": "Fault record for any control module"}
+}

@@ -1,0 +1,2 @@
+{"$schema":"konomi/std/v1","id":"KPI","scope":"operational performance metrics","version":"1.0.0",
+"meta":{"desc":"Standard manufacturing KPI definitions"}}

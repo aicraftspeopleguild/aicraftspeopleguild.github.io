@@ -1,0 +1,94 @@
+/* ═══ ACG · global theme tokens ═══
+ * Single source of truth for colours + type. Every page (main chat,
+ * sandbox launcher, sandbox tools) consumes these variables.
+ *
+ * Warm parchment / guild aesthetic — teal accent, amber/sage status,
+ * Source Serif for display, DM Sans for body, JetBrains Mono for code.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  /* surface */
+  --bg:#faf6f0;
+  --bg2:#f5ede0;
+  --card:#fff;
+  --inp:#faf6f0;
+  --bd:#e4ddd0;
+  --bd2:#ede8de;
+  --sh:rgba(40,30,15,.08);
+
+  /* ink */
+  --tx:#1a2332;
+  --dm:#5a6672;
+  --ft:#8d95a0;
+
+  /* accent family (teal · guild primary) */
+  --tl:#1a5c4c;
+  --tl2:#2d7a68;
+  --tlb:#e8f4f0;
+
+  /* status */
+  --sg:#4a8868;  --sgb:#e8f2ec;    /* sage / good       */
+  --am:#c47a20;  --amb:#fdf2e0;    /* amber / warning   */
+  --rs:#b85c5c;  --rsb:#fce8e8;    /* rose / error      */
+
+  /* mono (used by terminals, sha pills, code) */
+  --mono-bg:#1c2128;
+  --mono-bg2:#2d3138;
+  --mono-tx:#c9d1d9;
+  --mono-green:#7ee787;
+  --mono-blue:#79c0ff;
+  --mono-purple:#d2a8ff;
+  --mono-red:#f85149;
+  --mono-amber:#e3b341;
+
+  /* type */
+  --ff-display: 'Source Serif 4', Georgia, serif;
+  --ff-body:    'DM Sans', system-ui, -apple-system, sans-serif;
+  --ff-mono:    'JetBrains Mono', 'Fira Code', Menlo, monospace;
+
+  /* radius */
+  --r-sm:6px;
+  --r-md:10px;
+  --r-lg:14px;
+}
+
+html,body{font-family:var(--ff-body);color:var(--tx);background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0)}
+
+/* ═══ Auth drop-down ═══
+ * Consolidated identity panel — one <details> holding every auth
+ * sub-provider (webrtc · webtorrent · discord · github · google).
+ * Rendered by /controls/scada/gateway/scripts/auth.js paint().
+ */
+.auth-drop{position:relative;display:inline-block}
+.auth-drop[open]{z-index:50}
+.auth-sum{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--bd);border-radius:20px;background:var(--card);font-family:var(--ff-body);font-size:11px;font-weight:600;color:var(--tx);box-shadow:0 1px 3px var(--sh);user-select:none}
+.auth-sum::-webkit-details-marker{display:none}
+.auth-sum:hover{border-color:var(--tl);color:var(--tl)}
+.auth-drop[open] .auth-sum{border-color:var(--tl);background:var(--tlb);color:var(--tl)}
+.auth-sum img{width:20px;height:20px;border-radius:50%;border:1px solid var(--bd)}
+.auth-sum .auth-em{font-size:16px;line-height:1}
+.auth-sum .auth-caret{font-size:9px;color:var(--ft);margin-left:4px;transition:transform .12s ease}
+.auth-drop[open] .auth-sum .auth-caret{transform:rotate(180deg);color:var(--tl)}
+
+.auth-body{position:absolute;top:calc(100% + 6px);right:0;min-width:340px;max-width:420px;background:var(--card);border:1px solid var(--bd);border-radius:var(--r-md);box-shadow:0 4px 18px var(--sh);padding:8px;font-family:var(--ff-body);font-size:11px;color:var(--tx)}
+.auth-drop[open] .auth-body{animation:auth-fade .12s ease}
+@keyframes auth-fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+.auth-row{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-radius:var(--r-sm)}
+.auth-row:hover{background:var(--bg2)}
+.auth-row .auth-ic{font-size:18px;line-height:1;text-align:center}
+.auth-row .auth-lb strong{font-family:var(--ff-display);font-weight:600;color:var(--tx);font-size:12px;display:block;margin-bottom:1px}
+.auth-row .auth-st{color:var(--dm);font-size:10px;font-family:var(--ff-mono);word-break:break-all}
+.auth-row .auth-st code{font-family:var(--ff-mono);background:var(--bg);padding:1px 4px;border-radius:3px;color:var(--tl)}
+.auth-hr{height:1px;background:var(--bd2);margin:4px 0}
+
+.auth-btn{padding:5px 11px;border:1px solid var(--bd);border-radius:var(--r-sm);background:var(--inp);color:var(--dm);font-family:var(--ff-body);font-size:10px;font-weight:600;cursor:pointer;letter-spacing:.3px}
+.auth-btn:hover{border-color:var(--tl);color:var(--tl);background:var(--card)}
+.auth-btn[data-action="logout"]:hover{border-color:var(--rs);color:var(--rs)}
+
+.auth-pill{padding:2px 9px;border-radius:20px;font-family:var(--ff-mono);font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border:1px solid transparent}
+.auth-pill.ok {background:var(--sgb);color:var(--sg);border-color:rgba(74,136,104,.3)}
+.auth-pill.wrn{background:var(--amb);color:var(--am);border-color:rgba(196,122,32,.3)}
+.auth-pill.err{background:var(--rsb);color:var(--rs);border-color:rgba(184,92,92,.3)}
+.auth-pill.muted{background:var(--bg2);color:var(--ft)}

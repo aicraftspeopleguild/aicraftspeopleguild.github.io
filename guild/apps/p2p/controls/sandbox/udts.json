@@ -1,0 +1,40 @@
+{
+  "§": "S.UDT",
+  "🏗️": "🧪",
+  "name": "sandbox · UDTs",
+  "owner": "sandbox/provider.py",
+
+  "types": {
+    "MeshEnvelope": {
+      "fields": {
+        "source": "s",
+        "type":   "s",
+        "path":   "s?",
+        "value":  "any?",
+        "ts":     "ms"
+      },
+      "desc": "Canonical BroadcastChannel('acg-mesh') payload (§4)."
+    },
+    "Model": {
+      "fields": { "id":"s", "size":"i?", "loaded":"b", "loadedAt":"ms?", "progress":"i?", "status":"s?" }
+    },
+    "Engine": {
+      "fields": { "ready":"b", "generating":"b?", "streamedTokens":"i?", "lastLatencyMs":"i?" }
+    },
+    "Voice": {
+      "fields": { "micConnected":"b", "listening":"b", "rms":"f", "f0":"f", "energy":"f",
+                  "vowel":"e[oo|oh|ah|eh|ee]", "coherence":"f", "pulseRate":"f" }
+    },
+    "Emotion": {
+      "fields": { "dominant":"e[excitement|calm|anger|sadness|joy|curiosity]",
+                  "excitement":"f", "calm":"f", "anger":"f", "sadness":"f", "joy":"f", "curiosity":"f" }
+    },
+    "VFile":  { "fields": { "path":"s", "type":"e", "size":"i", "mtime":"ms" } },
+    "Commit": { "fields": { "id":"s7", "message":"s", "ts":"ms", "files":"i" } },
+    "ToolCall": {
+      "fields": { "name":"e[create_file|edit_file|patch_file|delete_file|read_file|list_files|search_files|commit|preview]",
+                  "args":"o", "ok":"b", "result":"any?", "ts":"ms" }
+    },
+    "ChatMsg": { "fields": { "role":"e[user|ai|system]", "len":"i", "ts":"ms", "emoTag":"s?" } }
+  }
+}

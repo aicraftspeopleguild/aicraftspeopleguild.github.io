@@ -1,0 +1,3 @@
+{"$schema":"konomi/udt/v1","name":"OPC_NodeClass","std":"OPC-UA","layer":6,"version":"1.0.0",
+"enum":["Object","ObjectType","Variable","VariableType","Method","View","DataType","ReferenceType"],
+"meta":{"desc":"OPC UA node classification"}}

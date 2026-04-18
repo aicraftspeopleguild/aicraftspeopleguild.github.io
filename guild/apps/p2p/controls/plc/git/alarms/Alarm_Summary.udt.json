@@ -1,0 +1,14 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Alarm_Summary",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "total_active", "type": "UDINT"},
+    {"name": "unacked", "type": "UDINT"},
+    {"name": "by_priority", "type": "UDINT", "array": true, "dims": [4], "desc": "P1..P4 counts"},
+    {"name": "most_recent", "type": "Alarm_Instance"},
+    {"name": "oldest_unacked", "type": "Alarm_Instance"}
+  ],
+  "meta": {"desc": "Aggregate alarm KPIs"}
+}

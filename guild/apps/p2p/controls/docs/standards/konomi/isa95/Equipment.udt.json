@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Equipment","std":"ISA-95","base":"PhysicalAsset","layer":2,"version":"1.0.0","fields":[
+{"n":"capability","t":"STRING","array":true},
+{"n":"state","t":"EquipmentState"},
+{"n":"mode","t":"EquipmentMode"}
+],"meta":{"desc":"Equipment asset with state + mode"}}

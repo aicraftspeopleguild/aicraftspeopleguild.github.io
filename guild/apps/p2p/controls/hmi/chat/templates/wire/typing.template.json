@@ -1,0 +1,14 @@
+{"$schema":"chat/wire/v1","t":"typing","glyph":"⌨",
+"fields":{
+"t":"\"typing\"",
+"id":"s20",
+"on":"b",
+"ts":"ms"
+},
+"required":["t","id","on","ts"],
+"example":{"t":"typing","id":"-ACG001-abcdef012345","on":true,"ts":1700000000500},
+"ttl":"3000ms — receivers MUST ignore envelopes older than 3s",
+"effect":[
+"receiver: peers.<id>.typing = on (with auto-reset after TTL)"
+],
+"meta":{"desc":"Transient 'typing…' indicator. Not persisted, not retried."}}

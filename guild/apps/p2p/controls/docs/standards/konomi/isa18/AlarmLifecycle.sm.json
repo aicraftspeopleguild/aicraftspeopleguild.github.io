@@ -1,0 +1,10 @@
+{"$schema":"konomi/state_machine/v1","name":"AlarmLifecycle","std":"ISA-18.2","layer":5,"version":"1.0.0",
+"states":["NORMAL","UNACK_ALARM","ACKED_ALARM","RTN_UNACK"],
+"initial":"NORMAL",
+"transitions":[
+{"from":"NORMAL","to":"UNACK_ALARM","trigger":"condition"},
+{"from":"UNACK_ALARM","to":"ACKED_ALARM","trigger":"ack"},
+{"from":"ACKED_ALARM","to":"NORMAL","trigger":"clear"},
+{"from":"UNACK_ALARM","to":"RTN_UNACK","trigger":"clear"},
+{"from":"RTN_UNACK","to":"NORMAL","trigger":"ack"}
+],"meta":{"desc":"ISA-18.2 alarm lifecycle"}}

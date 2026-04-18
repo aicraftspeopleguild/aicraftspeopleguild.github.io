@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"Trend","std":"ISA-101","layer":4,"version":"1.0.0","fields":[
+{"n":"tags","t":"STRUCT","array":true,"of":{"path":"PATH","color":"STRING","scale":"STRING","unit":"STRING"}},
+{"n":"timespan","t":"Duration"},
+{"n":"sample","t":"Duration"},
+{"n":"scales","t":"STRUCT","array":true,"of":{"tag":"STRING","min":"REAL","max":"REAL","auto":"BOOL"}}
+],"meta":{"desc":"Historical trend configuration"}}

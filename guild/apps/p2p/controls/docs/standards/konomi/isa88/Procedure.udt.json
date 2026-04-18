@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Procedure","std":"ISA-88","layer":3,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING"},
+{"n":"unit_procedures","t":"UnitProcedure","array":true},
+{"n":"ordering","t":"ENUM","values":["Sequential","Parallel","Mixed"]}
+],"meta":{"desc":"Top of procedural hierarchy"}}

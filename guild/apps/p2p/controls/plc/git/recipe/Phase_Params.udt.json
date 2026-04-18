@@ -1,0 +1,15 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Phase_Params",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "target_temp", "type": "REAL"},
+    {"name": "target_time", "type": "TIME"},
+    {"name": "target_level", "type": "REAL"},
+    {"name": "target_speed", "type": "REAL"},
+    {"name": "target_pressure", "type": "REAL"},
+    {"name": "custom", "type": "REAL", "array": true, "dims": [20]}
+  ],
+  "meta": {"desc": "Phase formula parameters"}
+}

@@ -1,0 +1,19 @@
+{
+  "§":"C.TAGS.template","🏗️":"💬",
+  "name":"<sub> · tag catalog (chat template)",
+  "owner":"<sub>/provider.py",
+  "namespaces":["<ns>","room","tracker","peers","signal"],
+  "tags":[
+    {"path":"<ns>.msgsIn", "type":"Counter","unit":"msgs"},
+    {"path":"<ns>.msgsOut","type":"Counter","unit":"msgs"},
+    {"path":"<ns>.lastMsgAt","type":"DateTime"},
+    {"path":"room.name","type":"String"},
+    {"path":"room.hash","type":"String"},
+    {"path":"room.peerCount","type":"Counter"},
+    {"path":"tracker.current","type":"UDT:Tracker"},
+    {"path":"tracker.state","type":"e[connecting|connected|reconnecting|failed|offline]"},
+    {"pathPattern":"peers.<peerId>","cardinality":"many","type":"UDT:Peer"},
+    {"path":"signal.offersIn","type":"Counter"},
+    {"path":"signal.answersOut","type":"Counter"}
+  ]
+}

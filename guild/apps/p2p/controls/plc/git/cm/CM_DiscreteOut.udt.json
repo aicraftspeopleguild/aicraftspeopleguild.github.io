@@ -1,0 +1,15 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "CM_DiscreteOut",
+  "vendor": null,
+  "base": "CM_Base",
+  "version": "1.0.0",
+  "fields": [
+    {"name": "cmd", "type": "BOOL"},
+    {"name": "fbk", "type": "BOOL"},
+    {"name": "fbk_time", "type": "TIME"},
+    {"name": "fail_to_state", "type": "BOOL"},
+    {"name": "output", "type": "BOOL", "dir": "out"}
+  ],
+  "meta": {"desc": "Digital output with optional feedback"}
+}

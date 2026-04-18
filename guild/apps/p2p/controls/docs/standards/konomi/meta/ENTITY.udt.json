@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"ENTITY","layer":0,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"udt","t":"STRING","desc":"references UDT"},
+{"n":"parent","t":"STRING","nullable":true},
+{"n":"children","t":"STRING","array":true},
+{"n":"tags","t":"MAP","of":"TAG_DEF","desc":"category → tag defs"}
+],"meta":{"desc":"Core standard object, instance of a UDT"}}

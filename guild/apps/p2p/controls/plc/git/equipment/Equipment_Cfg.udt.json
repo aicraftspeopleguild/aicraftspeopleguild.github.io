@@ -1,0 +1,17 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Equipment_Cfg",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "enabled", "type": "BOOL"},
+    {"name": "sim_mode", "type": "BOOL"},
+    {"name": "bypass_interlocks", "type": "BOOL"},
+    {"name": "auto_reset", "type": "BOOL"},
+    {"name": "timeouts.starting", "type": "TIME"},
+    {"name": "timeouts.stopping", "type": "TIME"},
+    {"name": "timeouts.aborting", "type": "TIME"},
+    {"name": "custom", "type": "ANY"}
+  ],
+  "meta": {"desc": "Configurable equipment parameters"}
+}

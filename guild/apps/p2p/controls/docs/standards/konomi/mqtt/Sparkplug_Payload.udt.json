@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Sparkplug_Payload","std":"MQTT+Sparkplug","layer":7,"version":"1.0.0","fields":[
+{"n":"timestamp","t":"ULINT"},
+{"n":"metrics","t":"STRUCT","array":true,"of":{"name":"STRING","alias":"ULINT","timestamp":"ULINT","datatype":"STRING","value":"ANY","properties":"MAP"}},
+{"n":"seq","t":"ULINT"}
+],"meta":{"desc":"Sparkplug B protobuf payload"}}

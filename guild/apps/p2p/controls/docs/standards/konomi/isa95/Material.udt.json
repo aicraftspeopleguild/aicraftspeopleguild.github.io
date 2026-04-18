@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"Material","std":"ISA-95","layer":2,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"name","t":"STRING"},
+{"n":"desc","t":"STRING"},
+{"n":"props","t":"MAP"},
+{"n":"lot","t":"STRING","nullable":true},
+{"n":"sublots","t":"REF","array":true}
+],"meta":{"desc":"Material / batch tracking object"}}

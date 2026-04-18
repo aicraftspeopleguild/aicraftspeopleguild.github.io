@@ -1,0 +1,19 @@
+{"$schema":"konomi/udt/v1","name":"Alarm","std":"ISA-18.2","layer":5,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"tag","t":"PATH"},
+{"n":"type","t":"ENUM","values":["HI","HIHI","LO","LOLO","DEV","ROG","DISC"]},
+{"n":"priority","t":"DINT","range":[1,4]},
+{"n":"state","t":"AlarmState"},
+{"n":"setpoint","t":"REAL"},
+{"n":"deadband","t":"REAL"},
+{"n":"delay","t":"Duration"},
+{"n":"message","t":"STRING"},
+{"n":"consequence","t":"STRING"},
+{"n":"response","t":"STRING"},
+{"n":"ts_in","t":"Timestamp"},
+{"n":"ts_ack","t":"Timestamp","nullable":true},
+{"n":"ts_out","t":"Timestamp","nullable":true},
+{"n":"ack_user","t":"STRING","nullable":true},
+{"n":"shelve_until","t":"Timestamp","nullable":true},
+{"n":"shelve_reason","t":"STRING","nullable":true}
+],"meta":{"desc":"Runtime alarm instance"}}

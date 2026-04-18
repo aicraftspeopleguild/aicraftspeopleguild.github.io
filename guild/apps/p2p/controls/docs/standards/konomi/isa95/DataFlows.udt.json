@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"DataFlows","std":"ISA-95","layer":2,"version":"1.0.0",
+"flows":{
+"L4->L3":["Schedule","MaterialDef","ProductDef","WorkOrder"],
+"L3->L4":["Performance","Inventory","Quality","Status"],
+"L3->L2":["Recipe","Setpoints","Commands","Schedule"],
+"L2->L3":["ProcessData","Events","Alarms","Batch"],
+"L2->L1":["Setpoints","Commands"],
+"L1->L2":["Measurements","Status","Alarms"]
+},"meta":{"desc":"Required information flows between ISA-95 levels"}}

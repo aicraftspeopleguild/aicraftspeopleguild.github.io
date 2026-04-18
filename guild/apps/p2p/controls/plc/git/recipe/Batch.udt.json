@@ -1,0 +1,15 @@
+{"$schema":"gitplc/udt/v1","name":"Batch","version":"1.0.0","fields":[
+{"name":"id","type":"UDINT"},
+{"name":"recipe_id","type":"STRING","length":40},
+{"name":"recipe_ver","type":"STRING","length":20},
+{"name":"product","type":"STRING","length":40},
+{"name":"lot","type":"STRING","length":40},
+{"name":"state","type":"Batch_State"},
+{"name":"times.create","type":"DT"},
+{"name":"times.start","type":"DT"},
+{"name":"times.end","type":"DT"},
+{"name":"unit_allocs","type":"STRUCT","array":true,"of":{"unit":"STRING","start":"DT","end":"DT"}},
+{"name":"phases","type":"Phase_Base","array":true},
+{"name":"params","type":"Batch_Params"},
+{"name":"report","type":"Batch_Report"}
+],"meta":{"desc":"S88 batch record"}}

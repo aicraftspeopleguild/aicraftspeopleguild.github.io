@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"OPC_Subscription","std":"OPC-UA","layer":6,"version":"1.0.0","fields":[
+{"n":"id","t":"UDINT"},
+{"n":"publishing_interval","t":"Duration"},
+{"n":"lifetime","t":"Duration"},
+{"n":"max_keepalive","t":"DINT"},
+{"n":"priority","t":"USINT"},
+{"n":"enabled","t":"BOOL"},
+{"n":"monitored_items","t":"OPC_MonitoredItem","array":true}
+],"meta":{"desc":"Client subscription context"}}

@@ -1,0 +1,6 @@
+{"$schema":"konomi/crosswalk/v1","from_std":"ISA-101","to_std":"ISA-18.2","version":"1.0.0",
+"maps":[
+{"from":"AlarmIndicator","to":"AlarmState","mapping":"semantic","note":"visual representation"},
+{"from":"ColorMeaning.Alarm","to":"Priority","mapping":"partial","note":"color-coded priority"},
+{"from":"L1-L5.AlarmSummary","to":"AlarmList","mapping":"partial","transform":"filter by area"}
+],"meta":{"desc":"HMI alarm indication ↔ alarm-management semantics"}}

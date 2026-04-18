@@ -1,0 +1,16 @@
+{"$schema":"chat/wire/v1","t":"ping","glyph":"📡","dir":"both",
+"fields":{
+"t":"\"ping\"",
+"id":"s20",
+"n":"i?",
+"ts":"ms"
+},
+"required":["t","id","ts"],
+"example":{"t":"ping","id":"-ACG001-abcdef012345","n":42,"ts":1700000001000},
+"cadence":"every 10s while channel open",
+"effect":[
+"receiver SHOULD reply with wire/ping (echo n+1)",
+"peers.<id>.lastSeen = ts",
+"peers.<id>.rttMs    = now - ts (on echo)"
+],
+"meta":{"desc":"Keepalive + RTT probe. Stateless, no user content."}}

@@ -1,0 +1,16 @@
+{"$schema":"gitplc/udt/v1","name":"Field","version":"1.0.0","kind":"meta","fields":[
+{"name":"name","type":"STRING"},
+{"name":"type","type":"TypeRef"},
+{"name":"offset_bits","type":"DINT"},
+{"name":"size_bits","type":"DINT"},
+{"name":"array_dims","type":"DINT","array":true,"nullable":true},
+{"name":"initial","type":"ANY","nullable":true},
+{"name":"attrs.retain","type":"BOOL"},
+{"name":"attrs.constant","type":"BOOL"},
+{"name":"attrs.persistent","type":"BOOL"},
+{"name":"attrs.opc_access","type":"ENUM","values":["RO","RW","WO","None"]},
+{"name":"attrs.eng_unit","type":"STRING","nullable":true},
+{"name":"attrs.eng_lo","type":"REAL","nullable":true},
+{"name":"attrs.eng_hi","type":"REAL","nullable":true},
+{"name":"attrs.desc","type":"STRING","nullable":true}
+],"meta":{"desc":"Structural field"}}

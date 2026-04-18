@@ -1,0 +1,18 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "PackML_Mode",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "current", "type": "DINT"},
+    {"name": "requested", "type": "DINT"}
+  ],
+  "enum": {
+    "1": "Production",
+    "2": "Maintenance",
+    "3": "Manual",
+    "4": "Auto",
+    "5": "SemiAuto"
+  },
+  "meta": {"desc": "PackML mode selection"}
+}

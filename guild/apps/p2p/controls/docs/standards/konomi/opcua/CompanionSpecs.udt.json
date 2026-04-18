@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"CompanionSpecs","std":"OPC-UA","layer":6,"version":"1.0.0",
+"specs":{
+"ISA-95":{"ns":"isa95","provides":["Equipment","Material","Personnel","Process"]},
+"PackML":{"ns":"packml","provides":["StateMachine","Admin","Status","Command"]},
+"MDIS":{"ns":"mdis","provides":["Subsea equipment"]},
+"PLCopen":{"ns":"plcopen","provides":["Motion control"]}
+},"meta":{"desc":"Registered OPC UA companion specifications"}}

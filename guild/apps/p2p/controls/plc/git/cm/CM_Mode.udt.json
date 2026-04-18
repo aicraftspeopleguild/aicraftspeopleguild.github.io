@@ -1,0 +1,15 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "CM_Mode",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "current", "type": "DINT"}
+  ],
+  "enum": {
+    "0": "OOS",
+    "1": "Manual",
+    "2": "Auto"
+  },
+  "meta": {"desc": "Operator mode of control module"}
+}

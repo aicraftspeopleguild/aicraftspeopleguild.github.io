@@ -1,0 +1,52 @@
+name: "🏷️ Tag update"
+description: "Write a single value into the ACG tag DB (controls/db/tags.json)."
+title: "🏷️ <tag.path> = <value>"
+labels: ["acg-db", "tag-update"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Records one tag write against the live plant.  The sync workflow
+        (`.github/workflows/sync-db.yml`) merges the body below into
+        `controls/db/tags.json` and commits to `main`.  Every badge on the README
+        that reads that path updates on the next deploy.
+
+        See `/controls/scada/gateway/providers/registry.json` for the owning provider of each namespace.
+
+  - type: input
+    id: path
+    attributes:
+      label: "Tag path"
+      description: "Dot-separated, e.g. `room.peerCount`, `errors.byLevel.ERROR.count`."
+      placeholder: "room.peerCount"
+    validations: { required: true }
+
+  - type: input
+    id: value
+    attributes:
+      label: "Value"
+      description: "JSON-encoded scalar or object (string, number, bool, null, or {…})."
+      placeholder: "7"
+    validations: { required: true }
+
+  - type: dropdown
+    id: quality
+    attributes:
+      label: "Quality"
+      options: ["good", "stale", "bad", "uncertain"]
+      default: 0
+    validations: { required: true }
+
+  - type: input
+    id: type
+    attributes:
+      label: "Type (optional)"
+      description: "Primitive (`Counter`, `DateTime`, `String`, `Boolean`) or `UDT:<Name>`."
+      placeholder: "Counter"
+
+  - type: textarea
+    id: note
+    attributes:
+      label: "Note"
+      description: "Why this write happened. Appears in the commit message."
+      placeholder: "manual override — tracker stuck in reconnecting"

@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"ProductionPerformance","std":"ISA-95","layer":2,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"schedule_ref","t":"REF"},
+{"n":"actual_start","t":"Timestamp"},
+{"n":"actual_end","t":"Timestamp"},
+{"n":"segments","t":"STRUCT","array":true,"of":{"ref":"REF","actual_duration":"Duration","actual_qty":"REAL","actual_params":"MAP"}},
+{"n":"kpis","t":"MAP"}
+],"meta":{"desc":"L2 → L3 actual production feedback"}}

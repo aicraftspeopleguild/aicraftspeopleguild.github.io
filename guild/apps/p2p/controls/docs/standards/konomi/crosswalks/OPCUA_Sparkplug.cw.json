@@ -1,0 +1,7 @@
+{"$schema":"konomi/crosswalk/v1","from_std":"OPC-UA","to_std":"Sparkplug","version":"1.0.0",
+"maps":[
+{"from":"Variable","to":"Metric","mapping":"exact"},
+{"from":"Subscription","to":"NDATA/DDATA","mapping":"semantic","transform":"publish on change"},
+{"from":"Method","to":"NCMD/DCMD","mapping":"semantic"},
+{"from":"AddressSpace","to":"NBIRTH","mapping":"semantic","transform":"enumerate metric list"}
+],"meta":{"desc":"OPC UA pull model ↔ Sparkplug push/pub-sub model"}}

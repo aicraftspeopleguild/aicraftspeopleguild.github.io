@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"UDT","layer":0,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"base","t":"STRING","nullable":true},
+{"n":"fields","t":"STRUCT","array":true,"of":{"name":"STRING","type":"STRING","unit":"STRING","range":"STRING","desc":"STRING"}},
+{"n":"methods","t":"STRUCT","array":true,"of":{"name":"STRING","params":"ANY","returns":"STRING","desc":"STRING"}},
+{"n":"constraints","t":"RULE","array":true}
+],"meta":{"desc":"User-defined type with fields, methods, constraints"}}

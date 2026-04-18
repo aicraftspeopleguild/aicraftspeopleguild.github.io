@@ -1,0 +1,8 @@
+{"$schema":"konomi/index/v1","name":"konomi-crosswalks","version":"1.0.0",
+"crosswalks":[
+"ISA95_ISA88.cw.json",
+"ISA95_OPCUA.cw.json",
+"ISA88_PackML.cw.json",
+"ISA101_ISA18.cw.json",
+"OPCUA_Sparkplug.cw.json"
+],"meta":{"desc":"All Konomi cross-standard mappings"}}

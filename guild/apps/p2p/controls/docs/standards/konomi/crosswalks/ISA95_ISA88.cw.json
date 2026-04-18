@@ -1,0 +1,7 @@
+{"$schema":"konomi/crosswalk/v1","from_std":"ISA-95","to_std":"ISA-88","version":"1.0.0",
+"maps":[
+{"from":"WorkCenter","to":"ProcessCell","mapping":"exact"},
+{"from":"WorkUnit","to":"Unit","mapping":"exact"},
+{"from":"ProcessSegment","to":"Operation","mapping":"exact"},
+{"from":"ProductionSchedule","to":"Batch","mapping":"semantic","transform":"instantiate"}
+],"meta":{"desc":"ISA-95 → ISA-88 equipment + work mapping"}}

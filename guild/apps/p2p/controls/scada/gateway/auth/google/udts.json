@@ -1,0 +1,31 @@
+{
+  "§":    "A.Go.UDT",
+  "🏗️":   "🔎",
+  "name": "auth.google · UDTs",
+  "owner":"auth/google/provider.py",
+
+  "types": {
+    "GoogleProfile": {
+      "fields": {
+        "provider":       "\"google\"",
+        "id":             "s",
+        "email":          "s",
+        "email_verified": "b",
+        "name":           "s",
+        "given_name":     "s?",
+        "family_name":    "s?",
+        "picture":        "s",
+        "locale":         "s?"
+      },
+      "desc": "Claims from the Google ID token payload (decoded JWT)."
+    },
+    "GoogleIdToken": {
+      "fields": {
+        "id_token":  "s",
+        "expiresAt": "ms",
+        "audience":  "s"
+      },
+      "desc": "OIDC id_token from response_type=id_token implicit flow.  Held in memory only — never persisted."
+    }
+  }
+}

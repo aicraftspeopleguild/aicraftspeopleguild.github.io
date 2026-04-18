@@ -1,0 +1,19 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Equipment_Sts",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "ready", "type": "BOOL"},
+    {"name": "running", "type": "BOOL"},
+    {"name": "done", "type": "BOOL"},
+    {"name": "faulted", "type": "BOOL"},
+    {"name": "warning", "type": "BOOL"},
+    {"name": "interlocked", "type": "BOOL"},
+    {"name": "interlock_reason", "type": "DINT"},
+    {"name": "runtime", "type": "TIME"},
+    {"name": "cycle_count", "type": "UDINT"},
+    {"name": "custom", "type": "BOOL", "array": true, "dims": [16]}
+  ],
+  "meta": {"desc": "Status reporting for equipment state"}
+}

@@ -1,0 +1,48 @@
+name: sync-db
+
+# Parses every `acg-db`-labelled issue and merges it into controls/db/tags.json.
+# Triggered on issue open / edit / label change.
+#
+# This is a stub — it currently only bumps _meta.updatedAt and appends a
+# short audit line to controls/db/README.md when an issue is opened.  The real merge
+# logic (parse body → set tag path) is a TODO; the workflow exists so the
+# permissions + trigger wiring are already approved when we fill it in.
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  sync:
+    if: contains(github.event.issue.labels.*.name, 'acg-db')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+
+      - name: Bump updatedAt
+        run: |
+          python3 - <<'PY'
+          import json, os, time
+          p = 'controls/db/tags.json'
+          d = json.load(open(p))
+          d.setdefault('_meta', {})['updatedAt'] = int(time.time() * 1000)
+          d['_meta']['lastIssue'] = int(os.environ['ISSUE_NUMBER'])
+          d['_meta']['lastIssueTitle'] = os.environ['ISSUE_TITLE']
+          json.dump(d, open(p, 'w'), indent=2)
+          PY
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE:  ${{ github.event.issue.title }}
+
+      - name: Commit + push
+        run: |
+          git config user.name  "acg-sync-bot"
+          git config user.email "acg-sync-bot@users.noreply.github.com"
+          git add controls/db/tags.json
+          git diff --cached --quiet || git commit -m "sync: #${{ github.event.issue.number }} · ${{ github.event.issue.title }}"
+          git push

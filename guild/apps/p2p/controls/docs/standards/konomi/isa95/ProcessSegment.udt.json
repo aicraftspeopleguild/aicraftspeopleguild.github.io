@@ -1,0 +1,10 @@
+{"$schema":"konomi/udt/v1","name":"ProcessSegment","std":"ISA-95","layer":2,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"name","t":"STRING"},
+{"n":"equipment","t":"REF","array":true},
+{"n":"personnel","t":"REF","array":true},
+{"n":"materials_in","t":"REF","array":true},
+{"n":"materials_out","t":"REF","array":true},
+{"n":"params","t":"STRUCT","array":true,"of":{"name":"STRING","value":"ANY","uom":"STRING"}},
+{"n":"duration","t":"Duration"}
+],"meta":{"desc":"Reusable unit of work"}}

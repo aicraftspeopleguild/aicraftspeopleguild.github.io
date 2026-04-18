@@ -1,0 +1,41 @@
+name: "⚠ Log entry"
+description: "Append an incident / warning / info note into errors.ring."
+title: "⚠ [<LEVEL>] <short message>"
+labels: ["acg-db", "log-entry"]
+body:
+  - type: dropdown
+    id: level
+    attributes:
+      label: "Level"
+      options: ["ERROR", "WARN", "INFO", "DEBUG"]
+      default: 0
+    validations: { required: true }
+
+  - type: input
+    id: logger
+    attributes:
+      label: "Logger"
+      description: "Module / source that produced this entry."
+      placeholder: "p2p"
+    validations: { required: true }
+
+  - type: input
+    id: message
+    attributes:
+      label: "Message"
+      placeholder: "tracker.openwebtorrent.com — WSS handshake failed"
+    validations: { required: true }
+
+  - type: textarea
+    id: stack
+    attributes:
+      label: "Stack / context (optional)"
+      render: shell
+
+  - type: textarea
+    id: meta
+    attributes:
+      label: "Meta (optional JSON)"
+      render: json
+      placeholder: |
+        { "url": "wss://tracker.openwebtorrent.com", "attempt": 3 }

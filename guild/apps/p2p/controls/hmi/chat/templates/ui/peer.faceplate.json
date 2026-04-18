@@ -1,0 +1,17 @@
+{"$schema":"hmi/faceplate/v1","name":"Peer_Faceplate","udt":"Peer","isaLayer":"L3","glyph":"👥",
+"binds":"peers.<peerId>",
+"reads":[
+{"tag":"name",       "label":"NM"},
+{"tag":"emoji",      "label":"EM"},
+{"tag":"state",      "label":"ST"},
+{"tag":"channels",   "label":"CH", "format":"0"},
+{"tag":"rttMs",      "label":"RT", "unit":"ms","format":"0"},
+{"tag":"lastSeen",   "label":"SEEN","format":"ago"}
+],
+"palette":["Running","Warning","Faulted","Transition"],
+"stateMap":{"open":"Running","reconnecting":"Transition","closed":"Faulted","stale":"Warning"},
+"commands":[
+{"cmd":"send-ping", "label":"PING","confirm":false},
+{"cmd":"disconnect","label":"DROP","confirm":true, "color":"Faulted"}
+],
+"meta":{"desc":"Single peer row. Drives the west-dock peer list on chat HMIs."}}

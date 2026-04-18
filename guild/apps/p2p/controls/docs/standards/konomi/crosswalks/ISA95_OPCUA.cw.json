@@ -1,0 +1,6 @@
+{"$schema":"konomi/crosswalk/v1","from_std":"ISA-95","to_std":"OPC-UA","version":"1.0.0",
+"maps":[
+{"from":"Equipment","to":"Object","mapping":"exact","transform":"ns=isa95"},
+{"from":"Property","to":"Variable","mapping":"exact"},
+{"from":"Capability","to":"Method","mapping":"exact"}
+],"meta":{"desc":"ISA-95 → OPC UA companion specification mapping"}}

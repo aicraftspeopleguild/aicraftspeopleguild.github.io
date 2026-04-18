@@ -1,0 +1,10 @@
+{"$schema":"hmi/layer/v1","id":"L3","name":"Unit","scope":"Equipment","glyph":"⚙️",
+"nav":["L2","L4"],
+"tiles":[
+{"kind":"faceplate","template":"motor.faceplate.json","bind":"<unit>.motor"},
+{"kind":"faceplate","template":"valve.faceplate.json","bind":"<unit>.valve"},
+{"kind":"faceplate","template":"analog.faceplate.json","bind":"<unit>.sensor"},
+{"kind":"faceplate","template":"pid.faceplate.json",   "bind":"<unit>.pid"}
+],
+"note":"Per-unit faceplate grid. Hosts all operator control actions. L4 drill-down for tuning/config.",
+"meta":{"desc":"L3 Unit — faceplate grid + primary control actions"}}

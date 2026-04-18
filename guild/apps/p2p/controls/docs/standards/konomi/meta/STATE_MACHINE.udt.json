@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"STATE_MACHINE","layer":0,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"states","t":"STRING","array":true},
+{"n":"initial","t":"STRING"},
+{"n":"transitions","t":"STRUCT","array":true,"of":{"from":"STRING","to":"STRING","trigger":"STRING","guard":"STRING","action":"STRING"}}
+],"meta":{"desc":"Named state machine with transitions"}}

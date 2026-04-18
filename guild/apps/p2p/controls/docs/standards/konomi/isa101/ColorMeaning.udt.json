@@ -1,0 +1,13 @@
+{"$schema":"konomi/udt/v1","name":"ColorMeaning","std":"ISA-101","layer":4,"version":"1.0.0",
+"palette":{
+"Normal":{"hex":"#808080","use":"default"},
+"Running":{"hex":"#00AA00","use":"active"},
+"Stopped":{"hex":"#404040","use":"inactive"},
+"Warning":{"hex":"#FFCC00","use":"attention"},
+"Alarm":{"hex":"#CC0000","use":"action required"},
+"Fault":{"hex":"#CC0000","use":"equipment fault"},
+"Maint":{"hex":"#0066CC","use":"out of service"},
+"Disabled":{"hex":"#808080","use":"n/a"},
+"Manual":{"hex":"#FF6600","use":"manual"},
+"Transition":{"hex":"#00CCCC","use":"changing"}
+},"meta":{"desc":"ISA-101 semantic color palette"}}

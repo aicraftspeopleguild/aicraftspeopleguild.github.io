@@ -1,0 +1,77 @@
+{
+  "$schema": "gitplc/index/v1",
+  "name": "gitplc-templates",
+  "version": "1.0.0",
+  "description": "GitPLC UDT template library - vendor-agnostic PLC namespace",
+  "layers": {
+    "0_meta": [
+      "meta/GitPLC_Type.udt.json",
+      "meta/Field.udt.json",
+      "meta/TypeRef.udt.json",
+      "meta/Method.udt.json"
+    ],
+    "2_equipment": [
+      "equipment/Equipment.udt.json",
+      "equipment/PackML_State.udt.json",
+      "equipment/PackML_Mode.udt.json",
+      "equipment/Equipment_Cmd.udt.json",
+      "equipment/Equipment_Sts.udt.json",
+      "equipment/Equipment_Cfg.udt.json",
+      "equipment/Equipment_HMI.udt.json"
+    ],
+    "3_cm": [
+      "cm/CM_Base.udt.json",
+      "cm/CM_State.udt.json",
+      "cm/CM_Mode.udt.json",
+      "cm/Fault_Data.udt.json",
+      "cm/Sim_Data.udt.json",
+      "cm/CM_DiscreteIn.udt.json",
+      "cm/CM_DiscreteOut.udt.json",
+      "cm/CM_AnalogIn.udt.json",
+      "cm/CM_AnalogOut.udt.json",
+      "cm/CM_Motor.udt.json",
+      "cm/CM_Valve.udt.json",
+      "cm/CM_VFD.udt.json",
+      "cm/CM_PID.udt.json"
+    ],
+    "4_alarms": [
+      "alarms/Alarm_SP.udt.json",
+      "alarms/Alarm_Instance.udt.json",
+      "alarms/Alarm_State.udt.json",
+      "alarms/Alarm_Summary.udt.json"
+    ],
+    "5_recipe": [
+      "recipe/Phase_Base.udt.json",
+      "recipe/Phase_State.udt.json",
+      "recipe/Phase_Params.udt.json",
+      "recipe/Phase_Report.udt.json",
+      "recipe/Batch.udt.json",
+      "recipe/Batch_State.udt.json",
+      "recipe/Batch_Params.udt.json",
+      "recipe/Batch_Report.udt.json"
+    ],
+    "6_io": [
+      "io/IO_Card.udt.json",
+      "io/IO_Status.udt.json",
+      "io/IO_Config.udt.json",
+      "io/IO_Point.udt.json",
+      "io/IO_Map.udt.json"
+    ],
+    "config": [
+      "config/config.json",
+      "config/vendor-map.json"
+    ]
+  },
+  "agents": {
+    "alpha":   "parse vendor -> UDT",
+    "beta":    "gen UDT -> vendor",
+    "gamma":   "diff ver <-> ver",
+    "delta":   "merge branch -> main",
+    "epsilon": "validate UDT -> ISA",
+    "zeta":    "map addr <-> tag",
+    "eta":     "sim UDT -> emulate",
+    "theta":   "sync git <-> PLC",
+    "iota":    "convert format <-> format",
+    "kappa":   "doc UDT -> human"
+  }
+}

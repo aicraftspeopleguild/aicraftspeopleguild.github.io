@@ -1,0 +1,13 @@
+{"$schema":"konomi/udt/v1","name":"Agents","std":"GitPLC","version":"1.0.0",
+"agents":{
+"alpha":"Parse(vendor → UDT)",
+"beta":"Gen(UDT → vendor)",
+"gamma":"Diff(ver ↔ ver)",
+"delta":"Merge(branch → main)",
+"epsilon":"Validate(UDT → ISA)",
+"zeta":"Map(addr → tag)",
+"eta":"Sim(UDT → emulate)",
+"theta":"Sync(git ↔ PLC)",
+"iota":"Convert(format ↔ format)",
+"kappa":"Doc(UDT → human)"
+},"meta":{"desc":"Agent roles in GitPLC pipeline"}}

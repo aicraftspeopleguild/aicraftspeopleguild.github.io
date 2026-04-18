@@ -1,0 +1,12 @@
+{"$schema":"hmi/layer/v1","id":"L1","name":"Overview","scope":"Plant/Site","glyph":"🗺",
+"nav":["L2"],
+"tiles":[
+{"kind":"badge","template":"alarm.badge.json"},
+{"kind":"kpi",  "tag":"scada.uptime",          "label":"UP"},
+{"kind":"kpi",  "tag":"room.peerCount",        "label":"PEERS"},
+{"kind":"kpi",  "tag":"chat.msgsIn",           "label":"MSG↓"},
+{"kind":"kpi",  "tag":"chat.msgsOut",          "label":"MSG↑"},
+{"kind":"trend","tag":"room.peerCount","span":"1h","sample":"10s"}
+],
+"note":"Top-level plant overview. No direct control actions here — drill into L2/L3 to act.",
+"meta":{"desc":"L1 Overview — KPIs, alarm summary, site-level trends"}}

@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"AddressSpace","std":"OPC-UA","layer":6,"version":"1.0.0",
+"roots":{
+"Objects":["Server","DeviceSet","Aliases"],
+"Types":["ObjectTypes","VariableTypes","DataTypes","ReferenceTypes"],
+"Views":["Engineering","Operations","Maintenance"]
+},"meta":{"desc":"Standard OPC UA address-space roots"}}

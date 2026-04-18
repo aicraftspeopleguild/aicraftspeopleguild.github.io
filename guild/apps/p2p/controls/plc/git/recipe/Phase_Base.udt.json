@@ -1,0 +1,21 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Phase_Base",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "id", "type": "DINT"},
+    {"name": "name", "type": "STRING", "length": 40},
+    {"name": "state", "type": "Phase_State"},
+    {"name": "owner", "type": "UDINT", "desc": "batch id"},
+    {"name": "unit", "type": "STRING", "length": 40},
+    {"name": "step", "type": "DINT"},
+    {"name": "params", "type": "Phase_Params"},
+    {"name": "report", "type": "Phase_Report"},
+    {"name": "times.start", "type": "DT"},
+    {"name": "times.end", "type": "DT"},
+    {"name": "times.running", "type": "TIME"},
+    {"name": "times.held", "type": "TIME"}
+  ],
+  "meta": {"desc": "S88 phase base class"}
+}

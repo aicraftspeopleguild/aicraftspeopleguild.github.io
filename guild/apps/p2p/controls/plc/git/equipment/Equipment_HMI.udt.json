@@ -1,0 +1,14 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Equipment_HMI",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "visible", "type": "BOOL"},
+    {"name": "faceplate_id", "type": "STRING", "length": 40},
+    {"name": "color_override", "type": "DINT"},
+    {"name": "blink", "type": "BOOL"},
+    {"name": "nav_target", "type": "STRING", "length": 40}
+  ],
+  "meta": {"desc": "HMI presentation hooks for equipment"}
+}

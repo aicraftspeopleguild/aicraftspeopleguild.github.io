@@ -1,0 +1,12 @@
+{"$schema":"konomi/udt/v1","name":"ExceptionCodes","std":"Modbus","layer":8,"version":"1.0.0",
+"codes":{
+"01":"Illegal Function",
+"02":"Illegal Address",
+"03":"Illegal Value",
+"04":"Device Fail",
+"05":"Ack",
+"06":"Busy",
+"08":"Parity",
+"0A":"Gateway Path",
+"0B":"Gateway Target"
+},"meta":{"desc":"Modbus exception response codes"}}

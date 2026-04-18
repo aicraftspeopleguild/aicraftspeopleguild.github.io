@@ -1,0 +1,24 @@
+{
+  "§":"H.UDT.template","🏗️":"🖼",
+  "name":"<subsystem> · UDTs (HMI template)",
+  "owner":"<subsystem>/provider.py",
+  "note":"Pre-filled /index/udt.template — HMI consumers.",
+  "types":{
+    "<ComponentType>":{
+      "glyph":"<🎚|🔘|📊>",
+      "extends":"<CM_Base|none>",
+      "fields":{
+        "tag":"s","title":"s",
+        "pv":"f|b|s","sp":"f?",
+        "state":"e[Normal|Running|Stopped|Warning|Alarm|Fault|Maint|Manual]",
+        "mode":"e[OOS|Manual|Auto]","alarm":"b","ts":"ms"
+      },
+      "desc":"HMI component. state MUST map to <ns>.palette.<state>."
+    },
+    "<BadgeType>":{
+      "glyph":"<🟢|🟡|🔴>",
+      "fields":{"label":"s","value":"s|i|f","state":"e","priority":"i[1..4]?"},
+      "desc":"Single-tag readout used in L1 tiles."
+    }
+  }
+}

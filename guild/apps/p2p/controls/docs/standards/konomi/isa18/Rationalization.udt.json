@@ -1,0 +1,10 @@
+{"$schema":"konomi/udt/v1","name":"Rationalization","std":"ISA-18.2","layer":5,"version":"1.0.0",
+"rules":{
+"R1":"every alarm must be documented",
+"R2":"every alarm must have unique response",
+"R3":"every alarm must be actionable",
+"R4":"priority based on consequence + response_time",
+"R5":"no duplicate alarms for same condition",
+"R6":"review frequency: annual minimum",
+"R7":"metrics: alarms/hr < 6 avg, < 12 peak, no floods > 10/10min"
+},"meta":{"desc":"Alarm rationalization rule set"}}

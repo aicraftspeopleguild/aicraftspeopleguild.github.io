@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"CycleTime","std":"KPI","layer":9,"version":"1.0.0","fields":[
+{"n":"ideal","t":"Duration"},
+{"n":"actual","t":"Duration"},
+{"n":"efficiency","t":"PCT","formula":"ideal / actual"}
+],"meta":{"desc":"Cycle-time efficiency ratio"}}

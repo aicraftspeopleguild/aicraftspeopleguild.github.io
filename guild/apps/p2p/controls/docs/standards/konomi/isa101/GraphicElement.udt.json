@@ -1,0 +1,13 @@
+{"$schema":"konomi/udt/v1","name":"GraphicElement","std":"ISA-101","layer":4,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING"},
+{"n":"type","t":"ENUM","values":["Tank","Valve","Pump","Motor","Conveyor","Pipe","Sensor","Other"]},
+{"n":"tags.pv","t":"TAG"},
+{"n":"tags.sp","t":"TAG"},
+{"n":"tags.cmd","t":"TAG"},
+{"n":"tags.sts","t":"TAG"},
+{"n":"tags.mode","t":"TAG"},
+{"n":"states","t":"STRING","array":true},
+{"n":"appearance.shape","t":"STRING"},
+{"n":"appearance.size","t":"STRING"},
+{"n":"appearance.orientation","t":"STRING"}
+],"meta":{"desc":"Tag-bound HMI graphic element"}}

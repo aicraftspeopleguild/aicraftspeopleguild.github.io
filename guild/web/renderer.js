@@ -344,8 +344,9 @@ const ACGRenderer = (function () {
           dataCtx[dataKeys[d]] = results[d + 1];
         }
 
-        // Load required components, then render
-        return loadComponents(view.tags.component_ids || []).then(function () {
+        // Load all registered components (upfront — no per-view lookup).
+        // The first call fills _componentCache; subsequent calls no-op.
+        return loadAllComponents().then(function () {
           renderView(view, dataCtx);
         });
       });
@@ -355,26 +356,21 @@ const ACGRenderer = (function () {
     });
   }
 
-  function loadComponents(componentIds) {
+  /** Load all components from the registry into _componentCache keyed by
+   *  PascalCase name (same key used in view nodes' `type` field). Idempotent. */
+  function loadAllComponents() {
+    var keys = Object.keys(_registry);
     var fetches = [];
-    for (var i = 0; i < componentIds.length; i++) {
-      var id = componentIds[i];
-      if (_componentCache[id]) continue;
-
-      // Find in registry by matching id to PascalCase name
-      var keys = Object.keys(_registry);
-      for (var k = 0; k < keys.length; k++) {
-        var regId = keys[k].replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '');
-        if (regId === id && !_componentCache[keys[k]]) {
-          (function (name, src) {
-            fetches.push(
-              fetchJSON((_siteMap.base || '') + src).then(function (comp) {
-                _componentCache[name] = comp;
-              })
-            );
-          })(keys[k], _registry[keys[k]].src);
-        }
-      }
+    for (var k = 0; k < keys.length; k++) {
+      var name = keys[k];
+      if (_componentCache[name]) continue;
+      (function (name, src) {
+        fetches.push(
+          fetchJSON((_siteMap.base || '') + src).then(function (comp) {
+            _componentCache[name] = comp;
+          })
+        );
+      })(name, _registry[name].src);
     }
     return fetches.length > 0 ? Promise.all(fetches) : Promise.resolve();
   }

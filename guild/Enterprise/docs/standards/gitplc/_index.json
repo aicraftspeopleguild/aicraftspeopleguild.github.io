@@ -1,0 +1,12 @@
+{"$schema":"konomi/index/v1","std":"GitPLC","version":"1.0.0",
+"descriptors":[
+"_std.json",
+"Agents.udt.json",
+"Layers.udt.json",
+"Converters.udt.json",
+"CLI.udt.json",
+"RepoStructure.udt.json",
+"Workflows.udt.json"
+],
+"template_root":"../../../L1/plc/git/",
+"meta":{"desc":"GitPLC standard index; concrete UDT templates live at template_root"}}

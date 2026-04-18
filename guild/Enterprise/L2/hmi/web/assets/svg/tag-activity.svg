@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 432" width="1040" height="432" role="img" aria-label="ACG tag activity">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1040" height="36" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1040" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1040" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ tag activity · last 12 writes · state.db/tag_history</text>
+<rect y="36" width="1040" height="396" fill="url(#gBg)"/>
+<g style="transform-origin:24px 66px">
+    <circle cx="24" cy="66" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="66" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="66" r="4" class="g"/>
+<text x="42" y="70" class="t sub">07:50:12</text>
+<text x="110" y="70" class="t" font-size="12" fill="#79c0ff">api.health.paperCount</text>
+<text x="1020" y="70" text-anchor="end" class="t" font-size="12" fill="#e6edf3">0</text>
+<g style="transform-origin:24px 96px">
+    <circle cx="24" cy="96" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="96" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="96" r="4" class="g"/>
+<text x="42" y="100" class="t sub">07:50:12</text>
+<text x="110" y="100" class="t" font-size="12" fill="#79c0ff">api.state.faults_active</text>
+<text x="1020" y="100" text-anchor="end" class="t" font-size="12" fill="#e6edf3">2</text>
+<g style="transform-origin:24px 126px">
+    <circle cx="24" cy="126" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="126" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="126" r="4" class="g"/>
+<text x="42" y="130" class="t sub">07:46:30</text>
+<text x="110" y="130" class="t" font-size="12" fill="#79c0ff">enterprise.paperCount</text>
+<text x="1020" y="130" text-anchor="end" class="t" font-size="12" fill="#e6edf3">0</text>
+<g style="transform-origin:24px 156px">
+    <circle cx="24" cy="156" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="156" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="156" r="4" class="g"/>
+<text x="42" y="160" class="t sub">07:46:30</text>
+<text x="110" y="160" class="t" font-size="12" fill="#79c0ff">state.faults.active_count</text>
+<text x="1020" y="160" text-anchor="end" class="t" font-size="12" fill="#e6edf3">2</text>
+<g style="transform-origin:24px 186px">
+    <circle cx="24" cy="186" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="186" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="186" r="4" class="g"/>
+<text x="42" y="190" class="t sub">07:46:30</text>
+<text x="110" y="190" class="t" font-size="12" fill="#79c0ff">state.pipelines.success_rate_pct</text>
+<text x="1020" y="190" text-anchor="end" class="t" font-size="12" fill="#e6edf3">100</text>
+<g style="transform-origin:24px 216px">
+    <circle cx="24" cy="216" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="216" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="216" r="4" class="g"/>
+<text x="42" y="220" class="t sub">07:46:30</text>
+<text x="110" y="220" class="t" font-size="12" fill="#79c0ff">tag.coverage.top10</text>
+<text x="1020" y="220" text-anchor="end" class="t" font-size="12" fill="#e6edf3">[{"c": 128, "tag_name": "ext:db"}, {"c": 96, "tag_name": "ex</text>
+<g style="transform-origin:24px 246px">
+    <circle cx="24" cy="246" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="246" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="246" r="4" class="g"/>
+<text x="42" y="250" class="t sub">07:46:30</text>
+<text x="110" y="250" class="t" font-size="12" fill="#79c0ff">state.tools.latest_failure</text>
+<text x="1020" y="250" text-anchor="end" class="t" font-size="12" fill="#e6edf3">build:api</text>
+<g style="transform-origin:24px 276px">
+    <circle cx="24" cy="276" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="276" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="276" r="4" class="g"/>
+<text x="42" y="280" class="t sub">07:46:13</text>
+<text x="110" y="280" class="t" font-size="12" fill="#79c0ff">state.faults.active_count</text>
+<text x="1020" y="280" text-anchor="end" class="t" font-size="12" fill="#e6edf3">2</text>
+<g style="transform-origin:24px 306px">
+    <circle cx="24" cy="306" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="306" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="306" r="4" class="g"/>
+<text x="42" y="310" class="t sub">07:29:36</text>
+<text x="110" y="310" class="t" font-size="12" fill="#79c0ff">pipeline.build.step.01.status</text>
+<text x="1020" y="310" text-anchor="end" class="t" font-size="12" fill="#e6edf3">COMPLETE</text>
+<g style="transform-origin:24px 336px">
+    <circle cx="24" cy="336" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="336" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="336" r="4" class="g"/>
+<text x="42" y="340" class="t sub">07:29:36</text>
+<text x="110" y="340" class="t" font-size="12" fill="#79c0ff">pipeline.build.step.02.status</text>
+<text x="1020" y="340" text-anchor="end" class="t" font-size="12" fill="#e6edf3">RUNNING</text>
+<g style="transform-origin:24px 366px">
+    <circle cx="24" cy="366" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="366" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="366" r="4" class="g"/>
+<text x="42" y="370" class="t sub">07:29:36</text>
+<text x="110" y="370" class="t" font-size="12" fill="#79c0ff">pipeline.build.step.02.id</text>
+<text x="1020" y="370" text-anchor="end" class="t" font-size="12" fill="#e6edf3">components-build-catalog</text>
+<g style="transform-origin:24px 396px">
+    <circle cx="24" cy="396" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="24" cy="396" r="7" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="24" cy="396" r="4" class="g"/>
+<text x="42" y="400" class="t sub">07:29:36</text>
+<text x="110" y="400" class="t" font-size="12" fill="#79c0ff">pipeline.build.step.02.tool_id</text>
+<text x="1020" y="400" text-anchor="end" class="t" font-size="12" fill="#e6edf3">script:components:build-catalog</text>
+</svg>

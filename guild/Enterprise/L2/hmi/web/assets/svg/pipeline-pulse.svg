@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" role="img" aria-label="ACG pipeline pulse">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="720" height="200" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="360" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ pipeline · run pulse</text>
+<g style="transform-origin:40px 80px">
+    <circle cx="40" cy="80" r="12" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="40" cy="80" r="12" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="40" cy="80" r="8" class="g"/>
+<text x="64" y="78" class="t lb">pipeline.complete</text>
+<text x="64" y="104" class="t va g">1</text>
+<text x="220" y="78" class="t lb">pipeline.aborted</text>
+<text x="220" y="104" class="t va g">0</text>
+<text x="380" y="78" class="t lb">pipeline.states</text>
+<text x="380" y="104" class="t va">31</text>
+<text x="520" y="78" class="t lb">last 1 run</text>
+<polyline fill="none" stroke="#3fb950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="510.0,110.0"/>
+<text x="700" y="130" text-anchor="end" class="t sub">avg 0.1s</text>
+<rect x="20" y="156" width="680" height="8" rx="3" fill="#3fb950"/>
+<rect x="700" y="156" width="0" height="8" rx="3" fill="#f85149"/>
+<text x="20" y="180" class="t sub">100% success</text>
+</svg>

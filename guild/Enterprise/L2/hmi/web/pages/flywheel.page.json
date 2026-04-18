@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "🌸 ASS-OS BLOOM PROMPT — THE FLYWHEEL",
+    "slug": "flywheel",
+    "route": "/flywheel",
+    "view": "views/flywheel.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "community",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/flywheel.data.json"
+    }
+  },
+  "tags": {
+    "id": "flywheel",
+    "view_id": "flywheel",
+    "schema_version": "1.0.0"
+  }
+}

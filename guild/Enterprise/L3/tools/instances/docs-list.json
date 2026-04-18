@@ -1,0 +1,23 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "docs:list",
+    "name": "List docs in docs.db",
+    "description": "Enumerate docs stored in docs.db. Optional prefix (dir LIKE) and ext filters.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/docs_query.py:list_docs",
+    "language": "python",
+    "inputs": [
+      {"name":"prefix","type":"String","required":false},
+      {"name":"ext","type":"String","required":false}
+    ],
+    "outputs": [{"name":"docs","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["docs","list","read-only"],
+    "mcp": {
+      "mcp_name":"docs_list",
+      "input_schema":{"type":"object","properties":{"prefix":{"type":"string"},"ext":{"type":"string"}}}
+    }
+  },
+  "tags": { "id": "docs-list", "schema_version": "1.0.0" }
+}

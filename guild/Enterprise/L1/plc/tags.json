@@ -1,0 +1,29 @@
+{
+  "§": "P.TAGS",
+  "🏗️": "🔧",
+  "name": "plc · tag catalog",
+  "owner": "L1/plc/provider.py",
+  "namespaces": ["plc"],
+  "templateRoot": "/L1/plc/git/",
+
+  "tags": [
+    { "path": "plc.project",        "type": "UDT:Project",     "desc": "current GitPLC project header" },
+
+    { "path": "plc.types.count",    "type": "i",               "desc": "number of UDT templates loaded" },
+    { "pathPattern": "plc.types.<name>", "cardinality": "many", "type": "UDT:TypeSummary",
+      "desc": "per-UDT summary row (name, base, version, field count)" },
+
+    { "path": "plc.equipment.count","type": "i",               "desc": "nodes in equipment tree" },
+    { "pathPattern": "plc.equipment.<path>", "cardinality": "many", "type": "UDT:EquipmentNode",
+      "desc": "one node per ISA-88 equipment path" },
+
+    { "path": "plc.io.cards",       "type": "i",               "desc": "IO card count" },
+    { "path": "plc.io.points",      "type": "i",               "desc": "total IO points across cards" },
+
+    { "pathPattern": "plc.sync.<vendor>", "cardinality": "many", "type": "UDT:SyncStatus",
+      "desc": "last sync attempt per vendor" },
+
+    { "path": "plc.git.head",       "type": "UDT:GitHead",     "desc": "HEAD commit of gitplc project" },
+    { "path": "plc.git.dirty",      "type": "b",               "desc": "working tree has uncommitted changes" }
+  ]
+}

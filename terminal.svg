@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340">
+  <defs>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,'Liberation Mono','Courier New',monospace;font-size:13px}
+      .pr{fill:#3fb950}
+      .di{fill:#8b949e}
+      .cm{fill:#e6edf3}
+      .dn{fill:#e3b341;font-weight:bold}
+      .ok{fill:#3fb950}
+      .ar{fill:#a371f7}
+      .ln{opacity:0;animation:si .15s ease-out forwards}
+      .d0{animation-delay:.4s}
+      .d1{animation-delay:1s}
+      .d2{animation-delay:1.8s}
+      .d3{animation-delay:2.3s}
+      .d4{animation-delay:2.7s}
+      .d5{animation-delay:3.1s}
+      .d6{animation-delay:3.5s}
+      .d7{animation-delay:4s}
+      .d8{animation-delay:4.9s}
+      .d9{animation-delay:5.5s}
+      .d10{animation-delay:6.2s}
+      .cu{opacity:0;animation:bl 1s step-end infinite;animation-delay:6.4s}
+      @keyframes si{from{opacity:0}to{opacity:1}}
+      @keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+    </style>
+  </defs>
+
+  <!-- window chrome -->
+  <rect width="720" height="340" rx="10" fill="#0d1117"/>
+  <rect width="720" height="36" rx="10" fill="#161b22"/>
+  <rect y="26" width="720" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="360" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">&#x2692;  ACG CLI  &#xb7;  guild@acg:~</text>
+
+  <!-- terminal body -->
+  <g class="t" transform="translate(28,56)">
+
+    <!-- acg health -->
+    <text class="ln d0" y="0">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cm">acg health</tspan>
+    </text>
+    <text class="ln d1" y="20">
+      <tspan class="di">  paperCount </tspan><tspan class="cm">25</tspan><tspan class="di">  &#xb7;  memberCount </tspan><tspan class="cm">8</tspan><tspan class="di">  &#xb7;  apiVersion </tspan><tspan class="cm">1.0</tspan><tspan class="di">  &#xb7;  lastUpdated </tspan><tspan class="cm">2026-04-18</tspan>
+    </text>
+
+    <!-- acg build:full -->
+    <text class="ln d2" y="54">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cm">acg build:full</tspan>
+    </text>
+    <text class="ln d3" y="74">
+      <tspan class="di">  running 12-step build pipeline&#x2026;</tspan>
+    </text>
+    <text class="ln d4" y="96">
+      <tspan class="ok">  &#x2713; </tspan><tspan class="cm">ingest-papers     </tspan><tspan class="di">25 papers ingested</tspan>
+    </text>
+    <text class="ln d5" y="116">
+      <tspan class="ok">  &#x2713; </tspan><tspan class="cm">render-views      </tspan><tspan class="di">34 pages emitted to dist/</tspan>
+    </text>
+    <text class="ln d6" y="136">
+      <tspan class="ok">  &#x2713; </tspan><tspan class="cm">update-tags       </tspan><tspan class="di">308 tags &#xb7; 6 databases</tspan>
+    </text>
+    <text class="ln d7" y="156">
+      <tspan class="dn">  &#x2713; COMPLETE</tspan><tspan class="di">  12 steps &#xb7; 25 papers &#xb7; 8 members</tspan>
+    </text>
+
+    <!-- acg tag:read -->
+    <text class="ln d8" y="190">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cm">acg tag:read path=enterprise.paperCount</tspan>
+    </text>
+    <text class="ln d9" y="210">
+      <tspan class="ar">  &#x2192; </tspan><tspan class="cm">25</tspan><tspan class="di">  (enterprise.paperCount &#xb7; Konomi Value)</tspan>
+    </text>
+
+    <!-- final prompt + blinking cursor -->
+    <text class="ln d10" y="244">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan>
+    </text>
+    <rect class="cu" x="103" y="232" width="8" height="14" fill="#3fb950"/>
+
+    <!-- live link footer -->
+    <text class="ln d10" y="290" font-size="12">
+      <tspan class="di">↳ interactive: </tspan>
+      <tspan fill="#79c0ff" text-decoration="underline">aicraftspeopleguild.github.io/guild/apps/terminal/</tspan>
+    </text>
+
+  </g>
+</svg>

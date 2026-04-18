@@ -1,0 +1,38 @@
+﻿/* -- Tabbed Panel --------------------------------------------------- */
+.tabbed-panel { display: flex; flex-direction: column; }
+
+.tab-bar {
+  display:          flex;
+  gap:              0;
+  background:       var(--tab-bar-bg);
+  border-bottom:    1px solid var(--tab-border);
+  padding:          0 0.5rem;
+  overflow-x:       auto;
+  scrollbar-width:  none;
+}
+
+.tab-btn {
+  padding:          0.5rem 1rem;
+  border:           none;
+  border-bottom:    2px solid transparent;
+  background:       transparent;
+  cursor:           pointer;
+  font-size:        0.875rem;
+  font-weight:      500;
+  color:            var(--color-ink-muted, #64748b);
+  white-space:      nowrap;
+  transition:       color 0.15s, border-color 0.15s;
+}
+.tab-btn:hover { color: var(--color-ink, #0f172a); }
+
+.tab-btn-active {
+  color:        var(--tab-btn-active-fg);
+  border-bottom-color: var(--tab-btn-active-fg);
+  background:   var(--tab-btn-active-bg);
+}
+
+.tab-panes { flex: 1; }
+
+.tab-pane { padding: var(--widget-pad); }
+.tab-pane[hidden] { display: none; }
+

@@ -1,0 +1,28 @@
+<!--
+  ═══ tags.json template ═══
+  A subsystem's tag catalog.  Drop this under /{sub}/tags.json and the
+  renderer (../index/renderer.js) will read it + cross-check against
+  /controls/db/tags.json to show live values + quality + timestamps.
+-->
+{
+  "§":          "<SECTION-CODE>",
+  "🏗️":         "<GLYPH>",
+  "name":       "<subsystem> · tag catalog",
+  "owner":      "<subsystem>/provider.py",
+  "namespaces": ["<ns1>", "<ns2>"],
+
+  "tags": [
+    {
+      "path":        "<ns>.<key>",
+      "type":        "Counter | DateTime | String | Boolean | UDT:<Name>",
+      "unit":        "<optional unit>",
+      "desc":        "<what this tag represents>"
+    },
+    {
+      "pathPattern": "<ns>.<dynamic>",
+      "cardinality": "many",
+      "type":        "UDT:<Name>",
+      "desc":        "<describe how many instances + lifetime>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L4/sandbox/whiteboard",
+    "label": "whiteboard",
+    "parent": "guild/Enterprise/L4/sandbox",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L4_sandbox_whiteboard",
+    "fs_path": "guild/Enterprise/L4/sandbox/whiteboard",
+    "depth": 5,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L4",
+      "guild_Enterprise_L4_sandbox",
+      "guild_Enterprise_L4_sandbox_whiteboard"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/L4/sandbox/shared",
+      "guild/Enterprise/L4/sandbox/web-llm"
+    ],
+    "descendants": 0,
+    "file_count": 4,
+    "subdir_count": 0,
+    "kinds": {
+      "db": 2,
+      "html": 1,
+      "md": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

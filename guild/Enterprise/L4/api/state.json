@@ -1,0 +1,53 @@
+{
+  "summary": {
+    "ok": true,
+    "db": "guild/Enterprise/L2/state/state.db",
+    "tag_values": 73,
+    "tag_history": 88,
+    "events": 31,
+    "tool_runs": 33,
+    "tool_failures": 4,
+    "pipeline_runs": 1,
+    "pipeline_failures": 0,
+    "faults_active": 2,
+    "faults_total": 5,
+    "repo_state": 0,
+    "last_event": {
+      "at": "2026-04-18T07:50:12Z",
+      "kind": "on_transition",
+      "tag": "api.health.paperCount",
+      "from_state": "",
+      "to_state": "0"
+    },
+    "last_pipeline_run": {
+      "started_at": "2026-04-18T07:29:35Z",
+      "pipeline_id": "build",
+      "ok": 1
+    }
+  },
+  "faults_active": [
+    {
+      "fault_id": 5,
+      "tag": "api.papers.json",
+      "kind": "build_failure",
+      "severity": "error",
+      "message": "paperCount stuck at 0 — build-api.py packml import broken after reorg; init-db.py FK violation",
+      "raised_at": "2026-04-18T07:43:39Z",
+      "cleared_at": null,
+      "active": 1,
+      "ack_at": null
+    },
+    {
+      "fault_id": 4,
+      "tag": "tool:build:api",
+      "kind": "tool_failure",
+      "severity": "error",
+      "message": "tool build:api failed (rc=1)",
+      "raised_at": "2026-04-18T07:43:21Z",
+      "cleared_at": null,
+      "active": 1,
+      "ack_at": null
+    }
+  ],
+  "generated_at": "2026-04-18T07:50:12Z"
+}

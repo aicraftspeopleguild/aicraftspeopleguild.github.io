@@ -1,0 +1,24 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "ACG P2P — Guild Mesh",
+    "slug": "p2p",
+    "kind": "guild-app",
+    "description": "Peer-to-peer, serverless, SCADA-instrumented chat mesh for Guild members. Originally developed as github.com/teslasolar/ACGP2P; imported here as a self-contained Guild app.",
+    "source_type": "External",
+    "source_path": "https://github.com/teslasolar/ACGP2P",
+    "view": "guild/apps/p2p/index.html",
+    "route": "/guild/apps/p2p/",
+    "section": "community",
+    "stylesheets": [],
+    "status": "published",
+    "tags": ["p2p", "chat", "scada", "konomi", "guild-app"]
+  },
+  "tags": {
+    "id": "p2p",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/p2p/",
+    "view_id": "external",
+    "ingested_at": "2026-04-18T00:00:00Z",
+    "schema_version": "1.0.0"
+  }
+}

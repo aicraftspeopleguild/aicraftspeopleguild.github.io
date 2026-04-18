@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Pipeline",
+  "version": "1.0.0",
+  "description": "Ordered sequence of steps, each represented by a tag and a bound Tool UDT. Running the pipeline = writing the first step's status tag RUNNING; the runner then executes each step sequentially, writes its status/duration/output tags, and emits on_transition events that any Script UDT can subscribe to.",
+  "parameters": {
+    "id":          { "dataType": "String", "required": true,  "description": "kebab-case pipeline id, e.g. `build`" },
+    "name":        { "dataType": "String", "required": true },
+    "description": { "dataType": "String", "required": false },
+    "enabled":     { "dataType": "Boolean","required": false, "default": true },
+    "on_fail":     { "dataType": "String", "required": false, "description": "`abort` (default) | `continue` — what to do if a step fails" },
+    "steps":       { "dataType": "JSON",   "required": true,  "description": "Array of { id, tag, tool_id, inputs?, on_fail? }. Step i's completion fires the transition that runs step i+1." }
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "step_count":     { "dataType": "Number" },
+    "namespace":      { "dataType": "String", "description":"Tag prefix for every step, e.g. `pipeline.build`" },
+    "schema_version": { "dataType": "String" }
+  }
+}

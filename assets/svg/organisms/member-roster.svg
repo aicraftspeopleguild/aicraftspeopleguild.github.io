@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420"
+     role="img" aria-label="member roster — {{ROSTER_TITLE}}">
+  <!--
+  ═══════════════════════════════════════════════════════════════════
+  ORGANISM: member-roster.svg
+  Composes: atoms/level-dots  atoms/tag-chip  atoms/count-bubble
+  ═══════════════════════════════════════════════════════════════════
+  TOKENS (48 total):
+    ROSTER_TITLE  ROSTER_TS  ROSTER_TOTAL
+
+    Per member (6 rows × 7 tokens):
+      Mx_INIT  Mx_NAME  Mx_ROLE  Mx_LV  Mx_TAGS  Mx_CO  Mx_TS
+      Mx_D1 Mx_D2 Mx_D3 Mx_D4 Mx_D5   (level dot fills)
+
+    COLOR presets for Mx_CO (role accent):
+      Founder  #3fb950    Architect  #79c0ff
+      Author   #a371f7    Reviewer   #e3b341
+      Member   #8b949e    Inactive   #30363d
+
+    Level dot fill: active=#3fb950  inactive=#21262d
+    Use levelDotParams() helper in render.js to generate Mx_D1..D5 automatically.
+  -->
+  <defs>
+    <style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style>
+  </defs>
+
+  <rect width="720" height="420" rx="10" fill="#0d1117"/>
+
+  <!-- ── TITLEBAR ─────────────────────────────────────────────────── -->
+  <rect x="0" y="0"  width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10"  fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="96" y="22" class="t" font-size="11" fill="#e6edf3" font-weight="600">{{ROSTER_TITLE}}</text>
+  <rect x="638" y="8" width="66" height="20" rx="10" fill="#1b3a27" stroke="#3fb950" stroke-width="1" stroke-opacity=".5"/>
+  <text x="671" y="22" text-anchor="middle" class="t" font-size="10" fill="#3fb950">{{ROSTER_TOTAL}} members</text>
+
+  <!-- ── COLUMN HEADERS ────────────────────────────────────────────── -->
+  <text x="72"  y="52" class="t" font-size="10" fill="#484f58" letter-spacing="1">MEMBER</text>
+  <text x="300" y="52" class="t" font-size="10" fill="#484f58" letter-spacing="1">ROLE</text>
+  <text x="436" y="52" class="t" font-size="10" fill="#484f58" letter-spacing="1">LEVEL</text>
+  <text x="580" y="52" class="t" font-size="10" fill="#484f58" letter-spacing="1">LAST ACTIVE</text>
+  <line x1="16" y1="58" x2="704" y2="58" stroke="#21262d" stroke-width="1"/>
+
+  <!-- ── HELPER MACRO: each row is 56px tall, baseline at y+16 & y+30 ── -->
+
+  <!-- ROW 1 (y=60) -->
+  <circle cx="40"  cy="84" r="20" fill="#161b22" stroke="{{M1_CO}}" stroke-width="1.5"/>
+  <text x="40"  y="89" text-anchor="middle" class="t" font-size="13" font-weight="700" fill="#e6edf3">{{M1_INIT}}</text>
+  <text x="72"  y="79" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{M1_NAME}}</text>
+  <text x="72"  y="95" class="t" font-size="10" fill="#8b949e">{{M1_TAGS}}</text>
+  <rect x="292" y="70" width="110" height="20" rx="3" fill="#161b22" stroke="{{M1_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="347" y="84" text-anchor="middle" class="t" font-size="10" fill="{{M1_CO}}">{{M1_ROLE}}</text>
+  <circle cx="440" cy="82" r="4" fill="{{M1_D1}}"/>
+  <circle cx="456" cy="82" r="4" fill="{{M1_D2}}"/>
+  <circle cx="472" cy="82" r="4" fill="{{M1_D3}}"/>
+  <circle cx="488" cy="82" r="4" fill="{{M1_D4}}"/>
+  <circle cx="504" cy="82" r="4" fill="{{M1_D5}}"/>
+  <text x="524" y="86" class="t" font-size="10" fill="#8b949e">{{M1_LV}}</text>
+  <text x="700" y="86" text-anchor="end" class="t" font-size="10" fill="#484f58">{{M1_TS}}</text>
+  <line x1="16" y1="112" x2="704" y2="112" stroke="#161b22" stroke-width="1"/>
+
+  <!-- ROW 2 (y=116) -->
+  <circle cx="40"  cy="140" r="20" fill="#161b22" stroke="{{M2_CO}}" stroke-width="1.5"/>
+  <text x="40"  y="145" text-anchor="middle" class="t" font-size="13" font-weight="700" fill="#e6edf3">{{M2_INIT}}</text>
+  <text x="72"  y="135" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{M2_NAME}}</text>
+  <text x="72"  y="151" class="t" font-size="10" fill="#8b949e">{{M2_TAGS}}</text>
+  <rect x="292" y="126" width="110" height="20" rx="3" fill="#161b22" stroke="{{M2_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="347" y="140" text-anchor="middle" class="t" font-size="10" fill="{{M2_CO}}">{{M2_ROLE}}</text>
+  <circle cx="440" cy="138" r="4" fill="{{M2_D1}}"/>
+  <circle cx="456" cy="138" r="4" fill="{{M2_D2}}"/>
+  <circle cx="472" cy="138" r="4" fill="{{M2_D3}}"/>
+  <circle cx="488" cy="138" r="4" fill="{{M2_D4}}"/>
+  <circle cx="504" cy="138" r="4" fill="{{M2_D5}}"/>
+  <text x="524" y="142" class="t" font-size="10" fill="#8b949e">{{M2_LV}}</text>
+  <text x="700" y="142" text-anchor="end" class="t" font-size="10" fill="#484f58">{{M2_TS}}</text>
+  <line x1="16" y1="168" x2="704" y2="168" stroke="#161b22" stroke-width="1"/>
+
+  <!-- ROW 3 (y=172) -->
+  <circle cx="40"  cy="196" r="20" fill="#161b22" stroke="{{M3_CO}}" stroke-width="1.5"/>
+  <text x="40"  y="201" text-anchor="middle" class="t" font-size="13" font-weight="700" fill="#e6edf3">{{M3_INIT}}</text>
+  <text x="72"  y="191" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{M3_NAME}}</text>
+  <text x="72"  y="207" class="t" font-size="10" fill="#8b949e">{{M3_TAGS}}</text>
+  <rect x="292" y="182" width="110" height="20" rx="3" fill="#161b22" stroke="{{M3_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="347" y="196" text-anchor="middle" class="t" font-size="10" fill="{{M3_CO}}">{{M3_ROLE}}</text>
+  <circle cx="440" cy="194" r="4" fill="{{M3_D1}}"/>
+  <circle cx="456" cy="194" r="4" fill="{{M3_D2}}"/>
+  <circle cx="472" cy="194" r="4" fill="{{M3_D3}}"/>
+  <circle cx="488" cy="194" r="4" fill="{{M3_D4}}"/>
+  <circle cx="504" cy="194" r="4" fill="{{M3_D5}}"/>
+  <text x="524" y="198" class="t" font-size="10" fill="#8b949e">{{M3_LV}}</text>
+  <text x="700" y="198" text-anchor="end" class="t" font-size="10" fill="#484f58">{{M3_TS}}</text>
+  <line x1="16" y1="224" x2="704" y2="224" stroke="#161b22" stroke-width="1"/>
+
+  <!-- ROW 4 (y=228) -->
+  <circle cx="40"  cy="252" r="20" fill="#161b22" stroke="{{M4_CO}}" stroke-width="1.5"/>
+  <text x="40"  y="257" text-anchor="middle" class="t" font-size="13" font-weight="700" fill="#e6edf3">{{M4_INIT}}</text>
+  <text x="72"  y="247" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{M4_NAME}}</text>
+  <text x="72"  y="263" class="t" font-size="10" fill="#8b949e">{{M4_TAGS}}</text>
+  <rect x="292" y="238" width="110" height="20" rx="3" fill="#161b22" stroke="{{M4_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="347" y="252" text-anchor="middle" class="t" font-size="10" fill="{{M4_CO}}">{{M4_ROLE}}</text>
+  <circle cx="440" cy="250" r="4" fill="{{M4_D1}}"/>
+  <circle cx="456" cy="250" r="4" fill="{{M4_D2}}"/>
+  <circle cx="472" cy="250" r="4" fill="{{M4_D3}}"/>
+  <circle cx="488" cy="250" r="4" fill="{{M4_D4}}"/>
+  <circle cx="504" cy="250" r="4" fill="{{M4_D5}}"/>
+  <text x="524" y="254" class="t" font-size="10" fill="#8b949e">{{M4_LV}}</text>
+  <text x="700" y="254" text-anchor="end" class="t" font-size="10" fill="#484f58">{{M4_TS}}</text>
+  <line x1="16" y1="280" x2="704" y2="280" stroke="#161b22" stroke-width="1"/>
+
+  <!-- ROW 5 (y=284) -->
+  <circle cx="40"  cy="308" r="20" fill="#161b22" stroke="{{M5_CO}}" stroke-width="1.5"/>
+  <text x="40"  y="313" text-anchor="middle" class="t" font-size="13" font-weight="700" fill="#e6edf3">{{M5_INIT}}</text>
+  <text x="72"  y="303" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{M5_NAME}}</text>
+  <text x="72"  y="319" class="t" font-size="10" fill="#8b949e">{{M5_TAGS}}</text>
+  <rect x="292" y="294" width="110" height="20" rx="3" fill="#161b22" stroke="{{M5_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="347" y="308" text-anchor="middle" class="t" font-size="10" fill="{{M5_CO}}">{{M5_ROLE}}</text>
+  <circle cx="440" cy="306" r="4" fill="{{M5_D1}}"/>
+  <circle cx="456" cy="306" r="4" fill="{{M5_D2}}"/>
+  <circle cx="472" cy="306" r="4" fill="{{M5_D3}}"/>
+  <circle cx="488" cy="306" r="4" fill="{{M5_D4}}"/>
+  <circle cx="504" cy="306" r="4" fill="{{M5_D5}}"/>
+  <text x="524" y="310" class="t" font-size="10" fill="#8b949e">{{M5_LV}}</text>
+  <text x="700" y="310" text-anchor="end" class="t" font-size="10" fill="#484f58">{{M5_TS}}</text>
+  <line x1="16" y1="336" x2="704" y2="336" stroke="#161b22" stroke-width="1"/>
+
+  <!-- ROW 6 (y=340) -->
+  <circle cx="40"  cy="364" r="20" fill="#161b22" stroke="{{M6_CO}}" stroke-width="1.5"/>
+  <text x="40"  y="369" text-anchor="middle" class="t" font-size="13" font-weight="700" fill="#e6edf3">{{M6_INIT}}</text>
+  <text x="72"  y="359" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{M6_NAME}}</text>
+  <text x="72"  y="375" class="t" font-size="10" fill="#8b949e">{{M6_TAGS}}</text>
+  <rect x="292" y="350" width="110" height="20" rx="3" fill="#161b22" stroke="{{M6_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="347" y="364" text-anchor="middle" class="t" font-size="10" fill="{{M6_CO}}">{{M6_ROLE}}</text>
+  <circle cx="440" cy="362" r="4" fill="{{M6_D1}}"/>
+  <circle cx="456" cy="362" r="4" fill="{{M6_D2}}"/>
+  <circle cx="472" cy="362" r="4" fill="{{M6_D3}}"/>
+  <circle cx="488" cy="362" r="4" fill="{{M6_D4}}"/>
+  <circle cx="504" cy="362" r="4" fill="{{M6_D5}}"/>
+  <text x="524" y="366" class="t" font-size="10" fill="#8b949e">{{M6_LV}}</text>
+  <text x="700" y="366" text-anchor="end" class="t" font-size="10" fill="#484f58">{{M6_TS}}</text>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────────── -->
+  <line x1="16"  y1="394" x2="704" y2="394" stroke="#21262d" stroke-width="1"/>
+  <text x="16"  y="412" class="t" font-size="10" fill="#79c0ff">{{ROSTER_TS}}</text>
+  <text x="704" y="412" text-anchor="end" class="t" font-size="10" fill="#8b949e">view all &#x2192;</text>
+</svg>

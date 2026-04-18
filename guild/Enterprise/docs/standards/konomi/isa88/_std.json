@@ -1,0 +1,4 @@
+{"$schema":"konomi/std/v1","id":"ISA-88","scope":"batch process control","version":"1.0.0",
+"equipment_hierarchy":"Enterprise→Site→Area→ProcessCell→Unit→EquipmentModule→ControlModule",
+"recipe_hierarchy":"GeneralRecipe→SiteRecipe→MasterRecipe→ControlRecipe",
+"meta":{"desc":"ISA-88 standard header"}}

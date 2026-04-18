@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 48" width="560" height="48" role="img" aria-label="system status row — health · papers · members · build · api">
+  <defs>
+    <style>.t{font-family:'SFMono-Regular',Consolas,monospace;font-size:11px;text-anchor:middle}</style>
+    <!-- clip paths per badge (left-region tint) -->
+    <clipPath id="r0"><rect x="16"  y="10" width="96" height="28" rx="4"/></clipPath>
+    <clipPath id="r1"><rect x="122" y="10" width="96" height="28" rx="4"/></clipPath>
+    <clipPath id="r2"><rect x="228" y="10" width="96" height="28" rx="4"/></clipPath>
+    <clipPath id="r3"><rect x="334" y="10" width="96" height="28" rx="4"/></clipPath>
+    <clipPath id="r4"><rect x="440" y="10" width="96" height="28" rx="4"/></clipPath>
+  </defs>
+  <rect width="560" height="48" rx="8" fill="#0d1117"/>
+
+  <!-- health · ok (green) -->
+  <rect x="16"  y="10" width="96" height="28" rx="4" fill="#161b22" stroke="#3fb950"  stroke-width="1" stroke-opacity=".4"/>
+  <rect x="16"  y="10" width="48" height="28" fill="#1b3a27" clip-path="url(#r0)"/>
+  <text x="40"  y="28" class="t" fill="#3fb950">health</text>
+  <text x="88"  y="28" class="t" fill="#3fb950">ok</text>
+
+  <!-- papers · 25 (blue) -->
+  <rect x="122" y="10" width="96" height="28" rx="4" fill="#161b22" stroke="#79c0ff"  stroke-width="1" stroke-opacity=".4"/>
+  <rect x="122" y="10" width="48" height="28" fill="#0d1f2e" clip-path="url(#r1)"/>
+  <text x="146" y="28" class="t" fill="#79c0ff">papers</text>
+  <text x="194" y="28" class="t" fill="#79c0ff">25</text>
+
+  <!-- members · 8 (purple) -->
+  <rect x="228" y="10" width="96" height="28" rx="4" fill="#161b22" stroke="#a371f7"  stroke-width="1" stroke-opacity=".4"/>
+  <rect x="228" y="10" width="54" height="28" fill="#1e1530" clip-path="url(#r2)"/>
+  <text x="255" y="28" class="t" fill="#a371f7">members</text>
+  <text x="300" y="28" class="t" fill="#a371f7">8</text>
+
+  <!-- build · pass (green) -->
+  <rect x="334" y="10" width="96" height="28" rx="4" fill="#161b22" stroke="#3fb950"  stroke-width="1" stroke-opacity=".4"/>
+  <rect x="334" y="10" width="44" height="28" fill="#1b3a27" clip-path="url(#r3)"/>
+  <text x="356" y="28" class="t" fill="#3fb950">build</text>
+  <text x="404" y="28" class="t" fill="#3fb950">pass</text>
+
+  <!-- api · v1.0 (dim) -->
+  <rect x="440" y="10" width="96" height="28" rx="4" fill="#161b22" stroke="#30363d"  stroke-width="1"/>
+  <rect x="440" y="10" width="34" height="28" fill="#21262d" clip-path="url(#r4)"/>
+  <text x="457" y="28" class="t" fill="#8b949e">api</text>
+  <text x="506" y="28" class="t" fill="#e6edf3">v1.0</text>
+</svg>

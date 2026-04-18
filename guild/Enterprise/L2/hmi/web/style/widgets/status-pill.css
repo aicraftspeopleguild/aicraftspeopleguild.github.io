@@ -1,0 +1,41 @@
+﻿/* -- Status Pill ---------------------------------------------------- */
+.status-pill {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.35em;
+  padding:         0.2em 0.65em;
+  border-radius:   99px;
+  font-size:       0.75rem;
+  font-weight:     600;
+  text-transform:  uppercase;
+  letter-spacing:  0.04em;
+  white-space:     nowrap;
+  background:      var(--pill-idle-bg);
+  color:           var(--pill-idle-fg);
+}
+
+.status-pill-dot {
+  width:        0.5em;
+  height:       0.5em;
+  border-radius:50%;
+  background:   currentColor;
+  flex-shrink:  0;
+}
+
+/* State-specific colours via propsToClass (adds status-pill--STATE) */
+.status-pill--RUNNING,
+.status-pill--EXECUTE  { background: var(--pill-running-bg);  color: var(--pill-running-fg); }
+.status-pill--STARTING { background: var(--pill-starting-bg); color: var(--pill-starting-fg); }
+.status-pill--IDLE     { background: var(--pill-idle-bg);     color: var(--pill-idle-fg); }
+.status-pill--HELD,
+.status-pill--HOLDING,
+.status-pill--UNHOLDING,
+.status-pill--SUSPENDING,
+.status-pill--UNSUSPENDING { background: var(--pill-held-bg); color: var(--pill-held-fg); }
+.status-pill--STOPPING,
+.status-pill--STOPPED  { background: var(--pill-stopping-bg); color: var(--pill-stopping-fg); }
+.status-pill--ABORTING,
+.status-pill--ABORTED  { background: var(--pill-aborted-bg);  color: var(--pill-aborted-fg); }
+.status-pill--COMPLETE,
+.status-pill--RESETTING { background: var(--pill-complete-bg); color: var(--pill-complete-fg); }
+

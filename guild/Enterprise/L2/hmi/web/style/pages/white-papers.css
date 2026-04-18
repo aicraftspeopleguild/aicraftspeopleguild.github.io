@@ -1,0 +1,410 @@
+﻿/* white-papers.html */
+.page-white-papers {
+--color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+}
+
+.page-white-papers,
+.page-white-papers * {
+margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+}
+
+.page-white-papers {
+font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+}
+
+.page-white-papers::before {
+content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+}
+
+.page-white-papers header {
+position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-white-papers header::after {
+content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--color-rust) 0%,
+                var(--color-bronze) 50%,
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+}
+
+.page-white-papers .guild-mark {
+text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.page-white-papers .guild-mark .emblem {
+font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+}
+
+.page-white-papers h1 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+}
+
+.page-white-papers .subtitle {
+font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.page-white-papers .back-link {
+text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+.page-white-papers .back-link a {
+color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+}
+
+.page-white-papers .back-link a:hover {
+color: var(--color-rust);
+}
+
+.page-white-papers .container {
+max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-white-papers .intro-panel,
+.page-white-papers .papers-shell,
+.page-white-papers .future-panel {
+background: white;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+}
+
+.page-white-papers .intro-panel {
+margin: 5rem auto 2.5rem;
+            padding: 3rem;
+            border-left: 6px solid var(--color-rust);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+}
+
+.page-white-papers .papers-shell,
+.page-white-papers .future-panel {
+padding: 3rem;
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1.15s forwards;
+}
+
+.page-white-papers .future-panel {
+margin-top: 2.5rem;
+}
+
+.page-white-papers .intro-panel p,
+.page-white-papers .paper-card p,
+.page-white-papers .future-panel p {
+font-size: 1.1rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+}
+
+.page-white-papers .intro-panel p + p,
+.page-white-papers .future-panel p + p {
+margin-top: 1rem;
+}
+
+.page-white-papers .section-heading {
+text-align: center;
+            margin-bottom: 2.5rem;
+}
+
+.page-white-papers .section-heading h2 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-rust);
+            margin-bottom: 0.8rem;
+            position: relative;
+            display: inline-block;
+}
+
+.page-white-papers .section-heading h2::after {
+content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+}
+
+.page-white-papers .section-heading p {
+color: var(--color-graphite);
+            font-size: 1.05rem;
+}
+
+.page-white-papers .papers-grid {
+display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+}
+
+.page-white-papers .paper-card {
+padding: 2rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.9) 0%, white 100%);
+            border-top: 4px solid var(--color-rust);
+            box-shadow: 0 4px 10px var(--color-shadow);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.page-white-papers .paper-card.position-paper {
+border-top-color: var(--color-bronze);
+}
+
+.page-white-papers .paper-card.experimental-paper {
+border-top-color: var(--color-graphite);
+}
+
+.page-white-papers .paper-card.research-note {
+border-top-color: #6B5CA5;
+}
+
+.page-white-papers .paper-card.knowledge-paper {
+border-top-color: #3F6C8E;
+}
+
+.page-white-papers .paper-card:hover {
+transform: translateY(-6px);
+            box-shadow:
+                0 10px 18px var(--color-shadow),
+                0 18px 28px var(--color-shadow);
+}
+
+.page-white-papers .paper-type {
+display: inline-block;
+            margin-bottom: 1rem;
+            padding: 0.4rem 0.75rem;
+            background: var(--color-rust);
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+}
+
+.page-white-papers .paper-card.position-paper .paper-type {
+background: var(--color-bronze);
+            color: var(--color-ink);
+}
+
+.page-white-papers .paper-card.experimental-paper .paper-type {
+background: var(--color-graphite);
+            color: var(--color-parchment);
+}
+
+.page-white-papers .paper-card.research-note .paper-type {
+background: #6B5CA5;
+            color: var(--color-parchment);
+}
+
+.page-white-papers .paper-card.knowledge-paper .paper-type {
+background: #3F6C8E;
+            color: var(--color-parchment);
+}
+
+.page-white-papers .paper-meta {
+display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            color: var(--color-graphite);
+            font-size: 0.95rem;
+}
+
+.page-white-papers .paper-meta span {
+padding: 0.35rem 0.65rem;
+            background: rgba(166, 124, 82, 0.14);
+}
+
+.page-white-papers .paper-card h3 {
+font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            line-height: 1.25;
+            color: var(--color-ink);
+            margin-bottom: 1rem;
+}
+
+.page-white-papers .paper-card strong {
+color: var(--color-rust);
+}
+
+.page-white-papers .paper-actions {
+display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+}
+
+.page-white-papers .btn {
+font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.95rem 1.75rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+}
+
+.page-white-papers .btn-primary {
+background: var(--color-rust);
+            color: white;
+}
+
+.page-white-papers .btn-primary:hover {
+transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.35);
+}
+
+.page-white-papers .future-grid {
+display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+}
+
+.page-white-papers .future-slot {
+padding: 1.35rem;
+            border: 1px dashed rgba(166, 124, 82, 0.6);
+            background: var(--color-highlight);
+}
+
+.page-white-papers .future-slot h3 {
+font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--color-ink);
+            margin-bottom: 0.5rem;
+}
+
+.page-white-papers footer {
+background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+}
+
+.page-white-papers footer p {
+font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+}
+
+.page-white-papers footer a {
+color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+}
+
+.page-white-papers footer a:hover {
+color: var(--color-bronze);
+}
+
+.page-white-papers .github-link {
+display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+}
+
+.page-white-papers .github-link:hover {
+background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .page-white-papers header {
+padding: 3rem 1.5rem 2rem;
+    }
+
+    .page-white-papers .intro-panel,
+    .page-white-papers .papers-shell,
+    .page-white-papers .future-panel {
+padding: 2rem 1.5rem;
+    }
+
+    .page-white-papers .paper-actions {
+flex-direction: column;
+    }
+
+    .page-white-papers .btn {
+width: 100%;
+                text-align: center;
+    }
+}
+

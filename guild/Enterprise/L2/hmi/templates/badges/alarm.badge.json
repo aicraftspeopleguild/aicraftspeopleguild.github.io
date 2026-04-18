@@ -1,0 +1,13 @@
+{"$schema":"hmi/badge/v1","name":"AlarmSummary_Badge","isaLayer":"L1-L5","glyph":"🚨",
+"binds":"hmi.alarms.summary.*",
+"layout":[
+{"priority":1,"label":"P1","tag":"hmi.alarms.summary.p1","color":"Alarm",   "sound":"Continuous"},
+{"priority":2,"label":"P2","tag":"hmi.alarms.summary.p2","color":"Warning", "sound":"Fast"},
+{"priority":3,"label":"P3","tag":"hmi.alarms.summary.p3","color":"Warning", "sound":"Slow"},
+{"priority":4,"label":"P4","tag":"hmi.alarms.summary.p4","color":"Normal",  "sound":"None"}
+],
+"totals":[
+{"tag":"hmi.alarms.summary.total",  "label":"TOT"},
+{"tag":"hmi.alarms.summary.unacked","label":"UNK","emphasis":true}
+],
+"meta":{"desc":"ISA-18.2 alarm-summary pill visible at every screen layer"}}

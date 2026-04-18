@@ -1,0 +1,19 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:script-tools",
+    "name": "Wrap every script as a Tool UDT",
+    "description": "Scan guild/Enterprise/L3/scripts recursively and create a Tool UDT for every *.py/*.sh/*.js. Tool id = `script:<subdir>:<stem>`. Idempotent: skips scripts already wrapped.",
+    "category": "build",
+    "entry": "guild/Enterprise/L2/lib/build_script_tools.py:build",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"JSON"}],
+    "adapters": ["CliAdapter","LoggerWrapper","TestWrapper"],
+    "tags": ["build","tool","script","auto-wrap"],
+    "test_cases": [
+      {"name":"build completes","inputs":{},"expect":{"field":"ok","op":"eq","value":true}}
+    ]
+  },
+  "tags": { "id": "build-script-tools", "schema_version": "1.0.0" }
+}

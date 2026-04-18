@@ -1,0 +1,40 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L4/sandbox/web-llm/modules",
+    "label": "modules",
+    "parent": "guild/Enterprise/L4/sandbox/web-llm",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L4_sandbox_web-llm_modules",
+    "fs_path": "guild/Enterprise/L4/sandbox/web-llm/modules",
+    "depth": 6,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L4",
+      "guild_Enterprise_L4_sandbox",
+      "guild_Enterprise_L4_sandbox_web-llm",
+      "guild_Enterprise_L4_sandbox_web-llm_modules"
+    ],
+    "children": [
+      "guild/Enterprise/L4/sandbox/web-llm/modules/mcp",
+      "guild/Enterprise/L4/sandbox/web-llm/modules/scada"
+    ],
+    "siblings": [],
+    "descendants": 2,
+    "file_count": 10,
+    "subdir_count": 2,
+    "kinds": {
+      "js": 9,
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

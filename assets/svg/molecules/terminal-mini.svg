@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 180" width="440" height="180" role="img" aria-label="ACG mini terminal">
+  <defs>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,'Liberation Mono','Courier New',monospace;font-size:12px}
+      .pr{fill:#3fb950} .di{fill:#8b949e} .cm{fill:#e6edf3} .ok{fill:#3fb950}
+      .ar{fill:#a371f7} .bl{fill:#79c0ff}
+      .ln{opacity:0;animation:si .15s ease-out forwards}
+      .d0{animation-delay:.5s}  .d1{animation-delay:1.1s}
+      .d2{animation-delay:2.0s} .d3{animation-delay:2.6s}
+      .d4{animation-delay:3.2s} .d5{animation-delay:3.8s}
+      .cu{opacity:0;animation:bl 1s step-end infinite;animation-delay:4.0s}
+      @keyframes si{from{opacity:0}to{opacity:1}}
+      @keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+    </style>
+  </defs>
+
+  <!-- window chrome -->
+  <rect width="440" height="180" rx="10" fill="#0d1117"/>
+  <rect width="440" height="36"  rx="10" fill="#161b22"/>
+  <rect y="26"    width="440" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="220" y="22" text-anchor="middle" class="t" font-size="11" fill="#8b949e">&#x2692;  ACG CLI  &#xb7;  guild@acg:~</text>
+
+  <!-- terminal body -->
+  <g class="t" transform="translate(24,52)">
+
+    <!-- acg health -->
+    <text class="ln d0" y="0">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cm">acg health</tspan>
+    </text>
+    <text class="ln d1" y="18">
+      <tspan class="di">  paperCount </tspan><tspan class="cm">25</tspan>
+      <tspan class="di">  &#xb7;  members </tspan><tspan class="cm">8</tspan>
+      <tspan class="di">  &#xb7;  api </tspan><tspan class="cm">v1.0</tspan>
+    </text>
+
+    <!-- acg papers:list -->
+    <text class="ln d2" y="44">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cm">acg papers:list --limit 3</tspan>
+    </text>
+    <text class="ln d3" y="62">
+      <tspan class="ar">  [1] </tspan><tspan class="cm">UDT System Design</tspan>
+    </text>
+    <text class="ln d4" y="80">
+      <tspan class="ar">  [2] </tspan><tspan class="cm">PackML State Machine</tspan>
+    </text>
+    <text class="ln d5" y="98">
+      <tspan class="ar">  [3] </tspan><tspan class="cm">ISA-95 Integration</tspan>
+    </text>
+
+    <!-- blinking cursor -->
+    <text y="120">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cu" fill="#e6edf3">&#x2588;</tspan>
+    </text>
+  </g>
+</svg>

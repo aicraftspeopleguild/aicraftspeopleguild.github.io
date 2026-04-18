@@ -1,0 +1,16 @@
+{"$schema":"hmi/badge/v1","name":"State_Badge","isaLayer":"L2-L4","glyph":"🟢",
+"binds":"<tag>.state.current",
+"palette":"hmi.palette.*",
+"states":[
+{"value":"Normal",    "color":"#808080","blink":false},
+{"value":"Running",   "color":"#00AA00","blink":false},
+{"value":"Stopped",   "color":"#404040","blink":false},
+{"value":"Warning",   "color":"#FFCC00","blink":false},
+{"value":"Alarm",     "color":"#CC0000","blink":true},
+{"value":"Fault",     "color":"#CC0000","blink":true},
+{"value":"Maint",     "color":"#0066CC","blink":false},
+{"value":"Disabled",  "color":"#808080","blink":false,"strike":true},
+{"value":"Manual",    "color":"#FF6600","blink":false},
+{"value":"Transition","color":"#00CCCC","blink":true}
+],
+"meta":{"desc":"Semantic-color state pill per ISA-101. Blinks only for unacked Alarm/Fault/Transition."}}

@@ -1,0 +1,41 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/templates/konomi",
+    "label": "konomi",
+    "parent": "docs/templates",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_templates_konomi",
+    "fs_path": "docs/templates/konomi",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_templates",
+      "docs_templates_konomi"
+    ],
+    "children": [
+      "docs/templates/konomi/base",
+      "docs/templates/konomi/meta"
+    ],
+    "siblings": [
+      "docs/templates/formats",
+      "docs/templates/udts",
+      "docs/templates/views"
+    ],
+    "descendants": 2,
+    "file_count": 3,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 2,
+      "md": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

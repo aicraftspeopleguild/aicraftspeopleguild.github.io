@@ -1,0 +1,22 @@
+{"$schema":"konomi/state_machine/v1","name":"UnitState","std":"ISA-88","layer":3,"version":"1.0.0","note":"PackML subset",
+"states":["STOPPED","IDLE","STARTING","EXECUTE","COMPLETING","COMPLETE","RESETTING","HOLDING","HELD","UNHOLDING","STOPPING","ABORTING","ABORTED","CLEARING"],
+"initial":"STOPPED",
+"t":[
+"STOPPED→IDLE:reset",
+"IDLE→STARTING:start",
+"STARTING→EXECUTE:auto",
+"EXECUTE→COMPLETING:done",
+"COMPLETING→COMPLETE:auto",
+"COMPLETE→RESETTING:reset",
+"RESETTING→IDLE:auto",
+"EXECUTE→HOLDING:hold",
+"HOLDING→HELD:auto",
+"HELD→UNHOLDING:unhold",
+"UNHOLDING→EXECUTE:auto",
+"EXECUTE→STOPPING:stop",
+"STOPPING→STOPPED:auto",
+"*→ABORTING:abort",
+"ABORTING→ABORTED:auto",
+"ABORTED→CLEARING:clear",
+"CLEARING→STOPPED:auto"
+],"meta":{"desc":"Unit/PackML state machine"}}

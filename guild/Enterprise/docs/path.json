@@ -1,0 +1,41 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/docs",
+    "label": "docs",
+    "parent": "guild/Enterprise",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_docs",
+    "fs_path": "guild/Enterprise/docs",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_docs"
+    ],
+    "children": [
+      "guild/Enterprise/docs/standards"
+    ],
+    "siblings": [
+      "guild/Enterprise/L0",
+      "guild/Enterprise/L1",
+      "guild/Enterprise/L2",
+      "guild/Enterprise/L3",
+      "guild/Enterprise/L4"
+    ],
+    "descendants": 14,
+    "file_count": 1,
+    "subdir_count": 1,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "PageFooter",
+    "tag": "footer",
+    "cssClass": "",
+    "description": "Standard site footer with copyright, guild name, and GitHub link.",
+    "props": {
+      "year": {
+        "type": "String",
+        "required": false,
+        "default": "2026"
+      },
+      "githubUrl": {
+        "type": "URL",
+        "required": false,
+        "default": "https://github.com/aicraftspeopleguild"
+      }
+    },
+    "slots": [],
+    "template": "<footer><p>\u00a9 {{ year }} AI Craftspeople Guild. Built by practitioners, not evangelists.</p><p><a href=\"{{ githubUrl }}\">GitHub</a></p></footer>",
+    "atomicLevel": "organism",
+    "inputs": [
+      {
+        "key": "year",
+        "dataType": "String",
+        "source": "page.year",
+        "required": false
+      },
+      {
+        "key": "githubUrl",
+        "dataType": "URL",
+        "source": "page.githubUrl",
+        "required": false
+      }
+    ]
+  },
+  "tags": {
+    "id": "page-footer",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/page-footer.json",
+    "dependencies": [],
+    "used_by_views": [
+      "page-shell"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

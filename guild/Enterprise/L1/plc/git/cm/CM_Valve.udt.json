@@ -1,0 +1,11 @@
+{"$schema":"gitplc/udt/v1","name":"CM_Valve","base":"CM_Base","version":"1.0.0","fields":[
+{"name":"cmd.open","type":"BOOL"},{"name":"cmd.close","type":"BOOL"},
+{"name":"sts.opened","type":"BOOL"},{"name":"sts.closed","type":"BOOL"},
+{"name":"sts.transit","type":"BOOL"},{"name":"sts.faulted","type":"BOOL"},
+{"name":"cfg.open_time","type":"TIME"},{"name":"cfg.close_time","type":"TIME"},
+{"name":"cfg.fail_pos","type":"DINT"},
+{"name":"io.open_cmd","type":"BOOL","dir":"out"},
+{"name":"io.close_cmd","type":"BOOL","dir":"out"},
+{"name":"io.open_fbk","type":"BOOL","dir":"in"},
+{"name":"io.close_fbk","type":"BOOL","dir":"in"}
+],"meta":{"desc":"2-pos valve with limit fbk"}}

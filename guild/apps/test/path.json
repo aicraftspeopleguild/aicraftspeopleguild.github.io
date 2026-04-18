@@ -1,0 +1,46 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/apps/test",
+    "label": "test",
+    "parent": "guild/apps",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_apps_test",
+    "fs_path": "guild/apps/test",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_apps",
+      "guild_apps_test"
+    ],
+    "children": [
+      "guild/apps/test/assets",
+      "guild/apps/test/pages",
+      "guild/apps/test/tests"
+    ],
+    "siblings": [
+      "guild/apps/p2p",
+      "guild/apps/whitepapers"
+    ],
+    "descendants": 3,
+    "file_count": 10,
+    "subdir_count": 3,
+    "kinds": {
+      "json": 2,
+      "md": 2,
+      "yml": 1,
+      "db": 2,
+      "html": 3
+    },
+    "route_bindings": [
+      "test"
+    ],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

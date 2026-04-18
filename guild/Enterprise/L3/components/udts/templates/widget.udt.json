@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Widget",
+  "extends": "Component",
+  "version": "1.0.0",
+  "description": "Interactive, data-driven insertable unit. Unlike organisms (which render static-shaped data from the page), widgets FETCH their own data at runtime from the /api/ static endpoints or an MCP tool. Think Grafana panel, Perspective embedded view, or a live status badge.",
+  "parameters": {
+    "name":         { "dataType": "String",      "required": true },
+    "tag":          { "dataType": "String",      "required": true },
+    "cssClass":     { "dataType": "String",      "required": false },
+    "description":  { "dataType": "String",      "required": false },
+    "atomicLevel":  { "dataType": "String",      "required": true, "const": "widget" },
+    "source":       { "dataType": "Source",      "required": true, "description": "{kind: 'api'|'mcp'|'tag', ref: path-or-tool-id, interval_s: number}" },
+    "composes":     { "dataType": "StringArray", "required": false },
+    "template":     { "dataType": "String",      "required": true }
+  },
+  "constraints": {
+    "may_compose": ["Atom", "Molecule"],
+    "forbidden_compose": ["Organism", "Template", "Widget"],
+    "self_fetching": true
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "source_kind":    { "dataType": "String" },
+    "source_ref":     { "dataType": "String" },
+    "embeddable_in":  { "dataType": "StringArray", "description": "Organism/Template/Molecule levels where this widget may appear" },
+    "schema_version": { "dataType": "String" }
+  }
+}

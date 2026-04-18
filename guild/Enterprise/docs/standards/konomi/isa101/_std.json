@@ -1,0 +1,3 @@
+{"$schema":"konomi/std/v1","id":"ISA-101","scope":"human machine interface design","version":"1.0.0",
+"layers":["L1 Overview","L2 Area","L3 Unit","L4 Detail","L5 Support"],
+"meta":{"desc":"ISA-101 HMI standard header"}}

@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"Python3File","layer":9,"version":"1.0.0","extends":"PythonFile","fields":[
+{"n":"min_version","t":"STRING","desc":"e.g. '3.9', '3.11'"},
+{"n":"uses_walrus","t":"BOOL","desc":"True if `:=` operator used (3.8+)"},
+{"n":"uses_match","t":"BOOL","desc":"True if `match` statement used (3.10+)"},
+{"n":"uses_f_strings","t":"BOOL"},
+{"n":"async_functions","t":"DINT","desc":"Count of `async def`"}
+],"meta":{"desc":"Python 3.x. The default variant for ACG build scripts."}}

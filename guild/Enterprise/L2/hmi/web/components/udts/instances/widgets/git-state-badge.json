@@ -1,0 +1,31 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "GitStateBadge",
+    "tag": "aside",
+    "cssClass": "widget widget-git",
+    "description": "Live git-as-PackML state badge. Calls the git:status Tool UDT (guild/Enterprise/L3/tools/instances/git-status.json) and renders state + counts. Off-page CI can also render server-side by invoking `bin/acg git:status`.",
+    "atomicLevel": "widget",
+    "source": {
+      "kind": "mcp",
+      "ref": "git_status",
+      "interval_s": 15,
+      "expects": {
+        "state": "String",
+        "branch": "String",
+        "counts": "JSON"
+      }
+    },
+    "props": {},
+    "composes": ["Badge"],
+    "template": "<aside class=\"widget widget-git\" data-widget=\"git-state\" data-state=\"{{ state }}\"><div class=\"widget-body\"><span class=\"badge badge-state-{{ state }}\"><strong>{{ state }}</strong></span><span class=\"badge badge-muted\">{{ branch }}</span><span class=\"badge\">staged {{ counts.staged }}</span><span class=\"badge\">unstaged {{ counts.unstaged }}</span><span class=\"badge\">untracked {{ counts.untracked }}</span></div></aside>"
+  },
+  "tags": {
+    "id": "git-state-badge",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/git-state-badge.json",
+    "source_kind": "mcp",
+    "source_ref": "git_status",
+    "embeddable_in": ["Organism", "Template"],
+    "schema_version": "1.0.0"
+  }
+}

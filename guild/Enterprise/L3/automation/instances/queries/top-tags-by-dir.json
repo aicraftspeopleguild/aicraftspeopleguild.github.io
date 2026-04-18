@@ -1,0 +1,13 @@
+{
+  "udtType": "Query",
+  "parameters": {
+    "id":          "tags:top-by-dir-coverage",
+    "name":        "Top 10 tags by directory coverage",
+    "description": "Which tags appear in the most directories across the repo. Returns JSON array of [tag_name, dir_count].",
+    "db":          "tag",
+    "sql":         "SELECT tag_name, COUNT(*) c FROM tag_dirs GROUP BY tag_name ORDER BY c DESC LIMIT 10",
+    "output_tag":  "tag.coverage.top10",
+    "enabled":     true
+  },
+  "tags": { "id": "query-top-tags-by-dir", "schema_version": "1.0.0" }
+}

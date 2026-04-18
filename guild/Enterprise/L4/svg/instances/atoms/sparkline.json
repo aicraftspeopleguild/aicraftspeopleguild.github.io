@@ -1,0 +1,40 @@
+{
+  "udtType": "SvgAtom",
+  "parameters": {
+    "name": "Sparkline",
+    "atomicLevel": "atom",
+    "renderer": "svg_widget:sparkline",
+    "description": "Min-max-normalized polyline over N values.",
+    "props": {
+      "x": {
+        "type": "Number",
+        "required": true
+      },
+      "y": {
+        "type": "Number",
+        "required": true
+      },
+      "w": {
+        "type": "Number",
+        "required": true
+      },
+      "h": {
+        "type": "Number",
+        "required": true
+      },
+      "values": {
+        "type": "Number[]",
+        "required": true
+      },
+      "color_class": {
+        "type": "String",
+        "required": true
+      }
+    }
+  },
+  "tags": {
+    "id": "sparkline",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/atoms/sparkline.json"
+  }
+}

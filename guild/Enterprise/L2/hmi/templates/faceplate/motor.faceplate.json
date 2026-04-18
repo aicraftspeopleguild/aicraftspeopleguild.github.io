@@ -1,0 +1,19 @@
+{"$schema":"hmi/faceplate/v1","name":"Motor_Faceplate","udt":"CM_Motor","isaLayer":"L3","glyph":"🔘",
+"bindings":{
+"pv":   ["sts.running","sts.current","sts.runtime"],
+"sp":   ["cmd.start","cmd.stop","cmd.reset"],
+"mode": "mode.current",
+"state":"state.current",
+"alarm":"fault.active"
+},
+"palette":["Running","Stopped","Faulted","Manual","Transition"],
+"commands":[
+{"cmd":"cmd.start","label":"START","confirm":false,"color":"Running"},
+{"cmd":"cmd.stop", "label":"STOP", "confirm":true, "color":"Stopped"},
+{"cmd":"cmd.reset","label":"RESET","confirm":true, "color":"Transition"}
+],
+"reads":[
+{"tag":"sts.current","label":"I","unit":"A","format":"0.0"},
+{"tag":"sts.runtime","label":"RT","unit":"h","format":"0.00"}
+],
+"meta":{"desc":"DOL/contactor motor — shows start/stop/reset, current, runtime"}}

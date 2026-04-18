@@ -1,0 +1,32 @@
+{
+  "udtType": "Member",
+  "parameters": {
+    "name": "Jona Heidsick",
+    "role": "founding member",
+    "title": "Full-Stack Architect · First-Principles Architect",
+    "bio": "Jona's work sits at the intersection of first-principles architecture, clean code, protocol design, and agentic AI systems built on classical engineering foundations.\n\nFounding Member\nFull-Stack Architect\nFirst-Principles Architect\n25 Years Building & Operating Software Systems\n\n## Jona Heidsick\n\nFounding Member · Full-Stack Software Engineer · 25 Years Building & Operating Software Systems\n\nFounding Member · Full-Stack Architect · First-Principles Architect\n\nI've been writing, shipping, and running software for 25 years. Full stack, from bare metal to frontend, across industries. The constant through all of it: strip the problem to its essential structure, build the minimum that actually works, then iterate. First-principles thinking, minimum viable architecture, Occam's Razor as engineering discipline.\n\nI have a borderline obsession with clean code and a deep affinity for functional and declarative programming - immutability, composition, expressing *what* over *how*, and explicitness over magic. These aren't aesthetic preferences; they're how you keep systems honest at scale.\n\nToday I focus on agentic AI systems, MCP integrations, and backend reliability - built on classical foundations: DDD, TDD, and continuous delivery. I was an early MCP adopter and have built multiple protocol servers. I've also worked extensively in blockchain (Algorand, NEAR, Cardano).\n\nA recurring theme in my work is what I call \"hacking the coding process itself\" - engineering not just the product, but the way it's made. I think of AI through the lens of Extended Mind Theory: it extends the engineer's cognition, it doesn't replace it. That distinction matters when you're drawing lines around responsibility, authorship, and failure.\n\nI co-authored and signed the ACG manifesto because craft needs defending - especially now, when the tools are powerful enough to make sloppiness scale.\n\nFirst-Principles\nMCP\nAgentic AI\nDDD/TDD\nContinuous Delivery\nBlockchain\nClean Code\nFunctional Programming\nDeclarative Programming\nExtended Mind Theory",
+    "avatar_href": "Jona.png",
+    "expertise_tags": [
+      "First-Principles",
+      "MCP",
+      "Agentic AI",
+      "DDD/TDD",
+      "Continuous Delivery",
+      "Blockchain",
+      "Clean Code",
+      "Functional Programming",
+      "Declarative Programming",
+      "Extended Mind Theory"
+    ],
+    "links": {},
+    "joined_date": ""
+  },
+  "tags": {
+    "id": "jona-heidsick",
+    "slug": "jona-heidsick",
+    "paper_ids": [],
+    "instance_path": "udts/instances/jona-heidsick.json",
+    "ingested_at": "2026-04-17T20:08:45Z",
+    "schema_version": "1.0.0"
+  }
+}

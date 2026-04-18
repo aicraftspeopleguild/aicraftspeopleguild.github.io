@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "fault:raise",
+    "name": "Raise fault",
+    "description": "Manually raise a fault in state.db. Use for alerts not covered by automatic tool/pipeline failure capture (e.g., stale data detected, external check failed).",
+    "category": "command",
+    "entry": "guild/Enterprise/L2/lib/state_db.py:raise_fault",
+    "language": "python",
+    "inputs": [
+      {"name":"kind","type":"String","required":false,"default":"custom"},
+      {"name":"message","type":"String","required":false},
+      {"name":"tag","type":"String","required":false},
+      {"name":"severity","type":"String","required":false,"default":"error"}
+    ],
+    "outputs": [{"name":"fault","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["state","fault","alarm","command"],
+    "mcp": {
+      "mcp_name":"fault_raise",
+      "input_schema":{
+        "type":"object",
+        "properties":{
+          "kind":{"type":"string"},"message":{"type":"string"},
+          "tag":{"type":"string"},"severity":{"type":"string"}
+        }
+      }
+    }
+  },
+  "tags": { "id": "fault-raise", "schema_version": "1.0.0" }
+}

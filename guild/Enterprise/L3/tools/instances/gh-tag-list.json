@@ -1,0 +1,20 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "gh-tag:list",
+    "name": "List GitHub-Issue tags",
+    "description": "Enumerate issues labeled `tag` (optionally narrowed by ns=<namespace>) and return each as {path, value, quality, issue, url, updated_at}.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/gh_tag.py:list_tags",
+    "language": "python",
+    "inputs": [{"name":"ns","type":"String","required":false}],
+    "outputs": [{"name":"tags","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["tag","github","list","dynamic"],
+    "mcp": {
+      "mcp_name":"gh_tag_list",
+      "input_schema":{"type":"object","properties":{"ns":{"type":"string"}}}
+    }
+  },
+  "tags": { "id": "gh-tag-list", "schema_version": "1.0.0" }
+}

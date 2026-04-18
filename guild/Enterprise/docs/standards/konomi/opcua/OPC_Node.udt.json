@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"OPC_Node","std":"OPC-UA","layer":6,"version":"1.0.0","fields":[
+{"n":"node_id","t":"STRING"},
+{"n":"browse_name","t":"STRING"},
+{"n":"display_name","t":"STRING"},
+{"n":"node_class","t":"NodeClass"},
+{"n":"type_def","t":"REF","nullable":true},
+{"n":"parent","t":"REF","nullable":true}
+],"meta":{"desc":"Base OPC UA address-space node"}}

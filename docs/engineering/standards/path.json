@@ -1,0 +1,39 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/engineering/standards",
+    "label": "standards",
+    "parent": "docs/engineering",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_engineering_standards",
+    "fs_path": "docs/engineering/standards",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_engineering",
+      "docs_engineering_standards"
+    ],
+    "children": [],
+    "siblings": [
+      "docs/engineering/architecture",
+      "docs/engineering/component-catalog",
+      "docs/engineering/tech-spec",
+      "docs/engineering/urs"
+    ],
+    "descendants": 0,
+    "file_count": 8,
+    "subdir_count": 0,
+    "kinds": {
+      "md": 6,
+      "db": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

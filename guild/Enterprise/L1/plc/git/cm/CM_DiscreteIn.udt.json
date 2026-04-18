@@ -1,0 +1,16 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "CM_DiscreteIn",
+  "vendor": null,
+  "base": "CM_Base",
+  "version": "1.0.0",
+  "fields": [
+    {"name": "input", "type": "BOOL", "dir": "in"},
+    {"name": "value", "type": "BOOL"},
+    {"name": "invert", "type": "BOOL"},
+    {"name": "debounce", "type": "TIME"},
+    {"name": "on_delay", "type": "TIME"},
+    {"name": "off_delay", "type": "TIME"}
+  ],
+  "meta": {"desc": "Digital input with debounce and delays"}
+}

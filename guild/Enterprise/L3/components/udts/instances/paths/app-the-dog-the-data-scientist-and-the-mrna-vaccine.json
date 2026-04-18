@@ -1,0 +1,33 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/whitepapers/the-dog-the-data-scientist-and-the-mrna-vaccine",
+    "label": "The Dog, the Data Scientist, and the mRNA Vaccine",
+    "page": "guild/apps/whitepapers/pages/the-dog-the-data-scientist-and-the-mrna-vaccine.page.json",
+    "section": "resources",
+    "parent": "white-papers",
+    "order": 100,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "app-the-dog-the-data-scientist-and-the-mrna-vaccine",
+    "full_url": "https://aicraftspeopleguild.github.io/whitepapers/the-dog-the-data-scientist-and-the-mrna-vaccine",
+    "children": [],
+    "breadcrumb": [
+      "home",
+      "white-papers",
+      "app-the-dog-the-data-scientist-and-the-mrna-vaccine"
+    ],
+    "depth": 2,
+    "view_id": "white-paper-app",
+    "last_verified": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

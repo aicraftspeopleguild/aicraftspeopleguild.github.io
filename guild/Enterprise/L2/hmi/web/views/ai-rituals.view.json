@@ -1,0 +1,37 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "ai-rituals",
+    "description": "Decomposed view for ai-rituals",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "{{ page.title }}",
+        "subtitle": "{{ page.subtitle }}",
+        "eyebrow": "{{ page.eyebrow }}",
+        "bodyClass": "{{ page.bodyClass }}",
+        "backHref": "{{ page.backHref }}",
+        "backLabel": "{{ page.backLabel }}"
+      },
+      "children": [
+        {
+          "type": "RawHTML",
+          "props": {
+            "html": "{{ page.body }}"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "ai-rituals",
+    "component_ids": [
+      "page-shell",
+      "raw-html"
+    ],
+    "data_sources": [
+      "views/data/ai-rituals.data.json"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

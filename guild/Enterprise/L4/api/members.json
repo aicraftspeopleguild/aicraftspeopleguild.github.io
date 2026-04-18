@@ -1,0 +1,153 @@
+[
+  {
+    "handle": "alex-bunardzic",
+    "name": "Alex Bunardzic",
+    "role": "founding member",
+    "org": "",
+    "signed": true,
+    "joined": "",
+    "avatar_href": "Alex3D.jpg",
+    "expertise_tags": [
+      "Business Velocity",
+      "CI/CD",
+      "Mutation Testing",
+      "Service Virtualization",
+      "Shift-Left",
+      "TDD"
+    ]
+  },
+  {
+    "handle": "jona-heidsick",
+    "name": "Jona Heidsick",
+    "role": "founding member",
+    "org": "",
+    "signed": true,
+    "joined": "",
+    "avatar_href": "Jona.png",
+    "expertise_tags": [
+      "Agentic AI",
+      "Blockchain",
+      "Clean Code",
+      "Continuous Delivery",
+      "DDD/TDD",
+      "Declarative Programming",
+      "Extended Mind Theory",
+      "First-Principles",
+      "Functional Programming",
+      "MCP"
+    ]
+  },
+  {
+    "handle": "kelly-hohman",
+    "name": "Kelly T. Hohman",
+    "role": "founding member",
+    "org": "",
+    "signed": true,
+    "joined": "",
+    "avatar_href": "Kelly.png",
+    "expertise_tags": [
+      "Behavioral Health",
+      "Cultural Intelligence",
+      "Grounded AI",
+      "Historical Reality",
+      "Narrative Systems",
+      "Transpersonal Psychology"
+    ]
+  },
+  {
+    "handle": "laurie-scheepers",
+    "name": "Laurie Scheepers",
+    "role": "founding member",
+    "org": "",
+    "signed": true,
+    "joined": "",
+    "avatar_href": "Laurie.png",
+    "expertise_tags": [
+      "160 Skills",
+      "28 Agents",
+      "30 Operating Modes",
+      "53 Commands",
+      "AGI R&D",
+      "Critical Thinking",
+      "Lean Advanced Tech",
+      "Mechanical Safety Gates",
+      "Quality Control",
+      "Systems Thinking",
+      "Technology for People"
+    ]
+  },
+  {
+    "handle": "matt-burch",
+    "name": "Matt Burch",
+    "role": "founding member",
+    "org": "",
+    "signed": true,
+    "joined": "",
+    "avatar_href": "Matt.jpeg",
+    "expertise_tags": [
+      "#keepbuilding",
+      "AI Consultancy",
+      "AI-Native Workflow",
+      "ActionScript to AI",
+      "Agentic Architecture",
+      "Emergent Tech",
+      "Full-Stack Engineering",
+      "Standards"
+    ]
+  },
+  {
+    "handle": "nicolas-rosado",
+    "name": "Nicolas Rosado",
+    "role": "founding member",
+    "org": "",
+    "signed": true,
+    "joined": "",
+    "avatar_href": "Nicolas.jpeg",
+    "expertise_tags": [
+      "AI Best Practices",
+      "Community Building",
+      "Continuous Improvement",
+      "Feedback Loops",
+      "Human-Centric AI",
+      "Meetups",
+      "Mental Health",
+      "Psychological Safety",
+      "Sociable Programming",
+      "Software Craftsmanship"
+    ]
+  },
+  {
+    "handle": "thomas-frumkin",
+    "name": "Thomas Frumkin",
+    "role": "founding member",
+    "org": "",
+    "signed": true,
+    "joined": "",
+    "avatar_href": "thomas-frumkin.png",
+    "expertise_tags": [
+      "A.S.S.-OS",
+      "Controls Engineering",
+      "ISA-95",
+      "Industrial Automation",
+      "KCC",
+      "Konomi Standard"
+    ]
+  },
+  {
+    "handle": "tsvetan",
+    "name": "Tsvetan Tsvetanov",
+    "role": "founding member",
+    "org": "",
+    "signed": true,
+    "joined": "",
+    "avatar_href": "Tsvetan.jpeg",
+    "expertise_tags": [
+      "AI-Assisted Development",
+      "BDD",
+      "DeSlopify Method",
+      "Hexagonal Architecture",
+      "Production-Grade Software",
+      "Small Steps"
+    ]
+  }
+]

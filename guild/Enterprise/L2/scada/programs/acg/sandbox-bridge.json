@@ -1,0 +1,28 @@
+{
+  "§": "4.1",
+  "🏗️": "🛰️",
+  "name": "sandbox-bridge (host side)",
+  "module": "L2/scada/gateway/scripts/sandbox-bridge.js",
+
+  "⚙️": { "CHAN": "acg-mesh" },
+
+  "📦": { "ch": "BroadcastChannel?" },
+
+  "→": [
+    { "name": "onEnvelope", "in": "env:{source,type,path?,value?,ts,…}",
+      "flow": "type==='tag' ? tags.write('sandbox.'+source+'.'+path, value, {udt,quality}) : tags.write('sandbox.'+source+'.event.'+type, env) ⊕ tags.inc('sandbox.'+source+'.events.'+type+'.count')" },
+    { "name": "startSandboxBridge", "flow": "new BroadcastChannel ⊕ listen ⊕ tags.write(sandbox.bridgeOpen, true)" },
+    { "name": "stopSandboxBridge",  "flow": "ch.close ⊕ tags.write(sandbox.bridgeOpen, false)" }
+  ],
+
+  "↑🖥️": [
+    "sandbox.bridgeOpen",
+    "sandbox.channel",
+    "sandbox.<source>.lastEventAt",
+    "sandbox.<source>.lastEvent",
+    "sandbox.<source>.<path>    (on type==='tag')",
+    "sandbox.<source>.event.<type>",
+    "sandbox.<source>.events.<type>.count"
+  ],
+  "和": true
+}

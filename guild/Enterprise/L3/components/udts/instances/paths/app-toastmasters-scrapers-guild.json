@@ -1,0 +1,33 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/whitepapers/toastmasters-scrapers-guild",
+    "label": "Toastmasters Scrapers Guild",
+    "page": "guild/apps/whitepapers/pages/toastmasters-scrapers-guild.page.json",
+    "section": "resources",
+    "parent": "white-papers",
+    "order": 100,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "app-toastmasters-scrapers-guild",
+    "full_url": "https://aicraftspeopleguild.github.io/whitepapers/toastmasters-scrapers-guild",
+    "children": [],
+    "breadcrumb": [
+      "home",
+      "white-papers",
+      "app-toastmasters-scrapers-guild"
+    ],
+    "depth": 2,
+    "view_id": "white-paper-app",
+    "last_verified": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

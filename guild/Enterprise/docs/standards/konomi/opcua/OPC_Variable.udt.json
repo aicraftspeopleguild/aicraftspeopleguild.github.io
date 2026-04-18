@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"OPC_Variable","std":"OPC-UA","base":"OPC_Node","layer":6,"version":"1.0.0","fields":[
+{"n":"data_type","t":"STRING"},
+{"n":"value","t":"ANY"},
+{"n":"source_timestamp","t":"Timestamp"},
+{"n":"server_timestamp","t":"Timestamp"},
+{"n":"status","t":"UDINT"},
+{"n":"access","t":"ENUM","values":["RO","RW","WO"]},
+{"n":"historizing","t":"BOOL"}
+],"meta":{"desc":"Readable/writable tag node"}}

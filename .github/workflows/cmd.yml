@@ -1,0 +1,148 @@
+name: cmd
+
+# README buttons are links to pre-filled new issues. Submitting the issue
+# fires this workflow, which reads the title and executes the matching
+# command (bump heartbeat / rebuild SVGs / write an arbitrary tag /
+# clear faults). The issue is auto-closed with a receipt comment.
+#
+# Title patterns recognized:
+#   cmd:bump-heartbeat
+#   cmd:rebuild-svgs
+#   cmd:rebuild-api
+#   cmd:clear-faults
+#   cmd:tag-write path=<path> value=<value>
+#
+# Put the cmd issue under label `cmd` to trigger this workflow.
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  dispatch:
+    if: contains(github.event.issue.labels.*.name, 'cmd')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+
+      - name: Dispatch
+        env:
+          GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          GH_TAG_REPO:       ${{ github.repository }}
+          ISSUE_TITLE:       ${{ github.event.issue.title }}
+          ISSUE_NUMBER:      ${{ github.event.issue.number }}
+          ISSUE_BODY:        ${{ github.event.issue.body }}
+        run: |
+          python - <<'PY'
+          import json, os, re, subprocess, sys
+          from datetime import datetime, timezone
+
+          sys.path.insert(0, 'guild/Enterprise/L2/lib')
+          import gh_tag
+
+          title = os.environ.get("ISSUE_TITLE", "").strip()
+          num   = os.environ.get("ISSUE_NUMBER", "?")
+
+          receipts = []
+
+          def run(cmd):
+              print(f"→ {cmd}")
+              r = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+              receipts.append((cmd, r.returncode, (r.stdout + r.stderr)[-500:]))
+              return r.returncode
+
+          if title == "cmd:bump-heartbeat":
+              val = int(datetime.now(timezone.utc).timestamp())
+              gh_tag.write(
+                  path="demo.heartbeat", value=val, quality="good",
+                  type="Counter",
+                  description=f"bumped via cmd issue #{num} at {datetime.now(timezone.utc).isoformat()}",
+              )
+              receipts.append(("bump-heartbeat", 0, f"value={val}"))
+              run("python guild/Enterprise/L4/svg/build-scada-dashboard.py")
+
+          elif title == "cmd:rebuild-svgs":
+              for svg in [
+                  "build-heartbeat", "build-status-dashboard", "build-tag-grid",
+                  "build-pipeline-pulse", "build-readme-hero",
+                  "build-readme-controls", "build-readme-api",
+                  "build-scada-dashboard",
+              ]:
+                  run(f"python guild/Enterprise/L4/svg/{svg}.py")
+
+          elif title == "cmd:rebuild-api":
+              run("python guild/Enterprise/L4/database/init-db.py")
+              run("python guild/Enterprise/L4/api/scripts/build-api.py")
+              run("python guild/Enterprise/L4/api/scripts/build-runtime-tags.py")
+              run("python guild/Enterprise/L4/api/scripts/build-state.py")
+
+          elif title == "cmd:clear-faults":
+              # Use the Python state_db directly — clearing a fault updates
+              # a row, no extra work beyond that.
+              sys.path.insert(0, 'guild/Enterprise/L2/lib')
+              import state_db
+              out = []
+              for f in state_db.list_faults(active_only="1").get("faults", []):
+                  state_db.clear_fault(fault_id=str(f["fault_id"]))
+                  out.append(f["fault_id"])
+              receipts.append(("clear-faults", 0, f"cleared {out}"))
+
+          elif title.startswith("cmd:tag-write"):
+              m = re.search(r'path=(\S+).*?value=(.+)', title)
+              if m:
+                  gh_tag.write(
+                      path=m.group(1).strip(),
+                      value=m.group(2).strip(),
+                      description=f"written via cmd issue #{num}",
+                  )
+                  receipts.append(("tag-write", 0, f"{m.group(1)} = {m.group(2)}"))
+              else:
+                  receipts.append(("tag-write", 2, "usage: cmd:tag-write path=... value=..."))
+
+          else:
+              receipts.append(("unknown", 2, f"title '{title}' did not match any pattern"))
+
+          # Comment the receipt back on the cmd issue + close it.
+          lines = [f"⚒ cmd dispatched at {datetime.now(timezone.utc).isoformat()}", ""]
+          for cmd, rc, tail in receipts:
+              lines.append(f"- `{cmd}` rc={rc}")
+              if tail.strip():
+                  lines.append(f"  ```\n  {tail.strip()[:400]}\n  ```")
+          body = "\n".join(lines)
+          # Use gh api to comment + close
+          import urllib.request
+          tok = os.environ.get("GITHUB_TOKEN", "")
+          repo = os.environ.get("GH_TAG_REPO", "")
+          def api(method, path, data=None):
+              url = f"https://api.github.com{path}"
+              hdrs = {"Authorization": f"Bearer {tok}",
+                      "Accept": "application/vnd.github+json",
+                      "User-Agent": "acg-cmd/1.0"}
+              d = json.dumps(data).encode() if data is not None else None
+              if d: hdrs["Content-Type"] = "application/json"
+              req = urllib.request.Request(url, data=d, method=method, headers=hdrs)
+              return urllib.request.urlopen(req, timeout=10).read().decode("utf-8", "replace")
+          api("POST",  f"/repos/{repo}/issues/{num}/comments", {"body": body})
+          api("PATCH", f"/repos/{repo}/issues/{num}", {"state": "closed", "state_reason": "completed"})
+
+          print(body)
+          PY
+
+      - name: Commit any regenerated artifacts
+        run: |
+          git config user.name  "acg-cmd-bot"
+          git config user.email "acg-cmd-bot@users.noreply.github.com"
+          git add guild/Enterprise/L2/hmi/web/assets/svg/ guild/Enterprise/L4/api/ guild/Enterprise/L4/runtime/ || true
+          if git diff --cached --quiet; then
+            echo "no artifact change"
+          else
+            git commit -m "cmd: regenerate artifacts from issue #${{ github.event.issue.number }}"
+            git push origin main || true
+          fi

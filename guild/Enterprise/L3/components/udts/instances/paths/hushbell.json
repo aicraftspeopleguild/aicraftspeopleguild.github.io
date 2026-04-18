@@ -1,0 +1,34 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/hushbell",
+    "label": "Hushbell",
+    "page": "pages/hushbell.page.json",
+    "section": "resources",
+    "parent": "home",
+    "order": 40,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "hushbell",
+    "full_url": "https://aicraftspeopleguild.github.io/hushbell",
+    "children": [
+      "hushbell-full-spec"
+    ],
+    "breadcrumb": [
+      "resources",
+      "hushbell"
+    ],
+    "depth": 1,
+    "view_id": "static-page",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Python2File","layer":9,"version":"1.0.0","extends":"PythonFile","fields":[
+{"n":"print_as_statement","t":"BOOL","desc":"True if `print x` (statement) used"},
+{"n":"from_future","t":"STRING[]","desc":"e.g. ['absolute_import','print_function']"},
+{"n":"uses_unicode_literals","t":"BOOL"}
+],"meta":{"desc":"Python 2.x. End-of-lifed 2020 but preserved for legacy Jython contexts."}}

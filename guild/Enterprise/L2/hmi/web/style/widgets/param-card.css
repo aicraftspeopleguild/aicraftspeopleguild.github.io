@@ -1,0 +1,40 @@
+﻿/* -- Param Card ----------------------------------------------------- */
+.param-card {
+  background:   var(--widget-bg);
+  border:       1px solid var(--widget-border);
+  border-radius:var(--widget-radius);
+  overflow:     hidden;
+}
+
+.param-card-hd {
+  padding:      var(--widget-pad);
+  border-bottom:1px solid var(--widget-border);
+}
+
+.param-card-title {
+  font-size:   1rem;
+  font-weight: 700;
+  color:       var(--color-ink, #0f172a);
+}
+
+.param-card-subtitle {
+  font-size:  0.875rem;
+  color:      var(--color-ink-muted, #64748b);
+  margin-top: 0.2rem;
+}
+
+.param-card-meta {
+  font-size:   0.75rem;
+  color:       var(--color-ink-muted, #64748b);
+  margin-top:  0.35rem;
+  font-style:  italic;
+}
+
+.param-card-body { padding: var(--widget-pad); }
+
+/* Variant classes added by propsToClass */
+.param-card--primary  { border-left: 3px solid var(--color-accent, #2563eb); }
+.param-card--secondary{ border-left: 3px solid var(--color-ink-muted, #94a3b8); }
+.param-card--warning  { border-left: 3px solid #d97706; }
+.param-card--danger   { border-left: 3px solid #dc2626; }
+

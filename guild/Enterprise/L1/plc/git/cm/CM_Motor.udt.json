@@ -1,0 +1,13 @@
+{"$schema":"gitplc/udt/v1","name":"CM_Motor","base":"CM_Base","version":"1.0.0","fields":[
+{"name":"cmd.start","type":"BOOL"},{"name":"cmd.stop","type":"BOOL"},
+{"name":"cmd.jog","type":"BOOL"},{"name":"cmd.reset","type":"BOOL"},
+{"name":"sts.running","type":"BOOL"},{"name":"sts.ready","type":"BOOL"},
+{"name":"sts.faulted","type":"BOOL"},{"name":"sts.current","type":"REAL"},
+{"name":"sts.runtime","type":"TIME"},
+{"name":"cfg.start_delay","type":"TIME"},{"name":"cfg.stop_delay","type":"TIME"},
+{"name":"cfg.jog_time","type":"TIME"},{"name":"cfg.overcurrent","type":"REAL"},
+{"name":"io.run_cmd","type":"BOOL","dir":"out"},
+{"name":"io.run_fbk","type":"BOOL","dir":"in"},
+{"name":"io.fault","type":"BOOL","dir":"in"},
+{"name":"io.current","type":"INT","dir":"in"}
+],"meta":{"desc":"DOL/contactor motor"}}

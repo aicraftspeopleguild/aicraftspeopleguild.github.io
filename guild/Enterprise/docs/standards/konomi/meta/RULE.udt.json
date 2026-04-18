@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"RULE","layer":0,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING"},
+{"n":"condition","t":"EXPR"},
+{"n":"action","t":"STRING"},
+{"n":"severity","t":"ENUM","values":["info","warn","error","fatal"]}
+],"meta":{"desc":"Constraint or validation rule"}}

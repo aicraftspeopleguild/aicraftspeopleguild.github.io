@@ -1,0 +1,55 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "member-profile",
+    "description": "Individual Guild member profile page",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "{{ member.parameters.name }}",
+        "subtitle": "{{ member.parameters.title }}",
+        "bodyClass": "page-member-profile",
+        "stylesheets": ["style/main.css", "style/member-profile.css"],
+        "eyebrow": "ACG Member",
+        "backHref": "#/members",
+        "backLabel": "Back to Members"
+      },
+      "children": [
+        {
+          "type": "IntroPanel",
+          "props": { "content": "{{ member.parameters.bio }}" }
+        },
+        {
+          "type": "FigureBlock",
+          "when": "{{ member.parameters.avatar_href }}",
+          "props": {
+            "src": "{{ member.parameters.avatar_href }}",
+            "alt": "{{ member.parameters.name }} portrait",
+            "caption": ""
+          }
+        },
+        {
+          "type": "BadgeRow",
+          "when": "{{ member.parameters.expertise_tags }}",
+          "props": { "items": "{{ member.parameters.expertise_tags }}" }
+        },
+        {
+          "type": "CTASection",
+          "props": {
+            "heading": "Explore More",
+            "primaryText": "Back to Members",
+            "primaryHref": "#/members",
+            "secondaryText": "Back to Home",
+            "secondaryHref": "#/"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "member-profile",
+    "component_ids": ["page-shell", "intro-panel", "figure-block", "badge-row", "cta-section"],
+    "data_sources": ["members/udts/instances/:slug.json"],
+    "schema_version": "1.0.0"
+  }
+}

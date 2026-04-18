@@ -1,0 +1,14 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "IO_Config",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "sample_rate", "type": "TIME"},
+    {"name": "filter", "type": "DINT"},
+    {"name": "range", "type": "DINT"},
+    {"name": "wire_type", "type": "DINT", "desc": "2/3/4-wire"},
+    {"name": "burnout", "type": "DINT", "desc": "upscale|downscale"}
+  ],
+  "meta": {"desc": "Card-level IO configuration"}
+}

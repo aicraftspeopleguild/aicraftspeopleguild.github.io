@@ -1,0 +1,18 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Batch_State",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "current", "type": "DINT"}
+  ],
+  "enum": {
+    "0": "Created",
+    "1": "Ready",
+    "2": "Running",
+    "3": "Held",
+    "4": "Complete",
+    "5": "Aborted"
+  },
+  "meta": {"desc": "Overall batch lifecycle state"}
+}

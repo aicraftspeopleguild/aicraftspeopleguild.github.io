@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:members-strip-svg",
+    "name": "Render members-strip.svg",
+    "description": "Render members-strip.svg \u2014 founding members with per-member paper counts.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-members-strip.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "svg",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "svg",
+      "readme",
+      "build"
+    ]
+  },
+  "tags": {
+    "id": "build-members-strip-svg",
+    "schema_version": "1.0.0"
+  }
+}

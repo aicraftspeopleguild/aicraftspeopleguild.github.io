@@ -1,0 +1,10 @@
+{"$schema":"hmi/layer/v1","id":"L5","name":"Support","scope":"Maintenance","glyph":"🛠",
+"nav":["L4"],
+"tiles":[
+{"kind":"wizard",  "name":"calibrate",     "target":"<unit>.scale.*"},
+{"kind":"wizard",  "name":"loop-check",    "target":"<unit>.io.*"},
+{"kind":"history", "source":"<unit>",      "span":"30d"},
+{"kind":"tagtable","source":"<unit>.sim.*","access":"RW","confirm":true}
+],
+"note":"Maintenance workflows — calibration wizards, loop checks, long-term history, sim-mode overrides.",
+"meta":{"desc":"L5 Support — calibration, loop-check, history, sim overrides"}}

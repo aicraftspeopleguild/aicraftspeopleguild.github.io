@@ -1,0 +1,19 @@
+{"$schema":"hmi/faceplate/v1","name":"Mesh_Faceplate","udt":"Mesh","isaLayer":"L1","glyph":"🛰",
+"binds":"chat.* + room.* + tracker.* + signal.*",
+"reads":[
+{"tag":"room.peerCount","label":"PEERS"},
+{"tag":"chat.msgsIn","label":"MSG↓"},
+{"tag":"chat.msgsOut","label":"MSG↑"},
+{"tag":"tracker.state","label":"TRK"},
+{"tag":"tracker.announces","label":"ANN"},
+{"tag":"signal.offersIn","label":"OFF↓"},
+{"tag":"signal.answersOut","label":"ANS↑"}
+],
+"palette":["Running","Transition","Warning","Faulted"],
+"stateMap":{
+"tracker=connected&&peers>=1":"Running",
+"tracker=connecting":"Transition",
+"tracker=reconnecting":"Warning",
+"tracker=failed||offline":"Faulted"
+},
+"meta":{"desc":"Aggregate mesh summary for L1 Overview"}}

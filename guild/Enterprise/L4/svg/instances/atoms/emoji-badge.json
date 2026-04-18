@@ -1,0 +1,36 @@
+{
+  "udtType": "SvgAtom",
+  "parameters": {
+    "name": "EmojiBadge",
+    "atomicLevel": "atom",
+    "renderer": "svg_widget:emoji_badge",
+    "description": "Emoji next to a colored label.",
+    "props": {
+      "x": {
+        "type": "Number",
+        "required": true
+      },
+      "y": {
+        "type": "Number",
+        "required": true
+      },
+      "emoji": {
+        "type": "String",
+        "required": true
+      },
+      "label": {
+        "type": "String",
+        "required": true
+      },
+      "color_class": {
+        "type": "String",
+        "required": true
+      }
+    }
+  },
+  "tags": {
+    "id": "emoji-badge",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/atoms/emoji-badge.json"
+  }
+}

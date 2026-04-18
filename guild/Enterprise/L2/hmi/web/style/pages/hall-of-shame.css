@@ -1,0 +1,399 @@
+﻿/* hall-of-shame.html */
+.page-hall-of-shame {
+--color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+            --color-warning: #7C2319;
+}
+
+.page-hall-of-shame,
+.page-hall-of-shame * {
+margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+}
+
+.page-hall-of-shame {
+font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+}
+
+.page-hall-of-shame::before {
+content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+}
+
+.page-hall-of-shame header {
+position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-hall-of-shame header::after {
+content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-warning) 0%, var(--color-rust) 50%, var(--color-bronze) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+}
+
+.page-hall-of-shame .guild-mark {
+text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.page-hall-of-shame .guild-mark .emblem {
+font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+}
+
+.page-hall-of-shame h1 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+}
+
+.page-hall-of-shame .subtitle {
+font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 920px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.page-hall-of-shame .back-link {
+text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+.page-hall-of-shame .back-link a {
+color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+}
+
+.page-hall-of-shame .back-link a:hover {
+color: var(--color-rust);
+}
+
+.page-hall-of-shame .container {
+max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-hall-of-shame .intro-panel,
+.page-hall-of-shame .entries-shell,
+.page-hall-of-shame .future-panel {
+background: white;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+}
+
+.page-hall-of-shame .intro-panel {
+margin: 5rem auto 2.5rem;
+            padding: 3rem;
+            border-left: 6px solid var(--color-warning);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+}
+
+.page-hall-of-shame .entries-shell,
+.page-hall-of-shame .future-panel {
+padding: 3rem;
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1.15s forwards;
+}
+
+.page-hall-of-shame .future-panel {
+margin-top: 2.5rem;
+}
+
+.page-hall-of-shame .intro-panel p,
+.page-hall-of-shame .entry-card p,
+.page-hall-of-shame .future-panel p {
+font-size: 1.1rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+}
+
+.page-hall-of-shame .intro-panel p + p,
+.page-hall-of-shame .future-panel p + p {
+margin-top: 1rem;
+}
+
+.page-hall-of-shame .section-heading {
+text-align: center;
+            margin-bottom: 2.5rem;
+}
+
+.page-hall-of-shame .section-heading h2 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-warning);
+            margin-bottom: 0.8rem;
+            position: relative;
+            display: inline-block;
+}
+
+.page-hall-of-shame .section-heading h2::after {
+content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-rust);
+}
+
+.page-hall-of-shame .section-heading p {
+color: var(--color-graphite);
+            font-size: 1.05rem;
+}
+
+.page-hall-of-shame .entry-card {
+padding: 2rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.9) 0%, white 100%);
+            border-top: 4px solid var(--color-warning);
+            box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.page-hall-of-shame .entry-meta {
+display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            color: var(--color-graphite);
+            font-size: 0.95rem;
+}
+
+.page-hall-of-shame .entry-meta span {
+padding: 0.35rem 0.65rem;
+            background: rgba(124, 35, 25, 0.12);
+}
+
+.page-hall-of-shame .entry-card h3 {
+font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            line-height: 1.2;
+            color: var(--color-ink);
+            margin-bottom: 1rem;
+}
+
+.page-hall-of-shame .entry-card strong {
+color: var(--color-warning);
+}
+
+.page-hall-of-shame .future-grid {
+display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+}
+
+.page-hall-of-shame .future-slot {
+padding: 1.35rem;
+            border: 1px dashed rgba(124, 35, 25, 0.45);
+            background: var(--color-highlight);
+}
+
+.page-hall-of-shame .future-slot h3 {
+font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--color-ink);
+            margin-bottom: 0.5rem;
+}
+
+.page-hall-of-shame .cta-section {
+margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+}
+
+.page-hall-of-shame .cta-section::before {
+content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+}
+
+.page-hall-of-shame .cta-section h2 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-hall-of-shame .cta-section p {
+font-size: 1.15rem;
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-hall-of-shame .cta-buttons {
+display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+}
+
+.page-hall-of-shame .btn {
+font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+}
+
+.page-hall-of-shame .btn-primary {
+background: var(--color-rust);
+            color: white;
+}
+
+.page-hall-of-shame .btn-primary:hover {
+transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.35);
+}
+
+.page-hall-of-shame .btn-secondary {
+background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+}
+
+.page-hall-of-shame .btn-secondary:hover {
+background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.3);
+}
+
+.page-hall-of-shame footer {
+background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+}
+
+.page-hall-of-shame footer p {
+font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+}
+
+.page-hall-of-shame footer a {
+color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+}
+
+.page-hall-of-shame footer a:hover {
+color: var(--color-bronze);
+}
+
+.page-hall-of-shame .github-link {
+display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+}
+
+.page-hall-of-shame .github-link:hover {
+background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .page-hall-of-shame header {
+padding: 3rem 1.5rem 2rem;
+    }
+
+    .page-hall-of-shame .intro-panel,
+    .page-hall-of-shame .entries-shell,
+    .page-hall-of-shame .future-panel,
+    .page-hall-of-shame .cta-section {
+padding: 2rem 1.5rem;
+    }
+
+    .page-hall-of-shame .cta-buttons {
+flex-direction: column;
+    }
+
+    .page-hall-of-shame .btn {
+width: 100%;
+                text-align: center;
+    }
+}
+

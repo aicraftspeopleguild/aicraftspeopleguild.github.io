@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"McpAdapter","layer":9,"version":"1.0.0","fields":[
+{"n":"tool_id","t":"STRING"},
+{"n":"mcp_name","t":"STRING","desc":"Name as it appears in MCP tool list"},
+{"n":"input_schema","t":"JSON","desc":"JSON Schema for Model Context Protocol input object"},
+{"n":"annotations","t":"JSON","nullable":true,"desc":"{readOnlyHint, destructiveHint, idempotentHint, openWorldHint}"}
+],"meta":{"desc":"Exposes a Tool over MCP (Model Context Protocol). The Cloudflare Worker proxy reads these to publish /mcp/sse endpoints."}}

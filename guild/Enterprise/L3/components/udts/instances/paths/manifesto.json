@@ -1,0 +1,32 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/manifesto",
+    "label": "Manifesto",
+    "page": "pages/aicraftspeopleguild-manifesto.page.json",
+    "section": "about",
+    "parent": "home",
+    "order": 10,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "manifesto",
+    "full_url": "https://aicraftspeopleguild.github.io/manifesto",
+    "children": [],
+    "breadcrumb": [
+      "about",
+      "manifesto"
+    ],
+    "depth": 1,
+    "view_id": "static-page",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:full",
+    "name": "Full site rebuild",
+    "description": "Run the 12-step build pipeline end-to-end.",
+    "category": "build",
+    "entry": "guild/Enterprise/L3/scripts/build.sh",
+    "language": "bash",
+    "inputs": [],
+    "outputs": [{"name":"dist","type":"dir","description":"guild/web/dist/*.html (build output, gitignored)"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["build","orchestrator"]
+  },
+  "tags": { "id": "build-full", "schema_version": "1.0.0" }
+}

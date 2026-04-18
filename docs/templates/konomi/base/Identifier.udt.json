@@ -1,0 +1,12 @@
+{"$schema":"konomi/udt/v1","name":"Identifier","layer":1,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"type","t":"STRING"},
+{"n":"scope","t":"STRING"},
+{"n":"format","t":"STRING"},
+{"n":"example","t":"STRING"}
+],"examples":{
+"UUID":{"type":"str","scope":"global","format":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx","example":"550e8400-e29b-41d4-a716-446655440000"},
+"PATH":{"type":"str","scope":"hierarchical","format":"A/B/C/D","example":"Site1/Area2/Line3/Unit4"},
+"TAG":{"type":"str","scope":"equipment","format":"Area_Unit_Module_Point","example":"Pkg_Filler_Tank1_Level"},
+"URN":{"type":"str","scope":"global","format":"urn:domain:type:id","example":"urn:acme:batch:12345"}
+},"meta":{"desc":"Generic identifier family"}}

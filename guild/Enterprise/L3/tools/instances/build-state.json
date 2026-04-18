@@ -1,0 +1,19 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:state",
+    "name": "Write /api/state.json from state.db",
+    "description": "Export the runtime state summary + active faults to guild/Enterprise/L4/api/state.json so browser widgets (repo-state-badge) can render it without server-side MCP.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/api/scripts/build-state.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"state.json","type":"file"}],
+    "adapters": ["CliAdapter","LoggerWrapper","TestWrapper"],
+    "tags": ["build","api","state"],
+    "test_cases": [
+      {"name":"builds ok","inputs":{},"expect":{"field":"ok","op":"eq","value":true}}
+    ]
+  },
+  "tags": { "id": "build-state", "schema_version": "1.0.0" }
+}

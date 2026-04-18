@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 900" width="1040" height="900" role="img" aria-label="ACG SCADA dashboard">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1040" height="900" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1040" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1040" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ ACG · SCADA dashboard · live</text>
+<g style="transform-origin:1000px 18px">
+    <circle cx="1000" cy="18" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="1000" cy="18" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="1000" cy="18" r="5" class="g"/>
+<text x="988" y="22" text-anchor="end" class="t" font-size="11" fill="#79c0ff">💓 2026-04-18 10:25Z</text>
+<text x="24" y="70" class="t lb" fill="#3fb950">CATALOG · /api/health.json</text><line x1="24" y1="76" x2="104" y2="76" stroke="#3fb950" stroke-width="2"/>
+<rect x="24" y="86" width="244" height="96" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="38" y="108" class="t lb" fill="#3fb950">papers</text><line x1="38" y1="114" x2="118" y2="114" stroke="#3fb950" stroke-width="2"/><text x="38" y="140" class="t va">24</text>
+<rect x="280" y="86" width="244" height="96" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="294" y="108" class="t lb" fill="#f0883e">members</text><line x1="294" y1="114" x2="374" y2="114" stroke="#f0883e" stroke-width="2"/><text x="294" y="140" class="t va">8</text>
+<rect x="536" y="86" width="244" height="96" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="550" y="108" class="t lb" fill="#a371f7">api</text><line x1="550" y1="114" x2="630" y2="114" stroke="#a371f7" stroke-width="2"/><text x="550" y="140" class="t va">v1.0</text>
+<rect x="792" y="86" width="244" height="96" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="806" y="108" class="t lb" fill="#3fb950">lastBuild</text><line x1="806" y1="114" x2="886" y2="114" stroke="#3fb950" stroke-width="2"/><text x="806" y="140" class="t va">2026-04-18T07:54:54</text>
+<text x="24" y="220" class="t lb" fill="#f0883e">ENTERPRISE · runtime/tags.json</text><line x1="24" y1="226" x2="104" y2="226" stroke="#f0883e" stroke-width="2"/>
+<rect x="24" y="236" width="160" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="38" y="258" class="t lb" fill="#3fb950">paperCount</text><line x1="38" y1="264" x2="118" y2="264" stroke="#3fb950" stroke-width="2"/><text x="38" y="290" class="t va">24</text>
+<rect x="192" y="236" width="160" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="206" y="258" class="t lb" fill="#f0883e">memberCount</text><line x1="206" y1="264" x2="286" y2="264" stroke="#f0883e" stroke-width="2"/><text x="206" y="290" class="t va">8</text>
+<rect x="360" y="236" width="160" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="374" y="258" class="t lb" fill="#a371f7">programCount</text><line x1="374" y1="264" x2="454" y2="264" stroke="#a371f7" stroke-width="2"/><text x="374" y="290" class="t va">23</text>
+<rect x="528" y="236" width="160" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="542" y="258" class="t lb" fill="#3fb950">runCount</text><line x1="542" y1="264" x2="622" y2="264" stroke="#3fb950" stroke-width="2"/><text x="542" y="290" class="t va">8</text>
+<rect x="696" y="236" width="160" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="710" y="258" class="t lb" fill="#a371f7">tagEdges</text><line x1="710" y1="264" x2="790" y2="264" stroke="#a371f7" stroke-width="2"/><text x="710" y="290" class="t va">4</text>
+<rect x="864" y="236" width="160" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="878" y="258" class="t lb" fill="#f0883e">authoredLinks</text><line x1="878" y1="264" x2="958" y2="264" stroke="#f0883e" stroke-width="2"/><text x="878" y="290" class="t va">6</text>
+<text x="24" y="354" class="t lb" fill="#a371f7">PIPELINE · L3 runs</text><line x1="24" y1="360" x2="104" y2="360" stroke="#a371f7" stroke-width="2"/>
+<rect x="24" y="370" width="992" height="120" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:54px 402px">
+    <circle cx="54" cy="402" r="11" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="54" cy="402" r="11" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="54" cy="402" r="7" class="g"/>
+<text x="78" y="398" class="t lb">complete</text>
+<text x="78" y="424" class="t va g">1</text>
+<text x="200" y="398" class="t lb">aborted</text>
+<text x="200" y="424" class="t va g">0</text>
+<text x="300" y="398" class="t lb">events</text>
+<text x="300" y="424" class="t va">31</text>
+<text x="400" y="398" class="t lb">success</text>
+<text x="400" y="424" class="t va g">100%</text>
+<text x="756" y="398" class="t lb">last 1 runs</text>
+<polyline fill="none" stroke="#3fb950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="756.0,438.0"/>
+<rect x="40" y="468" width="960" height="8" rx="4" fill="#0d1117" stroke="#30363d" stroke-width="1"/><rect x="40" y="468" width="960" height="8" rx="4" fill="#3fb950"/>
+<text x="24" y="524" class="t lb" fill="#a371f7">IDENTITY · deploy</text><line x1="24" y1="530" x2="104" y2="530" stroke="#a371f7" stroke-width="2"/>
+<g><rect x="24" y="534" rx="11" width="292" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="170" y="549" text-anchor="middle" class="t" font-size="11" fill="#3fb950">host aicraftspeopleguild.github.io</text></g>
+<g><rect x="326" y="534" rx="11" width="228" height="22" fill="none" stroke="#f0883e" stroke-width="1" opacity=".6"/><text x="440" y="549" text-anchor="middle" class="t" font-size="11" fill="#f0883e">deploy github-pages-static</text></g>
+<g><rect x="564" y="534" rx="11" width="84" height="22" fill="none" stroke="#a371f7" stroke-width="1" opacity=".6"/><text x="606" y="549" text-anchor="middle" class="t" font-size="11" fill="#a371f7">api v1.0</text></g>
+<g><rect x="658" y="534" rx="11" width="292" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="804" y="549" text-anchor="middle" class="t" font-size="11" fill="#3fb950">latest \"You're Absolutely Wrong!\</text></g>
+<text x="24" y="594" class="t lb" fill="#3fb950">TAGS · GitHub Issues (1)</text><line x1="24" y1="600" x2="104" y2="600" stroke="#3fb950" stroke-width="2"/>
+<rect x="24" y="610" width="244" height="72" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><g style="transform-origin:46px 634px">
+    <circle cx="46" cy="634" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="46" cy="634" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="46" cy="634" r="6" class="g"/><text x="64" y="638" class="t lb">demo.heartbeat</text><text x="38" y="670" class="t va">1776507911</text><text x="38" y="672" class="t sub">#21 · 1 edits</text>
+<text x="24" y="800" class="t lb" fill="#f85149">FAULTS · active</text><line x1="24" y1="806" x2="104" y2="806" stroke="#f85149" stroke-width="2"/>
+<g style="transform-origin:48px 830px">
+    <circle cx="48" cy="830" r="11" fill="none" stroke="#f85149" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="48" cy="830" r="11" fill="none" stroke="#f85149" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="48" cy="830" r="7" class="r"/>
+<text x="72" y="834" class="t va r">2 active faults</text>
+<g><rect x="240" y="818" rx="11" width="468" height="22" fill="none" stroke="#f85149" stroke-width="1" opacity=".6"/><text x="474" y="833" text-anchor="middle" class="t" font-size="11" fill="#f85149">build_failure · paperCount stuck at 0 — build-api.py pac</text></g>
+<g><rect x="718" y="818" rx="11" width="364" height="22" fill="none" stroke="#f85149" stroke-width="1" opacity=".6"/><text x="900" y="833" text-anchor="middle" class="t" font-size="11" fill="#f85149">tool_failure · tool build:api failed (rc=1)</text></g>
+</svg>

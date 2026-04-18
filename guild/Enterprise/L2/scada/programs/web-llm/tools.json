@@ -1,0 +1,20 @@
+{
+  "§": "4.2.3",
+  "🏗️": "🔧",
+  "name": "tools",
+  "module": "L4/sandbox/web-llm/modules/tools.js",
+
+  "📦": { "callCount": "i" },
+
+  "→": [
+    { "name": "runToolCall",   "in": "name:e, args:o",           "out": "result:o", "flow": "executeTool ⊕ logRow" },
+    { "name": "parseAndRunAll","in": "text:s, onAfter(tc,r)?",   "flow": "parseToolCalls ⊕ ∀ tc → runToolCall ⊕ onAfter" },
+    { "name": "logRow",        "in": "name,args,result",         "flow": "TOOL.inc(count) ⊕ TOOL.write(last,🏗️ToolCall) ⊕ DOM.prepend(.tool-entry)" }
+  ],
+
+  "↑🖥️(via 🛰️)": [
+    "sandbox.web-llm.tool.count",
+    "sandbox.web-llm.tool.last (🏗️ToolCall UDT)"
+  ],
+  "和": true
+}

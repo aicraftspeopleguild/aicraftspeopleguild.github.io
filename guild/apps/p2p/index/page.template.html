@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+  ═══ ACG page template ═══
+  This is the reference shape of every subsystem index.html.
+  Copy this file to /{sub}/index.html and change the three placeholders
+  in the renderSection({sub, glyph, name, desc}) call at the bottom.
+  Every page gets:
+    · the parchment theme                       (../controls/scada/gateway/styles/theme.css)
+    · the shared section layout                 (../controls/scada/gateway/styles/section.css)
+    · the renderer + mesh bridge wiring         (../index/renderer.js)
+    · ../udts.json and ../tags.json auto-loaded (overridable via opts)
+    · a live feed of cross-tab events on the acg-mesh BroadcastChannel
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{GLYPH}} {{NAME}} · ACG</title>
+<link rel="stylesheet" href="../controls/scada/gateway/styles/section.css">
+</head>
+<body>
+<main id="section"></main>
+<script type="module">
+import {renderSection} from '../index/renderer.js';
+renderSection({
+  sub:   '{{SUB}}',            // directory name · matches owning provider
+  glyph: '{{GLYPH}}',          // one-char emoji / symbol
+  name:  '{{NAME}}',           // human label
+  desc:  '{{DESC}}',           // one-line description (optional)
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "CASO — Chief AI Skeptic Officer",
+    "slug": "chief-ai-skeptic-officer",
+    "route": "/chief-ai-skeptic-officer",
+    "view": "views/chief-ai-skeptic-officer.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "about",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/chief-ai-skeptic-officer.data.json"
+    }
+  },
+  "tags": {
+    "id": "chief-ai-skeptic-officer",
+    "view_id": "chief-ai-skeptic-officer",
+    "schema_version": "1.0.0"
+  }
+}

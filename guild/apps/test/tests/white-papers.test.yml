@@ -1,0 +1,68 @@
+# tests/white-papers.test.yml
+# The generated human-readable index. Verifies the template shape
+# defined in Part 5 of the Paper Auto-Index Standard is rendered correctly.
+
+test: White papers index page
+target: white-papers.html
+
+exists:
+  expect: present
+  reason: "the generated index must be published so readers can browse Guild publications"
+
+watches:
+  - path: "article.paper-card"
+    expect: triggered
+    reason: "at least one paper card must render — the index is not empty"
+
+  - path: "article.paper-card[data-type='standard']"
+    expect: triggered
+    reason: "the self-validating paper must appear, classified as type 'standard'"
+
+  - path: "article.paper-card .paper-meta .paper-id"
+    expect: triggered
+    reason: "every card must expose its paper id so readers can cite it"
+
+  - path: "article.paper-card .paper-meta .paper-author"
+    expect: triggered
+    reason: "every card must show its author"
+
+  - path: "article.paper-card .paper-meta .paper-date"
+    expect: triggered
+    reason: "every card must show its publication date"
+
+  - path: "article.paper-card .paper-type-badge"
+    expect: triggered
+    reason: "the type badge is required by the template in Part 5"
+
+  - path: "article.paper-card h3"
+    expect: triggered
+    reason: "the card title is the h3 per the template"
+
+  - path: "article.paper-card .paper-abstract"
+    expect: triggered
+    reason: "the abstract paragraph is required on every card"
+
+  - path: "article.paper-card .paper-tags .tag"
+    expect: triggered
+    reason: "tags must render as chips so readers can scan topics"
+
+  - path: "article.paper-card a.paper-link"
+    expect: triggered
+    reason: "every card must link to the paper itself — the reason the card exists"
+
+  - path: "nav.site-nav a[href$='white-papers.html'][aria-current='page']"
+    expect: triggered
+    reason: "the Papers link must be current when this page is rendered"
+
+secrets:
+  - name: papers.json
+    expect: configured
+    reason: "the JSON source of truth must be published alongside the HTML view"
+
+  - name: paper-auto-index-standard.html
+    expect: configured
+    reason: "the paper linked from the first card must exist or the link is broken"
+
+guardrails:
+  - condition: "article.paper-card:not([data-type])"
+    reason: "every card must declare its type for filtering"

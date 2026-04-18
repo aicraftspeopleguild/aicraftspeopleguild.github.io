@@ -1,0 +1,18 @@
+{"$schema":"konomi/index/v1","name":"acgp2p-standards","version":"1.0.0",
+"standards":{
+"Konomi":{"path":"konomi/","version":"1.0.0","role":"meta-standard"},
+"GitPLC":{"path":"gitplc/","version":"1.0.0","role":"PLC transfer layer","depends_on":["Konomi","ISA-88","ISA-95","ISA-18.2"]}
+},
+"konomi_layers":{
+"0":"konomi/meta/","1":"konomi/base/",
+"2":"konomi/isa95/","3":"konomi/isa88/","4":"konomi/isa101/","5":"konomi/isa18/",
+"6":"konomi/opcua/","7":"konomi/mqtt/","8":"konomi/modbus/","9":"konomi/kpi/",
+"x":"konomi/crosswalks/"
+},
+"file_kinds":{
+"_std.json":"standard header",
+"*.udt.json":"user-defined type",
+"*.sm.json":"state machine",
+"*.cw.json":"crosswalk"
+},
+"token_budget":"<=250 per file"}

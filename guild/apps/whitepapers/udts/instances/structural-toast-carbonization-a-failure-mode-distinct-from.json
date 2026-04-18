@@ -1,0 +1,29 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "Structural Toast Carbonization: A Failure Mode Distinct from Voluntary Technical Debt Acquisition",
+    "slug": "structural-toast-carbonization-a-failure-mode-distinct-from",
+    "kind": "white-paper",
+    "description": "Thomas Frumkin reflects on Kelly Hohman's toast-burning research paper",
+    "source_type": "WhitePaper",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/structural-toast-carbonization-a-failure-mode-distinct-from-voluntary-technical-debt-acquisition.json",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/structural-toast-carbonization-a-failure-mode-distinct-from.data.json"
+    },
+    "route": "/whitepapers/structural-toast-carbonization-a-failure-mode-distinct-from",
+    "section": "resources",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "status": "published",
+    "tags": []
+  },
+  "tags": {
+    "id": "structural-toast-carbonization-a-failure-mode-distinct-from",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/structural-toast-carbonization-a-failure-mode-distinct-from/",
+    "view_id": "white-paper-app",
+    "ingested_at": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

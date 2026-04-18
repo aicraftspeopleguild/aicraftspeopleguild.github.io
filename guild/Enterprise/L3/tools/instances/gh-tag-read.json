@@ -1,0 +1,20 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "gh-tag:read",
+    "name": "Read a GitHub-Issue tag",
+    "description": "Fetch a tag whose backing store is a GitHub Issue. Title convention: `tag:<path>`. Value comes from the most recent comment (or issue body if no comments). Unauthenticated — 60 req/hr public.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/gh_tag.py:read",
+    "language": "python",
+    "inputs": [{"name":"path","type":"String","required":true}],
+    "outputs": [{"name":"tag","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["tag","github","dynamic","read"],
+    "mcp": {
+      "mcp_name":"gh_tag_read",
+      "input_schema":{"type":"object","properties":{"path":{"type":"string"}},"required":["path"]}
+    }
+  },
+  "tags": { "id": "gh-tag-read", "schema_version": "1.0.0" }
+}

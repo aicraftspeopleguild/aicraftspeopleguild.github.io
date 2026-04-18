@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "The Harm Equation",
+    "slug": "app-the-harm-equation",
+    "route": "/whitepapers/the-harm-equation",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/the-harm-equation.data.json"
+    },
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "section": "resources",
+    "parent_slug": "white-papers",
+    "status": "published"
+  },
+  "tags": {
+    "id": "app-the-harm-equation",
+    "view_id": "white-paper-app",
+    "schema_version": "1.0.0"
+  }
+}

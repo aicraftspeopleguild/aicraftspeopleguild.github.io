@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"GitIndex","layer":9,"version":"1.0.0",
+"desc":"Git / GitHub entity UDTs. Every ACG automation that touches the repo can emit instances of these into runtime tags or audit logs.",
+"entities":["Commit","Branch","Tag","PullRequest","Review","Issue","Workflow","WorkflowRun","Job","Step","Actor","Label"],
+"relations":["Commit->Branch","PullRequest->Commit[]","Review->PullRequest","Workflow->WorkflowRun->Job->Step"],
+"notes":"All fields use compact Konomi {n,t} shape. Timestamps are ISO8601 UTC strings."}

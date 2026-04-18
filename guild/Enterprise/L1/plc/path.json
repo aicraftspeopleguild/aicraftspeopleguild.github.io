@@ -1,0 +1,42 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L1/plc",
+    "label": "plc",
+    "parent": "guild/Enterprise/L1",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L1_plc",
+    "fs_path": "guild/Enterprise/L1/plc",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L1",
+      "guild_Enterprise_L1_plc"
+    ],
+    "children": [
+      "guild/Enterprise/L1/plc/git"
+    ],
+    "siblings": [
+      "guild/Enterprise/L1/forms"
+    ],
+    "descendants": 8,
+    "file_count": 7,
+    "subdir_count": 1,
+    "kinds": {
+      "db": 2,
+      "html": 1,
+      "py": 1,
+      "md": 1,
+      "json": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "state:fire",
+    "name": "State machine fire-event",
+    "description": "Manually inject an event into the state-machine runner. Every Script UDT whose trigger matches the event is invoked. Useful for testing + webhook-driven triggers (e.g., GitHub push -> state:fire tag=git:state from=HOLD to=COMPLETE).",
+    "category": "automation",
+    "entry": "guild/Enterprise/L2/lib/state_machine.py:fire_event",
+    "language": "python",
+    "inputs": [
+      {
+        "name": "tag",
+        "type": "String",
+        "required": true,
+        "description": "Tag path, e.g. git:state"
+      },
+      {
+        "name": "from_state",
+        "type": "String",
+        "required": false,
+        "description": "Previous state (for on_transition)"
+      },
+      {
+        "name": "to_state",
+        "type": "String",
+        "required": false,
+        "description": "New state (for on_transition)"
+      },
+      {
+        "name": "kind",
+        "type": "String",
+        "required": false,
+        "default": "on_transition"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "report",
+        "type": "FireReport",
+        "description": "matched scripts + execution outcomes"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "McpAdapter",
+      "LoggerWrapper",
+      "TestWrapper"
+    ],
+    "tags": [
+      "automation",
+      "state-machine",
+      "event"
+    ],
+    "mcp": {
+      "mcp_name": "state_fire",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string"
+          },
+          "from_state": {
+            "type": "string"
+          },
+          "to_state": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "default": "on_transition"
+          }
+        },
+        "required": [
+          "tag"
+        ]
+      }
+    }
+  },
+  "tags": {
+    "id": "state-fire",
+    "schema_version": "1.0.0"
+  }
+}

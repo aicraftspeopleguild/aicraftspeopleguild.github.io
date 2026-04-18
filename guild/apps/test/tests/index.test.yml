@@ -1,0 +1,76 @@
+# tests/index.test.yml
+# Verifies the GitHub Pages entry point renders the expected structure.
+# Page tests repurpose UDT:PathWatch — `path` is a CSS selector tested against
+# the page's live DOM. See acg-test.config.yml for the mapping.
+
+test: Home page (entry point)
+target: index.html
+
+exists:
+  expect: present
+  reason: "index.html must exist at repo root so GitHub Pages serves it as the entry point"
+
+watches:
+  - path: "header.site .brand"
+    expect: triggered
+    reason: "the brand link anchors every page and must render on the home page"
+
+  - path: "nav.site-nav a[href$='standard.html']"
+    expect: triggered
+    reason: "home page must link to the Standard page"
+
+  - path: "nav.site-nav a[href$='types.html']"
+    expect: triggered
+    reason: "home page must link to the Types page"
+
+  - path: "nav.site-nav a[href$='example.html']"
+    expect: triggered
+    reason: "home page must link to the Example page"
+
+  - path: "nav.site-nav a[href$='runner.html']"
+    expect: triggered
+    reason: "home page must link to the Runner page"
+
+  - path: "nav.site-nav a[href$='terminal.html']"
+    expect: triggered
+    reason: "home page must link to the Terminal page"
+
+  - path: "nav.site-nav a[href$='white-papers.html']"
+    expect: triggered
+    reason: "home page must link to the White Papers index"
+
+  - path: "section.hero h1"
+    expect: triggered
+    reason: "hero title must render so the site has a recognisable landing moment"
+
+  - path: ".card-grid .card"
+    expect: triggered
+    reason: "card grid must render so visitors can navigate to each section"
+
+  - path: "#site-summary"
+    expect: triggered
+    reason: "home page must host the live test summary driven by the runner"
+
+  - path: "ol.rules"
+    expect: triggered
+    reason: "design rules list is the spec-in-miniature and must render"
+
+secrets:
+  - name: assets/style.css
+    expect: configured
+    reason: "the shared stylesheet must load for any page to be legible"
+
+  - name: assets/udt-elements.js
+    expect: configured
+    reason: "UDT custom elements must load so pages can render typed content"
+
+  - name: assets/test-runner.js
+    expect: configured
+    reason: "the test runner must load so the summary section has data"
+
+guardrails:
+  - condition: "udt-expectation:not([reason])"
+    reason: "no UDT:Expectation may render without a reason attribute — the reason IS the documentation"
+
+  - condition: "udt-pathwatch:not([reason])"
+    reason: "no UDT:PathWatch may render without a reason attribute"

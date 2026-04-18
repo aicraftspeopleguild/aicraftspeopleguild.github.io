@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "From Correctness to Integrity: Measuring AI-Generated Code Through Constraint Satisfaction, Mutation Robustness, and Self-Articulated Limitations",
+    "slug": "app-from-correctness-to-integrity-measuring-ai-generated-code",
+    "route": "/whitepapers/from-correctness-to-integrity-measuring-ai-generated-code",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/from-correctness-to-integrity-measuring-ai-generated-code.data.json"
+    },
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "section": "resources",
+    "parent_slug": "white-papers",
+    "status": "published"
+  },
+  "tags": {
+    "id": "app-from-correctness-to-integrity-measuring-ai-generated-code",
+    "view_id": "white-paper-app",
+    "schema_version": "1.0.0"
+  }
+}

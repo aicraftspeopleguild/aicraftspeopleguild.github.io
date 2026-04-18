@@ -1,0 +1,4 @@
+{"$schema":"konomi/udt/v1","name":"EquipmentModule","std":"ISA-88","base":"Equipment","layer":3,"version":"1.0.0","fields":[
+{"n":"cms","t":"ControlModule","array":true},
+{"n":"type","t":"ENUM","values":["Agitator","Heater","Pump","Valve","Other"]}
+],"meta":{"desc":"Functional equipment module"}}

@@ -1,0 +1,74 @@
+{
+  "base": "http://127.0.0.1:8765/",
+  "at": "2026-04-18T08:10:31.093Z",
+  "results": [
+    {
+      "slug": "home",
+      "url": "http://127.0.0.1:8765/",
+      "ok": true,
+      "title": "AI Craftspeople Guild - Professional Code of Conduct",
+      "hasApp": true,
+      "appPreview": "⚒ ACG ⚒Loading...",
+      "bodyLen": 4562,
+      "is404": false,
+      "shot": "Enterprise\\L3\\dist\\live-shots\\home.png"
+    },
+    {
+      "slug": "charter",
+      "url": "http://127.0.0.1:8765/#/charter",
+      "ok": true,
+      "title": "Guild Charter — AI Craftspeople Guild",
+      "hasApp": true,
+      "appPreview": "← Back to Home\nPreamble\n\nWe are living through a profound change in the making of software. Artificial intelligence has expanded what software professionals can produce, how quickly they can produce i",
+      "bodyLen": 10314,
+      "is404": false,
+      "shot": "Enterprise\\L3\\dist\\live-shots\\charter.png"
+    },
+    {
+      "slug": "conduct",
+      "url": "http://127.0.0.1:8765/#/code-of-conduct",
+      "ok": true,
+      "title": "Code of Conduct — AI Craftspeople Guild",
+      "hasApp": true,
+      "appPreview": "← Back to Home\nCode of Conduct Terms of Service\nPreamble\n\nThe AI Craftspeople Guild is a collective of software professionals who insist on professional standards in an industry prone to hype. This Co",
+      "bodyLen": 13729,
+      "is404": false,
+      "shot": "Enterprise\\L3\\dist\\live-shots\\conduct.png"
+    },
+    {
+      "slug": "papers",
+      "url": "http://127.0.0.1:8765/#/white-papers",
+      "ok": true,
+      "title": "White Papers — AI Craftspeople Guild",
+      "hasApp": true,
+      "appPreview": "← Back to Home\n<p>The Guild catalog has 25 publications. Source of truth: <code>guild/Enterprise/L4/api/white-papers/originals/*.md</code>.</p>\nAvailable Papers\n\n25 publications in the Guild catalog.\n",
+      "bodyLen": 5602,
+      "is404": false,
+      "shot": "Enterprise\\L3\\dist\\live-shots\\papers.png"
+    },
+    {
+      "slug": "members",
+      "url": "http://127.0.0.1:8765/#/members",
+      "ok": true,
+      "title": "Guild Members — AI Craftspeople Guild",
+      "hasApp": true,
+      "appPreview": "← Back to Home\nCurrent Members\nJoin the Guild\nRead the CharterBack to Home",
+      "bodyLen": 578,
+      "is404": false,
+      "shot": "Enterprise\\L3\\dist\\live-shots\\members.png"
+    },
+    {
+      "slug": "submit",
+      "url": "http://127.0.0.1:8765/guild/Enterprise/L1/forms/submit/",
+      "ok": true,
+      "title": "Submit an Article — AI Craftspeople Guild",
+      "hasApp": false,
+      "appPreview": "",
+      "bodyLen": 907,
+      "is404": false,
+      "shot": "Enterprise\\L3\\dist\\live-shots\\submit.png"
+    }
+  ],
+  "consoleErrors": [],
+  "networkFails": []
+}

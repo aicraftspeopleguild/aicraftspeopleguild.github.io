@@ -1,0 +1,73 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "white-paper-article",
+    "description": "Individual white paper article page",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "{{ paper.parameters.title }}",
+        "subtitle": "{{ paper.parameters.summary }}",
+        "bodyClass": "page-white-paper",
+        "stylesheets": ["style/main.css"],
+        "eyebrow": "ACG White Paper",
+        "backHref": "../white-papers.html",
+        "backLabel": "Back to White Papers",
+        "meta": ["{{ paper.parameters.authors.0 }}", "{{ paper.parameters.publication_date }}", "{{ paper.parameters.doc_number }}"]
+      },
+      "children": [
+        {
+          "type": "ArticleNav",
+          "props": {
+            "sections": "{{ article.sections }}"
+          }
+        },
+        {
+          "type": "IntroPanel",
+          "props": {
+            "cssVariant": "lead",
+            "content": "{{ article.lead }}"
+          }
+        },
+        {
+          "type": "ArticleBody",
+          "repeat": {
+            "source": "article.sections",
+            "as": "section",
+            "template": {
+              "type": "ArticleSection",
+              "props": {
+                "id": "{{ section.id }}",
+                "title": "{{ section.label }}"
+              },
+              "children": "{{ section.content }}"
+            }
+          }
+        },
+        {
+          "type": "ClosingStatement",
+          "props": {
+            "content": "{{ article.closing }}",
+            "paperMark": "{{ article.paper_mark }}"
+          }
+        },
+        {
+          "type": "CTASection",
+          "props": {
+            "heading": "Continue Reading",
+            "primaryText": "Back to White Papers",
+            "primaryHref": "../white-papers.html",
+            "secondaryText": "Back to Home",
+            "secondaryHref": "#/"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "white-paper-article",
+    "component_ids": ["page-shell", "article-nav", "intro-panel", "article-section", "closing-statement", "cta-section", "callout", "figure-block", "code-block", "pull-quote"],
+    "data_sources": ["white-papers/udts/instances/:slug.json"],
+    "schema_version": "1.0.0"
+  }
+}

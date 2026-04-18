@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"Workflows","std":"GitPLC","version":"1.0.0",
+"workflows":{
+"import_edit_export":["gitplc import program.L5X","edit types/*.udt.json","git commit","gitplc export --vendor ab"],
+"cross_platform":["gitplc import siemens.zap16 --vendor siemens","gitplc export --vendor ab","compare/merge with AB project"],
+"multi_site":["git clone standard-library","fork/branch per site","customize equipment/types","PR common improvements"],
+"ci_cd":["on push: validate --strict","export --all-vendors","sim --test-suite","archive exports/"]
+},"meta":{"desc":"Canonical GitPLC workflows"}}

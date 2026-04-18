@@ -1,0 +1,43 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs",
+    "label": "docs",
+    "parent": ".",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs",
+    "fs_path": "docs",
+    "depth": 1,
+    "breadcrumb": [
+      "root",
+      "docs"
+    ],
+    "children": [
+      "docs/api",
+      "docs/engineering",
+      "docs/templates"
+    ],
+    "siblings": [
+      "bin",
+      "guild",
+      "index"
+    ],
+    "descendants": 21,
+    "file_count": 7,
+    "subdir_count": 3,
+    "kinds": {
+      "md": 2,
+      "db": 2,
+      "css": 1,
+      "html": 1,
+      "js": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

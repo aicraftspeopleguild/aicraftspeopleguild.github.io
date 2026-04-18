@@ -1,0 +1,24 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "Member Profile",
+    "slug": "member-profile",
+    "route": "/members/:slug",
+    "view": "views/member-profile.view.json",
+    "data": {
+      "member": "members/udts/instances/:slug.json"
+    },
+    "stylesheets": [
+      "style/main.css",
+      "style/member-profile.css"
+    ],
+    "section": "community",
+    "parent_slug": "members",
+    "status": "published"
+  },
+  "tags": {
+    "id": "member-profile",
+    "view_id": "member-profile",
+    "schema_version": "1.0.0"
+  }
+}

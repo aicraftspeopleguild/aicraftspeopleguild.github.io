@@ -1,2 +1,32 @@
-.idea
-*.iml
+# Build output — regenerate with: bash guild/web/scripts/build.sh
+guild/web/dist/
+
+# Paper auto-index transient summary (PR-comment step)
+.paper-index-summary.json
+
+# Python / Node
+__pycache__/
+*.pyc
+node_modules/
+package-lock.json
+
+# SQLite databases (regenerable from UDT instances)
+guild/Enterprise/L4/database/*.db
+guild/Enterprise/L4/database/*.db-journal
+
+# P2P app runtime SQLite (generated from tags.json on the client)
+guild/apps/p2p/controls/db/*.sqlite
+guild/apps/p2p/controls/db/*.sqlite-journal
+
+# Tool runner JSONL audit trail (per-invocation, local runtime artifact)
+guild/Enterprise/L2/logs/
+
+# Playwright live-smoke screenshots (regenerable)
+guild/web/dist/live-shots/
+guild/web/dist/screenshots/
+
+# Stray debug/probe artifacts
+/lengths.txt
+/stderr.txt
+/script.db
+/_probe.js

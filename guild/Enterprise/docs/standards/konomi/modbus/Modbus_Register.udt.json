@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"Modbus_Register","std":"Modbus","layer":8,"version":"1.0.0",
+"types":{
+"Coil":{"addr":"0-65535","access":"RW","type":"bit","fc_read":1,"fc_write":5,"fc_multi":15},
+"DiscreteInput":{"addr":"0-65535","access":"RO","type":"bit","fc_read":2},
+"HoldingReg":{"addr":"0-65535","access":"RW","type":"uint16","fc_read":3,"fc_write":6,"fc_multi":16},
+"InputReg":{"addr":"0-65535","access":"RO","type":"uint16","fc_read":4}
+},"meta":{"desc":"Modbus register classes"}}

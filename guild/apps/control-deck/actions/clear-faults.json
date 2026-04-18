@@ -1,0 +1,13 @@
+{
+  "udtType": "ControlAction",
+  "parameters": {
+    "id": "clear-faults",
+    "label": "✅ clear faults",
+    "title": "cmd:clear-faults",
+    "body": "Clear every active fault in state.db.",
+    "category": "cmd",
+    "color": "danger",
+    "order": 40
+  },
+  "tags": { "id": "action-clear-faults", "schema_version": "1.0.0" }
+}

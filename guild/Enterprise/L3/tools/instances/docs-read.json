@@ -1,0 +1,20 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "docs:read",
+    "name": "Read doc body from docs.db",
+    "description": "Return the archived body for a path stored in docs.db. Works even if the on-disk source has been removed — docs.db preserves bodies on regeneration.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/docs_query.py:read",
+    "language": "python",
+    "inputs": [{"name":"path","type":"String","required":true,"description":"e.g. docs/engineering/architecture/isa-95/level-2-scada.md"}],
+    "outputs": [{"name":"doc","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["docs","read","archive"],
+    "mcp": {
+      "mcp_name":"docs_read",
+      "input_schema":{"type":"object","properties":{"path":{"type":"string"}},"required":["path"]}
+    }
+  },
+  "tags": { "id": "docs-read", "schema_version": "1.0.0" }
+}

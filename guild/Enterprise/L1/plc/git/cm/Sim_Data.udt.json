@@ -1,0 +1,13 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Sim_Data",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "enable", "type": "BOOL"},
+    {"name": "value", "type": "REAL"},
+    {"name": "ramp_enable", "type": "BOOL"},
+    {"name": "ramp_rate", "type": "REAL"}
+  ],
+  "meta": {"desc": "Simulation override for testing"}
+}

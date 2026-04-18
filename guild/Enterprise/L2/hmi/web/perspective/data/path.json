@@ -1,0 +1,37 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/hmi/web/perspective/data",
+    "label": "data",
+    "parent": "guild/Enterprise/L2/hmi/web/perspective",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_perspective_data",
+    "fs_path": "guild/Enterprise/L2/hmi/web/perspective/data",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_perspective",
+      "guild_web_perspective_data"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/L2/hmi/web/perspective/components",
+      "guild/Enterprise/L2/hmi/web/perspective/views"
+    ],
+    "descendants": 0,
+    "file_count": 1,
+    "subdir_count": 0,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

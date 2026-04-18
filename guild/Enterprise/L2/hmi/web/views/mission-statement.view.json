@@ -1,0 +1,37 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "mission-statement",
+    "description": "Decomposed view for mission-statement",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "{{ page.title }}",
+        "subtitle": "{{ page.subtitle }}",
+        "eyebrow": "{{ page.eyebrow }}",
+        "bodyClass": "{{ page.bodyClass }}",
+        "backHref": "{{ page.backHref }}",
+        "backLabel": "{{ page.backLabel }}"
+      },
+      "children": [
+        {
+          "type": "RawHTML",
+          "props": {
+            "html": "{{ page.body }}"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "mission-statement",
+    "component_ids": [
+      "page-shell",
+      "raw-html"
+    ],
+    "data_sources": [
+      "views/data/mission-statement.data.json"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

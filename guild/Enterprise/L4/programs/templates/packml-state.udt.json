@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "PackMLState",
+  "version": "1.0.0",
+  "description": "A single run of a Program through the PackML state machine (ISA-TR88.00.02). Records the state transition history, pre/post check results, and final terminal state with any error captured.",
+  "parameters": {
+    "program_id": { "dataType": "String",      "required": true },
+    "run_id":     { "dataType": "String",      "required": true,  "description": "Unique id for this run, e.g. timestamp+uuid" },
+    "started_at": { "dataType": "String",      "required": true,  "description": "UTC ISO timestamp" },
+    "ended_at":   { "dataType": "String",      "required": false },
+    "terminal":   { "dataType": "String",      "required": false, "description": "COMPLETE | ABORTED | HELD | STOPPED" },
+    "transitions":{ "dataType": "JSON",        "required": false, "description": "Ordered list of {state, at, note}" },
+    "pre_check_results":  { "dataType": "JSON","required": false, "description": "{check_name: {ok, note}}" },
+    "post_check_results": { "dataType": "JSON","required": false },
+    "error":      { "dataType": "String",      "required": false, "description": "Error message if ABORTED" }
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "duration_s":     { "dataType": "String", "description": "Total duration in seconds" },
+    "schema_version": { "dataType": "String" }
+  }
+}

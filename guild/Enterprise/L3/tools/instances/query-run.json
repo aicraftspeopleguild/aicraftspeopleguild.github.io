@@ -1,0 +1,20 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "query:run",
+    "name": "Run a stored query",
+    "description": "Execute a stored query by id. If the query declares output_tag, the result is written through state_db.tag_write (single cell -> scalar; single column -> list; else JSON rows).",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/query_runner.py:run",
+    "language": "python",
+    "inputs": [{"name":"id","type":"String","required":true}],
+    "outputs": [{"name":"result","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["query","run"],
+    "mcp": {
+      "mcp_name":"query_run",
+      "input_schema":{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}
+    }
+  },
+  "tags": { "id": "query-run", "schema_version": "1.0.0" }
+}

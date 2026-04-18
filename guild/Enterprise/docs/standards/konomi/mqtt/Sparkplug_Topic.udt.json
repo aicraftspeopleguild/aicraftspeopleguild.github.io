@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"Sparkplug_Topic","std":"MQTT+Sparkplug","layer":7,"version":"1.0.0",
+"topics":{
+"NBIRTH":"spBv1.0/{group}/NBIRTH/{edge_node}  - node online, metric list",
+"NDEATH":"spBv1.0/{group}/NDEATH/{edge_node}  - node offline",
+"DBIRTH":"spBv1.0/{group}/DBIRTH/{edge_node}/{device}  - device online",
+"DDEATH":"spBv1.0/{group}/DDEATH/{edge_node}/{device}  - device offline",
+"NDATA":"spBv1.0/{group}/NDATA/{edge_node}  - node data",
+"DDATA":"spBv1.0/{group}/DDATA/{edge_node}/{device}  - device data",
+"NCMD":"spBv1.0/{group}/NCMD/{edge_node}  - command to node",
+"DCMD":"spBv1.0/{group}/DCMD/{edge_node}/{device}  - command to device"
+},"meta":{"desc":"Sparkplug B topic namespace"}}

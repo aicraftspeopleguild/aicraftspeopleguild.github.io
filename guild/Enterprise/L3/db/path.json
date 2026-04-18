@@ -1,0 +1,43 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L3/db",
+    "label": "db",
+    "parent": "guild/Enterprise/L3",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L3_db",
+    "fs_path": "guild/Enterprise/L3/db",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L3",
+      "guild_Enterprise_L3_db"
+    ],
+    "children": [
+      "guild/Enterprise/L3/db/sql"
+    ],
+    "siblings": [
+      "guild/Enterprise/L3/tools"
+    ],
+    "descendants": 1,
+    "file_count": 7,
+    "subdir_count": 1,
+    "kinds": {
+      "py": 1,
+      "db": 2,
+      "html": 1,
+      "md": 1,
+      "json": 1,
+      "sqlite": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

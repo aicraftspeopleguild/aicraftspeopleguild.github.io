@@ -1,0 +1,40 @@
+/* ═══ ACG Sandbox · shared theme ═══
+ * Consumes the global tokens from controls/scada/gateway/styles/theme.css.
+ * The SCADA gateway is the single source of truth for all HMI styles.
+ */
+@import url('../../../L2/scada/gateway/styles/theme.css');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;font-family:var(--ff-body);color:var(--tx);background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0)}
+
+.sb-topbar{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:0 1px 3px var(--sh);display:flex;align-items:center;gap:14px;flex-wrap:wrap;z-index:10}
+.sb-topbar .logo{font-family:var(--ff-display);font-weight:700;font-size:17px;color:var(--tx)}
+.sb-topbar .logo span{font-weight:400;color:var(--dm);font-size:13px;margin-left:6px}
+.sb-topbar a{color:var(--tl);text-decoration:none;font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--r-sm);border:1px solid transparent}
+.sb-topbar a:hover{background:var(--tlb);border-color:var(--tl)}
+.sb-topbar .spacer{flex:1}
+
+.sb-btn{padding:5px 12px;border:none;border-radius:8px;font-family:var(--ff-body);font-size:11px;font-weight:600;cursor:pointer;background:var(--tl);color:#fff;transition:all .15s}
+.sb-btn:hover{background:var(--tl2)}
+.sb-btn.g{background:var(--inp);color:var(--dm);border:1px solid var(--bd)}
+.sb-btn.g:hover{border-color:var(--tl);color:var(--tl)}
+
+.sb-main{padding:28px 24px;max-width:960px;margin:0 auto}
+.sb-main h1{font-family:var(--ff-display);font-weight:700;font-size:22px;letter-spacing:.3px;color:var(--tx)}
+.sb-main .lede{color:var(--dm);font-size:13px;line-height:1.6;margin-top:8px;max-width:640px}
+.sb-main .lede code{font-family:var(--ff-mono);font-size:11px;background:var(--bg2);color:var(--tl);padding:1px 6px;border-radius:4px}
+
+.sb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:22px}
+.sb-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r-lg);padding:18px;cursor:pointer;transition:border-color .15s,transform .15s,box-shadow .15s;text-decoration:none;color:inherit;display:block;box-shadow:0 2px 8px var(--sh)}
+.sb-card:hover{border-color:var(--tl);transform:translateY(-2px);box-shadow:0 6px 14px var(--sh)}
+.sb-card h3{font-family:var(--ff-display);color:var(--tx);font-size:15px;margin-bottom:6px;letter-spacing:.3px}
+.sb-card p{color:var(--dm);font-size:12px;line-height:1.55;margin-top:6px}
+.sb-card code{font-family:var(--ff-mono);font-size:10px;color:var(--tl);background:var(--bg2);padding:1px 5px;border-radius:4px}
+.sb-card .tag{display:inline-block;font-size:9px;background:var(--bg2);color:var(--dm);padding:2px 8px;border-radius:20px;margin-left:6px;text-transform:uppercase;letter-spacing:1px;font-weight:600;font-family:var(--ff-body)}
+.sb-card .tag.ok{background:var(--sgb);color:var(--sg)}
+.sb-card .tag.wip{background:var(--amb);color:var(--am)}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--dm)}

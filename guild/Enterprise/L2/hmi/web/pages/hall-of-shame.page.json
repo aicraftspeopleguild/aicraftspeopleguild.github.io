@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "Hall of Shame",
+    "slug": "hall-of-shame",
+    "route": "/hall-of-shame",
+    "view": "views/hall-of-shame.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "recognition",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/hall-of-shame.data.json"
+    }
+  },
+  "tags": {
+    "id": "hall-of-shame",
+    "view_id": "hall-of-shame",
+    "schema_version": "1.0.0"
+  }
+}

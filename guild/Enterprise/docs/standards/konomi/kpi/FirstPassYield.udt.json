@@ -1,0 +1,3 @@
+{"$schema":"konomi/udt/v1","name":"FirstPassYield","std":"KPI","layer":9,"version":"1.0.0","fields":[
+{"n":"fpy","t":"PCT","formula":"good_first_time / total_attempted"}
+],"meta":{"desc":"First Pass Yield ratio"}}

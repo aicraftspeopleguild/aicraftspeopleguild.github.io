@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:commit-activity-svg",
+    "name": "Render commit-activity.svg",
+    "description": "GitHub commit activity \u00b7 weekly sparkline (12 wk) + last 8 commits via GitHub API.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-commit-activity.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "svg",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "svg",
+      "readme",
+      "build"
+    ]
+  },
+  "tags": {
+    "id": "build-commit-activity-svg",
+    "schema_version": "1.0.0"
+  }
+}

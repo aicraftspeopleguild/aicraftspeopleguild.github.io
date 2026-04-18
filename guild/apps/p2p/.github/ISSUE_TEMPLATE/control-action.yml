@@ -1,0 +1,42 @@
+name: "🎛 Control action"
+description: "Request a runtime action (restart room, clear log, rotate tracker, …)"
+title: "🎛 <action>"
+labels: ["acg-db", "control-action"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Control actions are routed to the runtime through the sync
+        workflow.  Some are idempotent (clear log, pin tag), others
+        schedule a broadcast (join room, rotate tracker).
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: "Action"
+      options:
+        - "clear-log"
+        - "rotate-tracker"
+        - "join-room"
+        - "pin-tag"
+        - "unpin-tag"
+        - "force-reannounce"
+        - "toggle-monitor"
+        - "custom"
+      default: 0
+    validations: { required: true }
+
+  - type: textarea
+    id: args
+    attributes:
+      label: "Arguments (JSON)"
+      render: json
+      placeholder: |
+        { "room": "acg-guild" }
+
+  - type: input
+    id: requester
+    attributes:
+      label: "Requester (optional)"
+      description: "Your ACG handle, or a peer id."
+      placeholder: "-ACG001-abc123"

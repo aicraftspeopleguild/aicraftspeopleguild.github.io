@@ -1,0 +1,45 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/scada/gateway/auth/github",
+    "label": "github",
+    "parent": "guild/Enterprise/L2/scada/gateway/auth",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L2_scada_gateway_auth_github",
+    "fs_path": "guild/Enterprise/L2/scada/gateway/auth/github",
+    "depth": 7,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L2",
+      "guild_Enterprise_L2_scada",
+      "guild_Enterprise_L2_scada_gateway",
+      "guild_Enterprise_L2_scada_gateway_auth",
+      "guild_Enterprise_L2_scada_gateway_auth_github"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/L2/scada/gateway/auth/discord",
+      "guild/Enterprise/L2/scada/gateway/auth/google",
+      "guild/Enterprise/L2/scada/gateway/auth/webrtc",
+      "guild/Enterprise/L2/scada/gateway/auth/webtorrent"
+    ],
+    "descendants": 0,
+    "file_count": 6,
+    "subdir_count": 0,
+    "kinds": {
+      "db": 2,
+      "html": 1,
+      "py": 1,
+      "json": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

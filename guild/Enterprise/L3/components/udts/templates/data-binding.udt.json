@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "DataBinding",
+  "version": "1.0.0",
+  "description": "Declarative data input for organisms/templates/widgets. Resolves against the page's `parameters.data` map at render time. Screen components use these bindings instead of literal copy.",
+  "parameters": {
+    "key":         { "dataType": "String", "required": true,  "description": "Local name inside the template, e.g. `title`, `papers`" },
+    "dataType":    { "dataType": "String", "required": true,  "description": "String | Number | Boolean | URL | Date | Paper | Member | Paper[] | Member[] | JSON" },
+    "source":      { "dataType": "String", "required": true,  "description": "Dotted path into the page data context, e.g. `page.title`, `papers`, `data.papers[]`" },
+    "required":    { "dataType": "Boolean", "required": false, "default": true },
+    "fallback":    { "dataType": "JSON",   "required": false, "description": "Used only if source resolves to null/undefined AND required=false" },
+    "description": { "dataType": "String", "required": false }
+  }
+}

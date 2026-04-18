@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 110" width="380" height="110" role="img" aria-label="paper card — UDT System Design">
+  <defs>
+    <style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style>
+  </defs>
+  <rect width="380" height="110" rx="8" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
+
+  <!-- category eyebrow -->
+  <text x="16" y="20" class="t" font-size="10" fill="#8b949e" letter-spacing="1">ENGINEERING  &#xb7;  STANDARDS</text>
+
+  <!-- title -->
+  <text x="16" y="40" class="t" font-size="14" font-weight="700" fill="#e6edf3">UDT System Design for ISA-95 L2</text>
+
+  <!-- description -->
+  <text x="16" y="58" class="t" font-size="11" fill="#8b949e">Defines the canonical tag structure and UDT hierarchy</text>
+  <text x="16" y="72" class="t" font-size="11" fill="#8b949e">used across all Ignition gateway deployments.</text>
+
+  <!-- tag chips -->
+  <rect x="16"  y="82" width="46" height="18" rx="9" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="39"  y="95" class="t" font-size="10" fill="#8b949e" text-anchor="middle">isa-95</text>
+
+  <rect x="68"  y="82" width="30" height="18" rx="9" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="83"  y="95" class="t" font-size="10" fill="#8b949e" text-anchor="middle">udt</text>
+
+  <rect x="104" y="82" width="56" height="18" rx="9" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="132" y="95" class="t" font-size="10" fill="#8b949e" text-anchor="middle">ignition</text>
+
+  <!-- date -->
+  <text x="364" y="96" class="t" font-size="10" fill="#484f58" text-anchor="end">2026-01-15</text>
+</svg>

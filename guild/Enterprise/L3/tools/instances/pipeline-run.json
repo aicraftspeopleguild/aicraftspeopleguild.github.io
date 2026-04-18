@@ -1,0 +1,27 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "pipeline:run",
+    "name": "Run a pipeline",
+    "description": "Sequentially execute each step of a Pipeline UDT. Every step writes status/duration/rc tags through tag_state, and each status transition fires on_transition events that any Script UDT can subscribe to. on_fail=abort stops on first failure; on_fail=continue runs every step and reports. Use dry_run=1 to verify wiring without executing tools.",
+    "category": "automation",
+    "entry": "guild/Enterprise/L2/lib/pipeline_runner.py:run",
+    "language": "python",
+    "inputs": [
+      {"name":"id","type":"String","required":true,"description":"Pipeline.parameters.id"},
+      {"name":"dry_run","type":"String","required":false,"description":"'1' to skip tool invocation"}
+    ],
+    "outputs": [{"name":"report","type":"PipelineReport"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["automation","pipeline","orchestrator"],
+    "mcp": {
+      "mcp_name": "pipeline_run",
+      "input_schema": {
+        "type":"object",
+        "properties":{"id":{"type":"string"},"dry_run":{"type":"string"}},
+        "required":["id"]
+      }
+    }
+  },
+  "tags": { "id": "pipeline-run", "schema_version": "1.0.0" }
+}

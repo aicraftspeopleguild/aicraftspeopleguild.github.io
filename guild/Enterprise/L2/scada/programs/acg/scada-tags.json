@@ -1,0 +1,27 @@
+{
+  "§": "3.1",
+  "🏗️": "🏷️",
+  "name": "tags",
+  "module": "L2/scada/gateway/scripts/scada/tags.js",
+
+  "📦": {
+    "tags": "m path:s → { value:any quality:🟢|🟡|🔴 ts:ms type:s? }",
+    "subs": "m pattern:s → Set<(path, tag)→void>"
+  },
+
+  "→": [
+    { "name": "patternMatches", "in": "pat,path", "out": "b", "flow": "'*' | '**' | '.*' | '.**' | exact" },
+    { "name": "notify",         "in": "path",                 "flow": "∀ (pat,fns) ∈ subs where match(pat,path) → fn(path,tag)" },
+    { "name": "write",          "in": "path,value,opts={}",   "out": "tag", "flow": "tags.set ⊕ notify(path)" },
+    { "name": "inc",            "in": "path,by=1",            "flow": "write(path, (cur?.value||0)+by, type:Counter)" },
+    { "name": "read",           "in": "path",                 "out": "tag?" },
+    { "name": "del",            "in": "path",                 "flow": "tags.delete ⊕ notify" },
+    { "name": "list",           "in": "prefix=''",            "out": "[[path,tag],…]" },
+    { "name": "subscribe",      "in": "pattern,fn",           "out": "unsub" },
+    { "name": "setQuality",     "in": "path,quality" },
+    { "name": "sweepStale",     "in": "prefix,ageMs",         "flow": "∀ tag.quality=good ∧ ts<now-age → 🟡" }
+  ],
+
+  "↑🖥️": ["<all>"],
+  "和": true
+}

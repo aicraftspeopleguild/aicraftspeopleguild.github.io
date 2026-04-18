@@ -1,0 +1,39 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/apps",
+    "label": "apps",
+    "parent": "guild",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_apps",
+    "fs_path": "guild/apps",
+    "depth": 2,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_apps"
+    ],
+    "children": [
+      "guild/apps/p2p",
+      "guild/apps/test",
+      "guild/apps/whitepapers"
+    ],
+    "siblings": [
+      "guild/Enterprise",
+      "guild/web"
+    ],
+    "descendants": 14,
+    "file_count": 1,
+    "subdir_count": 3,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

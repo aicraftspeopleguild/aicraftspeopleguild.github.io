@@ -1,0 +1,61 @@
+﻿/* -------------------------------------------------------------------
+   Widget System — KPI, StatusPill, TagValue, AlarmCount,
+                   SplitPanel, TabbedPanel, ParamCard
+   Compatible with WidgetRuntime (widget-runtime.js) + ACGRenderer
+   ------------------------------------------------------------------- */
+
+/* -- CSS Custom Properties for widget theming ----------------------- */
+:root {
+  --widget-radius:        0.5rem;
+  --widget-pad:           1.25rem;
+  --widget-gap:           1rem;
+  --widget-bg:            var(--color-surface, #fff);
+  --widget-border:        var(--color-border, #e2e6ea);
+  --widget-shadow:        0 1px 3px rgba(0,0,0,.08);
+
+  /* KPI */
+  --kpi-label-size:       0.75rem;
+  --kpi-value-size:       2rem;
+  --kpi-unit-size:        1rem;
+
+  /* StatusPill state colours */
+  --pill-running-bg:      #d1fadf;
+  --pill-running-fg:      #166534;
+  --pill-idle-bg:         #f1f5f9;
+  --pill-idle-fg:         #475569;
+  --pill-held-bg:         #fef9c3;
+  --pill-held-fg:         #854d0e;
+  --pill-holding-bg:      #fef9c3;
+  --pill-holding-fg:      #854d0e;
+  --pill-stopping-bg:     #fee2e2;
+  --pill-stopping-fg:     #991b1b;
+  --pill-stopped-bg:      #fee2e2;
+  --pill-stopped-fg:      #991b1b;
+  --pill-aborted-bg:      #7f1d1d;
+  --pill-aborted-fg:      #fecaca;
+  --pill-aborting-bg:     #7f1d1d;
+  --pill-aborting-fg:     #fecaca;
+  --pill-complete-bg:     #dbeafe;
+  --pill-complete-fg:     #1e40af;
+  --pill-starting-bg:     #d1fae5;
+  --pill-starting-fg:     #065f46;
+  --pill-execute-bg:      #d1fadf;
+  --pill-execute-fg:      #166534;
+
+  /* Quality indicator colours */
+  --q-good-color:         #166534;
+  --q-stale-color:        #92400e;
+  --q-bad-color:          #991b1b;
+  --q-uncertain-color:    #1e40af;
+
+  /* Split panel */
+  --split-ratio:          1fr 1fr;
+  --split-gap:            var(--widget-gap);
+
+  /* Tab widget */
+  --tab-bar-bg:           var(--color-surface-2, #f8fafc);
+  --tab-btn-active-bg:    var(--color-surface, #fff);
+  --tab-btn-active-fg:    var(--color-accent, #2563eb);
+  --tab-border:           var(--color-border, #e2e6ea);
+}
+

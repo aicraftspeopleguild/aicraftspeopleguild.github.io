@@ -1,0 +1,4 @@
+{"$schema":"konomi/std/v1","id":"ISA-95","scope":"enterprise to control integration","version":"1.0.0",
+"hierarchy":"Enterprise:1 → Site:N → Area:N → WorkCenter:N → WorkUnit:N → Equipment:N",
+"levels":["L4 Business","L3 MOM","L2 Control","L1 Sensing","L0 Process"],
+"meta":{"desc":"ISA-95 standard header; see *.udt.json in this dir"}}

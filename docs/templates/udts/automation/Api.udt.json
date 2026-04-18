@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Api",
+  "version": "1.0.0",
+  "description": "An API endpoint watched by the state machine. api:tick fetches the URL, hashes the body, and compares to the last snapshot in state.db.api_watches. On change: the body (or a watch_field slice) is written to output_tag and a state-machine on_transition event fires, letting any Script react.",
+  "parameters": {
+    "id":          { "dataType": "String",  "required": true },
+    "name":        { "dataType": "String",  "required": true },
+    "description": { "dataType": "String",  "required": false },
+    "url":         { "dataType": "URL",     "required": true },
+    "output_tag":  { "dataType": "String",  "required": true,
+                     "description": "Tag to write on change. Transitions fire on its value-level." },
+    "watch_field": { "dataType": "String",  "required": false,
+                     "description": "Optional dot-path into the JSON body (e.g. `paperCount`). When set, only the field's value is compared + written." },
+    "interval_s":  { "dataType": "Number",  "required": false, "default": 60,
+                     "description": "Minimum seconds between fetches. api:tick skips a watch if too recent." },
+    "enabled":     { "dataType": "Boolean", "required": false, "default": true }
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "schema_version": { "dataType": "String" }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "white-paper-app",
+    "description": "Shared view template for every white paper app. PageShell + IntroPanel (abstract) + RawHTML (paper body) + CTASection.",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title":     "{{ paper.title }}",
+        "subtitle":  "{{ paper.subtitle }}",
+        "eyebrow":   "{{ paper.type_label }}",
+        "bodyClass": "page-white-paper",
+        "backHref":  "../../web/dist/white-papers.html",
+        "backLabel": "Back to White Papers"
+      },
+      "children": [
+        {
+          "type": "IntroPanel",
+          "when": "{{ paper.summary }}",
+          "props": { "content": "{{ paper.summary }}" }
+        },
+        {
+          "type": "RawHTML",
+          "props": { "html": "{{ paper.body_html }}" }
+        },
+        {
+          "type": "CTASection",
+          "props": {
+            "heading": "Continue Reading",
+            "description": "Browse the full Guild white paper catalog or return to the home page.",
+            "primaryText": "All White Papers",
+            "primaryHref": "../../web/dist/white-papers.html",
+            "secondaryText": "Back to Home",
+            "secondaryHref": "../../../index.html"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "white-paper-app",
+    "component_ids": ["page-shell", "intro-panel", "raw-html", "cta-section"],
+    "data_sources": ["data/<slug>.data.json"],
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"LEVEL","layer":0,"version":"1.0.0","fields":[
+{"n":"id","t":"ANY","desc":"int or str"},
+{"n":"name","t":"STRING"},
+{"n":"scope","t":"STRING","desc":"responsibility"},
+{"n":"timescale","t":"STRING","desc":"response time"},
+{"n":"systems","t":"STRING","array":true,"desc":"typical systems"},
+{"n":"data_down","t":"STRING","array":true,"desc":"sends to lower"},
+{"n":"data_up","t":"STRING","array":true,"desc":"sends to higher"}
+],"meta":{"desc":"Hierarchy layer / responsibility level"}}

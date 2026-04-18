@@ -1,0 +1,20 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "state:faults",
+    "name": "List faults",
+    "description": "List active faults (tool failures, pipeline aborts, custom raises) from state.db. Pass active_only=0 to include cleared ones.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/state_db.py:list_faults",
+    "language": "python",
+    "inputs": [{"name":"active_only","type":"String","required":false,"default":"1"}],
+    "outputs": [{"name":"faults","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["state","fault","alarm","read-only"],
+    "mcp": {
+      "mcp_name":"state_faults",
+      "input_schema":{"type":"object","properties":{"active_only":{"type":"string"}}}
+    }
+  },
+  "tags": { "id": "state-faults", "schema_version": "1.0.0" }
+}

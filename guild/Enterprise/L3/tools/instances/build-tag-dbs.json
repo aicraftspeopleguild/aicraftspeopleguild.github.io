@@ -1,0 +1,19 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:tag-dbs",
+    "name": "Build per-directory tag dbs (SQLite)",
+    "description": "Walk the repo; for every non-excluded directory write a local SQLite tag.db with tags, udt_types, sections, kinds, refs, ids, and full UDT bodies. Additionally writes a root tag.db with tag_dirs + tag_samples + graph_url_* + graph_fs_* + graph_indexes tables for whole-tree queries.",
+    "category": "build",
+    "entry": "guild/Enterprise/L3/scripts/paths/gen-tag-db.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"text","description":"tag.db counts, graph sizes, retired-legacy count"}],
+    "adapters": ["CliAdapter","LoggerWrapper","TestWrapper"],
+    "tags": ["build","tag","sqlite","catalog","graph"],
+    "test_cases": [
+      {"name":"build completes","inputs":{},"expect":{"field":"ok","op":"eq","value":true}}
+    ]
+  },
+  "tags": { "id": "build-tag-dbs", "schema_version": "1.0.0" }
+}

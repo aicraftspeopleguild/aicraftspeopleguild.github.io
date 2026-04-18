@@ -1,0 +1,63 @@
+# tests/standard.test.yml
+# The Standard page renders the canonical spec in readable form.
+
+test: Standard page
+target: pages/standard.html
+
+exists:
+  expect: present
+  reason: "the Standard page is the canonical reference for readers and must be served"
+
+watches:
+  - path: "h1"
+    expect: triggered
+    reason: "every page carries one H1 so screen readers can anchor navigation"
+
+  - path: "#purpose"
+    expect: triggered
+    reason: "section 1 Purpose must be anchor-linkable"
+
+  - path: "#base-types"
+    expect: triggered
+    reason: "section 2 Base Types must be anchor-linkable"
+
+  - path: "#trigger-types"
+    expect: triggered
+    reason: "section 3 Trigger Types must be anchor-linkable"
+
+  - path: "#notification"
+    expect: triggered
+    reason: "section 4 Notification Type must be anchor-linkable"
+
+  - path: "#guardrail"
+    expect: triggered
+    reason: "section 5 Guardrail Type must be anchor-linkable"
+
+  - path: "#workflowtest"
+    expect: triggered
+    reason: "section 6 WorkflowTest (root) must be anchor-linkable"
+
+  - path: "#inheritance"
+    expect: triggered
+    reason: "section 7 inheritance diagram must be anchor-linkable"
+
+  - path: "pre.tree"
+    expect: triggered
+    reason: "the inheritance diagram must render as a preserved-whitespace tree"
+
+  - path: "ol.rules"
+    expect: triggered
+    reason: "design rules list is the spec-in-miniature and must render"
+
+  - path: "#site-summary"
+    expect: triggered
+    reason: "each page hosts a summary so verification is visible inline"
+
+secrets:
+  - name: assets/style.css
+    expect: configured
+    reason: "the shared stylesheet must load for legibility"
+
+guardrails:
+  - condition: "h1 ~ h1"
+    reason: "no page may render a second H1 — accessibility requires exactly one top heading"

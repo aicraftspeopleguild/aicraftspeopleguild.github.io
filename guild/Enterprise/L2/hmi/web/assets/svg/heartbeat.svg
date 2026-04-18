@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 140" width="720" height="140" role="img" aria-label="ACG heartbeat · 2026-04-18 09:47Z">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .em{fill:#3fb950;font-size:28px;font-weight:700}
+      .lb{fill:#8b949e;font-size:11px;text-transform:uppercase;letter-spacing:2px}
+      .va{fill:#e6edf3;font-size:22px;font-weight:700}
+      .lo{fill:#79c0ff;font-size:12px}
+      .pulse{animation:p 1.6s ease-out infinite;transform-origin:60px 70px}
+      @keyframes p{
+        0%{transform:scale(1);opacity:.9}
+        40%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .ring{fill:none;stroke:#3fb950;stroke-width:2;opacity:.5}
+      .dot{fill:#3fb950}
+    </style>
+  </defs>
+  <rect width="720" height="140" rx="10" fill="url(#g)"/>
+  <rect x="0" y="0" width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="360" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">&#x2692;  ACG heartbeat  &#xb7;  regenerated on every push</text>
+
+  <!-- pulse ring -->
+  <g>
+    <circle class="ring pulse" cx="60" cy="70" r="14"/>
+    <circle class="ring pulse" style="animation-delay:.5s" cx="60" cy="70" r="14"/>
+    <circle class="dot" cx="60" cy="70" r="10"/>
+  </g>
+
+  <text x="100" y="68" class="t em">💓</text>
+  <text x="146" y="68" class="t va">2026-04-18 09:47Z</text>
+
+  <text x="100" y="92" class="t lb">demo.heartbeat</text>
+  <text x="100" y="108" class="t lo">updated 2026-04-18T09:47:41Z</text>
+
+  <text x="700" y="108" text-anchor="end" class="t lo">bumped at 2026-04-18T09:47:40.851699+00:00 by heartbeat work</text>
+</svg>

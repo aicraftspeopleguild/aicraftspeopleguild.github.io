@@ -1,0 +1,419 @@
+﻿/* ai-rituals.html */
+.page-ai-rituals {
+--color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+            --color-accent: #356B6A;
+}
+
+.page-ai-rituals,
+.page-ai-rituals * {
+margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+}
+
+.page-ai-rituals {
+font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+}
+
+.page-ai-rituals::before {
+content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+}
+
+.page-ai-rituals header {
+position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-ai-rituals header::after {
+content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 50%, var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+}
+
+.page-ai-rituals .guild-mark {
+text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.page-ai-rituals .guild-mark .emblem {
+font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+}
+
+.page-ai-rituals h1 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+}
+
+.page-ai-rituals .subtitle {
+font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 960px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.page-ai-rituals .back-link {
+text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+.page-ai-rituals .back-link a {
+color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+}
+
+.page-ai-rituals .back-link a:hover {
+color: var(--color-rust);
+}
+
+.page-ai-rituals .container {
+max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-ai-rituals .intro-panel,
+.page-ai-rituals .rituals-shell,
+.page-ai-rituals .contribution-shell,
+.page-ai-rituals .cta-section {
+background: white;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+}
+
+.page-ai-rituals .intro-panel {
+margin: 5rem auto 2.5rem;
+            padding: 3rem;
+            border-left: 6px solid var(--color-accent);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+}
+
+.page-ai-rituals .rituals-shell,
+.page-ai-rituals .contribution-shell,
+.page-ai-rituals .cta-section {
+padding: 3rem;
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1.15s forwards;
+}
+
+.page-ai-rituals .contribution-shell,
+.page-ai-rituals .cta-section {
+margin-top: 2.5rem;
+}
+
+.page-ai-rituals .intro-panel p,
+.page-ai-rituals .ritual-card p,
+.page-ai-rituals .contribution-shell p,
+.page-ai-rituals .contribution-shell li,
+.page-ai-rituals .cta-section p {
+font-size: 1.08rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+}
+
+.page-ai-rituals .intro-panel p + p,
+.page-ai-rituals .ritual-card p + p,
+.page-ai-rituals .contribution-shell p + p,
+.page-ai-rituals .contribution-shell li + li {
+margin-top: 1rem;
+}
+
+.page-ai-rituals .section-heading {
+text-align: center;
+            margin-bottom: 2.5rem;
+}
+
+.page-ai-rituals .section-heading h2 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.8rem;
+            position: relative;
+            display: inline-block;
+}
+
+.page-ai-rituals .section-heading h2::after {
+content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+}
+
+.page-ai-rituals .section-heading p {
+color: var(--color-graphite);
+            font-size: 1.05rem;
+}
+
+.page-ai-rituals .rituals-grid {
+display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+}
+
+.page-ai-rituals .ritual-card {
+padding: 2rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.92) 0%, white 100%);
+            border-top: 4px solid var(--color-accent);
+            box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.page-ai-rituals .ritual-number {
+display: inline-block;
+            margin-bottom: 0.9rem;
+            padding: 0.3rem 0.65rem;
+            font-family: 'Courier Prime', monospace;
+            background: rgba(53, 107, 106, 0.12);
+            color: var(--color-accent);
+            font-size: 0.92rem;
+            font-weight: 700;
+}
+
+.page-ai-rituals .ritual-card h3 {
+font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            line-height: 1.2;
+            color: var(--color-ink);
+            margin-bottom: 0.8rem;
+}
+
+.page-ai-rituals .ritual-prompt {
+margin-top: 1.2rem;
+            padding: 1rem 1.1rem;
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-rust);
+}
+
+.page-ai-rituals .ritual-prompt strong {
+display: block;
+            margin-bottom: 0.45rem;
+            color: var(--color-rust);
+}
+
+.page-ai-rituals .ritual-prompt code {
+font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            color: var(--color-ink);
+            white-space: pre-wrap;
+}
+
+.page-ai-rituals .contribution-shell ul {
+margin: 1rem 0 0 1.5rem;
+}
+
+.page-ai-rituals .contribution-shell strong {
+color: var(--color-accent);
+}
+
+.page-ai-rituals .cta-section {
+text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+}
+
+.page-ai-rituals .cta-section::before {
+content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+}
+
+.page-ai-rituals .cta-section h2,
+.page-ai-rituals .cta-section p,
+.page-ai-rituals .cta-buttons {
+position: relative;
+            z-index: 1;
+}
+
+.page-ai-rituals .cta-section h2 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+}
+
+.page-ai-rituals .cta-section p {
+color: var(--color-bronze);
+            margin-bottom: 2rem;
+}
+
+.page-ai-rituals .cta-buttons {
+display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+}
+
+.page-ai-rituals .btn {
+font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+}
+
+.page-ai-rituals .btn-primary {
+background: var(--color-rust);
+            color: white;
+}
+
+.page-ai-rituals .btn-primary:hover {
+transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.35);
+}
+
+.page-ai-rituals .btn-secondary {
+background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+}
+
+.page-ai-rituals .btn-secondary:hover {
+background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.3);
+}
+
+.page-ai-rituals footer {
+background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+}
+
+.page-ai-rituals footer p {
+font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+}
+
+.page-ai-rituals footer a {
+color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+}
+
+.page-ai-rituals footer a:hover {
+color: var(--color-bronze);
+}
+
+.page-ai-rituals .github-link {
+display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+}
+
+.page-ai-rituals .github-link:hover {
+background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .page-ai-rituals header {
+padding: 3rem 1.5rem 2rem;
+    }
+
+    .page-ai-rituals .rituals-grid {
+grid-template-columns: 1fr;
+    }
+
+    .page-ai-rituals .container {
+padding: 0 1rem;
+    }
+
+    .page-ai-rituals .intro-panel,
+    .page-ai-rituals .rituals-shell,
+    .page-ai-rituals .contribution-shell,
+    .page-ai-rituals .cta-section {
+padding: 2rem 1.5rem;
+    }
+
+    .page-ai-rituals .cta-buttons {
+flex-direction: column;
+    }
+
+    .page-ai-rituals .btn {
+width: 100%;
+                text-align: center;
+    }
+}
+

@@ -1,0 +1,29 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "\\\"You're Absolutely Wrong!\\",
+    "slug": "you-re-absolutely-wrong",
+    "kind": "white-paper",
+    "description": "The Anthropic Paradox: How Training AI to Be Uncertain About Consciousness Created a Dangerous Feedback Loop",
+    "source_type": "WhitePaper",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/you-re-absolutely-wrong.json",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/you-re-absolutely-wrong.data.json"
+    },
+    "route": "/whitepapers/you-re-absolutely-wrong",
+    "section": "resources",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "status": "published",
+    "tags": []
+  },
+  "tags": {
+    "id": "you-re-absolutely-wrong",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/you-re-absolutely-wrong/",
+    "view_id": "white-paper-app",
+    "ingested_at": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

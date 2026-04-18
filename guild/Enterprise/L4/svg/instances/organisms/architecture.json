@@ -1,0 +1,28 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "Architecture",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-architecture.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/architecture.svg",
+    "sources": [],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "Panel",
+      "PulseDot",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1040,
+      "h": 400
+    },
+    "description": "ISA-95 pyramid, every tier clickable to its Enterprise directory."
+  },
+  "tags": {
+    "id": "architecture",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/architecture.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/architecture.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

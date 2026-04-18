@@ -1,0 +1,7 @@
+{"$schema":"konomi/crosswalk/v1","from_std":"ISA-88","to_std":"PackML","version":"1.0.0",
+"maps":[
+{"from":"UnitState","to":"StateMachine","mapping":"partial","note":"ISA-88 UnitState is a subset"},
+{"from":"Phase.RUNNING","to":"EXECUTE","mapping":"exact"},
+{"from":"Phase.HELD","to":"HELD","mapping":"exact"},
+{"from":"Phase.ABORTED","to":"ABORTED","mapping":"exact"}
+],"meta":{"desc":"S88 phase/unit ↔ PackML state alignment"}}

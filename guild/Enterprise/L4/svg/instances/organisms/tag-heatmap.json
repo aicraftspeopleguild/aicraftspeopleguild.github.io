@@ -1,0 +1,28 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "TagHeatmap",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-tag-heatmap.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/tag-heatmap.svg",
+    "sources": [
+      "tag.db.udts"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "WindowChrome"
+    ],
+    "size": {
+      "w": "dynamic",
+      "h": "dynamic"
+    },
+    "description": "Tag density heatmap \u00b7 top directories \u00d7 UDT types with log-scaled intensity from tag.db.udts."
+  },
+  "tags": {
+    "id": "tag-heatmap",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/tag-heatmap.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/tag-heatmap.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

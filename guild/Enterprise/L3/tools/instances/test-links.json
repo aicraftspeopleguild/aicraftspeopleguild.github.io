@@ -1,0 +1,19 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "test:links",
+    "name": "Link checker",
+    "description": "Walk every HTML file in index.html + dist/ and verify internal href/src targets exist.",
+    "category": "test",
+    "entry": "guild/Enterprise/L3/scripts/test-links.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"text","description":"OK / MISSING counts + offenders list"}],
+    "adapters": ["CliAdapter","LoggerWrapper","TestWrapper"],
+    "tags": ["qa","links","test"],
+    "test_cases": [
+      {"name":"all links resolve","inputs":{},"expect":{"field":"ok","op":"eq","value":true}}
+    ]
+  },
+  "tags": { "id": "test-links", "schema_version": "1.0.0" }
+}

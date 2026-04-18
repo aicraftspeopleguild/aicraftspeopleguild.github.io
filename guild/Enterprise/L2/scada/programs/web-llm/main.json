@@ -1,0 +1,29 @@
+{
+  "§": "4.2.0",
+  "🏗️": "🚀",
+  "name": "main (web-llm)",
+  "module": "L4/sandbox/web-llm/modules/main.js",
+
+  "→": [
+    { "name": "hydrateSelect", "flow": "MODELS → #model-select <option>s" },
+    { "name": "checkGPU→UI",   "flow": "#gpu-status.text+class ∨ disable load button" },
+    { "name": "load.onclick",  "flow": "loadModel(id, progressCb→#load-bar/#load-status) ⊕ #model-status ⊕ startSandbox" },
+    { "name": "skip.onclick",  "flow": "startSandbox() w/o model" },
+    { "name": "startSandbox",  "flow": "SYS.write(startedAt,userAgent) ⊕ initRepo ⊕ refreshFileList/CommitLog ⊕ configureVoice(on*) ⊕ setupMic ⊕ setupRecognition ⊕ startListeningAuto ⊕ setInterval(updateEmotionDots,200)" },
+    { "name": "sendMessage",   "in": "text:s",
+      "flow": "emotionSnapshot → user bubble ⊕ build system+history → streamChat → incremental updateMsgText ⊕ parseAndRunAll (auto preview html) ⊕ if any tool → follow-up streamChat ⊕ refreshFileList/CommitLog" },
+    { "name": "updateEmotionDots", "flow": "snap.values[k] → .emo-dot opacity+active" }
+  ],
+
+  "🎹": {
+    "#chat-input.Enter":   "sendMessage(value)",
+    "#btn-send.click":     "sendMessage(value)",
+    "#btn-mic.click":      "toggleListening ⊕ .active",
+    "#btn-new-repo.click": "prompt → initRepo ⊕ clearPreview ⊕ refresh",
+    "#btn-commit.click":   "prompt → manualCommit ⊕ logRow",
+    "#btn-refresh-preview.click": "hasPreview? → showPreview(getCurrentPreview)"
+  },
+
+  "↑🖥️(via 🛰️)": ["sandbox.web-llm.sys.startedAt", "sandbox.web-llm.sys.userAgent", "sandbox.web-llm.chat.*"],
+  "和": true
+}

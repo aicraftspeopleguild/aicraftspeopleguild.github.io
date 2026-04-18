@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:apps:build-whitepaper-apps",
+    "name": "script · build-whitepaper-apps",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/apps/build-whitepaper-apps.py. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/apps/build-whitepaper-apps.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "apps"
+    ]
+  },
+  "tags": {
+    "id": "script-apps-build-whitepaper-apps",
+    "schema_version": "1.0.0"
+  }
+}

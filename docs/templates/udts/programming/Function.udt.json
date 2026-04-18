@@ -1,0 +1,13 @@
+{"$schema":"konomi/udt/v1","name":"Function","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"module","t":"STRING"},
+{"n":"language","t":"ENUM","values":["python","javascript","typescript","bash","sql","rust","go"]},
+{"n":"signature","t":"STRING","desc":"(a:T, b:T) -> T form"},
+{"n":"params","t":"JSON","desc":"Array of {name, type, default?}"},
+{"n":"returns","t":"STRING"},
+{"n":"purity","t":"ENUM","values":["pure","io","async","generator","effectful"],"nullable":true},
+{"n":"decorators","t":"STRING[]","nullable":true},
+{"n":"tags","t":"STRING[]","nullable":true},
+{"n":"file","t":"STRING"},
+{"n":"line","t":"DINT","nullable":true}
+],"meta":{"desc":"A callable unit — top-level function or method"}}

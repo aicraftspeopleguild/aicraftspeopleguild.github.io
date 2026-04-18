@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "🌸 BLOOMING 80085 SPEC — HUSHBELL",
+    "slug": "hushbell",
+    "route": "/hushbell",
+    "view": "views/hushbell.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "resources",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/hushbell.data.json"
+    }
+  },
+  "tags": {
+    "id": "hushbell",
+    "view_id": "hushbell",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Alarm_SP",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "enable", "type": "BOOL"},
+    {"name": "sp", "type": "REAL"},
+    {"name": "deadband", "type": "REAL"},
+    {"name": "delay", "type": "TIME"},
+    {"name": "priority", "type": "DINT", "range": [1, 4]},
+    {"name": "class", "type": "STRING", "length": 20}
+  ],
+  "meta": {"desc": "Alarm setpoint per ISA-18.2"}
+}

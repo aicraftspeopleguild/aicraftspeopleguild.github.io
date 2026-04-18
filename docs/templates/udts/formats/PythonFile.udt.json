@@ -1,0 +1,12 @@
+{"$schema":"konomi/udt/v1","name":"PythonFile","layer":9,"version":"1.0.0","fields":[
+{"n":"path","t":"STRING"},
+{"n":"ext","t":"ENUM","values":["py","pyi"]},
+{"n":"variant","t":"ENUM","values":["python2","python3","jython2.7"],"desc":"Which interpreter this file targets"},
+{"n":"python_version","t":"STRING","nullable":true,"desc":"e.g. '>=3.9' from requires-python or shebang"},
+{"n":"imports","t":"STRING[]"},
+{"n":"functions","t":"STRING[]","desc":"Function UDT IDs"},
+{"n":"classes","t":"STRING[]","desc":"Class UDT IDs"},
+{"n":"entry_point","t":"BOOL","desc":"True if has 'if __name__ == \"__main__\"'"},
+{"n":"has_type_hints","t":"BOOL"},
+{"n":"sha256","t":"STRING"}
+],"meta":{"desc":"Python source. 'variant' discriminates py2/py3/Jython for interop with JVM tooling."}}

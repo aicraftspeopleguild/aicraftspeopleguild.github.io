@@ -1,0 +1,39 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/hmi/web/components/udts",
+    "label": "udts",
+    "parent": "guild/Enterprise/L2/hmi/web/components",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_components_udts",
+    "fs_path": "guild/Enterprise/L2/hmi/web/components/udts",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_components",
+      "guild_web_components_udts"
+    ],
+    "children": [
+      "guild/Enterprise/L2/hmi/web/components/udts/instances",
+      "guild/Enterprise/L2/hmi/web/components/udts/templates"
+    ],
+    "siblings": [
+      "guild/Enterprise/L2/hmi/web/components/tags"
+    ],
+    "descendants": 3,
+    "file_count": 1,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

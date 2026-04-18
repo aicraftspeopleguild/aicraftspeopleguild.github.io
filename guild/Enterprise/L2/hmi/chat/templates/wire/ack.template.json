@@ -1,0 +1,15 @@
+{"$schema":"chat/wire/v1","t":"ack","glyph":"✅","dir":"recipient→sender",
+"fields":{
+"t":"\"ack\"",
+"id":"s20",
+"mid":"s",
+"ok":"b",
+"ts":"ms"
+},
+"required":["t","id","mid","ok","ts"],
+"example":{"t":"ack","id":"-ACG001-abcdef012345","mid":"m-7f3a","ok":true,"ts":1700000000134},
+"effect":[
+"sender: remove mid from chat.pending",
+"sender: chat.deliveries++"
+],
+"meta":{"desc":"Delivery receipt for a wire/msg.mid. Optional — unacked msgs may be retried."}}

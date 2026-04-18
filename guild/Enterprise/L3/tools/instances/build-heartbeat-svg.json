@@ -1,0 +1,16 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:heartbeat-svg",
+    "name": "Render guild/Enterprise/L4/svg/heartbeat.svg",
+    "description": "Read the demo.heartbeat tag from GitHub Issues and regenerate a styled SVG card with the current value + timestamp. README embeds the SVG via raw.githubusercontent, so every workflow bump pushes a fresh frame.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-heartbeat.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"svg","type":"file","description":"guild/Enterprise/L4/svg/heartbeat.svg"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","heartbeat","dynamic","render"]
+  },
+  "tags": { "id": "build-heartbeat-svg", "schema_version": "1.0.0" }
+}

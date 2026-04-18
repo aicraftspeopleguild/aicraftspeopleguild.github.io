@@ -1,0 +1,19 @@
+{"$schema":"hmi/faceplate/v1","name":"Valve_Faceplate","udt":"CM_Valve","isaLayer":"L3","glyph":"🎚",
+"bindings":{
+"pv":   ["sts.opened","sts.closed","sts.transit"],
+"sp":   ["cmd.open","cmd.close"],
+"mode": "mode.current",
+"state":"state.current",
+"alarm":"sts.faulted"
+},
+"palette":["Running","Stopped","Transition","Faulted","Manual"],
+"commands":[
+{"cmd":"cmd.open", "label":"OPEN", "confirm":false,"color":"Running"},
+{"cmd":"cmd.close","label":"CLOSE","confirm":false,"color":"Stopped"}
+],
+"indicators":[
+{"tag":"sts.opened", "label":"OPN","color":"Running"},
+{"tag":"sts.closed", "label":"CLS","color":"Stopped"},
+{"tag":"sts.transit","label":"⇆",  "color":"Transition"}
+],
+"meta":{"desc":"Two-position valve with open/close limit-switch feedback"}}

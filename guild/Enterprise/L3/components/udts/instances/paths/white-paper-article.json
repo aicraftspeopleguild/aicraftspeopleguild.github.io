@@ -1,0 +1,34 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/white-papers/:slug",
+    "label": "White Paper",
+    "page": "pages/white-paper-article.page.json",
+    "section": "resources",
+    "parent": "white-papers",
+    "order": 11,
+    "dynamic": true,
+    "params": [
+      "slug"
+    ],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "white-paper-article",
+    "full_url": "https://aicraftspeopleguild.github.io/white-papers/:slug",
+    "children": [],
+    "breadcrumb": [
+      "resources",
+      "white-paper-article"
+    ],
+    "depth": 1,
+    "view_id": "white-paper-article",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

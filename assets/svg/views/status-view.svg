@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 860" width="720" height="860"
+     role="img" aria-label="{{VIEW_TITLE}} — live status view">
+  <!--
+  ══════════════════════════════════════════════════════════════════════════
+  VIEW: status-view.svg
+  Composition (top → bottom):
+    [36px]  titlebar
+    [16px]  gap
+    [130px] ZONE A — alert banner  (molecules/alert-banner)
+    [16px]  gap
+    [72px]  ZONE B — metric row    (molecules/metric-row)
+    [16px]  gap
+    [52px]  ZONE C — status row    (molecules/status-row)
+    [16px]  gap
+    [380px] ZONE D — dashboard     (organisms/dashboard variant)
+    [16px]  gap
+    [90px]  ZONE E — ECG strip + heartbeat
+    [16px]  gap
+    [20px]  footer
+  ══════════════════════════════════════════════════════════════════════════
+  TOKENS (76 total):
+    VIEW_TITLE  VIEW_TS  VIEW_VERSION
+
+    Alert: AL_SEVERITY AL_MSG AL_COLOR AL_BG AL_TS
+      (use severityColors() helper in render.js to derive AL_COLOR + AL_BG)
+
+    Metrics ×3: M1_LB M1_VA M1_CO  M2_LB M2_VA M2_CO  M3_LB M3_VA M3_CO
+
+    Status badges ×5: ST1_LB ST1_VA ST1_CO  ST2_LB ST2_VA ST2_CO
+                      ST3_LB ST3_VA ST3_CO  ST4_LB ST4_VA ST4_CO
+                      ST5_LB ST5_VA ST5_CO
+
+    Stat cards ×4: S1_LB S1_VA S1_CO S1_SB  S2_LB S2_VA S2_CO S2_SB
+                   S3_LB S3_VA S3_CO S3_SB  S4_LB S4_VA S4_CO S4_SB
+
+    Activity rows ×5: A1_NUM A1_TXT A1_DT A1_CO … A5_NUM A5_TXT A5_DT A5_CO
+
+    Heartbeat: HB_TS  HB_STATUS  HB_STATUS_CO
+  -->
+  <defs>
+    <linearGradient id="vg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;letter-spacing:1px}
+      .sb{fill:#484f58;font-size:10px}
+      .pulse{animation:p 1.8s ease-out infinite;transform-origin:660px 810px}
+      @keyframes p{0%{transform:scale(1);opacity:.7}55%{transform:scale(2.2);opacity:0}100%{transform:scale(2.2);opacity:0}}
+    </style>
+  </defs>
+
+  <rect width="720" height="860" rx="10" fill="url(#vg)"/>
+
+  <!-- ══ TITLEBAR ════════════════════════════════════════════════════ -->
+  <rect x="0" y="0"  width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10"  fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="360" y="22" text-anchor="middle" class="t" font-size="11" fill="#8b949e">&#x2692;  {{VIEW_TITLE}}</text>
+
+  <!-- ══ ZONE A — ALERT BANNER (y=52) ════════════════════════════════ -->
+  <rect x="16" y="52" width="688" height="52" rx="6" fill="{{AL_BG}}" stroke="{{AL_COLOR}}" stroke-width="1" stroke-opacity=".4"/>
+  <rect x="16" y="52" width="4"   height="52" rx="2" fill="{{AL_COLOR}}"/>
+  <circle cx="34" cy="78" r="6" fill="{{AL_COLOR}}"/>
+  <text x="48"  y="82" class="t" font-size="11" font-weight="700" fill="{{AL_COLOR}}">{{AL_SEVERITY}}</text>
+  <text x="122" y="82" class="t" font-size="11" fill="#e6edf3">{{AL_MSG}}</text>
+  <text x="700" y="82" class="t" font-size="10" fill="#484f58" text-anchor="end">{{AL_TS}}</text>
+
+  <!-- ══ ZONE B — METRIC ROW (y=120) ═════════════════════════════════ -->
+  <rect x="16" y="120" width="688" height="72" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <!-- col 1 (cx=142) -->
+  <text x="142" y="142" class="t lb" text-anchor="middle">{{M1_LB}}</text>
+  <text x="142" y="176" class="t"    font-size="30" font-weight="700" fill="{{M1_CO}}" text-anchor="middle">{{M1_VA}}</text>
+  <line x1="228" y1="132" x2="228" y2="180" stroke="#21262d" stroke-width="1"/>
+  <!-- col 2 (cx=360) -->
+  <text x="360" y="142" class="t lb" text-anchor="middle">{{M2_LB}}</text>
+  <text x="360" y="176" class="t"    font-size="30" font-weight="700" fill="{{M2_CO}}" text-anchor="middle">{{M2_VA}}</text>
+  <line x1="476" y1="132" x2="476" y2="180" stroke="#21262d" stroke-width="1"/>
+  <!-- col 3 (cx=578) -->
+  <text x="578" y="142" class="t lb" text-anchor="middle">{{M3_LB}}</text>
+  <text x="578" y="176" class="t"    font-size="30" font-weight="700" fill="{{M3_CO}}" text-anchor="middle">{{M3_VA}}</text>
+
+  <!-- ══ ZONE C — STATUS BADGES (y=208) ══════════════════════════════ -->
+  <rect x="16"  y="208" width="124" height="28" rx="4" fill="#161b22" stroke="{{ST1_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="78"  y="226" class="t" font-size="11" fill="{{ST1_CO}}" text-anchor="middle">{{ST1_LB}} · {{ST1_VA}}</text>
+  <rect x="150" y="208" width="124" height="28" rx="4" fill="#161b22" stroke="{{ST2_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="212" y="226" class="t" font-size="11" fill="{{ST2_CO}}" text-anchor="middle">{{ST2_LB}} · {{ST2_VA}}</text>
+  <rect x="284" y="208" width="124" height="28" rx="4" fill="#161b22" stroke="{{ST3_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="346" y="226" class="t" font-size="11" fill="{{ST3_CO}}" text-anchor="middle">{{ST3_LB}} · {{ST3_VA}}</text>
+  <rect x="418" y="208" width="124" height="28" rx="4" fill="#161b22" stroke="{{ST4_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="480" y="226" class="t" font-size="11" fill="{{ST4_CO}}" text-anchor="middle">{{ST4_LB}} · {{ST4_VA}}</text>
+  <rect x="552" y="208" width="152" height="28" rx="4" fill="#161b22" stroke="{{ST5_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="628" y="226" class="t" font-size="11" fill="{{ST5_CO}}" text-anchor="middle">{{ST5_LB}} · {{ST5_VA}}</text>
+
+  <!-- ══ ZONE D — STAT CARDS (y=252–342) ═════════════════════════════ -->
+  <!-- Card 1 -->
+  <rect x="16"  y="252" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="96"  y="272" class="t lb" text-anchor="middle">{{S1_LB}}</text>
+  <text x="96"  y="316" class="t" font-size="32" font-weight="700" fill="{{S1_CO}}" text-anchor="middle">{{S1_VA}}</text>
+  <text x="96"  y="332" class="t sb" text-anchor="middle">{{S1_SB}}</text>
+  <!-- Card 2 -->
+  <rect x="186" y="252" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="266" y="272" class="t lb" text-anchor="middle">{{S2_LB}}</text>
+  <text x="266" y="316" class="t" font-size="32" font-weight="700" fill="{{S2_CO}}" text-anchor="middle">{{S2_VA}}</text>
+  <text x="266" y="332" class="t sb" text-anchor="middle">{{S2_SB}}</text>
+  <!-- Card 3 -->
+  <rect x="356" y="252" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="436" y="272" class="t lb" text-anchor="middle">{{S3_LB}}</text>
+  <text x="436" y="316" class="t" font-size="32" font-weight="700" fill="{{S3_CO}}" text-anchor="middle">{{S3_VA}}</text>
+  <text x="436" y="332" class="t sb" text-anchor="middle">{{S3_SB}}</text>
+  <!-- Card 4 -->
+  <rect x="526" y="252" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="606" y="272" class="t lb" text-anchor="middle">{{S4_LB}}</text>
+  <text x="606" y="316" class="t" font-size="32" font-weight="700" fill="{{S4_CO}}" text-anchor="middle">{{S4_VA}}</text>
+  <text x="606" y="332" class="t sb" text-anchor="middle">{{S4_SB}}</text>
+
+  <!-- ══ ZONE D (cont.) — ACTIVITY FEED (y=356–524) ══════════════════ -->
+  <line x1="16" y1="358" x2="250" y2="358" stroke="#21262d" stroke-width="1"/>
+  <text x="360" y="362" class="t" font-size="10" fill="#484f58" text-anchor="middle" letter-spacing="2">ACTIVITY FEED</text>
+  <line x1="470" y1="358" x2="704" y2="358" stroke="#21262d" stroke-width="1"/>
+
+  <!-- rows: baseline 384 408 432 456 480 -->
+  <circle cx="28" cy="380" r="4" fill="{{A1_CO}}"/>
+  <text x="44"  y="384" class="t" font-size="11" fill="#8b949e">{{A1_NUM}}</text>
+  <text x="76"  y="384" class="t" font-size="11" fill="#e6edf3">{{A1_TXT}}</text>
+  <text x="700" y="384" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A1_DT}}</text>
+  <line x1="16" y1="392" x2="704" y2="392" stroke="#161b22" stroke-width="1"/>
+
+  <circle cx="28" cy="404" r="4" fill="{{A2_CO}}"/>
+  <text x="44"  y="408" class="t" font-size="11" fill="#8b949e">{{A2_NUM}}</text>
+  <text x="76"  y="408" class="t" font-size="11" fill="#e6edf3">{{A2_TXT}}</text>
+  <text x="700" y="408" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A2_DT}}</text>
+  <line x1="16" y1="416" x2="704" y2="416" stroke="#161b22" stroke-width="1"/>
+
+  <circle cx="28" cy="428" r="4" fill="{{A3_CO}}"/>
+  <text x="44"  y="432" class="t" font-size="11" fill="#8b949e">{{A3_NUM}}</text>
+  <text x="76"  y="432" class="t" font-size="11" fill="#e6edf3">{{A3_TXT}}</text>
+  <text x="700" y="432" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A3_DT}}</text>
+  <line x1="16" y1="440" x2="704" y2="440" stroke="#161b22" stroke-width="1"/>
+
+  <circle cx="28" cy="452" r="4" fill="{{A4_CO}}"/>
+  <text x="44"  y="456" class="t" font-size="11" fill="#8b949e">{{A4_NUM}}</text>
+  <text x="76"  y="456" class="t" font-size="11" fill="#e6edf3">{{A4_TXT}}</text>
+  <text x="700" y="456" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A4_DT}}</text>
+  <line x1="16" y1="464" x2="704" y2="464" stroke="#161b22" stroke-width="1"/>
+
+  <circle cx="28" cy="476" r="4" fill="{{A5_CO}}"/>
+  <text x="44"  y="480" class="t" font-size="11" fill="#8b949e">{{A5_NUM}}</text>
+  <text x="76"  y="480" class="t" font-size="11" fill="#e6edf3">{{A5_TXT}}</text>
+  <text x="700" y="480" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A5_DT}}</text>
+
+  <!-- ══ ZONE E — ECG HEARTBEAT STRIP (y=500–590) ═════════════════════ -->
+  <rect x="16" y="500" width="688" height="90" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <!-- pulse dot -->
+  <circle class="pulse" cx="660" cy="545" r="14" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+  <circle class="pulse" cx="660" cy="545" r="14" fill="none" stroke="#3fb950" stroke-width="1.5" style="animation-delay:.55s"/>
+  <circle cx="660" cy="545" r="8" fill="{{HB_STATUS_CO}}"/>
+  <text x="660" y="575" class="t" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="1">STATUS</text>
+  <text x="660" y="587" class="t" font-size="10" font-weight="700" fill="{{HB_STATUS_CO}}" text-anchor="middle">{{HB_STATUS}}</text>
+  <!-- ECG line (x=24–632, y center=545) -->
+  <path d="M24,545 L90,545 L98,545 L103,526 L108,565 L113,535 L118,545
+           L196,545 L201,545 L206,526 L211,565 L216,535 L221,545
+           L300,545 L305,526 L310,565 L315,535 L320,545
+           L400,545 L405,526 L410,565 L415,535 L420,545
+           L520,545 L525,526 L530,565 L535,535 L540,545
+           L630,545"
+        fill="none" stroke="#3fb950" stroke-width="1.5" opacity=".6"
+        stroke-dasharray="1800" stroke-dashoffset="1800">
+    <animate attributeName="stroke-dashoffset"
+             from="1800" to="0" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <!-- timestamp inside strip -->
+  <text x="32" y="518" class="t" font-size="10" fill="#484f58">{{HB_TS}}</text>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════════════ -->
+  <line x1="16"  y1="610" x2="704" y2="610" stroke="#21262d" stroke-width="1"/>
+  <text x="16"  y="626" class="t" font-size="10" fill="#79c0ff">{{VIEW_TS}}</text>
+  <text x="704" y="626" class="t" font-size="10" fill="#484f58" text-anchor="end">{{VIEW_VERSION}}</text>
+</svg>

@@ -1,0 +1,10 @@
+{"$schema":"konomi/udt/v1","name":"Recipe","std":"ISA-88","layer":3,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"name","t":"STRING"},
+{"n":"version","t":"STRING"},
+{"n":"level","t":"RecipeLevel"},
+{"n":"product","t":"STRING"},
+{"n":"procedure","t":"Procedure"},
+{"n":"formula","t":"Formula"},
+{"n":"equipment_req","t":"STRING","array":true}
+],"meta":{"desc":"Recipe at any S88 level"}}

@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "🌸 ASS-OS BLOOM PROMPT — THE RADAR",
+    "slug": "guild-radar",
+    "route": "/guild-radar",
+    "view": "views/guild-radar.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "community",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/guild-radar.data.json"
+    }
+  },
+  "tags": {
+    "id": "guild-radar",
+    "view_id": "guild-radar",
+    "schema_version": "1.0.0"
+  }
+}

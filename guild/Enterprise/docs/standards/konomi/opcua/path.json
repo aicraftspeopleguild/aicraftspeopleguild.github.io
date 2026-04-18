@@ -1,0 +1,48 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/docs/standards/konomi/opcua",
+    "label": "opcua",
+    "parent": "guild/Enterprise/docs/standards/konomi",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_docs_standards_konomi_opcua",
+    "fs_path": "guild/Enterprise/docs/standards/konomi/opcua",
+    "depth": 6,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_docs",
+      "guild_Enterprise_docs_standards",
+      "guild_Enterprise_docs_standards_konomi",
+      "guild_Enterprise_docs_standards_konomi_opcua"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/docs/standards/konomi/base",
+      "guild/Enterprise/docs/standards/konomi/crosswalks",
+      "guild/Enterprise/docs/standards/konomi/isa101",
+      "guild/Enterprise/docs/standards/konomi/isa18",
+      "guild/Enterprise/docs/standards/konomi/isa88",
+      "guild/Enterprise/docs/standards/konomi/isa95",
+      "guild/Enterprise/docs/standards/konomi/kpi",
+      "guild/Enterprise/docs/standards/konomi/meta",
+      "guild/Enterprise/docs/standards/konomi/modbus",
+      "guild/Enterprise/docs/standards/konomi/mqtt"
+    ],
+    "descendants": 0,
+    "file_count": 11,
+    "subdir_count": 0,
+    "kinds": {
+      "json": 9,
+      "db": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

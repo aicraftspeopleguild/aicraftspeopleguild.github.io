@@ -1,0 +1,13 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Batch_Params",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "size", "type": "REAL"},
+    {"name": "size_unit", "type": "STRING", "length": 10},
+    {"name": "priority", "type": "DINT"},
+    {"name": "custom", "type": "STRUCT", "array": true, "dims": [50], "of": {"name": "STRING", "value": "REAL", "unit": "STRING"}}
+  ],
+  "meta": {"desc": "Batch header and custom parameters"}
+}

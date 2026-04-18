@@ -1,0 +1,17 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "CM_State",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "current", "type": "DINT"}
+  ],
+  "enum": {
+    "0": "Off",
+    "1": "Starting",
+    "2": "Running",
+    "3": "Stopping",
+    "4": "Faulted"
+  },
+  "meta": {"desc": "Control module state machine"}
+}

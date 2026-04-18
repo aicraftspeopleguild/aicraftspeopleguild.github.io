@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚒ ACG P2P · guild mesh</title>
+<link rel="stylesheet" href="../../Enterprise/L2/gateway/styles/section.css">
+<style>
+  body{overflow:auto}
+  .land{max-width:1040px;margin:0 auto;padding:28px 26px 60px;display:flex;flex-direction:column;gap:22px}
+  .land-hd{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--bd);flex-wrap:wrap}
+  .land-hd h1{font-family:var(--ff-display);font-size:24px;font-weight:700;letter-spacing:.3px;color:var(--tx)}
+  .land-hd h1 span{font-size:13px;color:var(--dm);font-weight:400;margin-left:8px}
+  .land-hd .spacer{flex:1}
+  .land-hd a{font-family:var(--ff-body);font-size:11px;font-weight:600;color:var(--tl);text-decoration:none;padding:5px 12px;border-radius:var(--r-sm);border:1px solid transparent}
+  .land-hd a:hover{background:var(--tlb);border-color:var(--tl)}
+
+  .land-section h2{font-family:var(--ff-display);font-size:11px;text-transform:uppercase;letter-spacing:1.3px;color:var(--ft);margin-bottom:8px;font-weight:600}
+
+  .op-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r-md);padding:14px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 1px 4px var(--sh)}
+  .op-em{font-size:28px;line-height:1}
+  .op-id{font-family:var(--ff-mono);color:var(--tl);font-weight:700;font-size:13px}
+  .op-sub{font-size:11px;color:var(--dm);margin-top:2px}
+  .op-pill{padding:3px 10px;border-radius:20px;font-family:var(--ff-mono);font-size:10px;font-weight:700;background:var(--sgb);color:var(--sg);border:1px solid rgba(74,136,104,.3);text-transform:uppercase;letter-spacing:.5px}
+
+  /* auth rendering handled by auth.js paint() — consolidated <details> dropdown styled in theme.css */
+
+  .ctrl-card .primary{background:var(--tl);color:#fff;font-size:10px;padding:3px 10px;border-radius:20px;letter-spacing:.5px}
+
+  .land-ftr{font-size:10px;color:var(--ft);padding-top:20px;border-top:1px solid var(--bd);display:flex;justify-content:space-between}
+  .land-ftr a{color:var(--tl);text-decoration:none}
+
+  #log{display:none}
+</style>
+</head>
+<body>
+<main class="land">
+
+  <header class="land-hd">
+    <h1>⚒ ACG P2P<span>· guild mesh</span></h1>
+    <span class="spacer"></span>
+    <a id="ver" href="https://github.com/teslasolar/ACGP2P" target="_blank" rel="noopener" title="commit sha">⌖ …</a>
+    <a href="../../Enterprise/">🎛 controls</a>
+    <a href="index/">🗂 directory</a>
+    <a href="../../Enterprise/L2/scada/gateway/gateway-log.html">⚠ log</a>
+    <a href="../../Enterprise/L2/gateway/health.html">⚕ health</a>
+  </header>
+
+  <!-- tier 1: operator login (automatic, peer-id = bearer) -->
+  <section class="land-section">
+    <h2>Operator · auto-login</h2>
+    <div class="op-card">
+      <span class="op-em" id="op-em">⚒️</span>
+      <div>
+        <div class="op-id" id="op-id">minting…</div>
+        <div class="op-sub" id="op-sub">anonymous peer-id · WebRTC mesh bearer</div>
+      </div>
+      <span class="spacer" style="flex:1"></span>
+      <span class="op-pill" id="op-pill">logged in</span>
+    </div>
+  </section>
+
+  <!-- tier 2: optional user identity layered on top -->
+  <section class="land-section">
+    <h2>User identity · optional (OAuth)</h2>
+    <div id="auth"></div>
+    <p class="ix-muted" style="margin-top:6px">
+      Sign in with any of the providers above to attach a display name + avatar to your operator session.
+      Sign-in is layered — the operator peer-id stays the bearer for the mesh.
+    </p>
+  </section>
+
+  <!-- open this -->
+  <section class="land-section">
+    <h2>Open</h2>
+    <div class="ctrl-grid">
+      <a class="ctrl-card" href="../../Enterprise/L2/hmi/chat/">
+        <h3>💬 Guild Chat<span class="ctrl-tag ready">ready</span></h3>
+        <p>Open the P2P chat mesh. WebRTC datachannels · WebTorrent trackers · no server stores messages.</p>
+        <code>Enterprise/L2/hmi/chat/</code>
+      </a>
+      <a class="ctrl-card" href="../../Enterprise/">
+        <h3>🎛 Controls</h3>
+        <p>SCADA, HMI, PLC, alarms, gateway, sandbox — every ACG control-plane subsystem (organised L1–L4).</p>
+        <code>Enterprise/</code>
+      </a>
+      <a class="ctrl-card" href="../../Enterprise/L4/sandbox/">
+        <h3>🧪 Sandbox</h3>
+        <p>Browser-only tool workshops: WebLLM, voice, virtual filesystem, git-lite.</p>
+        <code>Enterprise/L4/sandbox/</code>
+      </a>
+      <a class="ctrl-card" href="../../Enterprise/L2/scada/gateway/">
+        <h3>🛰 Gateway</h3>
+        <p>SCADA gateway host — styles, scripts, tag-provider registry, auth module.</p>
+        <code>Enterprise/L2/scada/gateway/</code>
+      </a>
+      <a class="ctrl-card" href="index/">
+        <h3>🗂 Directory</h3>
+        <p>Subsystem index — every provider's UDTs + live tag table in one place.</p>
+        <code>index/</code>
+      </a>
+      <a class="ctrl-card" href="../../Enterprise/L3/db/">
+        <h3>🗄️ Tag DB</h3>
+        <p>Canonical snapshot the README HMI + shields.io badges read from.</p>
+        <code>Enterprise/L3code>
+      </a>
+    </div>
+  </section>
+
+  <footer class="land-ftr">
+    <span>⚒ AI Craftspeople Guild · P2P</span>
+    <a href="https://github.com/aicraftspeopleguild" target="_blank" rel="noopener">github.com/aicraftspeopleguild</a>
+  </footer>
+</main>
+
+<script type="module">
+import {myId,myNm,myEm} from '../../Enterprise/L2/scada/gateway/scripts/config.js';
+import {startAuth,getProfile,onProfileChange} from '../../Enterprise/L2/scada/gateway/scripts/auth.js';
+import {startVersion} from '../../Enterprise/L2/gateway/scripts/version.js';
+
+document.getElementById('op-em').textContent=myEm;
+document.getElementById('op-id').textContent=myNm+' · '+myId;
+
+function reflectProfile(){
+  const p=getProfile();
+  const sub=document.getElementById('op-sub');
+  if(p)sub.textContent='anonymous peer-id · layered identity: '+p.username+' ('+p.provider+')';
+  else  sub.textContent='anonymous peer-id · WebRTC mesh bearer';
+}
+onProfileChange(reflectProfile);
+
+startAuth();
+reflectProfile();
+startVersion();
+</script>
+</body>
+</html>

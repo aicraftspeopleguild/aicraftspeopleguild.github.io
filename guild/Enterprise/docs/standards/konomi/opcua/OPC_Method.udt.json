@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"OPC_Method","std":"OPC-UA","base":"OPC_Node","layer":6,"version":"1.0.0","fields":[
+{"n":"input_args","t":"STRUCT","array":true,"of":{"name":"STRING","type":"STRING"}},
+{"n":"output_args","t":"STRUCT","array":true,"of":{"name":"STRING","type":"STRING"}},
+{"n":"executable","t":"BOOL"}
+],"meta":{"desc":"Callable method node"}}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36" width="120" height="36" role="img" aria-label="trend {{ARROW}} {{PCT}}">
+  <!-- TOKENS: ARROW  PCT  COLOR -->
+  <!-- defaults: ARROW="▲"  PCT="+8%"  COLOR="#3fb950" -->
+  <!-- for downtrend: ARROW="▼"  PCT="-3%"  COLOR="#ff7b72" -->
+  <rect width="120" height="36" rx="6" fill="#0d1117"/>
+  <text x="14" y="25" font-family="'SFMono-Regular',Consolas,monospace" font-size="17" fill="{{COLOR}}">{{ARROW}}</text>
+  <text x="38" y="25" font-family="'SFMono-Regular',Consolas,monospace" font-size="14" font-weight="700" fill="{{COLOR}}">{{PCT}}</text>
+</svg>

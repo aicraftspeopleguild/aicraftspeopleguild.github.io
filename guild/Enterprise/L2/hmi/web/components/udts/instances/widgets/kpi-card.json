@@ -1,0 +1,26 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "KpiCard",
+    "tag": "div",
+    "cssClass": "widget widget-kpi",
+    "atomicLevel": "widget",
+    "description": "Metric KPI card: label · value · unit · quality indicator. Nest a TagValue inside via slot:default for live updates, or bind value directly from page data.",
+    "props": {
+      "label":   { "type": "String",  "required": true,  "description": "Metric label, e.g. 'Members'" },
+      "value":   { "type": "String",  "required": true,  "description": "Display value" },
+      "unit":    { "type": "String",  "required": false, "description": "Unit suffix, e.g. 'ms'" },
+      "quality": { "type": "String",  "required": false, "default": "good", "description": "good | stale | bad | uncertain" },
+      "trend":   { "type": "String",  "required": false, "description": "up | down | flat" },
+      "href":    { "type": "String",  "required": false, "description": "Optional drill-down link" }
+    },
+    "slots": ["default"],
+    "template": "<div class=\"kpi-inner\">{{ #href }}<a class=\"kpi-link\" href=\"{{ href }}\">{{ /href }}<div class=\"kpi-label\">{{ label }}</div><div class=\"kpi-value\">{{ value }}{{ #unit }}<span class=\"kpi-unit\">{{ unit }}</span>{{ /unit }}</div>{{ #trend }}<div class=\"kpi-trend kpi-trend-{{ trend }}\">{{ trend }}</div>{{ /trend }}<div class=\"kpi-quality kpi-q-{{ quality }}\">{{ quality }}</div>{{ slot:default }}{{ #href }}</a>{{ /href }}</div>"
+  },
+  "tags": {
+    "id": "kpi-card",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/kpi-card.json",
+    "embeddable_in": ["Organism", "Template"],
+    "schema_version": "1.0.0"
+  }
+}

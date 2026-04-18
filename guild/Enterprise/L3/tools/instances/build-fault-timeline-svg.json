@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:fault-timeline-svg",
+    "name": "Render fault-timeline.svg",
+    "description": "Fault timeline \u00b7 every active + cleared fault in state.db as a horizontal bar.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-fault-timeline.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "svg",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "svg",
+      "readme",
+      "build"
+    ]
+  },
+  "tags": {
+    "id": "build-fault-timeline-svg",
+    "schema_version": "1.0.0"
+  }
+}

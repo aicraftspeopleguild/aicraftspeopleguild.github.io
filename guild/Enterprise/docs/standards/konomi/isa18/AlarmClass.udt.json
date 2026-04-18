@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"AlarmClass","std":"ISA-18.2","layer":5,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING"},
+{"n":"name","t":"STRING"},
+{"n":"priority_default","t":"DINT","range":[1,4]},
+{"n":"sound","t":"REF"},
+{"n":"color","t":"REF"},
+{"n":"auto_ack","t":"BOOL"},
+{"n":"log","t":"BOOL"}
+],"meta":{"desc":"Alarm class configuration"}}

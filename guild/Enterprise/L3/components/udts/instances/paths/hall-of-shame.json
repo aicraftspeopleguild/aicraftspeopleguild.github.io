@@ -1,0 +1,32 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/hall-of-shame",
+    "label": "Hall of Shame",
+    "page": "pages/hall-of-shame.page.json",
+    "section": "recognition",
+    "parent": "home",
+    "order": 20,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "hall-of-shame",
+    "full_url": "https://aicraftspeopleguild.github.io/hall-of-shame",
+    "children": [],
+    "breadcrumb": [
+      "recognition",
+      "hall-of-shame"
+    ],
+    "depth": 1,
+    "view_id": "static-page",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

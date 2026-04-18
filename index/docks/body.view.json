@@ -1,0 +1,210 @@
+{
+  "custom": {
+    "partial": true
+  },
+  "params": {},
+  "propConfig": {},
+  "props": {},
+  "root": {
+    "meta": {
+      "name": "BodyHome"
+    },
+    "type": "acg.container.body",
+    "props": {},
+    "children": [
+      {
+        "meta": {
+          "name": "Context"
+        },
+        "type": "acg.container.section",
+        "props": {
+          "variant": "context-section"
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "ContextText"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<p>The recent rapid advancement of AI/LLM technology has introduced considerable confusion, disorientation, and with it alarming amounts of <strong>false promises</strong>, <strong>snake oil sales tactics</strong>, and <strong>sleazy shilling</strong>. Our duty as software professionals is to prevent such degradation of quality by insisting on a high watermark professional code of ethics.</p>"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "meta": {
+          "name": "ManifestoSection"
+        },
+        "type": "acg.container.section",
+        "props": {
+          "variant": "manifesto-section"
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "ManifestoAnchor"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<div class=\"manifesto-header\" id=\"manifesto\"><h2>ACG Manifesto</h2></div>"
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "ManifestoGrid"
+            },
+            "type": "acg.container.grid",
+            "props": {
+              "variant": "manifesto-grid"
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "CardInnovation"
+                },
+                "type": "acg.card.manifesto",
+                "props": {
+                  "icon": "🚀",
+                  "title": "Embracing Innovation",
+                  "body": "We, software development professionals, are <strong>exploring the innovations made available</strong> by AI."
+                },
+                "children": []
+              },
+              {
+                "meta": {
+                  "name": "CardQuality"
+                },
+                "type": "acg.card.manifesto",
+                "props": {
+                  "icon": "⚠️",
+                  "title": "Demanding Quality",
+                  "body": "We are concerned about the proliferation of <strong>half-baked, barely verified content</strong> AI is notorious for delivering."
+                },
+                "children": []
+              },
+              {
+                "meta": {
+                  "name": "CardSafety"
+                },
+                "type": "acg.card.manifesto",
+                "props": {
+                  "icon": "🛡️",
+                  "title": "Ensuring Safety & Security",
+                  "body": "We insist that a <strong>proper harness</strong> ensure engineering quality, safety, security, and legal liability."
+                },
+                "children": []
+              },
+              {
+                "meta": {
+                  "name": "CardProtect"
+                },
+                "type": "acg.card.manifesto",
+                "props": {
+                  "icon": "🧠",
+                  "title": "Protecting Humans",
+                  "body": "We advocate the need for <strong>psychological safety</strong> of humans exposed to AI-generated products."
+                },
+                "children": []
+              },
+              {
+                "meta": {
+                  "name": "CardReadFull"
+                },
+                "type": "acg.display.html",
+                "props": {
+                  "html": "<a href=\"#/manifesto\" class=\"manifesto-card manifesto-card-link\"><span class=\"icon\">📜</span><h3>Read Full Manifesto</h3><p>Explore the complete code of conduct.</p></a>"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "meta": {
+          "name": "SignatureForm"
+        },
+        "type": "acg.display.html",
+        "props": {
+          "html": "<section id=\"sign\" class=\"signature-section\"><h2>Sign the Manifesto</h2><p>Join fellow professionals committed to excellence in AI-assisted development</p><form id=\"signatureForm\" class=\"signature-form\" action=\"https://docs.google.com/forms/d/e/1FAIpQLSf79pCLYUMfgHUYW2HeJrWZEsJqE4uvt-BVUJter52Dd6RMcw/formResponse\" method=\"POST\" target=\"hidden_iframe\"><div class=\"form-group\"><label for=\"name\">Name <span class=\"required\">*</span></label><input type=\"text\" id=\"name\" name=\"entry.1444049175\" required></div><div class=\"form-group\"><label for=\"title\">Title / Role</label><input type=\"text\" id=\"title\" name=\"entry.1208485608\" placeholder=\"e.g., Senior Software Engineer\"><small>Optional - helps others understand your perspective</small></div><div class=\"form-group\"><label for=\"organization\">Organization</label><input type=\"text\" id=\"organization\" name=\"entry.1920033105\" placeholder=\"e.g., Company name or Independent\"><small>Optional</small></div><div class=\"form-group\"><label for=\"email\">Email</label><input type=\"email\" id=\"email\" name=\"entry.1514577890\" placeholder=\"For verification (not displayed publicly)\"><small>Optional - only for preventing spam</small></div><button type=\"submit\" class=\"btn-sign\" id=\"submitBtn\">Sign the Manifesto</button><div id=\"formStatus\" class=\"form-status\"></div></form><div class=\"signatories-display\"><h3>Signatories</h3><div id=\"signatoriesCount\" class=\"signatories-count\">Loading signatures...</div><div id=\"signatoriesList\" class=\"signatories-grid\"><div class=\"loading\">Loading signatories</div></div></div></section>"
+        },
+        "children": []
+      },
+      {
+        "meta": {
+          "name": "JoinCta"
+        },
+        "type": "acg.nav.cta",
+        "props": {
+          "heading": "Join the Movement",
+          "description": "Stand with us in championing integrity, transparency, and professional excellence in AI-assisted development."
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "b1"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "https://github.com/aicraftspeopleguild",
+              "text": "Visit Our GitHub"
+            }
+          },
+          {
+            "meta": {
+              "name": "b2"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#sign",
+              "text": "Sign the Manifesto"
+            }
+          },
+          {
+            "meta": {
+              "name": "b3"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/manifesto",
+              "text": "Read Full Manifesto"
+            }
+          },
+          {
+            "meta": {
+              "name": "b4"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/charter",
+              "text": "Read the Charter"
+            }
+          }
+        ]
+      },
+      {
+        "meta": {
+          "name": "WorshipZone"
+        },
+        "type": "acg.display.html",
+        "props": {
+          "html": "<section class=\"worship-zone\"><h2>AI Craftspeople Guild is a worship free zone</h2><figure><img src=\"guild/Enterprise/L2/hmi/web/assets/worship-free-zone.png\" alt=\"AI Craftspeople Guild is a worship free zone\"></figure></section>"
+        },
+        "children": []
+      },
+      {
+        "meta": {
+          "name": "RouteMount"
+        },
+        "type": "acg.display.html",
+        "props": {
+          "html": "<div id=\"app\"></div>"
+        },
+        "children": []
+      }
+    ]
+  }
+}

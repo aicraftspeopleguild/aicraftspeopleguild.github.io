@@ -1,0 +1,17 @@
+{"$schema":"chat/wire/v1","t":"msg","glyph":"📨","dir":"both",
+"fields":{
+"t":"\"msg\"",
+"id":"s20",
+"mid":"s?",
+"txt":"s",
+"to":"s20?",
+"ts":"ms"
+},
+"required":["t","id","txt","ts"],
+"example":{"t":"msg","id":"-ACG001-abcdef012345","mid":"m-7f3a","txt":"hello guild","ts":1700000000123},
+"effect":[
+"receiver: chat.msgsIn++, chat.lastMsgAt=ts, append to chat ring",
+"sender:   chat.msgsOut++ once per broadcast() open channel"
+],
+"ack":"peers MAY respond with wire/ack for the mid",
+"meta":{"desc":"User-authored chat message. to=null means broadcast, to=<id> is direct."}}

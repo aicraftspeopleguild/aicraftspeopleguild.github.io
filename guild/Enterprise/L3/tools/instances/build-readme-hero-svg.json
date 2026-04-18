@@ -1,0 +1,15 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:readme-hero-svg",
+    "name": "Render readme-hero.svg",
+    "description": "Top-of-README hero banner — title, emblem, tagline, live chips (paperCount, memberCount, apiVersion, heartbeat timestamp). Replaces the static title + badge cluster with one composable SVG card.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-readme-hero.py",
+    "language": "python",
+    "inputs": [], "outputs": [{"name":"svg","type":"file"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","readme","hero","render"]
+  },
+  "tags": { "id": "build-readme-hero-svg", "schema_version": "1.0.0" }
+}

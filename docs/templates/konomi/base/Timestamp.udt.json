@@ -1,0 +1,10 @@
+{"$schema":"konomi/udt/v1","name":"Timestamp","layer":1,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"format","t":"STRING"},
+{"n":"resolution","t":"STRING"},
+{"n":"timezone","t":"STRING"}
+],"examples":{
+"ISO8601":{"format":"YYYY-MM-DDTHH:mm:ss.sssZ","resolution":"ms","tz":"UTC"},
+"EPOCH_MS":{"format":"int64 unix_ms","resolution":"ms","tz":"UTC"},
+"OPC_FILETIME":{"format":"int64 100ns since 1601","resolution":"100ns","tz":"UTC"}
+},"meta":{"desc":"Timestamp encodings"}}

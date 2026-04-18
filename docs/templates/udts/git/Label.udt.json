@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"Label","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"color","t":"STRING","desc":"Hex without #"},
+{"n":"description","t":"STRING","nullable":true},
+{"n":"scope","t":"ENUM","values":["issue","pr","both"]}
+],"meta":{"desc":"A GitHub label applied to issues or PRs."}}

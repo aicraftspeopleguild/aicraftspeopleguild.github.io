@@ -1,0 +1,36 @@
+{
+  "§": "C.TAGS",
+  "🏗️": "💬",
+  "name": "chat · tag catalog",
+  "owner": "L2/hmi/chat/provider.py",
+  "namespaces": ["chat", "room", "tracker", "peers", "signal"],
+
+  "tags": [
+    { "path": "chat.msgsIn",              "type": "Counter",  "unit": "msgs",  "desc": "total inbound messages" },
+    { "path": "chat.msgsOut",             "type": "Counter",  "unit": "msgs",  "desc": "total outbound messages" },
+    { "path": "chat.lastMsgAt",           "type": "DateTime",                  "desc": "timestamp of last tx/rx" },
+
+    { "path": "room.name",                "type": "String",                    "desc": "current room name" },
+    { "path": "room.hash",                "type": "String",                    "desc": "SHA1(acg:room)" },
+    { "path": "room.joinedAt",            "type": "DateTime" },
+    { "path": "room.peerCount",           "type": "Counter",  "unit": "peers", "desc": "connected peers incl. self" },
+    { "path": "room.data",                "type": "UDT:Room" },
+
+    { "path": "tracker.current",          "type": "UDT:Tracker",               "desc": "live tracker record" },
+    { "path": "tracker.state",            "type": "String",                    "desc": "connecting|connected|reconnecting|failed|offline" },
+    { "path": "tracker.announces",        "type": "Counter",  "unit": "count" },
+    { "path": "tracker.lastAnnounceAt",   "type": "DateTime" },
+
+    {
+      "pathPattern": "peers.<peerId>",
+      "cardinality": "many",
+      "type": "UDT:Peer",
+      "desc": "one record per open RTCDataChannel; auto-del on disconnect"
+    },
+
+    { "path": "signal.last",              "type": "UDT:SignalEvent" },
+    { "path": "signal.offersIn",          "type": "Counter" },
+    { "path": "signal.answersIn",         "type": "Counter" },
+    { "path": "signal.answersOut",        "type": "Counter" }
+  ]
+}

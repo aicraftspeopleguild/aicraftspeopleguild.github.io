@@ -1,0 +1,26 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "fault:clear",
+    "name": "Clear fault",
+    "description": "Mark fault(s) as cleared. Supply fault_id=N for a specific fault, or tag=X to clear every active fault on that tag.",
+    "category": "command",
+    "entry": "guild/Enterprise/L2/lib/state_db.py:clear_fault",
+    "language": "python",
+    "inputs": [
+      {"name":"fault_id","type":"String","required":false},
+      {"name":"tag","type":"String","required":false}
+    ],
+    "outputs": [{"name":"result","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["state","fault","alarm","command"],
+    "mcp": {
+      "mcp_name":"fault_clear",
+      "input_schema":{
+        "type":"object",
+        "properties":{"fault_id":{"type":"string"},"tag":{"type":"string"}}
+      }
+    }
+  },
+  "tags": { "id": "fault-clear", "schema_version": "1.0.0" }
+}

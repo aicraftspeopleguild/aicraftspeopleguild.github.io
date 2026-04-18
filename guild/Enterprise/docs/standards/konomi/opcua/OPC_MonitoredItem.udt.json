@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"OPC_MonitoredItem","std":"OPC-UA","layer":6,"version":"1.0.0","fields":[
+{"n":"id","t":"UDINT"},
+{"n":"node","t":"REF"},
+{"n":"sampling_interval","t":"Duration"},
+{"n":"queue_size","t":"UDINT"},
+{"n":"discard_oldest","t":"BOOL"},
+{"n":"filter","t":"REF","nullable":true}
+],"meta":{"desc":"Subscribed node sample configuration"}}

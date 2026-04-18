@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="720" height="380"
+     role="img" aria-label="{{TITLE}} dashboard">
+  <!--
+  TOKENS (54 total):
+    TITLE
+    Stat cards (×4): S1_LB S1_VA S1_CO S1_SB  S2_LB S2_VA S2_CO S2_SB
+                     S3_LB S3_VA S3_CO S3_SB  S4_LB S4_VA S4_CO S4_SB
+    Status badges (×5): ST1_LB ST1_VA ST1_CO  ST2_LB ST2_VA ST2_CO
+                        ST3_LB ST3_VA ST3_CO  ST4_LB ST4_VA ST4_CO
+                        ST5_LB ST5_VA ST5_CO
+    Activity rows (×5): A1_NUM A1_TXT A1_DT A1_CO  A2_NUM A2_TXT A2_DT A2_CO
+                        A3_NUM A3_TXT A3_DT A3_CO  A4_NUM A4_TXT A4_DT A4_CO
+                        A5_NUM A5_TXT A5_DT A5_CO
+    Footer: TS  VERSION
+  -->
+  <defs>
+    <linearGradient id="dg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;letter-spacing:1px}
+      .sb{fill:#484f58;font-size:10px}
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="720" height="380" rx="10" fill="url(#dg)"/>
+
+  <!-- ── TITLEBAR ───────────────────────────────────────────────────── -->
+  <rect x="0" y="0" width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="360" y="22" text-anchor="middle" class="t" font-size="11" fill="#8b949e">&#x2692;  {{TITLE}}</text>
+
+  <!-- ── STAT CARDS (y=40–130) ─────────────────────────────────────── -->
+  <!-- Card 1 (x=16) -->
+  <rect x="16"  y="40" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="96"  y="60" text-anchor="middle" class="t lb">{{S1_LB}}</text>
+  <text x="96"  y="102" text-anchor="middle" class="t" font-size="32" font-weight="700" fill="{{S1_CO}}">{{S1_VA}}</text>
+  <text x="96"  y="118" text-anchor="middle" class="t sb">{{S1_SB}}</text>
+
+  <!-- Card 2 (x=186) -->
+  <rect x="186" y="40" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="266" y="60" text-anchor="middle" class="t lb">{{S2_LB}}</text>
+  <text x="266" y="102" text-anchor="middle" class="t" font-size="32" font-weight="700" fill="{{S2_CO}}">{{S2_VA}}</text>
+  <text x="266" y="118" text-anchor="middle" class="t sb">{{S2_SB}}</text>
+
+  <!-- Card 3 (x=356) -->
+  <rect x="356" y="40" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="436" y="60" text-anchor="middle" class="t lb">{{S3_LB}}</text>
+  <text x="436" y="102" text-anchor="middle" class="t" font-size="32" font-weight="700" fill="{{S3_CO}}">{{S3_VA}}</text>
+  <text x="436" y="118" text-anchor="middle" class="t sb">{{S3_SB}}</text>
+
+  <!-- Card 4 (x=526) -->
+  <rect x="526" y="40" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="606" y="60" text-anchor="middle" class="t lb">{{S4_LB}}</text>
+  <text x="606" y="102" text-anchor="middle" class="t" font-size="32" font-weight="700" fill="{{S4_CO}}">{{S4_VA}}</text>
+  <text x="606" y="118" text-anchor="middle" class="t sb">{{S4_SB}}</text>
+
+  <!-- ── DIVIDER: SYSTEM STATUS ────────────────────────────────────── -->
+  <line x1="16"  y1="150" x2="272" y2="150" stroke="#21262d" stroke-width="1"/>
+  <text x="360"  y="154" text-anchor="middle" class="t" font-size="10" fill="#484f58" letter-spacing="2">SYSTEM STATUS</text>
+  <line x1="448" y1="150" x2="704" y2="150" stroke="#21262d" stroke-width="1"/>
+
+  <!-- ── STATUS BADGES (y=162–190) ─────────────────────────────────── -->
+  <!-- badge 1 (x=16, cx=76) -->
+  <rect x="16"  y="162" width="120" height="28" rx="4" fill="#161b22" stroke="{{ST1_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="76"  y="180" text-anchor="middle" class="t" font-size="11" fill="{{ST1_CO}}">{{ST1_LB}} · {{ST1_VA}}</text>
+  <!-- badge 2 (x=152, cx=212) -->
+  <rect x="152" y="162" width="120" height="28" rx="4" fill="#161b22" stroke="{{ST2_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="212" y="180" text-anchor="middle" class="t" font-size="11" fill="{{ST2_CO}}">{{ST2_LB}} · {{ST2_VA}}</text>
+  <!-- badge 3 (x=288, cx=348) -->
+  <rect x="288" y="162" width="120" height="28" rx="4" fill="#161b22" stroke="{{ST3_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="348" y="180" text-anchor="middle" class="t" font-size="11" fill="{{ST3_CO}}">{{ST3_LB}} · {{ST3_VA}}</text>
+  <!-- badge 4 (x=424, cx=484) -->
+  <rect x="424" y="162" width="120" height="28" rx="4" fill="#161b22" stroke="{{ST4_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="484" y="180" text-anchor="middle" class="t" font-size="11" fill="{{ST4_CO}}">{{ST4_LB}} · {{ST4_VA}}</text>
+  <!-- badge 5 (x=560, cx=620) -->
+  <rect x="560" y="162" width="120" height="28" rx="4" fill="#161b22" stroke="{{ST5_CO}}" stroke-width="1" stroke-opacity=".5"/>
+  <text x="620" y="180" text-anchor="middle" class="t" font-size="11" fill="{{ST5_CO}}">{{ST5_LB}} · {{ST5_VA}}</text>
+
+  <!-- ── DIVIDER: ACTIVITY FEED ────────────────────────────────────── -->
+  <line x1="16"  y1="208" x2="280" y2="208" stroke="#21262d" stroke-width="1"/>
+  <text x="360"  y="212" text-anchor="middle" class="t" font-size="10" fill="#484f58" letter-spacing="2">ACTIVITY FEED</text>
+  <line x1="440" y1="208" x2="704" y2="208" stroke="#21262d" stroke-width="1"/>
+
+  <!-- ── ACTIVITY ROWS (5 × 24px, baselines 232 256 280 304 328) ───── -->
+  <!-- Row 1 -->
+  <circle cx="28" cy="228" r="4" fill="{{A1_CO}}"/>
+  <text x="44"  y="232" class="t" font-size="11" fill="#8b949e">{{A1_NUM}}</text>
+  <text x="76"  y="232" class="t" font-size="11" fill="#e6edf3">{{A1_TXT}}</text>
+  <text x="700" y="232" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A1_DT}}</text>
+  <line x1="16" y1="240" x2="704" y2="240" stroke="#161b22" stroke-width="1"/>
+  <!-- Row 2 -->
+  <circle cx="28" cy="252" r="4" fill="{{A2_CO}}"/>
+  <text x="44"  y="256" class="t" font-size="11" fill="#8b949e">{{A2_NUM}}</text>
+  <text x="76"  y="256" class="t" font-size="11" fill="#e6edf3">{{A2_TXT}}</text>
+  <text x="700" y="256" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A2_DT}}</text>
+  <line x1="16" y1="264" x2="704" y2="264" stroke="#161b22" stroke-width="1"/>
+  <!-- Row 3 -->
+  <circle cx="28" cy="276" r="4" fill="{{A3_CO}}"/>
+  <text x="44"  y="280" class="t" font-size="11" fill="#8b949e">{{A3_NUM}}</text>
+  <text x="76"  y="280" class="t" font-size="11" fill="#e6edf3">{{A3_TXT}}</text>
+  <text x="700" y="280" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A3_DT}}</text>
+  <line x1="16" y1="288" x2="704" y2="288" stroke="#161b22" stroke-width="1"/>
+  <!-- Row 4 -->
+  <circle cx="28" cy="300" r="4" fill="{{A4_CO}}"/>
+  <text x="44"  y="304" class="t" font-size="11" fill="#8b949e">{{A4_NUM}}</text>
+  <text x="76"  y="304" class="t" font-size="11" fill="#e6edf3">{{A4_TXT}}</text>
+  <text x="700" y="304" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A4_DT}}</text>
+  <line x1="16" y1="312" x2="704" y2="312" stroke="#161b22" stroke-width="1"/>
+  <!-- Row 5 -->
+  <circle cx="28" cy="324" r="4" fill="{{A5_CO}}"/>
+  <text x="44"  y="328" class="t" font-size="11" fill="#8b949e">{{A5_NUM}}</text>
+  <text x="76"  y="328" class="t" font-size="11" fill="#e6edf3">{{A5_TXT}}</text>
+  <text x="700" y="328" class="t" font-size="10" fill="#484f58" text-anchor="end">{{A5_DT}}</text>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+  <line x1="16"  y1="348" x2="704" y2="348" stroke="#21262d" stroke-width="1"/>
+  <text x="16"  y="364" class="t" font-size="10" fill="#79c0ff">{{TS}}</text>
+  <text x="704" y="364" class="t" font-size="10" fill="#484f58" text-anchor="end">{{VERSION}}</text>
+</svg>

@@ -1,0 +1,4 @@
+{"$schema":"konomi/udt/v1","name":"ProcessCell","std":"ISA-88","base":"Equipment","layer":3,"version":"1.0.0","fields":[
+{"n":"units","t":"Unit","array":true},
+{"n":"coordination_control","t":"REF"}
+],"meta":{"desc":"Logical grouping of units"}}

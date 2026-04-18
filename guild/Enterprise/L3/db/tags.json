@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "schema": "acg/dense-token · §0",
+    "updatedAt": 0,
+    "source": "seed · replace with live snapshot from the browser runtime",
+    "provider": "all · see /providers.json"
+  },
+
+  "sys": {
+    "startedAt":    { "value": 0, "quality": "uncertain", "type": "DateTime" },
+    "uptimeSec":    { "value": 0, "quality": "uncertain", "type": "Counter" },
+    "myId":         { "value": "-ACG001-seed000000", "quality": "uncertain", "type": "String" },
+    "myNm":         { "value": "seed0000",           "quality": "uncertain", "type": "String" },
+    "myEm":         { "value": "⚒️",                 "quality": "uncertain", "type": "String" },
+    "trackerCount": { "value": 6, "quality": "good",      "type": "Counter" }
+  },
+
+  "version": {
+    "sha":         { "value": "seed", "quality": "uncertain", "type": "String" },
+    "shortSha":    { "value": "seed",  "quality": "uncertain", "type": "String" },
+    "rateLimited": { "value": false,   "quality": "good",      "type": "Boolean" }
+  },
+
+  "auth": {
+    "signedIn": { "value": false, "quality": "good", "type": "Boolean" },
+    "profile":  { "value": null,  "quality": "good", "type": "UDT:Profile" }
+  },
+
+  "room": {
+    "name":      { "value": "acg-guild", "quality": "good",     "type": "String" },
+    "hash":      { "value": null,        "quality": "uncertain","type": "String" },
+    "peerCount": { "value": 1,           "quality": "good",     "type": "Counter" },
+    "joinedAt":  { "value": 0,           "quality": "uncertain","type": "DateTime" }
+  },
+
+  "tracker": {
+    "state":         { "value": "offline", "quality": "stale", "type": "String" },
+    "announces":     { "value": 0,         "quality": "good",  "type": "Counter" },
+    "lastAnnounceAt":{ "value": 0,         "quality": "stale", "type": "DateTime" },
+    "current":       { "value": null,      "quality": "stale", "type": "UDT:Tracker" }
+  },
+
+  "chat": {
+    "msgsIn":     { "value": 0, "quality": "good", "type": "Counter" },
+    "msgsOut":    { "value": 0, "quality": "good", "type": "Counter" },
+    "lastMsgAt":  { "value": 0, "quality": "uncertain", "type": "DateTime" }
+  },
+
+  "signal": {
+    "offersIn":   { "value": 0, "quality": "good", "type": "Counter" },
+    "answersIn":  { "value": 0, "quality": "good", "type": "Counter" },
+    "answersOut": { "value": 0, "quality": "good", "type": "Counter" }
+  },
+
+  "errors": {
+    "count":   { "value": 0, "quality": "good", "type": "Counter" },
+    "lastAt":  { "value": 0, "quality": "uncertain", "type": "DateTime" },
+    "byLevel": {
+      "ERROR": { "count": { "value": 0, "quality": "good", "type": "Counter" } },
+      "WARN":  { "count": { "value": 0, "quality": "good", "type": "Counter" } },
+      "INFO":  { "count": { "value": 0, "quality": "good", "type": "Counter" } },
+      "DEBUG": { "count": { "value": 0, "quality": "good", "type": "Counter" } }
+    }
+  },
+
+  "sandbox": {
+    "bridgeOpen": { "value": false, "quality": "good", "type": "Boolean" },
+    "channel":    { "value": "acg-mesh", "quality": "good", "type": "String" }
+  }
+}

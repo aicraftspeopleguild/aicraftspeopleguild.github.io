@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"CROSSWALK","layer":0,"version":"1.0.0","fields":[
+{"n":"from_std","t":"STRING"},
+{"n":"from_entity","t":"STRING"},
+{"n":"to_std","t":"STRING"},
+{"n":"to_entity","t":"STRING"},
+{"n":"mapping","t":"ENUM","values":["exact","partial","semantic"]},
+{"n":"transform","t":"EXPR","nullable":true}
+],"meta":{"desc":"Cross-standard entity/field mapping"}}

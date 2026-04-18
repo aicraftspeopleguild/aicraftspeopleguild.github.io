@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "acg.* component type registry. Each entry maps a Perspective-style type name to a renderer definition (tag + cssClass + prop handling).",
+  "types": {
+    "acg.container.page": {
+      "tag": "fragment",
+      "cssClass": "",
+      "slots": ["head", "default", "footer"],
+      "template": "<header>{{ slot:head }}</header><main class=\"container\">{{ slot:default }}</main><footer>{{ slot:footer }}</footer>",
+      "description": "Page shell: header + main + footer. The builder wraps this in <!DOCTYPE html><html><head>...</head><body>...</body></html>."
+    },
+    "acg.dock.north": {
+      "tag": "header",
+      "cssClass": "dock-north",
+      "slots": ["default"],
+      "template": "{{ slot:default }}",
+      "description": "Top dock: sticky header chrome (nav, emblem, page title). Analogous to Ignition Perspective's north docked view."
+    },
+    "acg.dock.south": {
+      "tag": "footer",
+      "cssClass": "dock-south",
+      "slots": ["default"],
+      "template": "{{ slot:default }}",
+      "description": "Bottom dock: sticky footer (links, signatures, credits). Analogous to Ignition Perspective's south docked view."
+    },
+    "acg.container.body": {
+      "tag": "main",
+      "cssClass": "container dock-body",
+      "slots": ["default"],
+      "template": "{{ slot:default }}",
+      "description": "Body region between north and south docks. Holds the page's primary content; for SPA routing, the #app mount point lives inside this body."
+    },
+    "acg.container.dock-layout": {
+      "tag": "fragment",
+      "cssClass": "",
+      "slots": ["north", "body", "south"],
+      "template": "{{ slot:north }}{{ slot:body }}{{ slot:south }}",
+      "description": "Top-level dock arrangement. Children declare meta.slot = north | body | south."
+    },
+    "acg.container.section": {
+      "tag": "section",
+      "cssClass": "",
+      "slots": ["default"],
+      "propsToClass": ["variant"],
+      "template": "{{ slot:default }}"
+    },
+    "acg.container.main": {
+      "tag": "main",
+      "cssClass": "container",
+      "slots": ["default"],
+      "template": "{{ slot:default }}"
+    },
+    "acg.container.grid": {
+      "tag": "div",
+      "cssClass": "",
+      "slots": ["default"],
+      "propsToClass": ["variant"],
+      "template": "{{ slot:default }}"
+    },
+    "acg.container.flex": {
+      "tag": "div",
+      "cssClass": "flex",
+      "slots": ["default"],
+      "template": "{{ slot:default }}"
+    },
+    "acg.display.heading": {
+      "tag": "h{{ level }}",
+      "cssClass": "",
+      "template": "{{ text }}"
+    },
+    "acg.display.text": {
+      "tag": "p",
+      "cssClass": "",
+      "template": "{{ text }}"
+    },
+    "acg.display.html": {
+      "tag": "fragment",
+      "cssClass": "",
+      "template": "{{{ html }}}"
+    },
+    "acg.display.markdown": {
+      "tag": "div",
+      "cssClass": "markdown-body",
+      "template": "{{{ html }}}"
+    },
+    "acg.display.badge": {
+      "tag": "span",
+      "cssClass": "badge",
+      "template": "{{ text }}"
+    },
+    "acg.display.link": {
+      "tag": "a",
+      "cssClass": "",
+      "propsToAttr": { "href": "href", "target": "target", "rel": "rel" },
+      "template": "{{ text }}"
+    },
+    "acg.display.image": {
+      "tag": "img",
+      "cssClass": "",
+      "propsToAttr": { "src": "src", "alt": "alt", "loading": "loading" },
+      "selfClosing": true
+    },
+    "acg.display.emblem": {
+      "tag": "div",
+      "cssClass": "guild-mark",
+      "template": "<div class=\"emblem\">{{ text }}</div>"
+    },
+    "acg.nav.top": {
+      "tag": "nav",
+      "cssClass": "top-nav",
+      "slots": ["default"],
+      "propsToAttr": { "label": "aria-label" },
+      "template": "{{ slot:default }}"
+    },
+    "acg.nav.back-link": {
+      "tag": "div",
+      "cssClass": "back-link",
+      "template": "<a href=\"{{ href }}\">← {{ label }}</a>"
+    },
+    "acg.nav.cta": {
+      "tag": "section",
+      "cssClass": "cta-section",
+      "slots": ["default"],
+      "template": "{{ #heading }}<h2>{{ heading }}</h2>{{ /heading }}{{ #description }}<p>{{ description }}</p>{{ /description }}<div class=\"cta-actions\">{{ slot:default }}</div>"
+    },
+    "acg.card.paper": {
+      "tag": "article",
+      "cssClass": "paper-card",
+      "template": "<div class=\"paper-meta\">{{ #author }}<span>{{ author }}</span>{{ /author }}{{ #date }}<span>{{ date }}</span>{{ /date }}{{ #docNumber }}<span>{{ docNumber }}</span>{{ /docNumber }}</div><h3>{{ title }}</h3><p>{{ summary }}</p><div class=\"paper-actions\"><a href=\"{{ href }}\" class=\"btn btn-primary\">Read</a></div>"
+    },
+    "acg.card.manifesto": {
+      "tag": "div",
+      "cssClass": "manifesto-card",
+      "template": "<span class=\"icon\">{{ icon }}</span><h3>{{ title }}</h3><p>{{{ body }}}</p>"
+    },
+    "acg.container.split-panel": {
+      "tag": "div",
+      "cssClass": "split-panel",
+      "slots": ["left", "right"],
+      "props": {
+        "gap":   { "type": "String", "required": false },
+        "align": { "type": "String", "required": false, "default": "stretch" }
+      },
+      "template": "<div class=\"split-left\">{{ slot:left }}</div><div class=\"split-right\">{{ slot:right }}</div>",
+      "description": "Two-column layout. Override column ratio via node.style: { '--split-ratio': '1fr 2fr' }."
+    },
+    "acg.container.tabbed-panel": {
+      "tag": "div",
+      "cssClass": "tabbed-panel",
+      "slots": ["tab-0", "tab-1", "tab-2", "tab-3"],
+      "propsToAttr": { "id": "data-tabbed-panel" },
+      "props": {
+        "tabs": { "type": "StringArray", "required": true },
+        "id":   { "type": "String",      "required": false }
+      },
+      "template": "<nav class=\"tab-bar\" role=\"tablist\">{{ #tabs }}<button class=\"tab-btn\" role=\"tab\">{{ . }}</button>{{ /tabs }}</nav><div class=\"tab-panes\"><div class=\"tab-pane\">{{ slot:tab-0 }}</div><div class=\"tab-pane\">{{ slot:tab-1 }}</div><div class=\"tab-pane\">{{ slot:tab-2 }}</div><div class=\"tab-pane\">{{ slot:tab-3 }}</div></div>",
+      "description": "Tabbed panel container wired by WidgetRuntime.TabWidget after mount."
+    },
+    "acg.container.param-card": {
+      "tag": "div",
+      "cssClass": "param-card",
+      "slots": ["default"],
+      "propsToClass": ["variant"],
+      "props": {
+        "title":    { "type": "String", "required": true },
+        "subtitle": { "type": "String", "required": false },
+        "meta":     { "type": "String", "required": false },
+        "variant":  { "type": "String", "required": false }
+      },
+      "template": "<div class=\"param-card-hd\"><div class=\"param-card-title\">{{ title }}</div>{{ #subtitle }}<div class=\"param-card-subtitle\">{{ subtitle }}</div>{{ /subtitle }}{{ #meta }}<div class=\"param-card-meta\">{{ meta }}</div>{{ /meta }}</div><div class=\"param-card-body\">{{ slot:default }}</div>",
+      "description": "Reusable card driven by view.params. Use inside acg.view.embed with params: { title, subtitle, meta, variant }."
+    },
+    "acg.widget.kpi-card": {
+      "tag": "div",
+      "cssClass": "widget widget-kpi",
+      "slots": ["default"],
+      "propsToClass": ["quality"],
+      "props": {
+        "label":   { "type": "String", "required": true },
+        "value":   { "type": "String", "required": true },
+        "unit":    { "type": "String", "required": false },
+        "quality": { "type": "String", "required": false, "default": "good" },
+        "trend":   { "type": "String", "required": false },
+        "href":    { "type": "String", "required": false }
+      },
+      "template": "<div class=\"kpi-inner\">{{ #href }}<a class=\"kpi-link\" href=\"{{ href }}\">{{ /href }}<div class=\"kpi-label\">{{ label }}</div><div class=\"kpi-value\">{{ value }}{{ #unit }}<span class=\"kpi-unit\">{{ unit }}</span>{{ /unit }}</div>{{ #trend }}<div class=\"kpi-trend kpi-trend-{{ trend }}\">{{ trend }}</div>{{ /trend }}<div class=\"kpi-quality kpi-q-{{ quality }}\">{{ quality }}</div>{{ slot:default }}{{ #href }}</a>{{ /href }}</div>",
+      "description": "Metric KPI card with label / value / unit / quality class and optional live TagValue child."
+    },
+    "acg.widget.status-pill": {
+      "tag": "span",
+      "cssClass": "status-pill",
+      "slots": [],
+      "propsToClass": ["state"],
+      "props": {
+        "state": { "type": "String", "required": true },
+        "label": { "type": "String", "required": false }
+      },
+      "template": "<span class=\"status-pill-dot\"></span>{{ #label }}{{ label }}{{ /label }}{{ ^label }}{{ state }}{{ /label }}",
+      "description": "PackML state indicator pill. CSS class status-pill--STATE drives color via custom properties."
+    },
+    "acg.widget.tag-value": {
+      "tag": "span",
+      "cssClass": "tag-value",
+      "slots": [],
+      "propsToAttr": {
+        "path":     "data-tag-path",
+        "src":      "data-tag-src",
+        "interval": "data-tag-interval",
+        "format":   "data-tag-format",
+        "unit":     "data-tag-unit"
+      },
+      "props": {
+        "path":     { "type": "String", "required": true },
+        "src":      { "type": "String", "required": false },
+        "interval": { "type": "Number", "required": false, "default": 30 },
+        "format":   { "type": "String", "required": false, "default": "raw" },
+        "unit":     { "type": "String", "required": false },
+        "fallback": { "type": "String", "required": false, "default": "…" }
+      },
+      "template": "{{ fallback }}",
+      "description": "Live tag span polled by WidgetRuntime.TagPoller. Add data-tag-* attributes via propsToAttr wiring."
+    },
+    "acg.widget.alarm-count": {
+      "tag": "span",
+      "cssClass": "alarm-badge",
+      "slots": [],
+      "propsToAttr": {
+        "src":  "data-alarm-src",
+        "href": "data-alarm-href"
+      },
+      "props": {
+        "src":   { "type": "String", "required": true },
+        "href":  { "type": "String", "required": false },
+        "label": { "type": "String", "required": false, "default": "alarms" }
+      },
+      "template": "{{ label }}",
+      "description": "Active alarm count badge polled by WidgetRuntime.AlarmPoller. Toggles .alarm-badge-active when count > 0."
+    },
+    "acg.view.embed": {
+      "tag": null,
+      "cssClass": "",
+      "slots": [],
+      "props": {
+        "src":    { "type": "String", "required": true,  "description": "Path to the view JSON to embed." },
+        "params": { "type": "Object", "required": false, "description": "Params merged into ctx.params.* inside the child view." }
+      },
+      "description": "Embed a sub-view at runtime. Handled directly by ACGRenderer.renderEmbed(); not rendered as an HTML tag. Analogous to Ignition Perspective's embeddable view / view.params pattern."
+    }
+  }
+}

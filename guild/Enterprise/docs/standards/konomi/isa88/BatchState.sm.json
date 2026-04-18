@@ -1,0 +1,11 @@
+{"$schema":"konomi/state_machine/v1","name":"BatchState","std":"ISA-88","layer":3,"version":"1.0.0",
+"states":["Created","Scheduled","Running","Held","Complete","Aborted"],
+"initial":"Created",
+"transitions":[
+{"from":"Created","to":"Scheduled","trigger":"schedule"},
+{"from":"Scheduled","to":"Running","trigger":"start"},
+{"from":"Running","to":"Complete","trigger":"done"},
+{"from":"Running","to":"Held","trigger":"hold"},
+{"from":"Held","to":"Running","trigger":"resume"},
+{"from":"*","to":"Aborted","trigger":"abort"}
+],"meta":{"desc":"Batch lifecycle state machine"}}

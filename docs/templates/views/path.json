@@ -1,0 +1,37 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/templates/views",
+    "label": "views",
+    "parent": "docs/templates",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_templates_views",
+    "fs_path": "docs/templates/views",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_templates",
+      "docs_templates_views"
+    ],
+    "children": [],
+    "siblings": [
+      "docs/templates/formats",
+      "docs/templates/konomi",
+      "docs/templates/udts"
+    ],
+    "descendants": 0,
+    "file_count": 1,
+    "subdir_count": 0,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

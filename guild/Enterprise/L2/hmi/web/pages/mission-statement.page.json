@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "Mission Statement",
+    "slug": "mission-statement",
+    "route": "/mission-statement",
+    "view": "views/mission-statement.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "about",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/mission-statement.data.json"
+    }
+  },
+  "tags": {
+    "id": "mission-statement",
+    "view_id": "mission-statement",
+    "schema_version": "1.0.0"
+  }
+}

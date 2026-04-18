@@ -1,0 +1,48 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/",
+    "label": "Home",
+    "page": "index/view.json",
+    "section": "meta",
+    "parent": null,
+    "order": 0,
+    "dynamic": false,
+    "params": [],
+    "methods": ["GET"],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public",
+    "dependencies": [],
+    "provides": ["site-shell", "manifesto-cards", "signature-form"]
+  },
+  "tags": {
+    "id": "home",
+    "full_url": "https://aicraftspeopleguild.github.io/",
+    "children": [
+      "ai-rituals",
+      "charter",
+      "chief-ai-skeptic",
+      "code-of-conduct",
+      "flywheel",
+      "guild-radar",
+      "hall-of-fame",
+      "hall-of-shame",
+      "hushbell",
+      "manifesto",
+      "members",
+      "mission-statement",
+      "mob-programming",
+      "showcases",
+      "white-papers"
+    ],
+    "breadcrumb": [
+      "meta",
+      "home"
+    ],
+    "depth": 1,
+    "view_id": "home",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

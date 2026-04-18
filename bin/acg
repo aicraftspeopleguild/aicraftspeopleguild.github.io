@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+"""
+acg — ACG Guild command-line dispatcher.
+
+Reads Tool UDT instances from guild/Enterprise/L3/tools/instances/ and
+exposes each as a subcommand. Every invocation runs through the logger
+wrapper so a JSONL audit trail ends up in guild/Enterprise/L2/logs/.
+
+Usage:
+  acg                       list all tools
+  acg <tool_id>             run a tool (no inputs)
+  acg <tool_id> k=v k2=v2   run with inputs
+  acg --test <tool_id>      run declared test cases for a tool
+  acg --mcp                 emit MCP tool manifest (JSON)
+
+Python stdlib only. No dependencies.
+"""
+import json, sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve()
+REPO = HERE.parents[1]
+# Runner libs moved from guild/web/scripts/lib/ to guild/Enterprise/L2/lib/ —
+# accept either so the CLI survives further reorg.
+for candidate in (
+    REPO / "guild" / "Enterprise" / "L2" / "lib",
+    REPO / "guild" / "web" / "scripts" / "lib",
+):
+    if (candidate / "tool_runner.py").exists():
+        sys.path.insert(0, str(candidate))
+        break
+from tool_runner import load_tool, list_tools, run_with_logger
+from tool_tester import run_tests
+
+def usage():
+    print("acg — Guild command-line tool dispatcher\n")
+    print("Available tools:")
+    for t in list_tools():
+        p = t.get("parameters", {})
+        print(f"  {p.get('id',''):<24} {p.get('description','')}")
+    print("\nUse: acg <tool_id> [key=value ...]     run tool")
+    print("     acg --test <tool_id>              run test cases")
+    print("     acg --mcp                         emit MCP tool manifest")
+
+def parse_inputs(args):
+    out = {}
+    for a in args:
+        if "=" in a:
+            k, v = a.split("=", 1)
+            out[k.strip()] = v.strip()
+    return out
+
+def emit_mcp_manifest():
+    """Print MCP-compatible tool list."""
+    tools = []
+    for t in list_tools():
+        p = t.get("parameters", {})
+        adapters = p.get("adapters", [])
+        mcp = p.get("mcp", {}) or {}
+        if "McpAdapter" not in adapters and not mcp:
+            continue
+        tools.append({
+            "name":        mcp.get("mcp_name") or p["id"].replace(":", "_"),
+            "description": p.get("description", ""),
+            "inputSchema": mcp.get("input_schema") or {"type": "object", "properties": {}}
+        })
+    print(json.dumps({"tools": tools}, indent=2))
+
+def main():
+    args = sys.argv[1:]
+    if not args or args[0] in ("-h", "--help", "help"):
+        usage(); return 0
+
+    if args[0] == "--mcp":
+        emit_mcp_manifest(); return 0
+
+    if args[0] == "--test":
+        if len(args) < 2: print("usage: acg --test <tool_id>"); return 2
+        tool = load_tool(args[1])
+        summary = run_tests(tool)
+        print(json.dumps(summary, indent=2))
+        return 0 if summary["passed"] == summary["total"] else 1
+
+    try:
+        tool = load_tool(args[0])
+    except FileNotFoundError as e:
+        print(f"error: {e}", file=sys.stderr); return 2
+
+    inputs = parse_inputs(args[1:])
+    outcome = run_with_logger(tool, inputs)
+    if "result" in outcome:
+        print(json.dumps(outcome["result"], indent=2, default=str))
+    if outcome.get("stdout"): print(outcome["stdout"], end="")
+    if outcome.get("stderr"): print(outcome["stderr"], end="", file=sys.stderr)
+    return 0 if outcome.get("ok") else (outcome.get("rc") or 1)
+
+if __name__ == "__main__":
+    sys.exit(main())

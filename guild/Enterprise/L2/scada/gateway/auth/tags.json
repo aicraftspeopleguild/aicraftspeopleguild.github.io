@@ -1,0 +1,12 @@
+{
+  "§": "A.TAGS",
+  "🏗️": "🔑",
+  "name": "auth · tag catalog",
+  "owner": "auth/provider.py",
+  "namespaces": ["auth"],
+
+  "tags": [
+    { "path": "auth.profile",  "type": "UDT:Profile",  "desc": "current signed-in identity or null" },
+    { "path": "auth.signedIn", "type": "Boolean",      "desc": "derived: profile != null" }
+  ]
+}

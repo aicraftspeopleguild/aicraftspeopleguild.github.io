@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UDT Types · ACG-TEST</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="module" src="../assets/udt-elements.js"></script>
+  <script type="module" src="../assets/test-runner.js"></script>
+</head>
+<body data-page="types">
+  <header class="site">
+    <a class="brand" href="../index.html">ACG-TEST</a>
+    <nav class="site-nav">
+      <a href="./standard.html">Standard</a>
+      <a href="./types.html" aria-current="page">Types</a>
+      <a href="./example.html">Example</a>
+      <a href="./runner.html">Runner</a>
+      <a href="./terminal.html">Terminal</a>
+      <a href="../white-papers.html">Papers</a>
+    </nav>
+  </header>
+
+  <main class="prose">
+    <h1>UDT Types</h1>
+    <p class="lede">
+      Every type traces back to <code>UDT:Expectation</code>. Each card below
+      shows the type, its inheritance, and a concrete instance using the
+      matching custom element.
+    </p>
+
+    <article class="type-card">
+      <header>
+        <h2>UDT:Expectation</h2>
+        <p class="kind">base</p>
+      </header>
+      <p>Atomic unit. Every check in the system resolves to one of these.</p>
+      <udt-expectation expect="present" reason="the root container must render">
+        example: expect present, with a reason
+      </udt-expectation>
+    </article>
+
+    <article class="type-card">
+      <header>
+        <h2>UDT:EventTrigger</h2>
+        <p class="kind">inherits UDT:Expectation</p>
+      </header>
+      <p>Which GitHub event should (or should not) fire the workflow.</p>
+      <udt-eventtrigger event="pull_request" types="opened, ready_for_review"
+                        expect="triggered"
+                        reason="article PRs must notify editors"></udt-eventtrigger>
+      <udt-eventtrigger event="push"
+                        expect="not triggered"
+                        reason="direct pushes skip review, no notification needed"></udt-eventtrigger>
+    </article>
+
+    <article class="type-card">
+      <header>
+        <h2>UDT:PathWatch</h2>
+        <p class="kind">inherits UDT:Expectation</p>
+      </header>
+      <p>A concrete file path tested against the trigger patterns.</p>
+      <udt-pathwatch path="articles/my-new-post.md"
+                     expect="triggered"
+                     reason="articles folder is the primary submission path"></udt-pathwatch>
+      <udt-pathwatch path="css/style.css"
+                     expect="not triggered"
+                     reason="style changes are not articles"></udt-pathwatch>
+    </article>
+
+    <article class="type-card">
+      <header>
+        <h2>UDT:Guardrail</h2>
+        <p class="kind">inherits UDT:Expectation, constrained to not triggered</p>
+      </header>
+      <p>Conditions under which the workflow must NOT fire.</p>
+      <udt-guardrail condition="PR is a draft"
+                     reason="drafts are works in progress, editors should not be notified"></udt-guardrail>
+      <udt-guardrail condition="PR is opened by a bot"
+                     reason="automated PRs should not generate editor notifications"></udt-guardrail>
+    </article>
+
+    <article class="type-card">
+      <header>
+        <h2>UDT:Secret</h2>
+        <p class="kind">inherits UDT:Expectation, constrained to configured</p>
+      </header>
+      <p>A named secret the workflow depends on.</p>
+      <udt-secret name="EMAIL_USERNAME"
+                  reason="SMTP authentication requires a username"></udt-secret>
+      <udt-secret name="EMAIL_PASSWORD"
+                  reason="SMTP authentication requires a password"></udt-secret>
+    </article>
+
+    <article class="type-card">
+      <header>
+        <h2>UDT:Notification</h2>
+        <p class="kind">container with four expectation-bearing fields</p>
+      </header>
+      <p>Expected shape of the outbound notification.</p>
+      <udt-notification type="email">
+        <udt-field name="recipient" address="editors@aicraftspeopleguild.com"
+                   expect="present"
+                   reason="the editorial team must receive submissions"></udt-field>
+        <udt-field name="sender" address="guild-bot@aicraftspeopleguild.com"
+                   expect="present"
+                   reason="notifications come from the guild bot, not a person"></udt-field>
+        <udt-field name="subject" contains="pull_request.title"
+                   expect="present"
+                   reason="editors need to see the article title without opening the email"></udt-field>
+        <udt-field name="body"
+                   contains="pull_request.user.login, pull_request.title, pull_request.html_url"
+                   expect="present"
+                   reason="body includes author, title, and a link to review"></udt-field>
+      </udt-notification>
+    </article>
+
+    <article class="type-card">
+      <header>
+        <h2>UDT:WorkflowTest</h2>
+        <p class="kind">root container</p>
+      </header>
+      <p>The top-level type. One per workflow. See the example page for a full instance.</p>
+    </article>
+
+    <h2>Page verification</h2>
+    <div id="site-summary" class="summary" data-scope="types">Loading&hellip;</div>
+  </main>
+
+  <footer class="site">
+    <p>ACG-TEST v1.0 · Konomi Standard · AI Craftspeople Guild</p>
+  </footer>
+</body>
+</html>

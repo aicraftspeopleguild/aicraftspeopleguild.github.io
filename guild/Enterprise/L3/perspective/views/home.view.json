@@ -1,0 +1,133 @@
+{
+  "custom": {},
+  "params": {
+    "title": "AI Craftspeople Guild",
+    "subtitle": "Professional Code of Conduct for Engineers Using AI"
+  },
+  "propConfig": {},
+  "props": {},
+  "root": {
+    "meta": { "name": "root" },
+    "type": "acg.container.page",
+    "position": {},
+    "props": {},
+    "propConfig": {},
+    "children": [
+      {
+        "meta": { "name": "Emblem", "slot": "head" },
+        "type": "acg.display.emblem",
+        "props": { "text": "⚒ ACG ⚒" },
+        "propConfig": {},
+        "children": []
+      },
+      {
+        "meta": { "name": "Title", "slot": "head" },
+        "type": "acg.display.heading",
+        "props": { "level": 1 },
+        "propConfig": {
+          "props.text": {
+            "binding": { "type": "property", "config": { "path": "view.params.title" } }
+          }
+        },
+        "children": []
+      },
+      {
+        "meta": { "name": "Subtitle", "slot": "head" },
+        "type": "acg.display.text",
+        "props": {},
+        "propConfig": {
+          "props.text": {
+            "binding": { "type": "property", "config": { "path": "view.params.subtitle" } }
+          }
+        },
+        "children": []
+      },
+      {
+        "meta": { "name": "Context" },
+        "type": "acg.container.section",
+        "props": { "variant": "context-section" },
+        "propConfig": {
+          "props.variant": { "binding": null }
+        },
+        "children": [
+          {
+            "meta": { "name": "ContextText" },
+            "type": "acg.display.text",
+            "props": {
+              "text": "The rapid advancement of AI/LLM technology has introduced confusion and alarming false promises. Our duty as software professionals is to insist on a high watermark of professional ethics."
+            },
+            "propConfig": {},
+            "children": []
+          }
+        ]
+      },
+      {
+        "meta": { "name": "ManifestoSection" },
+        "type": "acg.container.section",
+        "props": { "variant": "manifesto-section" },
+        "children": [
+          {
+            "meta": { "name": "ManifestoHeading" },
+            "type": "acg.display.heading",
+            "props": { "level": 2, "text": "ACG Manifesto" },
+            "children": []
+          },
+          {
+            "meta": { "name": "ManifestoGrid" },
+            "type": "acg.container.grid",
+            "props": { "variant": "manifesto-grid" },
+            "propConfig": {},
+            "children": [
+              {
+                "meta": { "name": "CardInnovation" },
+                "type": "acg.card.manifesto",
+                "props": {
+                  "icon": "🚀",
+                  "title": "Embracing Innovation",
+                  "body": "We, software development professionals, are <strong>exploring the innovations</strong> made available by AI."
+                },
+                "children": []
+              },
+              {
+                "meta": { "name": "CardQuality" },
+                "type": "acg.card.manifesto",
+                "props": {
+                  "icon": "⚠️",
+                  "title": "Demanding Quality",
+                  "body": "We are concerned about the proliferation of <strong>half-baked, barely verified content</strong> that AI is notorious for delivering."
+                },
+                "children": []
+              },
+              {
+                "meta": { "name": "CardSafety" },
+                "type": "acg.card.manifesto",
+                "props": {
+                  "icon": "🛡️",
+                  "title": "Ensuring Safety & Security",
+                  "body": "We insist that a <strong>proper harness</strong> ensure engineering quality, safety, security, and legal liability."
+                },
+                "children": []
+              },
+              {
+                "meta": { "name": "CardProtect" },
+                "type": "acg.card.manifesto",
+                "props": {
+                  "icon": "🧠",
+                  "title": "Protecting Humans",
+                  "body": "We advocate for the <strong>psychological safety</strong> of humans exposed to AI-generated products."
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "meta": { "name": "BackLink", "slot": "footer" },
+        "type": "acg.nav.back-link",
+        "props": { "href": "#/", "label": "Back to Home" },
+        "children": []
+      }
+    ]
+  }
+}

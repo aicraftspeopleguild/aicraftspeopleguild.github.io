@@ -1,0 +1,54 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "CardGrid",
+    "tag": "section",
+    "cssClass": "",
+    "description": "Responsive auto-fit grid wrapper with section heading. Wraps any card type.",
+    "category": "layout",
+    "props": {
+      "heading": {
+        "type": "String",
+        "required": false
+      },
+      "subheading": {
+        "type": "String",
+        "required": false
+      },
+      "gridClass": {
+        "type": "String",
+        "required": false,
+        "default": "papers-grid"
+      },
+      "shellClass": {
+        "type": "String",
+        "required": false,
+        "default": "papers-shell"
+      },
+      "minWidth": {
+        "type": "String",
+        "required": false,
+        "default": "300px"
+      }
+    },
+    "slots": [
+      "default"
+    ],
+    "template": "<section class=\"{{ shellClass }}\">{{ #heading }}<div class=\"section-heading\"><h2>{{ heading }}</h2>{{ #subheading }}<p>{{ subheading }}</p>{{ /subheading }}</div>{{ /heading }}<div class=\"{{ gridClass }}\">{{ slot:default }}</div></section>",
+    "atomicLevel": "molecule"
+  },
+  "tags": {
+    "id": "card-grid",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/card-grid.json",
+    "dependencies": [
+      "section-heading"
+    ],
+    "used_by_views": [
+      "white-paper-index",
+      "members-index",
+      "hall-of-fame",
+      "hall-of-shame"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

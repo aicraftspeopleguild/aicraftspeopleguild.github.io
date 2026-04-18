@@ -1,0 +1,38 @@
+name: Paper Auto-Index
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+    paths: ['**/*.html', '**/*.md', '**/*.meta.yml', '**/*.meta.yaml']
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.head_ref }}', fetch-depth: 0 }
+
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - run: npm install --no-save js-yaml
+      - run: node .github/scripts/parse-papers.js
+      - run: node .github/scripts/validate-index.js
+
+      - name: Commit papers.json
+        run: |
+          git config user.name  guild-bot
+          git config user.email bot@aicraftspeopleguild.com
+          git add papers.json
+          git diff --cached --quiet || {
+            git commit -m 'auto-index: update papers.json'
+            git push
+          }
+
+      - uses: actions/github-script@v7
+        with:
+          script: await require('./.github/scripts/pr-comment.js')({github, context})

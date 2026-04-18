@@ -1,0 +1,13 @@
+{"$schema":"konomi/std/v1","id":"GitPLC","version":"1.0.0",
+"scope":"universal PLC namespace UDT transfer layer",
+"base_std":"Konomi",
+"depends_on":["ISA-88","ISA-95","ISA-18.2"],
+"goal":{
+"input":"any PLC program (AB, Siemens, Codesys, Beckhoff, Omron, Mitsubishi, ...)",
+"output":"universal UDT namespace (vendor-agnostic)",
+"transfer":"UDT ↔ UDT, any PLC to any PLC",
+"structure":"ISA-88/95 hierarchy",
+"version":"git-based, diff, merge, branch"
+},
+"template_root":"controls/plc/git/",
+"meta":{"desc":"GitPLC standard; UDT templates live at template_root"}}

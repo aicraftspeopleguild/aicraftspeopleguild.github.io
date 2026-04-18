@@ -1,0 +1,45 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/members/jona-heidsick",
+    "label": "jona-heidsick",
+    "parent": "guild/web/members",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_members_jona-heidsick",
+    "fs_path": "guild/web/members/jona-heidsick",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_members",
+      "guild_web_members_jona-heidsick"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/web/members/alex-bunardzic",
+      "guild/web/members/kelly-hohman",
+      "guild/web/members/laurie-scheepers",
+      "guild/web/members/matt-burch",
+      "guild/web/members/nicolas-rosado",
+      "guild/web/members/originals",
+      "guild/web/members/thomas-frumkin",
+      "guild/web/members/tsvetan",
+      "guild/web/members/udts"
+    ],
+    "descendants": 0,
+    "file_count": 2,
+    "subdir_count": 0,
+    "kinds": {
+      "png": 1,
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

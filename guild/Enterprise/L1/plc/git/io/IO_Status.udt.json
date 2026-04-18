@@ -1,0 +1,14 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "IO_Status",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "ok", "type": "BOOL"},
+    {"name": "fault", "type": "BOOL"},
+    {"name": "comm_fault", "type": "BOOL"},
+    {"name": "config_fault", "type": "BOOL"},
+    {"name": "diag", "type": "DINT", "array": true, "dims": [8]}
+  ],
+  "meta": {"desc": "Card health and diagnostics"}
+}

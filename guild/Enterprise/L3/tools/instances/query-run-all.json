@@ -1,0 +1,16 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "query:run-all",
+    "name": "Run every enabled query",
+    "description": "Execute every enabled query in tag.db.queries. Useful for periodic refresh cycles.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/query_runner.py:run_all",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["query","run","batch"]
+  },
+  "tags": { "id": "query-run-all", "schema_version": "1.0.0" }
+}

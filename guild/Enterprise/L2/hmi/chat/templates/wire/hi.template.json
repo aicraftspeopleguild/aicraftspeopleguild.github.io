@@ -1,0 +1,17 @@
+{"$schema":"chat/wire/v1","t":"hi","glyph":"👋","dir":"both",
+"fields":{
+"t":"\"hi\"",
+"id":"s20",
+"nm":"s",
+"em":"s",
+"av":"s?",
+"ts":"ms"
+},
+"required":["t","id","nm","em","ts"],
+"example":{"t":"hi","id":"-ACG001-abcdef012345","nm":"abcdef01","em":"⚒️","ts":1700000000000},
+"sentWhen":"RTCDataChannel.onopen",
+"effect":[
+"other side writes peers.<id> = UDT:Peer",
+"chat.lastMsgAt = ts"
+],
+"meta":{"desc":"Identity + capability handshake. First envelope on every open channel."}}

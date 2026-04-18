@@ -1,0 +1,37 @@
+{
+  "§": "3.2",
+  "🏗️": "🖥️",
+  "name": "monitor",
+  "module": "L2/scada/gateway/scripts/scada/monitor.js",
+
+  "📦": {
+    "panel":    "DOM #scada",
+    "tbody":    "DOM #sc-rows",
+    "filterIn": "DOM #sc-f",
+    "hidden":   "b",
+    "off":      "unsub?"
+  },
+
+  "→": [
+    { "name": "fmtAge",     "in": "ts:ms",   "out": "s", "flow": "now | Ns | Nm | Nh | Nd" },
+    { "name": "fmtVal",     "in": "any",     "out": "s", "flow": "primitive ∨ JSON.stringify" },
+    { "name": "render",     "flow": "tags.list() → filter → <tr class=q-{quality}>" },
+    { "name": "schedule",   "flow": "rAF-debounce render() when !hidden" },
+    { "name": "mount",      "flow": "build drawer DOM ⊕ wire filter/close" },
+    { "name": "applyHash",  "flow": "#scada | #scada?q | #scada/q → open(false) ⊕ filter=q" },
+    { "name": "open",       "in": "sync=true",  "flow": "subscribe('**',schedule) ⊕ history.replaceState(#scada)" },
+    { "name": "close",      "in": "sync=true",  "flow": "unsubscribe ⊕ history.replaceState(path)" },
+    { "name": "toggle",     "flow": "hidden ? open() : close()" },
+    { "name": "startMonitor","flow": "mount() ⊕ setInterval(render,1000) ⊕ hashchange listener ⊕ applyHash()" }
+  ],
+
+  "📐route": {
+    "#scada":         "open drawer, no filter",
+    "#scada?q":       "open drawer, pre-fill filter=q",
+    "#scada/q":       "open drawer, pre-fill filter=q (slash form)",
+    "Ctrl/Cmd+.":     "toggle"
+  },
+
+  "↓🖥️": ["<all>  via subscribe('**')"],
+  "和": true
+}

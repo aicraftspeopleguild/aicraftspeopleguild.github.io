@@ -1,0 +1,20 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "api:force",
+    "name": "Force-fetch one Api watch",
+    "description": "Fetch a single Api watch regardless of interval_s cooldown. Useful for manual refresh or testing an event chain.",
+    "category": "automation",
+    "entry": "guild/Enterprise/L2/lib/api_tick.py:force",
+    "language": "python",
+    "inputs": [{"name":"id","type":"String","required":true}],
+    "outputs": [{"name":"result","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["api","force","command"],
+    "mcp": {
+      "mcp_name":"api_force",
+      "input_schema":{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}
+    }
+  },
+  "tags": { "id": "api-force", "schema_version": "1.0.0" }
+}

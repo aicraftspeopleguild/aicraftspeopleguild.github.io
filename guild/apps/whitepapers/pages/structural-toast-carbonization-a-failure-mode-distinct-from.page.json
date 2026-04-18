@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "Structural Toast Carbonization: A Failure Mode Distinct from Voluntary Technical Debt Acquisition",
+    "slug": "app-structural-toast-carbonization-a-failure-mode-distinct-from",
+    "route": "/whitepapers/structural-toast-carbonization-a-failure-mode-distinct-from",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/structural-toast-carbonization-a-failure-mode-distinct-from.data.json"
+    },
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "section": "resources",
+    "parent_slug": "white-papers",
+    "status": "published"
+  },
+  "tags": {
+    "id": "app-structural-toast-carbonization-a-failure-mode-distinct-from",
+    "view_id": "white-paper-app",
+    "schema_version": "1.0.0"
+  }
+}

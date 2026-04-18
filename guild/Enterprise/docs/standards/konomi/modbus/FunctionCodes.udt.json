@@ -1,0 +1,12 @@
+{"$schema":"konomi/udt/v1","name":"FunctionCodes","std":"Modbus","layer":8,"version":"1.0.0",
+"codes":{
+"FC01":"Read Coils",
+"FC02":"Read Discrete Inputs",
+"FC03":"Read Holding Registers",
+"FC04":"Read Input Registers",
+"FC05":"Write Single Coil",
+"FC06":"Write Single Holding Register",
+"FC15":"Write Multiple Coils",
+"FC16":"Write Multiple Holding Registers",
+"FC23":"Read/Write Holding Registers"
+},"meta":{"desc":"Standard Modbus function codes"}}

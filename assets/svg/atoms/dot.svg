@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 60" width="192" height="60" role="img" aria-label="status dot atoms — ok · warn · error">
+  <defs>
+    <style>
+      .ring{fill:none;stroke-width:1.5;opacity:.55;transform-box:fill-box;transform-origin:center}
+      .pa{animation:p 1.8s ease-out infinite}
+      .pb{animation:p 1.8s ease-out infinite .7s}
+      @keyframes p{0%{transform:scale(1);opacity:.6}65%{transform:scale(2.6);opacity:0}100%{transform:scale(2.6);opacity:0}}
+      .lbl{font-family:'SFMono-Regular',Consolas,monospace;font-size:10px;fill:#8b949e;text-anchor:middle;letter-spacing:.5px}
+    </style>
+  </defs>
+  <rect width="192" height="60" rx="8" fill="#0d1117"/>
+  <!-- ok -->
+  <circle class="ring pa" cx="32" cy="26" r="12" stroke="#3fb950"/>
+  <circle cx="32" cy="26" r="7" fill="#3fb950"/>
+  <text class="lbl" x="32" y="50">ok</text>
+  <!-- warn -->
+  <circle class="ring pb" cx="96" cy="26" r="12" stroke="#e3b341"/>
+  <circle cx="96" cy="26" r="7" fill="#e3b341"/>
+  <text class="lbl" x="96" y="50">warn</text>
+  <!-- error — static, no pulse -->
+  <circle cx="160" cy="26" r="7" fill="#ff7b72"/>
+  <text class="lbl" x="160" y="50">error</text>
+</svg>

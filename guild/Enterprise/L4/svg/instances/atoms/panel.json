@@ -1,0 +1,32 @@
+{
+  "udtType": "SvgAtom",
+  "parameters": {
+    "name": "Panel",
+    "atomicLevel": "atom",
+    "renderer": "svg_widget:panel",
+    "description": "Rounded panel background rect.",
+    "props": {
+      "x": {
+        "type": "Number",
+        "required": true
+      },
+      "y": {
+        "type": "Number",
+        "required": true
+      },
+      "w": {
+        "type": "Number",
+        "required": true
+      },
+      "h": {
+        "type": "Number",
+        "required": true
+      }
+    }
+  },
+  "tags": {
+    "id": "panel",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/atoms/panel.json"
+  }
+}

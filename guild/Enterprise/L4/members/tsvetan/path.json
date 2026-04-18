@@ -1,0 +1,45 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/members/tsvetan",
+    "label": "tsvetan",
+    "parent": "guild/web/members",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_members_tsvetan",
+    "fs_path": "guild/web/members/tsvetan",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_members",
+      "guild_web_members_tsvetan"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/web/members/alex-bunardzic",
+      "guild/web/members/jona-heidsick",
+      "guild/web/members/kelly-hohman",
+      "guild/web/members/laurie-scheepers",
+      "guild/web/members/matt-burch",
+      "guild/web/members/nicolas-rosado",
+      "guild/web/members/originals",
+      "guild/web/members/thomas-frumkin",
+      "guild/web/members/udts"
+    ],
+    "descendants": 0,
+    "file_count": 2,
+    "subdir_count": 0,
+    "kinds": {
+      "db": 1,
+      "jpeg": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{"$schema":"hmi/layer/v1","id":"L4","name":"Detail","scope":"Diagnostic","glyph":"🔬",
+"nav":["L3","L5"],
+"tiles":[
+{"kind":"tagtable","source":"<unit>.cfg.*",  "access":"RW","confirm":true},
+{"kind":"tagtable","source":"<unit>.tune.*", "access":"RW","confirm":true},
+{"kind":"trend",   "tag":"<unit>.pv","span":"8h","sample":"10s"},
+{"kind":"log",     "source":"errors.ring","filter":"<unit>.*"}
+],
+"note":"Diagnostic + tuning view. Confirmation dialogs on all writes. Not for routine operation.",
+"meta":{"desc":"L4 Detail — config, tuning, trend history, filtered error log"}}

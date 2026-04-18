@@ -1,0 +1,41 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/engineering/architecture",
+    "label": "architecture",
+    "parent": "docs/engineering",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_engineering_architecture",
+    "fs_path": "docs/engineering/architecture",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_engineering",
+      "docs_engineering_architecture"
+    ],
+    "children": [
+      "docs/engineering/architecture/isa-95"
+    ],
+    "siblings": [
+      "docs/engineering/component-catalog",
+      "docs/engineering/standards",
+      "docs/engineering/tech-spec",
+      "docs/engineering/urs"
+    ],
+    "descendants": 1,
+    "file_count": 5,
+    "subdir_count": 1,
+    "kinds": {
+      "md": 3,
+      "db": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

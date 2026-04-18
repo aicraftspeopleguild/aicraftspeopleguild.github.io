@@ -1,0 +1,14 @@
+{"$schema":"hmi/faceplate/v1","name":"Room_Faceplate","udt":"Room","isaLayer":"L2","glyph":"🏛",
+"binds":"room",
+"reads":[
+{"tag":"room.name",     "label":"ROOM"},
+{"tag":"room.hash",     "label":"#",    "format":"hash12"},
+{"tag":"room.peerCount","label":"PEERS","format":"0"},
+{"tag":"room.joinedAt", "label":"JOIN", "format":"ago"}
+],
+"writes":[
+{"tag":"room.name","label":"join","confirm":false,"placeholder":"room-name"}
+],
+"palette":["Running","Transition","Faulted"],
+"stateMap":{">=2":"Running","1":"Transition","0":"Faulted"},
+"meta":{"desc":"Room header card. Shows hash12 (SHA-1 prefix) + live peer count."}}

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 36" width="430" height="36" role="img" aria-label="badge pill atoms — neutral · ok · warn · error">
+  <defs>
+    <style>.t{font-family:'SFMono-Regular',Consolas,monospace;font-size:11px;text-anchor:middle}</style>
+    <clipPath id="c0"><rect x="16"  y="4" width="92" height="28" rx="4"/></clipPath>
+    <clipPath id="c1"><rect x="118" y="4" width="92" height="28" rx="4"/></clipPath>
+    <clipPath id="c2"><rect x="220" y="4" width="92" height="28" rx="4"/></clipPath>
+    <clipPath id="c3"><rect x="322" y="4" width="92" height="28" rx="4"/></clipPath>
+  </defs>
+  <rect width="430" height="36" rx="8" fill="#0d1117"/>
+
+  <!-- neutral -->
+  <rect x="16"  y="4" width="92" height="28" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="16"  y="4" width="42" height="28" fill="#21262d" clip-path="url(#c0)"/>
+  <text x="37"  y="22" class="t" fill="#8b949e">stat</text>
+  <text x="83"  y="22" class="t" fill="#e6edf3">idle</text>
+
+  <!-- ok (green) -->
+  <rect x="118" y="4" width="92" height="28" rx="4" fill="#161b22" stroke="#3fb950" stroke-width="1" stroke-opacity=".4"/>
+  <rect x="118" y="4" width="42" height="28" fill="#1b3a27" clip-path="url(#c1)"/>
+  <text x="139" y="22" class="t" fill="#3fb950">up</text>
+  <text x="185" y="22" class="t" fill="#3fb950">ok</text>
+
+  <!-- warn (yellow) -->
+  <rect x="220" y="4" width="92" height="28" rx="4" fill="#161b22" stroke="#e3b341" stroke-width="1" stroke-opacity=".4"/>
+  <rect x="220" y="4" width="42" height="28" fill="#3a2e10" clip-path="url(#c2)"/>
+  <text x="241" y="22" class="t" fill="#e3b341">lag</text>
+  <text x="287" y="22" class="t" fill="#e3b341">warn</text>
+
+  <!-- error (red) -->
+  <rect x="322" y="4" width="92" height="28" rx="4" fill="#161b22" stroke="#ff7b72" stroke-width="1" stroke-opacity=".4"/>
+  <rect x="322" y="4" width="42" height="28" fill="#3a1010" clip-path="url(#c3)"/>
+  <text x="343" y="22" class="t" fill="#ff7b72">err</text>
+  <text x="389" y="22" class="t" fill="#ff7b72">fail</text>
+</svg>

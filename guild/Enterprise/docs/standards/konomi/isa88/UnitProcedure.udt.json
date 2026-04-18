@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"UnitProcedure","std":"ISA-88","layer":3,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING"},
+{"n":"unit_class","t":"STRING"},
+{"n":"operations","t":"Operation","array":true},
+{"n":"ordering","t":"ENUM","values":["Sequential","Parallel"]}
+],"meta":{"desc":"Procedural block bound to a unit class"}}

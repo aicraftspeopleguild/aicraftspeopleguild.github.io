@@ -1,0 +1,23 @@
+<!--
+  ═══ WEST dock ═══
+  Left rail.  Rendered by renderer.js as
+      <aside class="dock-w"> … </aside>
+  Default contents:
+    · sibling-subsystem nav pills (SUBSYSTEMS array · one <a> per entry)
+    · quick actions (jump to gateway-log, health, main mesh)
+
+  On narrow viewports (<900px) west + east collapse into horizontal
+  strips above / below the main area, preserving content order.
+-->
+<aside class="dock-w">
+  <nav class="dock-w-nav">
+    <a class="ix-pill{{active?}}" href="{{basePath}}{{sub.path}}/">{{sub.glyph}} {{sub.name}}</a>
+    …
+  </nav>
+  <hr class="dock-sep"/>
+  <div class="dock-w-actions">
+    <a class="ix-btn-g" href="{{basePath}}.github/ISSUE_TEMPLATE/tag-update.yml">🏷️ write tag</a>
+    <a class="ix-btn-g" href="{{basePath}}.github/ISSUE_TEMPLATE/log-entry.yml">⚠ log incident</a>
+    <a class="ix-btn-g" href="{{basePath}}.github/ISSUE_TEMPLATE/control-action.yml">🎛 control action</a>
+  </div>
+</aside>

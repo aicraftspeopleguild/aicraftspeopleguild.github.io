@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"ISA95_Level","std":"ISA-95","layer":2,"version":"1.0.0",
+"levels":{
+"L4":{"name":"Business","scope":"Planning,ERP","time":"days-months","sys":["ERP","BI"]},
+"L3":{"name":"MOM","scope":"MES,Execution","time":"shifts-days","sys":["MES","LIMS","WMS"]},
+"L2":{"name":"Control","scope":"Supervision","time":"sec-hours","sys":["SCADA","HMI","Batch"]},
+"L1":{"name":"Sensing","scope":"Direct Control","time":"ms-sec","sys":["PLC","DCS","RTU"]},
+"L0":{"name":"Process","scope":"Physical","time":"continuous","sys":["Sensors","Actuators"]}
+},"meta":{"desc":"ISA-95 functional hierarchy 0-4"}}

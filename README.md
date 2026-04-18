@@ -43,15 +43,15 @@
 ![enterprise.authoredLinks](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.enterprise.authoredLinks.value&label=enterprise.authoredLinks&color=6f42c1&style=flat-square)
 
 **`PIPELINE · L3`**  
-![pipeline.complete](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.lastCompleteCount.value&label=pipeline.complete&color=1a5c4c&style=flat-square)
-![pipeline.aborted](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.lastAbortedCount.value&label=pipeline.aborted&color=b85c5c&style=flat-square)
-![pipeline.states](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.stateFileCount.value&label=pipeline.states&color=8d95a0&style=flat-square)
+![pipeline.complete](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.complete.value&label=pipeline.complete&color=1a5c4c&style=flat-square)
+![pipeline.aborted](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.aborted.value&label=pipeline.aborted&color=b85c5c&style=flat-square)
+![pipeline.states](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.states.value&label=pipeline.states&color=8d95a0&style=flat-square)
 
 **`IDENTITY · deploy`**  
 ![host](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.identity.host.value&label=host&color=1c2128&style=flat-square)
 ![deploy mode](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.identity.deployMode.value&label=deploy&color=4a8868&style=flat-square)
-![sys.apiVersion](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.sys.apiVersion.value&label=sys.api&color=8d95a0&style=flat-square)
-![latest paper](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.catalog.latestPaperDate.value&label=latest+paper&color=c47a20&style=flat-square)
+![apiVersion](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.identity.apiVersion.value&label=api&color=8d95a0&style=flat-square)
+![latest paper](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.catalog.latestPaperTitle.value&label=latest+paper&color=c47a20&style=flat-square)
 
 ---
 
@@ -64,7 +64,8 @@ Static JSON rebuilt on every push · served from GitHub Pages · CORS open.
 | [`/guild/Enterprise/L4/api/health.json`](https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json) | ![health](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json&query=%24.lastUpdated&label=updated&color=1a5c4c&style=flat-square) |
 | [`/guild/Enterprise/L4/api/papers.json`](https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/papers.json) | ![papers](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json&query=%24.paperCount&label=papers&color=1a5c4c&style=flat-square) |
 | [`/guild/Enterprise/L4/api/members.json`](https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/members.json) | ![members](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json&query=%24.memberCount&label=members&color=4a8868&style=flat-square) |
-| [`/guild/Enterprise/L4/runtime/tags.json`](https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json) | ![tags](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.sys.apiVersion.value&label=sys.api&color=8d95a0&style=flat-square) |
+| [`/guild/Enterprise/L4/runtime/tags.json`](https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json) | ![tags](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.identity.apiVersion.value&label=api&color=8d95a0&style=flat-square) |
+| [`/guild/Enterprise/L4/api/state.json`](https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/state.json) | ![faults](https://img.shields.io/badge/dynamic/json?url=https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/state.json&query=%24.summary.faults_active&label=faults&color=b85c5c&style=flat-square) |
 
 ```bash
 curl https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json
@@ -138,9 +139,14 @@ flowchart TB
 
 ---
 
+## 🛠 DEVELOPMENT
+
+1. **Clone + serve.** `git clone …` then `python -m http.server 8765` at the repo root (or `./README.sh` / `README.bat`). Hit `http://127.0.0.1:8765/`.
+2. **Rebuild the static API.** `python bin/acg pipeline:run id=build` — 14 tag-driven steps regenerate `/api/*.json`, `/runtime/tags.json`, per-dir catalogs, and `/api/state.json` (live faults + tool runs).
+3. **Every content change seeds through UDT instances.** Don't edit rendered HTML in `guild/web/dist/` — edit the UDT JSON under `guild/Enterprise/L4/api/white-papers/udts/instances/`, `guild/Enterprise/L4/members/udts/instances/`, etc. and re-run the build.
+4. **Follow the palette.** Parchment · ink · rust · bronze · graphite. Playfair Display + Work Sans. The component catalog (`guild/web/components/udts/instances/`) encodes the contract.
+
 *[Discussions](https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io/discussions) · [Issues](https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io/issues) · [Engineering docs](docs/engineering/) · [Component catalog](docs/engineering/component-catalog/)*
-3. **Every content change seeds through UDT instances.** Don't edit rendered HTML in `guild/web/dist/` — edit the UDT JSON under `guild/web/*/udts/instances/` and re-run the build.
-4. **Follow the palette.** Parchment · ink · rust · bronze · graphite. Playfair Display + Work Sans. The component catalog encodes the contract.
 
 ---
 

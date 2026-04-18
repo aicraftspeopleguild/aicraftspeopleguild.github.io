@@ -1,0 +1,50 @@
+{
+  "udtType": "Machine",
+  "instance": "line-1",
+  "parameters": {
+    "id":              "line-1",
+    "name":            "Line 1 · Filler",
+    "vendor":          "Krones",
+    "model":           "Modulfill HRS",
+    "serial":          "KR-2024-01138",
+    "commissionedAt":  "2024-09-14T08:30:00Z",
+    "siteCode":        "ATL-01",
+    "cellCode":        "FILL-A",
+
+    "packmlState":     "EXECUTE",
+    "mode":            "PRODUCTION",
+    "running":         true,
+    "faulted":         false,
+    "stateEnteredAt":  "2026-04-18T14:22:10Z",
+
+    "setpointSpeed":        3200,
+    "actualSpeed":          3184,
+    "setpointTempC":        4.0,
+    "actualTempC":          4.2,
+    "setpointPressureKPa":  120,
+    "actualPressureKPa":    118.6,
+    "unitsPerMinute":       52.6,
+    "goodCount":            14382,
+    "rejectCount":          17,
+
+    "activeAlarmCount": 0,
+    "highestPriority":  "NONE",
+    "lastAlarmCode":    "TEMP_HIGH",
+    "lastAlarmAt":      "2026-04-17T22:04:00Z",
+    "acknowledgedBy":   "mferguson",
+
+    "currentOperator":  "mferguson",
+    "shift":            "A",
+    "shiftStartedAt":   "2026-04-18T06:00:00Z",
+    "notes":            "Running nominal · CIP complete · no open faults.",
+
+    "lastServiceAt":     "2026-04-01T00:00:00Z",
+    "nextServiceDueAt":  "2026-05-01T00:00:00Z",
+    "totalRuntimeHr":    2184.5,
+    "maintenanceMode":   false,
+
+    "recipeName":    "Lager · 330ml",
+    "recipeVersion": "1.4.2",
+    "recipeBatchId": "B-2026-04-18-001"
+  }
+}

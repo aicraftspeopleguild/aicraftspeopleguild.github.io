@@ -222,7 +222,7 @@ COMMANDS['api:list'] = async () => {
   line('  <span class="line-head">Live API endpoints</span>');
   blank();
   for (const [name, url] of Object.entries(ENDPOINTS)) {
-    const rel = url.replace('https://teslasolar.github.io/aicraftspeopleguild.github.io', '');
+    const rel = url.replace(location.origin, '').replace(/^\/[\w.-]+\.github\.io/, '');
     line(`  <span class="line-key">${name.padEnd(10)}</span>  <a href="${url}" target="_blank" style="color:var(--blue)">${esc(rel)}</a>`);
   }
   blank();

@@ -4,7 +4,29 @@ import { loadTok, gh } from './auth.js';
 import { refreshSvg } from './preview.js';
 import { maybeReturn } from './autofire.js';
 
-export const REPO = 'teslasolar/aicraftspeopleguild.github.io';
+// Self-detect which GH repo we're running on so the same code works from
+// teslasolar.github.io/aicraftspeopleguild.github.io/ *and* from the org
+// host aicraftspeopleguild.github.io/. Override via ?repo=owner/name in
+// the hash for local dev.
+function detectRepo() {
+  const q = new URLSearchParams(location.hash.slice(1));
+  const override = q.get('repo');
+  if (override && /^[\w.-]+\/[\w.-]+$/.test(override)) return override;
+  const host = location.hostname;
+  // github pages: <owner>.github.io
+  if (host.endsWith('.github.io')) {
+    const owner = host.replace(/\.github\.io$/, '');
+    const first = (location.pathname.split('/').filter(Boolean)[0]) || '';
+    // project page: /<repo>/...
+    if (first.endsWith('.github.io') || /^[\w.-]+$/.test(first)) return `${owner}/${first || host}`;
+    // user/org page: repo name == hostname
+    return `${owner}/${host}`;
+  }
+  // localhost / unknown → safe default
+  return 'teslasolar/aicraftspeopleguild.github.io';
+}
+
+export const REPO = detectRepo();
 
 export function issueUrl(title, body = '', labels = 'cmd') {
   const q = new URLSearchParams({ title, body, labels });

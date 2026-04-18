@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Machine",
+  "version": "1.0.0",
+  "description": "A production-line machine — the canonical 'big UDT' for ACG. Roughly mirrors an ISA-88 equipment module: identity + process + PackML state + alarms + operator + maintenance + recipe. Every parameter round-trips through the GitHub-Issues tag DB at path `udt.machine.<instance>.<name>`. The compressed UDT editor app (/guild/apps/udt-editor/) renders this schema as a dense, type-aware form.",
+  "sections": [
+    {
+      "id": "identity",
+      "title": "Identity",
+      "fields": ["id", "name", "vendor", "model", "serial", "commissionedAt", "siteCode", "cellCode"]
+    },
+    {
+      "id": "state",
+      "title": "PackML State",
+      "fields": ["packmlState", "mode", "running", "faulted", "stateEnteredAt"]
+    },
+    {
+      "id": "process",
+      "title": "Process",
+      "fields": ["setpointSpeed", "actualSpeed", "setpointTempC", "actualTempC", "setpointPressureKPa", "actualPressureKPa", "unitsPerMinute", "goodCount", "rejectCount"]
+    },
+    {
+      "id": "alarms",
+      "title": "Alarms",
+      "fields": ["activeAlarmCount", "highestPriority", "lastAlarmCode", "lastAlarmAt", "acknowledgedBy"]
+    },
+    {
+      "id": "operator",
+      "title": "Operator",
+      "fields": ["currentOperator", "shift", "shiftStartedAt", "notes"]
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance",
+      "fields": ["lastServiceAt", "nextServiceDueAt", "totalRuntimeHr", "maintenanceMode"]
+    },
+    {
+      "id": "recipe",
+      "title": "Recipe",
+      "fields": ["recipeName", "recipeVersion", "recipeBatchId"]
+    }
+  ],
+  "parameters": {
+    "id":              { "dataType": "String",   "required": true,  "description": "kebab-case unique id" },
+    "name":            { "dataType": "String",   "required": true },
+    "vendor":          { "dataType": "String",   "required": false },
+    "model":           { "dataType": "String",   "required": false },
+    "serial":          { "dataType": "String",   "required": false },
+    "commissionedAt":  { "dataType": "DateTime", "required": false },
+    "siteCode":        { "dataType": "String",   "required": false,  "description": "ISA-95 site code, e.g. ATL-01" },
+    "cellCode":        { "dataType": "String",   "required": false,  "description": "ISA-95 cell code within the site" },
+
+    "packmlState":     { "dataType": "String",   "required": true,  "enum": ["STOPPED","IDLE","STARTING","EXECUTE","COMPLETING","COMPLETE","RESETTING","HELD","HOLDING","SUSPENDED","SUSPENDING","ABORTED","ABORTING","CLEARING","STOPPING","UNHOLDING"], "default": "IDLE" },
+    "mode":            { "dataType": "String",   "required": true,  "enum": ["PRODUCTION","MAINTENANCE","MANUAL"], "default": "PRODUCTION" },
+    "running":         { "dataType": "Boolean",  "required": true,  "default": false },
+    "faulted":         { "dataType": "Boolean",  "required": true,  "default": false },
+    "stateEnteredAt":  { "dataType": "DateTime", "required": false },
+
+    "setpointSpeed":       { "dataType": "Number",  "unit": "rpm",  "min": 0, "max": 5000 },
+    "actualSpeed":         { "dataType": "Number",  "unit": "rpm",  "min": 0, "max": 5000, "quality": "good" },
+    "setpointTempC":       { "dataType": "Number",  "unit": "°C",  "min": -40, "max": 400 },
+    "actualTempC":         { "dataType": "Number",  "unit": "°C",  "min": -40, "max": 400, "quality": "good" },
+    "setpointPressureKPa": { "dataType": "Number",  "unit": "kPa" },
+    "actualPressureKPa":   { "dataType": "Number",  "unit": "kPa", "quality": "good" },
+    "unitsPerMinute":      { "dataType": "Number",  "unit": "u/min" },
+    "goodCount":           { "dataType": "Counter", "description": "Good parts counter since last reset" },
+    "rejectCount":         { "dataType": "Counter", "description": "Reject parts counter since last reset" },
+
+    "activeAlarmCount": { "dataType": "Counter" },
+    "highestPriority":  { "dataType": "String", "enum": ["NONE","LOW","MED","HIGH","CRITICAL"], "default": "NONE" },
+    "lastAlarmCode":    { "dataType": "String" },
+    "lastAlarmAt":      { "dataType": "DateTime" },
+    "acknowledgedBy":   { "dataType": "String" },
+
+    "currentOperator":  { "dataType": "String" },
+    "shift":            { "dataType": "String", "enum": ["A","B","C","D"], "default": "A" },
+    "shiftStartedAt":   { "dataType": "DateTime" },
+    "notes":            { "dataType": "String" },
+
+    "lastServiceAt":      { "dataType": "DateTime" },
+    "nextServiceDueAt":   { "dataType": "DateTime" },
+    "totalRuntimeHr":     { "dataType": "Number", "unit": "hr" },
+    "maintenanceMode":    { "dataType": "Boolean", "default": false },
+
+    "recipeName":      { "dataType": "String" },
+    "recipeVersion":   { "dataType": "String" },
+    "recipeBatchId":   { "dataType": "String" }
+  },
+  "tagRoot": "udt.machine.{id}",
+  "tags": {
+    "id":            { "dataType": "String" },
+    "schemaVersion": { "dataType": "String" }
+  }
+}

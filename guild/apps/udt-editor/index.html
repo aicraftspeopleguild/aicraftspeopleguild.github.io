@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚒ ACG UDT editor</title>
+<link rel="stylesheet" href="./udt-editor.css">
+</head>
+<body>
+
+<header>
+  <h1>⚒ UDT editor<small>· compressed tag-DB form · writes → cmd:tag-write</small></h1>
+  <span class="spacer"></span>
+  <label>UDT</label>
+  <select id="sel-udt"><option value="machine">machine</option></select>
+  <label>Instance</label>
+  <select id="sel-inst"><option value="line-1">line-1</option></select>
+  <a id="back-chip" style="display:none"></a>
+  <a href="../control-deck/">⚒ deck</a>
+  <a href="../../../index.html">⚒ guild</a>
+</header>
+
+<div id="auth-row">
+  <span id="auth-chip" class="auth off"><span class="dot"></span><span id="auth-text">paste PAT to enable direct writes</span></span>
+  <input type="password" id="tok" placeholder="GitHub PAT (repo) · localStorage only">
+  <span id="stats" class="stats">fields <b id="n-fields">0</b> · dirty <b id="n-dirty">0</b> · writes <b id="n-writes">0</b></span>
+  <button id="btn-reset">reset</button>
+  <button id="btn-save" class="primary">save dirty</button>
+</div>
+
+<main id="form-host"><div class="hint" style="padding:20px">loading UDT…</div></main>
+
+<div id="log" class="log"></div>
+
+<script type="module" src="./udt-editor.js"></script>
+</body>
+</html>

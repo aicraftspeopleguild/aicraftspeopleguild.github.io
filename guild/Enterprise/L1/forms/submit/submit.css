@@ -1,4 +1,60 @@
 /* Article submission form styling — complements main.css */
+
+/* ── Intro panel: home-style highlighted block ── */
+.page-submit .intro-panel {
+    margin: 3rem auto 2.5rem;
+    padding: 2.5rem 3rem;
+    background: white;
+    border-left: 6px solid var(--color-rust);
+    box-shadow:
+        0 4px 6px var(--color-shadow),
+        0 10px 20px var(--color-shadow);
+    position: relative;
+    opacity: 0;
+    animation: fadeInScale 1s ease-out 0.9s forwards;
+}
+
+.page-submit .intro-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--color-rust);
+    animation: expandHeight 1.5s cubic-bezier(0.16, 1, 0.3, 1) 1.2s backwards;
+}
+
+.page-submit .intro-panel p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--color-graphite);
+}
+
+.page-submit .intro-panel p + p {
+    margin-top: 1rem;
+}
+
+.page-submit .intro-panel strong {
+    color: var(--color-rust);
+    font-weight: 600;
+    background: linear-gradient(120deg, var(--color-highlight) 0%, var(--color-highlight) 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: 0 0;
+    padding: 0 0.2rem;
+    animation: highlightExpand 1.5s ease-out 2s forwards;
+}
+
+.page-submit .intro-panel code {
+    font-family: 'Courier Prime', monospace;
+    background: var(--color-highlight);
+    color: var(--color-graphite);
+    padding: 0.1rem 0.4rem;
+    border-radius: 2px;
+    font-size: 0.9em;
+}
+
 .submit-form { max-width: 780px; margin: 2rem auto; }
 .submit-form fieldset {
     border: 1px solid rgba(166,124,82,0.25);

@@ -20,3 +20,13 @@ guild/apps/p2p/controls/db/*.sqlite-journal
 
 # Tool runner JSONL audit trail (per-invocation, local runtime artifact)
 guild/Enterprise/L2/logs/
+
+# Playwright live-smoke screenshots (regenerable)
+guild/web/dist/live-shots/
+guild/web/dist/screenshots/
+
+# Stray debug/probe artifacts
+/lengths.txt
+/stderr.txt
+/script.db
+/_probe.js

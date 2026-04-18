@@ -19,6 +19,7 @@ from pathlib import Path
 LIB   = Path(__file__).resolve().parent
 REPO  = Path(__file__).resolve().parents[4]
 SCRIPTS_DIR = REPO / "guild" / "Enterprise" / "L3" / "automation" / "instances"
+UDT_SCRIPT_DIR = REPO / "guild" / "Enterprise" / "L3" / "udts" / "script" / "instances"
 STATE_FILE  = REPO / "guild" / "Enterprise" / "L2" / "state" / "sm-last.json"
 
 sys.path.insert(0, str(LIB))
@@ -40,19 +41,71 @@ def _script_file_to_tool_id(rel_path: str) -> str:
 
 
 def load_scripts() -> list:
-    """Load every Script binding. Two sources:
-      1. Script UDT JSON files under L3/automation/instances/
-      2. script_events table in root tag.db (from @tag-event headers)
-    Both normalize to the same shape consumed by _match / _fire."""
+    """Load every Script binding. Three sources, normalized to the same
+    shape consumed by _match / _fire:
+      1. Script UDT JSON files under L3/automation/instances/   (legacy)
+      2. StateMachineScript UDT instances under L3/udts/script/instances/
+         (emitted by bin/ingest-script-events.py — one per @tag-event
+         header discovered in the repo)
+      3. script_events table in root tag.db (also from @tag-event, used
+         when the ingest JSONs haven't been regenerated yet)
+    Duplicate ids are de-duped with source #1 / #2 winning over #3."""
     out = []
-    for f in sorted(SCRIPTS_DIR.glob("*.json")):
-        doc = json.loads(f.read_text(encoding="utf-8"))
-        if doc.get("udtType") != "Script":
-            continue
-        p = doc.get("parameters", {})
-        if p.get("enabled", True):
-            out.append(p)
+    seen = set()
 
+    def _push(item):
+        sid = item.get("id")
+        if sid and sid in seen:
+            return
+        if sid:
+            seen.add(sid)
+        out.append(item)
+
+    # 1. legacy Script UDT instances
+    if SCRIPTS_DIR.exists():
+        for f in sorted(SCRIPTS_DIR.glob("*.json")):
+            try:
+                doc = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            if doc.get("udtType") != "Script":
+                continue
+            p = doc.get("parameters", {})
+            if p.get("enabled", True):
+                _push({**p, "_source": "script_udt"})
+
+    # 2. StateMachineScript UDT instances (new ingestor)
+    if UDT_SCRIPT_DIR.exists():
+        for f in sorted(UDT_SCRIPT_DIR.glob("*.json")):
+            if f.name == "_index.json":
+                continue
+            try:
+                doc = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            if doc.get("udtType") != "StateMachineScript":
+                continue
+            p = doc.get("parameters", {})
+            if not p.get("enabled", True):
+                continue
+            rel = p.get("script_file") or ""
+            tool_id = p.get("action_tool_id") or _script_file_to_tool_id(rel)
+            _push({
+                "id":      p.get("id"),
+                "enabled": True,
+                "trigger": {
+                    "kind": p.get("kind") or "on_transition",
+                    "tag":  p.get("listens_tag"),
+                    "from": p.get("listens_from"),
+                    "to":   p.get("listens_to"),
+                    "interval_s": p.get("interval_s"),
+                },
+                "action":       {"tool_id": tool_id, "inputs": {}},
+                "_source":      "state_machine_script_udt",
+                "_script_file": rel,
+            })
+
+    # 3. tag.db.script_events (fallback when UDT instances aren't fresh)
     import sqlite3
     tag_db = REPO / "tag.db"
     if tag_db.exists():
@@ -64,7 +117,7 @@ def load_scripts() -> list:
                 for row in con.execute("SELECT * FROM script_events WHERE enabled=1"):
                     rel = row["script_file"]
                     tool_id = row["action_tool_id"] or _script_file_to_tool_id(rel)
-                    out.append({
+                    _push({
                         "id":      row["id"],
                         "enabled": True,
                         "trigger": {

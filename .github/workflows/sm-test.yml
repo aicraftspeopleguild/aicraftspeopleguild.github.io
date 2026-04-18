@@ -1,0 +1,73 @@
+name: sm-test
+
+# Smoke-test the state-machine runner's script-loading + matcher every
+# time scripts, lib code, or UDT instances change. Dry-run only —
+# doesn't spawn tool processes, just asserts that:
+#   1. load_scripts finds every @tag-event header we ingested
+#   2. a demo.heartbeat CHANGED event matches at least the SVG builders
+#   3. a papers.count CHANGED event matches the whitepaper regen scripts
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'bin/ingest-script-events.py'
+      - 'bin/sm-test.py'
+      - 'guild/Enterprise/L2/lib/**'
+      - 'guild/Enterprise/L3/scripts/**'
+      - 'guild/Enterprise/L3/udts/script/**'
+      - 'guild/Enterprise/L4/api/scripts/**'
+      - 'guild/Enterprise/L4/svg/**'
+  pull_request:
+    paths:
+      - 'bin/ingest-script-events.py'
+      - 'bin/sm-test.py'
+      - 'guild/Enterprise/L2/lib/**'
+      - 'guild/Enterprise/L3/udts/script/**'
+  workflow_dispatch:
+
+jobs:
+  sm-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Re-ingest @tag-event headers (fresh snapshot for the test)
+        run: python bin/ingest-script-events.py
+
+      - name: heartbeat CHANGED matches every SVG builder
+        run: |
+          out=$(python bin/sm-test.py --tag demo.heartbeat --to CHANGED --json)
+          echo "$out"
+          echo "$out" | python -c "
+          import json, sys
+          d = json.loads(sys.stdin.read())
+          assert d['scripts_total'] > 40, f'expected 40+ scripts, got {d[\"scripts_total\"]}'
+          assert d['matched'] >= 20,     f'expected 20+ heartbeat matches, got {d[\"matched\"]}'
+          assert any('heartbeat' in mid for mid in d['matched_ids']), 'build-heartbeat missing'
+          assert any('scada-dashboard' in mid for mid in d['matched_ids']), 'build-scada-dashboard missing'
+          print(f'OK  {d[\"scripts_total\"]} loaded · {d[\"matched\"]} heartbeat matches')
+          "
+
+      - name: papers.count CHANGED matches whitepaper regen
+        run: |
+          out=$(python bin/sm-test.py --tag papers.count --to CHANGED --json)
+          echo "$out"
+          echo "$out" | python -c "
+          import json, sys
+          d = json.loads(sys.stdin.read())
+          assert d['matched'] >= 1, f'expected 1+ papers.count matches, got {d[\"matched\"]}'
+          print(f'OK  {d[\"matched\"]} papers.count matches')
+          "
+
+      - name: unknown tag matches nothing (no false positives)
+        run: |
+          out=$(python bin/sm-test.py --tag does.not.exist --to CHANGED --json)
+          echo "$out" | python -c "
+          import json, sys
+          d = json.loads(sys.stdin.read())
+          assert d['matched'] == 0, f'expected 0 matches, got {d[\"matched\"]}: {d[\"matched_ids\"]}'
+          print('OK  no false positives on unknown tag')
+          "

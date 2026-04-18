@@ -13,9 +13,10 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import svg_widget as S
+import site_base
 
 OUT = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "architecture.svg"
-BASE = "https://teslasolar.github.io/aicraftspeopleguild.github.io"
+BASE = site_base.site_base()
 
 TIERS = [
     ("L4", "ERP · business",       "#c47a20", "g", "/api/*.json · runtime/tags.json · acg.db · members · papers"),

@@ -1,7 +1,7 @@
 {
   "udtType": "StateMachineScript",
-  "count": 47,
-  "generated": "2026-04-18T10:16:09Z",
+  "count": 53,
+  "generated": "2026-04-18T10:34:05Z",
   "instances": [
     {
       "slug": "components-extract-on-build-start",
@@ -268,6 +268,14 @@
       "listens_tag": "demo.heartbeat"
     },
     {
+      "slug": "build-guild-values-svg-on-heartbeat",
+      "id": "build-guild-values-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-guild-values.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
       "slug": "build-heartbeat-svg-on-heartbeat",
       "id": "build-heartbeat-svg:on-heartbeat",
       "script_file": "guild/Enterprise/L4/svg/build-heartbeat.py",
@@ -276,9 +284,33 @@
       "listens_tag": "demo.heartbeat"
     },
     {
+      "slug": "build-member-roster-svg-on-heartbeat",
+      "id": "build-member-roster-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-member-roster.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
       "slug": "build-members-strip-svg-on-heartbeat",
       "id": "build-members-strip-svg:on-heartbeat",
       "script_file": "guild/Enterprise/L4/svg/build-members-strip.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-packml-statechart-svg-on-heartbeat",
+      "id": "build-packml-statechart-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-packml-statechart.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-paper-feed-svg-on-heartbeat",
+      "id": "build-paper-feed-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-paper-feed.py",
       "enabled": true,
       "kind": "on_transition",
       "listens_tag": "demo.heartbeat"
@@ -367,6 +399,22 @@
       "slug": "build-tag-heatmap-svg-on-heartbeat",
       "id": "build-tag-heatmap-svg:on-heartbeat",
       "script_file": "guild/Enterprise/L4/svg/build-tag-heatmap.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-terminal-session-svg-on-heartbeat",
+      "id": "build-terminal-session-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-terminal-session.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-udt-tree-svg-on-heartbeat",
+      "id": "build-udt-tree-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-udt-tree.py",
       "enabled": true,
       "kind": "on_transition",
       "listens_tag": "demo.heartbeat"

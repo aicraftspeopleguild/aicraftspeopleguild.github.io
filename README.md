@@ -2,6 +2,8 @@
 
 <div align="center"><img src="guild/Enterprise/L2/hmi/web/assets/svg/readme-hero.svg" alt="AI Craftspeople Guild · ISA-95 live control-plane" width="1040"/></div>
 
+<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/guild-values.svg" alt="Guild charter — kindness · consideration · respect" width="1040"/></a></div>
+
 <div align="center">
 
 [![bump heartbeat](https://img.shields.io/badge/💓-bump_heartbeat-1a5c4c?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/apps/control-deck/#action=bump-heartbeat)
@@ -107,9 +109,45 @@ Deterministic seed = current heartbeat value. Click → opens that paper. Every 
 
 ## 👥 members
 
-<div align="center"><img src="guild/Enterprise/L2/hmi/web/assets/svg/members-strip.svg" alt="ACG members · click any card" width="1010"/></div>
+<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/member-roster.svg" alt="Guild member roster · full grid with avatars" width="1040"/></a></div>
+
+Full 8-member roster with avatars, role chips, top 3 expertise tags, paper counts joined from `/api/papers.json`, and a clickable deep-link on every card. Compact strip view:
+
+<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/members-strip.svg" alt="ACG members · click any card" width="1010"/></a></div>
 
 Eight founding members joined against `/api/papers.json` by name substring → per-member paper count. Each card is a deep-link to the member profile.
+
+---
+
+## 📚 paper feed · the latest drops
+
+<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/whitepapers/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/paper-feed.svg" alt="Latest guild papers · click any card" width="1040"/></a></div>
+
+Six most recent papers from the live `/api/papers.json`. Every card is a deep-link to the paper reader. Prefer a single surprise pick? See 🎲 [paper roulette](#-paper-roulette) above.
+
+---
+
+## ⌨ the terminal, live-transcribed
+
+<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/terminal-session.svg" alt="guild@acg:~ · example onboarding session" width="1040"/></a></div>
+
+This is the canonical onboarding path — `acg health`, `acg tag:read demo.heartbeat`, `chat hello`, `join paper-review`, `watch demo.heartbeat`. The third response line shows the **actual current heartbeat value** every rerender; the whole card deep-links to the live terminal so you can type the next command yourself.
+
+---
+
+## ⚙ PackML state chart
+
+<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/programs/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/packml-statechart.svg" alt="PackML 16-state machine · current state haloed" width="1040"/></a></div>
+
+All sixteen ISA-88/PackML states laid out as nodes with transition edges. The pulse halo tracks whichever state `packml.current` currently holds — write that tag from the [control deck](https://aicraftspeopleguild.github.io/guild/apps/control-deck/) or the [UDT editor](https://aicraftspeopleguild.github.io/guild/apps/udt-editor/#udt=machine&instance=line-1) and the halo moves on the next rerender.
+
+---
+
+## 🌲 UDT type hierarchy
+
+<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/udt-editor/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/udt-tree.svg" alt="UDT types · SVG composition ladder · automation stack · catalog · fabric" width="1040"/></a></div>
+
+Every type we catalog, grouped into four trees (SVG composition · automation · catalog · fabric). The count chips are pulled live from `tag.db.udts`; every node is a deep-link into the [UDT editor](https://aicraftspeopleguild.github.io/guild/apps/udt-editor/) filtered to that type.
 
 ---
 

@@ -1,10 +1,10 @@
 {
   "udtType": "StateMachineScript",
-  "instance": "build-commit-activity-svg-on-heartbeat",
+  "instance": "build-member-roster-svg-on-heartbeat",
   "parameters": {
-    "id": "build-commit-activity-svg:on-heartbeat",
+    "id": "build-member-roster-svg:on-heartbeat",
     "enabled": true,
-    "script_file": "guild/Enterprise/L4/svg/build-commit-activity.py",
+    "script_file": "guild/Enterprise/L4/svg/build-member-roster.py",
     "schemaVersion": "1.0.0",
     "kind": "on_transition",
     "listens_tag": "demo.heartbeat",
@@ -15,7 +15,7 @@
     "action_tool_id": null,
     "reads": [],
     "writes": [
-      "guild/Enterprise/L2/hmi/web/assets/svg/commit-activity.svg"
+      "guild/Enterprise/L2/hmi/web/assets/svg/member-roster.svg"
     ],
     "fires": [],
     "lastFiredAt": null,

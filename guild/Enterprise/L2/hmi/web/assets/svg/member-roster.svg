@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1046 436" width="1046" height="436" role="img" aria-label="Guild member roster">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1046" height="36" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1046" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1046" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="523" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">👥 member roster · 8 craftspeople · click any card</text>
+<rect y="36" width="1046" height="400" fill="url(#gBg)"/>
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/#alex-bunardzic" target="_blank">
+<rect x="14" y="52" width="244" height="156" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<clipPath id="clip-0"><circle cx="50" cy="92" r="22"/></clipPath><image x="28" y="70" width="44" height="44" href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/members/alex-bunardzic/Alex3D.jpg" clip-path="url(#clip-0)" preserveAspectRatio="xMidYMid slice"/><circle cx="50" cy="92" r="22" fill="none" stroke="#30363d" stroke-width="2"/>
+<text x="84" y="88" class="t" font-size="13" font-weight="700" fill="#e6edf3">Alex Bunardzic</text>
+<text x="84" y="104" class="t sub">founding member</text>
+<g><rect x="84" y="96" rx="11" width="84" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="126" y="111" text-anchor="middle" class="t" font-size="11" fill="#3fb950">4 papers</text></g>
+<rect x="28" y="134" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="84" y="147" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Business Velo…</text>
+<rect x="146" y="134" width="54" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="173" y="147" text-anchor="middle" class="t" font-size="10" fill="#8b949e">CI/CD</text>
+<rect x="28" y="156" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="84" y="169" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Mutation Test…</text>
+<text x="242" y="76" text-anchor="end" class="t" font-size="12" fill="#3fb950">✓ signed</text>
+</a>
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/#jona-heidsick" target="_blank">
+<rect x="272" y="52" width="244" height="156" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<clipPath id="clip-1"><circle cx="308" cy="92" r="22"/></clipPath><image x="286" y="70" width="44" height="44" href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/members/jona-heidsick/Jona.png" clip-path="url(#clip-1)" preserveAspectRatio="xMidYMid slice"/><circle cx="308" cy="92" r="22" fill="none" stroke="#30363d" stroke-width="2"/>
+<text x="342" y="88" class="t" font-size="13" font-weight="700" fill="#e6edf3">Jona Heidsick</text>
+<text x="342" y="104" class="t sub">founding member</text>
+<rect x="286" y="134" width="84" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="328" y="147" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Agentic AI</text>
+<rect x="376" y="134" width="84" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="418" y="147" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Blockchain</text>
+<rect x="286" y="156" width="84" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="328" y="169" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Clean Code</text>
+<text x="500" y="76" text-anchor="end" class="t" font-size="12" fill="#3fb950">✓ signed</text>
+</a>
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/#kelly-hohman" target="_blank">
+<rect x="530" y="52" width="244" height="156" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<clipPath id="clip-2"><circle cx="566" cy="92" r="22"/></clipPath><image x="544" y="70" width="44" height="44" href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/members/kelly-hohman/Kelly.png" clip-path="url(#clip-2)" preserveAspectRatio="xMidYMid slice"/><circle cx="566" cy="92" r="22" fill="none" stroke="#30363d" stroke-width="2"/>
+<text x="600" y="88" class="t" font-size="13" font-weight="700" fill="#e6edf3">Kelly T. Hohman</text>
+<text x="600" y="104" class="t sub">founding member</text>
+<rect x="544" y="134" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="600" y="147" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Behavioral He…</text>
+<rect x="544" y="156" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="600" y="169" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Cultural Inte…</text>
+<rect x="662" y="156" width="91" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="707" y="169" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Grounded AI</text>
+<text x="758" y="76" text-anchor="end" class="t" font-size="12" fill="#3fb950">✓ signed</text>
+</a>
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/#laurie-scheepers" target="_blank">
+<rect x="788" y="52" width="244" height="156" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<clipPath id="clip-3"><circle cx="824" cy="92" r="22"/></clipPath><image x="802" y="70" width="44" height="44" href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/members/laurie-scheepers/Laurie.png" clip-path="url(#clip-3)" preserveAspectRatio="xMidYMid slice"/><circle cx="824" cy="92" r="22" fill="none" stroke="#30363d" stroke-width="2"/>
+<text x="858" y="88" class="t" font-size="13" font-weight="700" fill="#e6edf3">Laurie Scheepers</text>
+<text x="858" y="104" class="t sub">founding member</text>
+<g><rect x="858" y="96" rx="11" width="76" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="896" y="111" text-anchor="middle" class="t" font-size="11" fill="#3fb950">1 paper</text></g>
+<rect x="802" y="134" width="84" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="844" y="147" text-anchor="middle" class="t" font-size="10" fill="#8b949e">160 Skills</text>
+<rect x="892" y="134" width="77" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="930" y="147" text-anchor="middle" class="t" font-size="10" fill="#8b949e">28 Agents</text>
+<rect x="802" y="156" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="858" y="169" text-anchor="middle" class="t" font-size="10" fill="#8b949e">30 Operating …</text>
+<text x="1016" y="76" text-anchor="end" class="t" font-size="12" fill="#3fb950">✓ signed</text>
+</a>
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/#matt-burch" target="_blank">
+<rect x="14" y="222" width="244" height="156" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<clipPath id="clip-4"><circle cx="50" cy="262" r="22"/></clipPath><image x="28" y="240" width="44" height="44" href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/members/matt-burch/Matt.jpeg" clip-path="url(#clip-4)" preserveAspectRatio="xMidYMid slice"/><circle cx="50" cy="262" r="22" fill="none" stroke="#30363d" stroke-width="2"/>
+<text x="84" y="258" class="t" font-size="13" font-weight="700" fill="#e6edf3">Matt Burch</text>
+<text x="84" y="274" class="t sub">founding member</text>
+<rect x="28" y="304" width="105" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="80" y="317" text-anchor="middle" class="t" font-size="10" fill="#8b949e">#keepbuilding</text>
+<rect x="28" y="326" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="84" y="339" text-anchor="middle" class="t" font-size="10" fill="#8b949e">AI Consultancy</text>
+<rect x="28" y="348" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="84" y="361" text-anchor="middle" class="t" font-size="10" fill="#8b949e">AI-Native Wor…</text>
+<text x="242" y="246" text-anchor="end" class="t" font-size="12" fill="#3fb950">✓ signed</text>
+</a>
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/#nicolas-rosado" target="_blank">
+<rect x="272" y="222" width="244" height="156" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<clipPath id="clip-5"><circle cx="308" cy="262" r="22"/></clipPath><image x="286" y="240" width="44" height="44" href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/members/nicolas-rosado/Nicolas.jpeg" clip-path="url(#clip-5)" preserveAspectRatio="xMidYMid slice"/><circle cx="308" cy="262" r="22" fill="none" stroke="#30363d" stroke-width="2"/>
+<text x="342" y="258" class="t" font-size="13" font-weight="700" fill="#e6edf3">Nicolas Rosado</text>
+<text x="342" y="274" class="t sub">founding member</text>
+<rect x="286" y="304" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="342" y="317" text-anchor="middle" class="t" font-size="10" fill="#8b949e">AI Best Pract…</text>
+<rect x="286" y="326" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="342" y="339" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Community Bui…</text>
+<rect x="286" y="348" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="342" y="361" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Continuous Im…</text>
+<text x="500" y="246" text-anchor="end" class="t" font-size="12" fill="#3fb950">✓ signed</text>
+</a>
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/#thomas-frumkin" target="_blank">
+<rect x="530" y="222" width="244" height="156" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<clipPath id="clip-6"><circle cx="566" cy="262" r="22"/></clipPath><image x="544" y="240" width="44" height="44" href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/members/thomas-frumkin/thomas-frumkin.png" clip-path="url(#clip-6)" preserveAspectRatio="xMidYMid slice"/><circle cx="566" cy="262" r="22" fill="none" stroke="#30363d" stroke-width="2"/>
+<text x="600" y="258" class="t" font-size="13" font-weight="700" fill="#e6edf3">Thomas Frumkin</text>
+<text x="600" y="274" class="t sub">founding member</text>
+<g><rect x="600" y="266" rx="11" width="76" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="638" y="281" text-anchor="middle" class="t" font-size="11" fill="#3fb950">1 paper</text></g>
+<rect x="544" y="304" width="77" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="582" y="317" text-anchor="middle" class="t" font-size="10" fill="#8b949e">A.S.S.-OS</text>
+<rect x="627" y="304" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="683" y="317" text-anchor="middle" class="t" font-size="10" fill="#8b949e">Controls Engi…</text>
+<rect x="544" y="326" width="56" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="572" y="339" text-anchor="middle" class="t" font-size="10" fill="#8b949e">ISA-95</text>
+<text x="758" y="246" text-anchor="end" class="t" font-size="12" fill="#3fb950">✓ signed</text>
+</a>
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/#tsvetan" target="_blank">
+<rect x="788" y="222" width="244" height="156" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<clipPath id="clip-7"><circle cx="824" cy="262" r="22"/></clipPath><image x="802" y="240" width="44" height="44" href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/members/tsvetan/Tsvetan.jpeg" clip-path="url(#clip-7)" preserveAspectRatio="xMidYMid slice"/><circle cx="824" cy="262" r="22" fill="none" stroke="#30363d" stroke-width="2"/>
+<text x="858" y="258" class="t" font-size="13" font-weight="700" fill="#e6edf3">Tsvetan Tsvetanov</text>
+<text x="858" y="274" class="t sub">founding member</text>
+<rect x="802" y="304" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="858" y="317" text-anchor="middle" class="t" font-size="10" fill="#8b949e">AI-Assisted D…</text>
+<rect x="920" y="304" width="54" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="947" y="317" text-anchor="middle" class="t" font-size="10" fill="#8b949e">BDD</text>
+<rect x="802" y="326" width="112" height="18" rx="9" fill="#161b22" stroke="#30363d"/>
+<text x="858" y="339" text-anchor="middle" class="t" font-size="10" fill="#8b949e">DeSlopify Met…</text>
+<text x="1016" y="246" text-anchor="end" class="t" font-size="12" fill="#3fb950">✓ signed</text>
+</a>
+<text x="24" y="418" class="t sub">every card → deep-link to the member page</text>
+<text x="1022" y="418" text-anchor="end" class="t sub">rebuilt on every heartbeat</text>
+</svg>

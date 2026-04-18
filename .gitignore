@@ -17,3 +17,7 @@ guild/l4-erp/database/*.db-journal
 # P2P app runtime SQLite (generated from tags.json on the client)
 guild/apps/p2p/controls/db/*.sqlite
 guild/apps/p2p/controls/db/*.sqlite-journal
+
+# Per-directory tag databases (regenerable from UDT instance JSON)
+**/tag.db
+**/tag.db-journal

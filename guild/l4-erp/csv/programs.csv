@@ -7,6 +7,7 @@ build_js,Build,build-orchestrator,node,IDLE
 build_sh,Build,build-orchestrator,bash,IDLE
 components--build-catalog_py,Build Catalog,components-pipeline,python,COMPLETE
 components--extract_py,Extract,components-pipeline,python,IDLE
+db--build-local-tagdbs_py,Build Local Tagdbs,misc,python,COMPLETE
 docs--split-catalog_py,Split Catalog,docs-pipeline,python,IDLE
 docs--split-udt-spec_py,Split Udt Spec,docs-pipeline,python,IDLE
 fix-data-links_py,Fix Data Links,fix-orchestrator,python,IDLE

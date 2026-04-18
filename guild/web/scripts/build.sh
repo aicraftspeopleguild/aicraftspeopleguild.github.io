@@ -41,8 +41,9 @@ echo "[build] 8/12 Render Perspective-schema views (acg.* components)"
 node guild/web/scripts/perspective-build.js
 
 echo ""
-echo "[build] 9/12 Initialize SQLite database from UDT instances"
+echo "[build] 9/12 Initialize SQLite databases (aggregate + per-directory tag.db)"
 python guild/l4-erp/database/init-db.py
+python guild/web/scripts/db/build-local-tagdbs.py
 
 echo ""
 echo "[build] 10/12 Build static JSON API (/api/*.json)"

@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-04-18T05:00:44Z",
+  "generated_at": "2026-04-18T05:09:02Z",
   "schema_version": "1.0.0",
   "counts": {
-    "programs": 21,
+    "programs": 22,
     "categories": 10
   },
   "programs": [
@@ -62,6 +62,13 @@
       "category": "components-pipeline",
       "path": "guild/web/scripts/components/extract.py",
       "last_state": "IDLE"
+    },
+    {
+      "id": "db--build-local-tagdbs_py",
+      "name": "Build Local Tagdbs",
+      "category": "misc",
+      "path": "guild/web/scripts/db/build-local-tagdbs.py",
+      "last_state": "COMPLETE"
     },
     {
       "id": "docs--split-catalog_py",

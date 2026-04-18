@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🎛 controls · ACG</title>
-<link rel="stylesheet" href="./scada/gateway/styles/section.css">
+<title>🎛 ACG Enterprise controls</title>
+<link rel="stylesheet" href="./L2/scada/gateway/styles/section.css">
 </head>
 <body>
 <div id="section"></div>
 
 <script type="module">
-import {bridge} from './sandbox/shared/mesh-bridge.js';
-import {buildDockShell, SUBSYSTEMS} from '../../apps/p2p/index/renderer.js';
+import {bridge} from './L4/sandbox/shared/mesh-bridge.js';
+import {buildDockShell, SUBSYSTEMS} from '../apps/p2p/index/renderer.js';
 
 const $  = id => document.getElementById(id);
 const el = (tag, attrs={}, children=[]) => {
@@ -27,40 +27,40 @@ const el = (tag, attrs={}, children=[]) => {
 const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const fmtTs=ts=>ts?new Date(ts).toLocaleTimeString():'—';
 
-const basePath='../';
+const basePath='./';
 const docks=buildDockShell($('section'));
 
-// Everything control-plane that lives under /controls/.  Extend here as
-// new tenants land (alarm, schedule, routing, pinning).
+// Control-plane subsystems, now organised by ISA-95 level under
+// guild/Enterprise/L{1..4}/.  Extend here as new tenants land.
 const CONTROLS=[
-  {id:'scada',    glyph:'🖥️', name:'SCADA',    status:'ready',
-   desc:'Tag plant + HMI monitor.  Owns sys.* and version.*.  Dense-token specs at /controls/scada/00-legend.json through 04-sandbox.json.',
-   href:'scada/'},
-  {id:'errors',   glyph:'⚠',  name:'Errors',   status:'ready',
-   desc:'Gateway-log ring buffer (N=200).  Owns errors.*.  Lives inside /controls/scada/ as the gateway area; viewer at /controls/scada/gateway/gateway-log.html.',
-   href:'scada/errors/'},
-  {id:'hmi',      glyph:'🖼', name:'HMI',      status:'ready',
+  {id:'scada',    level:'L2', glyph:'🖥️', name:'SCADA',    status:'ready',
+   desc:'Tag plant + HMI monitor.  Owns sys.* and version.*.  Dense-token specs at L2/scada/00-legend.json through 04-sandbox.json.',
+   href:'L2/scada/'},
+  {id:'errors',   level:'L2', glyph:'⚠',  name:'Errors',   status:'ready',
+   desc:'Gateway-log ring buffer (N=200).  Owns errors.*.  Lives inside L2/scada/ as the gateway area; viewer at L2/scada/gateway/gateway-log.html.',
+   href:'L2/scada/errors/'},
+  {id:'hmi',      level:'L2', glyph:'🖼', name:'HMI',      status:'ready',
    desc:'ISA-101 operator interface: 5 screen layers (L1 Overview … L5 Support), semantic color palette, faceplate registry.  Owns hmi.*.',
-   href:'hmi/'},
-  {id:'plc',      glyph:'🔧', name:'PLC',      status:'ready',
-   desc:'GitPLC universal PLC namespace.  UDT templates at /controls/plc/git/, standard at /controls/docs/standards/gitplc/.  Any vendor → UDT → any vendor.  Owns plc.*.',
-   href:'plc/'},
-  {id:'sandbox',  glyph:'🧪', name:'Sandbox',  status:'ready',
+   href:'L2/hmi/'},
+  {id:'plc',      level:'L1', glyph:'🔧', name:'PLC',      status:'ready',
+   desc:'GitPLC universal PLC namespace.  UDT templates at L1/plc/git/, standard at docs/standards/gitplc/.  Any vendor → UDT → any vendor.  Owns plc.*.',
+   href:'L1/plc/'},
+  {id:'sandbox',  level:'L4', glyph:'🧪', name:'Sandbox',  status:'ready',
    desc:'Browser-only tool workshops (web-llm, voice, VFS, git-lite).  Owns sandbox.*.  BroadcastChannel bridge publishes events into the SCADA tag plant.',
-   href:'sandbox/'},
-  {id:'db',       glyph:'🗄️', name:'DB',       status:'ready',
-   desc:'Canonical tag snapshot (tags.json) read by the README HMI + shields.io badges.  Merged by .github/workflows/sync-db.yml on every acg-db issue.',
-   href:'db/'},
-  {id:'alarm',    glyph:'🚨', name:'Alarm',    status:'planned',
+   href:'L4/sandbox/'},
+  {id:'db',       level:'L3', glyph:'🗄️', name:'DB',       status:'ready',
+   desc:'Canonical tag snapshot (tags.json) read by the README HMI + shields.io badges.',
+   href:'L3/db/'},
+  {id:'alarm',    level:'L2', glyph:'🚨', name:'Alarm',    status:'planned',
    desc:'Alarm engine + journal.  Rules watch tag values and raise/acknowledge/clear alarms.',
    href:'#'},
-  {id:'schedule', glyph:'⏲',  name:'Schedule', status:'planned',
+  {id:'schedule', level:'L2', glyph:'⏲',  name:'Schedule', status:'planned',
    desc:'Cron-like scheduling of re-announces, broadcasts, housekeeping scripts.',
    href:'#'},
-  {id:'routing',  glyph:'🔀', name:'Routing',  status:'planned',
+  {id:'routing',  level:'L2', glyph:'🔀', name:'Routing',  status:'planned',
    desc:'Rule-based tag routing + transformations between providers.',
    href:'#'},
-  {id:'pinning',  glyph:'📌', name:'Pinning',  status:'planned',
+  {id:'pinning',  level:'L3', glyph:'📌', name:'Pinning',  status:'planned',
    desc:'Pinned tags that persist across sessions and announce to new peers on join.',
    href:'#'},
 ];
@@ -69,14 +69,15 @@ const CONTROLS=[
 docks.n.append(
   el('div',{class:'dock-n-logo'},['🎛 controls', el('span',{},' · control plane')]),
   el('nav',{class:'dock-n-shell'},[
-    el('a',{href:'../../apps/p2p/'},'⚒ mesh'),
-    el('a',{href:basePath+'controls/scada/gateway/gateway-log.html'},'⚠ log'),
-    el('a',{href:basePath+'controls/scada/gateway/health.html'},'⚕ health'),
-    el('a',{href:basePath+'controls/hmi/chat/#scada'},'🖥 scada drawer'),
+    el('a',{href:'../apps/p2p/'},'⚒ mesh'),
+    el('a',{href:'L2/scada/gateway/gateway-log.html'},'⚠ log'),
+    el('a',{href:'L2/scada/gateway/health.html'},'⚕ health'),
+    el('a',{href:'L2/hmi/chat/#scada'},'🖥 scada drawer'),
   ])
 );
 
-// ── W — subsystem nav (scada is the only current control that's a subsystem)
+// ── W — subsystem nav.  SUBSYSTEMS[*].path is written relative to this
+// Enterprise root (e.g. 'L2/hmi/chat').
 docks.w.append(
   el('h4',{},'Subsystems'),
   el('nav',{class:'dock-w-nav'}, SUBSYSTEMS.map(s=>el('a',{
@@ -86,14 +87,14 @@ docks.w.append(
   el('hr',{class:'dock-sep'}),
   el('h4',{},'Actions'),
   el('div',{class:'dock-w-actions'},[
-    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/tag-update.yml'},'🏷️ write tag'),
-    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/log-entry.yml'},'⚠ log incident'),
-    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/control-action.yml'},'🎛 control action'),
+    el('a',{href:'https://github.com/teslasolar/ACGP2P/issues/new?template=tag-update.yml'},'🏷️ write tag'),
+    el('a',{href:'https://github.com/teslasolar/ACGP2P/issues/new?template=log-entry.yml'},'⚠ log incident'),
+    el('a',{href:'https://github.com/teslasolar/ACGP2P/issues/new?template=control-action.yml'},'🎛 control action'),
   ])
 );
 
 // ── M — control-subsystem cards
-docks.m.append(el('p',{class:'ix-lede'},'Control-plane subsystems under /controls/.  Each owns a tag namespace, a Jython 2.7 provider, and (where realised) a subsystem landing that follows the same NESW dock shape as the other /{sub}/ pages.'));
+docks.m.append(el('p',{class:'ix-lede'},'Control-plane subsystems under guild/Enterprise/, organised by ISA-95 level (L1–L4).  Each owns a tag namespace, a Jython 2.7 provider, and (where realised) a subsystem landing that follows the same NESW dock shape.'));
 
 const grid=el('div',{class:'ctrl-grid'});
 for(const c of CONTROLS){
@@ -103,7 +104,7 @@ for(const c of CONTROLS){
   card.append(
     el('h3',{},[c.glyph+' '+c.name, el('span',{class:'ctrl-tag '+c.status},c.status)]),
     el('p',{class:'ix-muted'},c.desc),
-    el('code',{},'/controls/'+c.id+'/')
+    el('code',{},(c.level?c.level+'/':'')+c.id+'/')
   );
   grid.append(card);
 }

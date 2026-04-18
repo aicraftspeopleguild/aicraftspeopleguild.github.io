@@ -126,5 +126,23 @@ def main():
     OUT.write_text(html, encoding="utf-8")
     print(f"[regen] wrote {OUT.relative_to(REPO)} with {len(papers)} papers")
 
+    # Emit split view data: one file for page metadata, one for papers array
+    data_dir = REPO / "guild" / "web" / "views" / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    page_data = {
+        "title": "White Papers",
+        "subtitle": "Guild publications.",
+        "intro": f"<p>The Guild catalog has {len(papers)} publications. Source of truth: <code>guild/web/white-papers/originals/*.md</code>.</p>",
+        "grid_subheading": f"{len(papers)} publications in the Guild catalog."
+    }
+    (data_dir / "white-papers.data.json").write_text(
+        json.dumps(page_data, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    (data_dir / "white-papers-list.data.json").write_text(
+        json.dumps(papers, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    print(f"[regen] wrote view data: white-papers.data.json + white-papers-list.data.json")
+
 if __name__ == "__main__":
     main()

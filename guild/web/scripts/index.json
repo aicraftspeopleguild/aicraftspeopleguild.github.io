@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-04-18T03:53:42Z",
+  "generated_at": "2026-04-18T04:01:56Z",
   "schema_version": "1.0.0",
   "counts": {
-    "programs": 16,
+    "programs": 17,
     "categories": 9
   },
   "programs": [
@@ -89,6 +89,13 @@
       "name": "Perspective Build",
       "category": "build-orchestrator",
       "path": "guild/web/scripts/perspective-build.js",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "test-browser_js",
+      "name": "Test Browser",
+      "category": "test-orchestrator",
+      "path": "guild/web/scripts/test-browser.js",
       "last_state": "IDLE"
     },
     {

@@ -5,9 +5,11 @@
     "slug": "white-papers",
     "route": "/white-papers",
     "view": "views/white-paper-index.view.json",
-    "stylesheets": [
-      "style/main.css"
-    ],
+    "data": {
+      "page": "views/data/white-papers.data.json",
+      "papers": "views/data/white-papers-list.data.json"
+    },
+    "stylesheets": ["style/main.css"],
     "section": "resources",
     "parent_slug": "home",
     "status": "published"

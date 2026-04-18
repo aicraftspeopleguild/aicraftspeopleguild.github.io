@@ -1,0 +1,6 @@
+{
+  "title": "White Papers",
+  "subtitle": "Guild publications.",
+  "intro": "<p>The Guild catalog has 24 publications. Source of truth: <code>guild/web/white-papers/originals/*.md</code>.</p>",
+  "grid_subheading": "24 publications in the Guild catalog."
+}

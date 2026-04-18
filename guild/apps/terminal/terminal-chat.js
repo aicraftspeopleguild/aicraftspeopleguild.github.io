@@ -88,7 +88,7 @@ function _detectGhRepo() {
     if (first.endsWith('.github.io')) return `${owner}/${first}`;
     return `${owner}/${host}`;
   }
-  return 'aicraftspeopleguild/aicraftspeopleguild.github.io';
+  return 'teslasolar/aicraftspeopleguild.github.io';
 }
 const GH_REPO = _detectGhRepo();
 const GH_API  = 'https://api.github.com';

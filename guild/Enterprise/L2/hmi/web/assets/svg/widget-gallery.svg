@@ -31,7 +31,7 @@
   <circle cx="66" cy="18" r="6" fill="#27c93f"/>
   <text x="522" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ widget gallery · 19 SvgOrganisms · click to open</text>
 <rect y="36" width="1044" height="1152" fill="url(#gBg)"/>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/architecture.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/architecture.svg" target="_blank">
 <rect x="12" y="56" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 84px">
     <circle cx="34" cy="84" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -43,7 +43,7 @@
 <text x="26" y="132" class="t sub">sources: (no sources)</text>
 <text x="502" y="146" text-anchor="end" class="t sub">1040 × 400</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/chat-llm-teaser.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/chat-llm-teaser.svg" target="_blank">
 <rect x="528" y="56" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 84px">
     <circle cx="550" cy="84" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -55,7 +55,7 @@
 <text x="542" y="132" class="t sub">sources: WebLLM sandbox</text>
 <text x="1018" y="146" text-anchor="end" class="t sub">1040 × 260</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/cmd-panel.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/cmd-panel.svg" target="_blank">
 <rect x="12" y="168" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 196px">
     <circle cx="34" cy="196" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -67,7 +67,7 @@
 <text x="26" y="244" class="t sub">sources: issues/new pre-filled URLs</text>
 <text x="502" y="258" text-anchor="end" class="t sub">1016 × 250</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/commit-activity.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/commit-activity.svg" target="_blank">
 <rect x="528" y="168" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 196px">
     <circle cx="550" cy="196" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -79,7 +79,7 @@
 <text x="542" y="244" class="t sub">sources: github.com/api/stats/participation, github.com/api/commits</text>
 <text x="1018" y="258" text-anchor="end" class="t sub">1040 × 240</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/fault-timeline.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/fault-timeline.svg" target="_blank">
 <rect x="12" y="280" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 308px">
     <circle cx="34" cy="308" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -91,7 +91,7 @@
 <text x="26" y="356" class="t sub">sources: state.db.faults</text>
 <text x="502" y="370" text-anchor="end" class="t sub">1040 × dynamic</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/heartbeat.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/heartbeat.svg" target="_blank">
 <rect x="528" y="280" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 308px">
     <circle cx="550" cy="308" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -103,7 +103,7 @@
 <text x="542" y="356" class="t sub">sources: tag:demo.heartbeat</text>
 <text x="1018" y="370" text-anchor="end" class="t sub">720 × 140</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/members-strip.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/members-strip.svg" target="_blank">
 <rect x="12" y="392" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 420px">
     <circle cx="34" cy="420" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -115,7 +115,7 @@
 <text x="26" y="468" class="t sub">sources: /api/members.json, /api/papers.json</text>
 <text x="502" y="482" text-anchor="end" class="t sub">1010 × dynamic</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/paper-roulette.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/paper-roulette.svg" target="_blank">
 <rect x="528" y="392" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 420px">
     <circle cx="550" cy="420" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -127,7 +127,7 @@
 <text x="542" y="468" class="t sub">sources: /api/papers.json, tag:demo.heartbeat</text>
 <text x="1018" y="482" text-anchor="end" class="t sub">1040 × 180</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/pipeline-pulse.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/pipeline-pulse.svg" target="_blank">
 <rect x="12" y="504" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 532px">
     <circle cx="34" cy="532" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -139,7 +139,7 @@
 <text x="26" y="580" class="t sub">sources: runtime/tags.json, state.db.pipeline_runs</text>
 <text x="502" y="594" text-anchor="end" class="t sub">720 × 200</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/readme-api.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/readme-api.svg" target="_blank">
 <rect x="528" y="504" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 532px">
     <circle cx="550" cy="532" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -151,7 +151,7 @@
 <text x="542" y="580" class="t sub">sources: HEAD-probe of each endpoint</text>
 <text x="1018" y="594" text-anchor="end" class="t sub">1040 × dynamic</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/readme-controls.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/readme-controls.svg" target="_blank">
 <rect x="12" y="616" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 644px">
     <circle cx="34" cy="644" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -163,7 +163,7 @@
 <text x="26" y="692" class="t sub">sources: (no sources)</text>
 <text x="502" y="706" text-anchor="end" class="t sub">1040 × dynamic</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/readme-hero.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/readme-hero.svg" target="_blank">
 <rect x="528" y="616" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 644px">
     <circle cx="550" cy="644" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -175,7 +175,7 @@
 <text x="542" y="692" class="t sub">sources: api/health.json, tag:demo.heartbeat</text>
 <text x="1018" y="706" text-anchor="end" class="t sub">1040 × 240</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/scada-dashboard.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/scada-dashboard.svg" target="_blank">
 <rect x="12" y="728" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 756px">
     <circle cx="34" cy="756" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -187,7 +187,7 @@
 <text x="26" y="804" class="t sub">sources: api/health.json, runtime/tags.json, api/state.json, state.db.pipeline_ru</text>
 <text x="502" y="818" text-anchor="end" class="t sub">1040 × 900</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/scada-network.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/scada-network.svg" target="_blank">
 <rect x="528" y="728" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 756px">
     <circle cx="550" cy="756" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -199,7 +199,7 @@
 <text x="542" y="804" class="t sub">sources: hand-placed</text>
 <text x="1018" y="818" text-anchor="end" class="t sub">1040 × 540</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/status-dashboard.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/status-dashboard.svg" target="_blank">
 <rect x="12" y="840" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 868px">
     <circle cx="34" cy="868" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -211,7 +211,7 @@
 <text x="26" y="916" class="t sub">sources: api/health.json, runtime/tags.json, tag:demo.heartbeat</text>
 <text x="502" y="930" text-anchor="end" class="t sub">960 × 300</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/tag-activity.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/tag-activity.svg" target="_blank">
 <rect x="528" y="840" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 868px">
     <circle cx="550" cy="868" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -223,7 +223,7 @@
 <text x="542" y="916" class="t sub">sources: state.db.tag_history</text>
 <text x="1018" y="930" text-anchor="end" class="t sub">1040 × dynamic</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/tag-grid.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/tag-grid.svg" target="_blank">
 <rect x="12" y="952" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 980px">
     <circle cx="34" cy="980" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -235,7 +235,7 @@
 <text x="26" y="1028" class="t sub">sources: label=tag issues</text>
 <text x="502" y="1042" text-anchor="end" class="t sub">dynamic × dynamic</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/tag-heatmap.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/tag-heatmap.svg" target="_blank">
 <rect x="528" y="952" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:550px 980px">
     <circle cx="550" cy="980" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
@@ -247,7 +247,7 @@
 <text x="542" y="1028" class="t sub">sources: tag.db.udts</text>
 <text x="1018" y="1042" text-anchor="end" class="t sub">dynamic × dynamic</text>
 </a>
-<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/widget-gallery.svg" target="_blank">
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/hmi/web/assets/svg/widget-gallery.svg" target="_blank">
 <rect x="12" y="1064" width="504" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
 <g style="transform-origin:34px 1092px">
     <circle cx="34" cy="1092" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>

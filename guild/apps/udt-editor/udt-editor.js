@@ -18,7 +18,7 @@ function detectRepo() {
     if (first.endsWith('.github.io')) return `${owner}/${first}`;
     return `${owner}/${host}`;
   }
-  return 'aicraftspeopleguild/aicraftspeopleguild.github.io';
+  return 'teslasolar/aicraftspeopleguild.github.io';
 }
 const REPO = detectRepo();
 

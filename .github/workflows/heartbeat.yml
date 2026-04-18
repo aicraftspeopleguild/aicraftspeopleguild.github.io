@@ -71,12 +71,6 @@ jobs:
           python guild/Enterprise/L4/svg/build-commit-activity.py
           python guild/Enterprise/L4/svg/build-scada-network.py
           python guild/Enterprise/L4/svg/build-tag-heatmap.py
-          python guild/Enterprise/L4/svg/build-guild-values.py
-          python guild/Enterprise/L4/svg/build-member-roster.py
-          python guild/Enterprise/L4/svg/build-paper-feed.py
-          python guild/Enterprise/L4/svg/build-terminal-session.py
-          python guild/Enterprise/L4/svg/build-packml-statechart.py
-          python guild/Enterprise/L4/svg/build-udt-tree.py
 
       - name: Commit SVG widgets if changed
         env:

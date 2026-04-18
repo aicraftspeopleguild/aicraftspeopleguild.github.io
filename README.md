@@ -2,20 +2,18 @@
 
 <div align="center"><img src="guild/Enterprise/L2/hmi/web/assets/svg/readme-hero.svg" alt="AI Craftspeople Guild · ISA-95 live control-plane" width="1040"/></div>
 
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/guild-values.svg" alt="Guild charter — kindness · consideration · respect" width="1040"/></a></div>
-
 <div align="center">
 
-[![bump heartbeat](https://img.shields.io/badge/💓-bump_heartbeat-1a5c4c?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/apps/control-deck/#action=bump-heartbeat)
-[![rebuild SVGs](https://img.shields.io/badge/🔁-rebuild_svgs-a371f7?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/apps/control-deck/#action=rebuild-svgs)
-[![rebuild API](https://img.shields.io/badge/📡-rebuild_api-f0883e?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/apps/control-deck/#action=rebuild-api)
-[![clear faults](https://img.shields.io/badge/✅-clear_faults-3fb950?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/apps/control-deck/#action=clear-faults)
-[![control deck](https://img.shields.io/badge/🎛-control_deck-6f42c1?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/apps/control-deck/)
+[![bump heartbeat](https://img.shields.io/badge/💓-bump_heartbeat-1a5c4c?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=bump-heartbeat)
+[![rebuild SVGs](https://img.shields.io/badge/🔁-rebuild_svgs-a371f7?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=rebuild-svgs)
+[![rebuild API](https://img.shields.io/badge/📡-rebuild_api-f0883e?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=rebuild-api)
+[![clear faults](https://img.shields.io/badge/✅-clear_faults-3fb950?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=clear-faults)
+[![control deck](https://img.shields.io/badge/🎛-control_deck-6f42c1?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/)
 
-[![open terminal](https://img.shields.io/badge/⌨-terminal-1c2128?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/apps/terminal/)
-[![open whiteboard](https://img.shields.io/badge/🖍-whiteboard-f0883e?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/apps/whiteboard/)
-[![chat with guild](https://img.shields.io/badge/🧠-web_llm-a371f7?style=for-the-badge)](https://aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/web-llm/)
-[![tag issues](https://img.shields.io/github/issues-search?query=repo%3Aaicraftspeopleguild%2Faicraftspeopleguild.github.io%20label%3Atag%20is%3Aopen&label=⚒%20tag%20issues&color=4a8868&style=for-the-badge)](https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io/issues?q=is:open+label:tag)
+[![open terminal](https://img.shields.io/badge/⌨-terminal-1c2128?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/)
+[![open whiteboard](https://img.shields.io/badge/🖍-whiteboard-f0883e?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/whiteboard/)
+[![chat with guild](https://img.shields.io/badge/🧠-web_llm-a371f7?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/web-llm/)
+[![tag issues](https://img.shields.io/github/issues-search?query=repo%3Ateslasolar%2Faicraftspeopleguild.github.io%20label%3Atag%20is%3Aopen&label=⚒%20tag%20issues&color=4a8868&style=for-the-badge)](https://github.com/teslasolar/aicraftspeopleguild.github.io/issues?q=is:open+label:tag)
 
 </div>
 
@@ -37,7 +35,7 @@ Network of how the subsystems actually feed each other — blue edges read, gree
 
 ## ▣ the one-glance SCADA dashboard
 
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/scada-dashboard.svg" alt="ACG SCADA dashboard · CATALOG · ENTERPRISE · PIPELINE · IDENTITY · TAGS · FAULTS · HEARTBEAT" width="1040"/></a></div>
+<div align="center"><a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/scada-dashboard.svg" alt="ACG SCADA dashboard · CATALOG · ENTERPRISE · PIPELINE · IDENTITY · TAGS · FAULTS · HEARTBEAT" width="1040"/></a></div>
 
 One SVG. Seven panels. Reads `/api/health.json`, `/runtime/tags.json`, `/api/state.json`, local `state.db.pipeline_runs`, and the GitHub-Issue tag bus. Click it to open the live terminal.
 
@@ -45,9 +43,9 @@ One SVG. Seven panels. Reads `/api/health.json`, `/runtime/tags.json`, `/api/sta
 
 ## 💓 heartbeat · the pulse
 
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/heartbeat.svg" alt="💓 demo.heartbeat — click to open the terminal" width="720"/></a></div>
+<div align="center"><a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/heartbeat.svg" alt="💓 demo.heartbeat — click to open the terminal" width="720"/></a></div>
 
-`tag:demo.heartbeat` is [issue #4](https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io/issues?q=is:issue+label:tag+%22tag:demo.heartbeat%22). Every push bumps its value (epoch seconds), appends a history comment, and regenerates every SVG on this page. Open the terminal and run `watch demo.heartbeat` to see the next bump land within 15 seconds of the workflow finishing.
+`tag:demo.heartbeat` is [issue #4](https://github.com/teslasolar/aicraftspeopleguild.github.io/issues?q=is:issue+label:tag+%22tag:demo.heartbeat%22). Every push bumps its value (epoch seconds), appends a history comment, and regenerates every SVG on this page. Open the terminal and run `watch demo.heartbeat` to see the next bump land within 15 seconds of the workflow finishing.
 
 ---
 
@@ -89,11 +87,11 @@ Each button is an anchor inside the SVG pointing at a **pre-filled `issues/new` 
 
 ## 🧠 talk to it · WebLLM + terminal
 
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/web-llm/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/chat-llm-teaser.svg" alt="Chat with the guild · WebLLM in your browser" width="1040"/></a></div>
+<div align="center"><a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/web-llm/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/chat-llm-teaser.svg" alt="Chat with the guild · WebLLM in your browser" width="1040"/></a></div>
 
 A quantized LLM (Phi-3-mini / Llama-3.2) running **entirely in your browser** via WebGPU. First load downloads the model into IndexedDB (~1-2 GB), subsequent chats are instant. The session speaks the same `t:'msg'` wire format as the P2P chat mesh, so peers in the same room can see each other's conversation.
 
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="terminal.svg" alt="ACG CLI terminal — click to open" width="720"/></a></div>
+<div align="center"><a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="terminal.svg" alt="ACG CLI terminal — click to open" width="720"/></a></div>
 
 For a keyboard-first view: the **live terminal** runs `acg health`, `acg tag:read`, `acg chat <msg>`, `acg watch <tag>` straight against the Pages endpoints and the GitHub API. Share a room URL `#room=<name>` and two visitors' terminals chat through the existing mesh.
 
@@ -109,45 +107,9 @@ Deterministic seed = current heartbeat value. Click → opens that paper. Every 
 
 ## 👥 members
 
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/member-roster.svg" alt="Guild member roster · full grid with avatars" width="1040"/></a></div>
-
-Full 8-member roster with avatars, role chips, top 3 expertise tags, paper counts joined from `/api/papers.json`, and a clickable deep-link on every card. Compact strip view:
-
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/members/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/members-strip.svg" alt="ACG members · click any card" width="1010"/></a></div>
+<div align="center"><img src="guild/Enterprise/L2/hmi/web/assets/svg/members-strip.svg" alt="ACG members · click any card" width="1010"/></div>
 
 Eight founding members joined against `/api/papers.json` by name substring → per-member paper count. Each card is a deep-link to the member profile.
-
----
-
-## 📚 paper feed · the latest drops
-
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/whitepapers/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/paper-feed.svg" alt="Latest guild papers · click any card" width="1040"/></a></div>
-
-Six most recent papers from the live `/api/papers.json`. Every card is a deep-link to the paper reader. Prefer a single surprise pick? See 🎲 [paper roulette](#-paper-roulette) above.
-
----
-
-## ⌨ the terminal, live-transcribed
-
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/terminal-session.svg" alt="guild@acg:~ · example onboarding session" width="1040"/></a></div>
-
-This is the canonical onboarding path — `acg health`, `acg tag:read demo.heartbeat`, `chat hello`, `join paper-review`, `watch demo.heartbeat`. The third response line shows the **actual current heartbeat value** every rerender; the whole card deep-links to the live terminal so you can type the next command yourself.
-
----
-
-## ⚙ PackML state chart
-
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/programs/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/packml-statechart.svg" alt="PackML 16-state machine · current state haloed" width="1040"/></a></div>
-
-All sixteen ISA-88/PackML states laid out as nodes with transition edges. The pulse halo tracks whichever state `packml.current` currently holds — write that tag from the [control deck](https://aicraftspeopleguild.github.io/guild/apps/control-deck/) or the [UDT editor](https://aicraftspeopleguild.github.io/guild/apps/udt-editor/#udt=machine&instance=line-1) and the halo moves on the next rerender.
-
----
-
-## 🌲 UDT type hierarchy
-
-<div align="center"><a href="https://aicraftspeopleguild.github.io/guild/apps/udt-editor/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/udt-tree.svg" alt="UDT types · SVG composition ladder · automation stack · catalog · fabric" width="1040"/></a></div>
-
-Every type we catalog, grouped into four trees (SVG composition · automation · catalog · fabric). The count chips are pulled live from `tag.db.udts`; every node is a deep-link into the [UDT editor](https://aicraftspeopleguild.github.io/guild/apps/udt-editor/) filtered to that type.
 
 ---
 
@@ -170,14 +132,14 @@ Live from the GitHub REST API — 12-week commit sparkline on the left, last 8 c
 Every endpoint is rebuilt on every push and served directly from Pages. No backend, no auth.
 
 ```bash
-curl https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json
+curl https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json
 # → {"paperCount":24, "memberCount":8, "lastUpdated":"...", "apiVersion":"1.0"}
 
-curl https://aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json \
+curl https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json \
   | jq '.enterprise'
 # → live enterprise counters (papers · members · programs · runs · tagEdges · authoredLinks)
 
-curl https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/state.json \
+curl https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/state.json \
   | jq '.summary'
 # → {"tag_values":..., "events":..., "tool_runs":..., "faults_active":..., ...}
 ```
@@ -190,13 +152,13 @@ curl https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/state.json \
 
 | page | |
 |---|---|
-| [`/`](https://aicraftspeopleguild.github.io/) | Guild landing |
-| [`/guild/apps/terminal/`](https://aicraftspeopleguild.github.io/guild/apps/terminal/) | ACG CLI in the browser + chat bridge |
-| [`/guild/apps/whiteboard/`](https://aicraftspeopleguild.github.io/guild/apps/whiteboard/) | P2P collaborative whiteboard |
-| [`/guild/apps/p2p/`](https://aicraftspeopleguild.github.io/guild/apps/p2p/) | Raw mesh (WebRTC + WebTorrent tracker) |
-| [`/guild/Enterprise/L4/sandbox/web-llm/`](https://aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/web-llm/) | WebLLM sandbox |
-| [`/guild/Enterprise/`](https://aicraftspeopleguild.github.io/guild/Enterprise/) | Enterprise controls · NESW dock |
-| [`/sitemap.xml`](https://aicraftspeopleguild.github.io/sitemap.xml) | Full sitemap |
+| [`/`](https://teslasolar.github.io/aicraftspeopleguild.github.io/) | Guild landing |
+| [`/guild/apps/terminal/`](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/) | ACG CLI in the browser + chat bridge |
+| [`/guild/apps/whiteboard/`](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/whiteboard/) | P2P collaborative whiteboard |
+| [`/guild/apps/p2p/`](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/p2p/) | Raw mesh (WebRTC + WebTorrent tracker) |
+| [`/guild/Enterprise/L4/sandbox/web-llm/`](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/web-llm/) | WebLLM sandbox |
+| [`/guild/Enterprise/`](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/) | Enterprise controls · NESW dock |
+| [`/sitemap.xml`](https://teslasolar.github.io/aicraftspeopleguild.github.io/sitemap.xml) | Full sitemap |
 
 ---
 

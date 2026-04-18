@@ -4,7 +4,7 @@
     "id":          "health",
     "name":        "Live health.json watcher",
     "description": "Poll the live /api/health.json on GitHub Pages. When paperCount changes, fire api.health.paperCount so widgets refresh and state:summary reflects the new count.",
-    "url":         "https://aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json",
+    "url":         "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json",
     "output_tag":  "api.health.paperCount",
     "watch_field": "paperCount",
     "interval_s":  60,

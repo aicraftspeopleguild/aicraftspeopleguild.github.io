@@ -28,7 +28,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const BASE = process.env.TEST_BASE || 'https://aicraftspeopleguild.github.io/';
+const BASE = process.env.TEST_BASE || 'https://teslasolar.github.io/aicraftspeopleguild.github.io/';
 const OUT  = path.resolve(__dirname, '..', 'dist', 'live-shots');
 
 const ROUTES = [

@@ -9,7 +9,7 @@
 function _detectBase() {
   const host = location.hostname;
   if (host === 'localhost' || host === '127.0.0.1') {
-    return 'https://aicraftspeopleguild.github.io/guild/Enterprise/L4';
+    return 'https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4';
   }
   // If path contains a project-page prefix (/<repo>/...), keep it.
   const first = (location.pathname.split('/').filter(Boolean)[0]) || '';

@@ -13,17 +13,15 @@ clicks → GitHub opens with the title/body/labels pre-populated → user
 clicks Submit → .github/workflows/cmd.yml fires and runs the matching
 action, auto-closing the issue with a receipt comment.
 """
-import os, sys, urllib.parse
+import sys, urllib.parse
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import svg_widget as S
-import site_base
 
 OUT  = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "cmd-panel.svg"
-REPO_SLUG = os.environ.get("GH_TAG_REPO", "aicraftspeopleguild/aicraftspeopleguild.github.io")
-BASE = site_base.site_base()
+REPO_SLUG = "teslasolar/aicraftspeopleguild.github.io"
 
 
 def issue_url(title: str, body: str = "", labels: list = None) -> str:
@@ -67,7 +65,7 @@ def render() -> str:
         x = gap + c * (cw + gap)
         y = 56 + r * (ch + gap)
         if cmd == "open-whiteboard":
-            url = f"{BASE}/guild/apps/whiteboard/"
+            url = f"https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/whiteboard/"
         else:
             url = issue_url(cmd, body)
         bg, _ = S.panel(x, y, cw, ch)

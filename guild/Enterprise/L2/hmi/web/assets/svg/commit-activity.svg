@@ -29,7 +29,7 @@
   <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
   <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
   <circle cx="66" cy="18" r="6" fill="#27c93f"/>
-  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ commit activity · github.com/aicraftspeopleguild/aicraftspeopleguild.github.io</text>
+  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ commit activity · github.com/teslasolar/aicraftspeopleguild.github.io</text>
 <text x="24" y="70" class="t lb g">last 12 weeks</text>
 <text x="24" y="96" class="t va">161</text>
 <text x="24" y="114" class="t sub">commits</text>
@@ -37,28 +37,28 @@
 <line x1="440" y1="56" x2="441" y2="56" stroke="#30363d" stroke-width="1"/>
 <line x1="460" y1="56" x2="460" y2="216" stroke="#30363d"/>
 <text x="480" y="70" class="t lb p">last 8 commits</text>
-<text x="480" y="96" class="t" font-size="11" fill="#79c0ff">685d825</text>
+<text x="480" y="96" class="t" font-size="11" fill="#79c0ff">520cbc3</text>
 <text x="540" y="96" class="t sub">2026-04-18</text>
-<text x="620" y="96" class="t" font-size="11" fill="#e6edf3">Merge pull request #22 from aicraftspeopleguild/feat/udt-editor-and-</text>
-<text x="480" y="114" class="t" font-size="11" fill="#79c0ff">ff5c247</text>
+<text x="620" y="96" class="t" font-size="11" fill="#e6edf3">Merge teslasolar branch bot regens</text>
+<text x="480" y="114" class="t" font-size="11" fill="#79c0ff">6287818</text>
 <text x="540" y="114" class="t sub">2026-04-18</text>
-<text x="620" y="114" class="t" font-size="11" fill="#e6edf3">fix(members): render avatar_href images instead of initials-only</text>
-<text x="480" y="132" class="t" font-size="11" fill="#79c0ff">27f42bc</text>
+<text x="620" y="114" class="t" font-size="11" fill="#e6edf3">4 more expansive SVG organisms: fault-timeline, commit-activity, sca</text>
+<text x="480" y="132" class="t" font-size="11" fill="#79c0ff">19f773d</text>
 <text x="540" y="132" class="t sub">2026-04-18</text>
-<text x="620" y="132" class="t" font-size="11" fill="#e6edf3">feat: StateMachineScript UDT + @tag-event ingestor</text>
-<text x="480" y="150" class="t" font-size="11" fill="#79c0ff">96aaf4d</text>
+<text x="620" y="132" class="t" font-size="11" fill="#e6edf3">Merge origin/main (PR #18 + #19) into rewrite</text>
+<text x="480" y="150" class="t" font-size="11" fill="#79c0ff">df07c00</text>
 <text x="540" y="150" class="t sub">2026-04-18</text>
-<text x="620" y="150" class="t" font-size="11" fill="#e6edf3">feat: compressed UDT editor + self-detect repo + resilient heartbeat</text>
-<text x="480" y="168" class="t" font-size="11" fill="#79c0ff">754ccd1</text>
+<text x="620" y="150" class="t" font-size="11" fill="#e6edf3">Merge pull request #6 from teslasolar/main</text>
+<text x="480" y="168" class="t" font-size="11" fill="#79c0ff">528add9</text>
 <text x="540" y="168" class="t sub">2026-04-18</text>
-<text x="620" y="168" class="t" font-size="11" fill="#e6edf3">Decompose control-deck into 5 ES modules + ControlAction UDTs</text>
-<text x="480" y="186" class="t" font-size="11" fill="#79c0ff">8a653db</text>
+<text x="620" y="168" class="t" font-size="11" fill="#e6edf3">Merge teslasolar/main bot regens</text>
+<text x="480" y="186" class="t" font-size="11" fill="#79c0ff">adcf234</text>
 <text x="540" y="186" class="t sub">2026-04-18</text>
-<text x="620" y="186" class="t" font-size="11" fill="#e6edf3">Merge pull request #20 from aicraftspeopleguild/acg-restructure-and-</text>
-<text x="480" y="204" class="t" font-size="11" fill="#79c0ff">69cc5da</text>
+<text x="620" y="186" class="t" font-size="11" fill="#e6edf3">Merge teslasolar branch bot regens</text>
+<text x="480" y="204" class="t" font-size="11" fill="#79c0ff">9859aaf</text>
 <text x="540" y="204" class="t sub">2026-04-18</text>
-<text x="620" y="204" class="t" font-size="11" fill="#e6edf3">Control deck self-finds its back URL — drops hardcoded back= from RE</text>
-<text x="480" y="222" class="t" font-size="11" fill="#79c0ff">e9e6e61</text>
+<text x="620" y="204" class="t" font-size="11" fill="#e6edf3">Merge origin branch (auto-index + bot SVG)</text>
+<text x="480" y="222" class="t" font-size="11" fill="#79c0ff">cd54733</text>
 <text x="540" y="222" class="t sub">2026-04-18</text>
-<text x="620" y="222" class="t" font-size="11" fill="#e6edf3">Merge remote-tracking branch 'teslasolar/acg-restructure-and-enginee</text>
+<text x="620" y="222" class="t" font-size="11" fill="#e6edf3">heartbeat: regenerate SVG widget frames</text>
 </svg>

@@ -22,8 +22,8 @@ function detectRepo() {
     // user/org page: repo name == hostname
     return `${owner}/${host}`;
   }
-  // localhost / unknown → safe default (canonical org)
-  return 'aicraftspeopleguild/aicraftspeopleguild.github.io';
+  // localhost / unknown → safe default
+  return 'teslasolar/aicraftspeopleguild.github.io';
 }
 
 export const REPO = detectRepo();

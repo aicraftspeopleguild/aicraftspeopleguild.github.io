@@ -1,0 +1,1511 @@
+{
+  "dir": "guild/web/views",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 19,
+  "udt_count": 19,
+  "tags": {
+    "components:article-nav": {
+      "count": 1,
+      "files": [
+        "white-paper-article.view.json"
+      ]
+    },
+    "components:article-section": {
+      "count": 1,
+      "files": [
+        "white-paper-article.view.json"
+      ]
+    },
+    "components:badge-row": {
+      "count": 1,
+      "files": [
+        "member-profile.view.json"
+      ]
+    },
+    "components:callout": {
+      "count": 1,
+      "files": [
+        "white-paper-article.view.json"
+      ]
+    },
+    "components:card-grid": {
+      "count": 3,
+      "files": [
+        "home.view.json",
+        "members-index.view.json",
+        "white-paper-index.view.json"
+      ]
+    },
+    "components:closing-statement": {
+      "count": 1,
+      "files": [
+        "white-paper-article.view.json"
+      ]
+    },
+    "components:code-block": {
+      "count": 1,
+      "files": [
+        "white-paper-article.view.json"
+      ]
+    },
+    "components:cta-section": {
+      "count": 5,
+      "files": [
+        "home.view.json",
+        "member-profile.view.json",
+        "members-index.view.json",
+        "white-paper-article.view.json",
+        "white-paper-index.view.json"
+      ]
+    },
+    "components:figure-block": {
+      "count": 2,
+      "files": [
+        "member-profile.view.json",
+        "white-paper-article.view.json"
+      ]
+    },
+    "components:intro-panel": {
+      "count": 5,
+      "files": [
+        "home.view.json",
+        "member-profile.view.json",
+        "members-index.view.json",
+        "white-paper-article.view.json",
+        "white-paper-index.view.json"
+      ]
+    },
+    "components:member-card": {
+      "count": 1,
+      "files": [
+        "members-index.view.json"
+      ]
+    },
+    "components:page-shell": {
+      "count": 19,
+      "files": [
+        "ai-rituals.view.json",
+        "aicraftspeopleguild-manifesto.view.json",
+        "charter.view.json",
+        "chief-ai-skeptic-officer.view.json",
+        "code-of-conduct.view.json",
+        "flywheel.view.json",
+        "guild-radar.view.json",
+        "hall-of-fame.view.json",
+        "hall-of-shame.view.json",
+        "home.view.json",
+        "hushbell-full-spec.view.json",
+        "hushbell.view.json",
+        "member-profile.view.json",
+        "members-index.view.json",
+        "mission-statement.view.json",
+        "mob-programming.view.json",
+        "showcases.view.json",
+        "white-paper-article.view.json",
+        "white-paper-index.view.json"
+      ]
+    },
+    "components:paper-card": {
+      "count": 1,
+      "files": [
+        "white-paper-index.view.json"
+      ]
+    },
+    "components:pull-quote": {
+      "count": 1,
+      "files": [
+        "white-paper-article.view.json"
+      ]
+    },
+    "components:raw-html": {
+      "count": 14,
+      "files": [
+        "ai-rituals.view.json",
+        "aicraftspeopleguild-manifesto.view.json",
+        "charter.view.json",
+        "chief-ai-skeptic-officer.view.json",
+        "code-of-conduct.view.json",
+        "flywheel.view.json",
+        "guild-radar.view.json",
+        "hall-of-fame.view.json",
+        "hall-of-shame.view.json",
+        "hushbell-full-spec.view.json",
+        "hushbell.view.json",
+        "mission-statement.view.json",
+        "mob-programming.view.json",
+        "showcases.view.json"
+      ]
+    },
+    "data_sources:members/index.json": {
+      "count": 1,
+      "files": [
+        "members-index.view.json"
+      ]
+    },
+    "data_sources:members/udts/instances/:slug.json": {
+      "count": 1,
+      "files": [
+        "member-profile.view.json"
+      ]
+    },
+    "data_sources:views/data/ai-rituals.data.json": {
+      "count": 1,
+      "files": [
+        "ai-rituals.view.json"
+      ]
+    },
+    "data_sources:views/data/aicraftspeopleguild-manifesto.data.json": {
+      "count": 1,
+      "files": [
+        "aicraftspeopleguild-manifesto.view.json"
+      ]
+    },
+    "data_sources:views/data/charter.data.json": {
+      "count": 1,
+      "files": [
+        "charter.view.json"
+      ]
+    },
+    "data_sources:views/data/chief-ai-skeptic-officer.data.json": {
+      "count": 1,
+      "files": [
+        "chief-ai-skeptic-officer.view.json"
+      ]
+    },
+    "data_sources:views/data/code-of-conduct.data.json": {
+      "count": 1,
+      "files": [
+        "code-of-conduct.view.json"
+      ]
+    },
+    "data_sources:views/data/flywheel.data.json": {
+      "count": 1,
+      "files": [
+        "flywheel.view.json"
+      ]
+    },
+    "data_sources:views/data/guild-radar.data.json": {
+      "count": 1,
+      "files": [
+        "guild-radar.view.json"
+      ]
+    },
+    "data_sources:views/data/hall-of-fame.data.json": {
+      "count": 1,
+      "files": [
+        "hall-of-fame.view.json"
+      ]
+    },
+    "data_sources:views/data/hall-of-shame.data.json": {
+      "count": 1,
+      "files": [
+        "hall-of-shame.view.json"
+      ]
+    },
+    "data_sources:views/data/home.data.json": {
+      "count": 1,
+      "files": [
+        "home.view.json"
+      ]
+    },
+    "data_sources:views/data/hushbell-full-spec.data.json": {
+      "count": 1,
+      "files": [
+        "hushbell-full-spec.view.json"
+      ]
+    },
+    "data_sources:views/data/hushbell.data.json": {
+      "count": 1,
+      "files": [
+        "hushbell.view.json"
+      ]
+    },
+    "data_sources:views/data/mission-statement.data.json": {
+      "count": 1,
+      "files": [
+        "mission-statement.view.json"
+      ]
+    },
+    "data_sources:views/data/mob-programming.data.json": {
+      "count": 1,
+      "files": [
+        "mob-programming.view.json"
+      ]
+    },
+    "data_sources:views/data/showcases.data.json": {
+      "count": 1,
+      "files": [
+        "showcases.view.json"
+      ]
+    },
+    "data_sources:white-papers/index.json": {
+      "count": 1,
+      "files": [
+        "white-paper-index.view.json"
+      ]
+    },
+    "data_sources:white-papers/udts/instances/:slug.json": {
+      "count": 1,
+      "files": [
+        "white-paper-article.view.json"
+      ]
+    },
+    "ext:json": {
+      "count": 19,
+      "files": [
+        "ai-rituals.view.json",
+        "aicraftspeopleguild-manifesto.view.json",
+        "charter.view.json",
+        "chief-ai-skeptic-officer.view.json",
+        "code-of-conduct.view.json",
+        "flywheel.view.json",
+        "guild-radar.view.json",
+        "hall-of-fame.view.json",
+        "hall-of-shame.view.json",
+        "home.view.json",
+        "hushbell-full-spec.view.json",
+        "hushbell.view.json",
+        "member-profile.view.json",
+        "members-index.view.json",
+        "mission-statement.view.json",
+        "mob-programming.view.json",
+        "showcases.view.json",
+        "white-paper-article.view.json",
+        "white-paper-index.view.json"
+      ]
+    },
+    "id:ai-rituals": {
+      "count": 1,
+      "files": [
+        "ai-rituals.view.json"
+      ]
+    },
+    "id:aicraftspeopleguild-manifesto": {
+      "count": 1,
+      "files": [
+        "aicraftspeopleguild-manifesto.view.json"
+      ]
+    },
+    "id:charter": {
+      "count": 1,
+      "files": [
+        "charter.view.json"
+      ]
+    },
+    "id:chief-ai-skeptic-officer": {
+      "count": 1,
+      "files": [
+        "chief-ai-skeptic-officer.view.json"
+      ]
+    },
+    "id:code-of-conduct": {
+      "count": 1,
+      "files": [
+        "code-of-conduct.view.json"
+      ]
+    },
+    "id:flywheel": {
+      "count": 1,
+      "files": [
+        "flywheel.view.json"
+      ]
+    },
+    "id:guild-radar": {
+      "count": 1,
+      "files": [
+        "guild-radar.view.json"
+      ]
+    },
+    "id:hall-of-fame": {
+      "count": 1,
+      "files": [
+        "hall-of-fame.view.json"
+      ]
+    },
+    "id:hall-of-shame": {
+      "count": 1,
+      "files": [
+        "hall-of-shame.view.json"
+      ]
+    },
+    "id:home": {
+      "count": 1,
+      "files": [
+        "home.view.json"
+      ]
+    },
+    "id:hushbell": {
+      "count": 1,
+      "files": [
+        "hushbell.view.json"
+      ]
+    },
+    "id:hushbell-full-spec": {
+      "count": 1,
+      "files": [
+        "hushbell-full-spec.view.json"
+      ]
+    },
+    "id:member-profile": {
+      "count": 1,
+      "files": [
+        "member-profile.view.json"
+      ]
+    },
+    "id:members-index": {
+      "count": 1,
+      "files": [
+        "members-index.view.json"
+      ]
+    },
+    "id:mission-statement": {
+      "count": 1,
+      "files": [
+        "mission-statement.view.json"
+      ]
+    },
+    "id:mob-programming": {
+      "count": 1,
+      "files": [
+        "mob-programming.view.json"
+      ]
+    },
+    "id:showcases": {
+      "count": 1,
+      "files": [
+        "showcases.view.json"
+      ]
+    },
+    "id:white-paper-article": {
+      "count": 1,
+      "files": [
+        "white-paper-article.view.json"
+      ]
+    },
+    "id:white-paper-index": {
+      "count": 1,
+      "files": [
+        "white-paper-index.view.json"
+      ]
+    },
+    "udt:View": {
+      "count": 19,
+      "files": [
+        "ai-rituals.view.json",
+        "aicraftspeopleguild-manifesto.view.json",
+        "charter.view.json",
+        "chief-ai-skeptic-officer.view.json",
+        "code-of-conduct.view.json",
+        "flywheel.view.json",
+        "guild-radar.view.json",
+        "hall-of-fame.view.json",
+        "hall-of-shame.view.json",
+        "home.view.json",
+        "hushbell-full-spec.view.json",
+        "hushbell.view.json",
+        "member-profile.view.json",
+        "members-index.view.json",
+        "mission-statement.view.json",
+        "mob-programming.view.json",
+        "showcases.view.json",
+        "white-paper-article.view.json",
+        "white-paper-index.view.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "View": 19
+  },
+  "sections": {},
+  "kinds": {
+    "json": 19
+  },
+  "refs": {
+    "components": {
+      "article-nav": 1,
+      "article-section": 1,
+      "badge-row": 1,
+      "callout": 1,
+      "card-grid": 3,
+      "closing-statement": 1,
+      "code-block": 1,
+      "cta-section": 5,
+      "figure-block": 2,
+      "intro-panel": 5,
+      "member-card": 1,
+      "page-shell": 19,
+      "paper-card": 1,
+      "pull-quote": 1,
+      "raw-html": 14
+    },
+    "data_sources": {
+      "members/index.json": 1,
+      "members/udts/instances/:slug.json": 1,
+      "views/data/ai-rituals.data.json": 1,
+      "views/data/aicraftspeopleguild-manifesto.data.json": 1,
+      "views/data/charter.data.json": 1,
+      "views/data/chief-ai-skeptic-officer.data.json": 1,
+      "views/data/code-of-conduct.data.json": 1,
+      "views/data/flywheel.data.json": 1,
+      "views/data/guild-radar.data.json": 1,
+      "views/data/hall-of-fame.data.json": 1,
+      "views/data/hall-of-shame.data.json": 1,
+      "views/data/home.data.json": 1,
+      "views/data/hushbell-full-spec.data.json": 1,
+      "views/data/hushbell.data.json": 1,
+      "views/data/mission-statement.data.json": 1,
+      "views/data/mob-programming.data.json": 1,
+      "views/data/showcases.data.json": 1,
+      "white-papers/index.json": 1,
+      "white-papers/udts/instances/:slug.json": 1
+    }
+  },
+  "ids": {
+    "ai-rituals": 1,
+    "aicraftspeopleguild-manifesto": 1,
+    "charter": 1,
+    "chief-ai-skeptic-officer": 1,
+    "code-of-conduct": 1,
+    "flywheel": 1,
+    "guild-radar": 1,
+    "hall-of-fame": 1,
+    "hall-of-shame": 1,
+    "home": 1,
+    "hushbell": 1,
+    "hushbell-full-spec": 1,
+    "member-profile": 1,
+    "members-index": 1,
+    "mission-statement": 1,
+    "mob-programming": 1,
+    "showcases": 1,
+    "white-paper-article": 1,
+    "white-paper-index": 1
+  },
+  "udts": [
+    {
+      "file": "ai-rituals.view.json",
+      "udtType": "View",
+      "id": "ai-rituals",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "ai-rituals",
+          "description": "Decomposed view for ai-rituals",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "ai-rituals",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/ai-rituals.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "aicraftspeopleguild-manifesto.view.json",
+      "udtType": "View",
+      "id": "aicraftspeopleguild-manifesto",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "aicraftspeopleguild-manifesto",
+          "description": "Decomposed view for aicraftspeopleguild-manifesto",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "aicraftspeopleguild-manifesto",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/aicraftspeopleguild-manifesto.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "charter.view.json",
+      "udtType": "View",
+      "id": "charter",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "charter",
+          "description": "Decomposed view for charter",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "charter",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/charter.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "chief-ai-skeptic-officer.view.json",
+      "udtType": "View",
+      "id": "chief-ai-skeptic-officer",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "chief-ai-skeptic-officer",
+          "description": "Decomposed view for chief-ai-skeptic-officer",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "chief-ai-skeptic-officer",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/chief-ai-skeptic-officer.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "code-of-conduct.view.json",
+      "udtType": "View",
+      "id": "code-of-conduct",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "code-of-conduct",
+          "description": "Decomposed view for code-of-conduct",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "code-of-conduct",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/code-of-conduct.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "flywheel.view.json",
+      "udtType": "View",
+      "id": "flywheel",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "flywheel",
+          "description": "Decomposed view for flywheel",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "flywheel",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/flywheel.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "guild-radar.view.json",
+      "udtType": "View",
+      "id": "guild-radar",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "guild-radar",
+          "description": "Decomposed view for guild-radar",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "guild-radar",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/guild-radar.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hall-of-fame.view.json",
+      "udtType": "View",
+      "id": "hall-of-fame",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "hall-of-fame",
+          "description": "Decomposed view for hall-of-fame",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "hall-of-fame",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/hall-of-fame.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hall-of-shame.view.json",
+      "udtType": "View",
+      "id": "hall-of-shame",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "hall-of-shame",
+          "description": "Decomposed view for hall-of-shame",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "hall-of-shame",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/hall-of-shame.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "home.view.json",
+      "udtType": "View",
+      "id": "home",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "home",
+          "description": "Home page — manifesto grid, signature form, site navigation",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "AI Craftspeople Guild",
+              "subtitle": "A professional guild for software engineers exploring the craft of AI-assisted development.",
+              "bodyClass": "page-home",
+              "stylesheets": [
+                "style/main.css"
+              ]
+            },
+            "children": [
+              {
+                "type": "IntroPanel",
+                "props": {
+                  "cssVariant": "context-section",
+                  "content": "{{ page.context }}"
+                }
+              },
+              {
+                "type": "CardGrid",
+                "props": {
+                  "heading": "The Manifesto",
+                  "gridClass": "manifesto-grid",
+                  "shellClass": "manifesto-section"
+                },
+                "repeat": {
+                  "source": "manifestoCards",
+                  "as": "card",
+                  "template": {
+                    "type": "ManifestoCard",
+                    "props": {
+                      "icon": "{{ card.icon }}",
+                      "title": "{{ card.title }}",
+                      "content": "{{ card.content }}"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "CardGrid",
+                "props": {
+                  "heading": "Explore the Guild",
+                  "gridClass": "manifesto-grid",
+                  "shellClass": "cta-nav-section"
+                },
+                "repeat": {
+                  "source": "navCards",
+                  "as": "nav",
+                  "template": {
+                    "type": "NavCard",
+                    "props": {
+                      "title": "{{ nav.title }}",
+                      "description": "{{ nav.description }}",
+                      "href": "{{ nav.href }}"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "CTASection",
+                "props": {
+                  "heading": "Join the Guild",
+                  "description": "Sign the manifesto and become part of a professional community.",
+                  "primaryText": "Read the Manifesto",
+                  "primaryHref": "#/manifesto",
+                  "secondaryText": "View White Papers",
+                  "secondaryHref": "#/white-papers"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "home",
+          "component_ids": [
+            "page-shell",
+            "intro-panel",
+            "card-grid",
+            "cta-section"
+          ],
+          "data_sources": [
+            "views/data/home.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hushbell-full-spec.view.json",
+      "udtType": "View",
+      "id": "hushbell-full-spec",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "hushbell-full-spec",
+          "description": "Decomposed view for hushbell-full-spec",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "hushbell-full-spec",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/hushbell-full-spec.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hushbell.view.json",
+      "udtType": "View",
+      "id": "hushbell",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "hushbell",
+          "description": "Decomposed view for hushbell",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "hushbell",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/hushbell.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "member-profile.view.json",
+      "udtType": "View",
+      "id": "member-profile",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "member-profile",
+          "description": "Individual Guild member profile page",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ member.parameters.name }}",
+              "subtitle": "{{ member.parameters.title }}",
+              "bodyClass": "page-member-profile",
+              "stylesheets": [
+                "style/main.css",
+                "style/member-profile.css"
+              ],
+              "eyebrow": "ACG Member",
+              "backHref": "#/members",
+              "backLabel": "Back to Members"
+            },
+            "children": [
+              {
+                "type": "IntroPanel",
+                "props": {
+                  "content": "{{ member.parameters.bio }}"
+                }
+              },
+              {
+                "type": "FigureBlock",
+                "when": "{{ member.parameters.avatar_href }}",
+                "props": {
+                  "src": "{{ member.parameters.avatar_href }}",
+                  "alt": "{{ member.parameters.name }} portrait",
+                  "caption": ""
+                }
+              },
+              {
+                "type": "BadgeRow",
+                "when": "{{ member.parameters.expertise_tags }}",
+                "props": {
+                  "items": "{{ member.parameters.expertise_tags }}"
+                }
+              },
+              {
+                "type": "CTASection",
+                "props": {
+                  "heading": "Explore More",
+                  "primaryText": "Back to Members",
+                  "primaryHref": "#/members",
+                  "secondaryText": "Back to Home",
+                  "secondaryHref": "#/"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "member-profile",
+          "component_ids": [
+            "page-shell",
+            "intro-panel",
+            "figure-block",
+            "badge-row",
+            "cta-section"
+          ],
+          "data_sources": [
+            "members/udts/instances/:slug.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "members-index.view.json",
+      "udtType": "View",
+      "id": "members-index",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "members-index",
+          "description": "Members directory page with profile cards",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "Guild Members",
+              "subtitle": "{{ page.subtitle }}",
+              "bodyClass": "page-members",
+              "stylesheets": [
+                "style/main.css"
+              ],
+              "backHref": "#/",
+              "backLabel": "Back to Home"
+            },
+            "children": [
+              {
+                "type": "IntroPanel",
+                "props": {
+                  "content": "{{ page.intro }}"
+                }
+              },
+              {
+                "type": "CardGrid",
+                "props": {
+                  "heading": "Current Members",
+                  "gridClass": "members-list",
+                  "shellClass": "members-shell"
+                },
+                "repeat": {
+                  "source": "members",
+                  "as": "member",
+                  "template": {
+                    "type": "MemberCard",
+                    "props": {
+                      "name": "{{ member.parameters.name }}",
+                      "role": "{{ member.parameters.role }}",
+                      "title": "{{ member.parameters.title }}",
+                      "bio": "{{ member.parameters.bio }}",
+                      "summary": "{{ member.parameters.summary }}",
+                      "avatarSrc": "{{ member.parameters.avatar_href }}",
+                      "avatarAlt": "{{ member.parameters.name }} portrait",
+                      "profileHref": "members/{{ member.tags.slug }}/",
+                      "expertiseTags": "{{ member.parameters.expertise_tags }}"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "CTASection",
+                "props": {
+                  "heading": "Join the Guild",
+                  "primaryText": "Read the Charter",
+                  "primaryHref": "charter.html",
+                  "secondaryText": "Back to Home",
+                  "secondaryHref": "#/"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "members-index",
+          "component_ids": [
+            "page-shell",
+            "intro-panel",
+            "card-grid",
+            "member-card",
+            "cta-section"
+          ],
+          "data_sources": [
+            "members/index.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "mission-statement.view.json",
+      "udtType": "View",
+      "id": "mission-statement",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "mission-statement",
+          "description": "Decomposed view for mission-statement",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "mission-statement",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/mission-statement.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "mob-programming.view.json",
+      "udtType": "View",
+      "id": "mob-programming",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "mob-programming",
+          "description": "Decomposed view for mob-programming",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "mob-programming",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/mob-programming.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "showcases.view.json",
+      "udtType": "View",
+      "id": "showcases",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "showcases",
+          "description": "Decomposed view for showcases",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ page.title }}",
+              "subtitle": "{{ page.subtitle }}",
+              "eyebrow": "{{ page.eyebrow }}",
+              "bodyClass": "{{ page.bodyClass }}",
+              "backHref": "{{ page.backHref }}",
+              "backLabel": "{{ page.backLabel }}"
+            },
+            "children": [
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ page.body }}"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "showcases",
+          "component_ids": [
+            "page-shell",
+            "raw-html"
+          ],
+          "data_sources": [
+            "views/data/showcases.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "white-paper-article.view.json",
+      "udtType": "View",
+      "id": "white-paper-article",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "white-paper-article",
+          "description": "Individual white paper article page",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ paper.parameters.title }}",
+              "subtitle": "{{ paper.parameters.summary }}",
+              "bodyClass": "page-white-paper",
+              "stylesheets": [
+                "style/main.css"
+              ],
+              "eyebrow": "ACG White Paper",
+              "backHref": "../white-papers.html",
+              "backLabel": "Back to White Papers",
+              "meta": [
+                "{{ paper.parameters.authors.0 }}",
+                "{{ paper.parameters.publication_date }}",
+                "{{ paper.parameters.doc_number }}"
+              ]
+            },
+            "children": [
+              {
+                "type": "ArticleNav",
+                "props": {
+                  "sections": "{{ article.sections }}"
+                }
+              },
+              {
+                "type": "IntroPanel",
+                "props": {
+                  "cssVariant": "lead",
+                  "content": "{{ article.lead }}"
+                }
+              },
+              {
+                "type": "ArticleBody",
+                "repeat": {
+                  "source": "article.sections",
+                  "as": "section",
+                  "template": {
+                    "type": "ArticleSection",
+                    "props": {
+                      "id": "{{ section.id }}",
+                      "title": "{{ section.label }}"
+                    },
+                    "children": "{{ section.content }}"
+                  }
+                }
+              },
+              {
+                "type": "ClosingStatement",
+                "props": {
+                  "content": "{{ article.closing }}",
+                  "paperMark": "{{ article.paper_mark }}"
+                }
+              },
+              {
+                "type": "CTASection",
+                "props": {
+                  "heading": "Continue Reading",
+                  "primaryText": "Back to White Papers",
+                  "primaryHref": "../white-papers.html",
+                  "secondaryText": "Back to Home",
+                  "secondaryHref": "#/"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "white-paper-article",
+          "component_ids": [
+            "page-shell",
+            "article-nav",
+            "intro-panel",
+            "article-section",
+            "closing-statement",
+            "cta-section",
+            "callout",
+            "figure-block",
+            "code-block",
+            "pull-quote"
+          ],
+          "data_sources": [
+            "white-papers/udts/instances/:slug.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "white-paper-index.view.json",
+      "udtType": "View",
+      "id": "white-paper-index",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "white-paper-index",
+          "description": "White papers listing page with card grid",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "White Papers",
+              "subtitle": "{{ page.subtitle }}",
+              "bodyClass": "page-white-papers",
+              "stylesheets": [
+                "style/main.css"
+              ],
+              "backHref": "../../index.html",
+              "backLabel": "Back to Home"
+            },
+            "children": [
+              {
+                "type": "IntroPanel",
+                "props": {
+                  "content": "{{ page.intro }}"
+                }
+              },
+              {
+                "type": "CardGrid",
+                "props": {
+                  "heading": "Available Papers",
+                  "subheading": "{{ page.grid_subheading }}",
+                  "gridClass": "papers-grid",
+                  "shellClass": "papers-shell"
+                },
+                "repeat": {
+                  "source": "papers",
+                  "as": "paper",
+                  "template": {
+                    "type": "PaperCard",
+                    "props": {
+                      "title": "{{ paper.parameters.title }}",
+                      "authors": "{{ paper.parameters.authors }}",
+                      "date": "{{ paper.parameters.publication_date }}",
+                      "docNumber": "{{ paper.parameters.doc_number }}",
+                      "summary": "{{ paper.parameters.summary }}",
+                      "href": "{{ paper.parameters.site_href }}",
+                      "status": "{{ paper.parameters.status }}",
+                      "tags": "{{ paper.parameters.tags }}"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "CTASection",
+                "props": {
+                  "heading": "Contribute a Paper",
+                  "description": "Drop a Markdown or CSV file in white-papers/originals/ and run the ingest pipeline.",
+                  "primaryText": "Back to White Papers",
+                  "primaryHref": "#",
+                  "secondaryText": "Back to Home",
+                  "secondaryHref": "../../index.html"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "white-paper-index",
+          "component_ids": [
+            "page-shell",
+            "intro-panel",
+            "card-grid",
+            "paper-card",
+            "cta-section"
+          ],
+          "data_sources": [
+            "white-papers/index.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

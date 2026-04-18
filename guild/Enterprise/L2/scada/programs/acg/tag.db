@@ -1,0 +1,33 @@
+{
+  "dir": "guild/Enterprise/L2/scada/programs/acg",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 10,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 10,
+      "files": [
+        "auth.json",
+        "chat.json",
+        "config.json",
+        "main.json",
+        "p2p.json",
+        "peers.json",
+        "sandbox-bridge.json",
+        "scada-monitor.json",
+        "scada-tags.json",
+        "version.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 10
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

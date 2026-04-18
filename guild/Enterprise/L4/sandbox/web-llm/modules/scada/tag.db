@@ -1,0 +1,26 @@
+{
+  "dir": "guild/Enterprise/L4/sandbox/web-llm/modules/scada",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 3,
+  "udt_count": 0,
+  "tags": {
+    "ext:js": {
+      "count": 3,
+      "files": [
+        "providers.js",
+        "tags.js",
+        "udt.js"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "js": 3
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

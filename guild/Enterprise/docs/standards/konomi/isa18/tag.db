@@ -1,0 +1,31 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/isa18",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 8,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 8,
+      "files": [
+        "Alarm.udt.json",
+        "AlarmClass.udt.json",
+        "AlarmLifecycle.sm.json",
+        "AlarmMetrics.udt.json",
+        "AlarmPriority.udt.json",
+        "AlarmState.udt.json",
+        "Rationalization.udt.json",
+        "_std.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 8
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

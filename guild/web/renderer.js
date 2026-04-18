@@ -293,11 +293,13 @@ const ACGRenderer = (function () {
     });
   }
 
-  // Resolve the active route. Hash form "#/slug" takes priority over pathname.
+  // Resolve the active route. Only hash form "#/slug" is treated as a route;
+  // plain anchor hashes like "#sign" or "#manifesto" are left to the browser
+  // (they scroll in-page and must NOT hijack the SPA router).
   function currentRoute() {
     var h = window.location.hash || '';
     if (h.indexOf('#/') === 0) return h.substring(1);        // "#/charter" → "/charter"
-    if (h.length > 1) return '/' + h.substring(1);           // "#charter" → "/charter"
+    if (h.length > 1) return '/';                            // "#sign" → stay on landing, let browser scroll
     return window.location.pathname;
   }
 

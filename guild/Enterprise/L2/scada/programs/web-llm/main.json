@@ -2,7 +2,7 @@
   "§": "4.2.0",
   "🏗️": "🚀",
   "name": "main (web-llm)",
-  "module": "controls/sandbox/web-llm/modules/main.js",
+  "module": "L4/sandbox/web-llm/modules/main.js",
 
   "→": [
     { "name": "hydrateSelect", "flow": "MODELS → #model-select <option>s" },

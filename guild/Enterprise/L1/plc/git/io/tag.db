@@ -1,0 +1,28 @@
+{
+  "dir": "guild/Enterprise/L1/plc/git/io",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 5,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 5,
+      "files": [
+        "IO_Card.udt.json",
+        "IO_Config.udt.json",
+        "IO_Map.udt.json",
+        "IO_Point.udt.json",
+        "IO_Status.udt.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 5
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

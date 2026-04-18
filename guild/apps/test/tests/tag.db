@@ -1,0 +1,41 @@
+{
+  "dir": "guild/apps/test/tests",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 12,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 1,
+      "files": [
+        "manifest.json"
+      ]
+    },
+    "ext:yml": {
+      "count": 11,
+      "files": [
+        "deploy-pages.test.yml",
+        "example.test.yml",
+        "index.test.yml",
+        "paper-auto-index-standard.test.yml",
+        "paper-index.test.yml",
+        "process.test.yml",
+        "runner.test.yml",
+        "standard.test.yml",
+        "terminal.test.yml",
+        "types.test.yml",
+        "white-papers.test.yml"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 1,
+    "yml": 11
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

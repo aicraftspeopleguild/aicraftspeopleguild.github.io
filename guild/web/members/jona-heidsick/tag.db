@@ -1,0 +1,24 @@
+{
+  "dir": "guild/web/members/jona-heidsick",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 1,
+  "udt_count": 0,
+  "tags": {
+    "ext:png": {
+      "count": 1,
+      "files": [
+        "Jona.png"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "png": 1
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

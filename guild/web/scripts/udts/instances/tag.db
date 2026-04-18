@@ -1,0 +1,975 @@
+{
+  "dir": "guild/web/scripts/udts/instances",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 23,
+  "udt_count": 23,
+  "tags": {
+    "ext:json": {
+      "count": 23,
+      "files": [
+        "api--build-api_py.json",
+        "api--build-csv-catalog_py.json",
+        "api--build-runtime-tags_py.json",
+        "api--build-sitemap_py.json",
+        "apps--build-whitepaper-apps_py.json",
+        "build_js.json",
+        "build_sh.json",
+        "components--build-catalog_py.json",
+        "components--extract_py.json",
+        "db--build-local-tagdbs_py.json",
+        "docs--split-catalog_py.json",
+        "docs--split-udt-spec_py.json",
+        "fix-data-links_py.json",
+        "members--extract_py.json",
+        "members--regen-index_py.json",
+        "pages--build-path-graph_py.json",
+        "pages--decompose_py.json",
+        "perspective-build_js.json",
+        "test-browser_js.json",
+        "test-links_py.json",
+        "test-nav_js.json",
+        "white-papers--extract_py.json",
+        "white-papers--regen-index_py.json"
+      ]
+    },
+    "id:api--build-api_py": {
+      "count": 1,
+      "files": [
+        "api--build-api_py.json"
+      ]
+    },
+    "id:api--build-csv-catalog_py": {
+      "count": 1,
+      "files": [
+        "api--build-csv-catalog_py.json"
+      ]
+    },
+    "id:api--build-runtime-tags_py": {
+      "count": 1,
+      "files": [
+        "api--build-runtime-tags_py.json"
+      ]
+    },
+    "id:api--build-sitemap_py": {
+      "count": 1,
+      "files": [
+        "api--build-sitemap_py.json"
+      ]
+    },
+    "id:apps--build-whitepaper-apps_py": {
+      "count": 1,
+      "files": [
+        "apps--build-whitepaper-apps_py.json"
+      ]
+    },
+    "id:build_js": {
+      "count": 1,
+      "files": [
+        "build_js.json"
+      ]
+    },
+    "id:build_sh": {
+      "count": 1,
+      "files": [
+        "build_sh.json"
+      ]
+    },
+    "id:components--build-catalog_py": {
+      "count": 1,
+      "files": [
+        "components--build-catalog_py.json"
+      ]
+    },
+    "id:components--extract_py": {
+      "count": 1,
+      "files": [
+        "components--extract_py.json"
+      ]
+    },
+    "id:db--build-local-tagdbs_py": {
+      "count": 1,
+      "files": [
+        "db--build-local-tagdbs_py.json"
+      ]
+    },
+    "id:docs--split-catalog_py": {
+      "count": 1,
+      "files": [
+        "docs--split-catalog_py.json"
+      ]
+    },
+    "id:docs--split-udt-spec_py": {
+      "count": 1,
+      "files": [
+        "docs--split-udt-spec_py.json"
+      ]
+    },
+    "id:fix-data-links_py": {
+      "count": 1,
+      "files": [
+        "fix-data-links_py.json"
+      ]
+    },
+    "id:members--extract_py": {
+      "count": 1,
+      "files": [
+        "members--extract_py.json"
+      ]
+    },
+    "id:members--regen-index_py": {
+      "count": 1,
+      "files": [
+        "members--regen-index_py.json"
+      ]
+    },
+    "id:pages--build-path-graph_py": {
+      "count": 1,
+      "files": [
+        "pages--build-path-graph_py.json"
+      ]
+    },
+    "id:pages--decompose_py": {
+      "count": 1,
+      "files": [
+        "pages--decompose_py.json"
+      ]
+    },
+    "id:perspective-build_js": {
+      "count": 1,
+      "files": [
+        "perspective-build_js.json"
+      ]
+    },
+    "id:test-browser_js": {
+      "count": 1,
+      "files": [
+        "test-browser_js.json"
+      ]
+    },
+    "id:test-links_py": {
+      "count": 1,
+      "files": [
+        "test-links_py.json"
+      ]
+    },
+    "id:test-nav_js": {
+      "count": 1,
+      "files": [
+        "test-nav_js.json"
+      ]
+    },
+    "id:white-papers--extract_py": {
+      "count": 1,
+      "files": [
+        "white-papers--extract_py.json"
+      ]
+    },
+    "id:white-papers--regen-index_py": {
+      "count": 1,
+      "files": [
+        "white-papers--regen-index_py.json"
+      ]
+    },
+    "udt:Program": {
+      "count": 23,
+      "files": [
+        "api--build-api_py.json",
+        "api--build-csv-catalog_py.json",
+        "api--build-runtime-tags_py.json",
+        "api--build-sitemap_py.json",
+        "apps--build-whitepaper-apps_py.json",
+        "build_js.json",
+        "build_sh.json",
+        "components--build-catalog_py.json",
+        "components--extract_py.json",
+        "db--build-local-tagdbs_py.json",
+        "docs--split-catalog_py.json",
+        "docs--split-udt-spec_py.json",
+        "fix-data-links_py.json",
+        "members--extract_py.json",
+        "members--regen-index_py.json",
+        "pages--build-path-graph_py.json",
+        "pages--decompose_py.json",
+        "perspective-build_js.json",
+        "test-browser_js.json",
+        "test-links_py.json",
+        "test-nav_js.json",
+        "white-papers--extract_py.json",
+        "white-papers--regen-index_py.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "Program": 23
+  },
+  "sections": {},
+  "kinds": {
+    "json": 23
+  },
+  "refs": {},
+  "ids": {
+    "api--build-api_py": 1,
+    "api--build-csv-catalog_py": 1,
+    "api--build-runtime-tags_py": 1,
+    "api--build-sitemap_py": 1,
+    "apps--build-whitepaper-apps_py": 1,
+    "build_js": 1,
+    "build_sh": 1,
+    "components--build-catalog_py": 1,
+    "components--extract_py": 1,
+    "db--build-local-tagdbs_py": 1,
+    "docs--split-catalog_py": 1,
+    "docs--split-udt-spec_py": 1,
+    "fix-data-links_py": 1,
+    "members--extract_py": 1,
+    "members--regen-index_py": 1,
+    "pages--build-path-graph_py": 1,
+    "pages--decompose_py": 1,
+    "perspective-build_js": 1,
+    "test-browser_js": 1,
+    "test-links_py": 1,
+    "test-nav_js": 1,
+    "white-papers--extract_py": 1,
+    "white-papers--regen-index_py": 1
+  },
+  "udts": [
+    {
+      "file": "api--build-api_py.json",
+      "udtType": "Program",
+      "id": "api--build-api_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build Api",
+          "path": "guild/web/scripts/api/build-api.py",
+          "language": "python",
+          "category": "misc",
+          "purpose": "Build the static JSON API at guild/Enterprise/L4/api/ from the SQLite database.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "misc",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "api--build-api_py",
+          "state_log": "state/api--build-api_py.state.json",
+          "last_state": "COMPLETE",
+          "last_run_at": "2026-04-18T05:32:13Z",
+          "last_duration": "0.005",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "api--build-csv-catalog_py.json",
+      "udtType": "Program",
+      "id": "api--build-csv-catalog_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build Csv Catalog",
+          "path": "guild/web/scripts/api/build-csv-catalog.py",
+          "language": "python",
+          "category": "misc",
+          "purpose": "Export dense CSV catalogs of Guild tags and relations to guild/Enterprise/L4/csv/.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "misc",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "api--build-csv-catalog_py",
+          "state_log": "state/api--build-csv-catalog_py.state.json",
+          "last_state": "COMPLETE",
+          "last_run_at": "2026-04-18T05:32:13Z",
+          "last_duration": "0.012",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "api--build-runtime-tags_py.json",
+      "udtType": "Program",
+      "id": "api--build-runtime-tags_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build Runtime Tags",
+          "path": "guild/web/scripts/api/build-runtime-tags.py",
+          "language": "python",
+          "category": "misc",
+          "purpose": "Build guild/Enterprise/L4/runtime/tags.json — Ignition-style live tags reflecting",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "misc",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "api--build-runtime-tags_py",
+          "state_log": "state/api--build-runtime-tags_py.state.json",
+          "last_state": "COMPLETE",
+          "last_run_at": "2026-04-18T05:32:13Z",
+          "last_duration": "0.018",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "api--build-sitemap_py.json",
+      "udtType": "Program",
+      "id": "api--build-sitemap_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build Sitemap",
+          "path": "guild/web/scripts/api/build-sitemap.py",
+          "language": "python",
+          "category": "misc",
+          "purpose": "Build /sitemap.xml at repo root from Path UDT instances.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "misc",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "api--build-sitemap_py",
+          "state_log": "state/api--build-sitemap_py.state.json",
+          "last_state": "COMPLETE",
+          "last_run_at": "2026-04-18T05:32:13Z",
+          "last_duration": "0.005",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "apps--build-whitepaper-apps_py.json",
+      "udtType": "Program",
+      "id": "apps--build-whitepaper-apps_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build Whitepaper Apps",
+          "path": "guild/web/scripts/apps/build-whitepaper-apps.py",
+          "language": "python",
+          "category": "apps-pipeline",
+          "purpose": "Generate one App per white paper UDT instance.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "apps-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "apps--build-whitepaper-apps_py",
+          "state_log": "state/apps--build-whitepaper-apps_py.state.json",
+          "last_state": "COMPLETE",
+          "last_run_at": "2026-04-18T05:35:42Z",
+          "last_duration": "0.235",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "build_js.json",
+      "udtType": "Program",
+      "id": "build_js",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build",
+          "path": "guild/web/scripts/build.js",
+          "language": "node",
+          "category": "build-orchestrator",
+          "purpose": "",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "build-orchestrator",
+            "node"
+          ]
+        },
+        "tags": {
+          "id": "build_js",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "build_sh.json",
+      "udtType": "Program",
+      "id": "build_sh",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build",
+          "path": "guild/web/scripts/build.sh",
+          "language": "bash",
+          "category": "build-orchestrator",
+          "purpose": "ACG site build pipeline",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "build-orchestrator",
+            "bash"
+          ]
+        },
+        "tags": {
+          "id": "build_sh",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "components--build-catalog_py.json",
+      "udtType": "Program",
+      "id": "components--build-catalog_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build Catalog",
+          "path": "guild/web/scripts/components/build-catalog.py",
+          "language": "python",
+          "category": "components-pipeline",
+          "purpose": "Build nested UDT/tag catalog for components.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "components-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "components--build-catalog_py",
+          "state_log": "state/components--build-catalog_py.state.json",
+          "last_state": "COMPLETE",
+          "last_run_at": "2026-04-18T05:35:42Z",
+          "last_duration": "0.028",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "components--extract_py.json",
+      "udtType": "Program",
+      "id": "components--extract_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Extract",
+          "path": "guild/web/scripts/components/extract.py",
+          "language": "python",
+          "category": "components-pipeline",
+          "purpose": "Extract Component UDT instances from engineering docs.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "components-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "components--extract_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "db--build-local-tagdbs_py.json",
+      "udtType": "Program",
+      "id": "db--build-local-tagdbs_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build Local Tagdbs",
+          "path": "guild/web/scripts/db/build-local-tagdbs.py",
+          "language": "python",
+          "category": "misc",
+          "purpose": "Build per-directory tag.db files.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "misc",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "db--build-local-tagdbs_py",
+          "state_log": "state/db--build-local-tagdbs_py.state.json",
+          "last_state": "COMPLETE",
+          "last_run_at": "2026-04-18T05:32:13Z",
+          "last_duration": "0.606",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "docs--split-catalog_py.json",
+      "udtType": "Program",
+      "id": "docs--split-catalog_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Split Catalog",
+          "path": "guild/web/scripts/docs/split-catalog.py",
+          "language": "python",
+          "category": "docs-pipeline",
+          "purpose": "Split docs/engineering/component-catalog/index.md into per-component files.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "docs-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "docs--split-catalog_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "docs--split-udt-spec_py.json",
+      "udtType": "Program",
+      "id": "docs--split-udt-spec_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Split Udt Spec",
+          "path": "guild/web/scripts/docs/split-udt-spec.py",
+          "language": "python",
+          "category": "docs-pipeline",
+          "purpose": "Split tech-spec/udt-system.md into per-type files.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "docs-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "docs--split-udt-spec_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "fix-data-links_py.json",
+      "udtType": "Program",
+      "id": "fix-data-links_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Fix Data Links",
+          "path": "guild/web/scripts/fix-data-links.py",
+          "language": "python",
+          "category": "fix-orchestrator",
+          "purpose": "One-shot fixer for stale links in views/data/*.data.json and apps/data.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "fix-orchestrator",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "fix-data-links_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "members--extract_py.json",
+      "udtType": "Program",
+      "id": "members--extract_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Extract",
+          "path": "guild/web/scripts/members/extract.py",
+          "language": "python",
+          "category": "members-pipeline",
+          "purpose": "Extract member profiles from HTML into markdown originals + Member UDT instances.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "members-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "members--extract_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "members--regen-index_py.json",
+      "udtType": "Program",
+      "id": "members--regen-index_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Regen Index",
+          "path": "guild/web/scripts/members/regen-index.py",
+          "language": "python",
+          "category": "members-pipeline",
+          "purpose": "Regenerate guild/web/static/members.html from Member UDT instances.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "members-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "members--regen-index_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "pages--build-path-graph_py.json",
+      "udtType": "Program",
+      "id": "pages--build-path-graph_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Build Path Graph",
+          "path": "guild/web/scripts/pages/build-path-graph.py",
+          "language": "python",
+          "category": "pages-pipeline",
+          "purpose": "Build the Path dependency graph for autopathing.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "pages-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "pages--build-path-graph_py",
+          "state_log": "state/pages--build-path-graph_py.state.json",
+          "last_state": "COMPLETE",
+          "last_run_at": "2026-04-18T05:32:12Z",
+          "last_duration": "0.188",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "pages--decompose_py.json",
+      "udtType": "Program",
+      "id": "pages--decompose_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Decompose",
+          "path": "guild/web/scripts/pages/decompose.py",
+          "language": "python",
+          "category": "pages-pipeline",
+          "purpose": "Decompose static HTML pages into view.json + data.json.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "pages-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "pages--decompose_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "perspective-build_js.json",
+      "udtType": "Program",
+      "id": "perspective-build_js",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Perspective Build",
+          "path": "guild/web/scripts/perspective-build.js",
+          "language": "node",
+          "category": "build-orchestrator",
+          "purpose": "",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "build-orchestrator",
+            "node"
+          ]
+        },
+        "tags": {
+          "id": "perspective-build_js",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "test-browser_js.json",
+      "udtType": "Program",
+      "id": "test-browser_js",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Test Browser",
+          "path": "guild/web/scripts/test-browser.js",
+          "language": "node",
+          "category": "test-orchestrator",
+          "purpose": "",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "test-orchestrator",
+            "node"
+          ]
+        },
+        "tags": {
+          "id": "test-browser_js",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "test-links_py.json",
+      "udtType": "Program",
+      "id": "test-links_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Test Links",
+          "path": "guild/web/scripts/test-links.py",
+          "language": "python",
+          "category": "test-orchestrator",
+          "purpose": "Test internal href/src links across index.html + all built dist/ pages.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "test-orchestrator",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "test-links_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "test-nav_js.json",
+      "udtType": "Program",
+      "id": "test-nav_js",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Test Nav",
+          "path": "guild/web/scripts/test-nav.js",
+          "language": "node",
+          "category": "test-orchestrator",
+          "purpose": "",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "test-orchestrator",
+            "node"
+          ]
+        },
+        "tags": {
+          "id": "test-nav_js",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "white-papers--extract_py.json",
+      "udtType": "Program",
+      "id": "white-papers--extract_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Extract",
+          "path": "guild/web/scripts/white-papers/extract.py",
+          "language": "python",
+          "category": "white-papers-pipeline",
+          "purpose": "Extract rendered HTML white papers into markdown originals.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "white-papers-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "white-papers--extract_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "white-papers--regen-index_py.json",
+      "udtType": "Program",
+      "id": "white-papers--regen-index_py",
+      "body": {
+        "udtType": "Program",
+        "parameters": {
+          "name": "Regen Index",
+          "path": "guild/web/scripts/white-papers/regen-index.py",
+          "language": "python",
+          "category": "white-papers-pipeline",
+          "purpose": "Regenerate guild/web/static/white-papers.html from UDT instances.",
+          "inputs": [],
+          "outputs": [],
+          "depends_on": [],
+          "pre_checks": [],
+          "post_checks": [],
+          "tags": [
+            "white-papers-pipeline",
+            "python"
+          ]
+        },
+        "tags": {
+          "id": "white-papers--regen-index_py",
+          "state_log": "",
+          "last_state": "IDLE",
+          "last_run_at": "",
+          "last_duration": "",
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

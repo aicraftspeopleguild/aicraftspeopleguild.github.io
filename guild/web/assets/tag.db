@@ -1,0 +1,31 @@
+{
+  "dir": "guild/web/assets",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 2,
+  "udt_count": 0,
+  "tags": {
+    "ext:jpg": {
+      "count": 1,
+      "files": [
+        "mob_prog_101.jpg"
+      ]
+    },
+    "ext:png": {
+      "count": 1,
+      "files": [
+        "worship-free-zone.png"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "jpg": 1,
+    "png": 1
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

@@ -60,7 +60,8 @@ def parse(html_path):
 
     back = soup.select_one(".back-link a")
     if back:
-        data["backHref"] = back.get("href", "")
+        back_href = back.get("href", "")
+        data["backHref"] = LINK_REWRITES.get(back_href, back_href)
         txt = back.get_text(strip=True)
         data["backLabel"] = re.sub(r"^←\s*", "", txt)
 
@@ -84,11 +85,31 @@ def parse(html_path):
 # Map old-style filenames (from when pages were at static/foo.html) to
 # the current dist/ output slugs (from Path UDT IDs).
 LINK_REWRITES = {
-    "aicraftspeopleguild-manifesto.html": "manifesto.html",
-    "chief-ai-skeptic-officer.html":      "chief-ai-skeptic.html",
-    "../web/dist/white-papers.html":      "white-papers.html",
-    "../web/dist/members.html":           "members.html",
-    "../../../index.html":                "../../index.html",
+    # SPA hash routes (kept in sync with guild/web/site-map.json)
+    "aicraftspeopleguild-manifesto.html": "#/manifesto",
+    "manifesto.html":                     "#/manifesto",
+    "chief-ai-skeptic-officer.html":      "#/chief-ai-skeptic",
+    "chief-ai-skeptic.html":              "#/chief-ai-skeptic",
+    "charter.html":                       "#/charter",
+    "code-of-conduct.html":               "#/code-of-conduct",
+    "mission-statement.html":             "#/mission",
+    "members.html":                       "#/members",
+    "../web/dist/members.html":           "#/members",
+    "white-papers.html":                  "#/white-papers",
+    "../web/dist/white-papers.html":      "#/white-papers",
+    "showcases.html":                     "#/showcases",
+    "flywheel.html":                      "#/flywheel",
+    "guild-radar.html":                   "#/guild-radar",
+    "hall-of-fame.html":                  "#/hall-of-fame",
+    "hall-of-shame.html":                 "#/hall-of-shame",
+    "ai-rituals.html":                    "#/rituals",
+    "mob-programming.html":               "#/mob-programming",
+    "hushbell.html":                      "#/hushbell",
+    "hushbell-full-spec.html":            "#/hushbell/spec",
+    # Back-to-home + sign anchor
+    "../../../index.html#sign":           "#sign",
+    "../../../index.html#manifesto":      "#manifesto-cards",
+    "../../../index.html":                "#/",
 }
 
 def rewrite_internal_links(html):

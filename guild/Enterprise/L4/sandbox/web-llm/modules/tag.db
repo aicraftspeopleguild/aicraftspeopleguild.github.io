@@ -1,0 +1,32 @@
+{
+  "dir": "guild/Enterprise/L4/sandbox/web-llm/modules",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 9,
+  "udt_count": 0,
+  "tags": {
+    "ext:js": {
+      "count": 9,
+      "files": [
+        "chat.js",
+        "config.js",
+        "engine.js",
+        "fs-panel.js",
+        "main.js",
+        "mcp-tools-engine.js",
+        "tools.js",
+        "ui.js",
+        "voice.js"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "js": 9
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

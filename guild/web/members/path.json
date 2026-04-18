@@ -1,0 +1,53 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/members",
+    "label": "members",
+    "parent": "guild/web",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_members",
+    "fs_path": "guild/web/members",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_members"
+    ],
+    "children": [
+      "guild/web/members/alex-bunardzic",
+      "guild/web/members/jona-heidsick",
+      "guild/web/members/kelly-hohman",
+      "guild/web/members/laurie-scheepers",
+      "guild/web/members/matt-burch",
+      "guild/web/members/nicolas-rosado",
+      "guild/web/members/originals",
+      "guild/web/members/thomas-frumkin",
+      "guild/web/members/tsvetan",
+      "guild/web/members/udts"
+    ],
+    "siblings": [
+      "guild/web/assets",
+      "guild/web/components",
+      "guild/web/pages",
+      "guild/web/perspective",
+      "guild/web/scripts",
+      "guild/web/style",
+      "guild/web/views",
+      "guild/web/white-papers"
+    ],
+    "descendants": 12,
+    "file_count": 1,
+    "subdir_count": 10,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T05:51:33Z",
+    "schema_version": "1.0.0"
+  }
+}

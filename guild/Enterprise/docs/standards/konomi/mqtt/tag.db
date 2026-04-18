@@ -1,0 +1,30 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/mqtt",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 7,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 7,
+      "files": [
+        "MQTT_QoS.udt.json",
+        "MQTT_Topic.udt.json",
+        "Sparkplug_DataType.udt.json",
+        "Sparkplug_Payload.udt.json",
+        "Sparkplug_Rules.udt.json",
+        "Sparkplug_Topic.udt.json",
+        "_std.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 7
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

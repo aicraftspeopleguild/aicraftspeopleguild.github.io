@@ -1,0 +1,40 @@
+{
+  "dir": "guild/Enterprise/L2/scada/gateway/scripts",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 11,
+  "udt_count": 0,
+  "tags": {
+    "ext:js": {
+      "count": 10,
+      "files": [
+        "auth.js",
+        "chat.js",
+        "config.js",
+        "errors.js",
+        "main.js",
+        "p2p.js",
+        "peers.js",
+        "sandbox-bridge.js",
+        "ui.js",
+        "version.js"
+      ]
+    },
+    "ext:md": {
+      "count": 1,
+      "files": [
+        "README.md"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "js": 10,
+    "md": 1
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

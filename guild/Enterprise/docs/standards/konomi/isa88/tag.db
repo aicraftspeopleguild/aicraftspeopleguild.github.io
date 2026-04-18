@@ -1,0 +1,40 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/isa88",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 17,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 17,
+      "files": [
+        "Batch.udt.json",
+        "BatchState.sm.json",
+        "ControlModule.udt.json",
+        "EquipmentModule.udt.json",
+        "Formula.udt.json",
+        "Operation.udt.json",
+        "Phase.udt.json",
+        "PhaseState.sm.json",
+        "Procedure.udt.json",
+        "ProcessCell.udt.json",
+        "Recipe.udt.json",
+        "S88_EquipmentLevel.udt.json",
+        "S88_RecipeLevel.udt.json",
+        "Unit.udt.json",
+        "UnitProcedure.udt.json",
+        "UnitState.sm.json",
+        "_std.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 17
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

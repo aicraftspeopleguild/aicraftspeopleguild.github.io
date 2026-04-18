@@ -1,0 +1,53 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/white-papers",
+    "label": "white-papers",
+    "parent": "guild/web",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_white-papers",
+    "fs_path": "guild/web/white-papers",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_white-papers"
+    ],
+    "children": [
+      "guild/web/white-papers/originals",
+      "guild/web/white-papers/tags",
+      "guild/web/white-papers/udts"
+    ],
+    "siblings": [
+      "guild/web/assets",
+      "guild/web/components",
+      "guild/web/members",
+      "guild/web/pages",
+      "guild/web/perspective",
+      "guild/web/scripts",
+      "guild/web/style",
+      "guild/web/views"
+    ],
+    "descendants": 5,
+    "file_count": 9,
+    "subdir_count": 3,
+    "kinds": {
+      "png": 2,
+      "jpg": 1,
+      "jpeg": 1,
+      "json": 1,
+      "py": 1,
+      "md": 1,
+      "db": 1,
+      "mp4": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T05:51:33Z",
+    "schema_version": "1.0.0"
+  }
+}

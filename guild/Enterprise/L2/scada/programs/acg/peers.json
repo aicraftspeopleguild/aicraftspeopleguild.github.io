@@ -2,7 +2,7 @@
   "§": "2.3",
   "🏗️": "👥",
   "name": "peers",
-  "module": "controls/scada/gateway/scripts/peers.js",
+  "module": "L2/scada/gateway/scripts/peers.js",
 
   "📦": {
     "pm": "m peerId:s20 → 🏗️👥{ name:s emoji:s avatar:s? dcs:Set<🔌> connectedAt:ms msgsIn:i msgsOut:i lastSeen:ms }"

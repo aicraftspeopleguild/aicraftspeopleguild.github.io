@@ -1,0 +1,143 @@
+{
+  "dir": "guild/apps/whitepapers/views",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 1,
+  "udt_count": 1,
+  "tags": {
+    "components:cta-section": {
+      "count": 1,
+      "files": [
+        "white-paper-app.view.json"
+      ]
+    },
+    "components:intro-panel": {
+      "count": 1,
+      "files": [
+        "white-paper-app.view.json"
+      ]
+    },
+    "components:page-shell": {
+      "count": 1,
+      "files": [
+        "white-paper-app.view.json"
+      ]
+    },
+    "components:raw-html": {
+      "count": 1,
+      "files": [
+        "white-paper-app.view.json"
+      ]
+    },
+    "data_sources:data/<slug>.data.json": {
+      "count": 1,
+      "files": [
+        "white-paper-app.view.json"
+      ]
+    },
+    "ext:json": {
+      "count": 1,
+      "files": [
+        "white-paper-app.view.json"
+      ]
+    },
+    "id:white-paper-app": {
+      "count": 1,
+      "files": [
+        "white-paper-app.view.json"
+      ]
+    },
+    "udt:View": {
+      "count": 1,
+      "files": [
+        "white-paper-app.view.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "View": 1
+  },
+  "sections": {},
+  "kinds": {
+    "json": 1
+  },
+  "refs": {
+    "components": {
+      "cta-section": 1,
+      "intro-panel": 1,
+      "page-shell": 1,
+      "raw-html": 1
+    },
+    "data_sources": {
+      "data/<slug>.data.json": 1
+    }
+  },
+  "ids": {
+    "white-paper-app": 1
+  },
+  "udts": [
+    {
+      "file": "white-paper-app.view.json",
+      "udtType": "View",
+      "id": "white-paper-app",
+      "body": {
+        "udtType": "View",
+        "parameters": {
+          "name": "white-paper-app",
+          "description": "Shared view template for every white paper app. PageShell + IntroPanel (abstract) + RawHTML (paper body) + CTASection.",
+          "root": {
+            "type": "PageShell",
+            "props": {
+              "title": "{{ paper.title }}",
+              "subtitle": "{{ paper.subtitle }}",
+              "eyebrow": "{{ paper.type_label }}",
+              "bodyClass": "page-white-paper",
+              "backHref": "../../web/dist/white-papers.html",
+              "backLabel": "Back to White Papers"
+            },
+            "children": [
+              {
+                "type": "IntroPanel",
+                "when": "{{ paper.summary }}",
+                "props": {
+                  "content": "{{ paper.summary }}"
+                }
+              },
+              {
+                "type": "RawHTML",
+                "props": {
+                  "html": "{{ paper.body_html }}"
+                }
+              },
+              {
+                "type": "CTASection",
+                "props": {
+                  "heading": "Continue Reading",
+                  "description": "Browse the full Guild white paper catalog or return to the home page.",
+                  "primaryText": "All White Papers",
+                  "primaryHref": "../../web/dist/white-papers.html",
+                  "secondaryText": "Back to Home",
+                  "secondaryHref": "../../../index.html"
+                }
+              }
+            ]
+          }
+        },
+        "tags": {
+          "id": "white-paper-app",
+          "component_ids": [
+            "page-shell",
+            "intro-panel",
+            "raw-html",
+            "cta-section"
+          ],
+          "data_sources": [
+            "data/<slug>.data.json"
+          ],
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

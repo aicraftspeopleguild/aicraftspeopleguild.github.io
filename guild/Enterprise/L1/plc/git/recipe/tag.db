@@ -1,0 +1,31 @@
+{
+  "dir": "guild/Enterprise/L1/plc/git/recipe",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 8,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 8,
+      "files": [
+        "Batch.udt.json",
+        "Batch_Params.udt.json",
+        "Batch_Report.udt.json",
+        "Batch_State.udt.json",
+        "Phase_Base.udt.json",
+        "Phase_Params.udt.json",
+        "Phase_Report.udt.json",
+        "Phase_State.udt.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 8
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

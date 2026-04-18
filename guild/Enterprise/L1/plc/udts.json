@@ -2,8 +2,8 @@
   "§":    "P.UDT",
   "🏗️":  "🔧",
   "name": "plc · UDTs",
-  "owner":"controls/plc/provider.py",
-  "note": "GitPLC transfer-layer UDTs. Concrete templates live at /controls/plc/git/. Standard descriptor at /controls/docs/standards/gitplc/.",
+  "owner":"L1/plc/provider.py",
+  "note": "GitPLC transfer-layer UDTs. Concrete templates live at /L1/plc/git/. Standard descriptor at /docs/standards/gitplc/.",
 
   "types": {
     "Project": {

@@ -1,0 +1,39 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/components/udts",
+    "label": "udts",
+    "parent": "guild/web/components",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_components_udts",
+    "fs_path": "guild/web/components/udts",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_components",
+      "guild_web_components_udts"
+    ],
+    "children": [
+      "guild/web/components/udts/instances",
+      "guild/web/components/udts/templates"
+    ],
+    "siblings": [
+      "guild/web/components/tags"
+    ],
+    "descendants": 5,
+    "file_count": 1,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T05:51:33Z",
+    "schema_version": "1.0.0"
+  }
+}

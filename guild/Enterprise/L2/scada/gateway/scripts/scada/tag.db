@@ -1,0 +1,28 @@
+{
+  "dir": "guild/Enterprise/L2/scada/gateway/scripts/scada",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 5,
+  "udt_count": 0,
+  "tags": {
+    "ext:js": {
+      "count": 5,
+      "files": [
+        "index.js",
+        "monitor.js",
+        "providers.js",
+        "tags.js",
+        "udt.js"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "js": 5
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

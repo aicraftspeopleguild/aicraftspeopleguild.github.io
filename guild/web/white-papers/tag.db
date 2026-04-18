@@ -1,0 +1,67 @@
+{
+  "dir": "guild/web/white-papers",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 8,
+  "udt_count": 0,
+  "tags": {
+    "ext:jpeg": {
+      "count": 1,
+      "files": [
+        "fratally-wrong.jpeg"
+      ]
+    },
+    "ext:jpg": {
+      "count": 1,
+      "files": [
+        "fractally-wrong.jpg"
+      ]
+    },
+    "ext:json": {
+      "count": 1,
+      "files": [
+        "index.json"
+      ]
+    },
+    "ext:md": {
+      "count": 1,
+      "files": [
+        "README.md"
+      ]
+    },
+    "ext:mp4": {
+      "count": 1,
+      "files": [
+        "TriadEngine_compressed.mp4"
+      ]
+    },
+    "ext:png": {
+      "count": 2,
+      "files": [
+        "AI Dual Architecture Model.png",
+        "AI rate of change.png"
+      ]
+    },
+    "ext:py": {
+      "count": 1,
+      "files": [
+        "ingest.py"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "jpeg": 1,
+    "jpg": 1,
+    "json": 1,
+    "md": 1,
+    "mp4": 1,
+    "png": 2,
+    "py": 1
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

@@ -1,0 +1,31 @@
+{
+  "dir": "guild/web/members/originals",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 8,
+  "udt_count": 0,
+  "tags": {
+    "ext:md": {
+      "count": 8,
+      "files": [
+        "alex-bunardzic.md",
+        "jona-heidsick.md",
+        "kelly-hohman.md",
+        "laurie-scheepers.md",
+        "matt-burch.md",
+        "nicolas-rosado.md",
+        "thomas-frumkin.md",
+        "tsvetan.md"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "md": 8
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

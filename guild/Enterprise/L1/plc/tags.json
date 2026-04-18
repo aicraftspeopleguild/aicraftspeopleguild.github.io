@@ -2,9 +2,9 @@
   "§": "P.TAGS",
   "🏗️": "🔧",
   "name": "plc · tag catalog",
-  "owner": "controls/plc/provider.py",
+  "owner": "L1/plc/provider.py",
   "namespaces": ["plc"],
-  "templateRoot": "/controls/plc/git/",
+  "templateRoot": "/L1/plc/git/",
 
   "tags": [
     { "path": "plc.project",        "type": "UDT:Project",     "desc": "current GitPLC project header" },

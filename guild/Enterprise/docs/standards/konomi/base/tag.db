@@ -1,0 +1,31 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/base",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 8,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 8,
+      "files": [
+        "Duration.udt.json",
+        "Identifier.udt.json",
+        "Quality.udt.json",
+        "Quantity.udt.json",
+        "Range.udt.json",
+        "Status.udt.json",
+        "Timestamp.udt.json",
+        "Value.udt.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 8
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

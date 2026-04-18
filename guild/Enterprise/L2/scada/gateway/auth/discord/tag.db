@@ -1,0 +1,39 @@
+{
+  "dir": "guild/Enterprise/L2/scada/gateway/auth/discord",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 4,
+  "udt_count": 0,
+  "tags": {
+    "ext:html": {
+      "count": 1,
+      "files": [
+        "index.html"
+      ]
+    },
+    "ext:json": {
+      "count": 2,
+      "files": [
+        "tags.json",
+        "udts.json"
+      ]
+    },
+    "ext:py": {
+      "count": 1,
+      "files": [
+        "provider.py"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "html": 1,
+    "json": 2,
+    "py": 1
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

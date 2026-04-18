@@ -1,0 +1,30 @@
+{
+  "dir": "docs/engineering/architecture/isa-95",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 7,
+  "udt_count": 0,
+  "tags": {
+    "ext:md": {
+      "count": 7,
+      "files": [
+        "index.md",
+        "level-0-physical.md",
+        "level-1-sensing.md",
+        "level-2-scada.md",
+        "level-3-mes.md",
+        "level-4-erp.md",
+        "level-map.md"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "md": 7
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

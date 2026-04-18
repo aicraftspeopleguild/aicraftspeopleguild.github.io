@@ -1,0 +1,592 @@
+{
+  "dir": "guild/Enterprise/L2/state",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 8,
+  "udt_count": 8,
+  "tags": {
+    "ext:json": {
+      "count": 8,
+      "files": [
+        "api--build-api_py.state.json",
+        "api--build-csv-catalog_py.state.json",
+        "api--build-runtime-tags_py.state.json",
+        "api--build-sitemap_py.state.json",
+        "apps--build-whitepaper-apps_py.state.json",
+        "components--build-catalog_py.state.json",
+        "db--build-local-tagdbs_py.state.json",
+        "pages--build-path-graph_py.state.json"
+      ]
+    },
+    "id:api--build-api_py-1776490544-9124cb": {
+      "count": 1,
+      "files": [
+        "api--build-api_py.state.json"
+      ]
+    },
+    "id:api--build-csv-catalog_py-1776490544-fb29e7": {
+      "count": 1,
+      "files": [
+        "api--build-csv-catalog_py.state.json"
+      ]
+    },
+    "id:api--build-runtime-tags_py-1776490544-85d51a": {
+      "count": 1,
+      "files": [
+        "api--build-runtime-tags_py.state.json"
+      ]
+    },
+    "id:api--build-sitemap_py-1776490544-ebea49": {
+      "count": 1,
+      "files": [
+        "api--build-sitemap_py.state.json"
+      ]
+    },
+    "id:apps--build-whitepaper-apps_py-1776490542-9acd3c": {
+      "count": 1,
+      "files": [
+        "apps--build-whitepaper-apps_py.state.json"
+      ]
+    },
+    "id:components--build-catalog_py-1776490542-12a82f": {
+      "count": 1,
+      "files": [
+        "components--build-catalog_py.state.json"
+      ]
+    },
+    "id:db--build-local-tagdbs_py-1776490543-b4f269": {
+      "count": 1,
+      "files": [
+        "db--build-local-tagdbs_py.state.json"
+      ]
+    },
+    "id:pages--build-path-graph_py-1776490543-713078": {
+      "count": 1,
+      "files": [
+        "pages--build-path-graph_py.state.json"
+      ]
+    },
+    "udt:PackMLState": {
+      "count": 8,
+      "files": [
+        "api--build-api_py.state.json",
+        "api--build-csv-catalog_py.state.json",
+        "api--build-runtime-tags_py.state.json",
+        "api--build-sitemap_py.state.json",
+        "apps--build-whitepaper-apps_py.state.json",
+        "components--build-catalog_py.state.json",
+        "db--build-local-tagdbs_py.state.json",
+        "pages--build-path-graph_py.state.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "PackMLState": 8
+  },
+  "sections": {},
+  "kinds": {
+    "json": 8
+  },
+  "refs": {},
+  "ids": {
+    "api--build-api_py-1776490544-9124cb": 1,
+    "api--build-csv-catalog_py-1776490544-fb29e7": 1,
+    "api--build-runtime-tags_py-1776490544-85d51a": 1,
+    "api--build-sitemap_py-1776490544-ebea49": 1,
+    "apps--build-whitepaper-apps_py-1776490542-9acd3c": 1,
+    "components--build-catalog_py-1776490542-12a82f": 1,
+    "db--build-local-tagdbs_py-1776490543-b4f269": 1,
+    "pages--build-path-graph_py-1776490543-713078": 1
+  },
+  "udts": [
+    {
+      "file": "api--build-api_py.state.json",
+      "udtType": "PackMLState",
+      "id": "api--build-api_py-1776490544-9124cb",
+      "body": {
+        "udtType": "PackMLState",
+        "parameters": {
+          "program_id": "api--build-api_py",
+          "run_id": "1776490544-9124cb",
+          "started_at": "2026-04-18T05:35:44Z",
+          "ended_at": "2026-04-18T05:35:44Z",
+          "terminal": "COMPLETE",
+          "transitions": [
+            {
+              "state": "STARTING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running pre_checks"
+            },
+            {
+              "state": "EXECUTE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "work starting"
+            },
+            {
+              "state": "COMPLETING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running post_checks"
+            },
+            {
+              "state": "COMPLETE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "all checks ok"
+            }
+          ],
+          "pre_check_results": {
+            "path_exists(acg.db)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "post_check_results": {
+            "path_exists(papers.json)": {
+              "ok": true,
+              "note": ""
+            },
+            "path_exists(members.json)": {
+              "ok": true,
+              "note": ""
+            },
+            "path_exists(health.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "error": null
+        },
+        "tags": {
+          "id": "api--build-api_py-1776490544-9124cb",
+          "duration_s": "0.004",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "api--build-csv-catalog_py.state.json",
+      "udtType": "PackMLState",
+      "id": "api--build-csv-catalog_py-1776490544-fb29e7",
+      "body": {
+        "udtType": "PackMLState",
+        "parameters": {
+          "program_id": "api--build-csv-catalog_py",
+          "run_id": "1776490544-fb29e7",
+          "started_at": "2026-04-18T05:35:44Z",
+          "ended_at": "2026-04-18T05:35:44Z",
+          "terminal": "COMPLETE",
+          "transitions": [
+            {
+              "state": "STARTING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running pre_checks"
+            },
+            {
+              "state": "EXECUTE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "work starting"
+            },
+            {
+              "state": "COMPLETING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running post_checks"
+            },
+            {
+              "state": "COMPLETE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "all checks ok"
+            }
+          ],
+          "pre_check_results": {
+            "path_exists(acg.db)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "post_check_results": {
+            "path_exists(papers.csv)": {
+              "ok": true,
+              "note": ""
+            },
+            "path_exists(members.csv)": {
+              "ok": true,
+              "note": ""
+            },
+            "path_exists(paths.csv)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "error": null
+        },
+        "tags": {
+          "id": "api--build-csv-catalog_py-1776490544-fb29e7",
+          "duration_s": "0.010",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "api--build-runtime-tags_py.state.json",
+      "udtType": "PackMLState",
+      "id": "api--build-runtime-tags_py-1776490544-85d51a",
+      "body": {
+        "udtType": "PackMLState",
+        "parameters": {
+          "program_id": "api--build-runtime-tags_py",
+          "run_id": "1776490544-85d51a",
+          "started_at": "2026-04-18T05:35:44Z",
+          "ended_at": "2026-04-18T05:35:44Z",
+          "terminal": "COMPLETE",
+          "transitions": [
+            {
+              "state": "STARTING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running pre_checks"
+            },
+            {
+              "state": "EXECUTE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "work starting"
+            },
+            {
+              "state": "COMPLETING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running post_checks"
+            },
+            {
+              "state": "COMPLETE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "all checks ok"
+            }
+          ],
+          "pre_check_results": {
+            "path_exists(acg.db)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "post_check_results": {
+            "path_exists(tags.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "error": null
+        },
+        "tags": {
+          "id": "api--build-runtime-tags_py-1776490544-85d51a",
+          "duration_s": "0.015",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "api--build-sitemap_py.state.json",
+      "udtType": "PackMLState",
+      "id": "api--build-sitemap_py-1776490544-ebea49",
+      "body": {
+        "udtType": "PackMLState",
+        "parameters": {
+          "program_id": "api--build-sitemap_py",
+          "run_id": "1776490544-ebea49",
+          "started_at": "2026-04-18T05:35:44Z",
+          "ended_at": "2026-04-18T05:35:44Z",
+          "terminal": "COMPLETE",
+          "transitions": [
+            {
+              "state": "STARTING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running pre_checks"
+            },
+            {
+              "state": "EXECUTE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "work starting"
+            },
+            {
+              "state": "COMPLETING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running post_checks"
+            },
+            {
+              "state": "COMPLETE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "all checks ok"
+            }
+          ],
+          "pre_check_results": {
+            "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\web\\components\\udts\\instances\\paths\\*.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "post_check_results": {
+            "path_exists(sitemap.xml)": {
+              "ok": true,
+              "note": ""
+            },
+            "path_exists(robots.txt)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "error": null
+        },
+        "tags": {
+          "id": "api--build-sitemap_py-1776490544-ebea49",
+          "duration_s": "0.006",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "apps--build-whitepaper-apps_py.state.json",
+      "udtType": "PackMLState",
+      "id": "apps--build-whitepaper-apps_py-1776490542-9acd3c",
+      "body": {
+        "udtType": "PackMLState",
+        "parameters": {
+          "program_id": "apps--build-whitepaper-apps_py",
+          "run_id": "1776490542-9acd3c",
+          "started_at": "2026-04-18T05:35:42Z",
+          "ended_at": "2026-04-18T05:35:42Z",
+          "terminal": "COMPLETE",
+          "transitions": [
+            {
+              "state": "STARTING",
+              "at": "2026-04-18T05:35:42Z",
+              "note": "running pre_checks"
+            },
+            {
+              "state": "EXECUTE",
+              "at": "2026-04-18T05:35:42Z",
+              "note": "work starting"
+            },
+            {
+              "state": "COMPLETING",
+              "at": "2026-04-18T05:35:42Z",
+              "note": "running post_checks"
+            },
+            {
+              "state": "COMPLETE",
+              "at": "2026-04-18T05:35:42Z",
+              "note": "all checks ok"
+            }
+          ],
+          "pre_check_results": {
+            "path_exists(instances)": {
+              "ok": true,
+              "note": ""
+            },
+            "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\web\\white-papers\\udts\\instances\\*.json)": {
+              "ok": true,
+              "note": ""
+            },
+            "path_exists(app.udt.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "post_check_results": {
+            "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\apps\\whitepapers\\udts\\instances\\*.json)": {
+              "ok": true,
+              "note": ""
+            },
+            "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\apps\\whitepapers\\data\\*.json)": {
+              "ok": true,
+              "note": ""
+            },
+            "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\apps\\whitepapers\\pages\\*.json)": {
+              "ok": true,
+              "note": ""
+            },
+            "path_exists(index.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "error": null
+        },
+        "tags": {
+          "id": "apps--build-whitepaper-apps_py-1776490542-9acd3c",
+          "duration_s": "0.235",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "components--build-catalog_py.state.json",
+      "udtType": "PackMLState",
+      "id": "components--build-catalog_py-1776490542-12a82f",
+      "body": {
+        "udtType": "PackMLState",
+        "parameters": {
+          "program_id": "components--build-catalog_py",
+          "run_id": "1776490542-12a82f",
+          "started_at": "2026-04-18T05:35:42Z",
+          "ended_at": "2026-04-18T05:35:42Z",
+          "terminal": "COMPLETE",
+          "transitions": [
+            {
+              "state": "STARTING",
+              "at": "2026-04-18T05:35:42Z",
+              "note": "running pre_checks"
+            },
+            {
+              "state": "EXECUTE",
+              "at": "2026-04-18T05:35:42Z",
+              "note": "work starting"
+            },
+            {
+              "state": "COMPLETING",
+              "at": "2026-04-18T05:35:42Z",
+              "note": "running post_checks"
+            },
+            {
+              "state": "COMPLETE",
+              "at": "2026-04-18T05:35:42Z",
+              "note": "all checks ok"
+            }
+          ],
+          "pre_check_results": {
+            "path_exists(instances)": {
+              "ok": true,
+              "note": ""
+            },
+            "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\web\\components\\udts\\instances\\*.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "post_check_results": {
+            "path_exists(index.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "error": null
+        },
+        "tags": {
+          "id": "components--build-catalog_py-1776490542-12a82f",
+          "duration_s": "0.028",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "db--build-local-tagdbs_py.state.json",
+      "udtType": "PackMLState",
+      "id": "db--build-local-tagdbs_py-1776490543-b4f269",
+      "body": {
+        "udtType": "PackMLState",
+        "parameters": {
+          "program_id": "db--build-local-tagdbs_py",
+          "run_id": "1776490543-b4f269",
+          "started_at": "2026-04-18T05:35:43Z",
+          "ended_at": "2026-04-18T05:35:44Z",
+          "terminal": "COMPLETE",
+          "transitions": [
+            {
+              "state": "STARTING",
+              "at": "2026-04-18T05:35:43Z",
+              "note": "running pre_checks"
+            },
+            {
+              "state": "EXECUTE",
+              "at": "2026-04-18T05:35:43Z",
+              "note": "work starting"
+            },
+            {
+              "state": "COMPLETING",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "running post_checks"
+            },
+            {
+              "state": "COMPLETE",
+              "at": "2026-04-18T05:35:44Z",
+              "note": "all checks ok"
+            }
+          ],
+          "pre_check_results": {
+            "path_exists(guild)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "post_check_results": {
+            "path_exists(tag.db)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "error": null
+        },
+        "tags": {
+          "id": "db--build-local-tagdbs_py-1776490543-b4f269",
+          "duration_s": "0.541",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "pages--build-path-graph_py.state.json",
+      "udtType": "PackMLState",
+      "id": "pages--build-path-graph_py-1776490543-713078",
+      "body": {
+        "udtType": "PackMLState",
+        "parameters": {
+          "program_id": "pages--build-path-graph_py",
+          "run_id": "1776490543-713078",
+          "started_at": "2026-04-18T05:35:43Z",
+          "ended_at": "2026-04-18T05:35:43Z",
+          "terminal": "COMPLETE",
+          "transitions": [
+            {
+              "state": "STARTING",
+              "at": "2026-04-18T05:35:43Z",
+              "note": "running pre_checks"
+            },
+            {
+              "state": "EXECUTE",
+              "at": "2026-04-18T05:35:43Z",
+              "note": "work starting"
+            },
+            {
+              "state": "COMPLETING",
+              "at": "2026-04-18T05:35:43Z",
+              "note": "running post_checks"
+            },
+            {
+              "state": "COMPLETE",
+              "at": "2026-04-18T05:35:43Z",
+              "note": "all checks ok"
+            }
+          ],
+          "pre_check_results": {
+            "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\web\\components\\udts\\instances\\paths\\*.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "post_check_results": {
+            "path_exists(index.json)": {
+              "ok": true,
+              "note": ""
+            },
+            "path_exists(_graph.json)": {
+              "ok": true,
+              "note": ""
+            }
+          },
+          "error": null
+        },
+        "tags": {
+          "id": "pages--build-path-graph_py-1776490543-713078",
+          "duration_s": "0.188",
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

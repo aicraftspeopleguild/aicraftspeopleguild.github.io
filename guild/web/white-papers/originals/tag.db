@@ -1,0 +1,54 @@
+{
+  "dir": "guild/web/white-papers/originals",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 25,
+  "udt_count": 0,
+  "tags": {
+    "ext:csv": {
+      "count": 1,
+      "files": [
+        "seed-batch.csv"
+      ]
+    },
+    "ext:md": {
+      "count": 24,
+      "files": [
+        "acg-peer-reviews.md",
+        "ai-harness.md",
+        "burnt-toast-scraping-analysis.md",
+        "burnt-toast-second-look.md",
+        "decentralized-guild-web.md",
+        "florence-governance-paper.md",
+        "fractally-wrong.md",
+        "from-correctness-to-integrity.md",
+        "grid-brain.md",
+        "guild-chain.md",
+        "irrational-universe.md",
+        "konomi-standard.md",
+        "lightning-factory.md",
+        "occams-razor.md",
+        "question-reflection-action.md",
+        "sad.md",
+        "shield-of-all-knights.md",
+        "the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+        "the-harm-equation.md",
+        "the-pattern-that-wasnt-there.md",
+        "the-prediction-trap.md",
+        "the-rational-empire.md",
+        "toastmasters-scrapers-guild.md",
+        "youre-absolutely-wrong.md"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "csv": 1,
+    "md": 24
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

@@ -1,0 +1,29 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/crosswalks",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 6,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 6,
+      "files": [
+        "ISA101_ISA18.cw.json",
+        "ISA88_PackML.cw.json",
+        "ISA95_ISA88.cw.json",
+        "ISA95_OPCUA.cw.json",
+        "OPCUA_Sparkplug.cw.json",
+        "_index.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 6
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

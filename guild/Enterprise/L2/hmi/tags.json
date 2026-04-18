@@ -2,7 +2,7 @@
   "§": "H.TAGS",
   "🏗️": "🖼",
   "name": "hmi · tag catalog",
-  "owner": "controls/hmi/provider.py",
+  "owner": "L2/hmi/provider.py",
   "namespaces": ["hmi"],
   "navHistorySize": 50,
 

@@ -1,0 +1,32 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/opcua",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 9,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 9,
+      "files": [
+        "AddressSpace.udt.json",
+        "CompanionSpecs.udt.json",
+        "OPC_Method.udt.json",
+        "OPC_MonitoredItem.udt.json",
+        "OPC_Node.udt.json",
+        "OPC_NodeClass.udt.json",
+        "OPC_Subscription.udt.json",
+        "OPC_Variable.udt.json",
+        "_std.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 9
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

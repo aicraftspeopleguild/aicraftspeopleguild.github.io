@@ -1,0 +1,29 @@
+{
+  "dir": "docs/engineering/tech-spec",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 6,
+  "udt_count": 0,
+  "tags": {
+    "ext:md": {
+      "count": 6,
+      "files": [
+        "index.md",
+        "perspective-bindings.md",
+        "perspective-components.md",
+        "perspective-schema.md",
+        "renderer.md",
+        "udt-system.md"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "md": 6
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

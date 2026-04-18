@@ -2,7 +2,7 @@
   "§": "4.2.1",
   "🏗️": "🧠",
   "name": "engine",
-  "module": "controls/sandbox/web-llm/modules/engine.js",
+  "module": "L4/sandbox/web-llm/modules/engine.js",
 
   "📦": { "webllm":"module?", "engine":"MLCEngine?", "modelId":"s?" },
 

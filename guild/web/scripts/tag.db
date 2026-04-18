@@ -1,0 +1,58 @@
+{
+  "dir": "guild/web/scripts",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 11,
+  "udt_count": 0,
+  "tags": {
+    "ext:js": {
+      "count": 4,
+      "files": [
+        "build.js",
+        "perspective-build.js",
+        "test-browser.js",
+        "test-nav.js"
+      ]
+    },
+    "ext:json": {
+      "count": 1,
+      "files": [
+        "index.json"
+      ]
+    },
+    "ext:md": {
+      "count": 1,
+      "files": [
+        "README.md"
+      ]
+    },
+    "ext:py": {
+      "count": 3,
+      "files": [
+        "build-programs.py",
+        "fix-data-links.py",
+        "test-links.py"
+      ]
+    },
+    "ext:sh": {
+      "count": 2,
+      "files": [
+        "README.sh",
+        "build.sh"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "js": 4,
+    "json": 1,
+    "md": 1,
+    "py": 3,
+    "sh": 2
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

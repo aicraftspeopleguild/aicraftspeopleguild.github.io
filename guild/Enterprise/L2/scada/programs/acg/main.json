@@ -2,7 +2,7 @@
   "§": "2.0",
   "🏗️": "🚀",
   "name": "main",
-  "module": "controls/scada/gateway/scripts/main.js",
+  "module": "L2/scada/gateway/scripts/main.js",
   "desc": "entry · wires handlers · seeds sys.* · starts monitor, version, auth, sandbox-bridge",
 
   "→": [

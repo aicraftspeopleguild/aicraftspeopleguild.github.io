@@ -1,0 +1,42 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": ".",
+    "label": "aicraftspeopleguild.github.io",
+    "parent": null,
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "root",
+    "fs_path": ".",
+    "depth": 0,
+    "breadcrumb": [
+      "root"
+    ],
+    "children": [
+      "bin",
+      "docs",
+      "guild",
+      "index"
+    ],
+    "siblings": [],
+    "descendants": 170,
+    "file_count": 8,
+    "subdir_count": 4,
+    "kinds": {
+      "html": 1,
+      "json": 1,
+      "bat": 1,
+      "md": 1,
+      "sh": 1,
+      "txt": 1,
+      "xml": 1,
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T05:51:33Z",
+    "schema_version": "1.0.0"
+  }
+}

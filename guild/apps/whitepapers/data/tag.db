@@ -1,0 +1,47 @@
+{
+  "dir": "guild/apps/whitepapers/data",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 24,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 24,
+      "files": [
+        "acg-kcc-guild-chain.data.json",
+        "acg-net-decentralized-guild-web.data.json",
+        "acg-review-forge.data.json",
+        "ai-harness-constraint-driven-software-development-for-the.data.json",
+        "ai-that-pisses-you-off-the-surprisingly-effective-path-to.data.json",
+        "ass-os-bloom-prompt-occam.data.json",
+        "ass-os-bloom-prompt-the-irrational-universe.data.json",
+        "ass-os-bloom-prompt-the-rational-empire.data.json",
+        "avoid-being-fractally-wrong.data.json",
+        "convergent-governance-topologies-in-specialist-networks-a.data.json",
+        "from-correctness-to-integrity-measuring-ai-generated-code.data.json",
+        "grid-brain.data.json",
+        "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.data.json",
+        "lightning-factory.data.json",
+        "s-a-d.data.json",
+        "structural-toast-carbonization-a-failure-mode-distinct-from.data.json",
+        "the-dog-the-data-scientist-and-the-mrna-vaccine.data.json",
+        "the-harm-equation.data.json",
+        "the-konomi-standard.data.json",
+        "the-pattern-that-wasn-t-there.data.json",
+        "the-prediction-trap.data.json",
+        "the-shield-of-all-knights-against-bounded-rationality.data.json",
+        "toastmasters-scrapers-guild.data.json",
+        "you-re-absolutely-wrong.data.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 24
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

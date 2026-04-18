@@ -2,9 +2,9 @@
   "§":    "W.UDT",
   "🏗️":  "🧠",
   "name": "sandbox.web-llm · UDTs",
-  "owner": "controls/sandbox/web-llm/modules/scada/udt.js",
+  "owner": "L4/sandbox/web-llm/modules/scada/udt.js",
   "namespace": "sandbox.web-llm",
-  "note": "Structured payloads published into sandbox.web-llm.*. Mirrors the scada UDT pattern (/controls/scada/gateway/scripts/scada/udt.js).",
+  "note": "Structured payloads published into sandbox.web-llm.*. Mirrors the scada UDT pattern (/L2/scada/gateway/scripts/scada/udt.js).",
 
   "types": {
     "Model":    { "fields": {"id":"s","size":"s?","loaded":"b","loadedAt":"ms","progress":"f","status":"e[idle|loading|ready|error]"},

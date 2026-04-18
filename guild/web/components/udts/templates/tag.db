@@ -1,0 +1,489 @@
+{
+  "dir": "guild/web/components/udts/templates",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 5,
+  "udt_count": 5,
+  "tags": {
+    "ext:json": {
+      "count": 5,
+      "files": [
+        "component.udt.json",
+        "fs-path.udt.json",
+        "page.udt.json",
+        "path.udt.json",
+        "view.udt.json"
+      ]
+    },
+    "udt:Component": {
+      "count": 1,
+      "files": [
+        "component.udt.json"
+      ]
+    },
+    "udt:FsPath": {
+      "count": 1,
+      "files": [
+        "fs-path.udt.json"
+      ]
+    },
+    "udt:Page": {
+      "count": 1,
+      "files": [
+        "page.udt.json"
+      ]
+    },
+    "udt:Path": {
+      "count": 1,
+      "files": [
+        "path.udt.json"
+      ]
+    },
+    "udt:View": {
+      "count": 1,
+      "files": [
+        "view.udt.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "Component": 1,
+    "FsPath": 1,
+    "Page": 1,
+    "Path": 1,
+    "View": 1
+  },
+  "sections": {},
+  "kinds": {
+    "json": 5
+  },
+  "refs": {},
+  "ids": {},
+  "udts": [
+    {
+      "file": "component.udt.json",
+      "udtType": "Component",
+      "id": {
+        "dataType": "String"
+      },
+      "body": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "udtType": "Component",
+        "version": "1.0.0",
+        "description": "A reusable UI component with typed props and slot definitions.",
+        "parameters": {
+          "name": {
+            "dataType": "String",
+            "required": true,
+            "description": "PascalCase component name"
+          },
+          "tag": {
+            "dataType": "String",
+            "required": false,
+            "default": "div",
+            "description": "HTML element tag"
+          },
+          "cssClass": {
+            "dataType": "String",
+            "required": false,
+            "description": "Root CSS class(es)"
+          },
+          "description": {
+            "dataType": "String",
+            "required": false
+          },
+          "category": {
+            "dataType": "String",
+            "required": false,
+            "description": "atomic | composite | layout | page-level"
+          },
+          "props": {
+            "dataType": "JSON",
+            "required": false,
+            "description": "Prop name to { type, required, default }"
+          },
+          "slots": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Named insertion points for children"
+          },
+          "template": {
+            "dataType": "String",
+            "required": false,
+            "description": "HTML template with {{ prop }} bindings"
+          }
+        },
+        "tags": {
+          "id": {
+            "dataType": "String"
+          },
+          "file_path": {
+            "dataType": "String"
+          },
+          "dependencies": {
+            "dataType": "StringArray",
+            "description": "Component IDs this depends on"
+          },
+          "used_by_views": {
+            "dataType": "StringArray",
+            "description": "View IDs that use this component"
+          },
+          "schema_version": {
+            "dataType": "String"
+          }
+        }
+      }
+    },
+    {
+      "file": "fs-path.udt.json",
+      "udtType": "FsPath",
+      "id": {
+        "dataType": "String",
+        "description": "Stable slug id (path with `/` → `_`; root = `root`)."
+      },
+      "body": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "udtType": "FsPath",
+        "version": "1.0.0",
+        "description": "A filesystem path / directory entry — the addressable unit of repo-on-disk navigation. One FsPath instance is written into each directory as `path.json`. Tag fields (`parent`, `children`, `siblings`, `breadcrumb`, etc.) are auto-computed by `guild/web/scripts/paths/gen-fs-paths.py` so the repo becomes self-describing: every dir knows where it sits, what it contains, and which peers it maps to.",
+        "parameters": {
+          "path": {
+            "dataType": "String",
+            "required": true,
+            "description": "Repo-relative POSIX path of this directory (e.g. `guild/web/pages`). Root dir uses `.`."
+          },
+          "label": {
+            "dataType": "String",
+            "required": true,
+            "description": "Human-readable directory name (basename)."
+          },
+          "parent": {
+            "dataType": "String",
+            "required": false,
+            "description": "Repo-relative POSIX path of the parent directory, or null for the repo root."
+          },
+          "kind": {
+            "dataType": "String",
+            "required": false,
+            "default": "filesystem",
+            "description": "Discriminator. Always `filesystem` for this UDT."
+          },
+          "purpose": {
+            "dataType": "String",
+            "required": false,
+            "description": "Optional one-line description of what the directory holds. Not overwritten on regeneration."
+          },
+          "owners": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Optional list of member IDs responsible for the directory. Not overwritten."
+          }
+        },
+        "tags": {
+          "id": {
+            "dataType": "String",
+            "description": "Stable slug id (path with `/` → `_`; root = `root`)."
+          },
+          "fs_path": {
+            "dataType": "String",
+            "description": "Repo-relative POSIX directory path."
+          },
+          "depth": {
+            "dataType": "Int",
+            "description": "Depth from repo root (0 = root)."
+          },
+          "breadcrumb": {
+            "dataType": "StringArray",
+            "description": "Ordered ancestor ids from root → self."
+          },
+          "children": {
+            "dataType": "StringArray",
+            "description": "Immediate subdirectory paths that also contain a `path.json`."
+          },
+          "siblings": {
+            "dataType": "StringArray",
+            "description": "Peer directories sharing the same parent."
+          },
+          "descendants": {
+            "dataType": "Int",
+            "description": "Count of all descendant FsPath instances under this dir."
+          },
+          "file_count": {
+            "dataType": "Int",
+            "description": "Number of non-hidden files directly in this dir (excludes `path.json` itself)."
+          },
+          "subdir_count": {
+            "dataType": "Int",
+            "description": "Number of non-excluded subdirectories."
+          },
+          "kinds": {
+            "dataType": "Object",
+            "description": "File-extension histogram for this dir: { \"json\": 10, \"md\": 1, ... }."
+          },
+          "route_bindings": {
+            "dataType": "StringArray",
+            "description": "URL-route Path ids (from `guild/web/components/udts/instances/paths/`) whose `page` target resolves inside this dir. Auto-computed — links fs-tree to site-map."
+          },
+          "last_generated": {
+            "dataType": "String",
+            "description": "UTC ISO timestamp of last regeneration."
+          },
+          "schema_version": {
+            "dataType": "String"
+          }
+        }
+      }
+    },
+    {
+      "file": "page.udt.json",
+      "udtType": "Page",
+      "id": {
+        "dataType": "String"
+      },
+      "body": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "udtType": "Page",
+        "version": "1.0.0",
+        "description": "A route entry binding a URL path to a view and data sources.",
+        "parameters": {
+          "title": {
+            "dataType": "String",
+            "required": true
+          },
+          "slug": {
+            "dataType": "String",
+            "required": true
+          },
+          "route": {
+            "dataType": "String",
+            "required": true,
+            "description": "URL path pattern"
+          },
+          "view": {
+            "dataType": "String",
+            "required": true,
+            "description": "Path to view.json"
+          },
+          "data": {
+            "dataType": "JSON",
+            "required": false,
+            "description": "Named data source paths"
+          },
+          "stylesheets": {
+            "dataType": "StringArray",
+            "required": false
+          },
+          "section": {
+            "dataType": "String",
+            "required": false
+          },
+          "parent_slug": {
+            "dataType": "String",
+            "required": false
+          },
+          "status": {
+            "dataType": "String",
+            "required": false,
+            "default": "published"
+          }
+        },
+        "tags": {
+          "id": {
+            "dataType": "String"
+          },
+          "view_id": {
+            "dataType": "String"
+          },
+          "schema_version": {
+            "dataType": "String"
+          }
+        }
+      }
+    },
+    {
+      "file": "path.udt.json",
+      "udtType": "Path",
+      "id": {
+        "dataType": "String",
+        "description": "Stable path identifier (slug form)."
+      },
+      "body": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "udtType": "Path",
+        "version": "1.0.0",
+        "description": "A URL path / route entry — the addressable unit of site navigation. A Path binds a URL pattern to a Page, and captures metadata for navigation (label, section, parent, order, visibility).",
+        "parameters": {
+          "path": {
+            "dataType": "String",
+            "required": true,
+            "description": "URL path pattern. Use :name for dynamic segments (e.g., /members/:slug)."
+          },
+          "label": {
+            "dataType": "String",
+            "required": true,
+            "description": "Human-readable name for menus and breadcrumbs."
+          },
+          "page": {
+            "dataType": "String",
+            "required": true,
+            "description": "Path to the Page UDT instance JSON that handles this route."
+          },
+          "section": {
+            "dataType": "String",
+            "required": false,
+            "description": "Navigation section: about | resources | community | recognition | meta"
+          },
+          "parent": {
+            "dataType": "String",
+            "required": false,
+            "description": "Parent Path ID — supports breadcrumb hierarchy."
+          },
+          "order": {
+            "dataType": "Int",
+            "required": false,
+            "description": "Sort order within its section. Lower = earlier."
+          },
+          "dynamic": {
+            "dataType": "Boolean",
+            "required": false,
+            "default": false,
+            "description": "True if path contains :param segments."
+          },
+          "params": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Names of dynamic params (e.g., ['slug'])."
+          },
+          "methods": {
+            "dataType": "StringArray",
+            "required": false,
+            "default": [
+              "GET"
+            ],
+            "description": "Supported HTTP methods. Static site = GET only."
+          },
+          "status": {
+            "dataType": "String",
+            "required": false,
+            "default": "published",
+            "description": "published | draft | deprecated | redirect"
+          },
+          "redirect_to": {
+            "dataType": "String",
+            "required": false,
+            "description": "Target path if this is a redirect."
+          },
+          "visible_in_nav": {
+            "dataType": "Boolean",
+            "required": false,
+            "default": true,
+            "description": "Show in top-level navigation menus."
+          },
+          "meta_tags": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Topic tags for cross-referencing."
+          },
+          "access": {
+            "dataType": "String",
+            "required": false,
+            "default": "public",
+            "description": "public | member-only | admin"
+          },
+          "dependencies": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Path IDs or data-source keys this path needs before it can render (autopath resolver consumes this)."
+          },
+          "provides": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Names of resources this path makes available to dependents."
+          }
+        },
+        "tags": {
+          "id": {
+            "dataType": "String",
+            "description": "Stable path identifier (slug form)."
+          },
+          "full_url": {
+            "dataType": "String",
+            "description": "Full URL resolved against site base."
+          },
+          "children": {
+            "dataType": "StringArray",
+            "description": "IDs of child Paths (computed)."
+          },
+          "dependents": {
+            "dataType": "StringArray",
+            "description": "Path IDs that depend on this one (computed; inverse of dependencies)."
+          },
+          "breadcrumb": {
+            "dataType": "StringArray",
+            "description": "Ordered path IDs from root to this node."
+          },
+          "depth": {
+            "dataType": "Int",
+            "description": "Depth from root (0 for home)."
+          },
+          "view_id": {
+            "dataType": "String",
+            "description": "Resolved View ID from the referenced Page."
+          },
+          "last_verified": {
+            "dataType": "String",
+            "description": "UTC ISO timestamp when route was last verified to resolve."
+          },
+          "schema_version": {
+            "dataType": "String"
+          }
+        }
+      }
+    },
+    {
+      "file": "view.udt.json",
+      "udtType": "View",
+      "id": {
+        "dataType": "String"
+      },
+      "body": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "udtType": "View",
+        "version": "1.0.0",
+        "description": "A page-level component tree with data bindings.",
+        "parameters": {
+          "name": {
+            "dataType": "String",
+            "required": true
+          },
+          "description": {
+            "dataType": "String",
+            "required": false
+          },
+          "root": {
+            "dataType": "JSON",
+            "required": true,
+            "description": "Component tree root node"
+          }
+        },
+        "tags": {
+          "id": {
+            "dataType": "String"
+          },
+          "component_ids": {
+            "dataType": "StringArray",
+            "description": "All components used in this view"
+          },
+          "data_sources": {
+            "dataType": "StringArray",
+            "description": "JSON paths referenced by bindings"
+          },
+          "schema_version": {
+            "dataType": "String"
+          }
+        }
+      }
+    }
+  ]
+}

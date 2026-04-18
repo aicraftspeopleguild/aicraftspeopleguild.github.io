@@ -1,0 +1,618 @@
+{
+  "dir": "guild/Enterprise/L3/tools/instances",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 9,
+  "udt_count": 9,
+  "tags": {
+    "ext:json": {
+      "count": 9,
+      "files": [
+        "build-api.json",
+        "build-full.json",
+        "git-branches.json",
+        "git-diff.json",
+        "git-log.json",
+        "git-status.json",
+        "health.json",
+        "papers-list.json",
+        "test-links.json"
+      ]
+    },
+    "id:build-api": {
+      "count": 1,
+      "files": [
+        "build-api.json"
+      ]
+    },
+    "id:build-full": {
+      "count": 1,
+      "files": [
+        "build-full.json"
+      ]
+    },
+    "id:git-branches": {
+      "count": 1,
+      "files": [
+        "git-branches.json"
+      ]
+    },
+    "id:git-diff": {
+      "count": 1,
+      "files": [
+        "git-diff.json"
+      ]
+    },
+    "id:git-log": {
+      "count": 1,
+      "files": [
+        "git-log.json"
+      ]
+    },
+    "id:git-status": {
+      "count": 1,
+      "files": [
+        "git-status.json"
+      ]
+    },
+    "id:health": {
+      "count": 1,
+      "files": [
+        "health.json"
+      ]
+    },
+    "id:papers-list": {
+      "count": 1,
+      "files": [
+        "papers-list.json"
+      ]
+    },
+    "id:test-links": {
+      "count": 1,
+      "files": [
+        "test-links.json"
+      ]
+    },
+    "udt:Tool": {
+      "count": 9,
+      "files": [
+        "build-api.json",
+        "build-full.json",
+        "git-branches.json",
+        "git-diff.json",
+        "git-log.json",
+        "git-status.json",
+        "health.json",
+        "papers-list.json",
+        "test-links.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "Tool": 9
+  },
+  "sections": {},
+  "kinds": {
+    "json": 9
+  },
+  "refs": {},
+  "ids": {
+    "build-api": 1,
+    "build-full": 1,
+    "git-branches": 1,
+    "git-diff": 1,
+    "git-log": 1,
+    "git-status": 1,
+    "health": 1,
+    "papers-list": 1,
+    "test-links": 1
+  },
+  "udts": [
+    {
+      "file": "build-api.json",
+      "udtType": "Tool",
+      "id": "build-api",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "build:api",
+          "name": "Rebuild JSON API",
+          "description": "Regenerate /api/papers.json, members.json, health.json from the SQLite catalog.",
+          "category": "build",
+          "entry": "guild/web/scripts/api/build-api.py",
+          "language": "python",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "papers.json",
+              "type": "file"
+            },
+            {
+              "name": "members.json",
+              "type": "file"
+            },
+            {
+              "name": "health.json",
+              "type": "file"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "LoggerWrapper",
+            "TestWrapper"
+          ],
+          "tags": [
+            "build",
+            "api"
+          ],
+          "test_cases": [
+            {
+              "name": "completes ok",
+              "inputs": {},
+              "expect": {
+                "field": "ok",
+                "op": "eq",
+                "value": true
+              }
+            }
+          ]
+        },
+        "tags": {
+          "id": "build-api",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "build-full.json",
+      "udtType": "Tool",
+      "id": "build-full",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "build:full",
+          "name": "Full site rebuild",
+          "description": "Run the 12-step build pipeline end-to-end.",
+          "category": "build",
+          "entry": "guild/web/scripts/build.sh",
+          "language": "bash",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "dist",
+              "type": "dir",
+              "description": "guild/web/dist/*.html"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "LoggerWrapper"
+          ],
+          "tags": [
+            "build",
+            "orchestrator"
+          ]
+        },
+        "tags": {
+          "id": "build-full",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "git-branches.json",
+      "udtType": "Tool",
+      "id": "git-branches",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "git:branches",
+          "name": "Git branches",
+          "description": "Enumerate local branches with short SHA, upstream, and current-branch flag.",
+          "category": "query",
+          "entry": "guild/web/scripts/lib/git_ops.py:branches",
+          "language": "python",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "branches",
+              "type": "Branch[]"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "McpAdapter",
+            "LoggerWrapper",
+            "TestWrapper"
+          ],
+          "tags": [
+            "git",
+            "branch",
+            "read-only"
+          ],
+          "mcp": {
+            "mcp_name": "git_branches",
+            "input_schema": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "test_cases": [
+            {
+              "name": "returns ok",
+              "inputs": {},
+              "expect": {
+                "field": "ok",
+                "op": "eq",
+                "value": true
+              }
+            }
+          ]
+        },
+        "tags": {
+          "id": "git-branches",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "git-diff.json",
+      "udtType": "Tool",
+      "id": "git-diff",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "git:diff",
+          "name": "Git diff stat",
+          "description": "One-line diffstat summary for staged + unstaged changes.",
+          "category": "query",
+          "entry": "guild/web/scripts/lib/git_ops.py:diff_stat",
+          "language": "python",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "diff",
+              "type": "DiffStat"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "McpAdapter",
+            "LoggerWrapper",
+            "TestWrapper"
+          ],
+          "tags": [
+            "git",
+            "diff",
+            "read-only"
+          ],
+          "mcp": {
+            "mcp_name": "git_diff",
+            "input_schema": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "test_cases": [
+            {
+              "name": "returns ok",
+              "inputs": {},
+              "expect": {
+                "field": "ok",
+                "op": "eq",
+                "value": true
+              }
+            }
+          ]
+        },
+        "tags": {
+          "id": "git-diff",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "git-log.json",
+      "udtType": "Tool",
+      "id": "git-log",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "git:log",
+          "name": "Git log",
+          "description": "Recent N commits as structured records (sha, date, author, subject).",
+          "category": "query",
+          "entry": "guild/web/scripts/lib/git_ops.py:log",
+          "language": "python",
+          "inputs": [
+            {
+              "name": "n",
+              "type": "int",
+              "default": 10,
+              "description": "number of commits"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "commits",
+              "type": "Commit[]"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "McpAdapter",
+            "LoggerWrapper",
+            "TestWrapper"
+          ],
+          "tags": [
+            "git",
+            "log",
+            "history",
+            "read-only"
+          ],
+          "mcp": {
+            "mcp_name": "git_log",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "n": {
+                  "type": "integer",
+                  "description": "commit count",
+                  "default": 10
+                }
+              }
+            }
+          },
+          "test_cases": [
+            {
+              "name": "returns ok",
+              "inputs": {
+                "n": 3
+              },
+              "expect": {
+                "field": "ok",
+                "op": "eq",
+                "value": true
+              }
+            }
+          ]
+        },
+        "tags": {
+          "id": "git-log",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "git-status.json",
+      "udtType": "Tool",
+      "id": "git-status",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "git:status",
+          "name": "Git status",
+          "description": "Porcelain git status + PackML state classification (IDLE/RUNNING/HOLD/COMPLETE/ABORTED).",
+          "category": "query",
+          "entry": "guild/web/scripts/lib/git_ops.py:status",
+          "language": "python",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "status",
+              "type": "GitStatus",
+              "description": "branch, state, counts, first 40 entries"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "McpAdapter",
+            "LoggerWrapper",
+            "TestWrapper"
+          ],
+          "tags": [
+            "git",
+            "state",
+            "packml",
+            "read-only"
+          ],
+          "mcp": {
+            "mcp_name": "git_status",
+            "input_schema": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "test_cases": [
+            {
+              "name": "returns ok",
+              "inputs": {},
+              "expect": {
+                "field": "ok",
+                "op": "eq",
+                "value": true
+              }
+            }
+          ]
+        },
+        "tags": {
+          "id": "git-status",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "health.json",
+      "udtType": "Tool",
+      "id": "health",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "health",
+          "name": "Guild health",
+          "description": "Current enterprise vitals: paperCount, memberCount, lastUpdated, apiVersion.",
+          "category": "query",
+          "entry": "guild/Enterprise/L4/api/health.json",
+          "language": "bash",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "health",
+              "type": "Health",
+              "description": "Vitals object"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "ApiAdapter",
+            "McpAdapter",
+            "LoggerWrapper"
+          ],
+          "tags": [
+            "health",
+            "vitals",
+            "read-only"
+          ],
+          "mcp": {
+            "mcp_name": "health",
+            "input_schema": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "api": {
+            "method": "GET",
+            "path": "/guild/Enterprise/L4/api/health.json",
+            "static": true
+          }
+        },
+        "tags": {
+          "id": "health",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "papers-list.json",
+      "udtType": "Tool",
+      "id": "papers-list",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "papers:list",
+          "name": "List papers",
+          "description": "Emit the static paper catalog (JSON array) from guild/Enterprise/L4/api/papers.json.",
+          "category": "query",
+          "entry": "guild/Enterprise/L4/api/papers.json",
+          "language": "bash",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "papers",
+              "type": "Paper[]",
+              "description": "Array of paper records"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "ApiAdapter",
+            "McpAdapter",
+            "LoggerWrapper",
+            "TestWrapper"
+          ],
+          "tags": [
+            "papers",
+            "catalog",
+            "read-only"
+          ],
+          "mcp": {
+            "mcp_name": "list_papers",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "description": "Optional topic filter"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Optional paper type filter"
+                }
+              }
+            }
+          },
+          "api": {
+            "method": "GET",
+            "path": "/guild/Enterprise/L4/api/papers.json",
+            "static": true
+          },
+          "test_cases": [
+            {
+              "name": "catalog exists",
+              "inputs": {},
+              "expect": {
+                "field": "ok",
+                "op": "eq",
+                "value": true
+              }
+            }
+          ]
+        },
+        "tags": {
+          "id": "papers-list",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "test-links.json",
+      "udtType": "Tool",
+      "id": "test-links",
+      "body": {
+        "udtType": "Tool",
+        "parameters": {
+          "id": "test:links",
+          "name": "Link checker",
+          "description": "Walk every HTML file in index.html + dist/ and verify internal href/src targets exist.",
+          "category": "test",
+          "entry": "guild/web/scripts/test-links.py",
+          "language": "python",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "report",
+              "type": "text",
+              "description": "OK / MISSING counts + offenders list"
+            }
+          ],
+          "adapters": [
+            "CliAdapter",
+            "LoggerWrapper",
+            "TestWrapper"
+          ],
+          "tags": [
+            "qa",
+            "links",
+            "test"
+          ],
+          "test_cases": [
+            {
+              "name": "all links resolve",
+              "inputs": {},
+              "expect": {
+                "field": "ok",
+                "op": "eq",
+                "value": true
+              }
+            }
+          ]
+        },
+        "tags": {
+          "id": "test-links",
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

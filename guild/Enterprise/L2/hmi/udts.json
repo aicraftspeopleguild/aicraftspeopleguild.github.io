@@ -2,8 +2,8 @@
   "§":    "H.UDT",
   "🏗️":  "🖼",
   "name": "hmi · UDTs",
-  "owner":"controls/hmi/provider.py",
-  "note": "ISA-101 HMI UDTs. See /controls/docs/standards/konomi/isa101/ for the full dense spec.",
+  "owner":"L2/hmi/provider.py",
+  "note": "ISA-101 HMI UDTs. See /docs/standards/konomi/isa101/ for the full dense spec.",
 
   "types": {
     "ScreenLayer": {

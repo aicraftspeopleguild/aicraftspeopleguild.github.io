@@ -58,7 +58,7 @@
             "primaryText": "Back to White Papers",
             "primaryHref": "../white-papers.html",
             "secondaryText": "Back to Home",
-            "secondaryHref": "../../../index.html"
+            "secondaryHref": "#/"
           }
         }
       ]

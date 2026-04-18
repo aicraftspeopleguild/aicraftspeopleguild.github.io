@@ -2,7 +2,7 @@
   "§": "4.2.4",
   "🏗️": "📁",
   "name": "fs-panel",
-  "module": "controls/sandbox/web-llm/modules/fs-panel.js",
+  "module": "L4/sandbox/web-llm/modules/fs-panel.js",
 
   "📦": { "selectedFile": "s?", "currentPreview": "s?" },
 

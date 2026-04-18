@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"LoggerWrapper","layer":9,"version":"1.0.0","fields":[
+{"n":"tool_id","t":"STRING"},
+{"n":"level","t":"ENUM","values":["DEBUG","INFO","WARN","ERROR"],"default":"INFO"},
+{"n":"format","t":"ENUM","values":["json-lines","text"],"default":"json-lines"},
+{"n":"sink","t":"STRING","desc":"Path template, e.g. guild/Enterprise/L2/logs/{tool_id}/{date}.jsonl"},
+{"n":"include_args","t":"BOOL","default":true},
+{"n":"include_output","t":"BOOL","default":false,"desc":"Off by default — output can be large"}
+],"meta":{"desc":"Structured logging around a Tool invocation. One record per call with start/end timestamps, inputs, terminal state, and error if any."}}

@@ -2,7 +2,7 @@
   "§":          "W.TAGS",
   "🏗️":         "🧠",
   "name":       "sandbox.web-llm · tag catalog",
-  "owner":      "controls/sandbox/web-llm/modules/scada/tags.js",
+  "owner":      "L4/sandbox/web-llm/modules/scada/tags.js",
   "namespaces": ["sandbox.web-llm"],
   "note":       "Local tag plant; every write is mirrored to the main ACG SCADA under sandbox.web-llm.* via BroadcastChannel('acg-mesh').",
 

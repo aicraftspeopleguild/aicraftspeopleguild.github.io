@@ -1,0 +1,34 @@
+{
+  "dir": "guild/apps/test/assets",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 5,
+  "udt_count": 0,
+  "tags": {
+    "ext:css": {
+      "count": 1,
+      "files": [
+        "style.css"
+      ]
+    },
+    "ext:js": {
+      "count": 4,
+      "files": [
+        "runner-core.js",
+        "terminal.js",
+        "test-runner.js",
+        "udt-elements.js"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "css": 1,
+    "js": 4
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

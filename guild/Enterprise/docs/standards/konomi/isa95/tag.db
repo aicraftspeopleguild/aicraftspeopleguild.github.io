@@ -1,0 +1,36 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/isa95",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 13,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 13,
+      "files": [
+        "DataFlows.udt.json",
+        "Equipment.udt.json",
+        "EquipmentMode.udt.json",
+        "EquipmentState.udt.json",
+        "ISA95_Level.udt.json",
+        "Material.udt.json",
+        "MaterialClass.udt.json",
+        "Personnel.udt.json",
+        "PhysicalAsset.udt.json",
+        "ProcessSegment.udt.json",
+        "ProductionPerformance.udt.json",
+        "ProductionSchedule.udt.json",
+        "_std.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 13
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

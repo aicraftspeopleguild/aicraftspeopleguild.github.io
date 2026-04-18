@@ -3,9 +3,9 @@
   "🏗️": "🧪",
   "name": "Sandbox",
   "module": [
-    "controls/sandbox/shared/mesh-bridge.js",
-    "controls/scada/gateway/scripts/sandbox-bridge.js",
-    "controls/sandbox/web-llm/**"
+    "L4/sandbox/shared/mesh-bridge.js",
+    "L2/scada/gateway/scripts/sandbox-bridge.js",
+    "L4/sandbox/web-llm/**"
   ],
 
   "🛰️ MeshBridge": {
@@ -15,7 +15,7 @@
   },
 
   "📦🧠 WebLLM": {
-    "module": "controls/sandbox/web-llm/**",
+    "module": "L4/sandbox/web-llm/**",
 
     "⚙️": { "model": "s", "status": "e[idle|loading|ready|error]", "gpu": "b", "progress": "f" },
     "🎤": { "rms": "f", "f0": "f", "pDelta": "f", "sustain": "f", "coherence": "f", "vowel": "e", "energy": "f" },

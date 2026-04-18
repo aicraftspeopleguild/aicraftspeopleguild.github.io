@@ -1,0 +1,36 @@
+{
+  "dir": "guild/web/scripts/lib",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 13,
+  "udt_count": 0,
+  "tags": {
+    "ext:py": {
+      "count": 13,
+      "files": [
+        "__init__.py",
+        "git_ops.py",
+        "html_to_md.py",
+        "link_rewrite.py",
+        "md_to_html.py",
+        "packml.py",
+        "packml_checks.py",
+        "packml_process.py",
+        "packml_states.py",
+        "slugify.py",
+        "tool_runner.py",
+        "tool_tester.py",
+        "yaml_front.py"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "py": 13
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

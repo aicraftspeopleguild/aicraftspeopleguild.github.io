@@ -1,0 +1,30 @@
+{
+  "dir": "docs/templates/udts/tools",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 7,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 7,
+      "files": [
+        "ApiAdapter.udt.json",
+        "CliAdapter.udt.json",
+        "LoggerWrapper.udt.json",
+        "McpAdapter.udt.json",
+        "TestWrapper.udt.json",
+        "Tool.udt.json",
+        "_index.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 7
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

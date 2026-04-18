@@ -1,22 +1,44 @@
 #!/usr/bin/env python3
 """
-Build the Path dependency graph for autopathing.
+DEPRECATED — superseded by guild/web/scripts/paths/gen-tag-db.py.
 
-Reads every Path UDT instance and produces:
-  - paths/tags/index.json    Tag UDT inverted indexes (section, parent, depth)
-  - paths/_graph.json        node/edge graph for the whole site
-
-Edges captured per path:
-  parent        which path is the owner (breadcrumb up)
-  dependencies  other paths or data sources this path needs first
-  provides      what resources downstream paths may consume
-  dependents    reverse of dependencies (computed)
-
-Also validates:
-  - Every parent reference resolves to an existing path
-  - No cycles in parent chain or dependency graph
-  - breadcrumb tags match computed chain
+The URL-path graph and tag index now live inside the root `tag.db`
+(under `graphs.url_paths` and `indexes.*`). This script is kept as a
+thin shim so existing call sites don't break; it just delegates to the
+new consolidator.
 """
+import subprocess
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve()
+REPO = HERE.parents[4]
+NEW  = REPO / "guild" / "web" / "scripts" / "paths" / "gen-tag-db.py"
+
+if __name__ == "__main__":
+    print("[build-path-graph] DEPRECATED — delegating to gen-tag-db.py")
+    sys.exit(subprocess.call([sys.executable, str(NEW)]))
+#!/usr/bin/env python3
+"""
+DEPRECATED — superseded by guild/web/scripts/paths/gen-tag-db.py.
+
+The URL-path graph and tag index now live inside the root `tag.db`
+(under `graphs.url_paths` and `indexes.*`). This script is kept as a
+thin shim so existing call sites don't break; it just delegates to the
+new consolidator.
+"""
+import subprocess
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve()
+REPO = HERE.parents[4]
+NEW  = REPO / "guild" / "web" / "scripts" / "paths" / "gen-tag-db.py"
+
+if __name__ == "__main__":
+    print("[build-path-graph] DEPRECATED — delegating to gen-tag-db.py")
+    sys.exit(subprocess.call([sys.executable, str(NEW)]))
+
 import json, sys
 from pathlib import Path
 from datetime import datetime, timezone

@@ -1,0 +1,45 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/views",
+    "label": "views",
+    "parent": "guild/web",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_views",
+    "fs_path": "guild/web/views",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_views"
+    ],
+    "children": [
+      "guild/web/views/data"
+    ],
+    "siblings": [
+      "guild/web/assets",
+      "guild/web/components",
+      "guild/web/members",
+      "guild/web/pages",
+      "guild/web/perspective",
+      "guild/web/scripts",
+      "guild/web/style",
+      "guild/web/white-papers"
+    ],
+    "descendants": 1,
+    "file_count": 20,
+    "subdir_count": 1,
+    "kinds": {
+      "json": 19,
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T05:51:33Z",
+    "schema_version": "1.0.0"
+  }
+}

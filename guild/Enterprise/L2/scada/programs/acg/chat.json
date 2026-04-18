@@ -2,7 +2,7 @@
   "§": "2.4",
   "🏗️": "💬",
   "name": "chat",
-  "module": "controls/scada/gateway/scripts/chat.js",
+  "module": "L2/scada/gateway/scripts/chat.js",
 
   "🏗️": {
     "ChatMsg": { "role":"e[user|ai|system]", "len":"i", "ts":"ms" },

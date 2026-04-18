@@ -1,0 +1,28 @@
+{
+  "dir": "guild/apps/test/pages",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 5,
+  "udt_count": 0,
+  "tags": {
+    "ext:html": {
+      "count": 5,
+      "files": [
+        "example.html",
+        "runner.html",
+        "standard.html",
+        "terminal.html",
+        "types.html"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "html": 5
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

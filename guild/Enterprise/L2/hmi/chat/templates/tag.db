@@ -1,0 +1,32 @@
+{
+  "dir": "guild/Enterprise/L2/hmi/chat/templates",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 3,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 2,
+      "files": [
+        "tags.template.json",
+        "udts.template.json"
+      ]
+    },
+    "ext:md": {
+      "count": 1,
+      "files": [
+        "README.md"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 2,
+    "md": 1
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

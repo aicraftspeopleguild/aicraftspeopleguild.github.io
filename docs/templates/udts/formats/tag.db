@@ -1,0 +1,35 @@
+{
+  "dir": "docs/templates/udts/formats",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 12,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 12,
+      "files": [
+        "CssFile.udt.json",
+        "CsvFile.udt.json",
+        "HtmlFile.udt.json",
+        "JsFile.udt.json",
+        "JythonFile.udt.json",
+        "MarkdownFile.udt.json",
+        "Python2File.udt.json",
+        "Python3File.udt.json",
+        "PythonFile.udt.json",
+        "TextFile.udt.json",
+        "YamlFile.udt.json",
+        "_index.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 12
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

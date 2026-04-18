@@ -18,6 +18,5 @@ guild/Enterprise/L4/database/*.db-journal
 guild/apps/p2p/controls/db/*.sqlite
 guild/apps/p2p/controls/db/*.sqlite-journal
 
-# Per-directory tag databases (regenerable from UDT instance JSON)
-**/tag.db
-**/tag.db-journal
+# Tool runner JSONL audit trail (per-invocation, local runtime artifact)
+guild/Enterprise/L2/logs/

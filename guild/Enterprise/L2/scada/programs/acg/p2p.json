@@ -2,7 +2,7 @@
   "§": "2.2",
   "🏗️": "📡",
   "name": "p2p",
-  "module": "controls/scada/gateway/scripts/p2p.js",
+  "module": "L2/scada/gateway/scripts/p2p.js",
   "desc": "Multi-tracker WebRTC signalling. Fans out to every tracker in TRACKERS[] in parallel; peers find each other via the union of connected trackers, not one chosen tracker. Per-URL reconnect with exponential back-off.",
 
   "📦": {

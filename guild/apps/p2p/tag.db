@@ -1,0 +1,99 @@
+{
+  "dir": "guild/apps/p2p",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 4,
+  "udt_count": 1,
+  "tags": {
+    "ext:html": {
+      "count": 1,
+      "files": [
+        "index.html"
+      ]
+    },
+    "ext:json": {
+      "count": 1,
+      "files": [
+        "acg-app.json"
+      ]
+    },
+    "ext:md": {
+      "count": 2,
+      "files": [
+        "ACG-INTEGRATION.md",
+        "README.md"
+      ]
+    },
+    "id:p2p": {
+      "count": 1,
+      "files": [
+        "acg-app.json"
+      ]
+    },
+    "section:community": {
+      "count": 1,
+      "files": [
+        "acg-app.json"
+      ]
+    },
+    "udt:App": {
+      "count": 1,
+      "files": [
+        "acg-app.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "App": 1
+  },
+  "sections": {
+    "community": 1
+  },
+  "kinds": {
+    "html": 1,
+    "json": 1,
+    "md": 2
+  },
+  "refs": {},
+  "ids": {
+    "p2p": 1
+  },
+  "udts": [
+    {
+      "file": "acg-app.json",
+      "udtType": "App",
+      "id": "p2p",
+      "body": {
+        "udtType": "App",
+        "parameters": {
+          "name": "ACG P2P — Guild Mesh",
+          "slug": "p2p",
+          "kind": "guild-app",
+          "description": "Peer-to-peer, serverless, SCADA-instrumented chat mesh for Guild members. Originally developed as github.com/teslasolar/ACGP2P; imported here as a self-contained Guild app.",
+          "source_type": "External",
+          "source_path": "https://github.com/teslasolar/ACGP2P",
+          "view": "guild/apps/p2p/index.html",
+          "route": "/guild/apps/p2p/",
+          "section": "community",
+          "stylesheets": [],
+          "status": "published",
+          "tags": [
+            "p2p",
+            "chat",
+            "scada",
+            "konomi",
+            "guild-app"
+          ]
+        },
+        "tags": {
+          "id": "p2p",
+          "url": "https://aicraftspeopleguild.github.io/guild/apps/p2p/",
+          "view_id": "external",
+          "ingested_at": "2026-04-18T00:00:00Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

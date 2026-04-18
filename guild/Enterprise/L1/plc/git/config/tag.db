@@ -1,0 +1,25 @@
+{
+  "dir": "guild/Enterprise/L1/plc/git/config",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 2,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 2,
+      "files": [
+        "config.json",
+        "vendor-map.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 2
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

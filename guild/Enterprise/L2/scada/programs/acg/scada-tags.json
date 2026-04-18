@@ -2,7 +2,7 @@
   "§": "3.1",
   "🏗️": "🏷️",
   "name": "tags",
-  "module": "controls/scada/gateway/scripts/scada/tags.js",
+  "module": "L2/scada/gateway/scripts/scada/tags.js",
 
   "📦": {
     "tags": "m path:s → { value:any quality:🟢|🟡|🔴 ts:ms type:s? }",

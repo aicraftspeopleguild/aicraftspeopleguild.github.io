@@ -1,0 +1,49 @@
+{
+  "dir": "docs/engineering/component-catalog",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 26,
+  "udt_count": 0,
+  "tags": {
+    "ext:md": {
+      "count": 26,
+      "files": [
+        "article-nav.md",
+        "article-section.md",
+        "back-link.md",
+        "badge-row.md",
+        "badge.md",
+        "button.md",
+        "callout.md",
+        "card-grid.md",
+        "closing-statement.md",
+        "code-block.md",
+        "cta-section.md",
+        "entry-card.md",
+        "eyebrow.md",
+        "figure-block.md",
+        "future-slot.md",
+        "guild-mark.md",
+        "index.md",
+        "intro-panel.md",
+        "member-card.md",
+        "page-footer.md",
+        "page-header.md",
+        "page-shell.md",
+        "paper-card.md",
+        "pull-quote.md",
+        "raw-html.md",
+        "section-heading.md"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "md": 26
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

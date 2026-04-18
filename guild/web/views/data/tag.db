@@ -1,0 +1,39 @@
+{
+  "dir": "guild/web/views/data",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 16,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 16,
+      "files": [
+        "ai-rituals.data.json",
+        "aicraftspeopleguild-manifesto.data.json",
+        "charter.data.json",
+        "chief-ai-skeptic-officer.data.json",
+        "code-of-conduct.data.json",
+        "flywheel.data.json",
+        "guild-radar.data.json",
+        "hall-of-fame.data.json",
+        "hall-of-shame.data.json",
+        "hushbell-full-spec.data.json",
+        "hushbell.data.json",
+        "mission-statement.data.json",
+        "mob-programming.data.json",
+        "showcases.data.json",
+        "white-papers-list.data.json",
+        "white-papers.data.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 16
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

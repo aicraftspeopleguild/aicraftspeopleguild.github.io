@@ -1,0 +1,26 @@
+{
+  "dir": "guild/web/style",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 3,
+  "udt_count": 0,
+  "tags": {
+    "ext:css": {
+      "count": 3,
+      "files": [
+        "home.css",
+        "main.css",
+        "member-profile.css"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "css": 3
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

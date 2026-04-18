@@ -2,7 +2,7 @@
   "§": "4.1",
   "🏗️": "🛰️",
   "name": "sandbox-bridge (host side)",
-  "module": "controls/scada/gateway/scripts/sandbox-bridge.js",
+  "module": "L2/scada/gateway/scripts/sandbox-bridge.js",
 
   "⚙️": { "CHAN": "acg-mesh" },
 

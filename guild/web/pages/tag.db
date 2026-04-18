@@ -1,0 +1,780 @@
+{
+  "dir": "guild/web/pages",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 19,
+  "udt_count": 19,
+  "tags": {
+    "ext:json": {
+      "count": 19,
+      "files": [
+        "ai-rituals.page.json",
+        "aicraftspeopleguild-manifesto.page.json",
+        "charter.page.json",
+        "chief-ai-skeptic-officer.page.json",
+        "code-of-conduct.page.json",
+        "flywheel.page.json",
+        "guild-radar.page.json",
+        "hall-of-fame.page.json",
+        "hall-of-shame.page.json",
+        "home.page.json",
+        "hushbell-full-spec.page.json",
+        "hushbell.page.json",
+        "member-profile.page.json",
+        "members.page.json",
+        "mission-statement.page.json",
+        "mob-programming.page.json",
+        "showcases.page.json",
+        "white-paper-article.page.json",
+        "white-papers.page.json"
+      ]
+    },
+    "id:ai-rituals": {
+      "count": 1,
+      "files": [
+        "ai-rituals.page.json"
+      ]
+    },
+    "id:aicraftspeopleguild-manifesto": {
+      "count": 1,
+      "files": [
+        "aicraftspeopleguild-manifesto.page.json"
+      ]
+    },
+    "id:charter": {
+      "count": 1,
+      "files": [
+        "charter.page.json"
+      ]
+    },
+    "id:chief-ai-skeptic-officer": {
+      "count": 1,
+      "files": [
+        "chief-ai-skeptic-officer.page.json"
+      ]
+    },
+    "id:code-of-conduct": {
+      "count": 1,
+      "files": [
+        "code-of-conduct.page.json"
+      ]
+    },
+    "id:flywheel": {
+      "count": 1,
+      "files": [
+        "flywheel.page.json"
+      ]
+    },
+    "id:guild-radar": {
+      "count": 1,
+      "files": [
+        "guild-radar.page.json"
+      ]
+    },
+    "id:hall-of-fame": {
+      "count": 1,
+      "files": [
+        "hall-of-fame.page.json"
+      ]
+    },
+    "id:hall-of-shame": {
+      "count": 1,
+      "files": [
+        "hall-of-shame.page.json"
+      ]
+    },
+    "id:home": {
+      "count": 1,
+      "files": [
+        "home.page.json"
+      ]
+    },
+    "id:hushbell": {
+      "count": 1,
+      "files": [
+        "hushbell.page.json"
+      ]
+    },
+    "id:hushbell-full-spec": {
+      "count": 1,
+      "files": [
+        "hushbell-full-spec.page.json"
+      ]
+    },
+    "id:member-profile": {
+      "count": 1,
+      "files": [
+        "member-profile.page.json"
+      ]
+    },
+    "id:members": {
+      "count": 1,
+      "files": [
+        "members.page.json"
+      ]
+    },
+    "id:mission-statement": {
+      "count": 1,
+      "files": [
+        "mission-statement.page.json"
+      ]
+    },
+    "id:mob-programming": {
+      "count": 1,
+      "files": [
+        "mob-programming.page.json"
+      ]
+    },
+    "id:showcases": {
+      "count": 1,
+      "files": [
+        "showcases.page.json"
+      ]
+    },
+    "id:white-paper-article": {
+      "count": 1,
+      "files": [
+        "white-paper-article.page.json"
+      ]
+    },
+    "id:white-papers": {
+      "count": 1,
+      "files": [
+        "white-papers.page.json"
+      ]
+    },
+    "section:about": {
+      "count": 5,
+      "files": [
+        "aicraftspeopleguild-manifesto.page.json",
+        "charter.page.json",
+        "chief-ai-skeptic-officer.page.json",
+        "code-of-conduct.page.json",
+        "mission-statement.page.json"
+      ]
+    },
+    "section:community": {
+      "count": 5,
+      "files": [
+        "flywheel.page.json",
+        "guild-radar.page.json",
+        "member-profile.page.json",
+        "members.page.json",
+        "showcases.page.json"
+      ]
+    },
+    "section:home": {
+      "count": 1,
+      "files": [
+        "home.page.json"
+      ]
+    },
+    "section:recognition": {
+      "count": 2,
+      "files": [
+        "hall-of-fame.page.json",
+        "hall-of-shame.page.json"
+      ]
+    },
+    "section:resources": {
+      "count": 6,
+      "files": [
+        "ai-rituals.page.json",
+        "hushbell-full-spec.page.json",
+        "hushbell.page.json",
+        "mob-programming.page.json",
+        "white-paper-article.page.json",
+        "white-papers.page.json"
+      ]
+    },
+    "udt:Page": {
+      "count": 19,
+      "files": [
+        "ai-rituals.page.json",
+        "aicraftspeopleguild-manifesto.page.json",
+        "charter.page.json",
+        "chief-ai-skeptic-officer.page.json",
+        "code-of-conduct.page.json",
+        "flywheel.page.json",
+        "guild-radar.page.json",
+        "hall-of-fame.page.json",
+        "hall-of-shame.page.json",
+        "home.page.json",
+        "hushbell-full-spec.page.json",
+        "hushbell.page.json",
+        "member-profile.page.json",
+        "members.page.json",
+        "mission-statement.page.json",
+        "mob-programming.page.json",
+        "showcases.page.json",
+        "white-paper-article.page.json",
+        "white-papers.page.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "Page": 19
+  },
+  "sections": {
+    "about": 5,
+    "community": 5,
+    "home": 1,
+    "recognition": 2,
+    "resources": 6
+  },
+  "kinds": {
+    "json": 19
+  },
+  "refs": {},
+  "ids": {
+    "ai-rituals": 1,
+    "aicraftspeopleguild-manifesto": 1,
+    "charter": 1,
+    "chief-ai-skeptic-officer": 1,
+    "code-of-conduct": 1,
+    "flywheel": 1,
+    "guild-radar": 1,
+    "hall-of-fame": 1,
+    "hall-of-shame": 1,
+    "home": 1,
+    "hushbell": 1,
+    "hushbell-full-spec": 1,
+    "member-profile": 1,
+    "members": 1,
+    "mission-statement": 1,
+    "mob-programming": 1,
+    "showcases": 1,
+    "white-paper-article": 1,
+    "white-papers": 1
+  },
+  "udts": [
+    {
+      "file": "ai-rituals.page.json",
+      "udtType": "Page",
+      "id": "ai-rituals",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "AI Rituals",
+          "slug": "ai-rituals",
+          "route": "/ai-rituals",
+          "view": "views/ai-rituals.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/ai-rituals.data.json"
+          }
+        },
+        "tags": {
+          "id": "ai-rituals",
+          "view_id": "ai-rituals",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "aicraftspeopleguild-manifesto.page.json",
+      "udtType": "Page",
+      "id": "aicraftspeopleguild-manifesto",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "ACG Manifesto",
+          "slug": "aicraftspeopleguild-manifesto",
+          "route": "/aicraftspeopleguild-manifesto",
+          "view": "views/aicraftspeopleguild-manifesto.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "about",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/aicraftspeopleguild-manifesto.data.json"
+          }
+        },
+        "tags": {
+          "id": "aicraftspeopleguild-manifesto",
+          "view_id": "aicraftspeopleguild-manifesto",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "charter.page.json",
+      "udtType": "Page",
+      "id": "charter",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Guild Charter",
+          "slug": "charter",
+          "route": "/charter",
+          "view": "views/charter.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "about",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/charter.data.json"
+          }
+        },
+        "tags": {
+          "id": "charter",
+          "view_id": "charter",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "chief-ai-skeptic-officer.page.json",
+      "udtType": "Page",
+      "id": "chief-ai-skeptic-officer",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "CASO — Chief AI Skeptic Officer",
+          "slug": "chief-ai-skeptic-officer",
+          "route": "/chief-ai-skeptic-officer",
+          "view": "views/chief-ai-skeptic-officer.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "about",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/chief-ai-skeptic-officer.data.json"
+          }
+        },
+        "tags": {
+          "id": "chief-ai-skeptic-officer",
+          "view_id": "chief-ai-skeptic-officer",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "code-of-conduct.page.json",
+      "udtType": "Page",
+      "id": "code-of-conduct",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Code of Conduct",
+          "slug": "code-of-conduct",
+          "route": "/code-of-conduct",
+          "view": "views/code-of-conduct.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "about",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/code-of-conduct.data.json"
+          }
+        },
+        "tags": {
+          "id": "code-of-conduct",
+          "view_id": "code-of-conduct",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "flywheel.page.json",
+      "udtType": "Page",
+      "id": "flywheel",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "🌸 ASS-OS BLOOM PROMPT — THE FLYWHEEL",
+          "slug": "flywheel",
+          "route": "/flywheel",
+          "view": "views/flywheel.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "community",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/flywheel.data.json"
+          }
+        },
+        "tags": {
+          "id": "flywheel",
+          "view_id": "flywheel",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "guild-radar.page.json",
+      "udtType": "Page",
+      "id": "guild-radar",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "🌸 ASS-OS BLOOM PROMPT — THE RADAR",
+          "slug": "guild-radar",
+          "route": "/guild-radar",
+          "view": "views/guild-radar.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "community",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/guild-radar.data.json"
+          }
+        },
+        "tags": {
+          "id": "guild-radar",
+          "view_id": "guild-radar",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hall-of-fame.page.json",
+      "udtType": "Page",
+      "id": "hall-of-fame",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Hall of Fame",
+          "slug": "hall-of-fame",
+          "route": "/hall-of-fame",
+          "view": "views/hall-of-fame.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "recognition",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/hall-of-fame.data.json"
+          }
+        },
+        "tags": {
+          "id": "hall-of-fame",
+          "view_id": "hall-of-fame",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hall-of-shame.page.json",
+      "udtType": "Page",
+      "id": "hall-of-shame",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Hall of Shame",
+          "slug": "hall-of-shame",
+          "route": "/hall-of-shame",
+          "view": "views/hall-of-shame.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "recognition",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/hall-of-shame.data.json"
+          }
+        },
+        "tags": {
+          "id": "hall-of-shame",
+          "view_id": "hall-of-shame",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "home.page.json",
+      "udtType": "Page",
+      "id": "home",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "AI Craftspeople Guild",
+          "slug": "home",
+          "route": "/",
+          "view": "views/home.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "home",
+          "status": "published"
+        },
+        "tags": {
+          "id": "home",
+          "view_id": "home",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hushbell-full-spec.page.json",
+      "udtType": "Page",
+      "id": "hushbell-full-spec",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "🌸 ASS-OS FULL SPEC — HUSHBELL v1.0",
+          "slug": "hushbell-full-spec",
+          "route": "/hushbell-full-spec",
+          "view": "views/hushbell-full-spec.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/hushbell-full-spec.data.json"
+          }
+        },
+        "tags": {
+          "id": "hushbell-full-spec",
+          "view_id": "hushbell-full-spec",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hushbell.page.json",
+      "udtType": "Page",
+      "id": "hushbell",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "🌸 BLOOMING 80085 SPEC — HUSHBELL",
+          "slug": "hushbell",
+          "route": "/hushbell",
+          "view": "views/hushbell.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/hushbell.data.json"
+          }
+        },
+        "tags": {
+          "id": "hushbell",
+          "view_id": "hushbell",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "member-profile.page.json",
+      "udtType": "Page",
+      "id": "member-profile",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Member Profile",
+          "slug": "member-profile",
+          "route": "/members/:slug",
+          "view": "views/member-profile.view.json",
+          "data": {
+            "member": "members/udts/instances/:slug.json"
+          },
+          "stylesheets": [
+            "style/main.css",
+            "style/member-profile.css"
+          ],
+          "section": "community",
+          "parent_slug": "members",
+          "status": "published"
+        },
+        "tags": {
+          "id": "member-profile",
+          "view_id": "member-profile",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "members.page.json",
+      "udtType": "Page",
+      "id": "members",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Guild Members",
+          "slug": "members",
+          "route": "/members",
+          "view": "views/members-index.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "community",
+          "parent_slug": "home",
+          "status": "published"
+        },
+        "tags": {
+          "id": "members",
+          "view_id": "members-index",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "mission-statement.page.json",
+      "udtType": "Page",
+      "id": "mission-statement",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Mission Statement",
+          "slug": "mission-statement",
+          "route": "/mission-statement",
+          "view": "views/mission-statement.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "about",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/mission-statement.data.json"
+          }
+        },
+        "tags": {
+          "id": "mission-statement",
+          "view_id": "mission-statement",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "mob-programming.page.json",
+      "udtType": "Page",
+      "id": "mob-programming",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Mob Programming 101",
+          "slug": "mob-programming",
+          "route": "/mob-programming",
+          "view": "views/mob-programming.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/mob-programming.data.json"
+          }
+        },
+        "tags": {
+          "id": "mob-programming",
+          "view_id": "mob-programming",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "showcases.page.json",
+      "udtType": "Page",
+      "id": "showcases",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Showcases",
+          "slug": "showcases",
+          "route": "/showcases",
+          "view": "views/showcases.view.json",
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "community",
+          "parent_slug": "home",
+          "status": "published",
+          "data": {
+            "page": "views/data/showcases.data.json"
+          }
+        },
+        "tags": {
+          "id": "showcases",
+          "view_id": "showcases",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "white-paper-article.page.json",
+      "udtType": "Page",
+      "id": "white-paper-article",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "White Paper",
+          "slug": "white-paper-article",
+          "route": "/white-papers/:slug",
+          "view": "views/white-paper-article.view.json",
+          "data": {
+            "paper": "white-papers/udts/instances/:slug.json"
+          },
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "white-paper-article",
+          "view_id": "white-paper-article",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "white-papers.page.json",
+      "udtType": "Page",
+      "id": "white-papers",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "White Papers",
+          "slug": "white-papers",
+          "route": "/white-papers",
+          "view": "views/white-paper-index.view.json",
+          "data": {
+            "page": "views/data/white-papers.data.json",
+            "papers": "views/data/white-papers-list.data.json"
+          },
+          "stylesheets": [
+            "style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "home",
+          "status": "published"
+        },
+        "tags": {
+          "id": "white-papers",
+          "view_id": "white-paper-index",
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

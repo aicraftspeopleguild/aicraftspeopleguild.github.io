@@ -125,7 +125,7 @@
       {
         "meta": { "name": "BackLink", "slot": "footer" },
         "type": "acg.nav.back-link",
-        "props": { "href": "../../../index.html", "label": "Back to Home" },
+        "props": { "href": "#/", "label": "Back to Home" },
         "children": []
       }
     ]

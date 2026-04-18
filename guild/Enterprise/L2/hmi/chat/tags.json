@@ -2,7 +2,7 @@
   "§": "C.TAGS",
   "🏗️": "💬",
   "name": "chat · tag catalog",
-  "owner": "controls/hmi/chat/provider.py",
+  "owner": "L2/hmi/chat/provider.py",
   "namespaces": ["chat", "room", "tracker", "peers", "signal"],
 
   "tags": [

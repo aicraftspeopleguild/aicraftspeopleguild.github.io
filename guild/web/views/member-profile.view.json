@@ -40,7 +40,7 @@
             "primaryText": "Back to Members",
             "primaryHref": "#/members",
             "secondaryText": "Back to Home",
-            "secondaryHref": "../../../index.html"
+            "secondaryHref": "#/"
           }
         }
       ]

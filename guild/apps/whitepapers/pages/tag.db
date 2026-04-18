@@ -1,0 +1,951 @@
+{
+  "dir": "guild/apps/whitepapers/pages",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 24,
+  "udt_count": 24,
+  "tags": {
+    "ext:json": {
+      "count": 24,
+      "files": [
+        "acg-kcc-guild-chain.page.json",
+        "acg-net-decentralized-guild-web.page.json",
+        "acg-review-forge.page.json",
+        "ai-harness-constraint-driven-software-development-for-the.page.json",
+        "ai-that-pisses-you-off-the-surprisingly-effective-path-to.page.json",
+        "ass-os-bloom-prompt-occam.page.json",
+        "ass-os-bloom-prompt-the-irrational-universe.page.json",
+        "ass-os-bloom-prompt-the-rational-empire.page.json",
+        "avoid-being-fractally-wrong.page.json",
+        "convergent-governance-topologies-in-specialist-networks-a.page.json",
+        "from-correctness-to-integrity-measuring-ai-generated-code.page.json",
+        "grid-brain.page.json",
+        "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.page.json",
+        "lightning-factory.page.json",
+        "s-a-d.page.json",
+        "structural-toast-carbonization-a-failure-mode-distinct-from.page.json",
+        "the-dog-the-data-scientist-and-the-mrna-vaccine.page.json",
+        "the-harm-equation.page.json",
+        "the-konomi-standard.page.json",
+        "the-pattern-that-wasn-t-there.page.json",
+        "the-prediction-trap.page.json",
+        "the-shield-of-all-knights-against-bounded-rationality.page.json",
+        "toastmasters-scrapers-guild.page.json",
+        "you-re-absolutely-wrong.page.json"
+      ]
+    },
+    "id:app-acg-kcc-guild-chain": {
+      "count": 1,
+      "files": [
+        "acg-kcc-guild-chain.page.json"
+      ]
+    },
+    "id:app-acg-net-decentralized-guild-web": {
+      "count": 1,
+      "files": [
+        "acg-net-decentralized-guild-web.page.json"
+      ]
+    },
+    "id:app-acg-review-forge": {
+      "count": 1,
+      "files": [
+        "acg-review-forge.page.json"
+      ]
+    },
+    "id:app-ai-harness-constraint-driven-software-development-for-the": {
+      "count": 1,
+      "files": [
+        "ai-harness-constraint-driven-software-development-for-the.page.json"
+      ]
+    },
+    "id:app-ai-that-pisses-you-off-the-surprisingly-effective-path-to": {
+      "count": 1,
+      "files": [
+        "ai-that-pisses-you-off-the-surprisingly-effective-path-to.page.json"
+      ]
+    },
+    "id:app-ass-os-bloom-prompt-occam": {
+      "count": 1,
+      "files": [
+        "ass-os-bloom-prompt-occam.page.json"
+      ]
+    },
+    "id:app-ass-os-bloom-prompt-the-irrational-universe": {
+      "count": 1,
+      "files": [
+        "ass-os-bloom-prompt-the-irrational-universe.page.json"
+      ]
+    },
+    "id:app-ass-os-bloom-prompt-the-rational-empire": {
+      "count": 1,
+      "files": [
+        "ass-os-bloom-prompt-the-rational-empire.page.json"
+      ]
+    },
+    "id:app-avoid-being-fractally-wrong": {
+      "count": 1,
+      "files": [
+        "avoid-being-fractally-wrong.page.json"
+      ]
+    },
+    "id:app-convergent-governance-topologies-in-specialist-networks-a": {
+      "count": 1,
+      "files": [
+        "convergent-governance-topologies-in-specialist-networks-a.page.json"
+      ]
+    },
+    "id:app-from-correctness-to-integrity-measuring-ai-generated-code": {
+      "count": 1,
+      "files": [
+        "from-correctness-to-integrity-measuring-ai-generated-code.page.json"
+      ]
+    },
+    "id:app-grid-brain": {
+      "count": 1,
+      "files": [
+        "grid-brain.page.json"
+      ]
+    },
+    "id:app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate": {
+      "count": 1,
+      "files": [
+        "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.page.json"
+      ]
+    },
+    "id:app-lightning-factory": {
+      "count": 1,
+      "files": [
+        "lightning-factory.page.json"
+      ]
+    },
+    "id:app-s-a-d": {
+      "count": 1,
+      "files": [
+        "s-a-d.page.json"
+      ]
+    },
+    "id:app-structural-toast-carbonization-a-failure-mode-distinct-from": {
+      "count": 1,
+      "files": [
+        "structural-toast-carbonization-a-failure-mode-distinct-from.page.json"
+      ]
+    },
+    "id:app-the-dog-the-data-scientist-and-the-mrna-vaccine": {
+      "count": 1,
+      "files": [
+        "the-dog-the-data-scientist-and-the-mrna-vaccine.page.json"
+      ]
+    },
+    "id:app-the-harm-equation": {
+      "count": 1,
+      "files": [
+        "the-harm-equation.page.json"
+      ]
+    },
+    "id:app-the-konomi-standard": {
+      "count": 1,
+      "files": [
+        "the-konomi-standard.page.json"
+      ]
+    },
+    "id:app-the-pattern-that-wasn-t-there": {
+      "count": 1,
+      "files": [
+        "the-pattern-that-wasn-t-there.page.json"
+      ]
+    },
+    "id:app-the-prediction-trap": {
+      "count": 1,
+      "files": [
+        "the-prediction-trap.page.json"
+      ]
+    },
+    "id:app-the-shield-of-all-knights-against-bounded-rationality": {
+      "count": 1,
+      "files": [
+        "the-shield-of-all-knights-against-bounded-rationality.page.json"
+      ]
+    },
+    "id:app-toastmasters-scrapers-guild": {
+      "count": 1,
+      "files": [
+        "toastmasters-scrapers-guild.page.json"
+      ]
+    },
+    "id:app-you-re-absolutely-wrong": {
+      "count": 1,
+      "files": [
+        "you-re-absolutely-wrong.page.json"
+      ]
+    },
+    "section:resources": {
+      "count": 24,
+      "files": [
+        "acg-kcc-guild-chain.page.json",
+        "acg-net-decentralized-guild-web.page.json",
+        "acg-review-forge.page.json",
+        "ai-harness-constraint-driven-software-development-for-the.page.json",
+        "ai-that-pisses-you-off-the-surprisingly-effective-path-to.page.json",
+        "ass-os-bloom-prompt-occam.page.json",
+        "ass-os-bloom-prompt-the-irrational-universe.page.json",
+        "ass-os-bloom-prompt-the-rational-empire.page.json",
+        "avoid-being-fractally-wrong.page.json",
+        "convergent-governance-topologies-in-specialist-networks-a.page.json",
+        "from-correctness-to-integrity-measuring-ai-generated-code.page.json",
+        "grid-brain.page.json",
+        "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.page.json",
+        "lightning-factory.page.json",
+        "s-a-d.page.json",
+        "structural-toast-carbonization-a-failure-mode-distinct-from.page.json",
+        "the-dog-the-data-scientist-and-the-mrna-vaccine.page.json",
+        "the-harm-equation.page.json",
+        "the-konomi-standard.page.json",
+        "the-pattern-that-wasn-t-there.page.json",
+        "the-prediction-trap.page.json",
+        "the-shield-of-all-knights-against-bounded-rationality.page.json",
+        "toastmasters-scrapers-guild.page.json",
+        "you-re-absolutely-wrong.page.json"
+      ]
+    },
+    "udt:Page": {
+      "count": 24,
+      "files": [
+        "acg-kcc-guild-chain.page.json",
+        "acg-net-decentralized-guild-web.page.json",
+        "acg-review-forge.page.json",
+        "ai-harness-constraint-driven-software-development-for-the.page.json",
+        "ai-that-pisses-you-off-the-surprisingly-effective-path-to.page.json",
+        "ass-os-bloom-prompt-occam.page.json",
+        "ass-os-bloom-prompt-the-irrational-universe.page.json",
+        "ass-os-bloom-prompt-the-rational-empire.page.json",
+        "avoid-being-fractally-wrong.page.json",
+        "convergent-governance-topologies-in-specialist-networks-a.page.json",
+        "from-correctness-to-integrity-measuring-ai-generated-code.page.json",
+        "grid-brain.page.json",
+        "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.page.json",
+        "lightning-factory.page.json",
+        "s-a-d.page.json",
+        "structural-toast-carbonization-a-failure-mode-distinct-from.page.json",
+        "the-dog-the-data-scientist-and-the-mrna-vaccine.page.json",
+        "the-harm-equation.page.json",
+        "the-konomi-standard.page.json",
+        "the-pattern-that-wasn-t-there.page.json",
+        "the-prediction-trap.page.json",
+        "the-shield-of-all-knights-against-bounded-rationality.page.json",
+        "toastmasters-scrapers-guild.page.json",
+        "you-re-absolutely-wrong.page.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "Page": 24
+  },
+  "sections": {
+    "resources": 24
+  },
+  "kinds": {
+    "json": 24
+  },
+  "refs": {},
+  "ids": {
+    "app-acg-kcc-guild-chain": 1,
+    "app-acg-net-decentralized-guild-web": 1,
+    "app-acg-review-forge": 1,
+    "app-ai-harness-constraint-driven-software-development-for-the": 1,
+    "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to": 1,
+    "app-ass-os-bloom-prompt-occam": 1,
+    "app-ass-os-bloom-prompt-the-irrational-universe": 1,
+    "app-ass-os-bloom-prompt-the-rational-empire": 1,
+    "app-avoid-being-fractally-wrong": 1,
+    "app-convergent-governance-topologies-in-specialist-networks-a": 1,
+    "app-from-correctness-to-integrity-measuring-ai-generated-code": 1,
+    "app-grid-brain": 1,
+    "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate": 1,
+    "app-lightning-factory": 1,
+    "app-s-a-d": 1,
+    "app-structural-toast-carbonization-a-failure-mode-distinct-from": 1,
+    "app-the-dog-the-data-scientist-and-the-mrna-vaccine": 1,
+    "app-the-harm-equation": 1,
+    "app-the-konomi-standard": 1,
+    "app-the-pattern-that-wasn-t-there": 1,
+    "app-the-prediction-trap": 1,
+    "app-the-shield-of-all-knights-against-bounded-rationality": 1,
+    "app-toastmasters-scrapers-guild": 1,
+    "app-you-re-absolutely-wrong": 1
+  },
+  "udts": [
+    {
+      "file": "acg-kcc-guild-chain.page.json",
+      "udtType": "Page",
+      "id": "app-acg-kcc-guild-chain",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "ACG-KCC: Guild Chain",
+          "slug": "app-acg-kcc-guild-chain",
+          "route": "/whitepapers/acg-kcc-guild-chain",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/acg-kcc-guild-chain.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-acg-kcc-guild-chain",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "acg-net-decentralized-guild-web.page.json",
+      "udtType": "Page",
+      "id": "app-acg-net-decentralized-guild-web",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "ACG-NET: Decentralized Guild Web",
+          "slug": "app-acg-net-decentralized-guild-web",
+          "route": "/whitepapers/acg-net-decentralized-guild-web",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/acg-net-decentralized-guild-web.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-acg-net-decentralized-guild-web",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "acg-review-forge.page.json",
+      "udtType": "Page",
+      "id": "app-acg-review-forge",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "ACG Review Forge",
+          "slug": "app-acg-review-forge",
+          "route": "/whitepapers/acg-review-forge",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/acg-review-forge.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-acg-review-forge",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "ai-harness-constraint-driven-software-development-for-the.page.json",
+      "udtType": "Page",
+      "id": "app-ai-harness-constraint-driven-software-development-for-the",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "AI Harness: Constraint-Driven Software Development for the Age of AI Agents",
+          "slug": "app-ai-harness-constraint-driven-software-development-for-the",
+          "route": "/whitepapers/ai-harness-constraint-driven-software-development-for-the",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/ai-harness-constraint-driven-software-development-for-the.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-ai-harness-constraint-driven-software-development-for-the",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "ai-that-pisses-you-off-the-surprisingly-effective-path-to.page.json",
+      "udtType": "Page",
+      "id": "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "AI That Pisses You Off: The Surprisingly Effective Path to Deeper Thinking",
+          "slug": "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+          "route": "/whitepapers/ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/ai-that-pisses-you-off-the-surprisingly-effective-path-to.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "ass-os-bloom-prompt-occam.page.json",
+      "udtType": "Page",
+      "id": "app-ass-os-bloom-prompt-occam",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "🌸 ASS-OS BLOOM PROMPT — OCCAM",
+          "slug": "app-ass-os-bloom-prompt-occam",
+          "route": "/whitepapers/ass-os-bloom-prompt-occam",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/ass-os-bloom-prompt-occam.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-ass-os-bloom-prompt-occam",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "ass-os-bloom-prompt-the-irrational-universe.page.json",
+      "udtType": "Page",
+      "id": "app-ass-os-bloom-prompt-the-irrational-universe",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "🌸 ASS-OS BLOOM PROMPT — THE IRRATIONAL UNIVERSE",
+          "slug": "app-ass-os-bloom-prompt-the-irrational-universe",
+          "route": "/whitepapers/ass-os-bloom-prompt-the-irrational-universe",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/ass-os-bloom-prompt-the-irrational-universe.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-ass-os-bloom-prompt-the-irrational-universe",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "ass-os-bloom-prompt-the-rational-empire.page.json",
+      "udtType": "Page",
+      "id": "app-ass-os-bloom-prompt-the-rational-empire",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "🌸 ASS-OS BLOOM PROMPT — THE RATIONAL EMPIRE",
+          "slug": "app-ass-os-bloom-prompt-the-rational-empire",
+          "route": "/whitepapers/ass-os-bloom-prompt-the-rational-empire",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/ass-os-bloom-prompt-the-rational-empire.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-ass-os-bloom-prompt-the-rational-empire",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "avoid-being-fractally-wrong.page.json",
+      "udtType": "Page",
+      "id": "app-avoid-being-fractally-wrong",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Avoid Being Fractally Wrong",
+          "slug": "app-avoid-being-fractally-wrong",
+          "route": "/whitepapers/avoid-being-fractally-wrong",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/avoid-being-fractally-wrong.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-avoid-being-fractally-wrong",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "convergent-governance-topologies-in-specialist-networks-a.page.json",
+      "udtType": "Page",
+      "id": "app-convergent-governance-topologies-in-specialist-networks-a",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Convergent Governance Topologies in Specialist Networks: A Comparative Analysis of Medieval Florentine Guild Structure and Modern Distributed Organizations",
+          "slug": "app-convergent-governance-topologies-in-specialist-networks-a",
+          "route": "/whitepapers/convergent-governance-topologies-in-specialist-networks-a",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/convergent-governance-topologies-in-specialist-networks-a.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-convergent-governance-topologies-in-specialist-networks-a",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "from-correctness-to-integrity-measuring-ai-generated-code.page.json",
+      "udtType": "Page",
+      "id": "app-from-correctness-to-integrity-measuring-ai-generated-code",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "From Correctness to Integrity: Measuring AI-Generated Code Through Constraint Satisfaction, Mutation Robustness, and Self-Articulated Limitations",
+          "slug": "app-from-correctness-to-integrity-measuring-ai-generated-code",
+          "route": "/whitepapers/from-correctness-to-integrity-measuring-ai-generated-code",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/from-correctness-to-integrity-measuring-ai-generated-code.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-from-correctness-to-integrity-measuring-ai-generated-code",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "grid-brain.page.json",
+      "udtType": "Page",
+      "id": "app-grid-brain",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Grid Brain",
+          "slug": "app-grid-brain",
+          "route": "/whitepapers/grid-brain",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/grid-brain.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-grid-brain",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.page.json",
+      "udtType": "Page",
+      "id": "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "\\\"I'll Burn Toast and You Scrape It\\\": A Hilariously Accurate Analysis of Software Development's Favorite Messy Divorce",
+          "slug": "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+          "route": "/whitepapers/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "lightning-factory.page.json",
+      "udtType": "Page",
+      "id": "app-lightning-factory",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Lightning Factory",
+          "slug": "app-lightning-factory",
+          "route": "/whitepapers/lightning-factory",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/lightning-factory.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-lightning-factory",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "s-a-d.page.json",
+      "udtType": "Page",
+      "id": "app-s-a-d",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "S.A.D.",
+          "slug": "app-s-a-d",
+          "route": "/whitepapers/s-a-d",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/s-a-d.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-s-a-d",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "structural-toast-carbonization-a-failure-mode-distinct-from.page.json",
+      "udtType": "Page",
+      "id": "app-structural-toast-carbonization-a-failure-mode-distinct-from",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Structural Toast Carbonization: A Failure Mode Distinct from Voluntary Technical Debt Acquisition",
+          "slug": "app-structural-toast-carbonization-a-failure-mode-distinct-from",
+          "route": "/whitepapers/structural-toast-carbonization-a-failure-mode-distinct-from",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/structural-toast-carbonization-a-failure-mode-distinct-from.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-structural-toast-carbonization-a-failure-mode-distinct-from",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "the-dog-the-data-scientist-and-the-mrna-vaccine.page.json",
+      "udtType": "Page",
+      "id": "app-the-dog-the-data-scientist-and-the-mrna-vaccine",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "The Dog, the Data Scientist, and the mRNA Vaccine",
+          "slug": "app-the-dog-the-data-scientist-and-the-mrna-vaccine",
+          "route": "/whitepapers/the-dog-the-data-scientist-and-the-mrna-vaccine",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/the-dog-the-data-scientist-and-the-mrna-vaccine.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-the-dog-the-data-scientist-and-the-mrna-vaccine",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "the-harm-equation.page.json",
+      "udtType": "Page",
+      "id": "app-the-harm-equation",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "The Harm Equation",
+          "slug": "app-the-harm-equation",
+          "route": "/whitepapers/the-harm-equation",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/the-harm-equation.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-the-harm-equation",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "the-konomi-standard.page.json",
+      "udtType": "Page",
+      "id": "app-the-konomi-standard",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "The Konomi Standard",
+          "slug": "app-the-konomi-standard",
+          "route": "/whitepapers/the-konomi-standard",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/the-konomi-standard.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-the-konomi-standard",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "the-pattern-that-wasn-t-there.page.json",
+      "udtType": "Page",
+      "id": "app-the-pattern-that-wasn-t-there",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "The Pattern That Wasn't There",
+          "slug": "app-the-pattern-that-wasn-t-there",
+          "route": "/whitepapers/the-pattern-that-wasn-t-there",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/the-pattern-that-wasn-t-there.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-the-pattern-that-wasn-t-there",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "the-prediction-trap.page.json",
+      "udtType": "Page",
+      "id": "app-the-prediction-trap",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "The Prediction Trap",
+          "slug": "app-the-prediction-trap",
+          "route": "/whitepapers/the-prediction-trap",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/the-prediction-trap.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-the-prediction-trap",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "the-shield-of-all-knights-against-bounded-rationality.page.json",
+      "udtType": "Page",
+      "id": "app-the-shield-of-all-knights-against-bounded-rationality",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "The Shield of All Knights Against Bounded Rationality",
+          "slug": "app-the-shield-of-all-knights-against-bounded-rationality",
+          "route": "/whitepapers/the-shield-of-all-knights-against-bounded-rationality",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/the-shield-of-all-knights-against-bounded-rationality.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-the-shield-of-all-knights-against-bounded-rationality",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "toastmasters-scrapers-guild.page.json",
+      "udtType": "Page",
+      "id": "app-toastmasters-scrapers-guild",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "Toastmasters Scrapers Guild",
+          "slug": "app-toastmasters-scrapers-guild",
+          "route": "/whitepapers/toastmasters-scrapers-guild",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/toastmasters-scrapers-guild.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-toastmasters-scrapers-guild",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "you-re-absolutely-wrong.page.json",
+      "udtType": "Page",
+      "id": "app-you-re-absolutely-wrong",
+      "body": {
+        "udtType": "Page",
+        "parameters": {
+          "title": "\\\"You're Absolutely Wrong!\\",
+          "slug": "app-you-re-absolutely-wrong",
+          "route": "/whitepapers/you-re-absolutely-wrong",
+          "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+          "data": {
+            "paper": "guild/apps/whitepapers/data/you-re-absolutely-wrong.data.json"
+          },
+          "stylesheets": [
+            "guild/web/style/main.css"
+          ],
+          "section": "resources",
+          "parent_slug": "white-papers",
+          "status": "published"
+        },
+        "tags": {
+          "id": "app-you-re-absolutely-wrong",
+          "view_id": "white-paper-app",
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

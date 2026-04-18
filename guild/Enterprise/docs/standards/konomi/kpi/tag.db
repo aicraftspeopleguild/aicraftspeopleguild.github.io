@@ -1,0 +1,33 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/kpi",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 10,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 10,
+      "files": [
+        "CycleTime.udt.json",
+        "Downtime.udt.json",
+        "EnergyKPI.udt.json",
+        "FirstPassYield.udt.json",
+        "KPITree.udt.json",
+        "MTBF.udt.json",
+        "MTTR.udt.json",
+        "OEE.udt.json",
+        "Throughput.udt.json",
+        "_std.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 10
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

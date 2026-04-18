@@ -2,7 +2,7 @@
   "§": "2.1",
   "🏗️": "⚙️",
   "name": "config",
-  "module": "controls/scada/gateway/scripts/config.js",
+  "module": "L2/scada/gateway/scripts/config.js",
 
   "⚙️": {
     "TRACKERS":   "a[s40]",

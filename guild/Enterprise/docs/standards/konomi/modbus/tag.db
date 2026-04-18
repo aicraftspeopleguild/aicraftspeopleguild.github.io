@@ -1,0 +1,29 @@
+{
+  "dir": "guild/Enterprise/docs/standards/konomi/modbus",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 6,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 6,
+      "files": [
+        "ExceptionCodes.udt.json",
+        "FunctionCodes.udt.json",
+        "Modbus_DataType.udt.json",
+        "Modbus_Map.udt.json",
+        "Modbus_Register.udt.json",
+        "_std.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 6
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

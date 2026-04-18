@@ -1,0 +1,2313 @@
+{
+  "dir": "guild/web/components/udts/instances/paths",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 47,
+  "udt_count": 46,
+  "tags": {
+    "ext:json": {
+      "count": 47,
+      "files": [
+        "_graph.json",
+        "ai-rituals.json",
+        "app-acg-kcc-guild-chain.json",
+        "app-acg-net-decentralized-guild-web.json",
+        "app-acg-review-forge.json",
+        "app-ai-harness-constraint-driven-software-development-for-the.json",
+        "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to.json",
+        "app-ass-os-bloom-prompt-occam.json",
+        "app-ass-os-bloom-prompt-the-irrational-universe.json",
+        "app-ass-os-bloom-prompt-the-rational-empire.json",
+        "app-avoid-being-fractally-wrong.json",
+        "app-convergent-governance-topologies-in-specialist-networks-a.json",
+        "app-from-correctness-to-integrity-measuring-ai-generated-code.json",
+        "app-grid-brain.json",
+        "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.json",
+        "app-lightning-factory.json",
+        "app-s-a-d.json",
+        "app-structural-toast-carbonization-a-failure-mode-distinct-from.json",
+        "app-the-dog-the-data-scientist-and-the-mrna-vaccine.json",
+        "app-the-harm-equation.json",
+        "app-the-konomi-standard.json",
+        "app-the-pattern-that-wasn-t-there.json",
+        "app-the-prediction-trap.json",
+        "app-the-shield-of-all-knights-against-bounded-rationality.json",
+        "app-toastmasters-scrapers-guild.json",
+        "app-you-re-absolutely-wrong.json",
+        "charter.json",
+        "chief-ai-skeptic.json",
+        "code-of-conduct.json",
+        "flywheel.json",
+        "guild-radar.json",
+        "hall-of-fame.json",
+        "hall-of-shame.json",
+        "home.json",
+        "hushbell-full-spec.json",
+        "hushbell.json",
+        "manifesto.json",
+        "member-profile.json",
+        "members.json",
+        "mission-statement.json",
+        "mob-programming.json",
+        "p2p.json",
+        "showcases.json",
+        "submit.json",
+        "test.json",
+        "white-paper-article.json",
+        "white-papers.json"
+      ]
+    },
+    "id:ai-rituals": {
+      "count": 1,
+      "files": [
+        "ai-rituals.json"
+      ]
+    },
+    "id:app-acg-kcc-guild-chain": {
+      "count": 1,
+      "files": [
+        "app-acg-kcc-guild-chain.json"
+      ]
+    },
+    "id:app-acg-net-decentralized-guild-web": {
+      "count": 1,
+      "files": [
+        "app-acg-net-decentralized-guild-web.json"
+      ]
+    },
+    "id:app-acg-review-forge": {
+      "count": 1,
+      "files": [
+        "app-acg-review-forge.json"
+      ]
+    },
+    "id:app-ai-harness-constraint-driven-software-development-for-the": {
+      "count": 1,
+      "files": [
+        "app-ai-harness-constraint-driven-software-development-for-the.json"
+      ]
+    },
+    "id:app-ai-that-pisses-you-off-the-surprisingly-effective-path-to": {
+      "count": 1,
+      "files": [
+        "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to.json"
+      ]
+    },
+    "id:app-ass-os-bloom-prompt-occam": {
+      "count": 1,
+      "files": [
+        "app-ass-os-bloom-prompt-occam.json"
+      ]
+    },
+    "id:app-ass-os-bloom-prompt-the-irrational-universe": {
+      "count": 1,
+      "files": [
+        "app-ass-os-bloom-prompt-the-irrational-universe.json"
+      ]
+    },
+    "id:app-ass-os-bloom-prompt-the-rational-empire": {
+      "count": 1,
+      "files": [
+        "app-ass-os-bloom-prompt-the-rational-empire.json"
+      ]
+    },
+    "id:app-avoid-being-fractally-wrong": {
+      "count": 1,
+      "files": [
+        "app-avoid-being-fractally-wrong.json"
+      ]
+    },
+    "id:app-convergent-governance-topologies-in-specialist-networks-a": {
+      "count": 1,
+      "files": [
+        "app-convergent-governance-topologies-in-specialist-networks-a.json"
+      ]
+    },
+    "id:app-from-correctness-to-integrity-measuring-ai-generated-code": {
+      "count": 1,
+      "files": [
+        "app-from-correctness-to-integrity-measuring-ai-generated-code.json"
+      ]
+    },
+    "id:app-grid-brain": {
+      "count": 1,
+      "files": [
+        "app-grid-brain.json"
+      ]
+    },
+    "id:app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate": {
+      "count": 1,
+      "files": [
+        "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.json"
+      ]
+    },
+    "id:app-lightning-factory": {
+      "count": 1,
+      "files": [
+        "app-lightning-factory.json"
+      ]
+    },
+    "id:app-s-a-d": {
+      "count": 1,
+      "files": [
+        "app-s-a-d.json"
+      ]
+    },
+    "id:app-structural-toast-carbonization-a-failure-mode-distinct-from": {
+      "count": 1,
+      "files": [
+        "app-structural-toast-carbonization-a-failure-mode-distinct-from.json"
+      ]
+    },
+    "id:app-the-dog-the-data-scientist-and-the-mrna-vaccine": {
+      "count": 1,
+      "files": [
+        "app-the-dog-the-data-scientist-and-the-mrna-vaccine.json"
+      ]
+    },
+    "id:app-the-harm-equation": {
+      "count": 1,
+      "files": [
+        "app-the-harm-equation.json"
+      ]
+    },
+    "id:app-the-konomi-standard": {
+      "count": 1,
+      "files": [
+        "app-the-konomi-standard.json"
+      ]
+    },
+    "id:app-the-pattern-that-wasn-t-there": {
+      "count": 1,
+      "files": [
+        "app-the-pattern-that-wasn-t-there.json"
+      ]
+    },
+    "id:app-the-prediction-trap": {
+      "count": 1,
+      "files": [
+        "app-the-prediction-trap.json"
+      ]
+    },
+    "id:app-the-shield-of-all-knights-against-bounded-rationality": {
+      "count": 1,
+      "files": [
+        "app-the-shield-of-all-knights-against-bounded-rationality.json"
+      ]
+    },
+    "id:app-toastmasters-scrapers-guild": {
+      "count": 1,
+      "files": [
+        "app-toastmasters-scrapers-guild.json"
+      ]
+    },
+    "id:app-you-re-absolutely-wrong": {
+      "count": 1,
+      "files": [
+        "app-you-re-absolutely-wrong.json"
+      ]
+    },
+    "id:charter": {
+      "count": 1,
+      "files": [
+        "charter.json"
+      ]
+    },
+    "id:chief-ai-skeptic": {
+      "count": 1,
+      "files": [
+        "chief-ai-skeptic.json"
+      ]
+    },
+    "id:code-of-conduct": {
+      "count": 1,
+      "files": [
+        "code-of-conduct.json"
+      ]
+    },
+    "id:flywheel": {
+      "count": 1,
+      "files": [
+        "flywheel.json"
+      ]
+    },
+    "id:guild-radar": {
+      "count": 1,
+      "files": [
+        "guild-radar.json"
+      ]
+    },
+    "id:hall-of-fame": {
+      "count": 1,
+      "files": [
+        "hall-of-fame.json"
+      ]
+    },
+    "id:hall-of-shame": {
+      "count": 1,
+      "files": [
+        "hall-of-shame.json"
+      ]
+    },
+    "id:home": {
+      "count": 1,
+      "files": [
+        "home.json"
+      ]
+    },
+    "id:hushbell": {
+      "count": 1,
+      "files": [
+        "hushbell.json"
+      ]
+    },
+    "id:hushbell-full-spec": {
+      "count": 1,
+      "files": [
+        "hushbell-full-spec.json"
+      ]
+    },
+    "id:manifesto": {
+      "count": 1,
+      "files": [
+        "manifesto.json"
+      ]
+    },
+    "id:member-profile": {
+      "count": 1,
+      "files": [
+        "member-profile.json"
+      ]
+    },
+    "id:members": {
+      "count": 1,
+      "files": [
+        "members.json"
+      ]
+    },
+    "id:mission-statement": {
+      "count": 1,
+      "files": [
+        "mission-statement.json"
+      ]
+    },
+    "id:mob-programming": {
+      "count": 1,
+      "files": [
+        "mob-programming.json"
+      ]
+    },
+    "id:p2p": {
+      "count": 1,
+      "files": [
+        "p2p.json"
+      ]
+    },
+    "id:showcases": {
+      "count": 1,
+      "files": [
+        "showcases.json"
+      ]
+    },
+    "id:submit": {
+      "count": 1,
+      "files": [
+        "submit.json"
+      ]
+    },
+    "id:test": {
+      "count": 1,
+      "files": [
+        "test.json"
+      ]
+    },
+    "id:white-paper-article": {
+      "count": 1,
+      "files": [
+        "white-paper-article.json"
+      ]
+    },
+    "id:white-papers": {
+      "count": 1,
+      "files": [
+        "white-papers.json"
+      ]
+    },
+    "provides:manifesto-cards": {
+      "count": 1,
+      "files": [
+        "home.json"
+      ]
+    },
+    "provides:signature-form": {
+      "count": 1,
+      "files": [
+        "home.json"
+      ]
+    },
+    "provides:site-shell": {
+      "count": 1,
+      "files": [
+        "home.json"
+      ]
+    },
+    "section:about": {
+      "count": 5,
+      "files": [
+        "charter.json",
+        "chief-ai-skeptic.json",
+        "code-of-conduct.json",
+        "manifesto.json",
+        "mission-statement.json"
+      ]
+    },
+    "section:community": {
+      "count": 6,
+      "files": [
+        "flywheel.json",
+        "guild-radar.json",
+        "member-profile.json",
+        "members.json",
+        "p2p.json",
+        "showcases.json"
+      ]
+    },
+    "section:engineering": {
+      "count": 1,
+      "files": [
+        "test.json"
+      ]
+    },
+    "section:meta": {
+      "count": 2,
+      "files": [
+        "home.json",
+        "submit.json"
+      ]
+    },
+    "section:recognition": {
+      "count": 2,
+      "files": [
+        "hall-of-fame.json",
+        "hall-of-shame.json"
+      ]
+    },
+    "section:resources": {
+      "count": 30,
+      "files": [
+        "ai-rituals.json",
+        "app-acg-kcc-guild-chain.json",
+        "app-acg-net-decentralized-guild-web.json",
+        "app-acg-review-forge.json",
+        "app-ai-harness-constraint-driven-software-development-for-the.json",
+        "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to.json",
+        "app-ass-os-bloom-prompt-occam.json",
+        "app-ass-os-bloom-prompt-the-irrational-universe.json",
+        "app-ass-os-bloom-prompt-the-rational-empire.json",
+        "app-avoid-being-fractally-wrong.json",
+        "app-convergent-governance-topologies-in-specialist-networks-a.json",
+        "app-from-correctness-to-integrity-measuring-ai-generated-code.json",
+        "app-grid-brain.json",
+        "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.json",
+        "app-lightning-factory.json",
+        "app-s-a-d.json",
+        "app-structural-toast-carbonization-a-failure-mode-distinct-from.json",
+        "app-the-dog-the-data-scientist-and-the-mrna-vaccine.json",
+        "app-the-harm-equation.json",
+        "app-the-konomi-standard.json",
+        "app-the-pattern-that-wasn-t-there.json",
+        "app-the-prediction-trap.json",
+        "app-the-shield-of-all-knights-against-bounded-rationality.json",
+        "app-toastmasters-scrapers-guild.json",
+        "app-you-re-absolutely-wrong.json",
+        "hushbell-full-spec.json",
+        "hushbell.json",
+        "mob-programming.json",
+        "white-paper-article.json",
+        "white-papers.json"
+      ]
+    },
+    "udt:Path": {
+      "count": 46,
+      "files": [
+        "ai-rituals.json",
+        "app-acg-kcc-guild-chain.json",
+        "app-acg-net-decentralized-guild-web.json",
+        "app-acg-review-forge.json",
+        "app-ai-harness-constraint-driven-software-development-for-the.json",
+        "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to.json",
+        "app-ass-os-bloom-prompt-occam.json",
+        "app-ass-os-bloom-prompt-the-irrational-universe.json",
+        "app-ass-os-bloom-prompt-the-rational-empire.json",
+        "app-avoid-being-fractally-wrong.json",
+        "app-convergent-governance-topologies-in-specialist-networks-a.json",
+        "app-from-correctness-to-integrity-measuring-ai-generated-code.json",
+        "app-grid-brain.json",
+        "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.json",
+        "app-lightning-factory.json",
+        "app-s-a-d.json",
+        "app-structural-toast-carbonization-a-failure-mode-distinct-from.json",
+        "app-the-dog-the-data-scientist-and-the-mrna-vaccine.json",
+        "app-the-harm-equation.json",
+        "app-the-konomi-standard.json",
+        "app-the-pattern-that-wasn-t-there.json",
+        "app-the-prediction-trap.json",
+        "app-the-shield-of-all-knights-against-bounded-rationality.json",
+        "app-toastmasters-scrapers-guild.json",
+        "app-you-re-absolutely-wrong.json",
+        "charter.json",
+        "chief-ai-skeptic.json",
+        "code-of-conduct.json",
+        "flywheel.json",
+        "guild-radar.json",
+        "hall-of-fame.json",
+        "hall-of-shame.json",
+        "home.json",
+        "hushbell-full-spec.json",
+        "hushbell.json",
+        "manifesto.json",
+        "member-profile.json",
+        "members.json",
+        "mission-statement.json",
+        "mob-programming.json",
+        "p2p.json",
+        "showcases.json",
+        "submit.json",
+        "test.json",
+        "white-paper-article.json",
+        "white-papers.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "Path": 46
+  },
+  "sections": {
+    "about": 5,
+    "community": 6,
+    "engineering": 1,
+    "meta": 2,
+    "recognition": 2,
+    "resources": 30
+  },
+  "kinds": {
+    "json": 47
+  },
+  "refs": {
+    "provides": {
+      "manifesto-cards": 1,
+      "signature-form": 1,
+      "site-shell": 1
+    }
+  },
+  "ids": {
+    "ai-rituals": 1,
+    "app-acg-kcc-guild-chain": 1,
+    "app-acg-net-decentralized-guild-web": 1,
+    "app-acg-review-forge": 1,
+    "app-ai-harness-constraint-driven-software-development-for-the": 1,
+    "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to": 1,
+    "app-ass-os-bloom-prompt-occam": 1,
+    "app-ass-os-bloom-prompt-the-irrational-universe": 1,
+    "app-ass-os-bloom-prompt-the-rational-empire": 1,
+    "app-avoid-being-fractally-wrong": 1,
+    "app-convergent-governance-topologies-in-specialist-networks-a": 1,
+    "app-from-correctness-to-integrity-measuring-ai-generated-code": 1,
+    "app-grid-brain": 1,
+    "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate": 1,
+    "app-lightning-factory": 1,
+    "app-s-a-d": 1,
+    "app-structural-toast-carbonization-a-failure-mode-distinct-from": 1,
+    "app-the-dog-the-data-scientist-and-the-mrna-vaccine": 1,
+    "app-the-harm-equation": 1,
+    "app-the-konomi-standard": 1,
+    "app-the-pattern-that-wasn-t-there": 1,
+    "app-the-prediction-trap": 1,
+    "app-the-shield-of-all-knights-against-bounded-rationality": 1,
+    "app-toastmasters-scrapers-guild": 1,
+    "app-you-re-absolutely-wrong": 1,
+    "charter": 1,
+    "chief-ai-skeptic": 1,
+    "code-of-conduct": 1,
+    "flywheel": 1,
+    "guild-radar": 1,
+    "hall-of-fame": 1,
+    "hall-of-shame": 1,
+    "home": 1,
+    "hushbell": 1,
+    "hushbell-full-spec": 1,
+    "manifesto": 1,
+    "member-profile": 1,
+    "members": 1,
+    "mission-statement": 1,
+    "mob-programming": 1,
+    "p2p": 1,
+    "showcases": 1,
+    "submit": 1,
+    "test": 1,
+    "white-paper-article": 1,
+    "white-papers": 1
+  },
+  "udts": [
+    {
+      "file": "ai-rituals.json",
+      "udtType": "Path",
+      "id": "ai-rituals",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/rituals",
+          "label": "AI Rituals",
+          "page": "pages/ai-rituals.page.json",
+          "section": "resources",
+          "parent": "home",
+          "order": 20,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "ai-rituals",
+          "full_url": "https://aicraftspeopleguild.github.io/rituals",
+          "children": [],
+          "breadcrumb": [
+            "resources",
+            "ai-rituals"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-acg-kcc-guild-chain.json",
+      "udtType": "Path",
+      "id": "app-acg-kcc-guild-chain",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/acg-kcc-guild-chain",
+          "label": "ACG-KCC: Guild Chain",
+          "page": "guild/apps/whitepapers/pages/acg-kcc-guild-chain.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-acg-kcc-guild-chain",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/acg-kcc-guild-chain",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-acg-kcc-guild-chain"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-acg-net-decentralized-guild-web.json",
+      "udtType": "Path",
+      "id": "app-acg-net-decentralized-guild-web",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/acg-net-decentralized-guild-web",
+          "label": "ACG-NET: Decentralized Guild Web",
+          "page": "guild/apps/whitepapers/pages/acg-net-decentralized-guild-web.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-acg-net-decentralized-guild-web",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/acg-net-decentralized-guild-web",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-acg-net-decentralized-guild-web"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-acg-review-forge.json",
+      "udtType": "Path",
+      "id": "app-acg-review-forge",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/acg-review-forge",
+          "label": "ACG Review Forge",
+          "page": "guild/apps/whitepapers/pages/acg-review-forge.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-acg-review-forge",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/acg-review-forge",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-acg-review-forge"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-ai-harness-constraint-driven-software-development-for-the.json",
+      "udtType": "Path",
+      "id": "app-ai-harness-constraint-driven-software-development-for-the",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/ai-harness-constraint-driven-software-development-for-the",
+          "label": "AI Harness: Constraint-Driven Software Development for the Age of AI Agents",
+          "page": "guild/apps/whitepapers/pages/ai-harness-constraint-driven-software-development-for-the.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-ai-harness-constraint-driven-software-development-for-the",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/ai-harness-constraint-driven-software-development-for-the",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-ai-harness-constraint-driven-software-development-for-the"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to.json",
+      "udtType": "Path",
+      "id": "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+          "label": "AI That Pisses You Off: The Surprisingly Effective Path to Deeper Thinking",
+          "page": "guild/apps/whitepapers/pages/ai-that-pisses-you-off-the-surprisingly-effective-path-to.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-ass-os-bloom-prompt-occam.json",
+      "udtType": "Path",
+      "id": "app-ass-os-bloom-prompt-occam",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/ass-os-bloom-prompt-occam",
+          "label": "🌸 ASS-OS BLOOM PROMPT — OCCAM",
+          "page": "guild/apps/whitepapers/pages/ass-os-bloom-prompt-occam.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-ass-os-bloom-prompt-occam",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/ass-os-bloom-prompt-occam",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-ass-os-bloom-prompt-occam"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-ass-os-bloom-prompt-the-irrational-universe.json",
+      "udtType": "Path",
+      "id": "app-ass-os-bloom-prompt-the-irrational-universe",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/ass-os-bloom-prompt-the-irrational-universe",
+          "label": "🌸 ASS-OS BLOOM PROMPT — THE IRRATIONAL UNIVERSE",
+          "page": "guild/apps/whitepapers/pages/ass-os-bloom-prompt-the-irrational-universe.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-ass-os-bloom-prompt-the-irrational-universe",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/ass-os-bloom-prompt-the-irrational-universe",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-ass-os-bloom-prompt-the-irrational-universe"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-ass-os-bloom-prompt-the-rational-empire.json",
+      "udtType": "Path",
+      "id": "app-ass-os-bloom-prompt-the-rational-empire",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/ass-os-bloom-prompt-the-rational-empire",
+          "label": "🌸 ASS-OS BLOOM PROMPT — THE RATIONAL EMPIRE",
+          "page": "guild/apps/whitepapers/pages/ass-os-bloom-prompt-the-rational-empire.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-ass-os-bloom-prompt-the-rational-empire",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/ass-os-bloom-prompt-the-rational-empire",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-ass-os-bloom-prompt-the-rational-empire"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-avoid-being-fractally-wrong.json",
+      "udtType": "Path",
+      "id": "app-avoid-being-fractally-wrong",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/avoid-being-fractally-wrong",
+          "label": "Avoid Being Fractally Wrong",
+          "page": "guild/apps/whitepapers/pages/avoid-being-fractally-wrong.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-avoid-being-fractally-wrong",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/avoid-being-fractally-wrong",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-avoid-being-fractally-wrong"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-convergent-governance-topologies-in-specialist-networks-a.json",
+      "udtType": "Path",
+      "id": "app-convergent-governance-topologies-in-specialist-networks-a",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/convergent-governance-topologies-in-specialist-networks-a",
+          "label": "Convergent Governance Topologies in Specialist Networks: A Comparative Analysis of Medieval Florentine Guild Structure and Modern Distributed Organizations",
+          "page": "guild/apps/whitepapers/pages/convergent-governance-topologies-in-specialist-networks-a.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-convergent-governance-topologies-in-specialist-networks-a",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/convergent-governance-topologies-in-specialist-networks-a",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-convergent-governance-topologies-in-specialist-networks-a"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-from-correctness-to-integrity-measuring-ai-generated-code.json",
+      "udtType": "Path",
+      "id": "app-from-correctness-to-integrity-measuring-ai-generated-code",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/from-correctness-to-integrity-measuring-ai-generated-code",
+          "label": "From Correctness to Integrity: Measuring AI-Generated Code Through Constraint Satisfaction, Mutation Robustness, and Self-Articulated Limitations",
+          "page": "guild/apps/whitepapers/pages/from-correctness-to-integrity-measuring-ai-generated-code.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-from-correctness-to-integrity-measuring-ai-generated-code",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/from-correctness-to-integrity-measuring-ai-generated-code",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-from-correctness-to-integrity-measuring-ai-generated-code"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-grid-brain.json",
+      "udtType": "Path",
+      "id": "app-grid-brain",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/grid-brain",
+          "label": "Grid Brain",
+          "page": "guild/apps/whitepapers/pages/grid-brain.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-grid-brain",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/grid-brain",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-grid-brain"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.json",
+      "udtType": "Path",
+      "id": "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+          "label": "\\\"I'll Burn Toast and You Scrape It\\\": A Hilariously Accurate Analysis of Software Development's Favorite Messy Divorce",
+          "page": "guild/apps/whitepapers/pages/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-lightning-factory.json",
+      "udtType": "Path",
+      "id": "app-lightning-factory",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/lightning-factory",
+          "label": "Lightning Factory",
+          "page": "guild/apps/whitepapers/pages/lightning-factory.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-lightning-factory",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/lightning-factory",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-lightning-factory"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-s-a-d.json",
+      "udtType": "Path",
+      "id": "app-s-a-d",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/s-a-d",
+          "label": "S.A.D.",
+          "page": "guild/apps/whitepapers/pages/s-a-d.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-s-a-d",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/s-a-d",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-s-a-d"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-structural-toast-carbonization-a-failure-mode-distinct-from.json",
+      "udtType": "Path",
+      "id": "app-structural-toast-carbonization-a-failure-mode-distinct-from",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/structural-toast-carbonization-a-failure-mode-distinct-from",
+          "label": "Structural Toast Carbonization: A Failure Mode Distinct from Voluntary Technical Debt Acquisition",
+          "page": "guild/apps/whitepapers/pages/structural-toast-carbonization-a-failure-mode-distinct-from.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-structural-toast-carbonization-a-failure-mode-distinct-from",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/structural-toast-carbonization-a-failure-mode-distinct-from",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-structural-toast-carbonization-a-failure-mode-distinct-from"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-the-dog-the-data-scientist-and-the-mrna-vaccine.json",
+      "udtType": "Path",
+      "id": "app-the-dog-the-data-scientist-and-the-mrna-vaccine",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/the-dog-the-data-scientist-and-the-mrna-vaccine",
+          "label": "The Dog, the Data Scientist, and the mRNA Vaccine",
+          "page": "guild/apps/whitepapers/pages/the-dog-the-data-scientist-and-the-mrna-vaccine.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-the-dog-the-data-scientist-and-the-mrna-vaccine",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/the-dog-the-data-scientist-and-the-mrna-vaccine",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-the-dog-the-data-scientist-and-the-mrna-vaccine"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-the-harm-equation.json",
+      "udtType": "Path",
+      "id": "app-the-harm-equation",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/the-harm-equation",
+          "label": "The Harm Equation",
+          "page": "guild/apps/whitepapers/pages/the-harm-equation.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-the-harm-equation",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/the-harm-equation",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-the-harm-equation"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-the-konomi-standard.json",
+      "udtType": "Path",
+      "id": "app-the-konomi-standard",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/the-konomi-standard",
+          "label": "The Konomi Standard",
+          "page": "guild/apps/whitepapers/pages/the-konomi-standard.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-the-konomi-standard",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/the-konomi-standard",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-the-konomi-standard"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-the-pattern-that-wasn-t-there.json",
+      "udtType": "Path",
+      "id": "app-the-pattern-that-wasn-t-there",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/the-pattern-that-wasn-t-there",
+          "label": "The Pattern That Wasn't There",
+          "page": "guild/apps/whitepapers/pages/the-pattern-that-wasn-t-there.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-the-pattern-that-wasn-t-there",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/the-pattern-that-wasn-t-there",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-the-pattern-that-wasn-t-there"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-the-prediction-trap.json",
+      "udtType": "Path",
+      "id": "app-the-prediction-trap",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/the-prediction-trap",
+          "label": "The Prediction Trap",
+          "page": "guild/apps/whitepapers/pages/the-prediction-trap.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-the-prediction-trap",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/the-prediction-trap",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-the-prediction-trap"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-the-shield-of-all-knights-against-bounded-rationality.json",
+      "udtType": "Path",
+      "id": "app-the-shield-of-all-knights-against-bounded-rationality",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/the-shield-of-all-knights-against-bounded-rationality",
+          "label": "The Shield of All Knights Against Bounded Rationality",
+          "page": "guild/apps/whitepapers/pages/the-shield-of-all-knights-against-bounded-rationality.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-the-shield-of-all-knights-against-bounded-rationality",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/the-shield-of-all-knights-against-bounded-rationality",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-the-shield-of-all-knights-against-bounded-rationality"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-toastmasters-scrapers-guild.json",
+      "udtType": "Path",
+      "id": "app-toastmasters-scrapers-guild",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/toastmasters-scrapers-guild",
+          "label": "Toastmasters Scrapers Guild",
+          "page": "guild/apps/whitepapers/pages/toastmasters-scrapers-guild.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-toastmasters-scrapers-guild",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/toastmasters-scrapers-guild",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-toastmasters-scrapers-guild"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "app-you-re-absolutely-wrong.json",
+      "udtType": "Path",
+      "id": "app-you-re-absolutely-wrong",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/whitepapers/you-re-absolutely-wrong",
+          "label": "\\\"You're Absolutely Wrong!\\",
+          "page": "guild/apps/whitepapers/pages/you-re-absolutely-wrong.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 100,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "app-you-re-absolutely-wrong",
+          "full_url": "https://aicraftspeopleguild.github.io/whitepapers/you-re-absolutely-wrong",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "white-papers",
+            "app-you-re-absolutely-wrong"
+          ],
+          "depth": 2,
+          "view_id": "white-paper-app",
+          "last_verified": "2026-04-18T05:35:42Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "charter.json",
+      "udtType": "Path",
+      "id": "charter",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/charter",
+          "label": "Charter",
+          "page": "pages/charter.page.json",
+          "section": "about",
+          "parent": "home",
+          "order": 20,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "charter",
+          "full_url": "https://aicraftspeopleguild.github.io/charter",
+          "children": [],
+          "breadcrumb": [
+            "about",
+            "charter"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "chief-ai-skeptic.json",
+      "udtType": "Path",
+      "id": "chief-ai-skeptic",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/chief-ai-skeptic",
+          "label": "Chief AI Skeptic Officer",
+          "page": "pages/chief-ai-skeptic-officer.page.json",
+          "section": "about",
+          "parent": "home",
+          "order": 50,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "chief-ai-skeptic",
+          "full_url": "https://aicraftspeopleguild.github.io/chief-ai-skeptic",
+          "children": [],
+          "breadcrumb": [
+            "about",
+            "chief-ai-skeptic"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "code-of-conduct.json",
+      "udtType": "Path",
+      "id": "code-of-conduct",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/code-of-conduct",
+          "label": "Code of Conduct",
+          "page": "pages/code-of-conduct.page.json",
+          "section": "about",
+          "parent": "home",
+          "order": 30,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "code-of-conduct",
+          "full_url": "https://aicraftspeopleguild.github.io/code-of-conduct",
+          "children": [],
+          "breadcrumb": [
+            "about",
+            "code-of-conduct"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "flywheel.json",
+      "udtType": "Path",
+      "id": "flywheel",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/flywheel",
+          "label": "Flywheel",
+          "page": "pages/flywheel.page.json",
+          "section": "community",
+          "parent": "home",
+          "order": 30,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "flywheel",
+          "full_url": "https://aicraftspeopleguild.github.io/flywheel",
+          "children": [],
+          "breadcrumb": [
+            "community",
+            "flywheel"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "guild-radar.json",
+      "udtType": "Path",
+      "id": "guild-radar",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/guild-radar",
+          "label": "Guild Radar",
+          "page": "pages/guild-radar.page.json",
+          "section": "community",
+          "parent": "home",
+          "order": 40,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "guild-radar",
+          "full_url": "https://aicraftspeopleguild.github.io/guild-radar",
+          "children": [],
+          "breadcrumb": [
+            "community",
+            "guild-radar"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hall-of-fame.json",
+      "udtType": "Path",
+      "id": "hall-of-fame",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/hall-of-fame",
+          "label": "Hall of Fame",
+          "page": "pages/hall-of-fame.page.json",
+          "section": "recognition",
+          "parent": "home",
+          "order": 10,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "hall-of-fame",
+          "full_url": "https://aicraftspeopleguild.github.io/hall-of-fame",
+          "children": [],
+          "breadcrumb": [
+            "recognition",
+            "hall-of-fame"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hall-of-shame.json",
+      "udtType": "Path",
+      "id": "hall-of-shame",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/hall-of-shame",
+          "label": "Hall of Shame",
+          "page": "pages/hall-of-shame.page.json",
+          "section": "recognition",
+          "parent": "home",
+          "order": 20,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "hall-of-shame",
+          "full_url": "https://aicraftspeopleguild.github.io/hall-of-shame",
+          "children": [],
+          "breadcrumb": [
+            "recognition",
+            "hall-of-shame"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "home.json",
+      "udtType": "Path",
+      "id": "home",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/",
+          "label": "Home",
+          "page": "index/view.json",
+          "section": "meta",
+          "parent": null,
+          "order": 0,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public",
+          "dependencies": [],
+          "provides": [
+            "site-shell",
+            "manifesto-cards",
+            "signature-form"
+          ]
+        },
+        "tags": {
+          "id": "home",
+          "full_url": "https://aicraftspeopleguild.github.io/",
+          "children": [
+            "ai-rituals",
+            "charter",
+            "chief-ai-skeptic",
+            "code-of-conduct",
+            "flywheel",
+            "guild-radar",
+            "hall-of-fame",
+            "hall-of-shame",
+            "hushbell",
+            "manifesto",
+            "members",
+            "mission-statement",
+            "mob-programming",
+            "showcases",
+            "white-papers"
+          ],
+          "breadcrumb": [
+            "meta",
+            "home"
+          ],
+          "depth": 1,
+          "view_id": "home",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hushbell-full-spec.json",
+      "udtType": "Path",
+      "id": "hushbell-full-spec",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/hushbell/spec",
+          "label": "Hushbell Full Spec",
+          "page": "pages/hushbell-full-spec.page.json",
+          "section": "resources",
+          "parent": "hushbell",
+          "order": 41,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "hushbell-full-spec",
+          "full_url": "https://aicraftspeopleguild.github.io/hushbell/spec",
+          "children": [],
+          "breadcrumb": [
+            "resources",
+            "hushbell-full-spec"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "hushbell.json",
+      "udtType": "Path",
+      "id": "hushbell",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/hushbell",
+          "label": "Hushbell",
+          "page": "pages/hushbell.page.json",
+          "section": "resources",
+          "parent": "home",
+          "order": 40,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "hushbell",
+          "full_url": "https://aicraftspeopleguild.github.io/hushbell",
+          "children": [
+            "hushbell-full-spec"
+          ],
+          "breadcrumb": [
+            "resources",
+            "hushbell"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "manifesto.json",
+      "udtType": "Path",
+      "id": "manifesto",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/manifesto",
+          "label": "Manifesto",
+          "page": "pages/aicraftspeopleguild-manifesto.page.json",
+          "section": "about",
+          "parent": "home",
+          "order": 10,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "manifesto",
+          "full_url": "https://aicraftspeopleguild.github.io/manifesto",
+          "children": [],
+          "breadcrumb": [
+            "about",
+            "manifesto"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "member-profile.json",
+      "udtType": "Path",
+      "id": "member-profile",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/members/:slug",
+          "label": "Member Profile",
+          "page": "pages/member-profile.page.json",
+          "section": "community",
+          "parent": "members",
+          "order": 11,
+          "dynamic": true,
+          "params": [
+            "slug"
+          ],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "member-profile",
+          "full_url": "https://aicraftspeopleguild.github.io/members/:slug",
+          "children": [],
+          "breadcrumb": [
+            "community",
+            "member-profile"
+          ],
+          "depth": 1,
+          "view_id": "member-profile",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "members.json",
+      "udtType": "Path",
+      "id": "members",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/members",
+          "label": "Members",
+          "page": "pages/members.page.json",
+          "section": "community",
+          "parent": "home",
+          "order": 10,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "members",
+          "full_url": "https://aicraftspeopleguild.github.io/members",
+          "children": [
+            "member-profile"
+          ],
+          "breadcrumb": [
+            "community",
+            "members"
+          ],
+          "depth": 1,
+          "view_id": "members-index",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "mission-statement.json",
+      "udtType": "Path",
+      "id": "mission-statement",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/mission",
+          "label": "Mission Statement",
+          "page": "pages/mission-statement.page.json",
+          "section": "about",
+          "parent": "home",
+          "order": 40,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "mission-statement",
+          "full_url": "https://aicraftspeopleguild.github.io/mission",
+          "children": [],
+          "breadcrumb": [
+            "about",
+            "mission-statement"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "mob-programming.json",
+      "udtType": "Path",
+      "id": "mob-programming",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/mob-programming",
+          "label": "Mob Programming",
+          "page": "pages/mob-programming.page.json",
+          "section": "resources",
+          "parent": "home",
+          "order": 30,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "mob-programming",
+          "full_url": "https://aicraftspeopleguild.github.io/mob-programming",
+          "children": [],
+          "breadcrumb": [
+            "resources",
+            "mob-programming"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "p2p.json",
+      "udtType": "Path",
+      "id": "p2p",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/p2p",
+          "label": "ACG P2P Chat",
+          "page": "guild/apps/p2p/index.html",
+          "section": "community",
+          "parent": "home",
+          "order": 50,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "p2p",
+          "full_url": "https://aicraftspeopleguild.github.io/guild/apps/p2p/",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "p2p"
+          ],
+          "depth": 1,
+          "view_id": "",
+          "last_verified": "2026-04-18T00:00:00Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "showcases.json",
+      "udtType": "Path",
+      "id": "showcases",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/showcases",
+          "label": "Showcases",
+          "page": "pages/showcases.page.json",
+          "section": "community",
+          "parent": "home",
+          "order": 20,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "showcases",
+          "full_url": "https://aicraftspeopleguild.github.io/showcases",
+          "children": [],
+          "breadcrumb": [
+            "community",
+            "showcases"
+          ],
+          "depth": 1,
+          "view_id": "static-page",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "submit.json",
+      "udtType": "Path",
+      "id": "submit",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/submit",
+          "label": "Submit an Article",
+          "page": "guild/Enterprise/L1/forms/submit/index.html",
+          "section": "meta",
+          "parent": "home",
+          "order": 90,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET",
+            "POST"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "submit",
+          "full_url": "https://aicraftspeopleguild.github.io/guild/Enterprise/L1/forms/submit/",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "submit"
+          ],
+          "depth": 1,
+          "view_id": "",
+          "last_verified": "2026-04-18T00:00:00Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "test.json",
+      "udtType": "Path",
+      "id": "test",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/test",
+          "label": "ACG Test Harness",
+          "page": "guild/apps/test/index.html",
+          "section": "engineering",
+          "parent": "home",
+          "order": 60,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "test",
+          "full_url": "https://aicraftspeopleguild.github.io/guild/apps/test/",
+          "children": [],
+          "breadcrumb": [
+            "home",
+            "test"
+          ],
+          "depth": 1,
+          "view_id": "",
+          "last_verified": "2026-04-18T00:00:00Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "white-paper-article.json",
+      "udtType": "Path",
+      "id": "white-paper-article",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/white-papers/:slug",
+          "label": "White Paper",
+          "page": "pages/white-paper-article.page.json",
+          "section": "resources",
+          "parent": "white-papers",
+          "order": 11,
+          "dynamic": true,
+          "params": [
+            "slug"
+          ],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": false,
+          "access": "public"
+        },
+        "tags": {
+          "id": "white-paper-article",
+          "full_url": "https://aicraftspeopleguild.github.io/white-papers/:slug",
+          "children": [],
+          "breadcrumb": [
+            "resources",
+            "white-paper-article"
+          ],
+          "depth": 1,
+          "view_id": "white-paper-article",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    },
+    {
+      "file": "white-papers.json",
+      "udtType": "Path",
+      "id": "white-papers",
+      "body": {
+        "udtType": "Path",
+        "parameters": {
+          "path": "/white-papers",
+          "label": "White Papers",
+          "page": "pages/white-papers.page.json",
+          "section": "resources",
+          "parent": "home",
+          "order": 10,
+          "dynamic": false,
+          "params": [],
+          "methods": [
+            "GET"
+          ],
+          "status": "published",
+          "visible_in_nav": true,
+          "access": "public"
+        },
+        "tags": {
+          "id": "white-papers",
+          "full_url": "https://aicraftspeopleguild.github.io/white-papers",
+          "children": [
+            "white-paper-article"
+          ],
+          "breadcrumb": [
+            "resources",
+            "white-papers"
+          ],
+          "depth": 1,
+          "view_id": "white-paper-index",
+          "last_verified": "2026-04-17T19:58:06Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

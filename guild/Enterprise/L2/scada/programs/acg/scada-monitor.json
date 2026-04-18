@@ -2,7 +2,7 @@
   "§": "3.2",
   "🏗️": "🖥️",
   "name": "monitor",
-  "module": "controls/scada/gateway/scripts/scada/monitor.js",
+  "module": "L2/scada/gateway/scripts/scada/monitor.js",
 
   "📦": {
     "panel":    "DOM #scada",

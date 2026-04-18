@@ -1,0 +1,40 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/white-papers/udts",
+    "label": "udts",
+    "parent": "guild/web/white-papers",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_white-papers_udts",
+    "fs_path": "guild/web/white-papers/udts",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_white-papers",
+      "guild_web_white-papers_udts"
+    ],
+    "children": [
+      "guild/web/white-papers/udts/instances",
+      "guild/web/white-papers/udts/templates"
+    ],
+    "siblings": [
+      "guild/web/white-papers/originals",
+      "guild/web/white-papers/tags"
+    ],
+    "descendants": 2,
+    "file_count": 1,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T05:51:33Z",
+    "schema_version": "1.0.0"
+  }
+}

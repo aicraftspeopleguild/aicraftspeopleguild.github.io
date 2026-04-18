@@ -2,7 +2,7 @@
   "§": "4.2.2",
   "🏗️": "🎤",
   "name": "voice",
-  "module": "controls/sandbox/web-llm/modules/voice.js",
+  "module": "L4/sandbox/web-llm/modules/voice.js",
 
   "📦": {
     "voice":   { "rms":"f", "f0":"f", "pDelta":"f", "sustain":"f", "coherence":"f", "vowel":"e[oo|oh|ah|eh|ee]", "pulseRate":"f", "energy":"f" },

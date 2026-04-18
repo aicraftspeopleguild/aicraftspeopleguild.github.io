@@ -3,8 +3,8 @@
 # ACG · PLC tag provider (Jython 2.7)
 #
 # Owns: plc.*
-# Backing store: /controls/plc/git/  (GitPLC UDT templates)
-# Standard:      /controls/docs/standards/gitplc/
+# Backing store: /L1/plc/git/  (GitPLC UDT templates)
+# Standard:      /docs/standards/gitplc/
 #
 # This provider keeps a live mirror of the GitPLC project state in the
 # tag plant. It does *not* parse vendor files itself - that is the job
@@ -21,8 +21,8 @@ except ImportError:
 NAMESPACE = 'plc'
 OWNED_PREFIXES = ('plc.',)
 
-TEMPLATE_ROOT = '/controls/plc/git/'
-STANDARD_ROOT = '/controls/docs/standards/gitplc/'
+TEMPLATE_ROOT = '/L1/plc/git/'
+STANDARD_ROOT = '/docs/standards/gitplc/'
 
 VENDORS = ('ab', 'siemens', 'codesys', 'beckhoff', 'omron', 'mitsubishi')
 

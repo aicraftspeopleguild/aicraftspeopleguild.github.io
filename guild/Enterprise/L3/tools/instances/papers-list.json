@@ -1,0 +1,37 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "papers:list",
+    "name": "List papers",
+    "description": "Emit the static paper catalog (JSON array) from guild/Enterprise/L4/api/papers.json.",
+    "category": "query",
+    "entry": "guild/Enterprise/L4/api/papers.json",
+    "language": "bash",
+    "inputs": [],
+    "outputs": [{"name":"papers","type":"Paper[]","description":"Array of paper records"}],
+    "adapters": ["CliAdapter","ApiAdapter","McpAdapter","LoggerWrapper","TestWrapper"],
+    "tags": ["papers","catalog","read-only"],
+    "mcp": {
+      "mcp_name": "list_papers",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "tag":  {"type":"string","description":"Optional topic filter"},
+          "type": {"type":"string","description":"Optional paper type filter"}
+        }
+      }
+    },
+    "api": {
+      "method": "GET",
+      "path": "/guild/Enterprise/L4/api/papers.json",
+      "static": true
+    },
+    "test_cases": [
+      {"name":"catalog exists","inputs":{},"expect":{"field":"ok","op":"eq","value":true}}
+    ]
+  },
+  "tags": {
+    "id": "papers-list",
+    "schema_version": "1.0.0"
+  }
+}

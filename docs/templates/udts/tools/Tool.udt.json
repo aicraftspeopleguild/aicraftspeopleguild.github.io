@@ -1,0 +1,12 @@
+{"$schema":"konomi/udt/v1","name":"Tool","layer":9,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING","desc":"Slug, e.g. 'papers:list'"},
+{"n":"name","t":"STRING"},
+{"n":"description","t":"STRING"},
+{"n":"category","t":"ENUM","values":["query","build","test","admin"]},
+{"n":"entry","t":"STRING","desc":"Script path OR python callable: module.path:function"},
+{"n":"language","t":"ENUM","values":["python","node","bash"]},
+{"n":"inputs","t":"JSON","desc":"[{name,type,required,default,description}]"},
+{"n":"outputs","t":"JSON","desc":"[{name,type,description}]"},
+{"n":"adapters","t":"STRING[]","desc":"Which adapter UDTs wrap it: CliAdapter, ApiAdapter, McpAdapter, LoggerWrapper, TestWrapper"},
+{"n":"tags","t":"STRING[]","nullable":true}
+],"meta":{"desc":"A callable Guild operation. One Tool -> many entry points (CLI, HTTP, MCP) via the adapter UDTs listed in 'adapters'."}}

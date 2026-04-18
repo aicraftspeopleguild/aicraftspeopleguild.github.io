@@ -4,7 +4,7 @@
 #
 # Owns: hmi.*
 # Aligns with ISA-101 (layers, palette, faceplates). Full dense spec at
-# /controls/docs/standards/konomi/isa101/.
+# /docs/standards/konomi/isa101/.
 #
 from __future__ import print_function, division, absolute_import
 

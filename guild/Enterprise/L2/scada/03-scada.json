@@ -3,10 +3,10 @@
   "🏗️": "🖥️",
   "name": "SCADA",
   "module": [
-    "controls/scada/gateway/scripts/scada/tags.js",
-    "controls/scada/gateway/scripts/scada/providers.js",
-    "controls/scada/gateway/scripts/scada/udt.js",
-    "controls/scada/gateway/scripts/scada/monitor.js"
+    "L2/scada/gateway/scripts/scada/tags.js",
+    "L2/scada/gateway/scripts/scada/providers.js",
+    "L2/scada/gateway/scripts/scada/udt.js",
+    "L2/scada/gateway/scripts/scada/monitor.js"
   ],
 
   "m🏷️": "path:s → { value:any quality:🟢|🟡|🔴 ts:ms type:s }",

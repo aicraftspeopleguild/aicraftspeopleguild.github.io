@@ -1,0 +1,27 @@
+{
+  "dir": "guild/Enterprise/L4/database/lib",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 4,
+  "udt_count": 0,
+  "tags": {
+    "ext:py": {
+      "count": 4,
+      "files": [
+        "db.py",
+        "load_members.py",
+        "load_papers.py",
+        "load_programs.py"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "py": 4
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

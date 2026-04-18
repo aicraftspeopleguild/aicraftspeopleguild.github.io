@@ -1,0 +1,109 @@
+{
+  "dir": "guild/apps/test",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 8,
+  "udt_count": 1,
+  "tags": {
+    "ext:html": {
+      "count": 3,
+      "files": [
+        "index.html",
+        "paper-auto-index-standard.html",
+        "white-papers.html"
+      ]
+    },
+    "ext:json": {
+      "count": 2,
+      "files": [
+        "acg-app.json",
+        "papers.json"
+      ]
+    },
+    "ext:md": {
+      "count": 2,
+      "files": [
+        "ACG-INTEGRATION.md",
+        "README.md"
+      ]
+    },
+    "ext:yml": {
+      "count": 1,
+      "files": [
+        "acg-test.config.yml"
+      ]
+    },
+    "id:test": {
+      "count": 1,
+      "files": [
+        "acg-app.json"
+      ]
+    },
+    "section:engineering": {
+      "count": 1,
+      "files": [
+        "acg-app.json"
+      ]
+    },
+    "udt:App": {
+      "count": 1,
+      "files": [
+        "acg-app.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "App": 1
+  },
+  "sections": {
+    "engineering": 1
+  },
+  "kinds": {
+    "html": 3,
+    "json": 2,
+    "md": 2,
+    "yml": 1
+  },
+  "refs": {},
+  "ids": {
+    "test": 1
+  },
+  "udts": [
+    {
+      "file": "acg-app.json",
+      "udtType": "App",
+      "id": "test",
+      "body": {
+        "udtType": "App",
+        "parameters": {
+          "name": "ACG-TEST — Konomi Standard Test Harness",
+          "slug": "test",
+          "kind": "guild-app",
+          "description": "Reference implementation of the Konomi Standard for UDT-nested GitHub Actions testing. Self-testing GitHub Pages site: every page has a .test.yml file and an in-browser runner verifies each step. Includes a browser terminal for ad-hoc test execution and the Paper Auto-Index Standard reference. Originally developed as github.com/teslasolar/ACG-Test; imported here as a self-contained Guild app.",
+          "source_type": "External",
+          "source_path": "https://github.com/teslasolar/ACG-Test",
+          "view": "guild/apps/test/index.html",
+          "route": "/guild/apps/test/",
+          "section": "engineering",
+          "stylesheets": [],
+          "status": "published",
+          "tags": [
+            "testing",
+            "konomi",
+            "udt",
+            "github-actions",
+            "guild-app"
+          ]
+        },
+        "tags": {
+          "id": "test",
+          "url": "https://aicraftspeopleguild.github.io/guild/apps/test/",
+          "view_id": "external",
+          "ingested_at": "2026-04-18T00:00:00Z",
+          "schema_version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

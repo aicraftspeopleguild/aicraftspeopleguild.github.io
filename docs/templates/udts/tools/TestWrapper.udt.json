@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"TestWrapper","layer":9,"version":"1.0.0","fields":[
+{"n":"tool_id","t":"STRING"},
+{"n":"cases","t":"JSON","desc":"[{name, inputs, expect: {field, op, value}}]"},
+{"n":"fixtures","t":"STRING[]","nullable":true,"desc":"Paths to sample files mocked into the run"},
+{"n":"teardown","t":"STRING","nullable":true,"desc":"Optional cleanup command"}
+],"meta":{"desc":"Declarative test spec for a Tool. Each case calls the Tool with inputs and asserts expectations on the outputs."}}

@@ -2,7 +2,7 @@
   "§": "E.UDT",
   "🏗️": "⚠",
   "name": "errors · UDTs",
-  "owner": "controls/scada/errors/provider.py",
+  "owner": "L2/scada/errors/provider.py",
 
   "types": {
     "LogEntry": {

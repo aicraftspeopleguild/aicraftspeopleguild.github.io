@@ -2,17 +2,17 @@
   "§": "4.2.5",
   "🏗️": "🧰",
   "name": "mcp-tools-engine",
-  "module":       "controls/sandbox/web-llm/modules/mcp-tools-engine.js",
+  "module":       "L4/sandbox/web-llm/modules/mcp-tools-engine.js",
   "modules_split":[
-    "controls/sandbox/web-llm/modules/mcp/repo.js",
-    "controls/sandbox/web-llm/modules/mcp/vfs.js",
-    "controls/sandbox/web-llm/modules/mcp/git.js",
-    "controls/sandbox/web-llm/modules/mcp/preview.js",
-    "controls/sandbox/web-llm/modules/mcp/scaffold.js",
-    "controls/sandbox/web-llm/modules/mcp/tools.js"
+    "L4/sandbox/web-llm/modules/mcp/repo.js",
+    "L4/sandbox/web-llm/modules/mcp/vfs.js",
+    "L4/sandbox/web-llm/modules/mcp/git.js",
+    "L4/sandbox/web-llm/modules/mcp/preview.js",
+    "L4/sandbox/web-llm/modules/mcp/scaffold.js",
+    "L4/sandbox/web-llm/modules/mcp/tools.js"
   ],
-  "udts": "controls/sandbox/web-llm/udts.json",
-  "tags": "controls/sandbox/web-llm/tags.json",
+  "udts": "L4/sandbox/web-llm/udts.json",
+  "tags": "L4/sandbox/web-llm/tags.json",
   "desc": "Virtual filesystem + git-lite + previewer + scaffolds + fenced LLM-tool parser/dispatcher. The monolithic mcp-tools-engine.js is now a thin re-export shim; every concern lives in its own file under mcp/.",
 
   "📦": {

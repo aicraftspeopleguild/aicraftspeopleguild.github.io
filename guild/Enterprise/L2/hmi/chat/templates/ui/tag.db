@@ -1,0 +1,27 @@
+{
+  "dir": "guild/Enterprise/L2/hmi/chat/templates/ui",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 4,
+  "udt_count": 0,
+  "tags": {
+    "ext:json": {
+      "count": 4,
+      "files": [
+        "mesh.faceplate.json",
+        "peer.faceplate.json",
+        "room.faceplate.json",
+        "tracker.faceplate.json"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "json": 4
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

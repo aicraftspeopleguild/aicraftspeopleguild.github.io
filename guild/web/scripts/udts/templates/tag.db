@@ -1,0 +1,203 @@
+{
+  "dir": "guild/web/scripts/udts/templates",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 2,
+  "udt_count": 2,
+  "tags": {
+    "ext:json": {
+      "count": 2,
+      "files": [
+        "packml-state.udt.json",
+        "program.udt.json"
+      ]
+    },
+    "udt:PackMLState": {
+      "count": 1,
+      "files": [
+        "packml-state.udt.json"
+      ]
+    },
+    "udt:Program": {
+      "count": 1,
+      "files": [
+        "program.udt.json"
+      ]
+    }
+  },
+  "udt_types": {
+    "PackMLState": 1,
+    "Program": 1
+  },
+  "sections": {},
+  "kinds": {
+    "json": 2
+  },
+  "refs": {},
+  "ids": {},
+  "udts": [
+    {
+      "file": "packml-state.udt.json",
+      "udtType": "PackMLState",
+      "id": {
+        "dataType": "String"
+      },
+      "body": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "udtType": "PackMLState",
+        "version": "1.0.0",
+        "description": "A single run of a Program through the PackML state machine (ISA-TR88.00.02). Records the state transition history, pre/post check results, and final terminal state with any error captured.",
+        "parameters": {
+          "program_id": {
+            "dataType": "String",
+            "required": true
+          },
+          "run_id": {
+            "dataType": "String",
+            "required": true,
+            "description": "Unique id for this run, e.g. timestamp+uuid"
+          },
+          "started_at": {
+            "dataType": "String",
+            "required": true,
+            "description": "UTC ISO timestamp"
+          },
+          "ended_at": {
+            "dataType": "String",
+            "required": false
+          },
+          "terminal": {
+            "dataType": "String",
+            "required": false,
+            "description": "COMPLETE | ABORTED | HELD | STOPPED"
+          },
+          "transitions": {
+            "dataType": "JSON",
+            "required": false,
+            "description": "Ordered list of {state, at, note}"
+          },
+          "pre_check_results": {
+            "dataType": "JSON",
+            "required": false,
+            "description": "{check_name: {ok, note}}"
+          },
+          "post_check_results": {
+            "dataType": "JSON",
+            "required": false
+          },
+          "error": {
+            "dataType": "String",
+            "required": false,
+            "description": "Error message if ABORTED"
+          }
+        },
+        "tags": {
+          "id": {
+            "dataType": "String"
+          },
+          "duration_s": {
+            "dataType": "String",
+            "description": "Total duration in seconds"
+          },
+          "schema_version": {
+            "dataType": "String"
+          }
+        }
+      }
+    },
+    {
+      "file": "program.udt.json",
+      "udtType": "Program",
+      "id": {
+        "dataType": "String"
+      },
+      "body": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "udtType": "Program",
+        "version": "1.0.0",
+        "description": "An executable program in the build pipeline. Wrapped by a PackML state machine (ISA-TR88.00.02) so every run transitions through the same lifecycle: IDLE -> STARTING -> EXECUTE -> COMPLETING -> COMPLETE (or -> ABORTING -> ABORTED on failure). Pre/post checks run at each transition.",
+        "parameters": {
+          "name": {
+            "dataType": "String",
+            "required": true,
+            "description": "Human-readable program name"
+          },
+          "path": {
+            "dataType": "String",
+            "required": true,
+            "description": "Path to script, repo-rooted"
+          },
+          "language": {
+            "dataType": "String",
+            "required": true,
+            "description": "python | bash | node"
+          },
+          "category": {
+            "dataType": "String",
+            "required": true,
+            "description": "extract | build | render | regen | test | split"
+          },
+          "purpose": {
+            "dataType": "String",
+            "required": false,
+            "description": "One-line purpose summary"
+          },
+          "inputs": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Paths or globs this program reads"
+          },
+          "outputs": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Paths or globs this program writes"
+          },
+          "depends_on": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Program IDs that must run before this one"
+          },
+          "pre_checks": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Named pre-execute guards (e.g., 'inputs_exist')"
+          },
+          "post_checks": {
+            "dataType": "StringArray",
+            "required": false,
+            "description": "Named post-execute guards (e.g., 'outputs_exist', 'no_stderr')"
+          },
+          "tags": {
+            "dataType": "StringArray",
+            "required": false
+          }
+        },
+        "tags": {
+          "id": {
+            "dataType": "String"
+          },
+          "state_log": {
+            "dataType": "String",
+            "description": "Path to most recent PackMLState instance"
+          },
+          "last_state": {
+            "dataType": "String",
+            "description": "Most recent state (IDLE | EXECUTE | COMPLETE | ABORTED)"
+          },
+          "last_run_at": {
+            "dataType": "String",
+            "description": "UTC ISO timestamp of last run"
+          },
+          "last_duration": {
+            "dataType": "String",
+            "description": "Seconds to run, e.g. '1.234'"
+          },
+          "schema_version": {
+            "dataType": "String"
+          }
+        }
+      }
+    }
+  ]
+}

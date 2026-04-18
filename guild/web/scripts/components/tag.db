@@ -1,0 +1,25 @@
+{
+  "dir": "guild/web/scripts/components",
+  "scope": "local",
+  "generated_at": "2026-04-18T05:52:09Z",
+  "schema_version": "2.0.0",
+  "file_count": 2,
+  "udt_count": 0,
+  "tags": {
+    "ext:py": {
+      "count": 2,
+      "files": [
+        "build-catalog.py",
+        "extract.py"
+      ]
+    }
+  },
+  "udt_types": {},
+  "sections": {},
+  "kinds": {
+    "py": 2
+  },
+  "refs": {},
+  "ids": {},
+  "udts": []
+}

@@ -23,7 +23,7 @@
       @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
     </style>
   </defs>
-<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/web-llm/" target="_blank">
+<a href="https://aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/web-llm/" target="_blank">
 <rect width="1040" height="260" rx="10" fill="url(#gBg)"/>
   <rect x="0" y="0" width="1040" height="36" rx="10" fill="#161b22"/>
   <rect x="0" y="26" width="1040" height="10" fill="#161b22"/>
@@ -43,7 +43,7 @@
 <g><rect x="460" y="166" rx="11" width="252" height="22" fill="none" stroke="#f0883e" stroke-width="1" opacity=".6"/><text x="586" y="181" text-anchor="middle" class="t" font-size="11" fill="#f0883e">🛰 shares context via p2p mesh</text></g>
 <g><rect x="722" y="166" rx="11" width="244" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="844" y="181" text-anchor="middle" class="t" font-size="11" fill="#3fb950">🔧 calls the acg tool catalog</text></g>
 <text x="1010" y="108" text-anchor="end" class="t" font-size="13" fill="#79c0ff">launch ↗</text>
-<text x="1010" y="130" text-anchor="end" class="t sub">teslasolar.github.io/aicraftspeopleguild.github.io/guild/E</text>
+<text x="1010" y="130" text-anchor="end" class="t sub">aicraftspeopleguild.github.io/guild/Enterprise/L4/sandbox/</text>
 <text x="520" y="246" text-anchor="middle" class="t sub">First load downloads the model (~1-2 GB) into IndexedDB. Subsequent chats are instant.</text>
 </a>
 </svg>

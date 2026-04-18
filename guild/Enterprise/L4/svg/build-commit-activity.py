@@ -17,7 +17,7 @@ sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import svg_widget as S
 
 OUT = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "commit-activity.svg"
-REPO_SLUG = os.environ.get("GH_TAG_REPO", "teslasolar/aicraftspeopleguild.github.io")
+REPO_SLUG = os.environ.get("GH_TAG_REPO", "aicraftspeopleguild/aicraftspeopleguild.github.io")
 
 
 def _api(path):

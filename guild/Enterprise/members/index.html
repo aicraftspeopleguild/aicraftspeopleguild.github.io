@@ -88,9 +88,14 @@ function render() {
 
   wrap.innerHTML = `<div class="member-grid">${members.map(m => {
     const tags = m.expertise_tags ?? [];
+    const src = m.avatar_href ? `../L4/members/${esc(m.handle ?? '')}/${esc(m.avatar_href)}` : '';
+    const avatar = src
+      ? `<img class="member-avatar" src="${src}" alt="${esc(m.name ?? m.handle ?? '')}"
+               onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'member-avatar',textContent:'${esc(initials(m.name))}'}))">`
+      : `<div class="member-avatar">${initials(m.name)}</div>`;
     return `<div class="member-card">
       <div class="member-top">
-        <div class="member-avatar">${initials(m.name)}</div>
+        ${avatar}
         <div class="member-info">
           <div class="member-name">${m.name ?? m.handle}</div>
           <div class="member-handle">@${m.handle ?? ''}</div>

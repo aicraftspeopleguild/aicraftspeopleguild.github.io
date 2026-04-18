@@ -1,0 +1,36 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L4/database/lib",
+    "label": "lib",
+    "parent": "guild/Enterprise/L4/database",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L4_database_lib",
+    "fs_path": "guild/Enterprise/L4/database/lib",
+    "depth": 5,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L4",
+      "guild_Enterprise_L4_database",
+      "guild_Enterprise_L4_database_lib"
+    ],
+    "children": [],
+    "siblings": [],
+    "descendants": 0,
+    "file_count": 5,
+    "subdir_count": 0,
+    "kinds": {
+      "py": 4,
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

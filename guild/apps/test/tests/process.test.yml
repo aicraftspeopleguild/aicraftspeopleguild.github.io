@@ -1,0 +1,64 @@
+# tests/process.test.yml
+# Meta test: verifies the TDD process itself is visible and honoured.
+# Every step of building this site must have a visible verdict on the Runner page.
+
+test: Process verification (TDD phases)
+target: pages/runner.html
+
+exists:
+  expect: present
+  reason: "the runner page is where process steps are reported and must be served"
+
+watches:
+  - path: "[data-step='scaffold']"
+    expect: triggered
+    reason: "step 1 — scaffolding the blank test file must be a visible phase"
+
+  - path: "[data-step='fail']"
+    expect: triggered
+    reason: "step 2 — watching the test fail before writing code is the whole point of TDD"
+
+  - path: "[data-step='write']"
+    expect: triggered
+    reason: "step 3 — writing the page or workflow is a distinct phase"
+
+  - path: "[data-step='pass']"
+    expect: triggered
+    reason: "step 4 — watching the test pass confirms the implementation is complete"
+
+  - path: "[data-step='commit']"
+    expect: triggered
+    reason: "step 5 — committing the test plus code together preserves the TDD artifact"
+
+secrets:
+  - name: tests/manifest.json
+    expect: configured
+    reason: "the manifest must list every test file so no verification step is invisible"
+
+  - name: tests/index.test.yml
+    expect: configured
+    reason: "the home page must have a test file — step 1 done"
+
+  - name: tests/standard.test.yml
+    expect: configured
+    reason: "the standard page must have a test file"
+
+  - name: tests/types.test.yml
+    expect: configured
+    reason: "the types page must have a test file"
+
+  - name: tests/example.test.yml
+    expect: configured
+    reason: "the example page must have a test file"
+
+  - name: tests/runner.test.yml
+    expect: configured
+    reason: "the runner page must have a test file"
+
+  - name: tests/deploy-pages.test.yml
+    expect: configured
+    reason: "the deploy workflow must have a canonical workflow test file"
+
+guardrails:
+  - condition: "udt-expectation[data-missing-reason]"
+    reason: "no expectation in the whole site may lack a reason — the reason IS the documentation"

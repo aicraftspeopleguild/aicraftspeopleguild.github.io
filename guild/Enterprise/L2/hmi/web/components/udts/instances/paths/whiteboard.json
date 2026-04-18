@@ -1,0 +1,23 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/apps/whiteboard",
+    "label": "P2P Whiteboard",
+    "page": "guild/apps/whiteboard/index.html",
+    "section": "apps",
+    "parent": "home",
+    "order": 30,
+    "dynamic": false,
+    "status": "published",
+    "dependencies": [
+      "guild/Enterprise/L2/scada/gateway/scripts/p2p.js",
+      "guild/Enterprise/L2/scada/gateway/scripts/peers.js"
+    ],
+    "provides": ["whiteboard-session", "meeting-canvas"]
+  },
+  "tags": {
+    "id": "whiteboard",
+    "depth": 2,
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "§": 0,
+  "id": "decompressor",
+  "desc": "GLYPH → MEANING · TYPE SHORTHAND · ARROW GRAMMAR",
+
+  "glyphs": {
+    "🏗️": "UDT (user defined type)",
+    "📦": "instance / container",
+    "🔌": "connection / channel",
+    "💬": "message / chat",
+    "👥": "peer / member",
+    "📡": "tracker / signal",
+    "🏷️": "tag (path·value·quality·ts)",
+    "📋": "provider (namespace owner)",
+    "🖥️": "HMI / monitor",
+    "🧪": "sandbox / tool",
+    "🧠": "LLM / inference",
+    "🎤": "voice / mic",
+    "💜": "emotion state",
+    "📁": "virtual file",
+    "🔀": "git / commit",
+    "🛰️": "mesh bridge / broadcast",
+    "⚙️": "config / constant",
+    "🔑": "identity",
+    "🟢": "GOOD quality",
+    "🟡": "STALE quality",
+    "🔴": "BAD quality"
+  },
+
+  "arrows": {
+    "↑": "publish",
+    "↓": "subscribe",
+    "↔": "bidirectional",
+    "→": "flow / transform",
+    "⊕": "compose",
+    "∈": "member of",
+    "∀": "for all",
+    "∃": "exists",
+    "∅": "null / empty",
+    "和": "resonant / complete"
+  },
+
+  "types": {
+    "s":   "str",
+    "s4":  "str[4]",
+    "s7":  "str[7]",
+    "s20": "str[20]",
+    "s40": "str[40]",
+    "i":   "int",
+    "f":   "float",
+    "b":   "bool",
+    "ms":  "epoch_ms",
+    "o":   "object",
+    "a":   "array",
+    "m":   "Map",
+    "e":   "enum",
+    "?":   "nullable"
+  }
+}

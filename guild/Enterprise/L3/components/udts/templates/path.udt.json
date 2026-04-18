@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Path",
+  "version": "1.0.0",
+  "description": "A URL path / route entry — the addressable unit of site navigation. A Path binds a URL pattern to a Page, and captures metadata for navigation (label, section, parent, order, visibility).",
+  "parameters": {
+    "path":         { "dataType": "String",      "required": true,  "description": "URL path pattern. Use :name for dynamic segments (e.g., /members/:slug)." },
+    "label":        { "dataType": "String",      "required": true,  "description": "Human-readable name for menus and breadcrumbs." },
+    "page":         { "dataType": "String",      "required": true,  "description": "Path to the Page UDT instance JSON that handles this route." },
+    "section":      { "dataType": "String",      "required": false, "description": "Navigation section: about | resources | community | recognition | meta" },
+    "parent":       { "dataType": "String",      "required": false, "description": "Parent Path ID — supports breadcrumb hierarchy." },
+    "order":        { "dataType": "Int",         "required": false, "description": "Sort order within its section. Lower = earlier." },
+    "dynamic":      { "dataType": "Boolean",     "required": false, "default": false, "description": "True if path contains :param segments." },
+    "params":       { "dataType": "StringArray", "required": false, "description": "Names of dynamic params (e.g., ['slug'])." },
+    "methods":      { "dataType": "StringArray", "required": false, "default": ["GET"], "description": "Supported HTTP methods. Static site = GET only." },
+    "status":       { "dataType": "String",      "required": false, "default": "published", "description": "published | draft | deprecated | redirect" },
+    "redirect_to":  { "dataType": "String",      "required": false, "description": "Target path if this is a redirect." },
+    "visible_in_nav": { "dataType": "Boolean",   "required": false, "default": true, "description": "Show in top-level navigation menus." },
+    "meta_tags":    { "dataType": "StringArray", "required": false, "description": "Topic tags for cross-referencing." },
+    "access":       { "dataType": "String",      "required": false, "default": "public", "description": "public | member-only | admin" },
+    "dependencies":{ "dataType": "StringArray", "required": false, "description": "Path IDs or data-source keys this path needs before it can render (autopath resolver consumes this)." },
+    "provides":     { "dataType": "StringArray", "required": false, "description": "Names of resources this path makes available to dependents." }
+  },
+  "tags": {
+    "id":             { "dataType": "String",      "description": "Stable path identifier (slug form)." },
+    "full_url":       { "dataType": "String",      "description": "Full URL resolved against site base." },
+    "children":       { "dataType": "StringArray", "description": "IDs of child Paths (computed)." },
+    "dependents":     { "dataType": "StringArray", "description": "Path IDs that depend on this one (computed; inverse of dependencies)." },
+    "breadcrumb":     { "dataType": "StringArray", "description": "Ordered path IDs from root to this node." },
+    "depth":          { "dataType": "Int",         "description": "Depth from root (0 for home)." },
+    "view_id":        { "dataType": "String",      "description": "Resolved View ID from the referenced Page." },
+    "last_verified":  { "dataType": "String",      "description": "UTC ISO timestamp when route was last verified to resolve." },
+    "schema_version": { "dataType": "String" }
+  }
+}

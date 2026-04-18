@@ -1,0 +1,42 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L4/sandbox/web-llm",
+    "label": "web-llm",
+    "parent": "guild/Enterprise/L4/sandbox",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L4_sandbox_web-llm",
+    "fs_path": "guild/Enterprise/L4/sandbox/web-llm",
+    "depth": 5,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L4",
+      "guild_Enterprise_L4_sandbox",
+      "guild_Enterprise_L4_sandbox_web-llm"
+    ],
+    "children": [
+      "guild/Enterprise/L4/sandbox/web-llm/modules"
+    ],
+    "siblings": [
+      "guild/Enterprise/L4/sandbox/shared",
+      "guild/Enterprise/L4/sandbox/whiteboard"
+    ],
+    "descendants": 3,
+    "file_count": 5,
+    "subdir_count": 1,
+    "kinds": {
+      "db": 2,
+      "html": 1,
+      "json": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

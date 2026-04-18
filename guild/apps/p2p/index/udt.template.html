@@ -1,0 +1,23 @@
+<!--
+  ═══ udts.json template ═══
+  A subsystem's UDT schemas (User Defined Types).  Field values use the
+  §0 type shorthand: s, s20, i, f, b, ms, o, a, m, e, ? (see
+  /controls/scada/00-legend.json).
+-->
+{
+  "§":     "<SECTION-CODE>",
+  "🏗️":    "<GLYPH>",
+  "name":  "<subsystem> · UDTs",
+  "owner": "<subsystem>/provider.py",
+
+  "types": {
+    "<TypeName>": {
+      "glyph":  "<optional emoji>",
+      "fields": {
+        "<fieldA>": "<typeShorthand>",
+        "<fieldB>": "<typeShorthand>"
+      },
+      "desc":   "<one-line purpose>"
+    }
+  }
+}

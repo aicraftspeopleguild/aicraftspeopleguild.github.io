@@ -1,0 +1,3 @@
+{"$schema":"konomi/udt/v1","name":"S88_EquipmentLevel","std":"ISA-88","layer":3,"version":"1.0.0",
+"hierarchy":["Enterprise","Site","Area","ProcessCell","Unit","EquipmentModule","ControlModule"],
+"meta":{"desc":"S88 physical model levels"}}

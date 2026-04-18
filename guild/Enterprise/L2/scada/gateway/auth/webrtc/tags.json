@@ -1,0 +1,19 @@
+{
+  "§":          "A.R.TAGS",
+  "🏗️":         "📡",
+  "name":       "auth.webrtc · tag catalog",
+  "owner":      "auth/webrtc/provider.py",
+  "namespaces": ["auth.webrtc"],
+  "flow":       "cryptographic peer-id identity — no OAuth, no server",
+
+  "tags": [
+    { "path": "auth.webrtc.peerId",     "type": "String",                "desc": "20-byte BT-style peer id: -ACG001-<12 hex>" },
+    { "path": "auth.webrtc.shortId",    "type": "String",                "desc": "last 8 chars of peerId — used as display name" },
+    { "path": "auth.webrtc.identity",   "type": "UDT:WebRTCPeerIdentity","desc": "canonical identity record" },
+    { "path": "auth.webrtc.signedIn",   "type": "Boolean",               "desc": "true once peerId has been generated + announced" },
+    { "path": "auth.webrtc.signedInAt", "type": "DateTime" },
+    { "path": "auth.webrtc.ice",        "type": "UDT:IceConfig",         "desc": "active ICE server set from OAUTH/ICE config" },
+    { "path": "auth.webrtc.conn",       "type": "UDT:ConnStats",         "desc": "aggregate connection stats across all RTCPeerConnections" },
+    { "path": "auth.webrtc.lastError",  "type": "String" }
+  ]
+}

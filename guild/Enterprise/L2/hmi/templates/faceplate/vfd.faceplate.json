@@ -1,0 +1,15 @@
+{"$schema":"hmi/faceplate/v1","name":"VFD_Faceplate","udt":"CM_VFD","isaLayer":"L3","glyph":"⚙️",
+"binds":{"pv":["sts.running","sts.speed_act","sts.current"],"sp":["cmd.speed_sp"],"state":"state.current","alarm":"sts.faulted"},
+"palette":["Running","Stopped","Faulted","Transition","Manual"],
+"cmds":[
+{"cmd":"cmd.run","label":"RUN"},
+{"cmd":"cmd.stop","label":"STOP","confirm":true},
+{"cmd":"cmd.reset","label":"RST","confirm":true}
+],
+"writes":[{"tag":"cmd.speed_sp","label":"Hz","min":"cfg.min_speed","max":"cfg.max_speed"}],
+"reads":[
+{"tag":"sts.speed_act","label":"Hz"},
+{"tag":"sts.current","label":"I","unit":"A"},
+{"tag":"sts.torque","label":"τ","unit":"%"}
+],
+"meta":{"desc":"VFD faceplate"}}

@@ -1,0 +1,16 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:cmd-panel-svg",
+    "name": "Render cmd-panel.svg",
+    "description": "Control panel SVG embedded in the README — 6 clickable buttons that each open a pre-filled GitHub issue. Companion workflow .github/workflows/cmd.yml picks up the submitted issue, runs the matching action (bump heartbeat · rebuild SVGs · rebuild API · clear faults · write tag), and auto-closes with a receipt.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-cmd-panel.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"svg","type":"file"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","cmd","panel","control","github-issues"]
+  },
+  "tags": { "id": "build-cmd-panel-svg", "schema_version": "1.0.0" }
+}

@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Downtime","std":"KPI","layer":9,"version":"1.0.0","fields":[
+{"n":"categories","t":"ENUM","array":true,"values":["Planned","Unplanned","Changeover","Setup","Breakdown","Idle"]},
+{"n":"events","t":"STRUCT","array":true,"of":{"start":"Timestamp","end":"Timestamp","category":"STRING","reason":"STRING","equipment":"STRING"}},
+{"n":"totals","t":"MAP","of":"Duration"}
+],"meta":{"desc":"Downtime event tracking"}}

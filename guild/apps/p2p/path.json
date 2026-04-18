@@ -1,0 +1,43 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/apps/p2p",
+    "label": "p2p",
+    "parent": "guild/apps",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_apps_p2p",
+    "fs_path": "guild/apps/p2p",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_apps",
+      "guild_apps_p2p"
+    ],
+    "children": [
+      "guild/apps/p2p/index"
+    ],
+    "siblings": [
+      "guild/apps/test",
+      "guild/apps/whitepapers"
+    ],
+    "descendants": 2,
+    "file_count": 6,
+    "subdir_count": 1,
+    "kinds": {
+      "json": 1,
+      "md": 2,
+      "db": 2,
+      "html": 1
+    },
+    "route_bindings": [
+      "p2p"
+    ],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

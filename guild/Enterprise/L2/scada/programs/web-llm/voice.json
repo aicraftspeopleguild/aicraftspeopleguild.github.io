@@ -1,0 +1,31 @@
+{
+  "§": "4.2.2",
+  "🏗️": "🎤",
+  "name": "voice",
+  "module": "L4/sandbox/web-llm/modules/voice.js",
+
+  "📦": {
+    "voice":   { "rms":"f", "f0":"f", "pDelta":"f", "sustain":"f", "coherence":"f", "vowel":"e[oo|oh|ah|eh|ee]", "pulseRate":"f", "energy":"f" },
+    "emotions":{ "excitement":"f", "calm":"f", "anger":"f", "sadness":"f", "joy":"f", "curiosity":"f" },
+    "dominantEmo": "s",
+    "audioCtx":"AudioContext?", "analyser":"AnalyserNode?", "recognition":"SpeechRecognition?", "micActive":"b"
+  },
+
+  "→": [
+    { "name": "setupMic",         "flow": "getUserMedia(audio) ⊕ AudioContext ⊕ Analyser(fft=2048) ⊕ VOICE.write(micConnected,true)" },
+    { "name": "analyzeLoop",      "flow": "rAF → RMS, F0 (autocorrelation), formant→vowel, onset→pulseRate ⊕ emotion heuristics ⊕ ~250ms throttle → VOICE/EMOTION.write" },
+    { "name": "setupRecognition", "flow": "new SpeechRecognition(continuous,interim) ⊕ auto-restart on end" },
+    { "name": "toggleListening",  "flow": "resume(audioCtx) ⊕ toggle micActive ⊕ recognition.start/stop" },
+    { "name": "startListeningAuto","flow": "analyser? ∧ recognition? → start ⊕ VOICE.write(listening,true)" },
+    { "name": "emotionSnapshot",  "out": "{dominant:s, values:o}" }
+  ],
+
+  "↑🖥️(via 🛰️)": [
+    "sandbox.web-llm.voice.micConnected",
+    "sandbox.web-llm.voice.listening",
+    "sandbox.web-llm.voice.state (🏗️Voice UDT)",
+    "sandbox.web-llm.emotion.state (🏗️Emotion UDT)",
+    "sandbox.web-llm.emotion.dominant"
+  ],
+  "和": true
+}

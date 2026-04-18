@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"MaterialClass","std":"ISA-95","layer":2,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"name","t":"STRING"},
+{"n":"props_def","t":"STRUCT","array":true,"of":{"name":"STRING","type":"STRING","uom":"STRING","required":"BOOL"}}
+],"meta":{"desc":"Material classification + property schema"}}

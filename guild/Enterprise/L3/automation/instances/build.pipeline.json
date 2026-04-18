@@ -1,0 +1,33 @@
+{
+  "udtType": "Pipeline",
+  "parameters": {
+    "id": "build",
+    "name": "Site build pipeline",
+    "description": "Tag-driven equivalent of guild/Enterprise/L3/scripts/build.sh. Each step writes pipeline.build.step.NN.status through tag_state; Script UDTs can subscribe to any step's transitions.",
+    "enabled": true,
+    "on_fail": "abort",
+    "steps": [
+      { "id": "components-extract",     "tool_id": "script:components:extract" },
+      { "id": "components-build-catalog","tool_id": "script:components:build-catalog" },
+      { "id": "white-papers-ingest",    "tool_id": "script:white-papers:extract" },
+      { "id": "apps-build-whitepapers", "tool_id": "script:apps:build-whitepaper-apps" },
+      { "id": "render-views",           "tool_id": "script:build" },
+      { "id": "white-papers-regen",     "tool_id": "script:white-papers:regen-index" },
+      { "id": "members-regen",          "tool_id": "script:members:regen-index" },
+      { "id": "build-programs",         "tool_id": "script:build-programs" },
+      { "id": "build-path-graph",       "tool_id": "script:pages:build-path-graph" },
+      { "id": "perspective-build",      "tool_id": "script:perspective-build" },
+      { "id": "build-local-tagdbs",     "tool_id": "build:tag-dbs" },
+      { "id": "build-tag-events",       "tool_id": "build:tag-events" },
+      { "id": "build-api",              "tool_id": "build:api" },
+      { "id": "build-state",            "tool_id": "build:state" }
+    ]
+  },
+  "tags": {
+    "id": "build-pipeline",
+    "file_path": "guild/Enterprise/L3/automation/instances/build.pipeline.json",
+    "step_count": 14,
+    "namespace": "pipeline.build",
+    "schema_version": "1.0.0"
+  }
+}

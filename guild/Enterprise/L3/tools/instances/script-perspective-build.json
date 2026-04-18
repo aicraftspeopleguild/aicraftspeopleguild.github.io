@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:perspective-build",
+    "name": "script · perspective-build",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/perspective-build.js. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/perspective-build.js",
+    "language": "node",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "perspective-build"
+    ]
+  },
+  "tags": {
+    "id": "script-perspective-build",
+    "schema_version": "1.0.0"
+  }
+}

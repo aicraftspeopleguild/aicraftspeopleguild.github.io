@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"MQTT_QoS","std":"MQTT+Sparkplug","layer":7,"version":"1.0.0",
+"levels":{
+"QoS0":{"name":"AtMostOnce","delivery":"Fire-forget","ack":"none"},
+"QoS1":{"name":"AtLeastOnce","delivery":"Guaranteed","ack":"PUBACK"},
+"QoS2":{"name":"ExactlyOnce","delivery":"Exactly once","ack":"PUBREC-PUBREL-PUBCOMP"}
+},"meta":{"desc":"MQTT quality-of-service levels"}}

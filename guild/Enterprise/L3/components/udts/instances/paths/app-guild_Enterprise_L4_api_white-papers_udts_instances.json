@@ -1,0 +1,33 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/whitepapers/guild_Enterprise_L4_api_white-papers_udts_instances",
+    "label": "guild_Enterprise_L4_api_white-papers_udts_instances",
+    "page": "guild/apps/whitepapers/pages/guild_Enterprise_L4_api_white-papers_udts_instances.page.json",
+    "section": "resources",
+    "parent": "white-papers",
+    "order": 100,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "app-guild_Enterprise_L4_api_white-papers_udts_instances",
+    "full_url": "https://aicraftspeopleguild.github.io/whitepapers/guild_Enterprise_L4_api_white-papers_udts_instances",
+    "children": [],
+    "breadcrumb": [
+      "home",
+      "white-papers",
+      "app-guild_Enterprise_L4_api_white-papers_udts_instances"
+    ],
+    "depth": 2,
+    "view_id": "white-paper-app",
+    "last_verified": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

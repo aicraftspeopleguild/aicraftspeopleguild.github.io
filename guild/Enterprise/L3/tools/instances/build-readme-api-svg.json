@@ -1,0 +1,15 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:readme-api-svg",
+    "name": "Render readme-api.svg",
+    "description": "Visual table of live API endpoints with HEAD-probed status chips (HTTP code + content-length). Each row is clickable (anchor inside SVG).",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-readme-api.py",
+    "language": "python",
+    "inputs": [], "outputs": [{"name":"svg","type":"file"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","readme","api","live","render"]
+  },
+  "tags": { "id": "build-readme-api-svg", "schema_version": "1.0.0" }
+}

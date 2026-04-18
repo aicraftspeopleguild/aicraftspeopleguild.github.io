@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚒ ACG Sandbox</title>
+<link rel="stylesheet" href="shared/sandbox.css">
+</head>
+<body>
+<div class="sb-topbar">
+  <span class="logo">⚒ ACG Sandbox<span>· tool guild</span></span>
+  <span class="spacer"></span>
+  <a href="../../index.html">← back to mesh</a>
+  <a href="https://github.com/teslasolar/ACGP2P" target="_blank" rel="noopener">github</a>
+</div>
+
+<div class="sb-main">
+  <h1>Tools</h1>
+  <p class="lede">
+    Browser-only workshops. Each runs standalone; with the main ACG P2P page
+    open in another tab, every tool publishes live events to the SCADA tag
+    plant via <code>BroadcastChannel("acg-mesh")</code>.
+  </p>
+
+  <div class="sb-grid">
+    <a class="sb-card" href="web-llm/index.html">
+      <h3>WebLLM <span class="tag ok">ready</span></h3>
+      <p>Voice-powered in-browser LLM with a virtual filesystem and live
+         preview iframe. Talk to the model, watch it write files, commit,
+         preview — all without leaving the browser.</p>
+      <p><code>/sandbox/web-llm/</code></p>
+    </a>
+
+    <a class="sb-card" href="whiteboard/index.html">
+      <h3>Whiteboard <span class="tag ok">ready</span></h3>
+      <p>Shared canvas relayed over the ACG peer mesh.  Pen + eraser,
+         stroke width, colour picker; cross-tab sync via
+         <code>BroadcastChannel</code>.</p>
+      <p><code>/controls/sandbox/whiteboard/</code></p>
+    </a>
+
+    <div class="sb-card" style="cursor:default;opacity:.55">
+      <h3>File drop <span class="tag wip">planned</span></h3>
+      <p>WebRTC file transfer between guild peers.</p>
+      <p><code>/sandbox/file-drop/</code></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

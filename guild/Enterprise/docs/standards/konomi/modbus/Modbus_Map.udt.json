@@ -1,0 +1,10 @@
+{"$schema":"konomi/udt/v1","name":"Modbus_Map","std":"Modbus","layer":8,"version":"1.0.0","fields":[
+{"n":"tag","t":"PATH"},
+{"n":"unit_id","t":"DINT"},
+{"n":"register_type","t":"ENUM","values":["Coil","DI","HR","IR"]},
+{"n":"addr","t":"DINT"},
+{"n":"data_type","t":"STRING"},
+{"n":"scale","t":"REAL"},
+{"n":"offset","t":"REAL"},
+{"n":"byte_order","t":"STRING"}
+],"meta":{"desc":"Tag ↔ Modbus register mapping"}}

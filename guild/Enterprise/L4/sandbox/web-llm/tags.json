@@ -1,0 +1,45 @@
+{
+  "§":          "W.TAGS",
+  "🏗️":         "🧠",
+  "name":       "sandbox.web-llm · tag catalog",
+  "owner":      "L4/sandbox/web-llm/modules/scada/tags.js",
+  "namespaces": ["sandbox.web-llm"],
+  "note":       "Local tag plant; every write is mirrored to the main ACG SCADA under sandbox.web-llm.* via BroadcastChannel('acg-mesh').",
+
+  "tags": [
+    {"path":"sys.startedAt",         "type":"DateTime"},
+    {"path":"sys.userAgent",         "type":"String"},
+
+    {"path":"model.current",         "type":"UDT:Model",         "desc":"currently loaded model (or last loaded)"},
+    {"path":"engine.state",          "type":"UDT:Engine"},
+    {"path":"engine.lastLatencyMs",  "type":"i"},
+
+    {"path":"voice.frame",           "type":"UDT:Voice",         "desc":"live mic frame (throttled ~10 Hz)"},
+    {"path":"emotion.state",         "type":"UDT:Emotion"},
+    {"path":"emotion.dominant",      "type":"String"},
+
+    {"path":"fs.fileCount",          "type":"Counter"},
+    {"path":"fs.files",              "type":"Array<String>",     "desc":"flat list of file paths (sorted)"},
+    {"path":"fs.tree",               "type":"UDT:FileTree",      "desc":"hierarchical listing from last `tree` call"},
+    {"path":"fs.dirCount",           "type":"Counter"},
+    {"path":"fs.currentPreview",     "type":"UDT:Preview"},
+
+    {"path":"git.branch",            "type":"String"},
+    {"path":"git.branches",          "type":"Array<Branch>"},
+    {"path":"git.commitCount",       "type":"Counter"},
+    {"path":"git.lastCommit",        "type":"UDT:Commit"},
+    {"path":"git.status",            "type":"UDT:Status"},
+    {"path":"git.lastDiff",          "type":"UDT:Diff"},
+
+    {"path":"chat.msgCount",         "type":"Counter"},
+    {"path":"chat.lastMsg",          "type":"UDT:ChatMsg"},
+
+    {"path":"tool.count",            "type":"Counter"},
+    {"path":"tool.last",             "type":"UDT:ToolCall"},
+    {"pathPattern":"tool.byName.<n>.count", "cardinality":"many", "type":"Counter",
+     "desc":"per-tool invocation count: create_file, edit_file, mkdir, mv, cp, tree, status, diff, preview, …"},
+
+    {"path":"export.lastArtifact",   "type":"UDT:ExportArtifact"},
+    {"path":"scaffold.lastApplied",  "type":"UDT:Scaffold"}
+  ]
+}

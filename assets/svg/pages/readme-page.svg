@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1040" width="720" height="1040"
+     role="img" aria-label="AI Craftspeople Guild — README overview page">
+  <!--
+  ══════════════════════════════════════════════════════════════════════════
+  PAGE: readme-page.svg
+  Full README hero panel. Composes all tiers.
+  Sections (top → bottom):
+    [36px]  titlebar
+    [120px] HERO  — guild mark + tagline + sub-tagline
+    [12px]  gap
+    [52px]  BAND  — 5 status badges
+    [12px]  gap
+    [90px]  STATS — 4 metric cards
+    [12px]  gap
+    [240px] PAPERS — 5 recent papers list
+    [12px]  gap
+    [130px] MEMBERS — 3 featured member chips
+    [12px]  gap
+    [90px]  ECG HEARTBEAT
+    [12px]  gap
+    [20px]  footer
+  Total: 1040px
+  ══════════════════════════════════════════════════════════════════════════
+  TOKENS (62 total):
+    PG_TS  PG_VERSION  PG_COMMIT
+
+    Hero: HE_TAGLINE  HE_SUB  HE_LOCATION
+
+    Badges ×5: B1_LB B1_VA B1_CO  B2 … B5
+
+    Stat cards ×4: S1_LB S1_VA S1_CO S1_SB  S2 … S4
+
+    Papers ×5: PA1_NUM PA1_TITLE PA1_DT PA1_CO  … PA5
+
+    Members ×3: MB1_INIT MB1_NAME MB1_ROLE MB1_CO
+                MB2_INIT MB2_NAME MB2_ROLE MB2_CO
+                MB3_INIT MB3_NAME MB3_ROLE MB3_CO
+
+    Heartbeat: HB_STATUS  HB_STATUS_CO  HB_TS
+  -->
+  <defs>
+    <linearGradient id="pg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset=".35" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="gg" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0"   stop-color="#3fb950"/>
+      <stop offset=".5"  stop-color="#79c0ff"/>
+      <stop offset="1"   stop-color="#a371f7"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .hd{font-family:'SFMono-Regular',Consolas,monospace;font-size:28px;font-weight:700;fill:url(#gg)}
+      .pulse{animation:pp 1.8s ease-out infinite;transform-origin:660px 938px}
+      @keyframes pp{0%{transform:scale(1);opacity:.7}55%{transform:scale(2.2);opacity:0}100%{opacity:0}}
+    </style>
+  </defs>
+
+  <rect width="720" height="1040" rx="10" fill="url(#pg)"/>
+
+  <!-- ══ TITLEBAR ════════════════════════════════════════════════════ -->
+  <rect x="0" y="0"  width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10"  fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="360" y="22" text-anchor="middle" class="t" font-size="11" fill="#8b949e">aicraftspeopleguild.github.io</text>
+
+  <!-- ══ HERO (y=36–156) ═════════════════════════════════════════════ -->
+  <!-- guild hexmark outline -->
+  <polygon points="360,54 388,70 388,102 360,118 332,102 332,70"
+           fill="none" stroke="#3fb950" stroke-width="1.5" opacity=".4"/>
+  <polygon points="360,60 382,73 382,99 360,112 338,99 338,73"
+           fill="none" stroke="#3fb950" stroke-width="1" opacity=".2"/>
+  <text x="360" y="95" class="t" font-size="16" fill="#3fb950" text-anchor="middle" font-weight="700">ACG</text>
+
+  <text x="360" y="140" class="hd" text-anchor="middle">{{HE_TAGLINE}}</text>
+  <text x="360" y="162" class="t" font-size="12" fill="#8b949e" text-anchor="middle">{{HE_SUB}}</text>
+
+  <!-- ══ STATUS BADGES (y=182–234) ══════════════════════════════════ -->
+  <rect x="16"  y="182" width="128" height="28" rx="14" fill="#161b22" stroke="{{B1_CO}}" stroke-width="1" stroke-opacity=".6"/>
+  <text x="80"  y="200" class="t" font-size="10" fill="{{B1_CO}}" text-anchor="middle">{{B1_LB}} · {{B1_VA}}</text>
+  <rect x="152" y="182" width="128" height="28" rx="14" fill="#161b22" stroke="{{B2_CO}}" stroke-width="1" stroke-opacity=".6"/>
+  <text x="216" y="200" class="t" font-size="10" fill="{{B2_CO}}" text-anchor="middle">{{B2_LB}} · {{B2_VA}}</text>
+  <rect x="288" y="182" width="128" height="28" rx="14" fill="#161b22" stroke="{{B3_CO}}" stroke-width="1" stroke-opacity=".6"/>
+  <text x="352" y="200" class="t" font-size="10" fill="{{B3_CO}}" text-anchor="middle">{{B3_LB}} · {{B3_VA}}</text>
+  <rect x="424" y="182" width="128" height="28" rx="14" fill="#161b22" stroke="{{B4_CO}}" stroke-width="1" stroke-opacity=".6"/>
+  <text x="488" y="200" class="t" font-size="10" fill="{{B4_CO}}" text-anchor="middle">{{B4_LB}} · {{B4_VA}}</text>
+  <rect x="560" y="182" width="144" height="28" rx="14" fill="#161b22" stroke="{{B5_CO}}" stroke-width="1" stroke-opacity=".6"/>
+  <text x="632" y="200" class="t" font-size="10" fill="{{B5_CO}}" text-anchor="middle">{{B5_LB}} · {{B5_VA}}</text>
+
+  <!-- ══ STAT CARDS (y=222–312) ══════════════════════════════════════ -->
+  <rect x="16"  y="222" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="96"  y="242" class="t" font-size="10" fill="#484f58" text-anchor="middle" letter-spacing="1">{{S1_LB}}</text>
+  <text x="96"  y="290" class="t" font-size="34" font-weight="700" fill="{{S1_CO}}" text-anchor="middle">{{S1_VA}}</text>
+  <text x="96"  y="306" class="t" font-size="10" fill="#484f58" text-anchor="middle">{{S1_SB}}</text>
+
+  <rect x="186" y="222" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="266" y="242" class="t" font-size="10" fill="#484f58" text-anchor="middle" letter-spacing="1">{{S2_LB}}</text>
+  <text x="266" y="290" class="t" font-size="34" font-weight="700" fill="{{S2_CO}}" text-anchor="middle">{{S2_VA}}</text>
+  <text x="266" y="306" class="t" font-size="10" fill="#484f58" text-anchor="middle">{{S2_SB}}</text>
+
+  <rect x="356" y="222" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="436" y="242" class="t" font-size="10" fill="#484f58" text-anchor="middle" letter-spacing="1">{{S3_LB}}</text>
+  <text x="436" y="290" class="t" font-size="34" font-weight="700" fill="{{S3_CO}}" text-anchor="middle">{{S3_VA}}</text>
+  <text x="436" y="306" class="t" font-size="10" fill="#484f58" text-anchor="middle">{{S3_SB}}</text>
+
+  <rect x="526" y="222" width="160" height="90" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="606" y="242" class="t" font-size="10" fill="#484f58" text-anchor="middle" letter-spacing="1">{{S4_LB}}</text>
+  <text x="606" y="290" class="t" font-size="34" font-weight="700" fill="{{S4_CO}}" text-anchor="middle">{{S4_VA}}</text>
+  <text x="606" y="306" class="t" font-size="10" fill="#484f58" text-anchor="middle">{{S4_SB}}</text>
+
+  <!-- ══ PAPERS SECTION (y=326–566) ═════════════════════════════════ -->
+  <line x1="16" y1="346" x2="248" y2="346" stroke="#21262d" stroke-width="1"/>
+  <rect x="248" y="334" width="224" height="24" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="360" y="351" class="t" font-size="10" fill="#8b949e" text-anchor="middle" letter-spacing="2">RECENT PAPERS</text>
+  <line x1="472" y1="346" x2="704" y2="346" stroke="#21262d" stroke-width="1"/>
+
+  <!-- paper rows 48px each -->
+  <text x="16" y="376" class="t" font-size="11" fill="#a371f7">{{PA1_NUM}}</text>
+  <text x="52" y="376" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{PA1_TITLE}}</text>
+  <text x="704" y="376" class="t" font-size="10" fill="{{PA1_CO}}" text-anchor="end">{{PA1_DT}}</text>
+  <line x1="16" y1="386" x2="704" y2="386" stroke="#161b22" stroke-width="1"/>
+
+  <text x="16" y="414" class="t" font-size="11" fill="#a371f7">{{PA2_NUM}}</text>
+  <text x="52" y="414" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{PA2_TITLE}}</text>
+  <text x="704" y="414" class="t" font-size="10" fill="{{PA2_CO}}" text-anchor="end">{{PA2_DT}}</text>
+  <line x1="16" y1="424" x2="704" y2="424" stroke="#161b22" stroke-width="1"/>
+
+  <text x="16" y="452" class="t" font-size="11" fill="#a371f7">{{PA3_NUM}}</text>
+  <text x="52" y="452" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{PA3_TITLE}}</text>
+  <text x="704" y="452" class="t" font-size="10" fill="{{PA3_CO}}" text-anchor="end">{{PA3_DT}}</text>
+  <line x1="16" y1="462" x2="704" y2="462" stroke="#161b22" stroke-width="1"/>
+
+  <text x="16" y="490" class="t" font-size="11" fill="#a371f7">{{PA4_NUM}}</text>
+  <text x="52" y="490" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{PA4_TITLE}}</text>
+  <text x="704" y="490" class="t" font-size="10" fill="{{PA4_CO}}" text-anchor="end">{{PA4_DT}}</text>
+  <line x1="16" y1="500" x2="704" y2="500" stroke="#161b22" stroke-width="1"/>
+
+  <text x="16" y="528" class="t" font-size="11" fill="#a371f7">{{PA5_NUM}}</text>
+  <text x="52" y="528" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{PA5_TITLE}}</text>
+  <text x="704" y="528" class="t" font-size="10" fill="{{PA5_CO}}" text-anchor="end">{{PA5_DT}}</text>
+
+  <!-- ══ MEMBERS SECTION (y=558–696) ════════════════════════════════ -->
+  <line x1="16" y1="558" x2="248" y2="558" stroke="#21262d" stroke-width="1"/>
+  <rect x="248" y="546" width="224" height="24" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="360" y="563" class="t" font-size="10" fill="#8b949e" text-anchor="middle" letter-spacing="2">FEATURED MEMBERS</text>
+  <line x1="472" y1="558" x2="704" y2="558" stroke="#21262d" stroke-width="1"/>
+
+  <!-- member chips (3 × ~210px wide) -->
+  <rect x="16"  y="578" width="210" height="80" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <circle cx="56" cy="618" r="24" fill="#0d1117" stroke="{{MB1_CO}}" stroke-width="1.5"/>
+  <text x="56" y="624" class="t" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">{{MB1_INIT}}</text>
+  <text x="90" y="610" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{MB1_NAME}}</text>
+  <rect x="90" y="618" width="122" height="18" rx="3" fill="#0d1117" stroke="{{MB1_CO}}" stroke-width="1" stroke-opacity=".4"/>
+  <text x="151" y="631" class="t" font-size="10" fill="{{MB1_CO}}" text-anchor="middle">{{MB1_ROLE}}</text>
+
+  <rect x="254" y="578" width="210" height="80" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <circle cx="294" cy="618" r="24" fill="#0d1117" stroke="{{MB2_CO}}" stroke-width="1.5"/>
+  <text x="294" y="624" class="t" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">{{MB2_INIT}}</text>
+  <text x="328" y="610" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{MB2_NAME}}</text>
+  <rect x="328" y="618" width="122" height="18" rx="3" fill="#0d1117" stroke="{{MB2_CO}}" stroke-width="1" stroke-opacity=".4"/>
+  <text x="389" y="631" class="t" font-size="10" fill="{{MB2_CO}}" text-anchor="middle">{{MB2_ROLE}}</text>
+
+  <rect x="492" y="578" width="210" height="80" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <circle cx="532" cy="618" r="24" fill="#0d1117" stroke="{{MB3_CO}}" stroke-width="1.5"/>
+  <text x="532" y="624" class="t" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">{{MB3_INIT}}</text>
+  <text x="566" y="610" class="t" font-size="12" font-weight="700" fill="#e6edf3">{{MB3_NAME}}</text>
+  <rect x="566" y="618" width="122" height="18" rx="3" fill="#0d1117" stroke="{{MB3_CO}}" stroke-width="1" stroke-opacity=".4"/>
+  <text x="627" y="631" class="t" font-size="10" fill="{{MB3_CO}}" text-anchor="middle">{{MB3_ROLE}}</text>
+
+  <!-- ══ ECG STRIP (y=682–788) ══════════════════════════════════════ -->
+  <rect x="16" y="700" width="688" height="90" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <circle class="pulse" cx="660" cy="745" r="14" fill="none" stroke="{{HB_STATUS_CO}}" stroke-width="1.5"/>
+  <circle class="pulse" cx="660" cy="745" r="14" fill="none" stroke="{{HB_STATUS_CO}}" stroke-width="1.5" style="animation-delay:.55s"/>
+  <circle cx="660" cy="745" r="8" fill="{{HB_STATUS_CO}}"/>
+  <text x="660" y="776" class="t" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="1">STATUS</text>
+  <text x="660" y="788" class="t" font-size="10" font-weight="700" fill="{{HB_STATUS_CO}}" text-anchor="middle">{{HB_STATUS}}</text>
+  <path d="M24,745 L90,745 L98,745 L103,726 L108,765 L113,735 L118,745
+           L196,745 L201,726 L206,765 L211,735 L216,745
+           L300,745 L305,726 L310,765 L315,735 L320,745
+           L400,745 L405,726 L410,765 L415,735 L420,745
+           L520,745 L525,726 L530,765 L535,735 L540,745
+           L630,745"
+        fill="none" stroke="{{HB_STATUS_CO}}" stroke-width="1.5" opacity=".6"
+        stroke-dasharray="1800" stroke-dashoffset="1800">
+    <animate attributeName="stroke-dashoffset" from="1800" to="0" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <text x="32" y="718" class="t" font-size="10" fill="#484f58">{{HB_TS}}</text>
+
+  <!-- ══ CTA STRIP (y=808) ══════════════════════════════════════════ -->
+  <line x1="16" y1="808" x2="704" y2="808" stroke="#21262d" stroke-width="1"/>
+  <rect x="220" y="820" width="280" height="32" rx="6" fill="#1b3a27" stroke="#3fb950" stroke-width="1" stroke-opacity=".5"/>
+  <text x="360" y="841" class="t" font-size="12" font-weight="700" fill="#3fb950" text-anchor="middle">join the guild &#x2192;</text>
+  <text x="16"  y="872" class="t" font-size="10" fill="#484f58">{{HE_LOCATION}}</text>
+  <text x="704" y="872" class="t" font-size="10" fill="#484f58" text-anchor="end">{{PG_COMMIT}}</text>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════════════ -->
+  <line x1="16"  y1="884" x2="704" y2="884" stroke="#21262d" stroke-width="1"/>
+  <text x="16"  y="900" class="t" font-size="10" fill="#79c0ff">{{PG_TS}}</text>
+  <text x="704" y="900" class="t" font-size="10" fill="#8b949e" text-anchor="end">{{PG_VERSION}}</text>
+</svg>

@@ -1,0 +1,3 @@
+{"$schema":"konomi/udt/v1","name":"EquipmentMode","std":"ISA-95","layer":2,"version":"1.0.0",
+"enum":["Production","Maintenance","Manual","Automatic","Semiauto"],
+"meta":{"desc":"High-level equipment operating mode"}}

@@ -1,0 +1,16 @@
+{"$schema":"gitplc/udt/v1","name":"GitPLC_Type","version":"1.0.0","kind":"meta","fields":[
+{"name":"id","type":"UUID"},
+{"name":"name","type":"STRING"},
+{"name":"vendor","type":"STRING","nullable":true},
+{"name":"base","type":"TypeRef","nullable":true},
+{"name":"version","type":"SemVer"},
+{"name":"fields","type":"Field","array":true},
+{"name":"methods","type":"Method","array":true,"nullable":true},
+{"name":"size_bits","type":"DINT"},
+{"name":"alignment","type":"DINT"},
+{"name":"endian","type":"ENUM","values":["LE","BE"]},
+{"name":"meta.desc","type":"STRING"},
+{"name":"meta.author","type":"STRING"},
+{"name":"meta.created","type":"DT"},
+{"name":"meta.modified","type":"DT"}
+],"meta":{"desc":"Root meta-UDT"}}

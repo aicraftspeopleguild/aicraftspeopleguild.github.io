@@ -1,0 +1,70 @@
+{
+  "udtType": "PackMLState",
+  "parameters": {
+    "program_id": "apps--build-whitepaper-apps_py",
+    "run_id": "1776492985-30fff2",
+    "started_at": "2026-04-18T06:16:25Z",
+    "ended_at": "2026-04-18T06:16:25Z",
+    "terminal": "COMPLETE",
+    "transitions": [
+      {
+        "state": "STARTING",
+        "at": "2026-04-18T06:16:25Z",
+        "note": "running pre_checks"
+      },
+      {
+        "state": "EXECUTE",
+        "at": "2026-04-18T06:16:25Z",
+        "note": "work starting"
+      },
+      {
+        "state": "COMPLETING",
+        "at": "2026-04-18T06:16:25Z",
+        "note": "running post_checks"
+      },
+      {
+        "state": "COMPLETE",
+        "at": "2026-04-18T06:16:25Z",
+        "note": "all checks ok"
+      }
+    ],
+    "pre_check_results": {
+      "path_exists(instances)": {
+        "ok": true,
+        "note": ""
+      },
+      "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\Enterprise\\L4\\api\\white-papers\\udts\\instances\\*.json)": {
+        "ok": true,
+        "note": ""
+      },
+      "path_exists(app.udt.json)": {
+        "ok": true,
+        "note": ""
+      }
+    },
+    "post_check_results": {
+      "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\apps\\whitepapers\\udts\\instances\\*.json)": {
+        "ok": true,
+        "note": ""
+      },
+      "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\apps\\whitepapers\\data\\*.json)": {
+        "ok": true,
+        "note": ""
+      },
+      "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\apps\\whitepapers\\pages\\*.json)": {
+        "ok": true,
+        "note": ""
+      },
+      "path_exists(index.json)": {
+        "ok": true,
+        "note": ""
+      }
+    },
+    "error": null
+  },
+  "tags": {
+    "id": "apps--build-whitepaper-apps_py-1776492985-30fff2",
+    "duration_s": "0.227",
+    "schema_version": "1.0.0"
+  }
+}

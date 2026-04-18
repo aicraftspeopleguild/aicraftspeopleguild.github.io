@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🖍 Whiteboard · ACG Sandbox</title>
+<link rel="stylesheet" href="../shared/sandbox.css">
+<style>
+  html,body{height:100vh;overflow:hidden;display:flex;flex-direction:column}
+  .sb-topbar{flex:0 0 auto}
+  .wb-wrap{flex:1;display:flex;flex-direction:column;background:var(--bg)}
+  .wb-tools{padding:10px 14px;background:var(--card);border-bottom:1px solid var(--bd);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .wb-tools label{font-size:11px;color:var(--dm);font-weight:600;font-family:var(--ff-body)}
+  .wb-tools input[type="color"]{width:32px;height:28px;border:1px solid var(--bd);border-radius:var(--r-sm);background:transparent;cursor:pointer;padding:0}
+  .wb-tools input[type="range"]{accent-color:var(--tl);width:90px}
+  .wb-tools .wb-size-v{font-family:var(--ff-mono);font-size:11px;color:var(--dm);min-width:28px;text-align:right}
+  .wb-tools button{padding:6px 14px;border:1px solid var(--bd);border-radius:var(--r-sm);background:var(--inp);color:var(--dm);font-family:var(--ff-body);font-size:11px;font-weight:600;cursor:pointer}
+  .wb-tools button:hover{border-color:var(--tl);color:var(--tl)}
+  .wb-tools button.on{background:var(--tlb);border-color:var(--tl);color:var(--tl)}
+  .wb-tools button.danger:hover{border-color:var(--rs);color:var(--rs)}
+  .wb-tools .spacer{flex:1}
+  .wb-tools .st{font-family:var(--ff-mono);font-size:10px;color:var(--ft)}
+  .wb-tools .st b{color:var(--tl)}
+  .wb-canvas-host{flex:1;position:relative;overflow:hidden}
+  canvas#wb{position:absolute;inset:0;width:100%;height:100%;background:var(--card);cursor:crosshair;touch-action:none}
+</style>
+</head>
+<body>
+<div class="sb-topbar">
+  <span class="logo">🖍 Whiteboard<span>· ACG sandbox</span></span>
+  <span class="spacer"></span>
+  <a href="../index.html">← sandbox</a>
+  <a href="../../../index.html">⚒ mesh</a>
+  <a href="../../../L2/hmi/chat/">💬 chat</a>
+</div>
+
+<div class="wb-wrap">
+  <div class="wb-tools">
+    <label>Pen</label>
+    <input type="color" id="wb-color" value="#1a5c4c" title="stroke color">
+    <label>Size</label>
+    <input type="range" id="wb-size" min="1" max="20" value="3" title="stroke width">
+    <span class="wb-size-v" id="wb-size-v">3</span>
+    <button id="wb-pen"   class="on">✏ pen</button>
+    <button id="wb-erase">🧽 erase</button>
+    <span class="spacer"></span>
+    <span class="st">strokes <b id="wb-n">0</b> · peers <b id="wb-peers">0</b></span>
+    <button id="wb-clear" class="danger">clear</button>
+  </div>
+  <div class="wb-canvas-host">
+    <canvas id="wb"></canvas>
+  </div>
+</div>
+
+<script type="module">
+import {bridge} from '../shared/mesh-bridge.js';
+
+// ── identity (one per tab; shown in peer count)
+const myId = 'wb-' + Math.random().toString(36).slice(2,10);
+const peers = new Set();
+const PEER_TTL = 10000;
+const peerSeen = new Map();
+
+// ── canvas + DPI
+const cv = document.getElementById('wb');
+const ctx = cv.getContext('2d');
+function fitCanvas(){
+  const dpr = window.devicePixelRatio || 1;
+  const r = cv.parentElement.getBoundingClientRect();
+  cv.width  = Math.floor(r.width  * dpr);
+  cv.height = Math.floor(r.height * dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.lineCap = ctx.lineJoin = 'round';
+  redraw();
+}
+window.addEventListener('resize', fitCanvas);
+
+// ── tool state
+let tool = 'pen';
+let color = document.getElementById('wb-color').value;
+let size = parseInt(document.getElementById('wb-size').value, 10);
+let strokes = [];  // persisted so resize/ping redraws correctly
+
+function setTool(t){
+  tool = t;
+  document.getElementById('wb-pen').classList.toggle('on', t==='pen');
+  document.getElementById('wb-erase').classList.toggle('on', t==='erase');
+  cv.style.cursor = t==='erase' ? 'cell' : 'crosshair';
+}
+document.getElementById('wb-pen').onclick   = () => setTool('pen');
+document.getElementById('wb-erase').onclick = () => setTool('erase');
+document.getElementById('wb-color').oninput = e => color = e.target.value;
+document.getElementById('wb-size').oninput  = e => {
+  size = parseInt(e.target.value, 10);
+  document.getElementById('wb-size-v').textContent = size;
+};
+
+// ── drawing primitives (local)
+function drawStroke(s){
+  if(!s || !s.pts || s.pts.length < 1) return;
+  const r = cv.getBoundingClientRect();
+  ctx.strokeStyle = s.tool==='erase' ? '#ffffff' : s.color;
+  ctx.lineWidth = s.size;
+  ctx.globalCompositeOperation = s.tool==='erase' ? 'destination-out' : 'source-over';
+  ctx.beginPath();
+  for(let i=0;i<s.pts.length;i++){
+    const [nx,ny] = s.pts[i];
+    const x = nx * r.width, y = ny * r.height;
+    if(i===0) ctx.moveTo(x, y);
+    else       ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+  ctx.globalCompositeOperation = 'source-over';
+}
+function redraw(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  for(const s of strokes) drawStroke(s);
+}
+
+// ── pointer events → live stroke + broadcast on finish
+let active = null;
+function normPt(ev){
+  const r = cv.getBoundingClientRect();
+  return [(ev.clientX - r.left) / r.width, (ev.clientY - r.top) / r.height];
+}
+cv.addEventListener('pointerdown', ev => {
+  ev.preventDefault();
+  cv.setPointerCapture(ev.pointerId);
+  active = { id:myId, tool, color, size, pts:[normPt(ev)], ts:Date.now() };
+});
+cv.addEventListener('pointermove', ev => {
+  if(!active) return;
+  const p = normPt(ev);
+  active.pts.push(p);
+  // incremental draw (just the new segment)
+  if(active.pts.length >= 2){
+    drawStroke({ ...active, pts: active.pts.slice(-2) });
+  }
+});
+function finishStroke(){
+  if(!active) return;
+  const s = active; active = null;
+  if(s.pts.length < 2) s.pts.push(s.pts[0]);  // a dot
+  strokes.push(s);
+  updateStrokeCount();
+  bridge.publish('whiteboard','stroke',{path:'stroke',value:s});
+}
+cv.addEventListener('pointerup',    finishStroke);
+cv.addEventListener('pointercancel',finishStroke);
+cv.addEventListener('pointerleave', finishStroke);
+
+// ── clear
+function clearLocal(){ strokes = []; ctx.clearRect(0,0,cv.width,cv.height); updateStrokeCount() }
+document.getElementById('wb-clear').onclick = () => {
+  clearLocal();
+  bridge.publish('whiteboard','clear',{path:'clear',value:{by:myId}});
+};
+
+function updateStrokeCount(){
+  document.getElementById('wb-n').textContent = strokes.length;
+}
+
+// ── peer presence
+function updatePeerCount(){
+  const now = Date.now();
+  for(const [id, ts] of peerSeen) if(now - ts > PEER_TTL) peerSeen.delete(id);
+  document.getElementById('wb-peers').textContent = peerSeen.size;
+}
+setInterval(updatePeerCount, 1000);
+
+// ── bridge in: apply remote strokes + clears + presence
+bridge.subscribe(env => {
+  if(env.source !== 'whiteboard') return;
+  if(env.value && env.value.id && env.value.id !== myId){
+    peerSeen.set(env.value.id, env.ts || Date.now());
+    updatePeerCount();
+  }
+  if(env.type === 'stroke' && env.value){
+    strokes.push(env.value);
+    drawStroke(env.value);
+    updateStrokeCount();
+  } else if(env.type === 'clear'){
+    if(!env.value || env.value.by !== myId) clearLocal();
+  }
+});
+
+// ── announce presence every 5 s so other tabs know we're here
+function ping(){
+  bridge.publish('whiteboard','ping',{path:'ping',value:{id:myId}});
+}
+bridge.publish('whiteboard','join',{path:'join',value:{id:myId}});
+ping(); setInterval(ping, 5000);
+window.addEventListener('beforeunload', () =>
+  bridge.publish('whiteboard','leave',{path:'leave',value:{id:myId}}));
+
+// ── init
+setTool('pen');
+fitCanvas();
+</script>
+</body>
+</html>

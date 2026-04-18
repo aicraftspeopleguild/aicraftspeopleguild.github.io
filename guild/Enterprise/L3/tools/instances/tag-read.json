@@ -1,0 +1,24 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "tag:read",
+    "name": "Read tag value",
+    "description": "Read a runtime tag value from guild/Enterprise/L2/state/tag-values.db. Pass prefix=<str> to list all tags under a namespace (e.g. `pipeline.build`).",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/tag_state.py:read",
+    "language": "python",
+    "inputs": [{"name":"tag","type":"String","required":true}],
+    "outputs": [{"name":"result","type":"TagRead"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["tag","read","runtime"],
+    "mcp": {
+      "mcp_name": "tag_read",
+      "input_schema": {
+        "type":"object",
+        "properties":{"tag":{"type":"string"}},
+        "required":["tag"]
+      }
+    }
+  },
+  "tags": { "id": "tag-read", "schema_version": "1.0.0" }
+}

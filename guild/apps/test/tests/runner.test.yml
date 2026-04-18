@@ -1,0 +1,55 @@
+# tests/runner.test.yml
+# The Runner page is the live in-browser test dashboard.
+
+test: Test runner page
+target: pages/runner.html
+
+exists:
+  expect: present
+  reason: "the runner page is where all tests are visible at a glance and must be served"
+
+watches:
+  - path: "#process-steps"
+    expect: triggered
+    reason: "process step list must render so TDD phases are visible"
+
+  - path: "#process-steps [data-step='scaffold']"
+    expect: triggered
+    reason: "phase 1 scaffold must have a visible marker"
+
+  - path: "#process-steps [data-step='fail']"
+    expect: triggered
+    reason: "phase 2 watch fail must have a visible marker"
+
+  - path: "#process-steps [data-step='write']"
+    expect: triggered
+    reason: "phase 3 write page/workflow must have a visible marker"
+
+  - path: "#process-steps [data-step='pass']"
+    expect: triggered
+    reason: "phase 4 watch pass must have a visible marker"
+
+  - path: "#process-steps [data-step='commit']"
+    expect: triggered
+    reason: "phase 5 commit must have a visible marker"
+
+  - path: "#test-list"
+    expect: triggered
+    reason: "list of per-file test results must have a mount point"
+
+  - path: "#site-summary"
+    expect: triggered
+    reason: "overall summary must have a mount point"
+
+secrets:
+  - name: assets/test-runner.js
+    expect: configured
+    reason: "the runner script must load or this whole page is inert"
+
+  - name: tests/manifest.json
+    expect: configured
+    reason: "the manifest must load so the runner knows which tests to execute"
+
+guardrails:
+  - condition: "[data-step]:not([data-step='scaffold']):not([data-step='fail']):not([data-step='write']):not([data-step='pass']):not([data-step='commit'])"
+    reason: "only the five named phases are allowed — no undocumented step must leak in"

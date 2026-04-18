@@ -1,0 +1,48 @@
+{
+  "$schema": "acg/index-manifest/v1",
+  "description": "Everything the root index.html depends on. Sources for the Perspective builder, assets loaded at runtime, and scripts/components referenced by the client-side renderer.",
+  "source_of_truth": {
+    "view":       "guild/Enterprise/L2/hmi/web/perspective/views/index.view.json",
+    "builder":    "guild/web/scripts/perspective-build.js",
+    "output":     "index.html"
+  },
+  "head_assets": {
+    "fonts":      "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap",
+    "analytics":  "https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH",
+    "css":        ["guild/Enterprise/L2/hmi/web/style/home.css"]
+  },
+  "body_scripts": {
+    "home_js":    "guild/Enterprise/L2/hmi/web/home.js",
+    "renderer":   "guild/Enterprise/L2/hmi/web/renderer.js",
+    "init_call":  "ACGRenderer.init({siteMap, components, mountPoint, analyticsId})"
+  },
+  "runtime_fetches": {
+    "site_map":   "guild/Enterprise/L2/hmi/web/site-map.json",
+    "components": "guild/Enterprise/L2/hmi/web/components/registry.json",
+    "page":       "guild/Enterprise/L2/hmi/web/pages/<slug>.page.json (per route)",
+    "view":       "guild/Enterprise/L2/hmi/web/views/<slug>.view.json (per route)",
+    "data":       "guild/Enterprise/L2/hmi/web/views/data/<slug>.data.json (per route)",
+    "component":  "guild/Enterprise/L2/hmi/web/components/udts/instances/<name>.json (all loaded upfront)"
+  },
+  "components_used_by_shell": {
+    "acg.container.dock-layout":  "guild/Enterprise/L2/hmi/web/perspective/components/registry.json",
+    "acg.dock.north":             "",
+    "acg.container.body":         "",
+    "acg.dock.south":             "",
+    "acg.nav.top":                "",
+    "acg.display.link":           "",
+    "acg.display.emblem":         "",
+    "acg.display.heading":        "",
+    "acg.display.text":           "",
+    "acg.display.html":           "",
+    "acg.card.manifesto":         "",
+    "acg.nav.cta":                ""
+  },
+  "mount_point":   "#app",
+  "route_activation_class": "has-route",
+  "hash_routes":   "Consult /sitemap.xml or /guild/Enterprise/L2/hmi/web/site-map.json",
+  "related": {
+    "operator_dashboard": "guild/index.html",
+    "full_build":         "./README.sh build"
+  }
+}

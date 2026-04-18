@@ -1,0 +1,39 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/apps/p2p/index",
+    "label": "index",
+    "parent": "guild/apps/p2p",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_apps_p2p_index",
+    "fs_path": "guild/apps/p2p/index",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_apps",
+      "guild_apps_p2p",
+      "guild_apps_p2p_index"
+    ],
+    "children": [
+      "guild/apps/p2p/index/docks"
+    ],
+    "siblings": [],
+    "descendants": 1,
+    "file_count": 8,
+    "subdir_count": 1,
+    "kinds": {
+      "db": 2,
+      "html": 4,
+      "md": 1,
+      "js": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

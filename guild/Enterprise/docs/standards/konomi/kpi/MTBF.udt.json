@@ -1,0 +1,3 @@
+{"$schema":"konomi/udt/v1","name":"MTBF","std":"KPI","layer":9,"version":"1.0.0","fields":[
+{"n":"mean_time_between_failures","t":"Duration","formula":"total_uptime / failure_count"}
+],"meta":{"desc":"Mean Time Between Failures"}}

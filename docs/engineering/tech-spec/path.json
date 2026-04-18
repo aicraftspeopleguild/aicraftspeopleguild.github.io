@@ -1,0 +1,41 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/engineering/tech-spec",
+    "label": "tech-spec",
+    "parent": "docs/engineering",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_engineering_tech-spec",
+    "fs_path": "docs/engineering/tech-spec",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_engineering",
+      "docs_engineering_tech-spec"
+    ],
+    "children": [
+      "docs/engineering/tech-spec/udt-types"
+    ],
+    "siblings": [
+      "docs/engineering/architecture",
+      "docs/engineering/component-catalog",
+      "docs/engineering/standards",
+      "docs/engineering/urs"
+    ],
+    "descendants": 1,
+    "file_count": 8,
+    "subdir_count": 1,
+    "kinds": {
+      "db": 2,
+      "md": 6
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

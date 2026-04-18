@@ -1,0 +1,41 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/scada/errors",
+    "label": "errors",
+    "parent": "guild/Enterprise/L2/scada",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L2_scada_errors",
+    "fs_path": "guild/Enterprise/L2/scada/errors",
+    "depth": 5,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L2",
+      "guild_Enterprise_L2_scada",
+      "guild_Enterprise_L2_scada_errors"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/L2/scada/gateway",
+      "guild/Enterprise/L2/scada/programs"
+    ],
+    "descendants": 0,
+    "file_count": 6,
+    "subdir_count": 0,
+    "kinds": {
+      "db": 2,
+      "html": 1,
+      "py": 1,
+      "json": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

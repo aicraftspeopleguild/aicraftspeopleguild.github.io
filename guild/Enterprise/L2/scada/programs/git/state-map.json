@@ -1,0 +1,29 @@
+{
+  "§": "P",
+  "name": "Git as factory process",
+  "desc": "Maps PackML states (ISA-TR88.00.02) onto concrete git repo conditions. The L3 tool guild/Enterprise/L3/tools/instances/git-status.json reports the current state; each state carries allowed transitions, the trigger event, and the tool/command that executes the transition.",
+  "module": "guild/Enterprise/L2/lib/git_ops.py",
+  "namespace": "git",
+  "states": {
+    "IDLE":     { "condition": "clean tree; no staged, unstaged, or untracked",     "transitions": ["RUNNING"] },
+    "RUNNING":  { "condition": "working-tree changes exist (unstaged or untracked)", "transitions": ["HOLD","IDLE"] },
+    "HOLD":     { "condition": "staged changes awaiting commit",                     "transitions": ["COMPLETE","RUNNING"] },
+    "COMPLETE": { "condition": "HEAD ahead of upstream; push pending",               "transitions": ["IDLE"] },
+    "ABORTED":  { "condition": "merge conflict or detached HEAD",                    "transitions": ["RUNNING","IDLE"] }
+  },
+  "transitions": [
+    { "from":"IDLE",     "to":"RUNNING",  "trigger":"edit",       "tool":"editor" },
+    { "from":"RUNNING",  "to":"HOLD",     "trigger":"stage",      "tool":"git add" },
+    { "from":"HOLD",     "to":"COMPLETE", "trigger":"commit",     "tool":"git commit" },
+    { "from":"COMPLETE", "to":"IDLE",     "trigger":"push",       "tool":"git push" },
+    { "from":"RUNNING",  "to":"IDLE",     "trigger":"discard",    "tool":"git restore" },
+    { "from":"HOLD",     "to":"RUNNING",  "trigger":"unstage",    "tool":"git restore --staged" },
+    { "from":"ABORTED",  "to":"RUNNING",  "trigger":"resolve",    "tool":"manual + git add" }
+  ],
+  "observability": {
+    "state_tool": "git:status",
+    "log_tool":   "git:log",
+    "diff_tool":  "git:diff",
+    "branches_tool": "git:branches"
+  }
+}

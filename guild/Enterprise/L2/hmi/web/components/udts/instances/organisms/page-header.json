@@ -1,0 +1,91 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "PageHeader",
+    "tag": "header",
+    "cssClass": "",
+    "description": "Full page header assembling GuildMark, title, subtitle, eyebrow, article-meta, and BackLink.",
+    "props": {
+      "title": {
+        "type": "String",
+        "required": true
+      },
+      "subtitle": {
+        "type": "String",
+        "required": false
+      },
+      "eyebrow": {
+        "type": "String",
+        "required": false
+      },
+      "backHref": {
+        "type": "URL",
+        "required": false
+      },
+      "backLabel": {
+        "type": "String",
+        "required": false
+      },
+      "meta": {
+        "type": "StringArray",
+        "required": false,
+        "description": "Article metadata badges"
+      }
+    },
+    "slots": [],
+    "template": "<header><div class=\"guild-mark\"><div class=\"emblem\">\u2692 ACG \u2692</div></div>{{ #eyebrow }}<p class=\"eyebrow\">{{ eyebrow }}</p>{{ /eyebrow }}<h1>{{ title }}</h1>{{ #subtitle }}<p class=\"subtitle\">{{ subtitle }}</p>{{ /subtitle }}{{ #meta }}<div class=\"article-meta\">{{ #meta }}<span>{{ . }}</span>{{ /meta }}</div>{{ /meta }}{{ #backHref }}<div class=\"back-link\"><a href=\"{{ backHref }}\">\u2190 {{ backLabel }}</a></div>{{ /backHref }}</header>",
+    "atomicLevel": "organism",
+    "inputs": [
+      {
+        "key": "title",
+        "dataType": "String",
+        "source": "page.title",
+        "required": true
+      },
+      {
+        "key": "subtitle",
+        "dataType": "String",
+        "source": "page.subtitle",
+        "required": false
+      },
+      {
+        "key": "eyebrow",
+        "dataType": "String",
+        "source": "page.eyebrow",
+        "required": false
+      },
+      {
+        "key": "backHref",
+        "dataType": "URL",
+        "source": "page.backHref",
+        "required": false
+      },
+      {
+        "key": "backLabel",
+        "dataType": "String",
+        "source": "page.backLabel",
+        "required": false
+      },
+      {
+        "key": "meta",
+        "dataType": "String[]",
+        "source": "page.meta",
+        "required": false,
+        "description": "Article metadata badges"
+      }
+    ]
+  },
+  "tags": {
+    "id": "page-header",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/page-header.json",
+    "dependencies": [
+      "guild-mark",
+      "eyebrow",
+      "back-link"
+    ],
+    "used_by_views": [
+      "page-shell"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

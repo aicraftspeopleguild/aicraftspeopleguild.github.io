@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"CsvFile","layer":9,"version":"1.0.0","fields":[
+{"n":"path","t":"STRING"},
+{"n":"ext","t":"ENUM","values":["csv","tsv"]},
+{"n":"header","t":"STRING[]","desc":"Column names from the first row"},
+{"n":"row_count","t":"DINT"},
+{"n":"delimiter","t":"STRING","default":","},
+{"n":"quote_char","t":"STRING","default":"\""},
+{"n":"sha256","t":"STRING"}
+],"meta":{"desc":"Comma-separated values. ACG catalogs use dense CSV with header row on top for token efficiency."}}

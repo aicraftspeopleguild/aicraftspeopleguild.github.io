@@ -1,0 +1,54 @@
+{
+  "udtType": "PackMLState",
+  "parameters": {
+    "program_id": "components--build-catalog_py",
+    "run_id": "1776490542-12a82f",
+    "started_at": "2026-04-18T05:35:42Z",
+    "ended_at": "2026-04-18T05:35:42Z",
+    "terminal": "COMPLETE",
+    "transitions": [
+      {
+        "state": "STARTING",
+        "at": "2026-04-18T05:35:42Z",
+        "note": "running pre_checks"
+      },
+      {
+        "state": "EXECUTE",
+        "at": "2026-04-18T05:35:42Z",
+        "note": "work starting"
+      },
+      {
+        "state": "COMPLETING",
+        "at": "2026-04-18T05:35:42Z",
+        "note": "running post_checks"
+      },
+      {
+        "state": "COMPLETE",
+        "at": "2026-04-18T05:35:42Z",
+        "note": "all checks ok"
+      }
+    ],
+    "pre_check_results": {
+      "path_exists(instances)": {
+        "ok": true,
+        "note": ""
+      },
+      "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\web\\components\\udts\\instances\\*.json)": {
+        "ok": true,
+        "note": ""
+      }
+    },
+    "post_check_results": {
+      "path_exists(index.json)": {
+        "ok": true,
+        "note": ""
+      }
+    },
+    "error": null
+  },
+  "tags": {
+    "id": "components--build-catalog_py-1776490542-12a82f",
+    "duration_s": "0.028",
+    "schema_version": "1.0.0"
+  }
+}

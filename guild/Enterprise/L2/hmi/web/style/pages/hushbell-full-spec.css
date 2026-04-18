@@ -1,0 +1,252 @@
+﻿/* hushbell-full-spec.html */
+.page-hushbell-full-spec {
+--color-parchment: #F5F1E8;
+            --color-ink: #191614;
+            --color-graphite: #222A2F;
+            --color-accent: #2B7A78;
+            --color-bronze: #C28E50;
+            --color-rust: #C84B31;
+            --color-highlight: #FFF6E6;
+            --color-card: rgba(255, 255, 255, 0.95);
+            --color-shadow: rgba(25, 22, 20, 0.1);
+            --color-code-bg: #11161B;
+            --color-code-border: rgba(43, 122, 120, 0.24);
+}
+
+.page-hushbell-full-spec,
+.page-hushbell-full-spec * {
+margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+}
+
+.page-hushbell-full-spec {
+font-family: 'Work Sans', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(43, 122, 120, 0.08), transparent 28%),
+                radial-gradient(circle at top right, rgba(200, 75, 49, 0.08), transparent 24%),
+                var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+}
+
+.page-hushbell-full-spec::before {
+content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px);
+            background-size: 42px 42px;
+            opacity: 0;
+            animation: fadeInPattern 1.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+}
+
+.page-hushbell-full-spec header {
+position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(34, 42, 47, 0.96) 0%, rgba(25, 22, 20, 0.98) 100%);
+            overflow: hidden;
+}
+
+.page-hushbell-full-spec header::after {
+content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 52%, var(--color-rust) 100%);
+}
+
+.page-hushbell-full-spec .guild-mark,
+.page-hushbell-full-spec h1,
+.page-hushbell-full-spec .subtitle {
+position: relative;
+            z-index: 1;
+            text-align: center;
+}
+
+.page-hushbell-full-spec .guild-mark {
+margin-bottom: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: var(--color-bronze);
+            text-shadow: 0 2px 20px rgba(194, 142, 80, 0.24);
+}
+
+.page-hushbell-full-spec h1 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 6.4vw, 4.8rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--color-parchment);
+            margin-bottom: 0.9rem;
+}
+
+.page-hushbell-full-spec .subtitle {
+max-width: 980px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: rgba(245, 241, 232, 0.88);
+}
+
+.page-hushbell-full-spec main {
+position: relative;
+            z-index: 1;
+}
+
+.page-hushbell-full-spec .container {
+max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+}
+
+.page-hushbell-full-spec .intro-panel,
+.page-hushbell-full-spec .section-shell,
+.page-hushbell-full-spec .cta-section {
+background: var(--color-card);
+            border: 1px solid rgba(43, 122, 120, 0.08);
+            box-shadow: 0 10px 30px var(--color-shadow);
+}
+
+.page-hushbell-full-spec .intro-panel {
+margin-top: -2.25rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.1), rgba(194, 142, 80, 0.1));
+}
+
+.page-hushbell-full-spec .section-shell {
+margin-top: 2rem;
+            padding: 2rem 2.1rem;
+}
+
+.page-hushbell-full-spec .section-heading {
+margin-bottom: 1.2rem;
+}
+
+.page-hushbell-full-spec .section-heading h2 {
+font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            line-height: 1.12;
+            margin-bottom: 0.35rem;
+}
+
+.page-hushbell-full-spec .section-heading p {
+color: var(--color-graphite);
+}
+
+.page-hushbell-full-spec .section-shell p + p,
+.page-hushbell-full-spec .intro-panel p + p {
+margin-top: 1rem;
+}
+
+.page-hushbell-full-spec pre {
+margin-top: 1rem;
+            padding: 1.25rem 1.3rem;
+            background: var(--color-code-bg);
+            color: #F6F2E9;
+            border: 1px solid var(--color-code-border);
+            overflow-x: auto;
+            box-shadow: inset 0 0 0 1px rgba(194, 142, 80, 0.1);
+}
+
+.page-hushbell-full-spec code,
+.page-hushbell-full-spec pre {
+font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            line-height: 1.65;
+}
+
+.page-hushbell-full-spec .callout {
+margin-top: 1.25rem;
+            padding: 1rem 1.1rem;
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-rust);
+}
+
+.page-hushbell-full-spec .closing-lines {
+margin-top: 1.4rem;
+            padding: 1.4rem 1.2rem;
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.08), rgba(194, 142, 80, 0.1));
+            font-family: 'Courier Prime', monospace;
+            font-size: 1rem;
+            text-align: center;
+            white-space: pre-line;
+}
+
+.page-hushbell-full-spec .cta-section {
+margin-top: 2rem;
+            padding: 2rem 2.1rem;
+            text-align: center;
+}
+
+.page-hushbell-full-spec .cta-section h2 {
+font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+}
+
+.page-hushbell-full-spec .cta-buttons {
+display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.4rem;
+}
+
+.page-hushbell-full-spec .btn {
+display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-hushbell-full-spec .btn:hover {
+transform: translateY(-2px);
+}
+
+.page-hushbell-full-spec .btn-primary {
+background: var(--color-graphite);
+            color: var(--color-parchment);
+            box-shadow: 0 12px 22px rgba(34, 42, 47, 0.18);
+}
+
+.page-hushbell-full-spec .btn-secondary {
+background: white;
+            color: var(--color-graphite);
+            border: 1px solid rgba(25, 22, 20, 0.12);
+}
+
+@media (max-width: 768px) {
+    .page-hushbell-full-spec header {
+padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .page-hushbell-full-spec .container {
+padding: 0 1rem 3rem;
+    }
+
+    .page-hushbell-full-spec .intro-panel,
+    .page-hushbell-full-spec .section-shell,
+    .page-hushbell-full-spec .cta-section {
+padding-left: 1.35rem;
+                padding-right: 1.35rem;
+    }
+
+    .page-hushbell-full-spec .cta-buttons {
+flex-direction: column;
+    }
+
+    .page-hushbell-full-spec .btn {
+width: 100%;
+    }
+}
+

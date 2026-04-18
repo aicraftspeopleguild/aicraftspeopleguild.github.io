@@ -1,0 +1,44 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/templates/udts",
+    "label": "udts",
+    "parent": "docs/templates",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_templates_udts",
+    "fs_path": "docs/templates/udts",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_templates",
+      "docs_templates_udts"
+    ],
+    "children": [
+      "docs/templates/udts/formats",
+      "docs/templates/udts/git",
+      "docs/templates/udts/programming",
+      "docs/templates/udts/render",
+      "docs/templates/udts/tools"
+    ],
+    "siblings": [
+      "docs/templates/formats",
+      "docs/templates/konomi",
+      "docs/templates/views"
+    ],
+    "descendants": 5,
+    "file_count": 6,
+    "subdir_count": 5,
+    "kinds": {
+      "db": 2,
+      "md": 4
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

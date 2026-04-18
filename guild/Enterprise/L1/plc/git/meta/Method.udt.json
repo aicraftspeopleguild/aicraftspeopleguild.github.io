@@ -1,0 +1,10 @@
+{"$schema":"gitplc/udt/v1","name":"Method","version":"1.0.0","kind":"meta","fields":[
+{"name":"name","type":"STRING"},
+{"name":"access","type":"ENUM","values":["PUBLIC","PRIVATE","PROTECTED"]},
+{"name":"inputs","type":"STRUCT","array":true,"of":{"name":"STRING","type":"TypeRef"}},
+{"name":"outputs","type":"STRUCT","array":true,"of":{"name":"STRING","type":"TypeRef"}},
+{"name":"inouts","type":"STRUCT","array":true,"of":{"name":"STRING","type":"TypeRef"}},
+{"name":"return","type":"TypeRef","nullable":true},
+{"name":"body_lang","type":"ENUM","values":["IL","ST","LD","FBD","SFC","NONE"]},
+{"name":"body","type":"STRING","nullable":true}
+],"meta":{"desc":"Method/FB member"}}

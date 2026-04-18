@@ -1,0 +1,41 @@
+{
+  "udtType": "SvgMolecule",
+  "parameters": {
+    "name": "RowKv",
+    "atomicLevel": "molecule",
+    "renderer": "svg_widget:row_kv",
+    "description": "Left-label right-value row for list displays.",
+    "composes": [],
+    "props": {
+      "x": {
+        "type": "Number",
+        "required": true
+      },
+      "y": {
+        "type": "Number",
+        "required": true
+      },
+      "w": {
+        "type": "Number",
+        "required": true
+      },
+      "label": {
+        "type": "String",
+        "required": true
+      },
+      "value": {
+        "type": "String",
+        "required": true
+      },
+      "value_class": {
+        "type": "String",
+        "required": true
+      }
+    }
+  },
+  "tags": {
+    "id": "row-kv",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/molecules/row-kv.json"
+  }
+}

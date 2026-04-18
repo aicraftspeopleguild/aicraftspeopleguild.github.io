@@ -1,0 +1,21 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Equipment_Cmd",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "start", "type": "BOOL"},
+    {"name": "stop", "type": "BOOL"},
+    {"name": "hold", "type": "BOOL"},
+    {"name": "unhold", "type": "BOOL"},
+    {"name": "suspend", "type": "BOOL"},
+    {"name": "unsuspend", "type": "BOOL"},
+    {"name": "abort", "type": "BOOL"},
+    {"name": "clear", "type": "BOOL"},
+    {"name": "reset", "type": "BOOL"},
+    {"name": "complete", "type": "BOOL"},
+    {"name": "mode_request", "type": "DINT"},
+    {"name": "custom", "type": "BOOL", "array": true, "dims": [16]}
+  ],
+  "meta": {"desc": "Command interface for PackML transitions"}
+}

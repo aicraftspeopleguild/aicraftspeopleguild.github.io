@@ -1,0 +1,17 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "CM_Base",
+  "vendor": null,
+  "base": null,
+  "version": "1.0.0",
+  "kind": "control_module",
+  "fields": [
+    {"name": "tag", "type": "STRING", "length": 32},
+    {"name": "desc", "type": "STRING", "length": 80},
+    {"name": "state", "type": "CM_State"},
+    {"name": "mode", "type": "CM_Mode"},
+    {"name": "fault", "type": "Fault_Data"},
+    {"name": "sim", "type": "Sim_Data"}
+  ],
+  "meta": {"desc": "Abstract base for all control modules"}
+}

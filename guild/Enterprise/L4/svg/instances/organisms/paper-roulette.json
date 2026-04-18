@@ -1,0 +1,29 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "PaperRoulette",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-paper-roulette.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/paper-roulette.svg",
+    "sources": [
+      "/api/papers.json",
+      "tag:demo.heartbeat"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1040,
+      "h": 180
+    },
+    "description": "Random-paper picker \u2014 deterministic seed from the heartbeat value, rerolls every bump."
+  },
+  "tags": {
+    "id": "paper-roulette",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/paper-roulette.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/paper-roulette.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

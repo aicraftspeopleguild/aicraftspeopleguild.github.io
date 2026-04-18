@@ -1,0 +1,13 @@
+{"$schema":"hmi/faceplate/v1","name":"Tracker_Faceplate","udt":"Tracker","isaLayer":"L3","glyph":"📡",
+"binds":"tracker.current",
+"reads":[
+{"tag":"tracker.current.url","label":"URL","format":"host"},
+{"tag":"tracker.current.state","label":"ST"},
+{"tag":"tracker.current.announces","label":"ANN"},
+{"tag":"tracker.current.lastAnnounceAt","label":"AGO","format":"ago"},
+{"tag":"tracker.current.rttMs","label":"RT","unit":"ms"}
+],
+"palette":["Running","Transition","Faulted","Warning"],
+"stateMap":{"connected":"Running","connecting":"Transition","reconnecting":"Warning","failed":"Faulted","offline":"Faulted"},
+"cmds":[{"cmd":"rotate-tracker","label":"↻","desc":"next URL in chain"}],
+"meta":{"desc":"Tracker health pill"}}

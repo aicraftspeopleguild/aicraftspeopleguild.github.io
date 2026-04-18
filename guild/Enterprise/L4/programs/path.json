@@ -1,0 +1,49 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/scripts/udts",
+    "label": "udts",
+    "parent": "guild/web/scripts",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_scripts_udts",
+    "fs_path": "guild/web/scripts/udts",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_scripts",
+      "guild_web_scripts_udts"
+    ],
+    "children": [
+      "guild/web/scripts/udts/instances",
+      "guild/web/scripts/udts/templates"
+    ],
+    "siblings": [
+      "guild/web/scripts/api",
+      "guild/web/scripts/apps",
+      "guild/web/scripts/components",
+      "guild/web/scripts/db",
+      "guild/web/scripts/docs",
+      "guild/web/scripts/lib",
+      "guild/web/scripts/members",
+      "guild/web/scripts/pages",
+      "guild/web/scripts/paths",
+      "guild/web/scripts/tags",
+      "guild/web/scripts/white-papers"
+    ],
+    "descendants": 2,
+    "file_count": 1,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

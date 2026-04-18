@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:chat-llm-teaser-svg",
+    "name": "Render chat-llm-teaser.svg",
+    "description": "Render chat-llm-teaser.svg \u2014 WebLLM sandbox launch card.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-chat-llm-teaser.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "svg",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "svg",
+      "readme",
+      "build"
+    ]
+  },
+  "tags": {
+    "id": "build-chat-llm-teaser-svg",
+    "schema_version": "1.0.0"
+  }
+}

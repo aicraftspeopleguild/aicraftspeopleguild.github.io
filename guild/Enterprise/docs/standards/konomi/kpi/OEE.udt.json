@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"OEE","std":"KPI","layer":9,"version":"1.0.0","fields":[
+{"n":"availability","t":"PCT","formula":"run_time / (run_time + downtime)"},
+{"n":"performance","t":"PCT","formula":"actual_rate / ideal_rate"},
+{"n":"quality","t":"PCT","formula":"good_units / total_units"},
+{"n":"oee","t":"PCT","formula":"availability * performance * quality"}
+],"targets":{"availability":">90%","performance":">95%","quality":">99%","oee":">85%"},
+"meta":{"desc":"Overall Equipment Effectiveness"}}

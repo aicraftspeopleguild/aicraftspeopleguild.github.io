@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚙ Programs · ACG</title>
+<link rel="stylesheet" href="../../L2/scada/gateway/styles/theme.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0);color:var(--tx);font-family:var(--ff-body);font-size:13px;overflow:hidden;display:flex;flex-direction:column}
+.hd{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:0 1px 3px var(--sh);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hd h1{font-family:var(--ff-display);font-weight:700;font-size:17px;letter-spacing:.3px}
+.hd h1 span{font-weight:400;color:var(--dm);font-size:13px;margin-left:6px}
+.hd a{color:var(--tl);text-decoration:none;font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--r-sm);border:1px solid transparent}
+.hd a:hover{background:var(--tlb);border-color:var(--tl)}
+.hd .spacer{flex:1}
+.hd .sum{font-family:var(--ff-mono);font-size:11px;color:var(--dm)}
+.hd .cadence{font-family:var(--ff-mono);font-size:11px;color:var(--sg)}
+
+.ctl{padding:8px 20px;background:var(--card);border-bottom:1px solid var(--bd2);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ctl input,.ctl select{padding:5px 10px;background:var(--inp);border:1px solid var(--bd);border-radius:var(--r-sm);font-family:var(--ff-mono);font-size:11px;color:var(--tx);outline:none}
+.ctl input:focus,.ctl select:focus{border-color:var(--tl)}
+.ctl input{flex:1;min-width:140px}
+.ctl label{font-size:11px;color:var(--dm)}
+
+.wrap{flex:1;overflow:auto;padding:16px 20px}
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;max-width:1300px;margin:0 auto}
+.prog-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r-md);padding:14px;box-shadow:0 1px 3px var(--sh);display:flex;flex-direction:column;gap:8px;transition:box-shadow .1s,border-color .1s}
+.prog-card:hover{box-shadow:0 2px 8px var(--sh);border-color:var(--bd2)}
+.prog-hd{display:flex;align-items:flex-start;gap:8px}
+.prog-name{font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--tx);flex:1;word-break:break-all}
+.prog-lang{font-size:10px;font-family:var(--ff-mono);padding:2px 7px;border-radius:20px;border:1px solid var(--bd);color:var(--dm);flex-shrink:0;align-self:flex-start}
+.prog-cat{font-size:10px;color:var(--ft);font-style:italic}
+.prog-purpose{font-size:11px;color:var(--dm);line-height:1.4}
+.prog-state{display:flex;align-items:center;gap:8px;padding-top:6px;border-top:1px solid var(--bd2)}
+.prog-state-pill{font-family:var(--ff-mono);font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.3px}
+.prog-state-pill.IDLE{background:var(--bg);color:var(--dm);border:1px solid var(--bd)}
+.prog-state-pill.RUNNING{background:rgba(69,160,90,.12);color:var(--sg);border:1px solid var(--sg)}
+.prog-state-pill.COMPLETE{background:var(--tlb);color:var(--tl);border:1px solid var(--tl)}
+.prog-state-pill.ABORTED,.prog-state-pill.ABORTING{background:rgba(184,92,92,.12);color:var(--rs);border:1px solid var(--rs)}
+.prog-state-pill.STARTING,.prog-state-pill.COMPLETING{background:rgba(180,140,60,.12);color:var(--am);border:1px solid var(--am)}
+.prog-run-at{font-family:var(--ff-mono);font-size:10px;color:var(--ft);flex:1;text-align:right}
+.prog-tags{display:flex;flex-wrap:wrap;gap:4px}
+.prog-tag{font-size:10px;font-family:var(--ff-mono);padding:2px 6px;border-radius:20px;background:var(--bg);border:1px solid var(--bd2);color:var(--ft)}
+.loading{padding:40px;text-align:center;color:var(--dm);font-style:italic}
+</style>
+</head>
+<body>
+<div class="hd">
+  <h1>⚙ Programs<span>· ACG build programs</span></h1>
+  <a href="../index.html">← L4</a>
+  <a href="../../index.html">enterprise</a>
+  <a href="../api/index.html">api</a>
+  <span class="spacer"></span>
+  <span class="sum" id="sum">—</span>
+  <span class="cadence" id="cadence">—</span>
+</div>
+<div class="ctl">
+  <label>Filter</label>
+  <input id="f-search" placeholder="name / category / tag…" spellcheck="false">
+  <label>State</label>
+  <select id="f-state"><option value="">ALL</option><option value="RUNNING">RUNNING</option><option value="COMPLETE">COMPLETE</option><option value="IDLE">IDLE</option><option value="ABORTED">ABORTED</option></select>
+  <label>Lang</label>
+  <select id="f-lang"><option value="">ALL</option><option value="python">python</option><option value="bash">bash</option><option value="javascript">javascript</option></select>
+</div>
+<div class="wrap" id="wrap"><div class="loading">Loading programs…</div></div>
+
+<script>
+const PROGRAM_IDS = [
+  'api--build-api_py','api--build-csv-catalog_py','api--build-runtime-tags_py',
+  'api--build-sitemap_py','apps--build-whitepaper-apps_py','build_js','build_sh',
+  'components--build-catalog_py','components--extract_py','db--build-local-tagdbs_py',
+  'docs--split-catalog_py','docs--split-udt-spec_py','fix-data-links_py',
+  'members--extract_py','members--regen-index_py','pages--build-path-graph_py',
+  'pages--decompose_py','perspective-build_js','test-browser_js','test-links_py',
+  'test-nav_js','white-papers--extract_py','white-papers--regen-index_py'
+];
+
+let allProgs = [];
+
+function relTs(ts) {
+  if (!ts) return '—';
+  const d = (Date.now() - new Date(ts)) / 1000;
+  if (d < 60) return `${Math.round(d)}s ago`;
+  if (d < 3600) return `${Math.round(d/60)}m ago`;
+  if (d < 86400) return `${Math.round(d/3600)}h ago`;
+  return `${Math.round(d/86400)}d ago`;
+}
+
+async function loadProgs() {
+  const results = await Promise.allSettled(
+    PROGRAM_IDS.map(id => fetch(`./instances/${id}.json`).then(r => r.json()).then(d => ({id, ...d})))
+  );
+  allProgs = results.map((r, i) => r.status === 'fulfilled' ? r.value : {id: PROGRAM_IDS[i], error: true});
+  render();
+  document.getElementById('sum').textContent = `${allProgs.length} programs`;
+  document.getElementById('cadence').textContent = 'loaded ' + new Date().toLocaleTimeString();
+}
+
+function render() {
+  const q = document.getElementById('f-search').value.toLowerCase();
+  const fState = document.getElementById('f-state').value;
+  const fLang  = document.getElementById('f-lang').value;
+
+  let progs = allProgs.filter(p => {
+    const name = p.parameters?.name ?? p.id ?? '';
+    const cat  = p.parameters?.category ?? '';
+    const tags = (p.parameters?.tags ?? []).join(' ');
+    const lang = p.parameters?.language ?? '';
+    const state = p.tags?.last_state ?? 'IDLE';
+    if (q && ![name, cat, tags, lang, p.id].join(' ').toLowerCase().includes(q)) return false;
+    if (fState && state !== fState) return false;
+    if (fLang && lang !== fLang) return false;
+    return true;
+  });
+
+  const wrap = document.getElementById('wrap');
+  if (!progs.length) {
+    wrap.innerHTML = '<div class="loading">No programs match the filter.</div>';
+    return;
+  }
+
+  wrap.innerHTML = `<div class="prog-grid">${progs.map(p => {
+    const pm = p.parameters ?? {};
+    const pt = p.tags ?? {};
+    const state = pt.last_state || 'IDLE';
+    const tags = pm.tags ?? [];
+    return `<div class="prog-card">
+      <div class="prog-hd">
+        <span class="prog-name">${pm.name ?? p.id}</span>
+        <span class="prog-lang">${pm.language ?? '?'}</span>
+      </div>
+      ${pm.category ? `<div class="prog-cat">${pm.category}</div>` : ''}
+      ${pm.purpose  ? `<div class="prog-purpose">${pm.purpose}</div>` : ''}
+      <div class="prog-state">
+        <span class="prog-state-pill ${state}">${state}</span>
+        <span class="prog-run-at">${relTs(pt.last_run_at)}</span>
+      </div>
+      ${tags.length ? `<div class="prog-tags">${tags.map(t => `<span class="prog-tag">${t}</span>`).join('')}</div>` : ''}
+    </div>`;
+  }).join('')}</div>`;
+}
+
+document.getElementById('f-search').addEventListener('input', render);
+document.getElementById('f-state').addEventListener('change', render);
+document.getElementById('f-lang').addEventListener('change', render);
+
+loadProgs();
+</script>
+</body>
+</html>

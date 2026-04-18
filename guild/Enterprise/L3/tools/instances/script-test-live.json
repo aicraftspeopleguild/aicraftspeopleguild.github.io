@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:test-live",
+    "name": "script · test-live",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/test-live.js. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/test-live.js",
+    "language": "node",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "test-live"
+    ]
+  },
+  "tags": {
+    "id": "script-test-live",
+    "schema_version": "1.0.0"
+  }
+}

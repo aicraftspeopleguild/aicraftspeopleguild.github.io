@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔌 API Explorer · ACG</title>
+<link rel="stylesheet" href="../../L2/scada/gateway/styles/theme.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0);color:var(--tx);font-family:var(--ff-body);font-size:13px;overflow:hidden;display:flex;flex-direction:column}
+.hd{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:0 1px 3px var(--sh);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hd h1{font-family:var(--ff-display);font-weight:700;font-size:17px;letter-spacing:.3px}
+.hd h1 span{font-weight:400;color:var(--dm);font-size:13px;margin-left:6px}
+.hd a{color:var(--tl);text-decoration:none;font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--r-sm);border:1px solid transparent}
+.hd a:hover{background:var(--tlb);border-color:var(--tl)}
+.hd .spacer{flex:1}
+.wrap{flex:1;overflow:auto;display:grid;grid-template-columns:320px 1fr;gap:0;background:var(--bd)}
+@media(max-width:700px){.wrap{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
+.ep-list{background:var(--card);padding:14px;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
+.ep-list h2{font-family:var(--ff-display);font-size:12px;font-weight:700;color:var(--ft);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ep-card{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r-md);padding:12px;cursor:pointer;transition:border-color .1s,background .1s}
+.ep-card:hover{border-color:var(--tl);background:var(--card)}
+.ep-card.active{border-color:var(--tl);background:var(--tlb)}
+.ep-method{font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--sg);letter-spacing:.5px;margin-bottom:4px}
+.ep-path{font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--tx);word-break:break-all}
+.ep-desc{font-size:11px;color:var(--dm);margin-top:4px;line-height:1.4}
+.ep-send{margin-top:8px;padding:5px 12px;border:1px solid var(--tl);border-radius:var(--r-sm);background:var(--tlb);color:var(--tl);font-family:var(--ff-body);font-size:11px;font-weight:600;cursor:pointer;width:100%}
+.ep-send:hover{background:var(--tl);color:#fff}
+.ep-send:disabled{opacity:.5;cursor:default}
+
+.resp-panel{background:var(--bg);padding:18px 20px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.resp-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.resp-status{font-family:var(--ff-mono);font-size:12px;font-weight:700}
+.resp-status.ok{color:var(--sg)}
+.resp-status.err{color:var(--rs)}
+.resp-time{font-family:var(--ff-mono);font-size:11px;color:var(--ft)}
+.resp-hd{font-family:var(--ff-display);font-size:13px;font-weight:700;color:var(--tx)}
+pre.json{font-family:var(--ff-mono);background:var(--card);color:var(--tx);padding:16px;border-radius:var(--r-md);overflow:auto;font-size:11px;line-height:1.6;border:1px solid var(--bd);max-height:calc(100vh - 180px);flex:1}
+.placeholder{color:var(--dm);font-family:var(--ff-display);font-style:italic;padding:20px 0}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
+</style>
+</head>
+<body>
+<div class="hd">
+  <h1>🔌 API Explorer<span>· ACG static JSON endpoints</span></h1>
+  <a href="../../index.html">← enterprise</a>
+  <a href="../programs/index.html">programs</a>
+  <span class="spacer"></span>
+</div>
+<div class="wrap">
+  <div class="ep-list">
+    <h2>Endpoints</h2>
+  </div>
+  <div class="resp-panel" id="resp-panel">
+    <div class="placeholder">Select an endpoint and click Send →</div>
+  </div>
+</div>
+
+<script>
+const ENDPOINTS = [
+  { path: './health.json',   desc: 'Service health check — build status, deploy info, last commit.',    label: 'health' },
+  { path: './state.json',    desc: 'Full PackML pipeline state: summary KPIs, active faults, last event.', label: 'state' },
+  { path: './members.json',  desc: 'Guild member roster with handles, roles, expertise tags.',           label: 'members' },
+  { path: './papers.json',   desc: 'Published papers and standards indexed from /api/.',               label: 'papers' },
+  { path: '../../../papers.json', desc: 'Root papers catalog — full published papers list.',           label: 'papers (root)' },
+  { path: '../runtime/tags.json', desc: 'Live runtime tag snapshot — all tag namespaces + quality.',   label: 'runtime/tags' },
+];
+
+const listEl = document.querySelector('.ep-list');
+const respEl = document.getElementById('resp-panel');
+let active = null;
+
+ENDPOINTS.forEach((ep, i) => {
+  const card = document.createElement('div');
+  card.className = 'ep-card';
+  card.innerHTML = `
+    <div class="ep-method">GET</div>
+    <div class="ep-path">${ep.path}</div>
+    <div class="ep-desc">${ep.desc}</div>
+    <button class="ep-send" data-i="${i}">▶ Send</button>`;
+  card.querySelector('.ep-send').addEventListener('click', async e => {
+    e.stopPropagation();
+    const btn = e.currentTarget;
+    if (active) active.classList.remove('active');
+    card.classList.add('active');
+    active = card;
+    btn.disabled = true;
+    btn.textContent = '⏳ Fetching…';
+    const t0 = performance.now();
+    try {
+      const res = await fetch(ep.path + '?t=' + Date.now());
+      const ms  = Math.round(performance.now() - t0);
+      const txt = await res.text();
+      let pretty;
+      try { pretty = JSON.stringify(JSON.parse(txt), null, 2); } catch { pretty = txt; }
+      respEl.innerHTML = `
+        <div class="resp-meta">
+          <span class="resp-hd">${ep.label}</span>
+          <span class="resp-status ok">HTTP ${res.status}</span>
+          <span class="resp-time">${ms} ms · ${txt.length} bytes</span>
+        </div>
+        <pre class="json">${escHtml(pretty)}</pre>`;
+    } catch (err) {
+      const ms = Math.round(performance.now() - t0);
+      respEl.innerHTML = `
+        <div class="resp-meta">
+          <span class="resp-hd">${ep.label}</span>
+          <span class="resp-status err">Error</span>
+          <span class="resp-time">${ms} ms</span>
+        </div>
+        <pre class="json">${escHtml(String(err))}</pre>`;
+    }
+    btn.disabled = false;
+    btn.textContent = '▶ Send';
+  });
+  listEl.appendChild(card);
+});
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "§": "2.6",
+  "🏗️": "⌖",
+  "name": "version",
+  "module": "L2/scada/gateway/scripts/version.js",
+
+  "⚙️": { "REPO": "teslasolar/ACGP2P", "BRANCH": "main" },
+
+  "📦": {
+    "last": "{ sha:s, date:ms, url:s, msg:s } ?"
+  },
+
+  "→": [
+    { "name": "rel",          "in": "ts:ms", "out": "s", "flow": "Δt → Ns | Nm | Nh | Nd ago" },
+    { "name": "paint",        "flow": "last? → #ver.text = '⌖ sha7 · Nm ago' ⊕ href/title" },
+    { "name": "fetchVersion", "flow": "GET api.github.com/repos/{REPO}/commits/{BRANCH} → last ⊕ VERSION.write(sha,shortSha,committedAt,message,url) ⊕ paint()" },
+    { "name": "startVersion", "flow": "fetchVersion() ⊕ setInterval(paint,30s) ⊕ setInterval(fetchVersion,5m)" }
+  ],
+
+  "↑🖥️": ["version.sha", "version.shortSha", "version.committedAt", "version.message", "version.url"],
+  "和": true
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 112" width="200" height="112" role="img" aria-label="stat card — papers indexed 72">
+  <defs>
+    <linearGradient id="sg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0"   stop-color="#3fb950" stop-opacity=".35"/>
+      <stop offset="1"   stop-color="#3fb950" stop-opacity="0"/>
+    </linearGradient>
+    <style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style>
+  </defs>
+  <rect width="200" height="112" rx="8" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
+
+  <!-- eyebrow + trend -->
+  <text x="16"  y="22" class="t" font-size="10" fill="#8b949e">papers</text>
+  <text x="184" y="22" class="t" font-size="10" fill="#3fb950" text-anchor="end">&#x2191; 8%</text>
+  <line x1="16" y1="28" x2="184" y2="28" stroke="#21262d" stroke-width="1"/>
+
+  <!-- big metric -->
+  <text x="16"  y="70" class="t" font-size="42" font-weight="700" fill="#e6edf3">72</text>
+  <text x="70"  y="70" class="t" font-size="14" fill="#8b949e">/ 100</text>
+
+  <!-- sublabel -->
+  <text x="16"  y="82" class="t" font-size="10" fill="#484f58">indexed</text>
+
+  <!-- sparkline strip (y 88–108, range 20px) -->
+  <!-- data: 30 35 28 45 42 55 58 65 60 72 → y = 108 - val*0.20 -->
+  <polygon
+    points="16,102 34.7,101 53.3,102.4 72,99 90.7,99.6 109.3,97 128,96.4 146.7,95 165.3,96 184,93.6 184,108 16,108"
+    fill="url(#sg)"/>
+  <polyline
+    points="16,102 34.7,101 53.3,102.4 72,99 90.7,99.6 109.3,97 128,96.4 146.7,95 165.3,96 184,93.6"
+    fill="none" stroke="#3fb950" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="184" cy="93.6" r="2.5" fill="#3fb950"/>
+</svg>

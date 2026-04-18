@@ -1,0 +1,45 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2",
+    "label": "L2",
+    "parent": "guild/Enterprise",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L2",
+    "fs_path": "guild/Enterprise/L2",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L2"
+    ],
+    "children": [
+      "guild/Enterprise/L2/hmi",
+      "guild/Enterprise/L2/logs",
+      "guild/Enterprise/L2/scada",
+      "guild/Enterprise/L2/state"
+    ],
+    "siblings": [
+      "guild/Enterprise/L0",
+      "guild/Enterprise/L1",
+      "guild/Enterprise/L3",
+      "guild/Enterprise/L4",
+      "guild/Enterprise/docs"
+    ],
+    "descendants": 35,
+    "file_count": 3,
+    "subdir_count": 4,
+    "kinds": {
+      "db": 2,
+      "md": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

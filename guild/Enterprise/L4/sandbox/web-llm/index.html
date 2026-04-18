@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WebLLM Sandbox · ACG</title>
+<link rel="stylesheet" href="../../../L2/scada/gateway/styles/theme.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0);color:var(--tx);font-family:var(--ff-body);font-size:13px}
+
+/* ─── Top Bar (matches main chat header) ─── */
+#topbar{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:0 1px 3px var(--sh);display:flex;align-items:center;gap:14px;flex-wrap:wrap;z-index:100}
+#topbar .logo{font-family:var(--ff-display);font-weight:700;font-size:17px;color:var(--tx);letter-spacing:.3px}
+#topbar .logo span{font-weight:400;color:var(--dm);font-size:13px;margin-left:6px}
+#topbar a.back{color:var(--tl);text-decoration:none;font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--r-sm);border:1px solid transparent}
+#topbar a.back:hover{background:var(--tlb);border-color:var(--tl)}
+#topbar .repo-name{color:var(--tl);font-family:var(--ff-mono);font-size:11px;padding:3px 10px;background:var(--tlb);border-radius:20px}
+#topbar .branch{color:var(--am);font-family:var(--ff-mono);font-size:10px;background:var(--amb);padding:3px 10px;border-radius:20px;font-weight:600}
+#topbar .status{margin-left:auto;font-size:11px;color:var(--dm)}
+#topbar button{background:var(--inp);color:var(--dm);border:1px solid var(--bd);padding:5px 12px;border-radius:8px;cursor:pointer;font-size:11px;font-family:var(--ff-body);font-weight:600}
+#topbar button:hover{border-color:var(--tl);color:var(--tl)}
+
+/* ─── Grid Layout ─── */
+#grid{display:grid;grid-template-columns:220px 1fr 340px;grid-template-rows:1fr 1fr;height:calc(100vh - 54px);gap:12px;padding:12px 20px}
+#file-panel,#preview-area,#tool-viz,#chat-panel{background:var(--card);border:1px solid var(--bd);border-radius:var(--r-lg);box-shadow:0 2px 8px var(--sh);display:flex;flex-direction:column;overflow:hidden}
+#file-panel{grid-row:1/3}
+#preview-area{grid-row:1/2;position:relative}
+#tool-viz{grid-row:2/2}
+#chat-panel{grid-row:1/3}
+
+/* ─── Panel headers (mirror main chat .ph) ─── */
+.panel-header{padding:10px 14px;border-bottom:1px solid var(--bd2);font-family:var(--ff-display);font-weight:600;font-size:13px;color:var(--tx);display:flex;align-items:center;gap:8px}
+
+/* ─── File Explorer ─── */
+#file-panel .panel-header{justify-content:space-between}
+#file-list{flex:1;overflow-y:auto;padding:6px 0}
+.file-entry{padding:6px 14px;cursor:pointer;display:flex;align-items:center;gap:8px;font-size:12px;border-left:3px solid transparent;transition:background .1s}
+.file-entry:hover{background:var(--bg2)}
+.file-entry.active{background:var(--tlb);border-left-color:var(--tl)}
+.file-entry .icon{font-size:11px;width:14px;text-align:center}
+.file-entry .icon.html{color:var(--rs)}
+.file-entry .icon.css{color:var(--tl)}
+.file-entry .icon.js{color:var(--am)}
+.file-entry .icon.other{color:var(--ft)}
+.file-entry .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--tx);font-family:var(--ff-mono)}
+.file-entry .size{color:var(--ft);font-size:10px;font-family:var(--ff-mono)}
+
+/* Commit Log */
+#commit-section{border-top:1px solid var(--bd2);max-height:180px;overflow-y:auto;background:var(--bg)}
+#commit-section .panel-header{padding:8px 14px;font-size:11px;font-family:var(--ff-body);color:var(--am);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.commit-entry{padding:5px 14px;font-size:11px;border-left:2px solid var(--bd);margin-left:10px}
+.commit-entry .cid{color:var(--am);font-family:var(--ff-mono);font-size:10px;font-weight:600}
+.commit-entry .cmsg{color:var(--dm);margin-left:6px}
+
+/* ─── Preview Area ─── */
+#preview-area .panel-header{padding:8px 14px;display:flex;align-items:center;gap:8px;background:var(--card)}
+#preview-area .panel-header > span:first-child{color:var(--am);font-family:var(--ff-display);font-weight:600}
+#preview-tabs{display:flex;gap:4px;flex:1;overflow-x:auto}
+.preview-tab{padding:4px 10px;cursor:pointer;color:var(--ft);border-bottom:2px solid transparent;font-size:11px;white-space:nowrap;font-family:var(--ff-mono);border-radius:var(--r-sm) var(--r-sm) 0 0}
+.preview-tab:hover{color:var(--tx);background:var(--bg2)}
+.preview-tab.active{color:var(--tl);border-bottom-color:var(--tl)}
+#iframe-container{flex:1}
+#iframe-container iframe{width:100%;height:100%;border:none;background:#fff}
+#no-preview{flex:1;display:flex;align-items:center;justify-content:center;color:var(--dm);font-size:13px;flex-direction:column;gap:8px;background:var(--bg);font-family:var(--ff-display)}
+#no-preview .hint{font-size:11px;color:var(--ft);font-family:var(--ff-body)}
+#btn-refresh-preview{background:transparent!important;border:1px solid var(--bd)!important;color:var(--dm)!important;padding:3px 10px!important;border-radius:var(--r-sm)!important;cursor:pointer;font-size:10px!important;font-family:var(--ff-body)!important}
+#btn-refresh-preview:hover{border-color:var(--tl)!important;color:var(--tl)!important}
+
+/* ─── Tool Visualization ─── */
+#tool-viz .panel-header{justify-content:space-between}
+#tool-viz .panel-header > span:first-child{color:var(--tl)}
+#tool-count{font-size:10px;color:var(--ft);font-family:var(--ff-mono)}
+#tool-log{flex:1;overflow-y:auto;padding:4px 0}
+.tool-entry{padding:8px 14px;border-bottom:1px solid var(--bd2);font-size:11px}
+.tool-entry .tool-name{color:var(--tl);font-weight:600;font-family:var(--ff-mono)}
+.tool-entry .tool-args{color:var(--dm);font-size:10px;margin-top:3px;word-break:break-all;max-height:40px;overflow:hidden;font-family:var(--ff-mono)}
+.tool-entry .tool-result{margin-top:4px;font-size:10px;font-family:var(--ff-mono)}
+.tool-entry .tool-result.ok{color:var(--sg)}
+.tool-entry .tool-result.err{color:var(--rs)}
+.tool-entry .tool-time{float:right;color:var(--ft);font-size:9px;font-family:var(--ff-mono)}
+
+/* ─── Chat Panel ─── */
+#chat-panel .panel-header > span:first-child{color:var(--tl)}
+#emotion-bar{display:flex;gap:4px;margin-left:auto}
+.emo-dot{width:9px;height:9px;border-radius:50%;opacity:.25;transition:opacity .3s;border:1px solid rgba(0,0,0,.05)}
+.emo-dot.active{opacity:1;box-shadow:0 0 7px currentColor}
+#chat-messages{flex:1;overflow-y:auto;padding:12px 14px}
+.msg{margin-bottom:10px;display:flex;flex-direction:column;font-size:13px}
+.msg.user{align-items:flex-end}
+.msg .sender{font-size:10px;color:var(--ft);margin-bottom:3px;font-weight:500}
+.msg > div:last-child{display:inline-block;max-width:85%;padding:9px 13px;border-radius:12px;line-height:1.5;word-wrap:break-word;font-size:13px}
+.msg.user > div:last-child{background:var(--tl);color:#fff;border-bottom-right-radius:4px}
+.msg.ai > div:last-child{background:var(--bg2);border:1px solid var(--bd2);border-bottom-left-radius:4px;color:var(--tx)}
+.msg.system > div:last-child{background:none;border:none;color:var(--ft);font-style:italic;font-size:11px;padding:3px 0}
+.msg .emo-tag{font-size:9px;padding:1px 6px;border-radius:10px;margin-left:6px;background:var(--bg2);color:var(--dm);font-family:var(--ff-mono)}
+.msg code{background:var(--bg2);padding:1px 5px;border-radius:4px;font-size:11px;font-family:var(--ff-mono);color:var(--tl)}
+.msg pre{background:var(--mono-bg);color:var(--mono-tx);padding:8px 10px;border-radius:var(--r-sm);margin:4px 0;overflow-x:auto;font-size:11px;font-family:var(--ff-mono)}
+.msg .tool-badge{display:inline-block;background:var(--tlb);color:var(--tl);padding:2px 8px;border-radius:20px;font-size:10px;margin:2px 0;font-family:var(--ff-mono);font-weight:500}
+
+/* Chat Input */
+#chat-input-area{border-top:1px solid var(--bd2);padding:10px 14px;background:var(--card)}
+#chat-input-row{display:flex;gap:8px}
+#chat-input{flex:1;background:var(--inp);border:1px solid var(--bd);color:var(--tx);padding:9px 13px;border-radius:var(--r-md);font-family:var(--ff-body);font-size:13px;resize:none;height:60px;outline:none}
+#chat-input:focus{border-color:var(--tl)}
+#chat-btns{display:flex;flex-direction:column;gap:4px}
+#chat-btns button{width:36px;height:28px;border:1px solid var(--bd);background:var(--inp);color:var(--dm);border-radius:var(--r-sm);cursor:pointer;font-size:13px}
+#chat-btns button:hover{border-color:var(--tl);color:var(--tl)}
+#chat-btns button.active{background:var(--tl);color:#fff;border-color:var(--tl)}
+#voice-status{font-size:10px;color:var(--dm);margin-top:6px;height:14px;font-family:var(--ff-mono)}
+#mic-level-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+#mic-level-bar{flex:1;height:6px;background:var(--bg2);border-radius:3px;overflow:hidden}
+#mic-level-fill{height:100%;width:0%;background:var(--tl);border-radius:3px;transition:width 50ms}
+#mic-level-label{font-size:9px;color:var(--dm);width:32px;text-align:right;font-family:var(--ff-mono)}
+#mic-indicator{width:8px;height:8px;border-radius:50%;background:var(--bd);transition:background .15s}
+#mic-indicator.active{background:var(--sg);box-shadow:0 0 8px var(--sg)}
+
+/* ─── Load Overlay ─── */
+#load-overlay{position:fixed;inset:0;background:rgba(250,246,240,.98);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;gap:14px}
+#load-overlay h1{color:var(--tl);font-family:var(--ff-display);font-size:24px;letter-spacing:.5px;font-weight:700}
+#load-overlay .sub{color:var(--dm);font-size:12px;margin-bottom:6px}
+#model-select{background:var(--card);color:var(--tx);border:1px solid var(--bd);padding:9px 13px;border-radius:var(--r-md);font-family:var(--ff-mono);font-size:12px;width:340px;outline:none}
+#model-select:focus{border-color:var(--tl)}
+#load-btn{background:var(--tl);color:#fff;border:none;padding:11px 34px;border-radius:var(--r-md);font-family:var(--ff-body);font-size:14px;font-weight:600;cursor:pointer;margin-top:4px;letter-spacing:.3px}
+#load-btn:hover{background:var(--tl2)}
+#load-btn:disabled{opacity:.4;cursor:default}
+#load-progress{width:340px;height:6px;background:var(--bg2);border-radius:3px;overflow:hidden;display:none}
+#load-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--tl),var(--sg));transition:width .3s}
+#load-status{font-size:11px;color:var(--dm);height:16px;font-family:var(--ff-mono)}
+#gpu-status{font-size:11px;margin-bottom:4px;font-family:var(--ff-mono)}
+#gpu-status.ok{color:var(--sg)}
+#gpu-status.fail{color:var(--rs)}
+#skip-btn{background:transparent;color:var(--dm);border:1px solid var(--bd);padding:7px 18px;border-radius:var(--r-sm);font-family:var(--ff-body);cursor:pointer;margin-top:6px;font-size:11px}
+#skip-btn:hover{color:var(--tl);border-color:var(--tl)}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--dm)}
+</style>
+</head>
+<body>
+
+<!-- Load Overlay -->
+<div id="load-overlay">
+  <h1>WebLLM SANDBOX</h1>
+  <div class="sub">Voice-Powered Code Builder — Talk to AI, Build in Browser</div>
+  <div id="gpu-status" class="ok">Checking WebGPU…</div>
+  <select id="model-select"></select>
+  <div id="load-progress"><div id="load-bar"></div></div>
+  <div id="load-status"></div>
+  <button id="load-btn">Load Model &amp; Enter Sandbox</button>
+  <button id="skip-btn">Skip Model — Use Sandbox Only</button>
+</div>
+
+<!-- Top Bar -->
+<div id="topbar">
+  <span class="logo">LLM SANDBOX</span>
+  <a class="back" href="../index.html">← sandbox</a>
+  <a class="back" href="../../../index.html">⚒ mesh</a>
+  <span class="repo-name" id="repo-name-display">untitled</span>
+  <span class="branch" id="branch-display">main</span>
+  <button id="btn-new-repo" title="New Repo">New Repo</button>
+  <button id="btn-commit" title="Commit All">Commit</button>
+  <span class="status" id="model-status">No model loaded</span>
+</div>
+
+<!-- Main Grid -->
+<div id="grid">
+  <!-- File Explorer -->
+  <div id="file-panel">
+    <div class="panel-header">
+      <span>Files</span>
+      <span id="file-count">0</span>
+    </div>
+    <div id="file-list"></div>
+    <div id="commit-section">
+      <div class="panel-header">Commits</div>
+      <div id="commit-log"></div>
+    </div>
+  </div>
+
+  <!-- Preview Area -->
+  <div id="preview-area">
+    <div class="panel-header">
+      <span style="color:var(--orange)">PREVIEW</span>
+      <div id="preview-tabs"></div>
+      <button id="btn-refresh-preview" style="margin-left:auto;background:transparent;border:1px solid var(--border);color:var(--dim);padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px">Refresh</button>
+    </div>
+    <div id="iframe-container" style="display:none"></div>
+    <div id="no-preview">
+      <span>No preview yet</span>
+      <span class="hint">Ask the AI to create an HTML file, or create one manually</span>
+    </div>
+  </div>
+
+  <!-- Tool Visualization -->
+  <div id="tool-viz">
+    <div class="panel-header">
+      <span>Tool Calls</span>
+      <span id="tool-count" style="font-size:10px;color:var(--dim)">0</span>
+    </div>
+    <div id="tool-log"></div>
+  </div>
+
+  <!-- Chat Panel -->
+  <div id="chat-panel">
+    <div class="panel-header">
+      <span>Chat</span>
+      <div id="emotion-bar">
+        <div class="emo-dot" style="color:#ffaa22" title="excitement"></div>
+        <div class="emo-dot" style="color:#44aaff" title="calm"></div>
+        <div class="emo-dot" style="color:#ff4444" title="anger"></div>
+        <div class="emo-dot" style="color:#6666cc" title="sadness"></div>
+        <div class="emo-dot" style="color:#44ff88" title="joy"></div>
+        <div class="emo-dot" style="color:#aa88ff" title="curiosity"></div>
+      </div>
+    </div>
+    <div id="chat-messages"></div>
+    <div id="chat-input-area">
+      <div id="chat-input-row">
+        <textarea id="chat-input" placeholder="Tell the AI what to build... (Enter to send)"></textarea>
+        <div id="chat-btns">
+          <button id="btn-send" title="Send">▶</button>
+          <button id="btn-mic" title="Voice">🎤</button>
+        </div>
+      </div>
+      <div id="mic-level-row">
+        <div id="mic-indicator"></div>
+        <div id="mic-level-bar"><div id="mic-level-fill"></div></div>
+        <div id="mic-level-label">0%</div>
+      </div>
+      <div id="voice-status"></div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="modules/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L3/tools",
+    "label": "tools",
+    "parent": "guild/Enterprise/L3",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L3_tools",
+    "fs_path": "guild/Enterprise/L3/tools",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L3",
+      "guild_Enterprise_L3_tools"
+    ],
+    "children": [
+      "guild/Enterprise/L3/tools/instances"
+    ],
+    "siblings": [
+      "guild/Enterprise/L3/db"
+    ],
+    "descendants": 1,
+    "file_count": 1,
+    "subdir_count": 1,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

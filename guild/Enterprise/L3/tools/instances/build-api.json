@@ -1,0 +1,50 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:api",
+    "name": "Rebuild JSON API",
+    "description": "Regenerate /api/papers.json, members.json, health.json from the SQLite catalog.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/api/scripts/build-api.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "papers.json",
+        "type": "file"
+      },
+      {
+        "name": "members.json",
+        "type": "file"
+      },
+      {
+        "name": "health.json",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper",
+      "TestWrapper"
+    ],
+    "tags": [
+      "build",
+      "api"
+    ],
+    "test_cases": [
+      {
+        "name": "completes ok",
+        "inputs": {},
+        "expect": {
+          "field": "ok",
+          "op": "eq",
+          "value": true
+        }
+      }
+    ]
+  },
+  "tags": {
+    "id": "build-api",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "git:log",
+    "name": "Git log",
+    "description": "Recent N commits as structured records (sha, date, author, subject).",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/git_ops.py:log",
+    "language": "python",
+    "inputs": [
+      {
+        "name": "n",
+        "type": "int",
+        "default": 10,
+        "description": "number of commits"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "commits",
+        "type": "Commit[]"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "McpAdapter",
+      "LoggerWrapper",
+      "TestWrapper"
+    ],
+    "tags": [
+      "git",
+      "log",
+      "history",
+      "read-only"
+    ],
+    "mcp": {
+      "mcp_name": "git_log",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "n": {
+            "type": "integer",
+            "description": "commit count",
+            "default": 10
+          }
+        }
+      }
+    },
+    "test_cases": [
+      {
+        "name": "returns ok",
+        "inputs": {
+          "n": 3
+        },
+        "expect": {
+          "field": "ok",
+          "op": "eq",
+          "value": true
+        }
+      }
+    ]
+  },
+  "tags": {
+    "id": "git-log",
+    "schema_version": "1.0.0"
+  }
+}

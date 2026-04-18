@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"Status","layer":1,"version":"1.0.0","fields":[
+{"n":"code","t":"DINT"},
+{"n":"name","t":"STRING"},
+{"n":"desc","t":"STRING"},
+{"n":"severity","t":"ENUM","values":["info","warn","error","fatal"]}
+],"meta":{"desc":"Generic status/result record"}}

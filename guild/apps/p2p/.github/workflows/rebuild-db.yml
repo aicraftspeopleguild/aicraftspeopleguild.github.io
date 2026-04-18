@@ -1,0 +1,45 @@
+name: rebuild-tag-catalog
+
+# Rebuild controls/db/tags.sqlite + sql/seed.sql whenever any JSON
+# manifest that feeds the catalog changes. Commits the regenerated
+# artifacts back to the same branch so the indexed DB never drifts
+# from the authoritative JSON.
+
+on:
+  push:
+    paths:
+      - 'controls/scada/gateway/providers/registry.json'
+      - 'controls/**/udts.json'
+      - 'controls/**/tags.json'
+      - 'controls/scada/programs/**.json'
+      - 'controls/db/build.py'
+      - 'controls/db/sql/schema.sql'
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Rebuild catalog
+        run: python3 controls/db/build.py
+
+      - name: Commit + push if changed
+        run: |
+          git config user.name  "acg-db-bot"
+          git config user.email "acg-db-bot@users.noreply.github.com"
+          git add controls/db/tags.sqlite controls/db/sql/seed.sql
+          if git diff --cached --quiet; then
+            echo "no catalog drift"
+          else
+            git commit -m "db: rebuild tag catalog (auto)"
+            git push
+          fi

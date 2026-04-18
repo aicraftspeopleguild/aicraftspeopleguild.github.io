@@ -1,0 +1,37 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "bin",
+    "label": "bin",
+    "parent": ".",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "bin",
+    "fs_path": "bin",
+    "depth": 1,
+    "breadcrumb": [
+      "root",
+      "bin"
+    ],
+    "children": [],
+    "siblings": [
+      "docs",
+      "guild",
+      "index"
+    ],
+    "descendants": 0,
+    "file_count": 3,
+    "subdir_count": 0,
+    "kinds": {
+      "(none)": 1,
+      "cmd": 1,
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

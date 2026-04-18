@@ -1,0 +1,31 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "TabbedPanel",
+    "tag": "div",
+    "cssClass": "tabbed-panel",
+    "description": "Tabbed panel container. Each child node assigns a named slot: 'tab-0', 'tab-1', 'tab-2', or 'tab-3'. Tab bar labels come from the 'tabs' prop array. WidgetRuntime.TabWidget wires the click handlers after mount. Analogous to Perspective's Tab Container.",
+    "slots": ["tab-0", "tab-1", "tab-2", "tab-3"],
+    "propsToAttr": {
+      "id": "data-tabbed-panel"
+    },
+    "props": {
+      "tabs": {
+        "type": "StringArray",
+        "required": true,
+        "description": "Ordered list of tab labels, e.g. ['Overview', 'Details', 'History']"
+      },
+      "id": {
+        "type": "String",
+        "required": false,
+        "description": "Unique instance ID used by data-tabbed-panel attribute"
+      }
+    },
+    "template": "<nav class=\"tab-bar\" role=\"tablist\">{{ #tabs }}<button class=\"tab-btn\" role=\"tab\" data-tab=\"{{ . }}\">{{ . }}</button>{{ /tabs }}</nav><div class=\"tab-panes\"><div class=\"tab-pane\" data-pane=\"0\">{{ slot:tab-0 }}</div><div class=\"tab-pane\" data-pane=\"1\">{{ slot:tab-1 }}</div><div class=\"tab-pane\" data-pane=\"2\">{{ slot:tab-2 }}</div><div class=\"tab-pane\" data-pane=\"3\">{{ slot:tab-3 }}</div></div>"
+  },
+  "tags": {
+    "id": "tabbed-panel",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/organisms/tabbed-panel.json",
+    "schema_version": "1.0.0"
+  }
+}

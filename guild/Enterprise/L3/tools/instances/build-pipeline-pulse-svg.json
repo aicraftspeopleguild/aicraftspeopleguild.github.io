@@ -1,0 +1,16 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:pipeline-pulse-svg",
+    "name": "Render pipeline-pulse.svg",
+    "description": "Pipeline run history sparkline + complete/aborted/states counters + success-rate bar. Reads state.db for durations, runtime/tags.json for counters.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-pipeline-pulse.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"svg","type":"file"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","pipeline","sparkline","render"]
+  },
+  "tags": { "id": "build-pipeline-pulse-svg", "schema_version": "1.0.0" }
+}

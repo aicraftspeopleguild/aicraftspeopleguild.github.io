@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"Job","layer":9,"version":"1.0.0","fields":[
+{"n":"id","t":"DINT"},
+{"n":"run_id","t":"DINT","desc":"References WorkflowRun.id"},
+{"n":"name","t":"STRING"},
+{"n":"status","t":"ENUM","values":["queued","in_progress","completed"]},
+{"n":"conclusion","t":"STRING","nullable":true},
+{"n":"runner","t":"STRING","desc":"e.g. ubuntu-latest"},
+{"n":"started_at","t":"Timestamp"},
+{"n":"completed_at","t":"Timestamp","nullable":true},
+{"n":"steps","t":"STRING[]","desc":"Step names or IDs"}
+],"meta":{"desc":"A job within a WorkflowRun — one runner, sequential steps."}}

@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"ApiAdapter","layer":9,"version":"1.0.0","fields":[
+{"n":"tool_id","t":"STRING"},
+{"n":"method","t":"ENUM","values":["GET","POST","PUT","DELETE"]},
+{"n":"path","t":"STRING","desc":"URL pattern, e.g. /api/papers"},
+{"n":"query_params","t":"STRING[]","nullable":true},
+{"n":"body_schema","t":"JSON","nullable":true},
+{"n":"response_shape","t":"STRING","desc":"JSON Schema $id or inline type"},
+{"n":"static","t":"BOOL","default":false,"desc":"True if output is a committed static JSON file"}
+],"meta":{"desc":"Exposes a Tool as an HTTP endpoint. Static=true means served directly by GitHub Pages as pre-generated JSON."}}

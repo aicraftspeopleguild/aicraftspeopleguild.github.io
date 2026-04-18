@@ -1,0 +1,32 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "HealthBadge",
+    "tag": "aside",
+    "cssClass": "widget widget-health",
+    "description": "Live enterprise vitals badge. Fetches /api/health.json and renders paperCount + memberCount + apiVersion. No hardcoded values.",
+    "atomicLevel": "widget",
+    "source": {
+      "kind": "api",
+      "ref": "guild/Enterprise/L4/api/health.json",
+      "interval_s": 60,
+      "expects": {
+        "paperCount": "Number",
+        "memberCount": "Number",
+        "lastUpdated": "Date",
+        "apiVersion": "String"
+      }
+    },
+    "props": {},
+    "composes": ["Badge", "BadgeRow"],
+    "template": "<aside class=\"widget widget-health\" data-widget=\"health\"><div class=\"widget-body\"><span class=\"badge\"><strong>{{ paperCount }}</strong> papers</span><span class=\"badge\"><strong>{{ memberCount }}</strong> members</span><span class=\"badge badge-muted\">api v{{ apiVersion }}</span></div><p class=\"widget-meta\">as of {{ lastUpdated }}</p></aside>"
+  },
+  "tags": {
+    "id": "health-badge",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/health-badge.json",
+    "source_kind": "api",
+    "source_ref": "guild/Enterprise/L4/api/health.json",
+    "embeddable_in": ["Organism", "Template"],
+    "schema_version": "1.0.0"
+  }
+}

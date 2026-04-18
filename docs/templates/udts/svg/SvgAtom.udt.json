@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "SvgAtom",
+  "extends": "Component",
+  "version": "1.0.0",
+  "description": "Smallest reusable SVG primitive — renders inline inside a parent <svg>. Has no defs of its own, no data dependency beyond scalar props, and does not fetch anything. Examples: chip, pulse_dot, bar, divider, section_heading, emoji_badge.",
+  "parameters": {
+    "name":         { "dataType": "String", "required": true,  "description": "PascalCase or snake name matching the Python helper" },
+    "atomicLevel":  { "dataType": "String", "required": true,  "const": "atom" },
+    "renderer":     { "dataType": "String", "required": true,  "description": "Dotted module:function path, e.g. svg_widget:chip" },
+    "props":        { "dataType": "JSON",   "required": false, "description": "Scalar props: name -> {type, required, default}" },
+    "description":  { "dataType": "String", "required": false },
+    "preview":      { "dataType": "String", "required": false, "description": "Inline sample SVG for catalog preview" }
+  },
+  "constraints": {
+    "no_nested_widgets": true,
+    "scalar_props_only": true
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "schema_version": { "dataType": "String" }
+  }
+}

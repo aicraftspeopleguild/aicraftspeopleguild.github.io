@@ -6,7 +6,7 @@
     "kind": "white-paper",
     "description": "The Razor That Shaves ItselfThis document has one argument. Every ring is the same argument. The repetition IS the proof.",
     "source_type": "WhitePaper",
-    "source_path": "guild/web/white-papers/udts/instances/ass-os-bloom-prompt-occam.json",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/ass-os-bloom-prompt-occam.json",
     "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
     "data": {
       "paper": "guild/apps/whitepapers/data/ass-os-bloom-prompt-occam.data.json"
@@ -14,7 +14,7 @@
     "route": "/whitepapers/ass-os-bloom-prompt-occam",
     "section": "resources",
     "stylesheets": [
-      "guild/web/style/main.css"
+      "guild/Enterprise/L2/hmi/web/style/main.css"
     ],
     "status": "published",
     "tags": []
@@ -23,7 +23,7 @@
     "id": "ass-os-bloom-prompt-occam",
     "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/ass-os-bloom-prompt-occam/",
     "view_id": "white-paper-app",
-    "ingested_at": "2026-04-18T01:30:03Z",
+    "ingested_at": "2026-04-18T06:16:25Z",
     "schema_version": "1.0.0"
   }
 }

@@ -1,0 +1,15 @@
+{
+  "udtType": "SvgAtom",
+  "parameters": {
+    "name": "SharedDefs",
+    "atomicLevel": "atom",
+    "renderer": "svg_widget:shared_defs",
+    "description": "Gradient + font + pulse CSS. Emit once per SVG.",
+    "props": {}
+  },
+  "tags": {
+    "id": "shared-defs",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/atoms/shared-defs.json"
+  }
+}

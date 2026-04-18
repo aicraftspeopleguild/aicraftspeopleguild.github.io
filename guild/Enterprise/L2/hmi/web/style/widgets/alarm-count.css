@@ -1,0 +1,22 @@
+﻿/* -- Alarm Badge ---------------------------------------------------- */
+.alarm-badge {
+  display:      inline-flex;
+  align-items:  center;
+  padding:      0.2em 0.6em;
+  border-radius:99px;
+  font-size:    0.75rem;
+  font-weight:  600;
+  background:   var(--color-surface-2, #f1f5f9);
+  color:        var(--color-ink-muted, #64748b);
+  border:       1px solid transparent;
+  transition:   background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.alarm-badge-active {
+  background:   #fee2e2;
+  color:        #991b1b;
+  border-color: #fca5a5;
+  cursor:       pointer;
+}
+.alarm-badge-active:hover { background: #fecaca; }
+

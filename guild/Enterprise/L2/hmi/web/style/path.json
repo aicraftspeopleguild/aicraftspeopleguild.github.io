@@ -1,0 +1,42 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/hmi/web/style",
+    "label": "style",
+    "parent": "guild/web",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_style",
+    "fs_path": "guild/Enterprise/L2/hmi/web/style",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_style"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/L2/hmi/web/assets",
+      "guild/Enterprise/L2/hmi/web/components",
+      "guild/web/members",
+      "guild/Enterprise/L2/hmi/web/pages",
+      "guild/Enterprise/L2/hmi/web/perspective",
+      "guild/web/scripts",
+      "guild/Enterprise/L2/hmi/web/views"
+    ],
+    "descendants": 0,
+    "file_count": 4,
+    "subdir_count": 0,
+    "kinds": {
+      "css": 3,
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

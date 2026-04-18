@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚒ ACG · Gateway Log</title>
+<link rel="stylesheet" href="./styles/theme.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0);color:var(--tx);font-family:var(--ff-body);font-size:13px;overflow:hidden;display:flex;flex-direction:column}
+.hd{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:0 1px 3px var(--sh);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hd h1{font-family:var(--ff-display);font-weight:700;font-size:17px;letter-spacing:.3px}
+.hd h1 span{font-weight:400;color:var(--dm);font-size:13px;margin-left:6px}
+.hd a{color:var(--tl);text-decoration:none;font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--r-sm);border:1px solid transparent}
+.hd a:hover{background:var(--tlb);border-color:var(--tl)}
+.hd .spacer{flex:1}
+.hd .sum{font-family:var(--ff-mono);font-size:11px;color:var(--dm)}
+.hd .sum b{color:var(--tl)}
+.hd button{padding:5px 12px;border:1px solid var(--bd);border-radius:8px;font-family:var(--ff-body);font-size:11px;font-weight:600;cursor:pointer;background:var(--inp);color:var(--dm)}
+.hd button:hover{border-color:var(--tl);color:var(--tl)}
+
+.ctl{padding:10px 20px;background:var(--card);border-bottom:1px solid var(--bd2);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ctl input,.ctl select{padding:6px 10px;background:var(--inp);border:1px solid var(--bd);border-radius:var(--r-sm);font-family:var(--ff-mono);font-size:11px;color:var(--tx);outline:none}
+.ctl input:focus,.ctl select:focus{border-color:var(--tl)}
+.ctl input{flex:1;min-width:180px}
+.ctl label{font-size:11px;color:var(--dm)}
+
+.wrap{flex:1;overflow:auto;padding:0 20px 20px}
+table.log{width:100%;border-collapse:collapse;font-size:12px;background:var(--card);border:1px solid var(--bd);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 8px var(--sh);margin-top:10px}
+table.log thead{position:sticky;top:0;background:var(--bg2);z-index:1}
+table.log th{text-align:left;padding:8px 12px;font-weight:600;color:var(--dm);font-size:11px;border-bottom:1px solid var(--bd);letter-spacing:.3px}
+table.log td{padding:6px 12px;border-bottom:1px solid var(--bd2);vertical-align:top;font-family:var(--ff-mono);font-size:11px}
+table.log td.ts{color:var(--ft);white-space:nowrap}
+table.log td.lvl{font-weight:700;text-align:center}
+table.log td.logger{color:var(--dm);white-space:nowrap}
+table.log td.msg{color:var(--tx);word-break:break-word}
+table.log tr.lv-ERROR td.lvl{color:var(--rs)}
+table.log tr.lv-WARN  td.lvl{color:var(--am)}
+table.log tr.lv-INFO  td.lvl{color:var(--tl)}
+table.log tr.lv-DEBUG td.lvl{color:var(--ft)}
+table.log tr.lv-ERROR{background:rgba(184,92,92,.04)}
+table.log tr:hover{background:var(--bg2)}
+table.log td .stack{display:block;white-space:pre-wrap;color:var(--ft);font-size:10px;margin-top:4px;max-height:120px;overflow:auto;background:var(--bg);padding:6px 8px;border-radius:4px;border:1px solid var(--bd2)}
+
+.empty{padding:40px;text-align:center;color:var(--dm);font-family:var(--ff-display);font-style:italic}
+pre.json{font-family:var(--ff-mono);background:var(--mono-bg);color:var(--mono-tx);padding:14px 16px;border-radius:var(--r-md);margin-top:10px;overflow:auto;font-size:11px;line-height:1.5;max-height:70vh}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
+</style>
+</head>
+<body>
+<div class="hd">
+  <h1>⚒ Gateway Log<span>· ACG runtime</span></h1>
+  <a href="../../../index.html">← mesh</a>
+  <a href="../../../L4/sandbox/index.html">sandbox</a>
+  <a href="../../../index.html#scada">scada</a>
+  <span class="spacer"></span>
+  <span class="sum" id="sum">0 entries</span>
+  <button id="btn-refresh">Refresh</button>
+  <button id="btn-export">Export JSON</button>
+  <button id="btn-clear">Clear</button>
+  <button id="btn-format">Table ↔ JSON</button>
+</div>
+<div class="ctl">
+  <label>Level</label>
+  <select id="f-level">
+    <option value="">ALL</option>
+    <option value="ERROR">ERROR</option>
+    <option value="WARN">WARN</option>
+    <option value="INFO">INFO</option>
+    <option value="DEBUG">DEBUG</option>
+  </select>
+  <label>Logger</label>
+  <select id="f-logger"><option value="">ALL</option></select>
+  <label>Search</label>
+  <input id="f-search" placeholder="filter message / stack…" spellcheck="false">
+</div>
+<div class="wrap" id="wrap"></div>
+
+<script type="module">
+const KEY='acg.errors';
+const $=id=>document.getElementById(id);
+let view='table';
+
+function load(){
+  try{const a=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(a)?a:[]}
+  catch{return[]}
+}
+
+function fmtTs(ts){
+  const d=new Date(ts);
+  return d.toISOString().replace('T',' ').slice(0,23);
+}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+function render(){
+  const all=load();
+  const level=$('f-level').value;
+  const logger=$('f-logger').value;
+  const q=$('f-search').value.trim().toLowerCase();
+  const filtered=all.filter(e=>
+    (!level||e.level===level)&&
+    (!logger||e.logger===logger)&&
+    (!q||(e.msg&&e.msg.toLowerCase().includes(q))||(e.stack&&e.stack.toLowerCase().includes(q)))
+  );
+  $('sum').innerHTML=`<b>${filtered.length}</b> of ${all.length} entries`;
+
+  // populate logger dropdown (preserve selection)
+  const loggers=[...new Set(all.map(e=>e.logger))].sort();
+  const cur=$('f-logger').value;
+  $('f-logger').innerHTML='<option value="">ALL</option>'+loggers.map(l=>`<option value="${esc(l)}"${l===cur?' selected':''}>${esc(l)}</option>`).join('');
+
+  const wrap=$('wrap');
+  if(view==='json'){
+    wrap.innerHTML=`<pre class="json">${esc(JSON.stringify({count:filtered.length,entries:filtered.slice().reverse()},null,2))}</pre>`;
+    return;
+  }
+  if(filtered.length===0){
+    wrap.innerHTML='<div class="empty">no entries · the log is clean</div>';
+    return;
+  }
+  const rows=filtered.slice().reverse().map(e=>{
+    const stack=e.stack?`<div class="stack">${esc(e.stack)}</div>`:'';
+    const meta=e.meta?`<div class="stack">${esc(JSON.stringify(e.meta,null,2))}</div>`:'';
+    return `<tr class="lv-${e.level}">
+      <td class="ts">${fmtTs(e.ts)}</td>
+      <td class="lvl">${e.level}</td>
+      <td class="logger">${esc(e.logger)}</td>
+      <td class="msg">${esc(e.msg)}${stack}${meta}</td>
+    </tr>`;
+  }).join('');
+  wrap.innerHTML=`<table class="log">
+    <thead><tr><th style="width:180px">Timestamp</th><th style="width:70px">Level</th><th style="width:120px">Logger</th><th>Message</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
+}
+
+$('f-level').oninput=render;
+$('f-logger').oninput=render;
+$('f-search').oninput=render;
+$('btn-refresh').onclick=render;
+$('btn-clear').onclick=()=>{if(confirm('Clear log from this browser?')){localStorage.removeItem(KEY);render()}};
+$('btn-export').onclick=()=>{
+  const all=load();
+  const blob=new Blob([JSON.stringify({exportedAt:Date.now(),count:all.length,entries:all},null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`acg-log-${Date.now()}.json`;a.click();
+};
+$('btn-format').onclick=()=>{view=view==='table'?'json':'table';render()};
+
+// live follow via BroadcastChannel (if open in another tab)
+try{
+  const ch=new BroadcastChannel('acg-mesh');
+  ch.addEventListener('message',e=>{if(e?.data?.source==='errors'&&e?.data?.type==='entry')render()});
+}catch(e){}
+
+// also poll every 2s so logs written by the same page update
+setInterval(render,2000);
+render();
+</script>
+</body>
+</html>

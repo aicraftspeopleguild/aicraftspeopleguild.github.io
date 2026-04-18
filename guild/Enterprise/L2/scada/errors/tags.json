@@ -1,0 +1,18 @@
+{
+  "§": "E.TAGS",
+  "🏗️": "⚠",
+  "name": "errors · tag catalog",
+  "owner": "L2/scada/errors/provider.py",
+  "namespaces": ["errors"],
+  "viewer": "/gateway-log.html",
+  "ringSize": 200,
+
+  "tags": [
+    { "path": "errors.count",              "type": "Counter",          "desc": "total entries ever logged" },
+    { "path": "errors.lastAt",             "type": "DateTime",         "desc": "ts of most recent entry" },
+    { "path": "errors.last",               "type": "UDT:LogEntry",     "desc": "most recent entry" },
+    { "path": "errors.ring",               "type": "Array<LogEntry>",  "desc": "last N=200 entries (FIFO)" },
+    { "pathPattern": "errors.byLevel.<LEVEL>.count", "cardinality":"many", "type":"Counter",
+      "desc": "level ∈ {ERROR,WARN,INFO,DEBUG}" }
+  ]
+}

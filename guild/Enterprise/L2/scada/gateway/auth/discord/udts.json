@@ -1,0 +1,29 @@
+{
+  "§":    "A.D.UDT",
+  "🏗️":   "🎮",
+  "name": "auth.discord · UDTs",
+  "owner":"auth/discord/provider.py",
+
+  "types": {
+    "DiscordProfile": {
+      "fields": {
+        "provider":   "\"discord\"",
+        "id":         "s",
+        "username":   "s",
+        "global_name":"s?",
+        "avatar":     "s",
+        "discriminator":"s?",
+        "verified":   "b?"
+      },
+      "desc": "Response shape from GET https://discord.com/api/users/@me"
+    },
+    "DiscordToken": {
+      "fields": {
+        "accessToken": "s",
+        "expiresAt":   "ms",
+        "scope":       "s"
+      },
+      "desc": "Implicit-grant access token parsed from location.hash.  Never persisted to disk — held in memory only."
+    }
+  }
+}

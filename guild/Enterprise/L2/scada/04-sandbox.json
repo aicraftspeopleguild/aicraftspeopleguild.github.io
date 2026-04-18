@@ -1,0 +1,47 @@
+{
+  "§": 4,
+  "🏗️": "🧪",
+  "name": "Sandbox",
+  "module": [
+    "L4/sandbox/shared/mesh-bridge.js",
+    "L2/scada/gateway/scripts/sandbox-bridge.js",
+    "L4/sandbox/web-llm/**"
+  ],
+
+  "🛰️ MeshBridge": {
+    "channel": "BroadcastChannel(\"acg-mesh\")",
+    "dir":     "↔  🧪 → 🖥️  |  🖥️ → 🧪",
+    "format":  { "source": "s", "type": "s", "path": "s", "value": "any", "ts": "ms" }
+  },
+
+  "📦🧠 WebLLM": {
+    "module": "L4/sandbox/web-llm/**",
+
+    "⚙️": { "model": "s", "status": "e[idle|loading|ready|error]", "gpu": "b", "progress": "f" },
+    "🎤": { "rms": "f", "f0": "f", "pDelta": "f", "sustain": "f", "coherence": "f", "vowel": "e", "energy": "f" },
+    "💜": { "excitement": "f", "calm": "f", "anger": "f", "sadness": "f", "joy": "f", "curiosity": "f", "dominant": "s" },
+
+    "📁 VFS": "m path:s → { content:s type:e size:i modified:ms }",
+    "🔀 Git": "a [ { id:s7 message:s ts:ms files:a } ]",
+
+    "🏗️🔧ToolCall": {
+      "fields": { "name": "e", "args": "o", "result": "{ ok:b error?:s }" },
+      "names":  ["create_file","edit_file","delete_file","commit","list","preview","search","read","patch"]
+    },
+
+    "↑🛰️": [
+      "sandbox.llm.*",
+      "sandbox.voice.*",
+      "sandbox.emotion.*",
+      "sandbox.fs.*",
+      "sandbox.git.*",
+      "sandbox.tool.*"
+    ],
+
+    "和": true
+  },
+
+  "📦future": "[future tools plug here]",
+
+  "和": true
+}

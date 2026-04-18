@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>💬 Guild Chat · ACG P2P</title>
+<!-- dock-shell grid + theme tokens -->
+<link rel="stylesheet" href="../../scada/gateway/styles/section.css">
+<!-- chat-specific widgets (.pn/.ph/.ca/.cb/.pl/.pc/.bg/.ri/.bt/.dt/#scada/#log/…) -->
+<link rel="stylesheet" href="../../scada/gateway/styles/style.css">
+<style>
+  /* chat page uses dock-shell as the top-level layout */
+  body{display:block;height:100vh;overflow:hidden}
+  .dock-m{padding:14px 20px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+  .dock-e{gap:10px}
+  .chat-pane{flex:1;display:flex;flex-direction:column;overflow:hidden}
+  .dock-n .chat-hd-ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .dock-n .chat-hd-ctl .ri{gap:6px}
+  .dock-n .dock-n-shell{margin-left:auto}
+  /* log window inside the east dock */
+  .dock-e #log{max-height:140px;border-radius:var(--r-sm);background:#1c2128;color:#8b949e;font-family:var(--ff-mono);font-size:10px;padding:8px 10px;line-height:1.6;overflow-y:auto;border:1px solid var(--bd)}
+  .dock-e #log::-webkit-scrollbar{width:3px}
+  .dock-e #log::-webkit-scrollbar-thumb{background:#444}
+  /* peer list inside the east dock */
+  .dock-e .pl{max-height:40vh;overflow-y:auto;padding:6px;border:1px solid var(--bd);border-radius:var(--r-sm);background:var(--card)}
+  .dock-e .pc{padding:6px 8px;border-radius:6px;margin-bottom:3px}
+  .dock-e .pc:hover{background:var(--bg2)}
+  .dock-e .pc.me{background:var(--tlb)}
+</style>
+</head>
+<body>
+<div id="section"></div>
+
+<!-- Build the NESW dock shell BEFORE main.js runs so every DOM id
+     it hooks into (#chat, #cIn, #sBtn, #rIn, #jBtn, #mId, #pList, #nP,
+     #pLb, #cBg, #cTx, #dot, #log, #ver, #auth) is already in place. -->
+<script type="module">
+import {
+  buildDockShell, paintWest, paintEast, paintSouth, SHELL_LINKS, SUBSYSTEMS,
+} from '../../../index/renderer.js';
+
+const basePath='../../../';
+const root=document.getElementById('section');
+const docks=buildDockShell(root);
+
+function el(tag,attrs={},kids=[]){
+  const n=document.createElement(tag);
+  for(const[k,v]of Object.entries(attrs)){
+    if(k==='class')n.className=v;
+    else if(k==='html')n.innerHTML=v;
+    else n.setAttribute(k,v);
+  }
+  for(const c of[].concat(kids||[]))if(c!=null)n.append(c.nodeType?c:document.createTextNode(c));
+  return n;
+}
+
+/* ── NORTH: logo · chat controls (room + status + auth) · shell links ── */
+docks.n.append(
+  el('div',{class:'dock-n-logo'},['💬 Guild Chat', el('span',{},' · ACG subsystem')]),
+  el('div',{class:'chat-hd-ctl'},[
+    el('span',{class:'bg t'},'WebRTC'),
+    el('span',{class:'bg a',id:'cBg'},'Connecting'),
+    el('span',{class:'dt try',id:'dot'}),
+    el('span',{id:'cTx'},'Connecting'),
+    (()=>{
+      const ri=el('div',{class:'ri'});
+      ri.append(
+        el('label',{},'Room'),
+        el('input',{type:'text',id:'rIn',value:'acg-guild'}),
+        el('button',{class:'bt p',id:'jBtn'},'Join'),
+      );
+      return ri;
+    })(),
+    el('div',{id:'auth'}),
+  ]),
+  el('nav',{class:'dock-n-shell'},
+    SHELL_LINKS.map(l=>el('a',{href:basePath+l.href},l.label))
+  ),
+  // floating commit pill pinned to the far right
+  el('a',{id:'ver',class:'bg v',href:'https://github.com/teslasolar/ACGP2P',target:'_blank',rel:'noopener',title:'loading…'},'⌖ …'),
+);
+
+/* ── WEST: subsystem nav with auth drop-down + Controls actions ── */
+paintWest(docks.w,{sub:'chat',basePath});
+
+/* ── MAIN: chat message list + input ── */
+const chatPane=el('div',{class:'pn chat-pane'});
+chatPane.append(
+  el('div',{class:'ph'},[
+    el('span',{class:'ic t'},'💬'),
+    'Messages',
+    el('span',{class:'ct',id:'mId'},'—'),
+  ]),
+  el('div',{class:'ca',id:'chat'}),
+  (()=>{
+    const cb=el('div',{class:'cb'});
+    cb.append(
+      el('input',{type:'text',id:'cIn',placeholder:'Type a message…',spellcheck:'false'}),
+      el('button',{class:'bt p',id:'sBtn'},'Send'),
+    );
+    return cb;
+  })(),
+);
+docks.m.append(chatPane);
+
+/* ── EAST: peers · about · log ── */
+docks.e.append(
+  (()=>{
+    const sec=el('section',{class:'dock-e-sec'});
+    const h=el('h3',{},[
+      '👥 Peers · ',
+      el('span',{class:'sv',id:'nP'},'1'),
+      ' online',
+    ]);
+    // fold pLb into the header so main.js's updPeers() still finds it
+    h.append(el('span',{id:'pLb',style:'display:none'},'1 online'));
+    sec.append(h, el('div',{class:'pl',id:'pList'}));
+    return sec;
+  })(),
+  (()=>{
+    const sec=el('section',{class:'dock-e-sec'});
+    sec.append(
+      el('h3',{},'⚒ Guild'),
+      el('p',{class:'ix-muted'},
+        'Peer-to-peer chat. No server stores messages. Direct WebRTC via '+
+        'WebTorrent trackers with automatic fallback.'),
+      el('a',{href:'https://aicraftspeopleguild.github.io',target:'_blank',rel:'noopener',class:'ix-shell'},
+        'Visit guild site →'),
+    );
+    return sec;
+  })(),
+  (()=>{
+    const sec=el('section',{class:'dock-e-sec'});
+    sec.append(
+      el('h3',{},'⚠ Runtime log'),
+      el('div',{id:'log'}),
+    );
+    return sec;
+  })(),
+);
+
+/* ── SOUTH: mesh feed ticker ── */
+paintSouth(docks.s);
+</script>
+
+<!-- runtime: wires every id the dock shell paints above -->
+<script type="module" src="../../scada/gateway/scripts/main.js"></script>
+</body>
+</html>

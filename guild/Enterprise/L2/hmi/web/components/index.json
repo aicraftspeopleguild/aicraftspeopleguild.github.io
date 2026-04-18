@@ -1,0 +1,161 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-04-18T05:35:42Z",
+  "schema_version": "1.0.0",
+  "counts": {
+    "components": 25,
+    "categories": 4
+  },
+  "components": [
+    {
+      "id": "article-nav",
+      "name": "ArticleNav",
+      "category": "composite",
+      "instance_path": "udts/instances/article-nav.json"
+    },
+    {
+      "id": "article-section",
+      "name": "ArticleSection",
+      "category": "composite",
+      "instance_path": "udts/instances/article-section.json"
+    },
+    {
+      "id": "back-link",
+      "name": "BackLink",
+      "category": "atomic",
+      "instance_path": "udts/instances/back-link.json"
+    },
+    {
+      "id": "badge-row",
+      "name": "BadgeRow",
+      "category": "atomic",
+      "instance_path": "udts/instances/badge-row.json"
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "category": "atomic",
+      "instance_path": "udts/instances/badge.json"
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "category": "atomic",
+      "instance_path": "udts/instances/button.json"
+    },
+    {
+      "id": "callout",
+      "name": "Callout",
+      "category": "atomic",
+      "instance_path": "udts/instances/callout.json"
+    },
+    {
+      "id": "card-grid",
+      "name": "CardGrid",
+      "category": "layout",
+      "instance_path": "udts/instances/card-grid.json"
+    },
+    {
+      "id": "closing-statement",
+      "name": "ClosingStatement",
+      "category": "composite",
+      "instance_path": "udts/instances/closing-statement.json"
+    },
+    {
+      "id": "code-block",
+      "name": "CodeBlock",
+      "category": "atomic",
+      "instance_path": "udts/instances/code-block.json"
+    },
+    {
+      "id": "cta-section",
+      "name": "CTASection",
+      "category": "composite",
+      "instance_path": "udts/instances/cta-section.json"
+    },
+    {
+      "id": "entry-card",
+      "name": "EntryCard",
+      "category": "composite",
+      "instance_path": "udts/instances/entry-card.json"
+    },
+    {
+      "id": "eyebrow",
+      "name": "Eyebrow",
+      "category": "atomic",
+      "instance_path": "udts/instances/eyebrow.json"
+    },
+    {
+      "id": "figure-block",
+      "name": "FigureBlock",
+      "category": "atomic",
+      "instance_path": "udts/instances/figure-block.json"
+    },
+    {
+      "id": "future-slot",
+      "name": "FutureSlot",
+      "category": "composite",
+      "instance_path": "udts/instances/future-slot.json"
+    },
+    {
+      "id": "guild-mark",
+      "name": "GuildMark",
+      "category": "atomic",
+      "instance_path": "udts/instances/guild-mark.json"
+    },
+    {
+      "id": "intro-panel",
+      "name": "IntroPanel",
+      "category": "composite",
+      "instance_path": "udts/instances/intro-panel.json"
+    },
+    {
+      "id": "member-card",
+      "name": "MemberCard",
+      "category": "composite",
+      "instance_path": "udts/instances/member-card.json"
+    },
+    {
+      "id": "page-footer",
+      "name": "PageFooter",
+      "category": "composite",
+      "instance_path": "udts/instances/page-footer.json"
+    },
+    {
+      "id": "page-header",
+      "name": "PageHeader",
+      "category": "composite",
+      "instance_path": "udts/instances/page-header.json"
+    },
+    {
+      "id": "page-shell",
+      "name": "PageShell",
+      "category": "page-level",
+      "instance_path": "udts/instances/page-shell.json"
+    },
+    {
+      "id": "paper-card",
+      "name": "PaperCard",
+      "category": "composite",
+      "instance_path": "udts/instances/paper-card.json"
+    },
+    {
+      "id": "pull-quote",
+      "name": "PullQuote",
+      "category": "atomic",
+      "instance_path": "udts/instances/pull-quote.json"
+    },
+    {
+      "id": "raw-html",
+      "name": "RawHTML",
+      "category": "layout",
+      "instance_path": "udts/instances/raw-html.json"
+    },
+    {
+      "id": "section-heading",
+      "name": "SectionHeading",
+      "category": "atomic",
+      "instance_path": "udts/instances/section-heading.json"
+    }
+  ]
+}

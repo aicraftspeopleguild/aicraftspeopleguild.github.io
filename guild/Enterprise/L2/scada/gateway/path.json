@@ -1,0 +1,45 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/scada/gateway",
+    "label": "gateway",
+    "parent": "guild/Enterprise/L2/scada",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L2_scada_gateway",
+    "fs_path": "guild/Enterprise/L2/scada/gateway",
+    "depth": 5,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L2",
+      "guild_Enterprise_L2_scada",
+      "guild_Enterprise_L2_scada_gateway"
+    ],
+    "children": [
+      "guild/Enterprise/L2/scada/gateway/auth",
+      "guild/Enterprise/L2/scada/gateway/providers",
+      "guild/Enterprise/L2/scada/gateway/scripts",
+      "guild/Enterprise/L2/scada/gateway/styles"
+    ],
+    "siblings": [
+      "guild/Enterprise/L2/scada/errors",
+      "guild/Enterprise/L2/scada/programs"
+    ],
+    "descendants": 10,
+    "file_count": 6,
+    "subdir_count": 4,
+    "kinds": {
+      "db": 2,
+      "html": 3,
+      "md": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

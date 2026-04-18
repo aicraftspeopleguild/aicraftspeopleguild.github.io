@@ -1,0 +1,20 @@
+{
+  "$schema": "gitplc/vendor-map/v1",
+  "version": "1.0.0",
+  "primitives": {
+    "BOOL":    {"ab":"BOOL","siemens":"Bool","codesys":"BOOL","beckhoff":"BOOL","omron":"BOOL","mitsubishi":"Bit"},
+    "SINT":    {"ab":"SINT","siemens":"SInt","codesys":"SINT","beckhoff":"SINT","omron":"SINT","mitsubishi":"SINT"},
+    "INT":     {"ab":"INT","siemens":"Int","codesys":"INT","beckhoff":"INT","omron":"INT","mitsubishi":"INT"},
+    "DINT":    {"ab":"DINT","siemens":"DInt","codesys":"DINT","beckhoff":"DINT","omron":"DINT","mitsubishi":"DINT"},
+    "LINT":    {"ab":"LINT","siemens":"LInt","codesys":"LINT","beckhoff":"LINT","omron":"LINT","mitsubishi":"LINT"},
+    "REAL":    {"ab":"REAL","siemens":"Real","codesys":"REAL","beckhoff":"REAL","omron":"REAL","mitsubishi":"REAL"},
+    "LREAL":   {"ab":"LREAL","siemens":"LReal","codesys":"LREAL","beckhoff":"LREAL","omron":"LREAL","mitsubishi":"LREAL"},
+    "STRING":  {"ab":"STRING","siemens":"String","codesys":"STRING","beckhoff":"STRING","omron":"STRING","mitsubishi":"STRING"},
+    "TIME":    {"ab":"TIME","siemens":"Time","codesys":"TIME","beckhoff":"TIME","omron":"TIME","mitsubishi":"TIME"}
+  },
+  "function_blocks": {
+    "TIMER": {"ab":"TON","siemens":"TON","codesys":"TON","beckhoff":"TON","omron":"TIM","mitsubishi":"TON"},
+    "COUNTER": {"ab":"CTU","siemens":"CTU","codesys":"CTU","beckhoff":"CTU","omron":"CNT","mitsubishi":"CTU"},
+    "PID": {"ab":"PIDE","siemens":"PID_Compact","codesys":"PID","beckhoff":"FB_PID","omron":"PIDAT","mitsubishi":"PIDAT"}
+  }
+}

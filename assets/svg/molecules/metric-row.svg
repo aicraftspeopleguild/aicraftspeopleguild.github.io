@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 72" width="520" height="72" role="img" aria-label="metrics {{M1_LB}} {{M2_LB}} {{M3_LB}}">
+  <!-- TOKENS: M1_LB M1_VA M1_CO  M2_LB M2_VA M2_CO  M3_LB M3_VA M3_CO -->
+  <defs><style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style></defs>
+  <rect width="520" height="72" rx="8" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
+
+  <!-- col 1 (center x=86) -->
+  <text x="86"  y="22" class="t" font-size="10" fill="#8b949e" text-anchor="middle" letter-spacing="1">{{M1_LB}}</text>
+  <text x="86"  y="56" class="t" font-size="30" font-weight="700" fill="{{M1_CO}}" text-anchor="middle">{{M1_VA}}</text>
+  <line x1="172" y1="12" x2="172" y2="60" stroke="#21262d" stroke-width="1"/>
+
+  <!-- col 2 (center x=260) -->
+  <text x="260" y="22" class="t" font-size="10" fill="#8b949e" text-anchor="middle" letter-spacing="1">{{M2_LB}}</text>
+  <text x="260" y="56" class="t" font-size="30" font-weight="700" fill="{{M2_CO}}" text-anchor="middle">{{M2_VA}}</text>
+  <line x1="348" y1="12" x2="348" y2="60" stroke="#21262d" stroke-width="1"/>
+
+  <!-- col 3 (center x=434) -->
+  <text x="434" y="22" class="t" font-size="10" fill="#8b949e" text-anchor="middle" letter-spacing="1">{{M3_LB}}</text>
+  <text x="434" y="56" class="t" font-size="30" font-weight="700" fill="{{M3_CO}}" text-anchor="middle">{{M3_VA}}</text>
+</svg>

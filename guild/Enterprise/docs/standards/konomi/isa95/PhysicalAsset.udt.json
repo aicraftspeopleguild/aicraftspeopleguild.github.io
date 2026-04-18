@@ -1,0 +1,10 @@
+{"$schema":"konomi/udt/v1","name":"PhysicalAsset","std":"ISA-95","layer":2,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"path","t":"PATH"},
+{"n":"name","t":"STRING"},
+{"n":"desc","t":"STRING"},
+{"n":"level","t":"ENUM","values":["L0","L1","L2","L3","L4"]},
+{"n":"parent","t":"REF"},
+{"n":"children","t":"REF","array":true},
+{"n":"props","t":"MAP"}
+],"meta":{"desc":"Generic physical asset node"}}

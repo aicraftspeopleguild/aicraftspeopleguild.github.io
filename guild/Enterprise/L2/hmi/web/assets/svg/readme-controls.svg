@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1016 218" width="1016" height="218" role="img" aria-label="ACG controls">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1016" height="36" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1016" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1016" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="508" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ controls · jump into an app</text>
+<rect y="36" width="1016" height="182" fill="url(#gBg)"/>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/" target="_blank"><rect x="14" y="56" width="320" height="60" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="28" y="90" class="t" font-size="18">⌨</text><text x="58" y="83" class="t vs">live terminal</text><text x="58" y="99" class="t sub">teslasolar.github.io/aicraftspeopleguild.git</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/whiteboard/" target="_blank"><rect x="348" y="56" width="320" height="60" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="362" y="90" class="t" font-size="18">🖍</text><text x="392" y="83" class="t vs">p2p whiteboard</text><text x="392" y="99" class="t sub">teslasolar.github.io/aicraftspeopleguild.git</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/p2p/" target="_blank"><rect x="682" y="56" width="320" height="60" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="696" y="90" class="t" font-size="18">🛰</text><text x="726" y="83" class="t vs">p2p mesh</text><text x="726" y="99" class="t sub">teslasolar.github.io/aicraftspeopleguild.git</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L1/forms/submit/" target="_blank"><rect x="14" y="130" width="320" height="60" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="28" y="164" class="t" font-size="18">📝</text><text x="58" y="157" class="t vs">submit a paper</text><text x="58" y="173" class="t sub">teslasolar.github.io/aicraftspeopleguild.git</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/" target="_blank"><rect x="348" y="130" width="320" height="60" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="362" y="164" class="t" font-size="18">🎛</text><text x="392" y="157" class="t vs">controls</text><text x="392" y="173" class="t sub">teslasolar.github.io/aicraftspeopleguild.git</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/manifesto" target="_blank"><rect x="682" y="130" width="320" height="60" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="696" y="164" class="t" font-size="18">📜</text><text x="726" y="157" class="t vs">manifesto</text><text x="726" y="173" class="t sub">teslasolar.github.io/aicraftspeopleguild.git</text></a>
+</svg>

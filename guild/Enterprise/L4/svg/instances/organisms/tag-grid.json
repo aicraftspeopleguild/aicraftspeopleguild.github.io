@@ -1,0 +1,29 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "TagGrid",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-tag-grid.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/tag-grid.svg",
+    "sources": [
+      "label=tag issues"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "TagCard",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": "dynamic",
+      "h": "dynamic"
+    },
+    "description": "Rendered by guild/Enterprise/L4/svg/build-tag-grid.py on each demo.heartbeat CHANGED event."
+  },
+  "tags": {
+    "id": "tag-grid",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/tag-grid.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/tag-grid.svg",
+    "trigger": "demo.heartbeat"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "IO_Card",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "slot", "type": "DINT"},
+    {"name": "type", "type": "DINT"},
+    {"name": "type_enum", "type": "ENUM", "values": ["DI","DO","AI","AO","RTD","TC","HART","SERIAL","SAFE"]},
+    {"name": "vendor", "type": "STRING", "length": 20},
+    {"name": "model", "type": "STRING", "length": 40},
+    {"name": "channels", "type": "DINT"},
+    {"name": "status", "type": "IO_Status"},
+    {"name": "config", "type": "IO_Config"},
+    {"name": "points", "type": "IO_Point", "array": true}
+  ],
+  "meta": {"desc": "Physical IO card representation"}
+}

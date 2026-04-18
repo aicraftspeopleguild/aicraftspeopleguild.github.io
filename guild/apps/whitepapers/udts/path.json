@@ -1,0 +1,41 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/apps/whitepapers/udts",
+    "label": "udts",
+    "parent": "guild/apps/whitepapers",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_apps_whitepapers_udts",
+    "fs_path": "guild/apps/whitepapers/udts",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_apps",
+      "guild_apps_whitepapers",
+      "guild_apps_whitepapers_udts"
+    ],
+    "children": [
+      "guild/apps/whitepapers/udts/instances",
+      "guild/apps/whitepapers/udts/templates"
+    ],
+    "siblings": [
+      "guild/apps/whitepapers/data",
+      "guild/apps/whitepapers/pages",
+      "guild/apps/whitepapers/views"
+    ],
+    "descendants": 2,
+    "file_count": 1,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

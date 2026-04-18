@@ -1,0 +1,17 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "pipeline:list",
+    "name": "List pipelines",
+    "description": "Enumerate every Pipeline UDT instance under guild/Enterprise/L3/automation/instances/.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/pipeline_runner.py:list_pipelines",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"pipelines","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["query","pipeline"],
+    "mcp": {"mcp_name":"pipeline_list","input_schema":{"type":"object","properties":{}}}
+  },
+  "tags": { "id": "pipeline-list", "schema_version": "1.0.0" }
+}

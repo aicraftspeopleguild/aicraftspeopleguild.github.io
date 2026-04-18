@@ -1,0 +1,23 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "docs:search",
+    "name": "Search doc bodies",
+    "description": "Naive LIKE search over docs.db body text. Returns dir/path/h1/preview for up to `limit` matches.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/docs_query.py:search",
+    "language": "python",
+    "inputs": [
+      {"name":"q","type":"String","required":true},
+      {"name":"limit","type":"String","required":false,"default":"20"}
+    ],
+    "outputs": [{"name":"results","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["docs","search"],
+    "mcp": {
+      "mcp_name":"docs_search",
+      "input_schema":{"type":"object","properties":{"q":{"type":"string"},"limit":{"type":"string"}},"required":["q"]}
+    }
+  },
+  "tags": { "id": "docs-search", "schema_version": "1.0.0" }
+}

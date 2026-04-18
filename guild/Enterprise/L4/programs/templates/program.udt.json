@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Program",
+  "version": "1.0.0",
+  "description": "An executable program in the build pipeline. Wrapped by a PackML state machine (ISA-TR88.00.02) so every run transitions through the same lifecycle: IDLE -> STARTING -> EXECUTE -> COMPLETING -> COMPLETE (or -> ABORTING -> ABORTED on failure). Pre/post checks run at each transition.",
+  "parameters": {
+    "name":         { "dataType": "String",      "required": true,  "description": "Human-readable program name" },
+    "path":         { "dataType": "String",      "required": true,  "description": "Path to script, repo-rooted" },
+    "language":     { "dataType": "String",      "required": true,  "description": "python | bash | node" },
+    "category":     { "dataType": "String",      "required": true,  "description": "extract | build | render | regen | test | split" },
+    "purpose":      { "dataType": "String",      "required": false, "description": "One-line purpose summary" },
+    "inputs":       { "dataType": "StringArray", "required": false, "description": "Paths or globs this program reads" },
+    "outputs":      { "dataType": "StringArray", "required": false, "description": "Paths or globs this program writes" },
+    "depends_on":   { "dataType": "StringArray", "required": false, "description": "Program IDs that must run before this one" },
+    "pre_checks":   { "dataType": "StringArray", "required": false, "description": "Named pre-execute guards (e.g., 'inputs_exist')" },
+    "post_checks":  { "dataType": "StringArray", "required": false, "description": "Named post-execute guards (e.g., 'outputs_exist', 'no_stderr')" },
+    "tags":         { "dataType": "StringArray", "required": false }
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "state_log":      { "dataType": "String", "description": "Path to most recent PackMLState instance" },
+    "last_state":     { "dataType": "String", "description": "Most recent state (IDLE | EXECUTE | COMPLETE | ABORTED)" },
+    "last_run_at":    { "dataType": "String", "description": "UTC ISO timestamp of last run" },
+    "last_duration":  { "dataType": "String", "description": "Seconds to run, e.g. '1.234'" },
+    "schema_version": { "dataType": "String" }
+  }
+}

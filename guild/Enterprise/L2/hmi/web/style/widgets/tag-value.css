@@ -1,0 +1,11 @@
+﻿/* -- Tag Value ------------------------------------------------------ */
+.tag-value {
+  font-variant-numeric: tabular-nums;
+  transition: opacity 0.2s;
+}
+
+.tag-q-stale     { opacity: 0.6; }
+.tag-q-bad       { color: var(--q-bad-color); font-weight: 600; }
+.tag-q-uncertain { color: var(--q-uncertain-color); }
+.tag-q-good      { /* baseline — no extra style needed */ }
+

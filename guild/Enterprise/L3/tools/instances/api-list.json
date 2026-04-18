@@ -1,0 +1,17 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "api:list",
+    "name": "List Api watches",
+    "description": "Enumerate Api UDTs synced into state.db.api_watches with last_value / last_checked / last_changed.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/api_tick.py:list_watches",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"watches","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["api","list","read-only"],
+    "mcp": {"mcp_name":"api_list","input_schema":{"type":"object","properties":{}}}
+  },
+  "tags": { "id": "api-list", "schema_version": "1.0.0" }
+}

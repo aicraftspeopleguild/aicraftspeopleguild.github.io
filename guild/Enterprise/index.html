@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎛 ACG Enterprise controls</title>
+<link rel="stylesheet" href="./L2/scada/gateway/styles/section.css">
+</head>
+<body>
+<div id="section"></div>
+
+<script type="module">
+import {bridge} from './L4/sandbox/shared/mesh-bridge.js';
+import {buildDockShell, SUBSYSTEMS} from './index/renderer.js';
+
+const $  = id => document.getElementById(id);
+const el = (tag, attrs={}, children=[]) => {
+  const n = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)) {
+    if (k==='class') n.className = v;
+    else if (k==='html') n.innerHTML = v;
+    else n.setAttribute(k,v);
+  }
+  for (const c of [].concat(children||[])) if (c!=null) n.append(c.nodeType?c:document.createTextNode(c));
+  return n;
+};
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const fmtTs=ts=>ts?new Date(ts).toLocaleTimeString():'—';
+
+const basePath='./';
+const docks=buildDockShell($('section'));
+
+// Control-plane subsystems, now organised by ISA-95 level under
+// guild/Enterprise/L{1..4}/.  Extend here as new tenants land.
+const CONTROLS=[
+  {id:'scada',    level:'L2', glyph:'🖥️', name:'SCADA',    status:'ready',
+   desc:'Tag plant + HMI monitor.  Owns sys.* and version.*.  Dense-token specs at L2/scada/00-legend.json through 04-sandbox.json.',
+   href:'L2/scada/'},
+  {id:'errors',   level:'L2', glyph:'⚠',  name:'Errors',   status:'ready',
+   desc:'Gateway-log ring buffer (N=200).  Owns errors.*.  Lives inside L2/scada/ as the gateway area; viewer at L2/scada/gateway/gateway-log.html.',
+   href:'L2/scada/errors/'},
+  {id:'hmi',      level:'L2', glyph:'🖼', name:'HMI',      status:'ready',
+   desc:'ISA-101 operator interface: 5 screen layers (L1 Overview … L5 Support), semantic color palette, faceplate registry.  Owns hmi.*.',
+   href:'L2/hmi/'},
+  {id:'plc',      level:'L1', glyph:'🔧', name:'PLC',      status:'ready',
+   desc:'GitPLC universal PLC namespace.  UDT templates at L1/plc/git/, standard at docs/standards/gitplc/.  Any vendor → UDT → any vendor.  Owns plc.*.',
+   href:'L1/plc/'},
+  {id:'sandbox',  level:'L4', glyph:'🧪', name:'Sandbox',  status:'ready',
+   desc:'Browser-only tool workshops (web-llm, voice, VFS, git-lite).  Owns sandbox.*.  BroadcastChannel bridge publishes events into the SCADA tag plant.',
+   href:'L4/sandbox/'},
+  {id:'db',       level:'L3', glyph:'🗄️', name:'DB',       status:'ready',
+   desc:'Canonical tag snapshot (tags.json) read by the README HMI + shields.io badges.',
+   href:'L3/db/'},
+  {id:'alarm',    level:'L2', glyph:'🚨', name:'Alarm',    status:'planned',
+   desc:'Alarm engine + journal.  Rules watch tag values and raise/acknowledge/clear alarms.',
+   href:'#'},
+  {id:'schedule', level:'L2', glyph:'⏲',  name:'Schedule', status:'planned',
+   desc:'Cron-like scheduling of re-announces, broadcasts, housekeeping scripts.',
+   href:'#'},
+  {id:'routing',  level:'L2', glyph:'🔀', name:'Routing',  status:'planned',
+   desc:'Rule-based tag routing + transformations between providers.',
+   href:'#'},
+  {id:'pinning',  level:'L3', glyph:'📌', name:'Pinning',  status:'planned',
+   desc:'Pinned tags that persist across sessions and announce to new peers on join.',
+   href:'#'},
+];
+
+// ── N
+docks.n.append(
+  el('div',{class:'dock-n-logo'},['🎛 controls', el('span',{},' · control plane')]),
+  el('nav',{class:'dock-n-shell'},[
+    el('a',{href:'../apps/p2p/'},'⚒ mesh'),
+    el('a',{href:'L2/scada/gateway/gateway-log.html'},'⚠ log'),
+    el('a',{href:'L2/scada/gateway/health.html'},'⚕ health'),
+    el('a',{href:'L2/hmi/chat/#scada'},'🖥 scada drawer'),
+  ])
+);
+
+// ── W — subsystem nav.  SUBSYSTEMS[*].path is written relative to this
+// Enterprise root (e.g. 'L2/hmi/chat').
+docks.w.append(
+  el('h4',{},'Subsystems'),
+  el('nav',{class:'dock-w-nav'}, SUBSYSTEMS.map(s=>el('a',{
+    class:s.sub==='scada'?'on':'',
+    href:basePath+s.path+'/',
+  },[s.glyph+' '+s.name]))),
+  el('hr',{class:'dock-sep'}),
+  el('h4',{},'Actions'),
+  el('div',{class:'dock-w-actions'},[
+    el('a',{href:'https://github.com/teslasolar/ACGP2P/issues/new?template=tag-update.yml'},'🏷️ write tag'),
+    el('a',{href:'https://github.com/teslasolar/ACGP2P/issues/new?template=log-entry.yml'},'⚠ log incident'),
+    el('a',{href:'https://github.com/teslasolar/ACGP2P/issues/new?template=control-action.yml'},'🎛 control action'),
+  ])
+);
+
+// ── M — control-subsystem cards
+docks.m.append(el('p',{class:'ix-lede'},'Control-plane subsystems under guild/Enterprise/, organised by ISA-95 level (L1–L4).  Each owns a tag namespace, a Jython 2.7 provider, and (where realised) a subsystem landing that follows the same NESW dock shape.'));
+
+const grid=el('div',{class:'ctrl-grid'});
+for(const c of CONTROLS){
+  const card=c.href==='#'
+    ? el('div',{class:'ctrl-card disabled'})
+    : el('a',{class:'ctrl-card',href:c.href});
+  card.append(
+    el('h3',{},[c.glyph+' '+c.name, el('span',{class:'ctrl-tag '+c.status},c.status)]),
+    el('p',{class:'ix-muted'},c.desc),
+    el('code',{},(c.level?c.level+'/':'')+c.id+'/')
+  );
+  grid.append(card);
+}
+docks.m.append(el('section',{class:'ix-sec'},[el('h2',{},'🏗️ Subsystems'),grid]));
+
+// ── E — live clients + broadcast + cadence
+docks.e.append(
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'💓 Live clients'),
+    el('div',{id:'clients',class:'ix-hbrow'}),
+  ]),
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'📣 Broadcast'),
+    (() => {
+      const row=el('div',{class:'ix-row'});
+      row.append(
+        el('input',{class:'ix-in',id:'ping',placeholder:'ping sibling tabs…'}),
+        el('button',{class:'ix-btn',id:'send'},'send')
+      );
+      return row;
+    })(),
+  ]),
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'⏱ Cadence'),
+    el('p',{class:'ix-muted'},'heartbeat 5 s · 15 s TTL'),
+  ])
+);
+
+// ── S
+docks.s.append(
+  el('span',{class:'dock-s-mark'},'⚒ AI Craftspeople Guild · P2P'),
+  el('span',{class:'dock-s-feed',id:'dock-s-feed'},'— idle —'),
+  el('span',{class:'dock-s-cadence'},'💓 5s')
+);
+
+// wiring — heartbeat + broadcast + footer ticker
+$('send').onclick=()=>{
+  const text=$('ping').value.trim()||'ping';
+  bridge.publish('controls','ping',{path:'broadcast',value:text});
+  $('ping').value='';
+};
+$('ping').addEventListener('keydown',e=>{if(e.key==='Enter')$('send').click()});
+
+const liveClients=new Map();
+bridge.subscribe(env=>{
+  if(env.type==='heartbeat'&&env.source)liveClients.set(env.source,{ts:env.ts||Date.now(),path:env.path||''});
+  const v=typeof env.value==='object'?JSON.stringify(env.value):(env.value??'');
+  const f=$('dock-s-feed');if(f)f.textContent=`${fmtTs(env.ts)} · ${env.source}/${env.type}${env.path?' · '+env.path:''}${v?' · '+v:''}`;
+});
+function paintClients(){
+  const now=Date.now();
+  const alive=[...liveClients.entries()].filter(([,v])=>now-v.ts<15000).sort();
+  $('clients').innerHTML=alive.length
+    ?alive.map(([src,v])=>{const age=Math.floor((now-v.ts)/1000);return `<span class="ix-hbpill" title="last heartbeat ${age}s ago · ${v.path||''}">${esc(src)} · ${age}s</span>`}).join('')
+    :'<span class="ix-muted">no sibling pages heard in last 15 s</span>';
+}
+function beat(){bridge.publish('controls','heartbeat',{path:location.pathname})}
+bridge.publish('controls','page-open',{path:location.pathname});
+beat();setInterval(beat,5000);
+paintClients();setInterval(paintClients,1000);
+window.addEventListener('beforeunload',()=>bridge.publish('controls','page-close',{path:location.pathname}));
+</script>
+</body>
+</html>

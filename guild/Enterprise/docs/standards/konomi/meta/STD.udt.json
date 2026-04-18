@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"STD","layer":0,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING","desc":"unique key (ISA-95, ISA-88, ...)"},
+{"n":"scope","t":"STRING"},
+{"n":"udt","t":"UDT","array":true},
+{"n":"hierarchy","t":"LEVEL","array":true},
+{"n":"states","t":"STATE_MACHINE","array":true},
+{"n":"entities","t":"ENTITY","array":true},
+{"n":"relations","t":"RELATION","array":true},
+{"n":"rules","t":"RULE","array":true},
+{"n":"crosswalk","t":"MAP","of":"CROSSWALK"}
+],"meta":{"desc":"Root standard descriptor"}}

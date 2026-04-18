@@ -1,0 +1,17 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "state:summary",
+    "name": "Repo state summary",
+    "description": "One-shot roll-up of state.db: tag_values count, event count, tool_runs (ok/fail), pipeline_runs (ok/fail), active faults, repo_state rows, plus the latest event and pipeline run as sentinels.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/state_db.py:summary",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"summary","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["state","status","read-only"],
+    "mcp": {"mcp_name":"state_summary","input_schema":{"type":"object","properties":{}}}
+  },
+  "tags": { "id": "state-summary", "schema_version": "1.0.0" }
+}

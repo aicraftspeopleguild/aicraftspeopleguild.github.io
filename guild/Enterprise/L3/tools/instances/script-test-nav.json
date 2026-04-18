@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:test-nav",
+    "name": "script · test-nav",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/test-nav.js. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/test-nav.js",
+    "language": "node",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "test-nav"
+    ]
+  },
+  "tags": {
+    "id": "script-test-nav",
+    "schema_version": "1.0.0"
+  }
+}

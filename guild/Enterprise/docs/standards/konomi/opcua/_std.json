@@ -1,0 +1,3 @@
+{"$schema":"konomi/std/v1","id":"OPC-UA","scope":"industrial interoperability","version":"1.0.0",
+"companion_specs":["ISA-95","PackML","MDIS","PLCopen"],
+"meta":{"desc":"OPC UA communication standard header"}}

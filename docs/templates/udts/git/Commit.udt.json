@@ -1,0 +1,14 @@
+{"$schema":"konomi/udt/v1","name":"Commit","layer":9,"version":"1.0.0","fields":[
+{"n":"sha","t":"STRING","desc":"40-char hex SHA"},
+{"n":"short_sha","t":"STRING","desc":"7-char prefix"},
+{"n":"author","t":"STRING"},
+{"n":"committer","t":"STRING","nullable":true},
+{"n":"date","t":"Timestamp"},
+{"n":"message","t":"STRING"},
+{"n":"summary","t":"STRING","desc":"First line of message"},
+{"n":"files_changed","t":"DINT"},
+{"n":"insertions","t":"DINT","nullable":true},
+{"n":"deletions","t":"DINT","nullable":true},
+{"n":"branch","t":"STRING","desc":"Branch this commit is on (at the time of observation)"},
+{"n":"parents","t":"STRING[]","desc":"Parent SHAs"}
+],"meta":{"desc":"A single git commit observed in the repo."}}

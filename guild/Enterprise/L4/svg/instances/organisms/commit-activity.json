@@ -1,0 +1,30 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "CommitActivity",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-commit-activity.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/commit-activity.svg",
+    "sources": [
+      "github.com/api/stats/participation",
+      "github.com/api/commits"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "Sparkline",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1040,
+      "h": 240
+    },
+    "description": "GitHub commit activity \u00b7 weekly sparkline (12 wk) + last 8 commits via GitHub API."
+  },
+  "tags": {
+    "id": "commit-activity",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/commit-activity.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/commit-activity.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

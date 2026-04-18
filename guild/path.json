@@ -1,0 +1,40 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild",
+    "label": "guild",
+    "parent": ".",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild",
+    "fs_path": "guild",
+    "depth": 1,
+    "breadcrumb": [
+      "root",
+      "guild"
+    ],
+    "children": [
+      "guild/Enterprise",
+      "guild/apps",
+      "guild/web"
+    ],
+    "siblings": [
+      "bin",
+      "docs",
+      "index"
+    ],
+    "descendants": 148,
+    "file_count": 3,
+    "subdir_count": 3,
+    "kinds": {
+      "db": 2,
+      "html": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"Branch","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"head_sha","t":"STRING"},
+{"n":"upstream","t":"STRING","nullable":true,"desc":"e.g. origin/main"},
+{"n":"protected","t":"BOOL","default":false},
+{"n":"default","t":"BOOL","default":false},
+{"n":"behind","t":"DINT","nullable":true},
+{"n":"ahead","t":"DINT","nullable":true}
+],"meta":{"desc":"A git branch in the repo."}}

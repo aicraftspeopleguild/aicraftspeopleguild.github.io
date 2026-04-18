@@ -1,0 +1,24 @@
+{
+  "udtType": "Script",
+  "parameters": {
+    "name": "ScriptTemplate",
+    "label": "Script UDT",
+    "description": "Describes an executable script registered in script.db. Invoked by `script-run.py run <id>`.",
+    "id":          { "type": "string",  "required": true,  "description": "Stable unique id (kebab-case)." },
+    "label":       { "type": "string",  "required": true,  "description": "Human-readable name." },
+    "path":        { "type": "string",  "required": true,  "description": "Repo-relative path to the script." },
+    "language":    { "type": "string",  "required": true,  "description": "python | node | shell | powershell" },
+    "entrypoint":  { "type": "string",  "required": false, "description": "Override interpreter command (e.g. `python`, `node`, `bash`)." },
+    "category":    { "type": "string",  "required": false, "description": "Logical grouping: build | generate | validate | fix | query | test | dev-server" },
+    "description": { "type": "string",  "required": false, "description": "One-line purpose statement." },
+    "inputs":      { "type": "array",   "items": "string", "description": "File globs / paths the script reads." },
+    "outputs":     { "type": "array",   "items": "string", "description": "File paths the script writes." },
+    "depends_on":  { "type": "array",   "items": "string", "description": "Script ids that must run first." },
+    "args":        { "type": "array",   "items": "string", "description": "Default CLI args." }
+  },
+  "tags": {
+    "id":          "script-template",
+    "categories":  ["meta", "udt-template"],
+    "version":     "1.0.0"
+  }
+}

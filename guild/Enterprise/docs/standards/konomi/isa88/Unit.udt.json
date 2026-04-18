@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"Unit","std":"ISA-88","base":"Equipment","layer":3,"version":"1.0.0","fields":[
+{"n":"ems","t":"EquipmentModule","array":true},
+{"n":"state","t":"UnitState"},
+{"n":"mode","t":"UnitMode"},
+{"n":"allocated_to","t":"Batch","nullable":true}
+],"meta":{"desc":"Batch-allocatable unit"}}

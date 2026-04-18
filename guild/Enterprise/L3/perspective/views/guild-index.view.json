@@ -1,0 +1,78 @@
+{
+  "custom": {
+    "output": "guild/index.html",
+    "bodyClass": "page-guild-operator",
+    "stylesheets": ["web/style/main.css"],
+    "headExtra": "<style>body.page-guild-operator{background:#faf6f0;}.op-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin:1.5rem 0;}.op-card{background:white;border-left:3px solid var(--color-bronze,#A67C52);padding:1rem 1.25rem;box-shadow:0 2px 6px rgba(0,0,0,.05);}.op-card h3{margin-top:0;font-size:1.05rem;color:var(--color-rust,#C84B31);}.op-card ul{padding-left:1.25rem;margin:.5rem 0;font-size:.92rem;}.op-card a{color:var(--color-ink,#1A1614);}.op-note{font-size:.85rem;color:#666;margin-top:.5rem;}.op-badge{display:inline-block;padding:.15rem .5rem;background:rgba(26,92,76,.1);color:#1a5c4c;border-radius:3px;font-size:.75rem;margin-left:.35rem;font-family:'Courier Prime',monospace;}</style>"
+  },
+  "params": {
+    "title": "Guild Operator Dashboard"
+  },
+  "propConfig": {},
+  "props": {},
+  "root": {
+    "meta": { "name": "GuildOperatorRoot" },
+    "type": "acg.container.dock-layout",
+    "props": {},
+    "children": [
+      {
+        "meta": { "name": "NorthChrome", "slot": "north" },
+        "type": "acg.dock.north",
+        "props": {},
+        "children": [
+          { "meta": { "name": "Emblem"   }, "type": "acg.display.emblem",  "props": { "text": "⚒ GUILD OPS ⚒" }, "children": [] },
+          { "meta": { "name": "Title"    }, "type": "acg.display.heading", "props": { "level": 1, "text": "Guild Operator Dashboard" }, "children": [] },
+          { "meta": { "name": "Subtitle" }, "type": "acg.display.text",    "props": { "text": "Internal infrastructure view — apps, SCADA telemetry, ISA-95 levels, build state. Not the public-facing site." }, "children": [] },
+          { "meta": { "name": "PublicBack" }, "type": "acg.display.html", "props": { "html": "<div class=\"back-link\"><a href=\"../index.html\">← Public Guild Site</a></div>" }, "children": [] }
+        ]
+      },
+
+      {
+        "meta": { "name": "OperatorBody", "slot": "body" },
+        "type": "acg.container.body",
+        "props": {},
+        "children": [
+          {
+            "meta": { "name": "AppsSection" }, "type": "acg.display.html",
+            "props": { "html": "<h2>Guild Apps <span class=\"op-badge\">L4</span></h2><div class=\"op-grid\"><div class=\"op-card\"><h3>White Papers</h3><ul><li><a href=\"apps/whitepapers/\">Apps catalog</a></li><li><a href=\"web/white-papers/\">Originals + UDT instances</a></li><li>24 papers, 55 author links</li></ul></div><div class=\"op-card\"><h3>ACG P2P Mesh</h3><ul><li><a href=\"apps/p2p/\">Open P2P chat</a></li><li>Serverless, SCADA-instrumented</li><li>Imported from ACGP2P</li></ul><p class=\"op-note\">Upstream: <a href=\"https://github.com/teslasolar/ACGP2P\">teslasolar/ACGP2P</a></p></div><div class=\"op-card\"><h3>Test App</h3><ul><li><a href=\"apps/test/\">ACG-TEST runner</a></li><li>Standard validation fixtures</li></ul></div></div>" },
+            "children": []
+          },
+
+          {
+            "meta": { "name": "ScadaSection" }, "type": "acg.display.html",
+            "props": { "html": "<h2>SCADA Telemetry <span class=\"op-badge\">L2</span></h2><div class=\"op-grid\"><div class=\"op-card\"><h3>Runtime Tags</h3><ul><li><a href=\"Enterprise/L4/runtime/tags.json\">tags.json</a> (Konomi Value)</li><li><a href=\"Enterprise/L4/api/health.json\">/api/health.json</a></li></ul></div><div class=\"op-card\"><h3>PackML State</h3><ul><li><a href=\"Enterprise/L2/state/\">State directory</a></li><li>Latest run per program</li><li>IDLE → COMPLETE state audit</li></ul></div><div class=\"op-card\"><h3>Per-Directory tag.db</h3><ul><li>white-papers (24 UDTs)</li><li>members (8)</li><li>components (71)</li><li>scripts (21)</li><li>whitepapers app (49)</li><li>Enterprise/L2 (6)</li></ul><p class=\"op-note\">Total: 179 UDTs, 308 tags across 6 local SQLite DBs</p></div></div>" },
+            "children": []
+          },
+
+          {
+            "meta": { "name": "IsaLevelsSection" }, "type": "acg.display.html",
+            "props": { "html": "<h2>ISA-95 Levels</h2><div class=\"op-grid\"><div class=\"op-card\"><h3>L0 Physical <span class=\"op-badge\">L0</span></h3><ul><li><a href=\"Enterprise/L0/\">README</a></li><li>Human work: authoring, mobbing</li></ul></div><div class=\"op-card\"><h3>L1 Sensing <span class=\"op-badge\">L1</span></h3><ul><li><a href=\"Enterprise/L1/\">README</a></li><li><a href=\"Enterprise/L1/forms/submit/\">Submission form</a></li><li>Event router: git, forms</li></ul></div><div class=\"op-card\"><h3>L2 SCADA <span class=\"op-badge\">L2</span></h3><ul><li><a href=\"Enterprise/L2/\">README</a></li><li>PackML state machines</li><li>ISA-TR88.00.02 supervision</li></ul></div><div class=\"op-card\"><h3>L3 MES <span class=\"op-badge\">L3</span></h3><ul><li><a href=\"Enterprise/L3/\">README</a></li><li>build.sh orchestrator</li><li>Editorial workflow</li></ul></div><div class=\"op-card\"><h3>L4 ERP <span class=\"op-badge\">L4</span></h3><ul><li><a href=\"Enterprise/L4/\">README</a></li><li><a href=\"Enterprise/L4/api/papers.json\">/api/papers.json</a></li><li><a href=\"Enterprise/L4/api/members.json\">/api/members.json</a></li><li><a href=\"Enterprise/L4/csv/\">Dense CSV catalogs</a></li></ul></div><div class=\"op-card\"><h3>Enterprise Controls</h3><ul><li><a href=\"Enterprise/\">Enterprise/</a></li><li>Konomi + ISA standards tree</li></ul></div></div>" },
+            "children": []
+          },
+
+          {
+            "meta": { "name": "BuildSection" }, "type": "acg.display.html",
+            "props": { "html": "<h2>Build Pipeline</h2><div class=\"op-grid\"><div class=\"op-card\"><h3>Orchestrator</h3><ul><li><code>bash guild/web/scripts/build.sh</code> (12 steps)</li><li><a href=\"web/scripts/\">scripts/ source</a></li></ul></div><div class=\"op-card\"><h3>QA</h3><ul><li><code>test-links.py</code> (255 links)</li><li><code>test-browser.js</code> (Playwright nav)</li><li><code>test-nav.js</code> (render tree walk)</li></ul></div><div class=\"op-card\"><h3>CI</h3><ul><li><a href=\"../.github/workflows/paper-index.yml\">paper-index.yml</a></li><li>Runs on every PR</li></ul></div></div>" },
+            "children": []
+          },
+
+          {
+            "meta": { "name": "DocsSection" }, "type": "acg.display.html",
+            "props": { "html": "<h2>Standards &amp; Docs</h2><div class=\"op-grid\"><div class=\"op-card\"><h3>Engineering</h3><ul><li><a href=\"../docs/engineering/\">docs/engineering/</a></li><li>URS, arch, tech-spec, component catalog</li></ul></div><div class=\"op-card\"><h3>UDT Templates</h3><ul><li><a href=\"../docs/templates/\">docs/templates/</a></li><li>Konomi base, git, programming, formats</li></ul></div><div class=\"op-card\"><h3>ACG Standards</h3><ul><li><a href=\"../docs/engineering/standards/paper-auto-index.md\">Paper Auto-Index</a></li><li><a href=\"../docs/engineering/standards/acg-api.md\">ACG API v1.0</a></li><li><a href=\"../docs/engineering/standards/packml.md\">PackML Process</a></li><li><a href=\"../docs/engineering/standards/article-submission.md\">Article Submission</a></li></ul></div></div>" },
+            "children": []
+          }
+        ]
+      },
+
+      {
+        "meta": { "name": "SouthDockGuild", "slot": "south" },
+        "type": "acg.dock.south",
+        "props": {},
+        "children": [
+          { "meta": { "name": "Label" }, "type": "acg.display.text", "props": { "text": "Guild operator dashboard — internal view. Regenerated on every build." }, "children": [] },
+          { "meta": { "name": "PublicLink" }, "type": "acg.display.html", "props": { "html": "<a href=\"../index.html\">← Public Site</a> · <a href=\"https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io\">GitHub</a>" }, "children": [] }
+        ]
+      }
+    ]
+  }
+}

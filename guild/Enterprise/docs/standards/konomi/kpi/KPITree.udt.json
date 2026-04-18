@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"KPITree","std":"KPI","layer":9,"version":"1.0.0",
+"tree":{
+"OEE":{
+"Availability":["MTBF","MTTR","Downtime"],
+"Performance":["CycleTime","Throughput"],
+"Quality":["FirstPassYield","DefectRate"]
+}
+},"meta":{"desc":"Decomposition of OEE into constituent KPIs"}}

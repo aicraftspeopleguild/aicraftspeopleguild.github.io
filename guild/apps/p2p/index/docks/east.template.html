@@ -1,0 +1,27 @@
+<!--
+  ═══ EAST dock ═══
+  Right rail.  Rendered by renderer.js as
+      <aside class="dock-e"> … </aside>
+  Default contents:
+    · "💓 Live clients" strip — pills for every source heard on
+      BroadcastChannel("acg-mesh") in the last 15 s.
+    · "📣 broadcast" input — fire a `ping` envelope to sibling tabs.
+    · heartbeat + 5s refresh status.
+-->
+<aside class="dock-e">
+  <section class="dock-e-sec">
+    <h3>💓 Live clients</h3>
+    <div class="ix-hbrow" id="dock-e-clients"></div>
+  </section>
+  <section class="dock-e-sec">
+    <h3>📣 Broadcast</h3>
+    <div class="ix-row">
+      <input class="ix-in" id="dock-e-ping" placeholder="ping sibling tabs…">
+      <button class="ix-btn" id="dock-e-send">send</button>
+    </div>
+  </section>
+  <section class="dock-e-sec">
+    <h3>⏱ Cadence</h3>
+    <p class="ix-muted">heartbeat 5 s · tag refresh 5 s · commit poll 90 s</p>
+  </section>
+</aside>

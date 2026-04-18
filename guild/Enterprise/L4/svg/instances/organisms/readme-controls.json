@@ -1,0 +1,27 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "ReadmeControls",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-readme-controls.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/readme-controls.svg",
+    "sources": [],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "LinkCard",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1040,
+      "h": "dynamic"
+    },
+    "description": "Rendered by guild/Enterprise/L4/svg/build-readme-controls.py on each demo.heartbeat CHANGED event."
+  },
+  "tags": {
+    "id": "readme-controls",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/readme-controls.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/readme-controls.svg",
+    "trigger": "demo.heartbeat"
+  }
+}

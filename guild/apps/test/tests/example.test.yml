@@ -1,0 +1,78 @@
+# tests/example.test.yml
+# The Example page renders the article-notification test as nested UDTs.
+
+test: Concrete example page
+target: pages/example.html
+
+exists:
+  expect: present
+  reason: "the Example page is the worked instance and must be served"
+
+watches:
+  - path: "udt-workflowtest"
+    expect: triggered
+    reason: "the example is framed as a single UDT:WorkflowTest root container"
+
+  - path: "udt-workflowtest udt-expectation[slot='exists']"
+    expect: triggered
+    reason: "the workflow file existence check is the first expectation"
+
+  - path: "udt-workflowtest udt-eventtrigger[event='pull_request']"
+    expect: triggered
+    reason: "article PRs must notify editors — the trigger must be declared"
+
+  - path: "udt-workflowtest udt-eventtrigger[event='push']"
+    expect: triggered
+    reason: "direct pushes must be declared as not triggered (explicit guardrail)"
+
+  - path: "udt-workflowtest udt-pathwatch[path$='.md']"
+    expect: triggered
+    reason: "at least one watched markdown path proves articles trigger the workflow"
+
+  - path: "udt-workflowtest udt-pathwatch[path='index.html']"
+    expect: triggered
+    reason: "homepage edits must be an explicit not-triggered watch (example parity)"
+
+  - path: "udt-workflowtest udt-notification[type='email']"
+    expect: triggered
+    reason: "the notification must declare its type as email"
+
+  - path: "udt-workflowtest udt-field[name='recipient']"
+    expect: triggered
+    reason: "the notification must declare a recipient field with a reason"
+
+  - path: "udt-workflowtest udt-field[name='sender']"
+    expect: triggered
+    reason: "the notification must declare a sender field with a reason"
+
+  - path: "udt-workflowtest udt-field[name='subject']"
+    expect: triggered
+    reason: "the notification must declare a subject field with a reason"
+
+  - path: "udt-workflowtest udt-field[name='body']"
+    expect: triggered
+    reason: "the notification must declare a body field with a reason"
+
+  - path: "udt-workflowtest udt-secret[name='EMAIL_USERNAME']"
+    expect: triggered
+    reason: "SMTP authentication requires a username secret"
+
+  - path: "udt-workflowtest udt-secret[name='EMAIL_PASSWORD']"
+    expect: triggered
+    reason: "SMTP authentication requires a password secret"
+
+  - path: "udt-workflowtest udt-guardrail"
+    expect: triggered
+    reason: "at least one must-not-trigger guardrail (draft, bot, non-article) must be declared"
+
+secrets:
+  - name: assets/style.css
+    expect: configured
+    reason: "the shared stylesheet must load for the nested UDTs to render legibly"
+
+guardrails:
+  - condition: "udt-field:not([reason])"
+    reason: "every notification field must carry a reason — editors need to know why each piece exists"
+
+  - condition: "udt-secret:not([reason])"
+    reason: "every secret must carry a reason — future maintainers need to know why it exists"

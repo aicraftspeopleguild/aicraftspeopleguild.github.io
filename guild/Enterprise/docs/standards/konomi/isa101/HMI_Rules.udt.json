@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"HMI_Rules","std":"ISA-101","layer":4,"version":"1.0.0",
+"rules":{
+"R1":"no hardcoded values in graphics",
+"R2":"bind to tag path, not direct address",
+"R3":"template → instance inheritance",
+"R4":"centralized style definitions",
+"R5":"alarm indication visible at all layers",
+"R6":"navigation consistent, predictable",
+"R7":"controls labeled, units shown",
+"R8":"confirmation for critical commands"
+},"meta":{"desc":"ISA-101 engineering rules"}}

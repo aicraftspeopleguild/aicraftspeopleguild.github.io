@@ -1,0 +1,13 @@
+"""PackML (ISA-TR88.00.02) state names — core subset used by the pipeline."""
+
+IDLE       = "IDLE"
+STARTING   = "STARTING"
+EXECUTE    = "EXECUTE"
+COMPLETING = "COMPLETING"
+COMPLETE   = "COMPLETE"
+ABORTING   = "ABORTING"
+ABORTED    = "ABORTED"
+HELD       = "HELD"
+STOPPED    = "STOPPED"
+
+TERMINAL = {COMPLETE, ABORTED, HELD, STOPPED}

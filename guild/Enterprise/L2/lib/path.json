@@ -1,0 +1,47 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/scripts/lib",
+    "label": "lib",
+    "parent": "guild/web/scripts",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_scripts_lib",
+    "fs_path": "guild/web/scripts/lib",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_scripts",
+      "guild_web_scripts_lib"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/web/scripts/api",
+      "guild/web/scripts/apps",
+      "guild/web/scripts/components",
+      "guild/web/scripts/db",
+      "guild/web/scripts/docs",
+      "guild/web/scripts/members",
+      "guild/web/scripts/pages",
+      "guild/web/scripts/paths",
+      "guild/web/scripts/tags",
+      "guild/web/scripts/udts",
+      "guild/web/scripts/white-papers"
+    ],
+    "descendants": 0,
+    "file_count": 14,
+    "subdir_count": 0,
+    "kinds": {
+      "py": 13,
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

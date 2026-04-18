@@ -1,0 +1,19 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:udt-dbs",
+    "name": "Build per-directory UDT dbs",
+    "description": "Walk the repo; in every directory holding one or more *.udt.json files, create/refresh a local udt.db SQLite with each UDT type as a row. Mirrors the per-directory tag.db pattern so UDT definitions are queryable alongside their files.",
+    "category": "build",
+    "entry": "guild/Enterprise/L2/lib/build_udt_dbs.py:build",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"JSON","description":"dirs_with_udts, created_dbs, updated_dbs, total_udts"}],
+    "adapters": ["CliAdapter","LoggerWrapper","TestWrapper"],
+    "tags": ["build","udt","sqlite","catalog"],
+    "test_cases": [
+      {"name":"build completes","inputs":{},"expect":{"field":"ok","op":"eq","value":true}}
+    ]
+  },
+  "tags": { "id": "build-udt-dbs", "schema_version": "1.0.0" }
+}

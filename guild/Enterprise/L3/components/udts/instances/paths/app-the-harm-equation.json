@@ -1,0 +1,33 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/whitepapers/the-harm-equation",
+    "label": "The Harm Equation",
+    "page": "guild/apps/whitepapers/pages/the-harm-equation.page.json",
+    "section": "resources",
+    "parent": "white-papers",
+    "order": 100,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "app-the-harm-equation",
+    "full_url": "https://aicraftspeopleguild.github.io/whitepapers/the-harm-equation",
+    "children": [],
+    "breadcrumb": [
+      "home",
+      "white-papers",
+      "app-the-harm-equation"
+    ],
+    "depth": 2,
+    "view_id": "white-paper-app",
+    "last_verified": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

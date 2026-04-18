@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Standard · ACG-TEST</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="module" src="../assets/udt-elements.js"></script>
+  <script type="module" src="../assets/test-runner.js"></script>
+</head>
+<body data-page="standard">
+  <header class="site">
+    <a class="brand" href="../index.html">ACG-TEST</a>
+    <nav class="site-nav">
+      <a href="./standard.html" aria-current="page">Standard</a>
+      <a href="./types.html">Types</a>
+      <a href="./example.html">Example</a>
+      <a href="./runner.html">Runner</a>
+      <a href="./terminal.html">Terminal</a>
+      <a href="../white-papers.html">Papers</a>
+    </nav>
+  </header>
+
+  <main class="prose">
+    <h1>The Standard</h1>
+    <p class="lede">
+      This standard defines a human-readable YAML format for testing GitHub Actions
+      workflows before they exist. Tests are written first, watched fail, then
+      the workflow is written until the tests pass.
+    </p>
+
+    <h2 id="purpose">1. Purpose</h2>
+    <p>
+      The architecture nests using the Konomi Standard UDT pattern: each type is
+      self-contained, composable, and inherits from a shared base.
+    </p>
+
+    <h2 id="base-types">2. Base Types</h2>
+
+    <h3>UDT:Expectation</h3>
+    <p>The atomic unit. Every check in the system resolves to one expectation.</p>
+    <pre class="yaml"><code>UDT:Expectation:
+  fields:
+    expect:
+      type: enum
+      values: [present, triggered, not triggered, configured]
+    reason:
+      type: string
+      required: true
+      purpose: "plain English explanation"
+    result:
+      type: enum
+      values: [pass, fail, skip]
+      default: skip</code></pre>
+
+    <h3>UDT:PathPattern</h3>
+    <p>A file path with a glob pattern used to match triggers.</p>
+    <pre class="yaml"><code>UDT:PathPattern:
+  fields:
+    path:
+      type: string
+      format: glob</code></pre>
+
+    <h3>UDT:Secret</h3>
+    <p>A named secret the workflow depends on.</p>
+    <pre class="yaml"><code>UDT:Secret:
+  inherits: UDT:Expectation
+  fields:
+    name: string
+    expect: [configured]</code></pre>
+
+    <h2 id="trigger-types">3. Trigger Types</h2>
+    <p>
+      <code>UDT:EventTrigger</code> defines which GitHub event should or should
+      not activate the workflow. <code>UDT:PathWatch</code> tests whether a
+      specific file change would or would not trigger it.
+    </p>
+
+    <h2 id="notification">4. Notification Type</h2>
+    <p>
+      <code>UDT:Notification</code> defines the expected shape of the outbound
+      notification: type, recipient, sender, subject, body. Each nested field
+      inherits from <code>UDT:Expectation</code>.
+    </p>
+
+    <h2 id="guardrail">5. Guardrail Type</h2>
+    <p>
+      <code>UDT:Guardrail</code> defines conditions under which the workflow
+      must NOT fire. Constrained to <code>expect: not triggered</code>.
+    </p>
+
+    <h2 id="workflowtest">6. Test Type (the root)</h2>
+    <p>
+      <code>UDT:WorkflowTest</code> is the top-level type. One per workflow.
+      Contains exists, triggers, watches, notification, secrets, guardrails.
+    </p>
+
+    <h2 id="inheritance">7. Inheritance diagram</h2>
+    <pre class="tree"><code>UDT:Expectation          ← base of everything
+├── UDT:EventTrigger     ← what events fire the workflow
+├── UDT:PathWatch        ← what file changes trigger it
+├── UDT:Guardrail        ← what must NOT trigger it
+├── UDT:Secret           ← what config must exist
+└── UDT:Notification     ← what gets sent
+    ├── .recipient       ← who receives
+    ├── .sender          ← who sends
+    ├── .subject         ← what the subject contains
+    └── .body            ← what the body contains
+
+UDT:WorkflowTest         ← root container
+├── .exists              → UDT:Expectation
+├── .triggers[]          → UDT:EventTrigger
+├── .watches[]           → UDT:PathWatch
+├── .notification        → UDT:Notification
+├── .secrets[]           → UDT:Secret
+└── .guardrails[]        → UDT:Guardrail</code></pre>
+
+    <h2 id="runner">10. Runner commands</h2>
+    <pre><code>acg-test run &lt;file&gt;              run one test file
+acg-test run tests/              run all tests in folder
+acg-test init &lt;workflow-name&gt;    scaffold a blank test file
+acg-test validate &lt;file&gt;         check test YAML structure only
+acg-test report                  summary of all tests across repo</code></pre>
+
+    <h2 id="layout">11. File layout</h2>
+    <pre class="tree"><code>repo/
+├── .github/workflows/article-notification.yml
+├── tests/article-notification.test.yml
+└── acg-test.config.yml</code></pre>
+
+    <h2 id="rules">12. Design rules</h2>
+    <ol class="rules">
+      <li>Every expectation has a reason.</li>
+      <li>Four words only in <code>expect</code>.</li>
+      <li>Three results only in <code>result</code>.</li>
+      <li>Tests before code.</li>
+      <li>UDT inheritance — every type traces back to <code>UDT:Expectation</code>.</li>
+      <li>One test file, one workflow.</li>
+    </ol>
+
+    <h2 id="page-tests">Page verification</h2>
+    <p>The tests for this page live in <code>tests/standard.test.yml</code>.</p>
+    <div id="site-summary" class="summary" data-scope="standard">Loading&hellip;</div>
+  </main>
+
+  <footer class="site">
+    <p>ACG-TEST v1.0 · Konomi Standard · AI Craftspeople Guild</p>
+  </footer>
+</body>
+</html>

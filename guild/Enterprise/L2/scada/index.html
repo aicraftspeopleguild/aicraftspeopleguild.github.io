@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🖥️ scada · ACG</title>
+<link rel="stylesheet" href="./gateway/styles/section.css">
+</head>
+<body>
+<main id="section"></main>
+<script type="module">
+import {renderSection} from '../../index/renderer.js';
+renderSection({
+  sub:      'scada',
+  glyph:    '🖥️',
+  name:     'scada',
+  desc:     'Tag plant + HMI monitor.  Owns sys.*, version.*.  Dense-token specs at /controls/scada/00-legend.json · 01-master.json · 02-chat.json · 03-scada.json · 04-sandbox.json, and per-program specs under /controls/scada/programs/.',
+  basePath: '../../'
+});
+</script>
+</body>
+</html>

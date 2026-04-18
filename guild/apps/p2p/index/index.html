@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚒ ACG · subsystem index</title>
+<link rel="stylesheet" href="../../../Enterprise/L2/scada/gateway/styles/section.css">
+</head>
+<body>
+<div id="section"></div>
+
+<script type="module">
+import {bridge} from '../../../Enterprise/L4/sandbox/shared/mesh-bridge.js';
+import {buildDockShell, SUBSYSTEMS} from './renderer.js';
+
+const $  = id => document.getElementById(id);
+const el = (tag, attrs={}, children=[]) => {
+  const n = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)) {
+    if (k==='class') n.className = v;
+    else if (k==='html') n.innerHTML = v;
+    else n.setAttribute(k,v);
+  }
+  for (const c of [].concat(children||[])) if (c!=null) n.append(c.nodeType?c:document.createTextNode(c));
+  return n;
+};
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const fmtTs=ts=>ts?new Date(ts).toLocaleTimeString():'—';
+
+const basePath    = '../';                         // p2p app root
+const entRoot     = '../../../Enterprise/';        // Enterprise (controls) root — SUBSYSTEMS paths are L*/.. relative to here
+const docks = buildDockShell($('section'));
+
+// N — logo + shell
+docks.n.append(
+  el('div',{class:'dock-n-logo'},['⚒ ACG directory', el('span',{},' · subsystem sitemap')]),
+  el('nav',{class:'dock-n-shell'},[
+    el('a',{href:basePath},'⚒ mesh'),
+    el('a',{href:entRoot+'L2/scada/gateway/gateway-log.html'},'⚠ log'),
+    el('a',{href:entRoot+'L2/scada/gateway/health.html'},'⚕ health'),
+    el('a',{href:entRoot+'L2/hmi/chat/#scada'},'🖥 scada drawer'),
+  ])
+);
+
+// W — subsystem nav
+// SUBSYSTEMS[*].path is 'L*/…' relative to the Enterprise root.
+docks.w.append(
+  el('h4',{},'Subsystems'),
+  el('nav',{class:'dock-w-nav'}, SUBSYSTEMS.map(s=>el('a',{href:entRoot+s.path+'/'},[s.glyph+' '+s.name]))),
+  el('hr',{class:'dock-sep'}),
+  el('h4',{},'Controls'),
+  el('div',{class:'dock-w-actions'},[
+    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/tag-update.yml'},'🏷️ write tag'),
+    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/log-entry.yml'},'⚠ log incident'),
+    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/control-action.yml'},'🎛 control action'),
+  ])
+);
+
+// M — lede + global feed
+docks.m.append(
+  el('p',{class:'ix-lede'},'Each subsystem landing page lives at /{sub}/ and participates in BroadcastChannel("acg-mesh").  Open two tabs and watch them hand-shake in the east rail.'),
+  el('section',{class:'ix-sec'},[
+    el('h2',{},'🛰️ Global mesh feed'),
+    el('p',{class:'ix-muted'},'Every envelope from every open tab lands here in real time.'),
+    el('table',{class:'ix-tbl ix-feed',id:'feed'},[
+      el('thead',{html:'<tr><th>ts</th><th>source</th><th>type</th><th>path</th><th>value</th></tr>'}),
+      el('tbody',{}),
+    ]),
+  ])
+);
+
+// E — live clients + broadcast + cadence
+docks.e.append(
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'💓 Live clients'),
+    el('div',{id:'clients',class:'ix-hbrow'}),
+  ]),
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'📣 Broadcast'),
+    (() => {
+      const row=el('div',{class:'ix-row'});
+      const input=el('input',{class:'ix-in',id:'ping',placeholder:'ping sibling tabs…'});
+      const btn=el('button',{class:'ix-btn',id:'send'},'send');
+      row.append(input,btn);
+      return row;
+    })(),
+  ]),
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'⏱ Cadence'),
+    el('p',{class:'ix-muted'},'heartbeat 5 s · 15 s TTL'),
+  ])
+);
+
+// S — footer
+docks.s.append(
+  el('span',{class:'dock-s-mark'},'⚒ AI Craftspeople Guild · P2P'),
+  el('span',{class:'dock-s-feed',id:'dock-s-feed'},'— idle —'),
+  el('span',{class:'dock-s-cadence'},'💓 5s')
+);
+
+// wiring
+$('send').onclick = () => {
+  const text = $('ping').value.trim() || 'ping';
+  bridge.publish('index', 'ping', { path: 'broadcast', value: text });
+  $('ping').value = '';
+};
+$('ping').addEventListener('keydown', e => { if (e.key==='Enter') $('send').click() });
+
+const tb = $('feed').querySelector('tbody');
+bridge.subscribe(env => {
+  const v = typeof env.value === 'object' ? JSON.stringify(env.value) : (env.value ?? '');
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td class="ix-muted">${fmtTs(env.ts)}</td>
+    <td><code>${esc(env.source||'?')}</code></td>
+    <td>${esc(env.type||'')}</td>
+    <td><code>${esc(env.path||'')}</code></td>
+    <td class="ix-v">${esc(v)}</td>`;
+  tb.prepend(tr);
+  while (tb.children.length > 50) tb.removeChild(tb.lastChild);
+  const f=$('dock-s-feed');if(f)f.textContent=`${fmtTs(env.ts)} · ${env.source}/${env.type}${env.path?' · '+env.path:''}${v?' · '+v:''}`;
+});
+
+// heartbeats
+const liveClients = new Map();
+bridge.subscribe(env => {
+  if (env.type === 'heartbeat' && env.source) liveClients.set(env.source, { ts: env.ts||Date.now(), path: env.path||'' });
+});
+function paintClients(){
+  const now=Date.now();
+  const alive=[...liveClients.entries()].filter(([,v])=>now-v.ts<15000).sort();
+  $('clients').innerHTML = alive.length
+    ? alive.map(([src,v])=>{const age=Math.floor((now-v.ts)/1000);return `<span class="ix-hbpill" title="last heartbeat ${age}s ago · ${v.path||''}">${esc(src)} · ${age}s</span>`}).join('')
+    : '<span class="ix-muted">no sibling pages heard in last 15 s</span>';
+}
+function beat(){ bridge.publish('index', 'heartbeat', { path: location.pathname }); }
+bridge.publish('index', 'page-open', { path: location.pathname });
+beat(); setInterval(beat, 5000);
+paintClients(); setInterval(paintClients, 1000);
+window.addEventListener('beforeunload', () => bridge.publish('index', 'page-close', { path: location.pathname }));
+</script>
+</body>
+</html>

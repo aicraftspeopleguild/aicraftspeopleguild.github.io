@@ -1,0 +1,165 @@
+name: sync-db
+
+# Parses every `acg-db`-labelled issue and merges it into
+# guild/Enterprise/L3/db/tags.json  AND  guild/Enterprise/L4/runtime/tags.json.
+#
+# Routing by secondary label:
+#   tag-update     → parse path/value/quality from issue body → deep-set in both files
+#   log-entry      → append structured event to L4/api/state.json events array
+#   control-action → record action request in L4/api/state.json (no exec — audit only)
+#
+# Issue body uses GitHub Forms format:
+#   ### Tag path\n<value>\n\n### Value\n<value>\n\n### Quality\n<value>\n ...
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  sync:
+    if: contains(github.event.issue.labels.*.name, 'acg-db')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Parse issue + merge tags
+        run: |
+          python3 - <<'PY'
+          import json, os, re, time
+
+          body          = os.environ.get('ISSUE_BODY', '')
+          issue_number  = int(os.environ.get('ISSUE_NUMBER', 0))
+          issue_title   = os.environ.get('ISSUE_TITLE', '')
+          labels        = os.environ.get('ISSUE_LABELS', '').split(',')
+          now_ms        = int(time.time() * 1000)
+          now_iso       = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+
+          def parse_field(body, heading):
+              """Extract the answer under a ### Heading from a GitHub Forms body."""
+              pattern = rf'###\s+{re.escape(heading)}\s*\n+(.*?)(?=\n###|\Z)'
+              m = re.search(pattern, body, re.DOTALL | re.IGNORECASE)
+              return m.group(1).strip() if m else ''
+
+          def deep_set(d, dotted_path, value):
+              """Set d[a][b][c] = value for dotted_path='a.b.c', creating dicts as needed."""
+              keys = dotted_path.split('.')
+              for k in keys[:-1]:
+                  d = d.setdefault(k, {})
+              d[keys[-1]] = value
+
+          def load_json(path):
+              try:
+                  with open(path) as f:
+                      return json.load(f)
+              except Exception:
+                  return {}
+
+          def save_json(path, data):
+              with open(path, 'w') as f:
+                  json.dump(data, f, indent=2)
+              print(f'  wrote {path}')
+
+          # ── tag-update ────────────────────────────────────────────────────────
+          if 'tag-update' in labels:
+              raw_path    = parse_field(body, 'Tag path')
+              raw_value   = parse_field(body, 'Value')
+              raw_quality = parse_field(body, 'Quality') or 'good'
+              raw_type    = parse_field(body, 'Type (optional)')
+
+              # Validate path is safe (dot-separated alphanumeric+underscore only)
+              if not re.fullmatch(r'[a-zA-Z_][a-zA-Z0-9_.]*', raw_path):
+                  print(f'ERROR: invalid tag path "{raw_path}" — skipping')
+                  raise SystemExit(1)
+
+              # Parse JSON value safely
+              try:
+                  value = json.loads(raw_value)
+              except json.JSONDecodeError:
+                  value = raw_value  # treat as plain string
+
+              quality = raw_quality if raw_quality in ('good','stale','bad','uncertain') else 'good'
+
+              tag_entry = {
+                  'value':   value,
+                  'quality': quality,
+                  'type':    raw_type or 'String',
+                  '_issue':  issue_number,
+                  '_ts':     now_iso,
+              }
+
+              for tags_path in [
+                  'guild/Enterprise/L3/db/tags.json',
+                  'guild/Enterprise/L4/runtime/tags.json',
+              ]:
+                  data = load_json(tags_path)
+                  data.setdefault('_meta', {})['updatedAt']      = now_ms
+                  data['_meta']['lastIssue']      = issue_number
+                  data['_meta']['lastIssueTitle'] = issue_title
+                  data['_meta']['source']         = f'issue #{issue_number}'
+                  deep_set(data, raw_path, tag_entry)
+                  save_json(tags_path, data)
+              print(f'tag-update: set {raw_path} = {value!r} (quality={quality})')
+
+          # ── log-entry ─────────────────────────────────────────────────────────
+          elif 'log-entry' in labels:
+              state_path = 'guild/Enterprise/L4/api/state.json'
+              data = load_json(state_path)
+              event = {
+                  'ts':      now_iso,
+                  'source':  f'issue #{issue_number}',
+                  'level':   parse_field(body, 'Level') or 'INFO',
+                  'logger':  parse_field(body, 'Logger') or 'manual',
+                  'message': parse_field(body, 'Message') or issue_title,
+              }
+              data.setdefault('events', []).insert(0, event)
+              data['events'] = data['events'][:100]  # keep last 100
+              data.setdefault('summary', {})['events'] = len(data['events'])
+              save_json(state_path, data)
+              print(f'log-entry: appended event from #{issue_number}')
+
+          # ── control-action ────────────────────────────────────────────────────
+          elif 'control-action' in labels:
+              state_path = 'guild/Enterprise/L4/api/state.json'
+              data = load_json(state_path)
+              action = {
+                  'ts':        now_iso,
+                  'issue':     issue_number,
+                  'action':    parse_field(body, 'Action') or issue_title,
+                  'args':      parse_field(body, 'Args (JSON, optional)'),
+                  'requester': parse_field(body, 'Requester') or 'unknown',
+                  'status':    'requested',
+              }
+              data.setdefault('control_queue', []).insert(0, action)
+              data['control_queue'] = data['control_queue'][:50]
+              save_json(state_path, data)
+              print(f'control-action: queued {action["action"]} from #{issue_number}')
+
+          else:
+              print(f'acg-db issue #{issue_number} has no routing label — bumping _meta only')
+              for p in ['guild/Enterprise/L3/db/tags.json', 'guild/Enterprise/L4/runtime/tags.json']:
+                  data = load_json(p)
+                  data.setdefault('_meta', {})['updatedAt'] = now_ms
+                  data['_meta']['lastIssue'] = issue_number
+                  save_json(p, data)
+          PY
+        env:
+          ISSUE_BODY:   ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE:  ${{ github.event.issue.title }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+
+      - name: Commit + push
+        run: |
+          git config user.name  "acg-sync-bot"
+          git config user.email "acg-sync-bot@users.noreply.github.com"
+          git add guild/Enterprise/L3/db/tags.json \
+                  guild/Enterprise/L4/runtime/tags.json \
+                  guild/Enterprise/L4/api/state.json
+          git diff --cached --quiet || git commit -m "sync: #${{ github.event.issue.number }} · ${{ github.event.issue.title }}"
+          git push

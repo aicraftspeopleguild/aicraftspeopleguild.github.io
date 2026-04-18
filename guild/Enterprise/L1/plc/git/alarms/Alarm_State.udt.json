@@ -1,0 +1,24 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Alarm_State",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "current", "type": "DINT"},
+    {"name": "bits.active", "type": "BOOL"},
+    {"name": "bits.acked", "type": "BOOL"},
+    {"name": "bits.shelved", "type": "BOOL"},
+    {"name": "bits.suppressed", "type": "BOOL"},
+    {"name": "bits.disabled", "type": "BOOL"}
+  ],
+  "enum": {
+    "0": "NORM",
+    "1": "UNACK",
+    "2": "ACKED",
+    "3": "RTN_UNACK",
+    "4": "SHELVED",
+    "5": "SUPPRESSED",
+    "6": "DISABLED"
+  },
+  "meta": {"desc": "ISA-18.2 alarm state machine"}
+}

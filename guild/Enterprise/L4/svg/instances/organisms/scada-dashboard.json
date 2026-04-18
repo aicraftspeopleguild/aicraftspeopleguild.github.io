@@ -1,0 +1,28 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "ScadaDashboard",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-scada-dashboard.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/scada-dashboard.svg",
+    "sources": [
+      "api/health.json",
+      "runtime/tags.json",
+      "api/state.json",
+      "state.db.pipeline_runs",
+      "tag:demo.heartbeat",
+      "GitHub Issues label=tag"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": ["PulseDot", "SectionHeading", "StatBlock", "Panel", "Sparkline", "Bar", "Chip", "TagCard", "WindowChrome"],
+    "size": { "w": 1040, "h": 900 },
+    "description": "Full SCADA dashboard — hero + CATALOG row + ENTERPRISE row + PIPELINE panel (counters + sparkline + success bar) + IDENTITY chips + TAGS grid (up to 8 live GitHub-Issue tags) + FAULTS strip. One SVG reads every public endpoint + state.db + the gh-tag DB on every heartbeat."
+  },
+  "tags": {
+    "id": "scada-dashboard",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/scada-dashboard.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/scada-dashboard.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

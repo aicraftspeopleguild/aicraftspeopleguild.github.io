@@ -1,0 +1,39 @@
+{
+  "§":    "A.R.UDT",
+  "🏗️":  "📡",
+  "name": "auth.webrtc · UDTs",
+  "owner":"auth/webrtc/provider.py",
+
+  "types": {
+    "WebRTCPeerIdentity": {
+      "fields": {
+        "provider": "\"webrtc\"",
+        "id":       "s",
+        "shortId":  "s",
+        "emoji":    "s",
+        "fingerprint":"s?",
+        "createdAt":"ms"
+      },
+      "desc": "Anonymous cryptographic identity derived from the 20-byte BT-style peer id (-ACG001-<12 hex>)."
+    },
+    "IceConfig": {
+      "fields": {
+        "stunServers": "a[s]",
+        "turnServers": "a[s]?",
+        "policy":      "e[all|relay]?"
+      },
+      "desc": "RTCConfiguration echoed from /js/config.js — controls ICE candidate gathering."
+    },
+    "ConnStats": {
+      "fields": {
+        "state":        "e[new|connecting|connected|disconnected|failed|closed]",
+        "peers":        "i",
+        "openChannels": "i",
+        "bytesSent":    "i",
+        "bytesRecv":    "i",
+        "ts":           "ms"
+      },
+      "desc": "Aggregate view of all RTCPeerConnections held by the mesh."
+    }
+  }
+}

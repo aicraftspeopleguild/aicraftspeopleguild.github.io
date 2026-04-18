@@ -1,0 +1,22 @@
+{"$schema":"hmi/faceplate/v1","name":"Analog_Faceplate","udt":"CM_AnalogIn","isaLayer":"L3","glyph":"📊",
+"bindings":{
+"pv":   ["value","raw"],
+"sp":   [],
+"mode": "mode.current",
+"state":"state.current",
+"alarm":"alarms.hihi.active|alarms.hi.active|alarms.lo.active|alarms.lolo.active"
+},
+"palette":["Normal","Warning","Alarm","Fault","Manual"],
+"trend":{
+"tag":"value",
+"timespan":"15min",
+"sample":"1s",
+"scale":{"auto":true}
+},
+"reads":[
+{"tag":"value",    "label":"PV","unit":"scale.eng_unit","format":"0.00"},
+{"tag":"scale.eng_lo","label":"LO","unit":"scale.eng_unit","format":"0.0"},
+{"tag":"scale.eng_hi","label":"HI","unit":"scale.eng_unit","format":"0.0"}
+],
+"alarmSPs":["alarms.hihi","alarms.hi","alarms.lo","alarms.lolo","alarms.roc"],
+"meta":{"desc":"Scaled analog input — value, range, trend, per-SP alarm badges"}}

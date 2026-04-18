@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"Layers","std":"GitPLC","version":"1.0.0",
+"layers":{
+"0":"Meta-UDT — how PLCs are described",
+"1":"Primitive mapping — BOOL, INT, DINT, REAL, STRING, TIME, ...",
+"2":"ISA-88 Equipment — ProcessCell/Unit/EM/CM + PackML",
+"3":"Control Modules — Base + Discrete/Analog/Motor/Valve/VFD/PID",
+"4":"Alarm UDTs — ISA-18.2 model",
+"5":"Recipe/Batch — S88 phases + batches",
+"6":"IO — cards/points/maps",
+"7":"Vendor converters — AB/Siemens/Codesys/Beckhoff/Omron/Mitsubishi"
+},"meta":{"desc":"GitPLC layering"}}

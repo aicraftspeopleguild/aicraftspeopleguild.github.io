@@ -1,0 +1,15 @@
+{"$schema":"konomi/state_machine/v1","name":"PhaseState","std":"ISA-88","layer":3,"version":"1.0.0",
+"states":["IDLE","RUNNING","COMPLETE","HOLDING","HELD","RESTARTING","STOPPING","STOPPED","ABORTING","ABORTED"],
+"initial":"IDLE",
+"transitions":[
+{"f":"IDLE","to":"RUNNING","on":"start"},
+{"f":"RUNNING","to":"COMPLETE","on":"done"},
+{"f":"RUNNING","to":"HOLDING","on":"hold"},
+{"f":"HOLDING","to":"HELD","on":"auto"},
+{"f":"HELD","to":"RESTARTING","on":"restart"},
+{"f":"RESTARTING","to":"RUNNING","on":"auto"},
+{"f":"RUNNING","to":"STOPPING","on":"stop"},
+{"f":"STOPPING","to":"STOPPED","on":"auto"},
+{"f":"*","to":"ABORTING","on":"abort"},
+{"f":"ABORTING","to":"ABORTED","on":"auto"}
+],"meta":{"desc":"Phase state machine"}}

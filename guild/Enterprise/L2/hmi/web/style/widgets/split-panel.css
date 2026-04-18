@@ -1,0 +1,14 @@
+﻿/* -- Split Panel ---------------------------------------------------- */
+.split-panel {
+  display:               grid;
+  grid-template-columns: var(--split-ratio);
+  gap:                   var(--split-gap);
+  align-items:           stretch;
+}
+
+@media (max-width: 640px) {
+  .split-panel {
+    grid-template-columns: 1fr;
+  }
+}
+

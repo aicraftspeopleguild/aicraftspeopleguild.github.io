@@ -1,0 +1,42 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/hmi/chat",
+    "label": "chat",
+    "parent": "guild/Enterprise/L2/hmi",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L2_hmi_chat",
+    "fs_path": "guild/Enterprise/L2/hmi/chat",
+    "depth": 5,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L2",
+      "guild_Enterprise_L2_hmi",
+      "guild_Enterprise_L2_hmi_chat"
+    ],
+    "children": [
+      "guild/Enterprise/L2/hmi/chat/templates"
+    ],
+    "siblings": [
+      "guild/Enterprise/L2/hmi/templates"
+    ],
+    "descendants": 3,
+    "file_count": 6,
+    "subdir_count": 1,
+    "kinds": {
+      "db": 2,
+      "html": 1,
+      "py": 1,
+      "json": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

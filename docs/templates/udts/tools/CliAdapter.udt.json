@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"CliAdapter","layer":9,"version":"1.0.0","fields":[
+{"n":"tool_id","t":"STRING"},
+{"n":"command","t":"STRING","desc":"Subcommand name, e.g. 'papers:list'"},
+{"n":"flags","t":"JSON","desc":"[{flag:'--tag',maps_to_input:'tag',type:'string'}]"},
+{"n":"positional","t":"STRING[]","nullable":true,"desc":"Input names consumed positionally"},
+{"n":"help","t":"STRING"}
+],"meta":{"desc":"Maps a Tool's inputs to argparse-style CLI. bin/acg reads this to dispatch."}}

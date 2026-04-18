@@ -1,0 +1,56 @@
+{
+  "§": "C.UDT",
+  "🏗️": "💬",
+  "name": "chat · UDTs",
+  "owner": "L2/hmi/chat/provider.py",
+
+  "types": {
+    "Peer": {
+      "fields": {
+        "id":         "s20",
+        "name":       "s",
+        "emoji":      "s",
+        "avatar":     "s?",
+        "state":      "e[open|closed]",
+        "channels":   "i",
+        "connectedAt":"ms",
+        "msgsIn":     "i",
+        "msgsOut":    "i",
+        "lastSeen":   "ms"
+      },
+      "desc": "A connected remote peer.  One per RTCDataChannel rid."
+    },
+    "Tracker": {
+      "fields": {
+        "url":           "s",
+        "state":         "e[connecting|connected|reconnecting|failed|offline]",
+        "connectedAt":   "ms?",
+        "announces":     "i",
+        "lastAnnounceAt":"ms?"
+      },
+      "desc": "WebTorrent tracker state."
+    },
+    "Room": {
+      "fields": {
+        "name":      "s",
+        "hash":      "s40",
+        "peerCount": "i",
+        "joinedAt":  "ms"
+      },
+      "desc": "Current chat room.  hash = SHA1('acg:'+name)."
+    },
+    "Channel": {
+      "fields": { "id":"s", "peerId":"s20", "state":"e", "openedAt":"ms" }
+    },
+    "msg": {
+      "glyph":  "📨",
+      "fields": { "t":"\"msg\"", "id":"s20", "txt":"s", "ts":"ms" },
+      "desc":   "Over-the-wire message envelope."
+    },
+    "hi": {
+      "glyph":  "👋",
+      "fields": { "t":"\"hi\"", "id":"s20", "nm":"s", "em":"s", "av":"s?" },
+      "desc":   "Handshake: identity on first channel open."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"Issue","layer":9,"version":"1.0.0","fields":[
+{"n":"number","t":"DINT"},
+{"n":"title","t":"STRING"},
+{"n":"author","t":"STRING"},
+{"n":"state","t":"ENUM","values":["open","closed"]},
+{"n":"labels","t":"STRING[]","nullable":true},
+{"n":"assignees","t":"STRING[]","nullable":true},
+{"n":"created_at","t":"Timestamp"},
+{"n":"closed_at","t":"Timestamp","nullable":true},
+{"n":"comments","t":"DINT","default":0}
+],"meta":{"desc":"A GitHub issue."}}

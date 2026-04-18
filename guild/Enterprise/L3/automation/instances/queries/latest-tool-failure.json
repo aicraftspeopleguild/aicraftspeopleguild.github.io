@@ -1,0 +1,13 @@
+{
+  "udtType": "Query",
+  "parameters": {
+    "id":          "tools:latest-failure",
+    "name":        "Latest failing tool",
+    "description": "tool_id of the most recent tool_runs row with ok=0.",
+    "db":          "state",
+    "sql":         "SELECT tool_id FROM tool_runs WHERE ok=0 ORDER BY started_at DESC LIMIT 1",
+    "output_tag":  "state.tools.latest_failure",
+    "enabled":     true
+  },
+  "tags": { "id": "query-latest-tool-failure", "schema_version": "1.0.0" }
+}

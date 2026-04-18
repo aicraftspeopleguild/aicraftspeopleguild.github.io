@@ -1,0 +1,28 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "tag:write",
+    "name": "Write tag value",
+    "description": "Write a value to a runtime tag (Value/Quality/Timestamp) in guild/Enterprise/L2/state/tag-values.db. Returns the prior value so callers can detect changes. Every write appends to tag_history.",
+    "category": "command",
+    "entry": "guild/Enterprise/L2/lib/tag_state.py:write",
+    "language": "python",
+    "inputs": [
+      {"name":"tag","type":"String","required":true},
+      {"name":"value","type":"String","required":false},
+      {"name":"quality","type":"String","required":false,"default":"good"}
+    ],
+    "outputs": [{"name":"result","type":"TagWrite"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["tag","write","runtime"],
+    "mcp": {
+      "mcp_name": "tag_write",
+      "input_schema": {
+        "type":"object",
+        "properties":{"tag":{"type":"string"},"value":{"type":"string"},"quality":{"type":"string"}},
+        "required":["tag"]
+      }
+    }
+  },
+  "tags": { "id": "tag-write", "schema_version": "1.0.0" }
+}

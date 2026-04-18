@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "tests": [
+    "tests/index.test.yml",
+    "tests/standard.test.yml",
+    "tests/types.test.yml",
+    "tests/example.test.yml",
+    "tests/runner.test.yml",
+    "tests/terminal.test.yml",
+    "tests/deploy-pages.test.yml",
+    "tests/paper-auto-index-standard.test.yml",
+    "tests/white-papers.test.yml",
+    "tests/paper-index.test.yml",
+    "tests/process.test.yml"
+  ]
+}

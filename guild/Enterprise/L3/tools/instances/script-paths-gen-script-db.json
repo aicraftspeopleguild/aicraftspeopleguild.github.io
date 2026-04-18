@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:paths:gen-script-db",
+    "name": "script · gen-script-db",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/paths/gen-script-db.py. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/paths/gen-script-db.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "paths"
+    ]
+  },
+  "tags": {
+    "id": "script-paths-gen-script-db",
+    "schema_version": "1.0.0"
+  }
+}

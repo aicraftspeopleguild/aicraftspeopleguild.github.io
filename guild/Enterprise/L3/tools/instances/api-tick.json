@@ -1,0 +1,17 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "api:tick",
+    "name": "Poll every Api watch",
+    "description": "Fetch each enabled Api UDT's URL, hash the body, compare to state.db.api_watches. On change, write output_tag and fire an on_transition event so Scripts can react. Respects interval_s cooldown.",
+    "category": "automation",
+    "entry": "guild/Enterprise/L2/lib/api_tick.py:tick",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["automation","api","poll","scheduler"],
+    "mcp": {"mcp_name":"api_tick","input_schema":{"type":"object","properties":{}}}
+  },
+  "tags": { "id": "api-tick", "schema_version": "1.0.0" }
+}

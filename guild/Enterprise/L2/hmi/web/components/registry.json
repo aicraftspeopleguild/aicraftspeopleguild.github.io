@@ -1,0 +1,193 @@
+{
+  "version": "2.0.0",
+  "description": "Atomic-design component registry.",
+  "levels": {
+    "atoms": [
+      "BackLink",
+      "Badge",
+      "Button",
+      "Callout",
+      "CodeBlock",
+      "Eyebrow",
+      "FigureBlock",
+      "GuildMark",
+      "PullQuote",
+      "RawHTML",
+      "SectionHeading"
+    ],
+    "molecules": [
+      "ArticleNav",
+      "BadgeRow",
+      "CardGrid",
+      "EntryCard",
+      "FutureSlot",
+      "MemberCard",
+      "PaperCard",
+      "ParamCard"
+    ],
+    "organisms": [
+      "ArticleSection",
+      "ClosingStatement",
+      "CTASection",
+      "IntroPanel",
+      "PageFooter",
+      "PageHeader",
+      "SplitPanel",
+      "TabbedPanel"
+    ],
+    "templates": [
+      "PageShell"
+    ],
+    "widgets": [
+      "AlarmCount",
+      "GitStateBadge",
+      "HealthBadge",
+      "KpiCard",
+      "ReposStateBadge",
+      "StatusPill",
+      "TagValue"
+    ]
+  },
+  "components": {
+    "BackLink": {
+      "src": "components/udts/instances/atoms/back-link.json",
+      "atomicLevel": "atom"
+    },
+    "Badge": {
+      "src": "components/udts/instances/atoms/badge.json",
+      "atomicLevel": "atom"
+    },
+    "Button": {
+      "src": "components/udts/instances/atoms/button.json",
+      "atomicLevel": "atom"
+    },
+    "Callout": {
+      "src": "components/udts/instances/atoms/callout.json",
+      "atomicLevel": "atom"
+    },
+    "CodeBlock": {
+      "src": "components/udts/instances/atoms/code-block.json",
+      "atomicLevel": "atom"
+    },
+    "Eyebrow": {
+      "src": "components/udts/instances/atoms/eyebrow.json",
+      "atomicLevel": "atom"
+    },
+    "FigureBlock": {
+      "src": "components/udts/instances/atoms/figure-block.json",
+      "atomicLevel": "atom"
+    },
+    "GuildMark": {
+      "src": "components/udts/instances/atoms/guild-mark.json",
+      "atomicLevel": "atom"
+    },
+    "PullQuote": {
+      "src": "components/udts/instances/atoms/pull-quote.json",
+      "atomicLevel": "atom"
+    },
+    "RawHTML": {
+      "src": "components/udts/instances/atoms/raw-html.json",
+      "atomicLevel": "atom"
+    },
+    "SectionHeading": {
+      "src": "components/udts/instances/atoms/section-heading.json",
+      "atomicLevel": "atom"
+    },
+    "ArticleNav": {
+      "src": "components/udts/instances/molecules/article-nav.json",
+      "atomicLevel": "molecule"
+    },
+    "BadgeRow": {
+      "src": "components/udts/instances/molecules/badge-row.json",
+      "atomicLevel": "molecule"
+    },
+    "CardGrid": {
+      "src": "components/udts/instances/molecules/card-grid.json",
+      "atomicLevel": "molecule"
+    },
+    "EntryCard": {
+      "src": "components/udts/instances/molecules/entry-card.json",
+      "atomicLevel": "molecule"
+    },
+    "FutureSlot": {
+      "src": "components/udts/instances/molecules/future-slot.json",
+      "atomicLevel": "molecule"
+    },
+    "MemberCard": {
+      "src": "components/udts/instances/molecules/member-card.json",
+      "atomicLevel": "molecule"
+    },
+    "PaperCard": {
+      "src": "components/udts/instances/molecules/paper-card.json",
+      "atomicLevel": "molecule"
+    },
+    "ArticleSection": {
+      "src": "components/udts/instances/organisms/article-section.json",
+      "atomicLevel": "organism"
+    },
+    "ClosingStatement": {
+      "src": "components/udts/instances/organisms/closing-statement.json",
+      "atomicLevel": "organism"
+    },
+    "CTASection": {
+      "src": "components/udts/instances/organisms/cta-section.json",
+      "atomicLevel": "organism"
+    },
+    "IntroPanel": {
+      "src": "components/udts/instances/organisms/intro-panel.json",
+      "atomicLevel": "organism"
+    },
+    "PageFooter": {
+      "src": "components/udts/instances/organisms/page-footer.json",
+      "atomicLevel": "organism"
+    },
+    "PageHeader": {
+      "src": "components/udts/instances/organisms/page-header.json",
+      "atomicLevel": "organism"
+    },
+    "PageShell": {
+      "src": "components/udts/instances/templates/page-shell.json",
+      "atomicLevel": "template"
+    },
+    "GitStateBadge": {
+      "src": "components/udts/instances/widgets/git-state-badge.json",
+      "atomicLevel": "widget"
+    },
+    "HealthBadge": {
+      "src": "components/udts/instances/widgets/health-badge.json",
+      "atomicLevel": "widget"
+    },
+    "ReposStateBadge": {
+      "src": "components/udts/instances/widgets/repo-state-badge.json",
+      "atomicLevel": "widget"
+    },
+    "KpiCard": {
+      "src": "components/udts/instances/widgets/kpi-card.json",
+      "atomicLevel": "widget"
+    },
+    "StatusPill": {
+      "src": "components/udts/instances/widgets/status-pill.json",
+      "atomicLevel": "widget"
+    },
+    "TagValue": {
+      "src": "components/udts/instances/widgets/tag-value.json",
+      "atomicLevel": "widget"
+    },
+    "AlarmCount": {
+      "src": "components/udts/instances/widgets/alarm-count.json",
+      "atomicLevel": "widget"
+    },
+    "ParamCard": {
+      "src": "components/udts/instances/molecules/param-card.json",
+      "atomicLevel": "molecule"
+    },
+    "SplitPanel": {
+      "src": "components/udts/instances/organisms/split-panel.json",
+      "atomicLevel": "organism"
+    },
+    "TabbedPanel": {
+      "src": "components/udts/instances/organisms/tabbed-panel.json",
+      "atomicLevel": "organism"
+    }
+  }
+}

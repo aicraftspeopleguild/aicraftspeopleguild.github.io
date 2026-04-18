@@ -1,0 +1,10 @@
+{"$schema":"hmi/layer/v1","id":"L2","name":"Area","scope":"Process Area","glyph":"🗂",
+"nav":["L1","L3"],
+"tiles":[
+{"kind":"pid","path":"<area>.flow"},
+{"kind":"pid","path":"<area>.temp"},
+{"kind":"trend","tags":["<area>.pv","<area>.sp"],"span":"30min","sample":"1s"},
+{"kind":"list","source":"<area>.equipment.*","renderAs":"state.badge.json"}
+],
+"note":"Process-area view. P&ID-style flow with embedded live state badges. Clicking a component → L3 faceplate.",
+"meta":{"desc":"L2 Area — flows, states, trends across one process area"}}

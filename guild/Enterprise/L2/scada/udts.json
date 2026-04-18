@@ -1,0 +1,18 @@
+{
+  "§":    "3.UDT",
+  "🏗️":   "🖥️",
+  "name": "scada · UDTs",
+  "owner":"scada/provider.py",
+  "note": "Cross-subsystem UDTs from the dense-token spec · see /scada/00-legend.json for the glyph + type legend.",
+
+  "types": {
+    "TagRecord": {
+      "fields": { "value": "any", "quality": "e[good|stale|bad|uncertain]", "ts": "ms", "type": "s?" },
+      "desc":   "Shape of every entry in the tag plant — path → TagRecord."
+    },
+    "Provider": {
+      "fields": { "ns": "s", "ownedPrefixes": "a[s]", "moduleJs": "s", "moduleJython": "s" },
+      "desc":   "A namespace owner.  See /providers.json for the registry."
+    }
+  }
+}

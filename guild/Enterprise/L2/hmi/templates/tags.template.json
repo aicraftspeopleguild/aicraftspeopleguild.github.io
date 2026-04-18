@@ -1,0 +1,16 @@
+{
+  "§":"H.TAGS.template","🏗️":"🖼",
+  "name":"<sub> · tag catalog (HMI template)",
+  "owner":"<sub>/provider.py",
+  "namespaces":["<ns>"],
+  "tags":[
+    {"path":"<ns>.layer.current","type":"e[L1|L2|L3|L4|L5]"},
+    {"path":"<ns>.nav.path","type":"String"},
+    {"path":"<ns>.nav.history","type":"Array<NavTarget>"},
+    {"pathPattern":"<ns>.palette.<state>","cardinality":"many","type":"UDT:ColorMeaning"},
+    {"pathPattern":"<ns>.faceplates.<tag>","cardinality":"many","type":"UDT:Faceplate"},
+    {"pathPattern":"<ns>.alarms.summary.p<N>","cardinality":"many","type":"UDT:AlarmBadge"},
+    {"path":"<ns>.alarms.summary.total","type":"Counter"},
+    {"path":"<ns>.alarms.summary.unacked","type":"Counter"}
+  ]
+}

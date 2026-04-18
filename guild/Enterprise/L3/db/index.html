@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🗄️ db · ACG</title>
+<link rel="stylesheet" href="../../L2/scada/gateway/styles/section.css">
+</head>
+<body>
+<div id="section"></div>
+
+<script type="module">
+import {bridge} from '../../L4/sandbox/shared/mesh-bridge.js';
+import {buildDockShell, SUBSYSTEMS} from '../../index/renderer.js';
+
+const $  = id => document.getElementById(id);
+const el = (tag, attrs={}, children=[]) => {
+  const n = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)) {
+    if (k==='class') n.className = v;
+    else if (k==='html') n.innerHTML = v;
+    else n.setAttribute(k,v);
+  }
+  for (const c of [].concat(children||[])) if (c!=null) n.append(c.nodeType?c:document.createTextNode(c));
+  return n;
+};
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const fmtTs=ts=>ts?new Date(ts).toLocaleTimeString():'—';
+const qDot=q=>({good:'🟢',stale:'🟡',bad:'🔴',uncertain:'⚪'}[q]||'⚪');
+
+const basePath = '../../';
+const docks = buildDockShell($('section'));
+
+// N
+docks.n.append(
+  el('div',{class:'dock-n-logo'},['🗄️ db', el('span',{},' · tag snapshot source')]),
+  el('nav',{class:'dock-n-shell'},[
+    el('a',{href:'../../../apps/p2p/'},'⚒ mesh'),
+    el('a',{href:'../../L2/scada/gateway/gateway-log.html'},'⚠ log'),
+    el('a',{href:'../../L2/scada/gateway/health.html'},'⚕ health'),
+    el('a',{href:'../../L2/hmi/chat/#scada'},'🖥 scada drawer'),
+  ])
+);
+
+// W
+docks.w.append(
+  el('h4',{},'Subsystems'),
+  el('nav',{class:'dock-w-nav'}, SUBSYSTEMS.map(s=>el('a',{
+    class:s.sub==='db'?'on':'',
+    href:basePath+s.path+'/',
+  },[s.glyph+' '+s.name]))),
+  el('hr',{class:'dock-sep'}),
+  el('h4',{},'Controls'),
+  el('div',{class:'dock-w-actions'},[
+    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/tag-update.yml'},'🏷️ write tag'),
+    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/log-entry.yml'},'⚠ log incident'),
+    el('a',{href:basePath+'.github/ISSUE_TEMPLATE/control-action.yml'},'🎛 control action'),
+  ])
+);
+
+// M — lede + filter + snapshot table
+docks.m.append(
+  el('p',{class:'ix-lede'},[
+    'Single source of truth that the ',
+    el('a',{href:'../../README.md'},'README HMI'),
+    ' reads via shields.io.  Edit tags.json directly or file an issue; both paths feed the same snapshot.',
+  ]),
+  el('section',{class:'ix-sec'},[
+    el('h2',{},'🏷️ Live snapshot'),
+    (() => {
+      const row=el('div',{class:'ix-row'});
+      row.append(
+        el('input',{class:'ix-in',id:'filter',placeholder:'filter path… (e.g. room., errors.)'}),
+        el('span',{class:'ix-muted',id:'meta'},'loading…')
+      );
+      return row;
+    })(),
+    el('table',{class:'ix-tbl',id:'tbl'},[
+      el('thead',{html:'<tr><th>path</th><th>value</th><th>quality</th><th>type</th><th>updated</th></tr>'}),
+      el('tbody'),
+    ]),
+  ])
+);
+
+// E — live clients + broadcast + cadence
+docks.e.append(
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'💓 Live clients'),
+    el('div',{id:'clients',class:'ix-hbrow'}),
+  ]),
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'📣 Broadcast'),
+    (() => {
+      const row=el('div',{class:'ix-row'});
+      row.append(
+        el('input',{class:'ix-in',id:'ping',placeholder:'ping sibling tabs…'}),
+        el('button',{class:'ix-btn',id:'send'},'send')
+      );
+      return row;
+    })(),
+  ]),
+  el('section',{class:'dock-e-sec'},[
+    el('h3',{},'⏱ Cadence'),
+    el('p',{class:'ix-muted'},'heartbeat 5 s · table refresh 5 s'),
+  ])
+);
+
+// S
+docks.s.append(
+  el('span',{class:'dock-s-mark'},'⚒ AI Craftspeople Guild · P2P'),
+  el('span',{class:'dock-s-feed',id:'dock-s-feed'},'— idle —'),
+  el('span',{class:'dock-s-cadence'},'💓 5s')
+);
+
+// ── data + wiring ────────────────────────────────────────────────────
+let db = null;
+function flatten(obj, prefix='') {
+  const out = [];
+  for (const [k, v] of Object.entries(obj||{})) {
+    if (k === '_meta') continue;
+    const p = prefix ? prefix + '.' + k : k;
+    if (v && typeof v === 'object' && 'value' in v && 'quality' in v) out.push([p, v]);
+    else if (v && typeof v === 'object') out.push(...flatten(v, p));
+  }
+  return out;
+}
+function render() {
+  const q = ($('filter').value || '').toLowerCase().trim();
+  const rows = flatten(db).filter(([p]) => !q || p.toLowerCase().includes(q));
+  const tb = $('tbl').querySelector('tbody');
+  tb.innerHTML = rows.map(([p, t]) => {
+    const v = typeof t.value === 'object' ? JSON.stringify(t.value) : String(t.value);
+    return `<tr>
+      <td><code>${esc(p)}</code></td>
+      <td class="ix-v">${esc(v)}</td>
+      <td>${qDot(t.quality)} ${esc(t.quality||'')}</td>
+      <td class="ix-muted">${esc(t.type||'')}</td>
+      <td class="ix-muted">${fmtTs(t.ts)}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="5" class="ix-muted" style="text-align:center;padding:20px">no matches</td></tr>';
+  $('meta').textContent = `${rows.length} tag${rows.length===1?'':'s'}${db?._meta?.updatedAt?(' · updated '+fmtTs(db._meta.updatedAt)):''}`;
+}
+async function loadDb(){
+  try {
+    const r = await fetch('tags.json?t='+Date.now(), {cache:'no-store'});
+    db = await r.json();
+    render();
+  } catch(e) { $('meta').textContent = 'failed to load tags.json: '+e.message }
+}
+loadDb(); setInterval(loadDb, 5000);
+$('filter').addEventListener('input', render);
+
+$('send').onclick = () => {
+  const text = $('ping').value.trim() || 'ping';
+  bridge.publish('db', 'ping', { path: 'broadcast', value: text });
+  $('ping').value = '';
+};
+$('ping').addEventListener('keydown', e => { if (e.key==='Enter') $('send').click() });
+
+const liveClients = new Map();
+bridge.subscribe(env => {
+  if (env.type === 'heartbeat' && env.source) liveClients.set(env.source, { ts: env.ts||Date.now(), path: env.path||'' });
+  const v = typeof env.value === 'object' ? JSON.stringify(env.value) : (env.value ?? '');
+  const f=$('dock-s-feed');if(f)f.textContent=`${fmtTs(env.ts)} · ${env.source}/${env.type}${env.path?' · '+env.path:''}${v?' · '+v:''}`;
+});
+function paintClients(){
+  const now=Date.now();
+  const alive=[...liveClients.entries()].filter(([,v])=>now-v.ts<15000).sort();
+  $('clients').innerHTML = alive.length
+    ? alive.map(([src,v])=>{const age=Math.floor((now-v.ts)/1000);return `<span class="ix-hbpill" title="last heartbeat ${age}s ago · ${v.path||''}">${esc(src)} · ${age}s</span>`}).join('')
+    : '<span class="ix-muted">no sibling pages heard in last 15 s</span>';
+}
+function beat(){ bridge.publish('db', 'heartbeat', { path: location.pathname }); }
+bridge.publish('db', 'page-open', { path: location.pathname });
+beat(); setInterval(beat, 5000);
+paintClients(); setInterval(paintClients, 1000);
+window.addEventListener('beforeunload', () => bridge.publish('db', 'page-close', { path: location.pathname }));
+</script>
+</body>
+</html>

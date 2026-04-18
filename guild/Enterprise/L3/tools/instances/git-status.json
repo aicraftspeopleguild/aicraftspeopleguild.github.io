@@ -1,0 +1,53 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "git:status",
+    "name": "Git status",
+    "description": "Porcelain git status + PackML state classification (IDLE/RUNNING/HOLD/COMPLETE/ABORTED).",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/git_ops.py:status",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "status",
+        "type": "GitStatus",
+        "description": "branch, state, counts, first 40 entries"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "McpAdapter",
+      "LoggerWrapper",
+      "TestWrapper"
+    ],
+    "tags": [
+      "git",
+      "state",
+      "packml",
+      "read-only"
+    ],
+    "mcp": {
+      "mcp_name": "git_status",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    "test_cases": [
+      {
+        "name": "returns ok",
+        "inputs": {},
+        "expect": {
+          "field": "ok",
+          "op": "eq",
+          "value": true
+        }
+      }
+    ]
+  },
+  "tags": {
+    "id": "git-status",
+    "schema_version": "1.0.0"
+  }
+}

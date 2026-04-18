@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Template",
+  "extends": "Component",
+  "version": "1.0.0",
+  "description": "Full page-level layout scaffold. Assembles organisms into dock zones (north/body/south/east/west) and forwards page-level data bindings down. No hardcoded page copy.",
+  "parameters": {
+    "name":         { "dataType": "String",      "required": true },
+    "tag":          { "dataType": "String",      "required": true, "default": "fragment" },
+    "cssClass":     { "dataType": "String",      "required": false },
+    "description":  { "dataType": "String",      "required": false },
+    "atomicLevel":  { "dataType": "String",      "required": true, "const": "template" },
+    "docks":        { "dataType": "JSON",        "required": true, "description": "Dock zone → organism list (north/body/south/east/west)" },
+    "inputs":       { "dataType": "DataBinding[]","required": true },
+    "template":     { "dataType": "String",      "required": true }
+  },
+  "constraints": {
+    "may_compose": ["Organism", "Widget"],
+    "forbidden_compose": ["Template"],
+    "no_hardcoded_content": true
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "used_by_pages":  { "dataType": "StringArray" },
+    "schema_version": { "dataType": "String" }
+  }
+}

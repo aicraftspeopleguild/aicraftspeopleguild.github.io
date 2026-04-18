@@ -1,0 +1,61 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "TagValue",
+    "tag": "span",
+    "cssClass": "tag-value",
+    "atomicLevel": "widget",
+    "description": "Live tag value display. Renders a span with data-tag-* attributes; WidgetRuntime.TagPoller wires a polling interval to keep the displayed value fresh from tags.json. Compose inside KpiCard, StatusPill, or any inline context.",
+    "propsToAttr": {
+      "path":     "data-tag-path",
+      "src":      "data-tag-src",
+      "interval": "data-tag-interval",
+      "format":   "data-tag-format",
+      "unit":     "data-tag-unit"
+    },
+    "props": {
+      "path": {
+        "type": "String",
+        "required": true,
+        "description": "Dot-path into tags.json, e.g. 'enterprise.memberCount'"
+      },
+      "src": {
+        "type": "String",
+        "required": false,
+        "description": "URL to tags.json. Defaults to guild/Enterprise/L4/runtime/tags.json"
+      },
+      "interval": {
+        "type": "Number",
+        "required": false,
+        "default": 30,
+        "description": "Poll interval in seconds (min 5)"
+      },
+      "format": {
+        "type": "String",
+        "required": false,
+        "default": "raw",
+        "description": "raw | number | datetime | boolean"
+      },
+      "unit": {
+        "type": "String",
+        "required": false,
+        "description": "Suffix appended after value, e.g. 'ms'"
+      },
+      "fallback": {
+        "type": "String",
+        "required": false,
+        "default": "…",
+        "description": "Text shown while loading or on error"
+      }
+    },
+    "slots": [],
+    "template": "{{ fallback }}"
+  },
+  "tags": {
+    "id": "tag-value",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/tag-value.json",
+    "source_kind": "poll",
+    "embeddable_in": ["Atom", "Molecule", "Organism", "Widget"],
+    "schema_version": "1.0.0"
+  }
+}

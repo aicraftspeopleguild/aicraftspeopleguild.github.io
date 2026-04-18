@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit an Article — AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../L2/hmi/web/style/main.css">
+    <link rel="stylesheet" href="submit.css">
+</head>
+<body class="page-submit">
+    <header>
+        <div class="guild-mark"><div class="emblem">⚒ ACG ⚒</div></div>
+        <h1>Submit an Article</h1>
+        <p class="subtitle">Every submission must meet the minimum criteria in the <a href="../../../docs/engineering/standards/article-submission.md">Article Submission Standard</a>.</p>
+        <div class="back-link"><a href="../../../../index.html">← Back to Home</a></div>
+    </header>
+
+    <main class="container">
+        <section class="intro-panel">
+            <p>Fill the form below. On submit, your article enters the review queue as a <code>draft</code>.
+               A Guild member will contact you within 7 days. This form posts to the same Google Sheet as the
+               Google Form channel — both paths go through the same auto-indexer.</p>
+        </section>
+
+        <form id="submitForm"
+              action="YOUR_GOOGLE_FORM_ACTION_URL"
+              method="POST" target="submitFrame"
+              class="submit-form">
+
+            <fieldset>
+                <legend>Author</legend>
+                <label>Name <span class="req">*</span>
+                    <input type="text" name="entry.author_name" required maxlength="100">
+                </label>
+                <label>Email <span class="req">*</span>
+                    <input type="email" name="entry.author_email" required>
+                    <small>Not displayed publicly; used for review correspondence.</small>
+                </label>
+                <label>Affiliation
+                    <input type="text" name="entry.affiliation" placeholder="Company, lab, or independent">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Article</legend>
+                <label>Title <span class="req">*</span>
+                    <input type="text" name="entry.title" required maxlength="120">
+                </label>
+                <label>Type <span class="req">*</span>
+                    <select name="entry.type" required>
+                        <option value="">Choose a type…</option>
+                        <option value="white-paper">White Paper</option>
+                        <option value="position-paper">Position Paper</option>
+                        <option value="experimental">Experimental</option>
+                        <option value="research-note">Research Note</option>
+                        <option value="knowledge">Knowledge About Knowledge</option>
+                        <option value="standard">Standard</option>
+                    </select>
+                </label>
+                <label>Abstract <span class="req">*</span>
+                    <textarea name="entry.abstract" required rows="5"
+                              placeholder="60–400 words. Thesis, evidence, conclusion."></textarea>
+                    <small><span id="abstractWords">0</span> words</small>
+                </label>
+                <label>Body (Markdown) <span class="req">*</span>
+                    <textarea name="entry.body" required rows="16"
+                              placeholder="≥ 800 words for papers, ≥ 300 for research notes."></textarea>
+                    <small><span id="bodyWords">0</span> words</small>
+                </label>
+                <label>Tags
+                    <input type="text" name="entry.tags" placeholder="comma-separated, e.g. ai-safety, governance">
+                </label>
+                <label>Citations / Links
+                    <textarea name="entry.citations" rows="4"
+                              placeholder="External claims should be referenced."></textarea>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Disclosures</legend>
+                <label>AI Assistance <span class="req">*</span>
+                    <select name="entry.ai_assistance" required>
+                        <option value="">Choose…</option>
+                        <option value="none">None</option>
+                        <option value="light">Light (editing, spelling)</option>
+                        <option value="substantial">Substantial (drafting with AI)</option>
+                    </select>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="entry.originality" required>
+                    I confirm this article is my own work.
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="entry.license" required>
+                    I agree to license this article under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY 4.0</a>.
+                </label>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary" id="submitBtn">Submit Article</button>
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+        </form>
+
+        <iframe name="submitFrame" style="display:none;" title="submission confirmation"></iframe>
+    </main>
+
+    <footer>
+        <p>© 2026 AI Craftspeople Guild.</p>
+        <p><a href="https://github.com/aicraftspeopleguild">GitHub</a></p>
+    </footer>
+
+    <script src="submit.js" defer></script>
+</body>
+</html>

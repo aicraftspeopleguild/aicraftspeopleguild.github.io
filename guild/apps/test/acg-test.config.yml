@@ -1,0 +1,42 @@
+# ACG-TEST runner config
+# See the Standard at pages/standard.html for vocabulary.
+
+version: "1.0"
+
+# Test discovery
+tests_dir: tests
+manifest: tests/manifest.json
+
+# Domain extension: this repo uses the ACG-TEST standard for BOTH
+# workflows (.github/workflows/*.yml) and static pages (*.html).
+#
+# For page tests the shape is unchanged, with one re-interpretation:
+#   UDT:PathWatch.path      → a CSS selector asserted against the live DOM
+#   UDT:Guardrail.condition → a CSS selector for a forbidden element,
+#                              OR a plain-English condition (skipped at runtime)
+#   UDT:Secret.name         → a required asset file path (must fetch 200 OK)
+#
+# For workflow tests the standard applies literally, per section 8 of the spec.
+
+# Re-purposing map (documents the extension explicitly)
+extensions:
+  page_tests:
+    target_field: target            # .html files are tested via `target:`
+    workflow_tests:
+      target_field: workflow        # .yml workflows keep the canonical key
+    path_as_selector: true
+    fail_on_missing_reason: true
+
+# Output
+output:
+  format: html                      # rendered into #site-summary and #test-list
+  verdict_colors: [green, yellow, red]
+
+# Design rules (enforced at author time, verified at runtime)
+rules:
+  - every-expectation-has-a-reason
+  - four-words-only
+  - three-results-only
+  - tests-before-code
+  - one-test-per-workflow
+  - one-test-per-page

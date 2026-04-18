@@ -1,0 +1,70 @@
+{
+  "custom": {
+    "partial": true
+  },
+  "params": {
+    "year": "2026",
+    "tagline": "Committed to quality, integrity, and human-centered AI."
+  },
+  "propConfig": {},
+  "props": {},
+  "root": {
+    "meta": {
+      "name": "SouthDock"
+    },
+    "type": "acg.dock.south",
+    "props": {},
+    "children": [
+      {
+        "meta": {
+          "name": "GuildName"
+        },
+        "type": "acg.display.text",
+        "props": {
+          "text": "AI Craftspeople Guild (ACG)"
+        },
+        "children": []
+      },
+      {
+        "meta": {
+          "name": "Advocacy"
+        },
+        "type": "acg.display.text",
+        "props": {
+          "text": "Advocating for professional standards in AI-assisted software development"
+        },
+        "children": []
+      },
+      {
+        "meta": {
+          "name": "GitHubLink"
+        },
+        "type": "acg.display.html",
+        "props": {
+          "html": "<a href=\"https://github.com/aicraftspeopleguild\" class=\"github-link\"><span>⚡</span> <span>github.com/aicraftspeopleguild</span></a>"
+        },
+        "children": []
+      },
+      {
+        "meta": {
+          "name": "FooterLinks"
+        },
+        "type": "acg.display.html",
+        "props": {
+          "html": "<div class=\"footer-links\"><a href=\"#/charter\">Charter</a> <a href=\"#/code-of-conduct\">Code of Conduct</a> <a href=\"guild/Enterprise/L1/forms/submit/\">Submit</a></div>"
+        },
+        "children": []
+      },
+      {
+        "meta": {
+          "name": "Credits"
+        },
+        "type": "acg.display.html",
+        "props": {
+          "html": "<p style=\"margin-top:2rem;font-size:0.85rem;\">© 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.</p>"
+        },
+        "children": []
+      }
+    ]
+  }
+}

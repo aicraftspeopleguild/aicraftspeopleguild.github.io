@@ -1,0 +1,39 @@
+{
+  "§":    "A.T.UDT",
+  "🏗️":  "🌊",
+  "name": "auth.webtorrent · UDTs",
+  "owner":"auth/webtorrent/provider.py",
+
+  "types": {
+    "TrackerEndpoint": {
+      "fields": {
+        "url":    "s",
+        "state":  "e[unknown|ok|fail|trying|closed]",
+        "rttMs":  "i?",
+        "lastAt": "ms?"
+      },
+      "desc": "One entry in the tracker fallback chain (see /js/config.js TRACKERS[])."
+    },
+    "AnnounceState": {
+      "fields": {
+        "room":      "s",
+        "infoHash":  "s",
+        "tracker":   "s",
+        "numWant":   "i",
+        "nOffers":   "i",
+        "ts":        "ms"
+      },
+      "desc": "Last BitTorrent-style announce we sent to a tracker."
+    },
+    "PeerDiscovery": {
+      "fields": {
+        "seen":      "i",
+        "connected": "i",
+        "offers":    "i",
+        "answers":   "i",
+        "ts":        "ms"
+      },
+      "desc": "Rolling counters of peers discovered via the tracker since session start."
+    }
+  }
+}

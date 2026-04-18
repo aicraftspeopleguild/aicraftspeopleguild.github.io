@@ -1,0 +1,28 @@
+{
+  "§": "4.2.4",
+  "🏗️": "📁",
+  "name": "fs-panel",
+  "module": "L4/sandbox/web-llm/modules/fs-panel.js",
+
+  "📦": { "selectedFile": "s?", "currentPreview": "s?" },
+
+  "→": [
+    { "name": "refreshFileList",  "flow": "listFiles('/') → rebuild #file-list ⊕ FS.write(fileCount,files)" },
+    { "name": "selectFile",       "in": "path",                 "flow": "readFile → if html → showPreview" },
+    { "name": "refreshPreviewTabs","flow": "getPreviewableFiles → rebuild #preview-tabs" },
+    { "name": "showPreview",      "in": "path",                 "flow": "getPreviewHTML → iframe.srcdoc ⊕ FS.write(currentPreview,path)" },
+    { "name": "clearPreview",     "flow": "iframe hide ⊕ FS.del(currentPreview)" },
+    { "name": "refreshCommitLog", "flow": "getLog(10) → rebuild #commit-log ⊕ GIT.write(commitCount,branch,lastCommit)" },
+    { "name": "manualCommit",     "in": "msg:s",                "flow": "commitChanges ⊕ refreshCommitLog" }
+  ],
+
+  "↑🖥️(via 🛰️)": [
+    "sandbox.web-llm.fs.fileCount",
+    "sandbox.web-llm.fs.files",
+    "sandbox.web-llm.fs.currentPreview",
+    "sandbox.web-llm.git.commitCount",
+    "sandbox.web-llm.git.branch",
+    "sandbox.web-llm.git.lastCommit (🏗️Commit UDT)"
+  ],
+  "和": true
+}

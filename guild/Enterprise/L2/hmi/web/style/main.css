@@ -1,0 +1,60 @@
+﻿/* AI Craftspeople Guild — stylesheet entry point
+ * Each layer is in its own file; import order matters.
+ *
+ * base/       — global keyframes & design tokens
+ * widgets/    — ACG widget component styles (WidgetRuntime + ACGRenderer)
+ * pages/      — per-page scoped overrides (each scoped to .page-* class)
+ * home.css    — home page supplement (loaded separately by home.page.json)
+ * member-profile.css — member profile supplement
+ */
+
+/* ── Base ──────────────────────────────────────────────────────────── */
+@import "base/animations.css";
+
+/* ── Widgets ───────────────────────────────────────────────────────── */
+@import "widgets/tokens.css";
+@import "widgets/base.css";
+@import "widgets/kpi-card.css";
+@import "widgets/status-pill.css";
+@import "widgets/tag-value.css";
+@import "widgets/alarm-count.css";
+@import "widgets/split-panel.css";
+@import "widgets/tabbed-panel.css";
+@import "widgets/param-card.css";
+@import "widgets/embed.css";
+
+/* ── Pages ─────────────────────────────────────────────────────────── */
+@import "pages/acg-peer-reviews.css";
+@import "pages/ai-harness.css";
+@import "pages/ai-rituals.css";
+@import "pages/manifesto.css";
+@import "pages/charter.css";
+@import "pages/chief-ai-skeptic.css";
+@import "pages/code-of-conduct.css";
+@import "pages/decentralized-guild-web.css";
+@import "pages/flywheel.css";
+@import "pages/grid-brain.css";
+@import "pages/guild-chain.css";
+@import "pages/guild-radar.css";
+@import "pages/hall-of-fame.css";
+@import "pages/hall-of-shame.css";
+@import "pages/hushbell-full-spec.css";
+@import "pages/hushbell.css";
+@import "pages/index.css";
+@import "pages/index-old.css";
+@import "pages/irrational-universe.css";
+@import "pages/konomi-standard.css";
+@import "pages/lightning-factory.css";
+@import "pages/members.css";
+@import "pages/mission-statement.css";
+@import "pages/occams-razor.css";
+@import "pages/question-reflection-action.css";
+@import "pages/sad.css";
+@import "pages/showcases.css";
+@import "pages/the-dog.css";
+@import "pages/the-harm-equation.css";
+@import "pages/the-pattern-that-wasnt-there.css";
+@import "pages/the-prediction-trap.css";
+@import "pages/the-rational-empire.css";
+@import "pages/white-papers.css";
+@import "pages/youre-absolutely-wrong.css";

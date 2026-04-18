@@ -1,0 +1,26 @@
+{
+  "§": "2.0",
+  "🏗️": "🚀",
+  "name": "main",
+  "module": "L2/scada/gateway/scripts/main.js",
+  "desc": "entry · wires handlers · seeds sys.* · starts monitor, version, auth, sandbox-bridge",
+
+  "→": [
+    { "name": "meLabel",   "out": "s", "flow": "profile?.username ∨ myNm" },
+    { "name": "<init>",
+      "flow": "#mId.text=meLabel ⊕ wire(#jBtn,#cIn,#sBtn,#scBtn) ⊕ SYS.write(startedAt,myId,myNm,myEm,trackerCount,userAgent) ⊕ startMonitor ⊕ startSandboxBridge ⊕ updPeers ⊕ startVersion ⊕ startAuth ⊕ onProfileChange(→re-hi) ⊕ setTimeout(join,300)" },
+    { "name": "<intervals>",
+      "flow": "30s → announce() ⊕ 1s → SYS.uptimeSec++" }
+  ],
+
+  "🎹": {
+    "#jBtn.click": "join(#rIn.value ∨ 'acg-guild')",
+    "#cIn.Enter":  "send()",
+    "#sBtn.click": "send()",
+    "#scBtn.click":"toggleMonitor()",
+    "Ctrl/Cmd+.":  "toggleMonitor()"
+  },
+
+  "↑🖥️": ["sys.startedAt", "sys.uptimeSec", "sys.myId", "sys.myNm", "sys.myEm", "sys.trackerCount", "sys.userAgent"],
+  "和": true
+}

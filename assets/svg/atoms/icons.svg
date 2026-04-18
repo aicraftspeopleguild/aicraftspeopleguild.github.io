@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" width="360" height="72" role="img" aria-label="guild icon atoms — terminal · paper · mesh · build · member · pulse">
+  <defs>
+    <style>
+      .ic{fill:none;stroke:#8b949e;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+      .lbl{font-family:'SFMono-Regular',Consolas,monospace;font-size:10px;fill:#8b949e;text-anchor:middle}
+    </style>
+  </defs>
+  <rect width="360" height="72" rx="8" fill="#0d1117"/>
+
+  <!-- 1: terminal (cx=30) -->
+  <rect x="16" y="10" width="28" height="28" rx="3" class="ic"/>
+  <text x="19" y="29" font-family="'SFMono-Regular',Consolas,monospace" font-size="12" fill="#8b949e">&gt;_</text>
+  <text class="lbl" x="30" y="62">terminal</text>
+
+  <!-- 2: paper/doc (cx=90) -->
+  <rect x="79" y="10" width="20" height="28" rx="2" class="ic"/>
+  <line x1="83" y1="19" x2="95" y2="19" class="ic"/>
+  <line x1="83" y1="24" x2="95" y2="24" class="ic"/>
+  <line x1="83" y1="29" x2="91" y2="29" class="ic"/>
+  <text class="lbl" x="90" y="62">paper</text>
+
+  <!-- 3: mesh/network (cx=150) — 3 nodes + edges -->
+  <circle cx="150" cy="15" r="5" class="ic"/>
+  <circle cx="138" cy="34" r="5" class="ic"/>
+  <circle cx="162" cy="34" r="5" class="ic"/>
+  <line x1="147" y1="19" x2="141" y2="30" class="ic"/>
+  <line x1="153" y1="19" x2="159" y2="30" class="ic"/>
+  <line x1="143"  y1="34" x2="157" y2="34" class="ic"/>
+  <text class="lbl" x="150" y="62">mesh</text>
+
+  <!-- 4: build / play triangle (cx=210) -->
+  <path d="M200,13 L200,37 L220,25 Z" class="ic"/>
+  <text class="lbl" x="210" y="62">build</text>
+
+  <!-- 5: member / person (cx=270) -->
+  <circle cx="270" cy="18" r="7" class="ic"/>
+  <path d="M257,38 Q270,26 283,38" class="ic"/>
+  <text class="lbl" x="270" y="62">member</text>
+
+  <!-- 6: heartbeat / ECG (cx=330) -->
+  <polyline points="312,26 320,26 323,14 327,38 331,26 340,26" class="ic"/>
+  <text class="lbl" x="326" y="62">pulse</text>
+</svg>

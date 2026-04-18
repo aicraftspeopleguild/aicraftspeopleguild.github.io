@@ -1,0 +1,219 @@
+{
+  "custom": {
+    "partial": true
+  },
+  "params": {
+    "title": "AI Craftspeople Guild",
+    "subtitle": "Professional Code of Conduct for Engineers Using AI to Create Automated Solutions"
+  },
+  "propConfig": {},
+  "props": {},
+  "root": {
+    "meta": {
+      "name": "NorthDock"
+    },
+    "type": "acg.dock.north",
+    "props": {},
+    "children": [
+      {
+        "meta": {
+          "name": "TopNav"
+        },
+        "type": "acg.nav.top",
+        "props": {
+          "label": "Primary"
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "n1"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/",
+              "text": "Home"
+            }
+          },
+          {
+            "meta": {
+              "name": "n2"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#manifesto",
+              "text": "Manifesto"
+            }
+          },
+          {
+            "meta": {
+              "name": "n3"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/white-papers",
+              "text": "White Papers"
+            }
+          },
+          {
+            "meta": {
+              "name": "n4"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/rituals",
+              "text": "AI Rituals"
+            }
+          },
+          {
+            "meta": {
+              "name": "n5"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/mob-programming",
+              "text": "Mob Programming"
+            }
+          },
+          {
+            "meta": {
+              "name": "n6"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/flywheel",
+              "text": "Flywheel"
+            }
+          },
+          {
+            "meta": {
+              "name": "n7"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/showcases",
+              "text": "Showcases"
+            }
+          },
+          {
+            "meta": {
+              "name": "n8"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/members",
+              "text": "Members"
+            }
+          },
+          {
+            "meta": {
+              "name": "n9"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/hall-of-fame",
+              "text": "Hall of Fame"
+            }
+          },
+          {
+            "meta": {
+              "name": "n10"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/hall-of-shame",
+              "text": "Hall of Shame"
+            }
+          },
+          {
+            "meta": {
+              "name": "n11"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/mission",
+              "text": "Mission"
+            }
+          },
+          {
+            "meta": {
+              "name": "n12"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/charter",
+              "text": "Charter"
+            }
+          },
+          {
+            "meta": {
+              "name": "n13"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "#/code-of-conduct",
+              "text": "Conduct"
+            }
+          },
+          {
+            "meta": {
+              "name": "n14"
+            },
+            "type": "acg.display.link",
+            "props": {
+              "href": "guild/Enterprise/L1/forms/submit/",
+              "text": "Submit"
+            }
+          }
+        ]
+      },
+      {
+        "meta": {
+          "name": "Emblem"
+        },
+        "type": "acg.display.emblem",
+        "props": {
+          "text": "⚒ ACG ⚒"
+        },
+        "children": []
+      },
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "type": "acg.display.heading",
+        "props": {
+          "level": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.title"
+              }
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "meta": {
+          "name": "Subtitle"
+        },
+        "type": "acg.display.text",
+        "props": {},
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.subtitle"
+              }
+            }
+          }
+        },
+        "children": []
+      }
+    ]
+  }
+}

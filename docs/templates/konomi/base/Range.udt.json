@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"Range","layer":1,"version":"1.0.0","fields":[
+{"n":"lo","t":"REAL"},
+{"n":"hi","t":"REAL"},
+{"n":"lo_inc","t":"BOOL"},
+{"n":"hi_inc","t":"BOOL"},
+{"n":"unit","t":"STRING"}
+],"meta":{"desc":"Numeric range with inclusivity and unit"}}

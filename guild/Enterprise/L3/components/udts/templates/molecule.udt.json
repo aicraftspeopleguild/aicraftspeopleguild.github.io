@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Molecule",
+  "extends": "Component",
+  "version": "1.0.0",
+  "description": "Small grouping of atoms — a card, row, pair, or layout fragment. May compose atoms and other molecules. Accepts slotted children and repeated child records but should not fetch its own data.",
+  "parameters": {
+    "name":         { "dataType": "String",      "required": true },
+    "tag":          { "dataType": "String",      "required": true },
+    "cssClass":     { "dataType": "String",      "required": false },
+    "description":  { "dataType": "String",      "required": false },
+    "atomicLevel":  { "dataType": "String",      "required": true, "const": "molecule" },
+    "props":        { "dataType": "JSON",        "required": false },
+    "slots":        { "dataType": "StringArray", "required": false, "description": "Named insertion points" },
+    "composes":     { "dataType": "StringArray", "required": false, "description": "Child component names (atoms/molecules only)" },
+    "template":     { "dataType": "String",      "required": true }
+  },
+  "constraints": {
+    "may_compose": ["Atom", "Molecule"],
+    "forbidden_compose": ["Organism", "Template", "Widget"],
+    "no_direct_data_fetch": true
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "dependencies":   { "dataType": "StringArray" },
+    "used_by":        { "dataType": "StringArray" },
+    "schema_version": { "dataType": "String" }
+  }
+}

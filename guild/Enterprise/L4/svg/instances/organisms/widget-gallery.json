@@ -1,0 +1,30 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "WidgetGallery",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-widget-gallery.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/widget-gallery.svg",
+    "sources": [
+      "tag.db.udts (SvgOrganism rows)"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "Panel",
+      "PulseDot",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1036,
+      "h": "dynamic"
+    },
+    "description": "Gallery of every SvgOrganism registered in tag.db with its sources + composes."
+  },
+  "tags": {
+    "id": "widget-gallery",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/widget-gallery.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/widget-gallery.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

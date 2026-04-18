@@ -1,0 +1,44 @@
+{
+  "§":    "H.UDT",
+  "🏗️":  "🖼",
+  "name": "hmi · UDTs",
+  "owner":"L2/hmi/provider.py",
+  "note": "ISA-101 HMI UDTs. See /docs/standards/konomi/isa101/ for the full dense spec.",
+
+  "types": {
+    "ScreenLayer": {
+      "fields": {
+        "id":    "e[L1|L2|L3|L4|L5]",
+        "name":  "s",
+        "scope": "s",
+        "info":  "s",
+        "nav":   "a[s]"
+      },
+      "desc":  "One of the five ISA-101 HMI layers (L1 Overview … L5 Support)."
+    },
+    "ColorMeaning": {
+      "fields": { "state": "s", "hex": "s", "use": "s" },
+      "desc":  "Semantic color for an equipment state (ISA-101 palette)."
+    },
+    "Faceplate": {
+      "fields": {
+        "tag":       "s",
+        "title":     "s",
+        "equipment": "s?",
+        "pv":        "a[s]",
+        "sp":        "a[s]",
+        "commands":  "a[s]",
+        "nav":       "a[s]"
+      },
+      "desc":  "Operator faceplate bound to an equipment tag."
+    },
+    "NavTarget": {
+      "fields": { "path": "s", "layer": "e[L1|L2|L3|L4|L5]", "ts": "ms" },
+      "desc":  "Entry in the HMI navigation history ring."
+    },
+    "AlarmBadge": {
+      "fields": { "priority": "i[1..4]", "count": "i", "unacked": "i" },
+      "desc":  "Aggregated alarm count visible at every screen layer."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"RELATION","layer":0,"version":"1.0.0","fields":[
+{"n":"type","t":"ENUM","values":["contains","references","triggers","produces","consumes"]},
+{"n":"from","t":"STRING"},
+{"n":"to","t":"STRING"},
+{"n":"cardinality","t":"ENUM","values":["1:1","1:N","N:M"]}
+],"meta":{"desc":"Edge between two entities"}}

@@ -1,0 +1,4 @@
+{"$schema":"konomi/udt/v1","name":"ControlModule","std":"ISA-88","base":"Equipment","layer":3,"version":"1.0.0","fields":[
+{"n":"io","t":"TAG","array":true},
+{"n":"type","t":"ENUM","values":["Analog","Discrete","Motor","Valve","PID"]}
+],"meta":{"desc":"Lowest-level control element"}}

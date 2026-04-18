@@ -1,0 +1,21 @@
+{
+  "§": "2.4",
+  "🏗️": "💬",
+  "name": "chat",
+  "module": "L2/scada/gateway/scripts/chat.js",
+
+  "🏗️": {
+    "ChatMsg": { "role":"e[user|ai|system]", "len":"i", "ts":"ms" },
+    "📨": { "t":"\"msg\"", "id":"s20", "txt":"s" }
+  },
+
+  "→": [
+    { "name": "addMsg", "in": "pid:s20?, nm:s, em:s, txt:s, sys:b=false, avatar:s?=null", "flow": "DOM.append(.msg) ⊕ scroll" },
+    { "name": "send",   "in": "∅",                                                         "flow": "read(#cIn) → bcast(📨) ⊕ addMsg(self) ⊕ CHAT.inc(msgsOut) ⊕ CHAT.write(lastMsgAt)" }
+  ],
+
+  "↑🖥️": ["chat.msgsOut", "chat.lastMsgAt"],
+  "↓🖥️": ["auth.profile"],
+
+  "和": true
+}

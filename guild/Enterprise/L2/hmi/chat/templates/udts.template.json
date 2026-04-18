@@ -1,0 +1,25 @@
+{
+  "§":"C.UDT.template","🏗️":"💬",
+  "name":"<subsystem> · UDTs (chat template)",
+  "owner":"<subsystem>/provider.py",
+  "note":"Pre-filled /index/udt.template — P2P mesh consumers.",
+  "types":{
+    "<Envelope>":{
+      "glyph":"<📨|👋|📡|📣>",
+      "fields":{
+        "t":"\"<kind>\"","id":"s20","ts":"ms",
+        "nm":"s?","em":"s?","txt":"s?","to":"s20?"
+      },
+      "desc":"Wire envelope over RTCDataChannel. t = discriminator."
+    },
+    "<PeerRecord>":{
+      "glyph":"👥",
+      "fields":{
+        "id":"s20","name":"s","emoji":"s",
+        "state":"e[open|closed|reconnecting]",
+        "channels":"i","connectedAt":"ms","lastSeen":"ms","rttMs":"i?"
+      },
+      "desc":"One row per open RTCDataChannel. Auto-del on close."
+    }
+  }
+}

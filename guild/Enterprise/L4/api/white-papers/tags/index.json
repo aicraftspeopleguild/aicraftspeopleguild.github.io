@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-04-18T05:35:42Z",
+  "tags": {
+    "ai-harness": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "ai-harness",
+        "label": "ai-harness",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-18T05:35:42Z"
+      }
+    },
+    "architecture": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "architecture",
+        "label": "architecture",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-18T05:35:42Z"
+      }
+    },
+    "governance": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "governance",
+        "label": "governance",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-18T05:35:42Z"
+      }
+    },
+    "constraint-driven-development": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "constraint-driven-development",
+        "label": "constraint-driven-development",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-18T05:35:42Z"
+      }
+    }
+  }
+}

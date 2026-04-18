@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACG &middot; Guild Terminal</title>
+  <link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+
+<div id="window">
+  <div id="titlebar">
+    <div class="dot dot-red"></div>
+    <div class="dot dot-yellow"></div>
+    <div class="dot dot-green"></div>
+    <span id="titlebar-label">&#x2692; ACG &middot; Guild Terminal &nbsp;&middot;&nbsp; guild@acg:~</span>
+    <span id="titlebar-links">
+      <a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/" target="_blank">site &uarr;</a>
+    </span>
+  </div>
+
+  <div id="output"></div>
+  <div id="hint"></div>
+
+  <div id="input-row">
+    <span id="ps1">guild@acg</span><span id="ps2">:~$ </span>
+    <input id="cmd-input" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+  </div>
+</div>
+
+<!-- hidden DOM that the P2P mesh bridge (terminal-chat.js) expects -->
+<div style="display:none">
+  <span id="cIn"></span><button id="sBtn"></button>
+  <ul id="pList"></ul><div id="msgList"></div>
+  <div id="log"></div>
+  <input id="rIn" value="acg-guild">
+  <button id="jBtn"></button>
+  <span id="mId"></span>
+</div>
+
+<!-- component scripts — order matters: each layer depends on the previous -->
+<script src="js/config.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/commands.js"></script>
+<script src="js/input.js"></script>
+
+<!-- P2P mesh chat bridge (ES module; uses window.ACG_TERMINAL set by input.js) -->
+<script type="module" src="./terminal-chat.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L4/csv",
+    "label": "csv",
+    "parent": "guild/Enterprise/L4",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L4_csv",
+    "fs_path": "guild/Enterprise/L4/csv",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L4",
+      "guild_Enterprise_L4_csv"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/L4/api",
+      "guild/Enterprise/L4/database",
+      "guild/Enterprise/L4/runtime",
+      "guild/Enterprise/L4/sandbox"
+    ],
+    "descendants": 0,
+    "file_count": 11,
+    "subdir_count": 0,
+    "kinds": {
+      "db": 2,
+      "csv": 9
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"Phase","std":"ISA-88","layer":3,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING"},
+{"n":"name","t":"STRING"},
+{"n":"logic","t":"REF"},
+{"n":"params","t":"STRUCT","array":true,"of":{"name":"STRING","type":"STRING","default":"ANY","min":"REAL","max":"REAL","uom":"STRING"}},
+{"n":"state","t":"PhaseState"}
+],"meta":{"desc":"Executable phase with parameter list"}}

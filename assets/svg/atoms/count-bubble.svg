@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="{{COUNT}} {{LABEL}}">
+  <!-- TOKENS: COUNT  LABEL  COLOR -->
+  <!-- defaults: COUNT="25"  LABEL="papers"  COLOR="#3fb950" -->
+  <defs><style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style></defs>
+  <rect width="80" height="80" rx="40" fill="#0d1117"/>
+  <circle cx="40" cy="40" r="36" fill="#161b22" stroke="{{COLOR}}" stroke-width="1.5"/>
+  <text x="40" y="38" class="t" font-size="22" font-weight="700" fill="{{COLOR}}" text-anchor="middle">{{COUNT}}</text>
+  <text x="40" y="54" class="t" font-size="10" fill="#8b949e" text-anchor="middle">{{LABEL}}</text>
+</svg>

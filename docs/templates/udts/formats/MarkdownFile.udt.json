@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"MarkdownFile","layer":9,"version":"1.0.0","fields":[
+{"n":"path","t":"STRING"},
+{"n":"ext","t":"ENUM","values":["md","markdown"]},
+{"n":"frontmatter","t":"JSON","nullable":true,"desc":"YAML block at top of file if present"},
+{"n":"headings","t":"JSON","desc":"[{level,text,id}]"},
+{"n":"code_blocks","t":"JSON","desc":"[{lang,content}]"},
+{"n":"word_count","t":"DINT"},
+{"n":"sha256","t":"STRING"}
+],"meta":{"desc":"Markdown document. frontmatter may carry acg-paper: for paper auto-index."}}

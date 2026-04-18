@@ -1,0 +1,48 @@
+{
+  "§":    "W.UDT",
+  "🏗️":  "🧠",
+  "name": "sandbox.web-llm · UDTs",
+  "owner": "L4/sandbox/web-llm/modules/scada/udt.js",
+  "namespace": "sandbox.web-llm",
+  "note": "Structured payloads published into sandbox.web-llm.*. Mirrors the scada UDT pattern (/L2/scada/gateway/scripts/scada/udt.js).",
+
+  "types": {
+    "Model":    { "fields": {"id":"s","size":"s?","loaded":"b","loadedAt":"ms","progress":"f","status":"e[idle|loading|ready|error]"},
+                  "desc":"Loaded WebLLM model snapshot." },
+    "Engine":   { "fields": {"ready":"b","generating":"b","streamedTokens":"i","lastLatencyMs":"i"},
+                  "desc":"Inference engine runtime state." },
+
+    "Voice":    { "fields": {"micConnected":"b","listening":"b","rms":"f","f0":"f","energy":"f","vowel":"s","coherence":"f","pulseRate":"f"},
+                  "desc":"Live mic analysis frame." },
+    "Emotion":  { "fields": {"dominant":"s","excitement":"f","calm":"f","anger":"f","sadness":"f","joy":"f","curiosity":"f"},
+                  "desc":"Emotion coefficients derived from Voice." },
+
+    "VFile":    { "fields": {"path":"s","type":"e[html|css|javascript|json|markdown|text|svg|other]","size":"i","mtime":"ms"},
+                  "desc":"File entry in the virtual filesystem." },
+    "Directory":{ "fields": {"path":"s","entries":"a[s]","fileCount":"i","mtime":"ms"},
+                  "desc":"Directory snapshot — direct children only." },
+    "FileTree": { "fields": {"root":"s","nodes":"a[{path:s,type:e,size:i?}]","fileCount":"i"},
+                  "desc":"Hierarchical repo listing produced by `tree`." },
+
+    "Commit":   { "fields": {"id":"s7","message":"s","ts":"ms","files":"i"},
+                  "desc":"Git-lite commit record." },
+    "Branch":   { "fields": {"name":"s","head":"s7?","commitCount":"i"},
+                  "desc":"Named branch with current HEAD." },
+    "Status":   { "fields": {"clean":"b","added":"a[s]","modified":"a[s]","deleted":"a[s]","commits":"i"},
+                  "desc":"`status` summary — working tree vs HEAD." },
+    "Diff":     { "fields": {"ref":"s?","added":"a[s]","modified":"a[s]","deleted":"a[s]"},
+                  "desc":"Per-file added/modified/deleted list." },
+
+    "Preview":  { "fields": {"path":"s","sizeBytes":"i","inlined":"a[{path:s,kind:e[css|js|img]}]","ts":"ms"},
+                  "desc":"Result of a preview render — tracks inlined assets." },
+    "ExportArtifact": { "fields": {"format":"e[json|bundle]","size":"i","ts":"ms"},
+                  "desc":"Result of `export` or `bundle`." },
+    "Scaffold": { "fields": {"kind":"e[vanilla|spa|markdown|canvas]","files":"a[s]","entry":"s?"},
+                  "desc":"Starter-kit pour from `scaffold <kind>`." },
+
+    "ToolCall": { "fields": {"name":"s","args":"o","ok":"b","result":"s?","ts":"ms"},
+                  "desc":"One LLM→tool invocation." },
+    "ChatMsg":  { "fields": {"role":"e[user|assistant|system]","len":"i","ts":"ms","emoTag":"s?"},
+                  "desc":"Shape of a chat message in the web-llm tool." }
+  }
+}

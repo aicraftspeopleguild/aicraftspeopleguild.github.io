@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-04-18T05:35:42Z",
+  "tags": {
+    "atomic": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "atomic",
+        "label": "Atomic",
+        "description": "Atomic components"
+      },
+      "tags": {
+        "component_ids": [
+          "back-link",
+          "badge",
+          "badge-row",
+          "button",
+          "callout",
+          "code-block",
+          "eyebrow",
+          "figure-block",
+          "guild-mark",
+          "pull-quote",
+          "section-heading"
+        ],
+        "count": 11,
+        "last_updated": "2026-04-18T05:35:42Z"
+      }
+    },
+    "composite": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "composite",
+        "label": "Composite",
+        "description": "Composite components"
+      },
+      "tags": {
+        "component_ids": [
+          "article-nav",
+          "article-section",
+          "closing-statement",
+          "cta-section",
+          "entry-card",
+          "future-slot",
+          "intro-panel",
+          "member-card",
+          "page-footer",
+          "page-header",
+          "paper-card"
+        ],
+        "count": 11,
+        "last_updated": "2026-04-18T05:35:42Z"
+      }
+    },
+    "layout": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "layout",
+        "label": "Layout",
+        "description": "Layout components"
+      },
+      "tags": {
+        "component_ids": [
+          "card-grid",
+          "raw-html"
+        ],
+        "count": 2,
+        "last_updated": "2026-04-18T05:35:42Z"
+      }
+    },
+    "page-level": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "page-level",
+        "label": "Page Level",
+        "description": "Page-Level components"
+      },
+      "tags": {
+        "component_ids": [
+          "page-shell"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-18T05:35:42Z"
+      }
+    }
+  }
+}

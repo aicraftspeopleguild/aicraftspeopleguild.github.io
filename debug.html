@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACG Debug</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #0d1117;
+    --bg2:    #161b22;
+    --bg3:    #21262d;
+    --border: #30363d;
+    --text:   #e6edf3;
+    --dim:    #8b949e;
+    --green:  #3fb950;
+    --red:    #f85149;
+    --yellow: #d29922;
+    --blue:   #58a6ff;
+    --purple: #bc8cff;
+    --mono:   "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  }
+
+  html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; }
+
+  /* ── layout ───────────────────────────────────────────────── */
+  body { display: grid; grid-template-rows: 40px 1fr; grid-template-columns: 260px 1fr; height: 100vh; }
+
+  #topbar {
+    grid-column: 1 / -1;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 12px; padding: 0 16px;
+  }
+  #topbar h1 { font-size: 13px; font-weight: 700; color: var(--blue); letter-spacing: .04em; }
+  #db-status { margin-left: auto; font-size: 11px; color: var(--dim); }
+  #db-status span { margin-left: 8px; }
+  #db-status .ok   { color: var(--green); }
+  #db-status .warn { color: var(--red); }
+
+  /* ── sidebar ──────────────────────────────────────────────── */
+  #sidebar {
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  #tool-filter {
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  #tool-filter input {
+    width: 100%; background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text); padding: 5px 8px; border-radius: 4px; font: inherit;
+    outline: none;
+  }
+  #tool-filter input:focus { border-color: var(--blue); }
+  #tool-list {
+    overflow-y: auto; flex: 1;
+    list-style: none;
+  }
+  #tool-list li {
+    padding: 7px 12px; cursor: pointer; border-bottom: 1px solid var(--border);
+    transition: background .1s;
+  }
+  #tool-list li:hover  { background: var(--bg3); }
+  #tool-list li.active { background: var(--bg3); border-left: 3px solid var(--blue); padding-left: 9px; }
+  #tool-list li .tid   { color: var(--blue); font-size: 11px; font-weight: 700; }
+  #tool-list li .tdesc { color: var(--dim); font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #tool-list li .tcat  { float: right; font-size: 9px; color: var(--purple); text-transform: uppercase; }
+
+  /* ── main panel ───────────────────────────────────────────── */
+  #main {
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+
+  /* ── tool header ──────────────────────────────────────────── */
+  #tool-header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    min-height: 60px;
+  }
+  #tool-header h2 { font-size: 13px; color: var(--text); }
+  #tool-header p  { font-size: 11px; color: var(--dim); margin-top: 3px; }
+  #tool-header .tags { margin-top: 4px; }
+  #tool-header .tag {
+    display: inline-block; font-size: 9px; color: var(--purple);
+    border: 1px solid var(--purple); border-radius: 10px;
+    padding: 1px 6px; margin-right: 4px;
+  }
+
+  /* ── params ───────────────────────────────────────────────── */
+  #params-area {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end;
+  }
+  .param-field { display: flex; flex-direction: column; gap: 3px; }
+  .param-field label { font-size: 10px; color: var(--dim); }
+  .param-field input, .param-field select {
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text); padding: 4px 8px; border-radius: 4px;
+    font: inherit; min-width: 140px; outline: none;
+  }
+  .param-field input:focus, .param-field select:focus { border-color: var(--blue); }
+
+  #kv-extra { display: flex; flex-direction: column; gap: 4px; }
+  #kv-extra label { font-size: 10px; color: var(--dim); }
+  #kv-line { display: flex; gap: 4px; align-items: center; }
+  #kv-key, #kv-val {
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text); padding: 4px 6px; border-radius: 4px; font: inherit; outline: none;
+  }
+  #kv-key { width: 100px; } #kv-val { width: 160px; }
+  #kv-key:focus, #kv-val:focus { border-color: var(--blue); }
+
+  #run-btn {
+    background: var(--green); color: #0d1117; border: none;
+    padding: 6px 18px; border-radius: 4px; font: inherit; font-weight: 700;
+    cursor: pointer; align-self: flex-end;
+  }
+  #run-btn:hover { filter: brightness(1.15); }
+  #run-btn:disabled { opacity: .4; cursor: default; }
+
+  /* ── output + logs ─────────────────────────────────────────── */
+  #output-area {
+    flex: 1; display: flex; flex-direction: column; overflow: hidden;
+  }
+  .tab-bar {
+    display: flex; background: var(--bg2); border-bottom: 1px solid var(--border);
+  }
+  .tab {
+    padding: 6px 16px; font-size: 11px; color: var(--dim);
+    cursor: pointer; border-bottom: 2px solid transparent;
+  }
+  .tab.active { color: var(--text); border-bottom-color: var(--blue); }
+
+  .tab-pane { display: none; flex: 1; overflow-y: auto; padding: 12px 16px; }
+  .tab-pane.active { display: flex; flex-direction: column; }
+
+  #output {
+    white-space: pre-wrap; word-break: break-all;
+    font-size: 12px; flex: 1;
+    min-height: 0;
+  }
+  .out-ok   { color: var(--text); }
+  .out-err  { color: var(--red); }
+  .out-meta { color: var(--dim); font-size: 11px; margin-bottom: 6px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  .out-json { color: var(--yellow); }
+
+  #logs-table {
+    width: 100%; border-collapse: collapse; font-size: 11px;
+  }
+  #logs-table th {
+    text-align: left; color: var(--dim); padding: 4px 8px;
+    border-bottom: 1px solid var(--border); font-weight: 400;
+  }
+  #logs-table td { padding: 4px 8px; border-bottom: 1px solid var(--border); }
+  #logs-table tr:hover td { background: var(--bg3); }
+  .ok-yes { color: var(--green); } .ok-no { color: var(--red); }
+
+  #no-tool { padding: 40px 20px; color: var(--dim); font-size: 12px; text-align: center; }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- ── top bar ──────────────────────────────────────────────── -->
+<header id="topbar">
+  <h1>ACG / debug</h1>
+  <div id="db-status">loading…</div>
+</header>
+
+<!-- ── sidebar ──────────────────────────────────────────────── -->
+<nav id="sidebar">
+  <div id="tool-filter">
+    <input id="filter-input" type="search" placeholder="filter tools…" autocomplete="off">
+  </div>
+  <ul id="tool-list"></ul>
+</nav>
+
+<!-- ── main ─────────────────────────────────────────────────── -->
+<main id="main">
+  <div id="no-tool">← select a tool</div>
+
+  <div id="tool-panel" style="display:none; flex-direction:column; flex:1; overflow:hidden;">
+    <div id="tool-header">
+      <h2 id="th-name"></h2>
+      <p  id="th-desc"></p>
+      <div class="tags" id="th-tags"></div>
+    </div>
+
+    <div id="params-area">
+      <div id="declared-params"></div>
+      <div id="kv-extra">
+        <label>extra param</label>
+        <div id="kv-line">
+          <input id="kv-key" placeholder="key" spellcheck="false">
+          <span style="color:var(--dim)">=</span>
+          <input id="kv-val" placeholder="value" spellcheck="false">
+        </div>
+      </div>
+      <button id="run-btn">▶ run</button>
+    </div>
+
+    <div id="output-area">
+      <div class="tab-bar">
+        <div class="tab active" data-tab="output">output</div>
+        <div class="tab"        data-tab="logs">logs</div>
+        <div class="tab"        data-tab="raw">raw</div>
+      </div>
+      <div class="tab-pane active" id="tab-output"><div id="output"><span style="color:var(--dim)">run a tool to see output</span></div></div>
+      <div class="tab-pane"        id="tab-logs"><table id="logs-table"><thead><tr><th>started</th><th>duration</th><th>ok</th><th>inputs</th></tr></thead><tbody id="logs-body"></tbody></table></div>
+      <div class="tab-pane"        id="tab-raw"><div id="raw-out" style="white-space:pre-wrap;word-break:break-all;font-size:11px;color:var(--yellow)"></div></div>
+    </div>
+  </div>
+</main>
+
+<script>
+'use strict';
+
+const API = '';          // same origin — debug-server.py at localhost:7070
+let _tools  = [];
+let _active = null;
+
+// ── fetch helpers ──────────────────────────────────────────────
+
+async function api(path, opts) {
+  const r = await fetch(API + path, opts);
+  if (!r.ok) throw new Error(`${r.status} ${path}`);
+  return r.json();
+}
+
+// ── boot ───────────────────────────────────────────────────────
+
+async function boot() {
+  await Promise.all([loadDbStatus(), loadTools()]);
+}
+
+async function loadDbStatus() {
+  const el = document.getElementById('db-status');
+  try {
+    const [db, broken] = await Promise.all([api('/api/db'), api('/api/db/broken')]);
+    const n = broken.count;
+    el.innerHTML =
+      `<span>docs: ${db.doc_count}</span>` +
+      `<span class="${n === 0 ? 'ok' : 'warn'}">broken refs: ${n}</span>`;
+  } catch {
+    el.textContent = 'debug-server offline';
+  }
+}
+
+async function loadTools() {
+  try {
+    const data = await api('/api/tools');
+    _tools = data.tools;
+    renderToolList(_tools);
+  } catch {
+    document.getElementById('no-tool').textContent = 'Could not reach debug-server.py — is it running?';
+  }
+}
+
+// ── sidebar ────────────────────────────────────────────────────
+
+function renderToolList(tools) {
+  const ul = document.getElementById('tool-list');
+  ul.innerHTML = '';
+  for (const t of tools) {
+    const li = document.createElement('li');
+    li.dataset.id = t.id;
+    li.innerHTML =
+      `<span class="tcat">${esc(t.category)}</span>` +
+      `<div class="tid">${esc(t.id)}</div>` +
+      `<div class="tdesc">${esc(t.description)}</div>`;
+    li.addEventListener('click', () => selectTool(t.id));
+    ul.appendChild(li);
+  }
+}
+
+document.getElementById('filter-input').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  const filtered = _tools.filter(t =>
+    t.id.toLowerCase().includes(q) ||
+    t.description.toLowerCase().includes(q) ||
+    (t.tags || []).some(tag => tag.toLowerCase().includes(q))
+  );
+  renderToolList(filtered);
+});
+
+// ── tool select ────────────────────────────────────────────────
+
+function selectTool(id) {
+  _active = _tools.find(t => t.id === id);
+  if (!_active) return;
+
+  // sidebar highlight
+  document.querySelectorAll('#tool-list li').forEach(li =>
+    li.classList.toggle('active', li.dataset.id === id)
+  );
+
+  // header
+  document.getElementById('th-name').textContent = _active.name || _active.id;
+  document.getElementById('th-desc').textContent = _active.description;
+  const tagsEl = document.getElementById('th-tags');
+  tagsEl.innerHTML = (_active.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+
+  // params
+  buildParams(_active.inputs || []);
+
+  // show panel
+  document.getElementById('no-tool').style.display  = 'none';
+  const panel = document.getElementById('tool-panel');
+  panel.style.display = 'flex';
+
+  // clear output
+  clearOutput();
+
+  // load logs
+  loadLogs(id);
+}
+
+// ── param builder ──────────────────────────────────────────────
+
+function buildParams(inputs) {
+  const el = document.getElementById('declared-params');
+  el.innerHTML = '';
+  for (const inp of inputs) {
+    const wrap = document.createElement('div');
+    wrap.className = 'param-field';
+    const label = document.createElement('label');
+    label.textContent = inp.name + (inp.required ? ' *' : '');
+    const input = document.createElement('input');
+    input.type        = 'text';
+    input.name        = inp.name;
+    input.placeholder = inp.type || 'string';
+    if (inp.default != null) input.value = inp.default;
+    wrap.appendChild(label);
+    wrap.appendChild(input);
+    el.appendChild(wrap);
+  }
+}
+
+function collectInputs() {
+  const inputs = {};
+  // declared params
+  document.querySelectorAll('#declared-params input').forEach(inp => {
+    if (inp.value.trim()) inputs[inp.name] = inp.value.trim();
+  });
+  // free-form kv
+  const k = document.getElementById('kv-key').value.trim();
+  const v = document.getElementById('kv-val').value.trim();
+  if (k) inputs[k] = v;
+  return inputs;
+}
+
+// ── run ────────────────────────────────────────────────────────
+
+document.getElementById('run-btn').addEventListener('click', runTool);
+
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') runTool();
+});
+
+async function runTool() {
+  if (!_active) return;
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ running…';
+  showTab('output');
+  clearOutput();
+
+  const inputs = collectInputs();
+  const meta   = `$ acg ${_active.id}${Object.entries(inputs).map(([k,v])=>` ${k}=${v}`).join('')}\n\n`;
+  appendOutput('out-meta', meta);
+
+  const t0 = Date.now();
+  try {
+    const result = await api('/api/run', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ tool_id: _active.id, inputs }),
+    });
+
+    const ms = Date.now() - t0;
+
+    if (result.stdout)        appendOutput('out-ok',  result.stdout);
+    if (result.stderr)        appendOutput('out-err', result.stderr);
+    if (result.result != null) appendOutput('out-json', JSON.stringify(result.result, null, 2));
+
+    appendOutput('out-meta', `\nexited ${result.rc ?? '?'}  (${ms} ms)`);
+
+    document.getElementById('raw-out').textContent = JSON.stringify(result, null, 2);
+    loadLogs(_active.id);
+  } catch (err) {
+    appendOutput('out-err', `error: ${err.message}`);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '▶ run';
+  }
+}
+
+// ── logs ───────────────────────────────────────────────────────
+
+async function loadLogs(toolId) {
+  try {
+    const data = await api(`/api/logs?tool=${encodeURIComponent(toolId)}&n=50`);
+    const tbody = document.getElementById('logs-body');
+    tbody.innerHTML = '';
+    for (const r of [...(data.records || [])].reverse()) {
+      const tr = document.createElement('tr');
+      tr.innerHTML =
+        `<td>${r.started_at || ''}</td>` +
+        `<td>${r.duration_s != null ? r.duration_s + 's' : ''}</td>` +
+        `<td class="${r.ok ? 'ok-yes' : 'ok-no'}">${r.ok ? 'yes' : 'no'}</td>` +
+        `<td>${esc(JSON.stringify(r.inputs || {}))}</td>`;
+      tbody.appendChild(tr);
+    }
+    if (!data.records || !data.records.length) {
+      tbody.innerHTML = '<tr><td colspan="4" style="color:var(--dim)">no log records yet</td></tr>';
+    }
+  } catch { /* ignore */ }
+}
+
+// ── tabs ───────────────────────────────────────────────────────
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => showTab(tab.dataset.tab));
+});
+
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach(t =>
+    t.classList.toggle('active', t.dataset.tab === name)
+  );
+  document.querySelectorAll('.tab-pane').forEach(p =>
+    p.classList.toggle('active', p.id === `tab-${name}`)
+  );
+}
+
+// ── output helpers ─────────────────────────────────────────────
+
+function clearOutput() {
+  document.getElementById('output').innerHTML = '';
+}
+
+function appendOutput(cls, text) {
+  const el  = document.getElementById('output');
+  const span = document.createElement('span');
+  span.className   = cls;
+  span.textContent = text;
+  el.appendChild(span);
+  el.scrollTop = el.scrollHeight;
+}
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ── go ─────────────────────────────────────────────────────────
+
+boot();
+</script>
+</body>
+</html>

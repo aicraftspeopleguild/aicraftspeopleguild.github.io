@@ -1,0 +1,32 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "BackLink",
+    "tag": "div",
+    "cssClass": "back-link",
+    "description": "Header navigation link with left arrow to parent page.",
+    "category": "atomic",
+    "props": {
+      "href": {
+        "type": "URL",
+        "required": true
+      },
+      "label": {
+        "type": "String",
+        "required": true
+      }
+    },
+    "slots": [],
+    "template": "<div class=\"back-link\"><a href=\"{{ href }}\">\u2190 {{ label }}</a></div>",
+    "atomicLevel": "atom"
+  },
+  "tags": {
+    "id": "back-link",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/back-link.json",
+    "dependencies": [],
+    "used_by_views": [
+      "page-shell"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

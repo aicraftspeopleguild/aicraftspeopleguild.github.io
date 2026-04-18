@@ -1,0 +1,30 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "Badge",
+    "tag": "span",
+    "cssClass": "badge",
+    "description": "Small label for metadata, tags, or status indicators.",
+    "category": "atomic",
+    "props": {
+      "text": {
+        "type": "String",
+        "required": true
+      }
+    },
+    "slots": [],
+    "template": "<span class=\"badge\">{{ text }}</span>",
+    "atomicLevel": "atom"
+  },
+  "tags": {
+    "id": "badge",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/badge.json",
+    "dependencies": [],
+    "used_by_views": [
+      "paper-card",
+      "member-card",
+      "white-paper-article"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

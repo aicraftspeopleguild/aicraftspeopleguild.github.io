@@ -1,0 +1,28 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "ScadaNetwork",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-scada-network.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/scada-network.svg",
+    "sources": [
+      "hand-placed"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1040,
+      "h": 540
+    },
+    "description": "Subsystem data-flow network \u00b7 nodes for GitHub Issues, workflows, state.db, tag.db, api, terminal, mesh, WebLLM. Edges colored by read/write/trigger."
+  },
+  "tags": {
+    "id": "scada-network",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/scada-network.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/scada-network.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

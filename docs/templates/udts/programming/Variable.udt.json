@@ -1,0 +1,10 @@
+{"$schema":"konomi/udt/v1","name":"Variable","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"type","t":"STRING"},
+{"n":"scope","t":"ENUM","values":["module","class","function","block"]},
+{"n":"mutable","t":"BOOL"},
+{"n":"default","t":"ANY","nullable":true},
+{"n":"tags","t":"STRING[]","nullable":true},
+{"n":"file","t":"STRING"},
+{"n":"line","t":"DINT","nullable":true}
+],"meta":{"desc":"A named storage location with a type and scope"}}

@@ -1,0 +1,46 @@
+{
+  "§": 3,
+  "🏗️": "🖥️",
+  "name": "SCADA",
+  "module": [
+    "L2/scada/gateway/scripts/scada/tags.js",
+    "L2/scada/gateway/scripts/scada/providers.js",
+    "L2/scada/gateway/scripts/scada/udt.js",
+    "L2/scada/gateway/scripts/scada/monitor.js"
+  ],
+
+  "m🏷️": "path:s → { value:any quality:🟢|🟡|🔴 ts:ms type:s }",
+  "m📋": "pattern:s → callback[]",
+
+  "📋": {
+    "SYS":     { "pattern": "sys.*",     "payload": "{ startedAt:ms uptimeSec:i myId:s20 userAgent:s }" },
+    "AUTH":    { "pattern": "auth.*",    "payload": "{ profile:🔑 signedIn:b }" },
+    "VERSION": { "pattern": "version.*", "payload": "{ sha:s shortSha:s7 committedAt:ms message:s }" },
+    "ROOM":    { "pattern": "room.*",    "payload": "{ name:s hash:s joinedAt:ms peerCount:i }" },
+    "TRACKER": { "pattern": "tracker.*", "payload": "{ url:s state:e latency:ms announces:i }" },
+    "PEERS":   { "pattern": "peers.*",   "payload": "{ <id>:🏗️👥 · dynamic ⊕ ∅ on disconnect }" },
+    "CHAT":    { "pattern": "chat.*",    "payload": "{ msgsIn:i msgsOut:i lastMsgAt:ms }" },
+    "SIGNAL":  { "pattern": "signal.*",  "payload": "{ offersIn:i answersIn:i answersOut:i last:o }" },
+    "SANDBOX": { "pattern": "sandbox.*", "payload": "{ ← 🛰️ subscriber }" }
+  },
+
+  "→": [
+    { "name": "write",     "in": "path,val,type?", "flow": "🏷️.set ⊕ notify(📋)" },
+    { "name": "read",      "in": "path",           "flow": "🏷️.get" },
+    { "name": "inc",       "in": "path",           "flow": "🏷️[path].value++" },
+    { "name": "del",       "in": "path",           "flow": "🏷️.delete ⊕ notify" },
+    { "name": "list",      "in": "prefix?",        "flow": "🏷️.filter" },
+    { "name": "subscribe", "in": "pattern,cb",     "flow": "📋.add   (** = ∀)" }
+  ],
+
+  "🏗️🖥️Monitor": {
+    "mount":   "DOM",
+    "filter":  "s",
+    "refresh": "1 Hz / rAF",
+    "route":   "#scada | #scada?filter | #scada/prefix.",
+    "toggle":  "Ctrl+.",
+    "quality": "🟢 green  🟡 amber  🔴 red"
+  },
+
+  "和": true
+}

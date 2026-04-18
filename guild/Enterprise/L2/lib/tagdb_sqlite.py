@@ -243,16 +243,57 @@ def write_global(db_path: str | Path, d: dict) -> None:
     con.close()
 
 
+def _snapshot_udts(db_path: Path) -> dict:
+    """Read existing (id,dir) -> full-row dict from tag.db.udts so archived
+    bodies survive source-file deletion."""
+    if not db_path.exists():
+        return {}
+    out = {}
+    try:
+        con = sqlite3.connect(str(db_path))
+        con.row_factory = sqlite3.Row
+        tables = {r[0] for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        if "udts" in tables:
+            for row in con.execute("SELECT id, dir, file, udt_type, body FROM udts"):
+                out[(row["id"], row["dir"])] = dict(row)
+        con.close()
+    except sqlite3.Error:
+        pass
+    return out
+
+
 def write_consolidated(db_path: str | Path, global_d: dict, local_dbs: dict) -> None:
     """Root tag.db containing EVERY local dir's full content stamped with dir.
-    Replaces the need for per-directory tag.db files."""
-    con = _fresh(Path(db_path), GLOBAL_EXTRA)
-    # Manifest only from global
+    Replaces per-directory tag.db files. Archived UDT rows whose source file
+    is no longer on disk are preserved from the prior tag.db."""
+    db_path = Path(db_path)
+    snapshot = _snapshot_udts(db_path)
+
+    con = _fresh(db_path, GLOBAL_EXTRA)
     con.executemany("INSERT INTO manifest(key,value) VALUES (?,?)", _manifest_rows(global_d))
-    # Graph tables only populated from the global rollup
     _write_global_extra(con, global_d)
-    # Ingest each local dir's slice, preserving dir attribution
+
+    touched_udts: set = set()
     for dir_rel, ld in local_dbs.items():
         _ingest_one(con, ld, dir_rel)
+        for u in (ld.get("udts") or []):
+            if not isinstance(u, dict): continue
+            uid = u.get("id") or u.get("file")
+            if uid: touched_udts.add((_s(uid) if not isinstance(uid, str) else uid, dir_rel))
+
+    # Carry forward archived UDT rows (source file gone, body preserved)
+    archived = 0
+    for key, row in snapshot.items():
+        if key in touched_udts:
+            continue
+        con.execute(
+            "INSERT OR REPLACE INTO udts(id,dir,file,udt_type,body) VALUES (?,?,?,?,?)",
+            (row["id"], row["dir"], row["file"], row["udt_type"], row["body"]),
+        )
+        archived += 1
+    con.execute(
+        "INSERT OR REPLACE INTO manifest(key,value) VALUES ('archived_udt_count', ?)",
+        (str(archived),),
+    )
     con.commit()
     con.close()

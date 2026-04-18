@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "base": "/guild/web/",
+  "base": "guild/web/",
   "generated_at": "2026-04-17T19:58:22Z",
   "path_udts": "components/udts/instances/paths/",
   "routes": [

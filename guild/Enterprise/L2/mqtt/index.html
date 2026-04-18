@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📡 ACG MQTT · live bus</title>
+<link rel="stylesheet" href="../scada/gateway/styles/theme.css">
+<style>
+  html,body{height:100vh;margin:0;overflow:hidden;display:flex;flex-direction:column;background:var(--bg);color:var(--tx);font-family:var(--ff-body);font-size:12px}
+  header{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--bd);flex-wrap:wrap}
+  header h1{font-family:var(--ff-display);font-size:15px;margin:0;font-weight:600}
+  header h1 small{color:var(--dm);font-weight:400;margin-left:8px;font-size:10px}
+  header .spacer{flex:1}
+  header a{color:var(--tl);text-decoration:none;font-size:11px;padding:3px 10px;border-radius:4px;border:1px solid transparent}
+  header a:hover{background:var(--tlb);border-color:var(--tl)}
+  .stats{font-family:var(--ff-mono);font-size:10px;color:var(--dm);padding:2px 10px;background:var(--inp);border:1px solid var(--bd);border-radius:12px}
+  .stats b{color:var(--tx)}
+  main{flex:1;display:grid;grid-template-columns:340px 1fr;gap:0;overflow:hidden}
+  .left{border-right:1px solid var(--bd);display:flex;flex-direction:column;overflow:hidden}
+  .sect{padding:10px 14px;border-bottom:1px solid var(--bd)}
+  .sect h2{font-size:10px;margin:0 0 6px;color:var(--tl);text-transform:uppercase;letter-spacing:1.6px;font-weight:700}
+  .row{display:flex;gap:6px;margin-bottom:6px}
+  input,select,button,textarea{background:var(--inp);color:var(--tx);border:1px solid var(--bd);border-radius:4px;padding:5px 8px;font-family:var(--ff-mono);font-size:11px}
+  button{cursor:pointer;font-family:var(--ff-body);font-weight:600}
+  button:hover{border-color:var(--tl);color:var(--tl)}
+  button.primary{background:var(--tl);border-color:var(--tl);color:#fff}
+  .subs{font-family:var(--ff-mono);font-size:10px;padding:4px 0;flex:1;overflow:auto}
+  .subs .item{display:flex;justify-content:space-between;padding:3px 14px;border-bottom:1px solid var(--bd2)}
+  .subs .item code{color:var(--tl)}
+  .subs .item .unsub{cursor:pointer;color:var(--dm)}
+  .subs .item .unsub:hover{color:var(--rs)}
+  .bus{overflow:auto;padding:4px 0;font-family:var(--ff-mono);font-size:11px;background:#0b1018}
+  .bus .msg{padding:3px 14px;border-bottom:1px solid #1a2030;display:grid;grid-template-columns:80px 1fr auto;gap:10px;align-items:baseline}
+  .bus .msg .t{color:var(--dm);font-size:10px}
+  .bus .msg .k{color:var(--tl);font-weight:700}
+  .bus .msg .v{color:var(--tx);word-break:break-all}
+  .bus .msg .meta{color:var(--ft);font-size:9px}
+  .bus .msg.retained .k::after{content:' (retained)';color:var(--amb);font-size:9px;font-weight:400}
+  .bus .msg.from-peer .k::before{content:'← ';color:var(--sg)}
+  #tests{padding:10px 14px;background:var(--card);border-top:1px solid var(--bd);font-family:var(--ff-mono);font-size:10px;max-height:160px;overflow:auto}
+  #tests .ok{color:var(--sg)} #tests .fail{color:var(--rs)}
+</style>
+</head>
+<body>
+<header>
+  <h1>📡 ACG MQTT<small>· topic bus over WebRTC mesh</small></h1>
+  <span class="spacer"></span>
+  <span class="stats" id="stats">0 subs · 0 retained · mesh=no</span>
+  <a href="../../../apps/whiteboard/">🖍 whiteboard</a>
+  <a href="../../../apps/control-deck/">⚒ deck</a>
+  <a href="../../../../index.html">⚒ guild</a>
+</header>
+
+<main>
+  <div class="left">
+    <div class="sect">
+      <h2>subscribe</h2>
+      <div class="row">
+        <input id="sub-topic" placeholder="topic pattern (e.g. peer.*.state)" style="flex:1" value="#">
+        <button id="sub-btn">add</button>
+      </div>
+      <div class="hint" style="color:var(--dm);font-size:10px;margin-top:4px">wildcards: <code>*</code> = one segment, <code>#</code> = rest of path</div>
+    </div>
+
+    <div class="sect">
+      <h2>publish</h2>
+      <div class="row">
+        <input id="pub-topic" placeholder="topic" style="flex:1" value="demo.hello">
+      </div>
+      <div class="row">
+        <input id="pub-msg" placeholder="message (string or JSON)" style="flex:1" value="from-the-mqtt-demo">
+      </div>
+      <div class="row">
+        <label style="color:var(--dm);font-size:10px"><input type="checkbox" id="pub-retained"> retained</label>
+        <span class="spacer" style="flex:1"></span>
+        <button id="pub-btn" class="primary">publish</button>
+      </div>
+    </div>
+
+    <div class="sect" style="flex:1;overflow:auto">
+      <h2>active subscriptions</h2>
+      <div class="subs" id="subs"></div>
+    </div>
+  </div>
+
+  <div class="bus" id="bus"></div>
+</main>
+
+<div id="tests">loading self-tests…</div>
+
+<script type="module">
+import mqtt, { subscribe, publish, matchTopic, peek, listSubscriptions, stats, attachMesh, clearRetained } from './mqtt.js';
+
+// ── attach to the mesh if it's available (lets peers see our publishes)
+try {
+  const p2p   = await import('../scada/gateway/scripts/p2p.js');
+  const peers = await import('../scada/gateway/scripts/peers.js');
+  const cfg   = await import('../scada/gateway/scripts/config.js');
+  attachMesh({ bcast: p2p.bcast, registerPeerHandler: peers.registerPeerHandler, myId: cfg.myId });
+  // Auto-join a "mqtt-bus" room so visitors across tabs all see each other.
+  setTimeout(() => p2p.join('mqtt-bus'), 400);
+} catch (e) { console.warn('mesh not attached:', e.message); }
+
+// ── ui
+const $ = id => document.getElementById(id);
+const busEl = $('bus');
+const subsEl = $('subs');
+const statsEl = $('stats');
+const activeSubs = new Map(); // id -> {pattern, unsub}
+
+function renderStats() {
+  const s = stats();
+  statsEl.innerHTML = `<b>${s.subs}</b> subs · <b>${s.retained}</b> retained · mesh=<b>${s.connectedToMesh ? 'yes' : 'no'}</b>`;
+}
+
+function renderSubs() {
+  subsEl.innerHTML = '';
+  for (const [id, info] of activeSubs) {
+    const row = document.createElement('div');
+    row.className = 'item';
+    row.innerHTML = `<span><code>${esc(info.pattern)}</code></span><span class="unsub" data-id="${id}">×</span>`;
+    subsEl.appendChild(row);
+  }
+  renderStats();
+}
+
+subsEl.addEventListener('click', e => {
+  const id = Number(e.target.dataset.id);
+  if (!id) return;
+  const info = activeSubs.get(id);
+  if (info) { info.unsub(); activeSubs.delete(id); renderSubs(); }
+});
+
+function esc(s) { return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function hhmmss() { return new Date().toTimeString().slice(0,8); }
+
+function appendToBus(topic, msg, rec) {
+  const el = document.createElement('div');
+  el.className = 'msg' + (rec.retained ? ' retained' : '') + (rec.from && rec.from !== stats().myId ? ' from-peer' : '');
+  const body = typeof msg === 'string' ? msg : JSON.stringify(msg);
+  el.innerHTML = `<span class="t">${hhmmss()}</span><span><span class="k">${esc(topic)}</span> <span class="v">${esc(body).slice(0, 200)}</span></span><span class="meta">${esc(rec.from || '')}</span>`;
+  busEl.appendChild(el);
+  busEl.scrollTop = busEl.scrollHeight;
+  while (busEl.children.length > 400) busEl.removeChild(busEl.firstChild);
+}
+
+function addSub(pattern) {
+  if (!pattern) return;
+  const unsub = subscribe(pattern, appendToBus);
+  const id = listSubscriptions().slice(-1)[0].id;
+  activeSubs.set(id, { pattern, unsub });
+  renderSubs();
+}
+
+$('sub-btn').addEventListener('click', () => {
+  const p = $('sub-topic').value.trim();
+  if (p) addSub(p);
+});
+$('sub-topic').addEventListener('keydown', e => { if (e.key === 'Enter') $('sub-btn').click(); });
+
+$('pub-btn').addEventListener('click', () => {
+  const topic = $('pub-topic').value.trim();
+  if (!topic) return;
+  let msg = $('pub-msg').value;
+  try { msg = JSON.parse(msg); } catch {}
+  publish(topic, msg, { retained: $('pub-retained').checked });
+});
+$('pub-msg').addEventListener('keydown', e => { if (e.key === 'Enter') $('pub-btn').click(); });
+
+// default sub: everything
+addSub('#');
+
+// ── self-tests (run once on load)
+const testsEl = $('tests');
+testsEl.innerHTML = '';
+function t(name, ok, note='') {
+  const line = document.createElement('div');
+  line.className = ok ? 'ok' : 'fail';
+  line.textContent = (ok ? '[ok]   ' : '[FAIL] ') + name + (note ? '  — ' + note : '');
+  testsEl.appendChild(line);
+  return ok;
+}
+
+{
+  let hits = 0;
+  const unsub = subscribe('test.*.value', () => { hits++; });
+  publish('test.a.value', 1, { local: true });
+  publish('test.b.value', 2, { local: true });
+  publish('test.a.other', 3, { local: true });
+  t('wildcard * matches one segment', hits === 2, 'expected 2 hits, got ' + hits);
+  unsub();
+}
+{
+  let hits = 0;
+  const unsub = subscribe('tree.#', () => { hits++; });
+  publish('tree.a',      1, { local: true });
+  publish('tree.a.b',    2, { local: true });
+  publish('tree.a.b.c',  3, { local: true });
+  publish('other.tree.a', 4, { local: true });
+  t('# matches rest of path', hits === 3, 'expected 3 hits, got ' + hits);
+  unsub();
+}
+{
+  publish('retained.value', 42, { retained: true, local: true });
+  let hits = 0;
+  const unsub = subscribe('retained.value', (topic, msg) => { if (msg === 42) hits++; });
+  t('retained replayed to new sub', hits === 1);
+  unsub();
+  clearRetained('retained.value');
+}
+{
+  t('matchTopic function', matchTopic('a.*.c', 'a.b.c') && !matchTopic('a.*.c', 'a.b.d.c'));
+}
+{
+  t('peek returns last retained', (publish('peek.t', 'x', { retained: true, local: true }), peek('peek.t').msg === 'x'));
+  clearRetained('peek.t');
+}
+renderStats();
+
+// expose for console poking
+window.mqtt = mqtt;
+window.m = { publish, subscribe, stats, peek, listSubscriptions };
+</script>
+
+</body>
+</html>

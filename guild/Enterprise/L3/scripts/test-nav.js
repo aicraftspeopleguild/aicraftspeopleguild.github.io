@@ -155,8 +155,8 @@ async function main() {
   const routes = extractHashRoutes(indexHTML);
   console.log(`Found ${routes.length} hash routes in index.html:\n`);
 
-  const sitemap = await fetchJSON('/guild/web/site-map.json');
-  const registry = await fetchJSON('/guild/web/components/registry.json');
+  const sitemap = await fetchJSON('/guild/Enterprise/L2/hmi/web/site-map.json');
+  const registry = await fetchJSON('/guild/Enterprise/L2/hmi/web/components/registry.json');
 
   let passed = 0, failed = 0;
   const results = [];

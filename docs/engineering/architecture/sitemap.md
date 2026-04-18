@@ -77,9 +77,9 @@ https://aicraftspeopleguild.github.io/
 
 | URL pattern                                        | Resolver                                      |
 |----------------------------------------------------|-----------------------------------------------|
-| `/`                                                | Public SPA shell (built from `guild/web/perspective/views/index.view.json`) |
+| `/`                                                | Public SPA shell (built from `guild/Enterprise/L2/hmi/web/perspective/views/index.view.json`) |
 | `/#/<slug>`                                        | `renderer.js` — fetches page + view + data JSONs by matching the Path UDT route |
-| `/guild/`                                          | Operator dashboard (built from `guild/web/perspective/views/guild-index.view.json`) |
+| `/guild/`                                          | Operator dashboard (built from `guild/Enterprise/L2/hmi/web/perspective/views/guild-index.view.json`) |
 | `/guild/apps/<name>/`                              | Static HTML served directly                   |
 | `/guild/Enterprise/L4/api/*.json`                         | Static JSON API (regenerated each build)      |
 | `/papers.json`                                     | Flat API catalog (auto-index workflow output) |
@@ -88,9 +88,9 @@ https://aicraftspeopleguild.github.io/
 
 ## Source of truth
 
-- **Path UDT instances** at `guild/web/components/udts/instances/paths/*.json` — 46 Path records define every registered route
-- **`guild/web/site-map.json`** — machine-readable route table consumed by `renderer.js`
-- **`guild/web/components/udts/instances/paths/_graph.json`** — 46 nodes, 45 edges dependency graph
+- **Path UDT instances** at `guild/Enterprise/L2/hmi/web/components/udts/instances/paths/*.json` — 46 Path records define every registered route
+- **`guild/Enterprise/L2/hmi/web/site-map.json`** — machine-readable route table consumed by `renderer.js`
+- **`guild/Enterprise/L2/hmi/web/components/udts/instances/paths/_graph.json`** — 46 nodes, 45 edges dependency graph
 - **`/sitemap.xml`** at repo root — SEO sitemap auto-generated from Path UDTs
 - **This document** — human-readable overview
 

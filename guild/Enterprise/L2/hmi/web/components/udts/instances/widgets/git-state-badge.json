@@ -22,7 +22,7 @@
   },
   "tags": {
     "id": "git-state-badge",
-    "file_path": "guild/web/components/udts/instances/widgets/git-state-badge.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/git-state-badge.json",
     "source_kind": "mcp",
     "source_ref": "git_status",
     "embeddable_in": ["Organism", "Template"],

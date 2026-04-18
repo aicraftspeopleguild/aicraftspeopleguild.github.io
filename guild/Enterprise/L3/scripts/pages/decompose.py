@@ -19,9 +19,9 @@ Decompose static HTML pages into view.json + data.json.
 For each guild/web/static/<slug>.html:
   - Extract header metadata (title, subtitle, eyebrow, meta, back-link)
   - Capture <main> inner HTML as the body content
-  - Write guild/web/views/<slug>.view.json — tree of PageShell + RawHTML
-  - Write guild/web/views/data/<slug>.data.json — {title, subtitle, body}
-  - Update guild/web/pages/<slug>.page.json — switch from static-page to <slug> view
+  - Write guild/Enterprise/L2/hmi/web/views/<slug>.view.json — tree of PageShell + RawHTML
+  - Write guild/Enterprise/L2/hmi/web/views/data/<slug>.data.json — {title, subtitle, body}
+  - Update guild/Enterprise/L2/hmi/web/pages/<slug>.page.json — switch from static-page to <slug> view
 
 After running, build.js will produce dist/<slug>.html from the view trees,
 and static/*.html becomes a build artifact that can be regenerated.
@@ -32,9 +32,9 @@ from bs4 import BeautifulSoup
 
 REPO = Path(__file__).resolve().parents[4]
 STATIC_DIR = REPO / "guild" / "web" / "static"
-VIEWS_DIR = REPO / "guild" / "web" / "views"
+VIEWS_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "views"
 DATA_DIR = VIEWS_DIR / "data"
-PAGES_DIR = REPO / "guild" / "web" / "pages"
+PAGES_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "pages"
 
 def parse(html_path):
     soup = BeautifulSoup(html_path.read_text(encoding="utf-8"), "html.parser")
@@ -99,7 +99,7 @@ def parse(html_path):
 # Map old-style filenames (from when pages were at static/foo.html) to
 # the current dist/ output slugs (from Path UDT IDs).
 LINK_REWRITES = {
-    # SPA hash routes (kept in sync with guild/web/site-map.json)
+    # SPA hash routes (kept in sync with guild/Enterprise/L2/hmi/web/site-map.json)
     "aicraftspeopleguild-manifesto.html": "#/manifesto",
     "manifesto.html":                     "#/manifesto",
     "chief-ai-skeptic-officer.html":      "#/chief-ai-skeptic",

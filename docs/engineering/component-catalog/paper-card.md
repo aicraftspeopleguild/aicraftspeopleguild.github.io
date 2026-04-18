@@ -27,7 +27,7 @@ White paper card for the papers index grid.
   },
   "tags": {
     "id": "paper-card",
-    "file_path": "guild/web/components/paper-card.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/paper-card.json",
     "dependencies": ["button", "badge"],
     "used_by_views": ["white-paper-index"],
     "schema_version": "1.0.0"

@@ -75,7 +75,7 @@
   },
   "tags": {
     "id": "cta-section",
-    "file_path": "guild/web/components/cta-section.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/cta-section.json",
     "dependencies": [
       "button"
     ],

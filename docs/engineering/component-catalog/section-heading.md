@@ -20,7 +20,7 @@ Section title with decorative underline.
   },
   "tags": {
     "id": "section-heading",
-    "file_path": "guild/web/components/section-heading.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/section-heading.json",
     "dependencies": [],
     "used_by_views": ["white-paper-index", "members-index", "home"],
     "schema_version": "1.0.0"

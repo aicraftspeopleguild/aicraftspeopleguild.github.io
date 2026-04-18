@@ -20,7 +20,7 @@ Dark-background closing block for white papers.
   },
   "tags": {
     "id": "closing-statement",
-    "file_path": "guild/web/components/closing-statement.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/closing-statement.json",
     "dependencies": [],
     "used_by_views": ["white-paper-article"],
     "schema_version": "1.0.0"

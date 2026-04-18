@@ -19,7 +19,7 @@ Metadata label / topic tag pill.
   },
   "tags": {
     "id": "badge",
-    "file_path": "guild/web/components/badge.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/badge.json",
     "dependencies": [],
     "used_by_views": ["paper-card", "member-card", "white-paper-article"],
     "schema_version": "1.0.0"

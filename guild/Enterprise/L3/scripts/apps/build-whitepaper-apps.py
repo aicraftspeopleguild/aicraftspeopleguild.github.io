@@ -21,7 +21,7 @@ For each guild/Enterprise/L4/api/white-papers/udts/instances/<slug>.json:
   - Write guild/apps/whitepapers/udts/instances/<slug>.json (App instance)
   - Write guild/apps/whitepapers/data/<slug>.data.json (paper data + body_html)
   - Write guild/apps/whitepapers/pages/<slug>.page.json (route + view binding)
-  - Add a Path UDT instance to guild/web/components/udts/instances/paths/
+  - Add a Path UDT instance to guild/Enterprise/L2/hmi/web/components/udts/instances/paths/
 
 The build step (build.js) then renders each app to dist/apps/<slug>.html.
 """
@@ -38,7 +38,7 @@ REPO = Path(__file__).resolve().parents[4]
 WP_INSTANCES = REPO / "guild" / "Enterprise" / "L4" / "api" / "white-papers" / "udts" / "instances"
 APP_DIR = REPO / "guild" / "apps" / "whitepapers"
 APP_TEMPLATE = APP_DIR / "udts" / "templates" / "app.udt.json"
-PATHS_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances" / "paths"
+PATHS_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "paths"
 
 TYPE_LABEL = {
     "published":           "White Paper",
@@ -163,7 +163,7 @@ def main():
                 "data":        {"paper": f"guild/apps/whitepapers/data/{slug}.data.json"},
                 "route":       f"/whitepapers/{slug}",
                 "section":     "resources",
-                "stylesheets": ["guild/web/style/main.css"],
+                "stylesheets": ["guild/Enterprise/L2/hmi/web/style/main.css"],
                 "status":      "published",
                 "tags":        params.get("tags") or []
             },
@@ -188,7 +188,7 @@ def main():
                 "route":       f"/whitepapers/{slug}",
                 "view":        "guild/apps/whitepapers/views/white-paper-app.view.json",
                 "data":        {"paper": f"guild/apps/whitepapers/data/{slug}.data.json"},
-                "stylesheets": ["guild/web/style/main.css"],
+                "stylesheets": ["guild/Enterprise/L2/hmi/web/style/main.css"],
                 "section":     "resources",
                 "parent_slug": "white-papers",
                 "status":      "published"

@@ -23,7 +23,7 @@
   },
   "tags": {
     "id": "health-badge",
-    "file_path": "guild/web/components/udts/instances/widgets/health-badge.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/health-badge.json",
     "source_kind": "api",
     "source_ref": "guild/Enterprise/L4/api/health.json",
     "embeddable_in": ["Organism", "Template"],

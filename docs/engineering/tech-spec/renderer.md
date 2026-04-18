@@ -34,8 +34,8 @@ The ACG View Renderer is a lightweight client-side engine that reads JSON view t
 
 ```json
 {
-  "siteMap":       "guild/web/site-map.json",
-  "components":    "guild/web/components/registry.json",
+  "siteMap":       "guild/Enterprise/L2/hmi/web/site-map.json",
+  "components":    "guild/Enterprise/L2/hmi/web/components/registry.json",
   "mountPoint":    "#app",
   "basePath":      "/",
   "fallbackPage":  "pages/404.page.json",

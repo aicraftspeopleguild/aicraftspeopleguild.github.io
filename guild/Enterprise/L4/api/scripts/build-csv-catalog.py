@@ -35,9 +35,9 @@ HERE = Path(__file__).resolve()
 REPO = HERE.parents[4]
 CSV_DIR = REPO / "guild" / "Enterprise" / "L4" / "csv"
 DB_LIB  = REPO / "guild" / "Enterprise" / "L4" / "database" / "lib"
-PATHS_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances" / "paths"
+PATHS_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "paths"
 
-sys.path.insert(0, str(REPO / "guild" / "web" / "scripts" / "lib"))
+sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 sys.path.insert(0, str(DB_LIB))
 from packml import Process, path_exists
 import db as acgdb

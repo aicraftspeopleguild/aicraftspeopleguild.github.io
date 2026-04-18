@@ -214,8 +214,8 @@ Dynamic routes use `:slug` parameters resolved against UDT instance IDs.
 ```js
 // Boot the renderer
 ACGRenderer.init({
-  siteMap:    'guild/web/site-map.json',
-  components: 'guild/web/components/registry.json',
+  siteMap:    'guild/Enterprise/L2/hmi/web/site-map.json',
+  components: 'guild/Enterprise/L2/hmi/web/components/registry.json',
   mountPoint: '#app'
 });
 

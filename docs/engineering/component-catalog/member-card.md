@@ -27,7 +27,7 @@ Member profile card for the members directory.
   },
   "tags": {
     "id": "member-card",
-    "file_path": "guild/web/components/member-card.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/member-card.json",
     "dependencies": ["button", "badge"],
     "used_by_views": ["members-index"],
     "schema_version": "1.0.0"

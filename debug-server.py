@@ -25,7 +25,7 @@ HERE = Path(__file__).resolve().parent
 
 for _candidate in (
     HERE / "guild" / "Enterprise" / "L2" / "lib",
-    HERE / "guild" / "web" / "scripts" / "lib",
+    HERE / "guild" / "Enterprise" / "L2" / "lib",
 ):
     if (_candidate / "tool_runner.py").exists():
         sys.path.insert(0, str(_candidate))

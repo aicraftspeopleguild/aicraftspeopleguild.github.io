@@ -31,13 +31,13 @@
       "guild/web/members/udts"
     ],
     "siblings": [
-      "guild/web/assets",
-      "guild/web/components",
-      "guild/web/pages",
-      "guild/web/perspective",
+      "guild/Enterprise/L2/hmi/web/assets",
+      "guild/Enterprise/L2/hmi/web/components",
+      "guild/Enterprise/L2/hmi/web/pages",
+      "guild/Enterprise/L2/hmi/web/perspective",
       "guild/web/scripts",
-      "guild/web/style",
-      "guild/web/views"
+      "guild/Enterprise/L2/hmi/web/style",
+      "guild/Enterprise/L2/hmi/web/views"
     ],
     "descendants": 12,
     "file_count": 1,

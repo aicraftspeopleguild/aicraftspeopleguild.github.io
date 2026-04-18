@@ -19,7 +19,7 @@ Bordered note block for important information.
   },
   "tags": {
     "id": "callout",
-    "file_path": "guild/web/components/callout.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/callout.json",
     "dependencies": [],
     "used_by_views": ["white-paper-article"],
     "schema_version": "1.0.0"

@@ -26,7 +26,7 @@ The outermost page wrapper that every view uses.
   },
   "tags": {
     "id": "page-shell",
-    "file_path": "guild/web/components/page-shell.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/page-shell.json",
     "dependencies": ["page-header", "page-footer", "guild-mark"],
     "used_by_views": ["home", "white-paper-index", "white-paper-article", "members-index", "member-profile", "charter", "flywheel", "mob-programming", "hall-of-fame", "hall-of-shame"],
     "schema_version": "1.0.0"

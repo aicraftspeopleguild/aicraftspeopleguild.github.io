@@ -39,7 +39,7 @@
   },
   "tags": {
     "id": "card-grid",
-    "file_path": "guild/web/components/card-grid.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/card-grid.json",
     "dependencies": [
       "section-heading"
     ],

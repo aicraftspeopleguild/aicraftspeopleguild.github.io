@@ -91,7 +91,7 @@ COMMENT_PREFIXES = {
 }
 SCHEMA_VERSION = "1.0.0"
 ROOT_DB        = REPO / "script.db"
-LEGACY_INSTANCES_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances" / "scripts"
+LEGACY_INSTANCES_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "scripts"
 BLOCK_START_RE = re.compile(r"^\s*(#|//)\s*@script\b", re.IGNORECASE)
 KV_RE          = re.compile(r"^\s*(?:#|//)\s*([A-Za-z_][\w\-]*)\s*:\s*(.*?)\s*$")
 LIST_ITEM_RE   = re.compile(r"^\s*(?:#|//)\s*-\s*(.+?)\s*$")

@@ -8,7 +8,7 @@
     "entry": "guild/Enterprise/L3/scripts/build.sh",
     "language": "bash",
     "inputs": [],
-    "outputs": [{"name":"dist","type":"dir","description":"guild/web/dist/*.html"}],
+    "outputs": [{"name":"dist","type":"dir","description":"guild/web/dist/*.html (build output, gitignored)"}],
     "adapters": ["CliAdapter","LoggerWrapper"],
     "tags": ["build","orchestrator"]
   },

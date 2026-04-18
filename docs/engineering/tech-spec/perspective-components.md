@@ -1,6 +1,6 @@
 # Perspective Component Types — `acg.*` Namespace
 
-Every component type is registered in `guild/web/perspective/components/registry.json` mapping the type string (e.g. `acg.display.heading`) to its renderer definition (HTML tag, CSS class, prop → attribute mapping).
+Every component type is registered in `guild/Enterprise/L2/hmi/web/perspective/components/registry.json` mapping the type string (e.g. `acg.display.heading`) to its renderer definition (HTML tag, CSS class, prop → attribute mapping).
 
 ## Containers
 

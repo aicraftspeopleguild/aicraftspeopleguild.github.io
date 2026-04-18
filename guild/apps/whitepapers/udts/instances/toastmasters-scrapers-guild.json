@@ -14,7 +14,7 @@
     "route": "/whitepapers/toastmasters-scrapers-guild",
     "section": "resources",
     "stylesheets": [
-      "guild/web/style/main.css"
+      "guild/Enterprise/L2/hmi/web/style/main.css"
     ],
     "status": "published",
     "tags": []

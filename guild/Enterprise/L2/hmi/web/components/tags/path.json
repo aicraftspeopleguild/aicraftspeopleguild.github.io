@@ -1,16 +1,16 @@
 {
   "udtType": "FsPath",
   "parameters": {
-    "path": "guild/web/components/tags",
+    "path": "guild/Enterprise/L2/hmi/web/components/tags",
     "label": "tags",
-    "parent": "guild/web/components",
+    "parent": "guild/Enterprise/L2/hmi/web/components",
     "kind": "filesystem",
     "purpose": null,
     "owners": []
   },
   "tags": {
     "id": "guild_web_components_tags",
-    "fs_path": "guild/web/components/tags",
+    "fs_path": "guild/Enterprise/L2/hmi/web/components/tags",
     "depth": 4,
     "breadcrumb": [
       "root",
@@ -21,7 +21,7 @@
     ],
     "children": [],
     "siblings": [
-      "guild/web/components/udts"
+      "guild/Enterprise/L2/hmi/web/components/udts"
     ],
     "descendants": 0,
     "file_count": 3,

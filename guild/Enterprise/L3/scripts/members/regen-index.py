@@ -21,7 +21,7 @@ import json, sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[4]
-INSTANCES = REPO / "guild" / "web" / "members" / "udts" / "instances"
+INSTANCES = REPO / "guild" / "Enterprise" / "L4" / "members" / "udts" / "instances"
 OUT = REPO / "guild" / "web" / "dist" / "members.html"
 
 def load_instances():

@@ -97,7 +97,7 @@
   },
   "tags": {
     "id": "page-shell",
-    "file_path": "guild/web/components/page-shell.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/page-shell.json",
     "dependencies": [
       "page-header",
       "page-footer",

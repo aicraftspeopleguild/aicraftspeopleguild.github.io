@@ -27,7 +27,7 @@
   },
   "tags": {
     "id": "intro-panel",
-    "file_path": "guild/web/components/intro-panel.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/intro-panel.json",
     "dependencies": [],
     "used_by_views": [
       "white-paper-index",

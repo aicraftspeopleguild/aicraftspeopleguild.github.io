@@ -22,7 +22,7 @@ Image or media with caption.
   },
   "tags": {
     "id": "figure-block",
-    "file_path": "guild/web/components/figure-block.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/figure-block.json",
     "dependencies": [],
     "used_by_views": ["white-paper-article"],
     "schema_version": "1.0.0"

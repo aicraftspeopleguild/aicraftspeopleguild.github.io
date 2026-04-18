@@ -21,7 +21,7 @@ Generic card for lists (Hall of Fame, Hall of Shame).
   },
   "tags": {
     "id": "entry-card",
-    "file_path": "guild/web/components/entry-card.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/entry-card.json",
     "dependencies": [],
     "used_by_views": ["hall-of-fame", "hall-of-shame"],
     "schema_version": "1.0.0"

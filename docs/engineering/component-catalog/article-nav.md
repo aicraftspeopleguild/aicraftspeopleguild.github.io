@@ -19,7 +19,7 @@ In-page section navigation for white papers.
   },
   "tags": {
     "id": "article-nav",
-    "file_path": "guild/web/components/article-nav.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/article-nav.json",
     "dependencies": [],
     "used_by_views": ["white-paper-article"],
     "schema_version": "1.0.0"

@@ -468,8 +468,8 @@ const ACGRenderer = (function () {
 
     // Fetch site map and component registry in parallel
     Promise.all([
-      fetchJSON(_config.siteMap || 'guild/web/site-map.json'),
-      fetchJSON(_config.components || 'guild/web/components/registry.json')
+      fetchJSON(_config.siteMap || 'guild/Enterprise/L2/hmi/web/site-map.json'),
+      fetchJSON(_config.components || 'guild/Enterprise/L2/hmi/web/components/registry.json')
     ]).then(function (results) {
       _siteMap = results[0];
       _registry = results[1].components || {};

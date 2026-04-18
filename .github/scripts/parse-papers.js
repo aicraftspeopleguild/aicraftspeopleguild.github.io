@@ -48,11 +48,11 @@ const TAG_VOCABULARY = new Set([
 // excluded so the validator doesn't see duplicate IDs.
 const SKIP_DIRS = new Set([
   '.git', 'node_modules', 'guild/web/dist', '__pycache__',
-  'guild/web/components/udts', 'guild/web/components/tags',
+  'guild/Enterprise/L2/hmi/web/components/udts', 'guild/Enterprise/L2/hmi/web/components/tags',
   'guild/apps/test',         // test-app snapshots duplicate standard IDs
   'guild/apps/p2p',          // p2p guild app (upstream ACGP2P snapshot)
   'guild/Enterprise',        // controls tree (contains its own standards)
-  'guild/web/views/data',    // body content for route views
+  'guild/Enterprise/L2/hmi/web/views/data',    // body content for route views
   'guild/apps/whitepapers/data'
 ]);
 

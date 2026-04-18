@@ -20,7 +20,7 @@ Content section within a white paper.
   },
   "tags": {
     "id": "article-section",
-    "file_path": "guild/web/components/article-section.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/article-section.json",
     "dependencies": [],
     "used_by_views": ["white-paper-article"],
     "schema_version": "1.0.0"

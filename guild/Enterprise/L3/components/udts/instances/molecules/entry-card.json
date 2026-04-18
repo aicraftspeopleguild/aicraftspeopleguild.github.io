@@ -26,7 +26,7 @@
   },
   "tags": {
     "id": "entry-card",
-    "file_path": "guild/web/components/entry-card.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/entry-card.json",
     "dependencies": [],
     "used_by_views": [
       "hall-of-fame",

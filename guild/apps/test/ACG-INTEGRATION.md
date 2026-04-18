@@ -42,7 +42,7 @@ as a Guild app under `guild/apps/test/`.
 - **Reference for the test standard**: Guild members can link to runnable
   Konomi UDT examples from white papers and engineering docs
 - **Independent of the renderer**: this app does not use
-  `guild/web/renderer.js` — it is a static sub-site
+  `guild/Enterprise/L2/hmi/web/renderer.js` — it is a static sub-site
 
 ## Upstream sync
 
@@ -62,4 +62,4 @@ Consider a future submodule or subtree merge when upstream stabilizes.
 
 See `guild/apps/test/acg-app.json` for the App UDT instance that registers
 this app in the Guild catalog, and
-`guild/web/components/udts/instances/paths/test.json` for the route.
+`guild/Enterprise/L2/hmi/web/components/udts/instances/paths/test.json` for the route.

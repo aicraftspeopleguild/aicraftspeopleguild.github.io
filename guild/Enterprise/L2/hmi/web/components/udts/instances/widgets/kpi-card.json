@@ -19,7 +19,7 @@
   },
   "tags": {
     "id": "kpi-card",
-    "file_path": "guild/web/components/udts/instances/widgets/kpi-card.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/kpi-card.json",
     "embeddable_in": ["Organism", "Template"],
     "schema_version": "1.0.0"
   }

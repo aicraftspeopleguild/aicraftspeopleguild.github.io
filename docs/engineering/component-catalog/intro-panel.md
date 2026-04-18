@@ -19,7 +19,7 @@ Opening text panel with left border accent.
   },
   "tags": {
     "id": "intro-panel",
-    "file_path": "guild/web/components/intro-panel.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/intro-panel.json",
     "dependencies": [],
     "used_by_views": ["white-paper-index", "members-index", "member-profile"],
     "schema_version": "1.0.0"

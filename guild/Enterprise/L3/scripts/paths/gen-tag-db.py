@@ -28,9 +28,9 @@ Consolidated tag / UDT index generator.
 Produces `tag.db` (JSON) in every non-excluded directory + a global root
 `tag.db`. Replaces and supersedes:
 
-  - guild/web/components/udts/instances/paths/tags/index.json
-  - guild/web/components/udts/instances/paths/_graph.json
-  - guild/web/components/udts/instances/fs-paths/_graph.json
+  - guild/Enterprise/L2/hmi/web/components/udts/instances/paths/tags/index.json
+  - guild/Enterprise/L2/hmi/web/components/udts/instances/paths/_graph.json
+  - guild/Enterprise/L2/hmi/web/components/udts/instances/fs-paths/_graph.json
 
 The root tag.db carries everything those files used to carry, plus:
   * every tag observed across the repo (namespaced: `udt:*`, `id:*`,
@@ -68,8 +68,8 @@ EXCLUDE_DIRS = {
 DB_FILE = "tag.db"
 SCHEMA_VERSION = "2.0.0"
 
-URL_PATHS_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances" / "paths"
-FS_PATHS_DIR  = REPO / "guild" / "web" / "components" / "udts" / "instances" / "fs-paths"
+URL_PATHS_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "paths"
+FS_PATHS_DIR  = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "fs-paths"
 
 LEGACY_FILES = [
     URL_PATHS_DIR / "tags" / "index.json",

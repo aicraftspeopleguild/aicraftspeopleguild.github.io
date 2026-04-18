@@ -2,9 +2,9 @@
   "custom": {
     "output": "index.html",
     "bodyClass": "",
-    "stylesheets": ["guild/web/style/home.css"],
+    "stylesheets": ["guild/Enterprise/L2/hmi/web/style/home.css"],
     "headExtra": "<style>body:not(.has-route) #app{display:none;}body.has-route main.dock-body>section{display:none;}body.has-route #app{display:block;min-height:60vh;padding:2rem 0;}</style>",
-    "bodyExtra": "<iframe name=\"hidden_iframe\" id=\"hidden_iframe\" style=\"display:none;\"></iframe>\n<script src=\"guild/web/home.js\" defer></script>\n<script src=\"guild/web/renderer.js\"></script>\n<script>if(typeof ACGRenderer!=='undefined'){ACGRenderer.init({siteMap:'guild/web/site-map.json',components:'guild/web/components/registry.json',mountPoint:'#app',analyticsId:'G-Z1CEF69ZSH'});}</script>"
+    "bodyExtra": "<iframe name=\"hidden_iframe\" id=\"hidden_iframe\" style=\"display:none;\"></iframe>\n<script src=\"guild/Enterprise/L2/hmi/web/home.js\" defer></script>\n<script src=\"guild/Enterprise/L2/hmi/web/renderer.js\"></script>\n<script>if(typeof ACGRenderer!=='undefined'){ACGRenderer.init({siteMap:'guild/Enterprise/L2/hmi/web/site-map.json',components:'guild/Enterprise/L2/hmi/web/components/registry.json',mountPoint:'#app',analyticsId:'G-Z1CEF69ZSH'});}</script>"
   },
   "params": {
     "title": "AI Craftspeople Guild - Professional Code of Conduct"
@@ -94,7 +94,7 @@
           },
           {
             "meta": { "name": "WorshipZone" }, "type": "acg.display.html",
-            "props": { "html": "<section class=\"worship-zone\"><h2>AI Craftspeople Guild is a worship free zone</h2><figure><img src=\"guild/web/assets/worship-free-zone.png\" alt=\"AI Craftspeople Guild is a worship free zone\"></figure></section>" }, "children": []
+            "props": { "html": "<section class=\"worship-zone\"><h2>AI Craftspeople Guild is a worship free zone</h2><figure><img src=\"guild/Enterprise/L2/hmi/web/assets/worship-free-zone.png\" alt=\"AI Craftspeople Guild is a worship free zone\"></figure></section>" }, "children": []
           },
           {
             "meta": { "name": "RouteMount" }, "type": "acg.display.html",

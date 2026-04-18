@@ -21,7 +21,7 @@ rather than fully decomposed component trees.
   },
   "tags": {
     "id": "raw-html",
-    "file_path": "guild/web/components/raw-html.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/raw-html.json",
     "dependencies": [],
     "used_by_views": ["charter", "flywheel", "mob-programming", "hall-of-fame", "hall-of-shame", "hushbell", "showcases"],
     "schema_version": "1.0.0"

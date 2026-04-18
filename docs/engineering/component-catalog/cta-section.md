@@ -24,7 +24,7 @@ Call-to-action section with rotating gradient background.
   },
   "tags": {
     "id": "cta-section",
-    "file_path": "guild/web/components/cta-section.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/cta-section.json",
     "dependencies": ["button"],
     "used_by_views": ["page-shell", "home", "white-paper-index", "members-index"],
     "schema_version": "1.0.0"

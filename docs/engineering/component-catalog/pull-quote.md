@@ -20,7 +20,7 @@ Emphasized quote with attribution.
   },
   "tags": {
     "id": "pull-quote",
-    "file_path": "guild/web/components/pull-quote.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/pull-quote.json",
     "dependencies": [],
     "used_by_views": ["white-paper-article", "mob-programming"],
     "schema_version": "1.0.0"

@@ -2,7 +2,7 @@
 
 **Document:** ACG-CC-001-2026  **Version:** 1.0.0
 
-26 reusable UI components. Each is a parseable `json:udt:Component` instance. The ingest pipeline extracts these into `guild/web/components/udts/instances/` for use by the view renderer.
+26 reusable UI components. Each is a parseable `json:udt:Component` instance. The ingest pipeline extracts these into `guild/Enterprise/L2/hmi/web/components/udts/instances/` for use by the view renderer.
 
 ## Atomic Components
 

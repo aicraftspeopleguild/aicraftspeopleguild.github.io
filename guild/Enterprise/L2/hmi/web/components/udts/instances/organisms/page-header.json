@@ -77,7 +77,7 @@
   },
   "tags": {
     "id": "page-header",
-    "file_path": "guild/web/components/page-header.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/page-header.json",
     "dependencies": [
       "guild-mark",
       "eyebrow",

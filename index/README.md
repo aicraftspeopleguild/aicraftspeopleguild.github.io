@@ -21,13 +21,13 @@ aicraftspeopleguild.github.io/
 ```
 
 The builder (`guild/web/scripts/perspective-build.js`) scans this
-directory recursively alongside `guild/web/perspective/views/` and
+directory recursively alongside `guild/Enterprise/L2/hmi/web/perspective/views/` and
 emits each non-partial view to its `custom.output` path.
 
 ## Path UDT
 
 Home route (`/`) is registered by:
-  `guild/web/components/udts/instances/paths/home.json`
+  `guild/Enterprise/L2/hmi/web/components/udts/instances/paths/home.json`
 
 It carries `page: "index/view.json"` so every downstream tool (sitemap,
 path-graph, bin/acg navigation) resolves the home route back to this

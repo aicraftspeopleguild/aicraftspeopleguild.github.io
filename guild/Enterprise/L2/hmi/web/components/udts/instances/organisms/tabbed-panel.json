@@ -25,7 +25,7 @@
   },
   "tags": {
     "id": "tabbed-panel",
-    "file_path": "guild/web/components/udts/instances/organisms/tabbed-panel.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/organisms/tabbed-panel.json",
     "schema_version": "1.0.0"
   }
 }

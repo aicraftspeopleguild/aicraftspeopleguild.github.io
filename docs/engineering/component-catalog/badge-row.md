@@ -19,7 +19,7 @@ Horizontal row of badges.
   },
   "tags": {
     "id": "badge-row",
-    "file_path": "guild/web/components/badge-row.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/badge-row.json",
     "dependencies": ["badge"],
     "used_by_views": ["flywheel", "mob-programming"],
     "schema_version": "1.0.0"

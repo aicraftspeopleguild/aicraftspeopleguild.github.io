@@ -21,7 +21,7 @@ Primary and secondary action buttons.
   },
   "tags": {
     "id": "button",
-    "file_path": "guild/web/components/button.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/button.json",
     "dependencies": [],
     "used_by_views": ["page-shell", "white-paper-index", "member-profile", "home"],
     "schema_version": "1.0.0"

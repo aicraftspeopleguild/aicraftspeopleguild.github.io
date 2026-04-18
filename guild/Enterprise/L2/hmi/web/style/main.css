@@ -15178,3 +15178,308 @@ width: 100%;
                 max-width: 320px;
     }
 }
+
+/* -------------------------------------------------------------------
+   Widget System — KPI, StatusPill, TagValue, AlarmCount,
+                   SplitPanel, TabbedPanel, ParamCard
+   Compatible with WidgetRuntime (widget-runtime.js) + ACGRenderer
+   ------------------------------------------------------------------- */
+
+/* -- CSS Custom Properties for widget theming ----------------------- */
+:root {
+  --widget-radius:        0.5rem;
+  --widget-pad:           1.25rem;
+  --widget-gap:           1rem;
+  --widget-bg:            var(--color-surface, #fff);
+  --widget-border:        var(--color-border, #e2e6ea);
+  --widget-shadow:        0 1px 3px rgba(0,0,0,.08);
+
+  /* KPI */
+  --kpi-label-size:       0.75rem;
+  --kpi-value-size:       2rem;
+  --kpi-unit-size:        1rem;
+
+  /* StatusPill state colours */
+  --pill-running-bg:      #d1fadf;
+  --pill-running-fg:      #166534;
+  --pill-idle-bg:         #f1f5f9;
+  --pill-idle-fg:         #475569;
+  --pill-held-bg:         #fef9c3;
+  --pill-held-fg:         #854d0e;
+  --pill-holding-bg:      #fef9c3;
+  --pill-holding-fg:      #854d0e;
+  --pill-stopping-bg:     #fee2e2;
+  --pill-stopping-fg:     #991b1b;
+  --pill-stopped-bg:      #fee2e2;
+  --pill-stopped-fg:      #991b1b;
+  --pill-aborted-bg:      #7f1d1d;
+  --pill-aborted-fg:      #fecaca;
+  --pill-aborting-bg:     #7f1d1d;
+  --pill-aborting-fg:     #fecaca;
+  --pill-complete-bg:     #dbeafe;
+  --pill-complete-fg:     #1e40af;
+  --pill-starting-bg:     #d1fae5;
+  --pill-starting-fg:     #065f46;
+  --pill-execute-bg:      #d1fadf;
+  --pill-execute-fg:      #166534;
+
+  /* Quality indicator colours */
+  --q-good-color:         #166534;
+  --q-stale-color:        #92400e;
+  --q-bad-color:          #991b1b;
+  --q-uncertain-color:    #1e40af;
+
+  /* Split panel */
+  --split-ratio:          1fr 1fr;
+  --split-gap:            var(--widget-gap);
+
+  /* Tab widget */
+  --tab-bar-bg:           var(--color-surface-2, #f8fafc);
+  --tab-btn-active-bg:    var(--color-surface, #fff);
+  --tab-btn-active-fg:    var(--color-accent, #2563eb);
+  --tab-border:           var(--color-border, #e2e6ea);
+}
+
+/* -- Base .widget ---------------------------------------------------- */
+.widget {
+  background:   var(--widget-bg);
+  border:       1px solid var(--widget-border);
+  border-radius:var(--widget-radius);
+  box-shadow:   var(--widget-shadow);
+  padding:      var(--widget-pad);
+  box-sizing:   border-box;
+}
+
+/* -- KPI Card ------------------------------------------------------- */
+.widget-kpi { min-width: 140px; }
+
+.kpi-inner { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.kpi-link {
+  display:         block;
+  text-decoration: none;
+  color:           inherit;
+}
+.kpi-link:hover .kpi-value { text-decoration: underline; }
+
+.kpi-label {
+  font-size:   var(--kpi-label-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-muted, #64748b);
+}
+
+.kpi-value {
+  font-size:   var(--kpi-value-size);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-ink, #0f172a);
+}
+
+.kpi-unit {
+  font-size:   var(--kpi-unit-size);
+  font-weight: 400;
+  margin-left: 0.2em;
+  color: var(--color-ink-muted, #64748b);
+}
+
+.kpi-trend {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.kpi-trend-up::before   { content: '? '; color: var(--q-good-color); }
+.kpi-trend-down::before { content: '? '; color: var(--q-bad-color); }
+.kpi-trend-flat::before { content: '? '; color: var(--color-ink-muted, #64748b); }
+
+.kpi-quality {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.kpi-q-good      { color: var(--q-good-color); }
+.kpi-q-stale     { color: var(--q-stale-color); }
+.kpi-q-bad       { color: var(--q-bad-color); }
+.kpi-q-uncertain { color: var(--q-uncertain-color); }
+
+/* -- Status Pill ---------------------------------------------------- */
+.status-pill {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.35em;
+  padding:         0.2em 0.65em;
+  border-radius:   99px;
+  font-size:       0.75rem;
+  font-weight:     600;
+  text-transform:  uppercase;
+  letter-spacing:  0.04em;
+  white-space:     nowrap;
+  background:      var(--pill-idle-bg);
+  color:           var(--pill-idle-fg);
+}
+
+.status-pill-dot {
+  width:        0.5em;
+  height:       0.5em;
+  border-radius:50%;
+  background:   currentColor;
+  flex-shrink:  0;
+}
+
+/* State-specific colours via propsToClass (adds status-pill--STATE) */
+.status-pill--RUNNING,
+.status-pill--EXECUTE  { background: var(--pill-running-bg);  color: var(--pill-running-fg); }
+.status-pill--STARTING { background: var(--pill-starting-bg); color: var(--pill-starting-fg); }
+.status-pill--IDLE     { background: var(--pill-idle-bg);     color: var(--pill-idle-fg); }
+.status-pill--HELD,
+.status-pill--HOLDING,
+.status-pill--UNHOLDING,
+.status-pill--SUSPENDING,
+.status-pill--UNSUSPENDING { background: var(--pill-held-bg); color: var(--pill-held-fg); }
+.status-pill--STOPPING,
+.status-pill--STOPPED  { background: var(--pill-stopping-bg); color: var(--pill-stopping-fg); }
+.status-pill--ABORTING,
+.status-pill--ABORTED  { background: var(--pill-aborted-bg);  color: var(--pill-aborted-fg); }
+.status-pill--COMPLETE,
+.status-pill--RESETTING { background: var(--pill-complete-bg); color: var(--pill-complete-fg); }
+
+/* -- Tag Value ------------------------------------------------------ */
+.tag-value {
+  font-variant-numeric: tabular-nums;
+  transition: opacity 0.2s;
+}
+
+.tag-q-stale     { opacity: 0.6; }
+.tag-q-bad       { color: var(--q-bad-color); font-weight: 600; }
+.tag-q-uncertain { color: var(--q-uncertain-color); }
+.tag-q-good      { /* baseline — no extra style needed */ }
+
+/* -- Alarm Badge ---------------------------------------------------- */
+.alarm-badge {
+  display:      inline-flex;
+  align-items:  center;
+  padding:      0.2em 0.6em;
+  border-radius:99px;
+  font-size:    0.75rem;
+  font-weight:  600;
+  background:   var(--color-surface-2, #f1f5f9);
+  color:        var(--color-ink-muted, #64748b);
+  border:       1px solid transparent;
+  transition:   background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.alarm-badge-active {
+  background:   #fee2e2;
+  color:        #991b1b;
+  border-color: #fca5a5;
+  cursor:       pointer;
+}
+.alarm-badge-active:hover { background: #fecaca; }
+
+/* -- Split Panel ---------------------------------------------------- */
+.split-panel {
+  display:               grid;
+  grid-template-columns: var(--split-ratio);
+  gap:                   var(--split-gap);
+  align-items:           stretch;
+}
+
+@media (max-width: 640px) {
+  .split-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -- Tabbed Panel --------------------------------------------------- */
+.tabbed-panel { display: flex; flex-direction: column; }
+
+.tab-bar {
+  display:          flex;
+  gap:              0;
+  background:       var(--tab-bar-bg);
+  border-bottom:    1px solid var(--tab-border);
+  padding:          0 0.5rem;
+  overflow-x:       auto;
+  scrollbar-width:  none;
+}
+
+.tab-btn {
+  padding:          0.5rem 1rem;
+  border:           none;
+  border-bottom:    2px solid transparent;
+  background:       transparent;
+  cursor:           pointer;
+  font-size:        0.875rem;
+  font-weight:      500;
+  color:            var(--color-ink-muted, #64748b);
+  white-space:      nowrap;
+  transition:       color 0.15s, border-color 0.15s;
+}
+.tab-btn:hover { color: var(--color-ink, #0f172a); }
+
+.tab-btn-active {
+  color:        var(--tab-btn-active-fg);
+  border-bottom-color: var(--tab-btn-active-fg);
+  background:   var(--tab-btn-active-bg);
+}
+
+.tab-panes { flex: 1; }
+
+.tab-pane { padding: var(--widget-pad); }
+.tab-pane[hidden] { display: none; }
+
+/* -- Param Card ----------------------------------------------------- */
+.param-card {
+  background:   var(--widget-bg);
+  border:       1px solid var(--widget-border);
+  border-radius:var(--widget-radius);
+  overflow:     hidden;
+}
+
+.param-card-hd {
+  padding:      var(--widget-pad);
+  border-bottom:1px solid var(--widget-border);
+}
+
+.param-card-title {
+  font-size:   1rem;
+  font-weight: 700;
+  color:       var(--color-ink, #0f172a);
+}
+
+.param-card-subtitle {
+  font-size:  0.875rem;
+  color:      var(--color-ink-muted, #64748b);
+  margin-top: 0.2rem;
+}
+
+.param-card-meta {
+  font-size:   0.75rem;
+  color:       var(--color-ink-muted, #64748b);
+  margin-top:  0.35rem;
+  font-style:  italic;
+}
+
+.param-card-body { padding: var(--widget-pad); }
+
+/* Variant classes added by propsToClass */
+.param-card--primary  { border-left: 3px solid var(--color-accent, #2563eb); }
+.param-card--secondary{ border-left: 3px solid var(--color-ink-muted, #94a3b8); }
+.param-card--warning  { border-left: 3px solid #d97706; }
+.param-card--danger   { border-left: 3px solid #dc2626; }
+
+/* -- Embed placeholder / error states ------------------------------ */
+.embed-pending,
+.embed-error {
+  display:      flex;
+  align-items:  center;
+  justify-content: center;
+  min-height:   80px;
+  font-size:    0.8rem;
+  color:        var(--color-ink-muted, #94a3b8);
+  border:       1px dashed var(--widget-border);
+  border-radius:var(--widget-radius);
+}
+
+.embed-error { color: var(--q-bad-color); border-color: #fca5a5; }

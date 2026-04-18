@@ -53,7 +53,7 @@
   },
   "tags": {
     "id": "tag-value",
-    "file_path": "guild/web/components/udts/instances/widgets/tag-value.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/tag-value.json",
     "source_kind": "poll",
     "embeddable_in": ["Atom", "Molecule", "Organism", "Widget"],
     "schema_version": "1.0.0"

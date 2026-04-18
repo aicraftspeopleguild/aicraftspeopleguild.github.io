@@ -51,7 +51,7 @@
   },
   "tags": {
     "id": "paper-card",
-    "file_path": "guild/web/components/paper-card.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/paper-card.json",
     "dependencies": [
       "button",
       "badge"

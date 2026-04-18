@@ -9,13 +9,13 @@ import re
 
 _SPA_RULES = [
     (re.compile(r'((?:href|src)\s*=\s*["\'])\.\./mob_prog_101\.jpg'),
-     r'\1/guild/web/assets/mob_prog_101.jpg'),
+     r'\1/guild/Enterprise/L2/hmi/web/assets/mob_prog_101.jpg'),
     (re.compile(r'((?:href|src)\s*=\s*["\'])\.\./assets/'),
-     r'\1/guild/web/assets/'),
+     r'\1/guild/Enterprise/L2/hmi/web/assets/'),
     (re.compile(r'((?:href|src)\s*=\s*["\'])\.\./white-papers/originals/'),
      r'\1/guild/Enterprise/L4/api/white-papers/originals/'),
     (re.compile(r'((?:href|src)\s*=\s*["\'])\.\./members/originals/'),
-     r'\1/guild/web/members/originals/'),
+     r'\1/guild/Enterprise/L4/members/originals/'),
 ]
 
 _PAPER_IMAGE_RE = re.compile(

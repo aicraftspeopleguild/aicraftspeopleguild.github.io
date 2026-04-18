@@ -11,7 +11,7 @@
 | Action scripts    | `.github/scripts/*.js`                          |
 | Submission form   | `forms/submit/` (moved from guild/web/submit/)  |
 | Signature form    | inline in `index.html` (Google Form action)     |
-| Form JS helpers   | `guild/web/home.js` (signatories loader)        |
+| Form JS helpers   | `guild/Enterprise/L2/hmi/web/home.js` (signatories loader)        |
 | Tag UDT template  | `guild/Enterprise/L3/components/udts/templates/path.udt.json` (Path is a typed route) |
 
 ## Event → Tag flow

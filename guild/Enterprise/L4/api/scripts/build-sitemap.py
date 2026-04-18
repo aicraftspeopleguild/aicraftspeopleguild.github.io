@@ -28,13 +28,13 @@ from datetime import datetime, timezone
 
 HERE = Path(__file__).resolve()
 REPO = HERE.parents[4]
-sys.path.insert(0, str(REPO / "guild" / "web" / "scripts" / "lib"))
+sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 from packml import Process, path_exists, has_files
 
 SITE = "https://aicraftspeopleguild.github.io"
-PATHS_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances" / "paths"
+PATHS_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "paths"
 PAPER_INSTANCES  = REPO / "guild" / "Enterprise" / "L4" / "api" / "white-papers" / "udts" / "instances"
-MEMBER_INSTANCES = REPO / "guild" / "web" / "members" / "udts" / "instances"
+MEMBER_INSTANCES = REPO / "guild" / "Enterprise" / "L4" / "members" / "udts" / "instances"
 
 PUBLIC_SECTIONS = {"about", "resources", "community", "recognition", "meta"}
 EXCLUDE_IDS = {"chief-ai-skeptic", "hushbell-full-spec", "submit"}

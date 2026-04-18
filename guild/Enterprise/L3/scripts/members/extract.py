@@ -29,7 +29,7 @@ from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 
 REPO = Path(__file__).resolve().parents[4]
-MEMBERS_DIR = REPO / "guild" / "web" / "members"
+MEMBERS_DIR = REPO / "guild" / "Enterprise" / "L4" / "members"
 ORIG_DIR = MEMBERS_DIR / "originals"
 INST_DIR = MEMBERS_DIR / "udts" / "instances"
 TEMPLATE = MEMBERS_DIR / "udts" / "templates" / "member.udt.json"

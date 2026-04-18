@@ -17,14 +17,14 @@ Extract Component UDT instances from engineering docs.
 
 Scans docs/engineering/**/*.md for fenced code blocks tagged
 `json:udt:Component` and writes each as a standalone JSON file in
-guild/web/components/.
+guild/Enterprise/L2/hmi/web/components/.
 """
 import json, re, os
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[4]
 DOCS = REPO / "docs" / "engineering"
-OUT_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances"
+OUT_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances"
 
 # Pattern: ```json:udt:Component ... ```
 BLOCK_RE = re.compile(

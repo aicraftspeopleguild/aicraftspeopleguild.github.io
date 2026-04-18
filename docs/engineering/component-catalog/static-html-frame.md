@@ -21,7 +21,7 @@ Embeds a pre-rendered HTML page as an iframe. Fallback for routes that have no R
   },
   "tags": {
     "id": "static-html-frame",
-    "file_path": "guild/web/components/static-html-frame.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/static-html-frame.json",
     "dependencies": [],
     "used_by_views": [],
     "schema_version": "1.0.0"

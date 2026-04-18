@@ -23,7 +23,7 @@ Quick reference for mapping every concrete Guild artefact to its ISA-95 level.
 | `test-links.py` / `test-browser.js`         | 3     | MES QA           |
 | `docs/engineering/`                         | 3     | MES document ctl |
 | `docs/engineering/standards/*.md`           | 3     | Process contract |
-| `guild/web/components/udts/*`               | 3     | Design artefact  |
+| `guild/Enterprise/L2/hmi/web/components/udts/*`               | 3     | Design artefact  |
 | `guild/web/members/udts/instances/*.json`   | 4     | ERP master data  |
 | `guild/Enterprise/L4/api/white-papers/udts/instances/*`   | 4     | ERP master data  |
 | `guild/Enterprise/L4/database/acg.db`                 | 4     | ERP data store   |

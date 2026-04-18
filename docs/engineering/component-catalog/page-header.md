@@ -24,7 +24,7 @@ Full page header with guild mark, title, subtitle, and optional back-link.
   },
   "tags": {
     "id": "page-header",
-    "file_path": "guild/web/components/page-header.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/page-header.json",
     "dependencies": ["guild-mark", "eyebrow", "back-link"],
     "used_by_views": ["page-shell"],
     "schema_version": "1.0.0"

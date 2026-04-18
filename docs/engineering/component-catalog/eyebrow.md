@@ -19,7 +19,7 @@ Small uppercase label above headings.
   },
   "tags": {
     "id": "eyebrow",
-    "file_path": "guild/web/components/eyebrow.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/eyebrow.json",
     "dependencies": [],
     "used_by_views": ["page-header", "member-profile", "white-paper-article"],
     "schema_version": "1.0.0"

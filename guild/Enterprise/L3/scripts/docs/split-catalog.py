@@ -80,7 +80,7 @@ def main():
            "",
            "**Document:** ACG-CC-001-2026  **Version:** 1.0.0",
            "",
-           f"{len(index_entries)} reusable UI components. Each is a parseable `json:udt:Component` instance. The ingest pipeline extracts these into `guild/web/components/udts/instances/` for use by the view renderer.",
+           f"{len(index_entries)} reusable UI components. Each is a parseable `json:udt:Component` instance. The ingest pipeline extracts these into `guild/Enterprise/L2/hmi/web/components/udts/instances/` for use by the view renderer.",
            ""]
     for cat in ["atomic", "composite", "layout", "page-level", "misc"]:
         if cat not in by_cat: continue

@@ -17,7 +17,7 @@ The guild emblem displayed in every page header.
   },
   "tags": {
     "id": "guild-mark",
-    "file_path": "guild/web/components/guild-mark.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/guild-mark.json",
     "dependencies": [],
     "used_by_views": ["page-shell"],
     "schema_version": "1.0.0"

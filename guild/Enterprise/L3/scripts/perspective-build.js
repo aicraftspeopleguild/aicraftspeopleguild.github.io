@@ -17,9 +17,9 @@
  * Perspective-compatible view renderer.
  *
  * Reads:
- *   - guild/web/perspective/components/registry.json  (acg.* type defs)
- *   - guild/web/perspective/views/<slug>.view.json    (Perspective view)
- *   - guild/web/perspective/data/<slug>.data.json     (optional data)
+ *   - guild/Enterprise/L2/hmi/web/perspective/components/registry.json  (acg.* type defs)
+ *   - guild/Enterprise/L2/hmi/web/perspective/views/<slug>.view.json    (Perspective view)
+ *   - guild/Enterprise/L2/hmi/web/perspective/data/<slug>.data.json     (optional data)
  *
  * Writes:
  *   - guild/web/dist/p-<slug>.html

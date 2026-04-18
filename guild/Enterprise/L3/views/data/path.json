@@ -1,16 +1,16 @@
 {
   "udtType": "FsPath",
   "parameters": {
-    "path": "guild/web/views/data",
+    "path": "guild/Enterprise/L2/hmi/web/views/data",
     "label": "data",
-    "parent": "guild/web/views",
+    "parent": "guild/Enterprise/L2/hmi/web/views",
     "kind": "filesystem",
     "purpose": null,
     "owners": []
   },
   "tags": {
     "id": "guild_web_views_data",
-    "fs_path": "guild/web/views/data",
+    "fs_path": "guild/Enterprise/L2/hmi/web/views/data",
     "depth": 4,
     "breadcrumb": [
       "root",

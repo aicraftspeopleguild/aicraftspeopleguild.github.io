@@ -69,7 +69,7 @@ Consider a future submodule or subtree merge when upstream stabilizes.
 
 See `guild/apps/p2p/acg-app.json` for the App UDT instance that
 registers this app in the Guild catalog, and
-`guild/web/components/udts/instances/paths/p2p.json` for the route.
+`guild/Enterprise/L2/hmi/web/components/udts/instances/paths/p2p.json` for the route.
 
 ## Known stale references
 

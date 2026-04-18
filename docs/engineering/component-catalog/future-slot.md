@@ -22,7 +22,7 @@ Dashed placeholder for upcoming content.
   },
   "tags": {
     "id": "future-slot",
-    "file_path": "guild/web/components/future-slot.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/future-slot.json",
     "dependencies": [],
     "used_by_views": ["white-paper-index", "members-index", "hall-of-fame"],
     "schema_version": "1.0.0"

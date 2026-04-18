@@ -185,7 +185,7 @@ function renderNode(node, ctx, components) {
 
 /** Convert a stylesheet path stored in page.json into a path that resolves
  *  from inside guild/web/dist/. Both web-relative ("style/main.css") and
- *  repo-rooted ("guild/web/style/main.css") inputs become "../style/main.css". */
+ *  repo-rooted ("guild/Enterprise/L2/hmi/web/style/main.css") inputs become "../style/main.css". */
 function relativizeAssetForDist(p) {
   if (!p) return p;
   if (/^https?:\/\//.test(p)) return p;

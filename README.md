@@ -144,7 +144,7 @@ flowchart TB
 1. **Clone + serve.** `git clone …` then `python -m http.server 8765` at the repo root (or `./README.sh` / `README.bat`). Hit `http://127.0.0.1:8765/`.
 2. **Rebuild the static API.** `python bin/acg pipeline:run id=build` — 14 tag-driven steps regenerate `/api/*.json`, `/runtime/tags.json`, per-dir catalogs, and `/api/state.json` (live faults + tool runs).
 3. **Every content change seeds through UDT instances.** Don't edit rendered HTML in `guild/web/dist/` — edit the UDT JSON under `guild/Enterprise/L4/api/white-papers/udts/instances/`, `guild/Enterprise/L4/members/udts/instances/`, etc. and re-run the build.
-4. **Follow the palette.** Parchment · ink · rust · bronze · graphite. Playfair Display + Work Sans. The component catalog (`guild/web/components/udts/instances/`) encodes the contract.
+4. **Follow the palette.** Parchment · ink · rust · bronze · graphite. Playfair Display + Work Sans. The component catalog (`guild/Enterprise/L2/hmi/web/components/udts/instances/`) encodes the contract.
 
 *[Discussions](https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io/discussions) · [Issues](https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io/issues) · [Engineering docs](docs/engineering/) · [Component catalog](docs/engineering/component-catalog/)*
 

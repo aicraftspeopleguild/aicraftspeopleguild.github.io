@@ -18,7 +18,7 @@
   },
   "tags": {
     "id": "eyebrow",
-    "file_path": "guild/web/components/eyebrow.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/eyebrow.json",
     "dependencies": [],
     "used_by_views": [
       "page-header",

@@ -20,7 +20,7 @@ Navigation link back to parent page.
   },
   "tags": {
     "id": "back-link",
-    "file_path": "guild/web/components/back-link.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/back-link.json",
     "dependencies": [],
     "used_by_views": ["page-shell"],
     "schema_version": "1.0.0"

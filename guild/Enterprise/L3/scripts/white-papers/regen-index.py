@@ -141,7 +141,7 @@ def main():
     print(f"[regen] wrote {OUT.relative_to(REPO)} with {len(papers)} papers")
 
     # Emit split view data: one file for page metadata, one for papers array
-    data_dir = REPO / "guild" / "web" / "views" / "data"
+    data_dir = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "views" / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
 
     page_data = {

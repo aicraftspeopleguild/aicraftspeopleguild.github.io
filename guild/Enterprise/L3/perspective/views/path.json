@@ -1,16 +1,16 @@
 {
   "udtType": "FsPath",
   "parameters": {
-    "path": "guild/web/perspective/views",
+    "path": "guild/Enterprise/L2/hmi/web/perspective/views",
     "label": "views",
-    "parent": "guild/web/perspective",
+    "parent": "guild/Enterprise/L2/hmi/web/perspective",
     "kind": "filesystem",
     "purpose": null,
     "owners": []
   },
   "tags": {
     "id": "guild_web_perspective_views",
-    "fs_path": "guild/web/perspective/views",
+    "fs_path": "guild/Enterprise/L2/hmi/web/perspective/views",
     "depth": 4,
     "breadcrumb": [
       "root",
@@ -21,8 +21,8 @@
     ],
     "children": [],
     "siblings": [
-      "guild/web/perspective/components",
-      "guild/web/perspective/data"
+      "guild/Enterprise/L2/hmi/web/perspective/components",
+      "guild/Enterprise/L2/hmi/web/perspective/data"
     ],
     "descendants": 0,
     "file_count": 4,

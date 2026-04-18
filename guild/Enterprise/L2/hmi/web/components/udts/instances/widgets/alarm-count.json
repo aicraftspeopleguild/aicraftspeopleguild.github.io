@@ -33,7 +33,7 @@
   },
   "tags": {
     "id": "alarm-count",
-    "file_path": "guild/web/components/udts/instances/widgets/alarm-count.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/alarm-count.json",
     "source_kind": "poll",
     "embeddable_in": ["Organism", "Template"],
     "schema_version": "1.0.0"

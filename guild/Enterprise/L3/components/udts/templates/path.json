@@ -1,16 +1,16 @@
 {
   "udtType": "FsPath",
   "parameters": {
-    "path": "guild/web/components/udts/templates",
+    "path": "guild/Enterprise/L2/hmi/web/components/udts/templates",
     "label": "templates",
-    "parent": "guild/web/components/udts",
+    "parent": "guild/Enterprise/L2/hmi/web/components/udts",
     "kind": "filesystem",
     "purpose": null,
     "owners": []
   },
   "tags": {
     "id": "guild_web_components_udts_templates",
-    "fs_path": "guild/web/components/udts/templates",
+    "fs_path": "guild/Enterprise/L2/hmi/web/components/udts/templates",
     "depth": 5,
     "breadcrumb": [
       "root",
@@ -22,7 +22,7 @@
     ],
     "children": [],
     "siblings": [
-      "guild/web/components/udts/instances"
+      "guild/Enterprise/L2/hmi/web/components/udts/instances"
     ],
     "descendants": 0,
     "file_count": 8,

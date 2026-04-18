@@ -191,7 +191,7 @@
         },
         "type": "acg.display.html",
         "props": {
-          "html": "<section class=\"worship-zone\"><h2>AI Craftspeople Guild is a worship free zone</h2><figure><img src=\"guild/web/assets/worship-free-zone.png\" alt=\"AI Craftspeople Guild is a worship free zone\"></figure></section>"
+          "html": "<section class=\"worship-zone\"><h2>AI Craftspeople Guild is a worship free zone</h2><figure><img src=\"guild/Enterprise/L2/hmi/web/assets/worship-free-zone.png\" alt=\"AI Craftspeople Guild is a worship free zone\"></figure></section>"
         },
         "children": []
       },

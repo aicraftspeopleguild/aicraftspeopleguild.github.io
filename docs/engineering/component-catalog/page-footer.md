@@ -20,7 +20,7 @@ Standard site footer with GitHub link.
   },
   "tags": {
     "id": "page-footer",
-    "file_path": "guild/web/components/page-footer.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/page-footer.json",
     "dependencies": [],
     "used_by_views": ["page-shell"],
     "schema_version": "1.0.0"

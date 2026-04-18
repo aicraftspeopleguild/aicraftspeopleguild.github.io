@@ -50,7 +50,7 @@
   },
   "tags": {
     "id": "member-card",
-    "file_path": "guild/web/components/member-card.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/member-card.json",
     "dependencies": [
       "button",
       "badge"

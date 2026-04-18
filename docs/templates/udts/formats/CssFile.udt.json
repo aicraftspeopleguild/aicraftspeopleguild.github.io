@@ -6,4 +6,4 @@
 {"n":"at_rules","t":"STRING[]","desc":"@media, @import, @keyframes etc."},
 {"n":"vars_defined","t":"STRING[]","desc":"Custom properties (--foo) defined"},
 {"n":"sha256","t":"STRING"}
-],"meta":{"desc":"Cascading Style Sheet. ACG uses guild/web/style/*.css for site theming."}}
+],"meta":{"desc":"Cascading Style Sheet. ACG uses guild/Enterprise/L2/hmi/web/style/*.css for site theming."}}

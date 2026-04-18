@@ -43,13 +43,13 @@ def is_pure_fragment(url):
     return url.startswith("#") and not url.startswith("#/")
 
 def load_site_map():
-    smfile = REPO / "guild" / "web" / "site-map.json"
+    smfile = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "site-map.json"
     if not smfile.exists():
         return None
     return json.loads(smfile.read_text(encoding="utf-8"))
 
 def load_paths():
-    paths_dir = REPO / "guild" / "web" / "components" / "udts" / "instances" / "paths"
+    paths_dir = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "paths"
     paths = {}
     if not paths_dir.exists():
         return paths

@@ -30,7 +30,7 @@ Two-pass algorithm:
                      `descendants`, and `route_bindings` (cross-link to URL
                      Path instances whose `page` field points inside the dir).
   Pass 3 (write):    emit `path.json` into each dir + a root graph
-                     `guild/web/components/udts/instances/fs-paths/_graph.json`.
+                     `guild/Enterprise/L2/hmi/web/components/udts/instances/fs-paths/_graph.json`.
 
 Preserves user-authored fields on rerun:
   - parameters.purpose
@@ -59,8 +59,8 @@ EXCLUDE_DIRS = {
 # Also skip any dir whose name starts with one of these prefixes.
 EXCLUDE_PREFIXES = ("_",)  # `_graph`, `_probe`, `_fix_*`, etc. don't exist as dirs but be safe.
 
-GRAPH_OUT = REPO / "guild" / "web" / "components" / "udts" / "instances" / "fs-paths" / "_graph.json"
-PATHS_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances" / "paths"
+GRAPH_OUT = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "fs-paths" / "_graph.json"
+PATHS_DIR = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components" / "udts" / "instances" / "paths"
 
 PATH_FILE = "path.json"
 SCHEMA_VERSION = "1.0.0"

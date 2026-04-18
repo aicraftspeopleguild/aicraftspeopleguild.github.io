@@ -9,7 +9,7 @@
       "paper": "guild/apps/whitepapers/data/the-dog-the-data-scientist-and-the-mrna-vaccine.data.json"
     },
     "stylesheets": [
-      "guild/web/style/main.css"
+      "guild/Enterprise/L2/hmi/web/style/main.css"
     ],
     "section": "resources",
     "parent_slug": "white-papers",

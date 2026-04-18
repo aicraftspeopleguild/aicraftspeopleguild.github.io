@@ -31,7 +31,7 @@
   },
   "tags": {
     "id": "button",
-    "file_path": "guild/web/components/button.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/button.json",
     "dependencies": [],
     "used_by_views": [
       "page-shell",

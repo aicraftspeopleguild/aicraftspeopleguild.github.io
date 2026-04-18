@@ -23,7 +23,7 @@ Responsive grid container for cards.
   },
   "tags": {
     "id": "card-grid",
-    "file_path": "guild/web/components/card-grid.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/card-grid.json",
     "dependencies": ["section-heading"],
     "used_by_views": ["white-paper-index", "members-index", "hall-of-fame", "hall-of-shame"],
     "schema_version": "1.0.0"

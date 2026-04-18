@@ -18,7 +18,7 @@
   },
   "tags": {
     "id": "raw-html",
-    "file_path": "guild/web/components/raw-html.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/raw-html.json",
     "dependencies": [],
     "used_by_views": [
       "charter",

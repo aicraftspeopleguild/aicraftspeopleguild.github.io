@@ -17,14 +17,14 @@ from datetime import datetime, timezone
 
 HERE = Path(__file__).resolve()
 REPO = HERE.parents[4]
-sys.path.insert(0, str(REPO / "guild" / "web" / "scripts" / "lib"))
+sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 from packml import Process, path_exists  # type: ignore
 
 # Directories that hold UDT instances and should get a tag.db
 TARGETS = [
-    REPO / "guild" / "web" / "white-papers",
-    REPO / "guild" / "web" / "members",
-    REPO / "guild" / "web" / "components",
+    REPO / "guild" / "Enterprise" / "L4" / "api" / "white-papers",
+    REPO / "guild" / "Enterprise" / "L4" / "members",
+    REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "components",
     REPO / "guild" / "web" / "scripts",
     REPO / "guild" / "apps" / "whitepapers",
     REPO / "guild" / "Enterprise" / "L2",
@@ -157,6 +157,6 @@ if __name__ == "__main__":
     with Process(
         "db--build-local-tagdbs_py",
         pre_checks=[path_exists(REPO / "guild")],
-        post_checks=[path_exists(REPO / "guild" / "web" / "white-papers" / "tag.db")],
+        post_checks=[path_exists(REPO / "guild" / "Enterprise" / "L4" / "api" / "white-papers" / "tag.db")],
     ):
         main()

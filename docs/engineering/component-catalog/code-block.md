@@ -20,7 +20,7 @@ Syntax-highlighted code display.
   },
   "tags": {
     "id": "code-block",
-    "file_path": "guild/web/components/code-block.json",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/code-block.json",
     "dependencies": [],
     "used_by_views": ["white-paper-article"],
     "schema_version": "1.0.0"

@@ -30,7 +30,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
 
-VIEW_DATA = REPO / "guild" / "web" / "views" / "data"
+VIEW_DATA = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "views" / "data"
 APP_DATA  = REPO / "guild" / "apps" / "whitepapers" / "data"
 
 # (pattern, replacement) — order matters

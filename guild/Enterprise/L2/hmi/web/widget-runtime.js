@@ -10,7 +10,7 @@
  *   TabWidget   — wires .tabbed-panel click switching
  *
  * Usage:
- *   <script src="guild/web/widget-runtime.js"></script>
+ *   <script src="guild/Enterprise/L2/hmi/web/widget-runtime.js"></script>
  *   (load before renderer.js so WidgetRuntime is available at renderView time)
  */
 const WidgetRuntime = (function () {

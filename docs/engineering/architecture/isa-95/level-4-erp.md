@@ -6,7 +6,7 @@
 
 | Domain            | Source of truth                                  |
 |-------------------|--------------------------------------------------|
-| Manifesto         | `guild/web/perspective/views/index.view.json`    |
+| Manifesto         | `guild/Enterprise/L2/hmi/web/perspective/views/index.view.json`    |
 | Membership roster | `guild/web/members/udts/instances/*.json` + Google Sheet signatories |
 | Paper catalog     | `guild/Enterprise/L4/api/white-papers/udts/instances/*.json`   |
 | Governance        | Charter, Code of Conduct, Mission Statement      |

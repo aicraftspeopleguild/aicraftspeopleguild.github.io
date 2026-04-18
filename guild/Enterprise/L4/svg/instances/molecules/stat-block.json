@@ -1,0 +1,52 @@
+{
+  "udtType": "SvgMolecule",
+  "parameters": {
+    "name": "StatBlock",
+    "atomicLevel": "molecule",
+    "renderer": "svg_widget:stat_block",
+    "description": "Panel + section heading + big value + optional sub.",
+    "composes": [
+      "Panel",
+      "SectionHeading"
+    ],
+    "props": {
+      "x": {
+        "type": "Number",
+        "required": true
+      },
+      "y": {
+        "type": "Number",
+        "required": true
+      },
+      "w": {
+        "type": "Number",
+        "required": true
+      },
+      "h": {
+        "type": "Number",
+        "required": true
+      },
+      "label": {
+        "type": "String",
+        "required": true
+      },
+      "value": {
+        "type": "String",
+        "required": true
+      },
+      "sub": {
+        "type": "String",
+        "required": true
+      },
+      "color_class": {
+        "type": "String",
+        "required": true
+      }
+    }
+  },
+  "tags": {
+    "id": "stat-block",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/molecules/stat-block.json"
+  }
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chief AI Skeptic Officer - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #191614;
+            --color-graphite: #222A2F;
+            --color-accent: #2B7A78;
+            --color-bronze: #C28E50;
+            --color-rust: #C84B31;
+            --color-highlight: #FFF6E6;
+            --color-card: rgba(255, 255, 255, 0.95);
+            --color-shadow: rgba(25, 22, 20, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(43, 122, 120, 0.08), transparent 28%),
+                radial-gradient(circle at top right, rgba(200, 75, 49, 0.08), transparent 24%),
+                var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px);
+            background-size: 42px 42px;
+            opacity: 0;
+            animation: fadeInPattern 1.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(34, 42, 47, 0.96) 0%, rgba(25, 22, 20, 0.98) 100%);
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 52%, var(--color-rust) 100%);
+        }
+
+        .guild-mark,
+        h1,
+        .subtitle,
+        .eyebrow {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .guild-mark {
+            margin-bottom: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: var(--color-bronze);
+            text-shadow: 0 2px 20px rgba(194, 142, 80, 0.24);
+        }
+
+        .eyebrow {
+            margin-bottom: 0.8rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-bronze);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--color-parchment);
+            margin-bottom: 0.9rem;
+        }
+
+        .subtitle {
+            max-width: 880px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: rgba(245, 241, 232, 0.88);
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .intro-panel,
+        .section-shell,
+        .directive-shell,
+        .closing-shell,
+        .cta-section {
+            background: var(--color-card);
+            border: 1px solid rgba(43, 122, 120, 0.08);
+            box-shadow: 0 10px 30px var(--color-shadow);
+        }
+
+        .intro-panel {
+            margin-top: -2.25rem;
+            padding: 2rem;
+        }
+
+        .section-shell,
+        .directive-shell,
+        .closing-shell,
+        .cta-section {
+            margin-top: 2rem;
+            padding: 2rem 2.1rem;
+        }
+
+        .section-heading {
+            margin-bottom: 1.2rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            line-height: 1.12;
+            margin-bottom: 0.35rem;
+        }
+
+        .section-shell p + p,
+        .intro-panel p + p,
+        .closing-shell p + p,
+        .section-shell ul + p,
+        .section-shell p + ul {
+            margin-top: 1rem;
+        }
+
+        .section-shell ul {
+            margin-left: 1.4rem;
+        }
+
+        .section-shell li + li {
+            margin-top: 0.55rem;
+        }
+
+        .directive-shell {
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.1), rgba(194, 142, 80, 0.1));
+        }
+
+        .directive-label {
+            font-family: 'Courier Prime', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--color-rust);
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .directive-shell h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            line-height: 1.12;
+            margin-bottom: 0.7rem;
+        }
+
+        .directive-shell p {
+            font-size: 1.12rem;
+            font-weight: 600;
+            max-width: 820px;
+        }
+
+        .closing-shell {
+            border-left: 4px solid var(--color-rust);
+            background: var(--color-highlight);
+        }
+
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.4rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--color-graphite);
+            color: var(--color-parchment);
+            box-shadow: 0 12px 22px rgba(34, 42, 47, 0.18);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-graphite);
+            border: 1px solid rgba(25, 22, 20, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2.5rem;
+            }
+
+            .container {
+                padding: 0 1rem 3rem;
+            }
+
+            .intro-panel,
+            .section-shell,
+            .directive-shell,
+            .closing-shell,
+            .cta-section {
+                padding-left: 1.35rem;
+                padding-right: 1.35rem;
+            }
+
+            .directive-shell h2 {
+                font-size: 1.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">⚒ ACG ⚒</div>
+        <div class="eyebrow">Job Opening</div>
+        <h1>CASO — Chief AI Skeptic Officer</h1>
+        <p class="subtitle">A role for the person in the room who treats every AI claim as a hypothesis to be tested, not a narrative to be admired.</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="intro-panel">
+                <p>The AI Craftspeople Guild is looking for a Chief AI Skeptic Officer: someone with a proven track record of exhibiting extreme skepticism toward any proposed solution that involves AI, especially when the proposed solution arrives wrapped in certainty, urgency, or hype.</p>
+                <p>This is not a ceremonial skeptic and not a contrarian for sport. The CASO is the person responsible for insisting on scientific research, falsifiability, observable-repeatable results, and empirical evidence before the Guild treats a claim as real.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>The Role</h2>
+                </div>
+                <p>The CASO exists to challenge proposed AI systems, workflows, products, and policies at the exact moment others are most tempted to wave them through. When someone says "the model can do X," the CASO asks under what conditions, with what failure rate, measured how, against which baseline, and whether the result remains true outside a demo environment.</p>
+                <p>This role is for a practitioner who understands that skepticism is not hostility to progress. It is quality control for claims. It is the discipline of refusing to confuse plausibility with proof.</p>
+                <p>The Chief AI Skeptic Officer is expected to make it difficult for bad ideas to survive contact with reality and equally difficult for good ideas to advance without evidence. That tension is the job.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Core Responsibilities</h2>
+                </div>
+                <ul>
+                    <li>Interrogate every material AI claim for falsifiability before it is adopted, published, recommended, or celebrated.</li>
+                    <li>Demand observable-repeatable demonstrations rather than anecdote, intuition, or one-off success stories.</li>
+                    <li>Ask for empirical evidence that survives baseline comparison, external validation, and hostile review.</li>
+                    <li>Separate benchmark theater from real-world performance, especially where safety, trust, or money are involved.</li>
+                    <li>Identify hidden assumptions, proxy metrics, and evaluation leakage in AI product claims and internal Guild experiments.</li>
+                    <li>Design challenge tests, red-team reviews, and disconfirmation protocols before systems are treated as reliable.</li>
+                    <li>Insist that any workflow involving AI specify what would count as failure, what would count as partial failure, and what a human must still verify.</li>
+                </ul>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>What Good Looks Like</h2>
+                </div>
+                <p>A strong CASO does not say "I don't like AI." A strong CASO says "show me the evidence," then knows how to inspect the evidence for contamination, cherry-picking, survivorship bias, unverifiable assumptions, and non-reproducible methodology.</p>
+                <p>They can read scientific research without being overawed by jargon. They understand that a paper is not proof, a benchmark is not deployment, and a user impression is not a validated outcome. They know how to move from claim to test, from test to measurement, and from measurement to a narrower, more defensible claim.</p>
+                <p>They are comfortable asking questions that slow a room down: What would falsify this? Where is the baseline? Can another team reproduce this result? Is the claimed gain still present when we control for prompt engineering, operator skill, or manual cleanup? What happens when the model is wrong?</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Required Disposition</h2>
+                </div>
+                <ul>
+                    <li>Refuses to outsource judgment to model fluency.</li>
+                    <li>Has a documented habit of asking for measurements instead of adjectives.</li>
+                    <li>Can distinguish confidence from calibration.</li>
+                    <li>Is unmoved by "everyone is doing it" as an argument.</li>
+                    <li>Understands that observable-repeatable evidence matters more than internal conviction.</li>
+                    <li>Can challenge teams without collapsing into cynicism, theater, or ego.</li>
+                    <li>Treats empirical evidence as a gate, not a decorative appendix.</li>
+                </ul>
+            </section>
+
+            <section class="directive-shell">
+                <div class="directive-label">Operating Principle</div>
+                <h2>No AI claim should be accepted by the Guild unless it can be stated clearly, tested directly, observed in practice, repeated by others, and bounded by known failure conditions.</h2>
+                <p>The CASO is the keeper of that standard.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Evaluation Standard</h2>
+                </div>
+                <p>The Chief AI Skeptic Officer should be fluent in the difference between:</p>
+                <ul>
+                    <li>research novelty and deployment reliability,</li>
+                    <li>internal validation and external validation,</li>
+                    <li>correlation and mechanism,</li>
+                    <li>benchmark gains and operational gains,</li>
+                    <li>assistive use and autonomous trust,</li>
+                    <li>demonstration quality and evidentiary quality.</li>
+                </ul>
+                <p>The role expects someone who will repeatedly bring the conversation back to falsifiability, empirical evidence, and observable-repeatable behavior, even when the room would prefer to move on.</p>
+            </section>
+
+            <section class="closing-shell">
+                <p>The Guild does not need another evangelist. It needs someone who can tell the difference between an exciting possibility and a defensible result, then force that difference to stay visible.</p>
+            </section>
+
+            <section class="cta-section">
+                <h2>Continue Reading</h2>
+                <p>The role fits naturally with the Guild's mission, rituals, and white papers on falsification, AI evaluation, and human judgment.</p>
+                <div class="cta-buttons">
+                    <a href="mission-statement.html" class="btn btn-primary">View Mission Statement</a>
+                    <a href="ai-rituals.html" class="btn btn-secondary">View AI Rituals</a>
+                    <a href="white-papers.html" class="btn btn-secondary">View White Papers</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

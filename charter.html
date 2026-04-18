@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Craftspeople Guild Charter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--color-rust) 0%,
+                var(--color-bronze) 50%,
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 840px;
+            margin: 0 auto 2rem;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .back-link {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .charter-content {
+            margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .charter-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-rust);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .charter-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+        }
+
+        .charter-intro {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-graphite);
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-rust);
+        }
+
+        .charter-intro h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--color-ink);
+            margin-bottom: 1rem;
+        }
+
+        .article {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(166, 124, 82, 0.25);
+        }
+
+        .article:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .article-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-number {
+            flex: 0 0 auto;
+            min-width: 3rem;
+            padding: 0.55rem 0.8rem;
+            background: var(--color-rust);
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .article h3,
+        .pillar h4,
+        .role-card h4,
+        .norm-item h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-ink);
+        }
+
+        .article h3 {
+            font-size: 1.9rem;
+            line-height: 1.2;
+        }
+
+        .article p,
+        .article li,
+        .pillar p,
+        .role-card p,
+        .norm-item p {
+            font-size: 1.08rem;
+            line-height: 1.8;
+            color: var(--color-graphite);
+        }
+
+        .article p + p {
+            margin-top: 1rem;
+        }
+
+        .article ul {
+            margin: 1rem 0 0 1.5rem;
+        }
+
+        .article li + li {
+            margin-top: 0.75rem;
+        }
+
+        .article strong,
+        .pillar strong,
+        .role-card strong,
+        .norm-item strong {
+            color: var(--color-rust);
+        }
+
+        .pillar-grid,
+        .role-grid,
+        .norm-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .pillar-grid {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .role-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .norm-grid {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .pillar,
+        .role-card,
+        .norm-item {
+            padding: 1.5rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.85) 0%, white 100%);
+            border-top: 3px solid var(--color-bronze);
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+
+        .pillar h4,
+        .role-card h4,
+        .norm-item h4 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .closing-affirmation {
+            margin-top: 1.5rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            color: var(--color-parchment);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing-affirmation::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(166, 124, 82, 0.22), transparent 55%);
+        }
+
+        .closing-affirmation p {
+            position: relative;
+            color: var(--color-parchment);
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
+        .closing-affirmation p + p {
+            margin-top: 1rem;
+        }
+
+        .cta-section {
+            margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2::after {
+            display: none;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .charter-content,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .charter-intro,
+            .closing-affirmation {
+                padding: 1.5rem;
+            }
+
+            .article-header {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .article-number {
+                min-width: 0;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <h1>Guild Charter</h1>
+        <p class="subtitle">Purpose, principles, and working commitments for responsible AI-assisted software engineering.</p>
+        <div class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="charter-content">
+            <h2>AI Craftspeople Guild Charter</h2>
+
+            <section class="charter-intro">
+                <h3>Preamble</h3>
+                <p>
+                    We are living through a profound change in the making of software. Artificial intelligence has expanded what software professionals can produce, how quickly they can produce it, and the range of possibilities now within reach. Yet with that expanded power comes a heightened burden of judgment. Speed without discipline invites fragility. Capability without responsibility invites harm. Innovation without craft invites decay.
+                </p>
+                <p>
+                    The AI Craftspeople Guild exists in response to that reality. We are a fellowship of software professionals who believe that the age of AI does not diminish the importance of craftsmanship. It increases it. We hold that ethical responsibility, technical excellence, and thoughtful innovation must remain inseparable in the work of designing, building, delivering, and sustaining software.
+                </p>
+                <p>
+                    This Charter sets forth the purpose, spirit, and working principles of the Guild.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">1</div>
+                    <h3>Purpose</h3>
+                </div>
+                <p>
+                    The purpose of the AI Craftspeople Guild is to advance the responsible, disciplined, and skillful practice of creating and delivering software with the aid of artificial intelligence.
+                </p>
+                <p>
+                    The Guild exists to gather practitioners who seek not merely to use AI, but to use it well: with integrity, with sound engineering judgment, and with respect for the human consequences of the systems we create.
+                </p>
+                <p>
+                    We aim to strengthen the standards of the profession, deepen the practice of the craft, and contribute meaningfully to the future of AI-assisted software engineering.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">2</div>
+                    <h3>Mission</h3>
+                </div>
+                <p>
+                    The mission of the Guild is to cultivate a community of software craftspeople who:
+                </p>
+                <ul>
+                    <li>apply AI with responsibility and professional judgment,</li>
+                    <li>uphold high standards of quality, architecture, safety, security, and maintainability,</li>
+                    <li>explore emerging tools and methods with curiosity tempered by rigour,</li>
+                    <li>share practical knowledge, field experience, and proven practice,</li>
+                    <li>support one another in learning, growth, and stewardship of the profession.</li>
+                </ul>
+                <p>
+                    The Guild exists not for passive observation, but for active contribution.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">3</div>
+                    <h3>The Three Pillars of the Guild</h3>
+                </div>
+                <p>
+                    The Guild stands upon three enduring pillars.
+                </p>
+                <div class="pillar-grid">
+                    <div class="pillar">
+                        <h4>Ethical Responsibility</h4>
+                        <p>
+                            We recognize that software carries consequences, and that AI-assisted software development amplifies both reach and risk. We therefore affirm honesty, accountability, transparency, safety, security, fairness, human dignity, and stewardship of the public good.
+                        </p>
+                        <p>
+                            We hold that the exercise of technical power must always be accompanied by moral seriousness. We insist on equality of our members regardless of their personal traits and orientations, and we work to liberate humans from the perils and drudgery that may be imposed through misapplied technology.
+                        </p>
+                    </div>
+                    <div class="pillar">
+                        <h4>Technical Excellence</h4>
+                        <p>
+                            We believe that software craftsmanship requires discipline. We uphold sound architecture, thoughtful design, testing, review, maintainability, operational readiness, and the steady exercise of professional judgment.
+                        </p>
+                        <p>
+                            We reject the notion that increased automation excuses careless engineering. On the contrary, the more powerful our tools become, the more necessary rigour becomes.
+                        </p>
+                    </div>
+                    <div class="pillar">
+                        <h4>Innovation</h4>
+                        <p>
+                            We embrace experimentation, learning, and the responsible exploration of new possibilities. We welcome new tools, workflows, and methods when they are approached with discernment, tested in practice, and judged by their real effects rather than their novelty alone.
+                        </p>
+                        <p>
+                            We seek progress, but not at the expense of substance. We aim to foster a scientific approach toward evaluating any proposed hypotheses related to the adoption of artificial intelligence, and peer reviews are in that regard mandatory.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">4</div>
+                    <h3>Scope</h3>
+                </div>
+                <p>
+                    The Guild's scope includes the practice and stewardship of AI-assisted software engineering, including:
+                </p>
+                <ul>
+                    <li>software design, development, testing, review, deployment, and maintenance with AI assistance,</li>
+                    <li>professional standards for responsible AI-assisted software delivery,</li>
+                    <li>case studies, field reports, practical guidance, and shared learning,</li>
+                    <li>evaluation of emerging tools, methods, and workflows,</li>
+                    <li>mentorship, dialogue, and collaborative creation of useful professional artifacts.</li>
+                </ul>
+                <p>
+                    The Guild is concerned not only with what can be done using AI, but with what should be done, and how it should be done well.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">5</div>
+                    <h3>What the Guild Is Not</h3>
+                </div>
+                <p>
+                    The Guild is not a vehicle for hype, spectacle, or uncritical enthusiasm. It is not a general discussion forum for AI detached from the lived realities of software practice.
+                </p>
+                <p>
+                    It is not founded to celebrate tools, to cultivate status, or to convert professional discourse into self-promotion. It is not, at this stage, a certification body, lobbying organization, or commercial marketplace.
+                </p>
+                <p>
+                    The Guild exists to serve the craft and the profession. We seek seriousness over noise, contribution over performance, and durable practice over passing fashion.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">6</div>
+                    <h3>Membership and Participation</h3>
+                </div>
+                <p>
+                    The Guild is open to software professionals and closely related practitioners who affirm its purpose and wish to contribute constructively to its mission.
+                </p>
+                <p>
+                    Participation in the Guild may take several forms:
+                </p>
+                <div class="role-grid">
+                    <div class="role-card">
+                        <h4>Signatories</h4>
+                        <p>Those who affirm the Guild's manifesto and publicly identify with its principles.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Participants</h4>
+                        <p>Those who take part in meetings, discussions, and Guild activities.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Contributors</h4>
+                        <p>Those who strengthen the Guild through practical work, writing, facilitation, mentoring, case studies, review, or other acts of service.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Stewards</h4>
+                        <p>Those who accept sustained responsibility for helping guide, organize, and care for the Guild's ongoing life and work.</p>
+                    </div>
+                </div>
+                <p>
+                    These are not ranks of prestige, but modes of contribution. The Guild recognizes service, substance, and good-faith work on behalf of the community.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">7</div>
+                    <h3>Norms of the Guild</h3>
+                </div>
+                <p>
+                    The Guild aspires to be governed by the following norms:
+                </p>
+                <div class="norm-grid">
+                    <div class="norm-item">
+                        <h4>Respectful Disagreement</h4>
+                        <p>We welcome candid and rigorous disagreement, conducted in a spirit of professionalism and mutual respect.</p>
+                    </div>
+                    <div class="norm-item">
+                        <h4>Evidence Over Assertion</h4>
+                        <p>We prefer examples, practice, demonstration, and careful reasoning over slogans, posturing, or unsupported claims.</p>
+                    </div>
+                    <div class="norm-item">
+                        <h4>Contribution Over Status</h4>
+                        <p>Influence in the Guild should arise chiefly from constructive contribution, not title, employer, reputation, or force of personality.</p>
+                    </div>
+                    <div class="norm-item">
+                        <h4>Craft Over Hype</h4>
+                        <p>We value discipline, clarity, and enduring quality over novelty for its own sake.</p>
+                    </div>
+                    <div class="norm-item">
+                        <h4>Transparency Over Backchannels</h4>
+                        <p>Where practical, important discussions, decisions, and outputs should remain visible to the community they affect.</p>
+                    </div>
+                    <div class="norm-item">
+                        <h4>Stewardship and Generosity</h4>
+                        <p>We seek to help one another grow in wisdom, skill, and responsibility. We regard mentorship and encouragement as part of professional duty.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">8</div>
+                    <h3>Activities of the Guild</h3>
+                </div>
+                <p>
+                    The Guild may pursue its purpose through gatherings and forms of shared work such as:
+                </p>
+                <ul>
+                    <li>roundtable discussions,</li>
+                    <li>workshops and practice clinics,</li>
+                    <li>working groups,</li>
+                    <li>case-study reviews,</li>
+                    <li>field reports from real-world practice,</li>
+                    <li>collaborative drafting of principles, checklists, and guidance,</li>
+                    <li>mentorship and peer exchange,</li>
+                    <li>publication of essays, statements, and other artifacts of professional value.</li>
+                </ul>
+                <p>
+                    The Guild should be known not merely for conversation, but for contribution.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">9</div>
+                    <h3>Working Groups</h3>
+                </div>
+                <p>
+                    The Guild may establish working groups to pursue focused areas of inquiry and practice.
+                </p>
+                <p>
+                    Initial areas may include:
+                </p>
+                <ul>
+                    <li>Ethics and Professional Responsibility,</li>
+                    <li>Technical Excellence and Engineering Practice,</li>
+                    <li>Innovation and Emerging Workflows.</li>
+                </ul>
+                <p>
+                    Each working group should have a clear purpose, visible stewardship, and at least one concrete output. The Guild favors small, meaningful acts of progress over grand but indefinite ambition.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">10</div>
+                    <h3>Decision Making</h3>
+                </div>
+                <p>
+                    The Guild will seek alignment through discussion, reflection, and rough consensus.
+                </p>
+                <p>
+                    Where full agreement is not yet possible, the Guild may proceed by way of small, visible, revisable steps: a draft, an experiment, a trial practice, or a provisional decision subject to further learning.
+                </p>
+                <p>
+                    We do not aspire to premature perfection. We aspire to thoughtful progress made in good faith.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">11</div>
+                    <h3>Outputs and Public Contribution</h3>
+                </div>
+                <p>
+                    The Guild should aim to produce useful work that benefits both its members and the wider profession.
+                </p>
+                <p>
+                    Such outputs may include:
+                </p>
+                <ul>
+                    <li>guiding principles,</li>
+                    <li>practical checklists,</li>
+                    <li>position statements,</li>
+                    <li>case-study summaries,</li>
+                    <li>recommended practices,</li>
+                    <li>learning materials,</li>
+                    <li>working papers and community documents.</li>
+                </ul>
+                <p>
+                    The Guild is fulfilled not by merely holding opinions, but by making those opinions useful through form, clarity, and application.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">12</div>
+                    <h3>Leadership and Stewardship</h3>
+                </div>
+                <p>
+                    Leadership within the Guild shall be understood as stewardship.
+                </p>
+                <p>
+                    Those who convene, organize, or guide the Guild do so not as owners, but as caretakers of its purpose, norms, and common life. They are expected to act with humility, fairness, seriousness, and service.
+                </p>
+                <p>
+                    The measure of leadership in the Guild is not prominence, but responsibility faithfully exercised for the good of the whole.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">13</div>
+                    <h3>Growth and Revision</h3>
+                </div>
+                <p>
+                    This Charter is a living document.
+                </p>
+                <p>
+                    It is intended to guide the Guild in its present form while remaining open to refinement as the Guild matures, learns, and grows in experience. Revision is not a sign of weakness, but of responsible adaptation.
+                </p>
+                <p>
+                    The Guild should preserve its principles while remaining willing to improve its practices.
+                </p>
+            </section>
+
+            <section class="article">
+                <div class="article-header">
+                    <div class="article-number">14</div>
+                    <h3>Founding Affirmation</h3>
+                </div>
+                <div class="closing-affirmation">
+                    <p>
+                        We affirm that artificial intelligence does not replace craftsmanship in software engineering. It makes craftsmanship more necessary.
+                    </p>
+                    <p>
+                        For that reason, we establish the AI Craftspeople Guild: to strengthen the union of responsibility, rigour, and imagination in the work of building software; to encourage one another in the disciplined use of powerful tools; and to serve the profession, and the public, with integrity.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <section class="cta-section">
+            <h2>Read, Sign, Contribute</h2>
+            <p>
+                The Charter defines how the Guild works. The Manifesto states what we stand for in practice.
+            </p>
+            <div class="cta-buttons">
+                <a href="index.html#sign" class="btn btn-primary">
+                    <span>Sign the Manifesto</span>
+                </a>
+                <a href="aicraftspeopleguild-manifesto.html" class="btn btn-secondary">
+                    <span>Read the Manifesto</span>
+                </a>
+                <a href="index.html" class="btn btn-secondary">
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

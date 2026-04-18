@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUSHBELL - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #191614;
+            --color-graphite: #222A2F;
+            --color-accent: #2B7A78;
+            --color-bronze: #C28E50;
+            --color-rust: #C84B31;
+            --color-highlight: #FFF6E6;
+            --color-card: rgba(255, 255, 255, 0.95);
+            --color-shadow: rgba(25, 22, 20, 0.1);
+            --color-code-bg: #11161B;
+            --color-code-border: rgba(43, 122, 120, 0.24);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(43, 122, 120, 0.08), transparent 28%),
+                radial-gradient(circle at top right, rgba(200, 75, 49, 0.08), transparent 24%),
+                var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px);
+            background-size: 42px 42px;
+            opacity: 0;
+            animation: fadeInPattern 1.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(34, 42, 47, 0.96) 0%, rgba(25, 22, 20, 0.98) 100%);
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 52%, var(--color-rust) 100%);
+        }
+
+        .guild-mark,
+        h1,
+        .subtitle {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .guild-mark {
+            margin-bottom: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: var(--color-bronze);
+            text-shadow: 0 2px 20px rgba(194, 142, 80, 0.24);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--color-parchment);
+            margin-bottom: 0.9rem;
+        }
+
+        .subtitle {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: rgba(245, 241, 232, 0.88);
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .intro-panel,
+        .section-shell,
+        .cta-section {
+            background: var(--color-card);
+            border: 1px solid rgba(43, 122, 120, 0.08);
+            box-shadow: 0 10px 30px var(--color-shadow);
+        }
+
+        .intro-panel {
+            margin-top: -2.25rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.1), rgba(194, 142, 80, 0.1));
+        }
+
+        .section-shell {
+            margin-top: 2rem;
+            padding: 2rem 2.1rem;
+        }
+
+        .section-heading {
+            margin-bottom: 1.2rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            line-height: 1.12;
+            margin-bottom: 0.35rem;
+        }
+
+        .section-heading p {
+            color: var(--color-graphite);
+        }
+
+        .section-shell p + p,
+        .intro-panel p + p {
+            margin-top: 1rem;
+        }
+
+        .number-list {
+            margin-left: 1.5rem;
+        }
+
+        .number-list li + li {
+            margin-top: 0.7rem;
+        }
+
+        pre {
+            margin-top: 1rem;
+            padding: 1.25rem 1.3rem;
+            background: var(--color-code-bg);
+            color: #F6F2E9;
+            border: 1px solid var(--color-code-border);
+            overflow-x: auto;
+            box-shadow: inset 0 0 0 1px rgba(194, 142, 80, 0.1);
+        }
+
+        code,
+        pre {
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .callout {
+            margin-top: 1.25rem;
+            padding: 1rem 1.1rem;
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-rust);
+        }
+
+        .closing-lines {
+            margin-top: 1.4rem;
+            padding: 1.4rem 1.2rem;
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.08), rgba(194, 142, 80, 0.1));
+            font-family: 'Courier Prime', monospace;
+            font-size: 1rem;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+        .cta-section {
+            margin-top: 2rem;
+            padding: 2rem 2.1rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.4rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--color-graphite);
+            color: var(--color-parchment);
+            box-shadow: 0 12px 22px rgba(34, 42, 47, 0.18);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-graphite);
+            border: 1px solid rgba(25, 22, 20, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2.5rem;
+            }
+
+            .container {
+                padding: 0 1rem 3rem;
+            }
+
+            .intro-panel,
+            .section-shell,
+            .cta-section {
+                padding-left: 1.35rem;
+                padding-right: 1.35rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">⚒ ACG ⚒</div>
+        <h1>🌸 BLOOMING 80085 SPEC — HUSHBELL</h1>
+        <p class="subtitle">The Doorbell Dogs Can't Hear</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="intro-panel">
+                <p>HUSHBELL is a product concept built around one unusually humane constraint: alert the human without escalating the dog. The refusal to trigger the dog is not a side effect. It is the product definition.</p>
+                <p>The short concept page lives here. The full build architecture, firmware, and deployment spec now live in <a href="hushbell-full-spec.html">HUSHBELL v1.0 full spec</a>.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Ring 3 — The Form</h2>
+                </div>
+                <ol class="number-list">
+                    <li><strong>What:</strong> A doorbell that rings at frequencies only humans can hear, completely silent to dogs.</li>
+                    <li><strong>Who:</strong> Every dog owner who has lost their mind watching their dog lose its mind every time someone rings the doorbell.</li>
+                    <li><strong>Why:</strong> Because the UPS driver shouldn't trigger a Code Red in your living room.</li>
+                </ol>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Ring 5 — The Flow</h2>
+                </div>
+                <ol class="number-list">
+                    <li><strong>Input:</strong> Visitor presses doorbell button.</li>
+                    <li><strong>Parse:</strong> Circuit activates tone generator with frequency-filtered output.</li>
+                    <li><strong>Process:</strong> Speaker emits tone in the 2,000-3,000 Hz sweet spot - peak human hearing sensitivity, within the range dogs find least alerting. Alternatively: modulated low-frequency tone below 100 Hz that humans perceive as a hum/vibration but falls below the dog startle threshold.</li>
+                    <li><strong>Output:</strong> Human hears doorbell. Dog does not react.</li>
+                    <li><strong>Feedback:</strong> Did the dog bark? No? Ship it. Yes? Adjust frequency.</li>
+                </ol>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>The Frequency Science</h2>
+                </div>
+                <pre><code>HUMAN HEARING:    20 Hz – 20,000 Hz
+DOG HEARING:      67 Hz – 45,000 Hz
+
+OVERLAP:          67 Hz – 20,000 Hz (both hear this)
+HUMAN ONLY:       20 Hz – 67 Hz (below dog range)
+
+STRATEGY A — GO LOW:
+  Tone at 30-50 Hz.
+  Humans hear/feel it as a low hum or vibration.
+  Dogs can't hear below ~67 Hz.
+  Problem: low frequencies need big speakers
+  and don't "sound like a doorbell."
+  Solution: pair with LED flash or phone notification.
+  The sound is the alert. The light confirms.
+
+STRATEGY B — PSYCHOACOUSTIC:
+  Dogs don't just HEAR differently.
+  They REACT differently.
+  Dog startle response is triggered by:
+    - sudden onset (sharp attack)
+    - high frequency (>3,000 Hz)
+    - high amplitude (loud)
+
+  A tone that is:
+    - gradual onset (slow fade-in over 500ms)
+    - mid frequency (1,500-2,500 Hz)
+    - moderate amplitude (60 dB, conversational)
+
+  ...is AUDIBLE to dogs but does NOT trigger
+  the startle/bark response.
+
+  The dog hears it. The dog doesn't care.
+
+  This is the more practical approach:
+  not INAUDIBLE to dogs, but UNREMARKABLE to dogs.
+
+STRATEGY C — HYBRID:
+  Primary: 40 Hz sub-bass pulse (below dog range)
+  Secondary: phone push notification via WiFi
+  Tertiary: LED strip flash at front door
+  No audible mid-range tone at all.
+  Dog hears nothing. Sees a light. Doesn't care.
+  Human feels the hum + gets phone buzz + sees light.</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Ring 19 — The Edge</h2>
+                </div>
+                <p>"This doorbell alerts humans but refuses to alert dogs, and that refusal is the product."</p>
+                <p>Every other doorbell is designed for maximum human attention. Maximum attention = maximum startle = maximum dog response. HUSHBELL is designed for minimum startle that still gets a human to the door. The constraint is the innovation.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Ring 281 — The Soul</h2>
+                </div>
+                <p>"If this disappeared, every dog owner goes back to the daily ritual of: doorbell rings → dog explodes → owner screams at dog → visitor stands awkwardly → dog keeps barking → owner opens door while restraining 70 lbs of pure acoustic fury → visitor says 'oh he's friendly!' → owner contemplates the void."</p>
+                <p>HUSHBELL gives that family peace. The dog stays calm. The owner stays calm. The visitor doesn't get tackled. The marriage survives one more delivery.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>BOM — Build It</h2>
+                </div>
+                <pre><code>OPTION A — DUMB VERSION ($15):
+  ESP32                        $3.50
+  Tactile transducer (bass)    $8.00  (makes surface vibrate at 40 Hz)
+  Momentary push button        $0.50  (the doorbell button)
+  3.7V LiPo + charger         $4.50
+  Enclosure (3D printed)       $1.00
+  TOTAL:                       $17.50
+
+  Mount tactile transducer on door frame.
+  Press button → ESP32 drives transducer at 40 Hz.
+  Human feels the door frame hum.
+  Dog hears nothing.
+
+OPTION B — SMART VERSION ($25):
+  Everything in Option A        $17.50
+  + WiFi push notification      $0 (ESP32 has WiFi)
+  + WS2812B LED strip (4 LEDs) $1.00
+  + Piezo buzzer at 2kHz        $0.30 (optional, slow fade-in)
+  + MQTT integration            $0 (software)
+  TOTAL:                        $18.80
+
+  Press button → ESP32 sends:
+    1. 40 Hz pulse to transducer (feel it)
+    2. Push notification to phone (see it)
+    3. LED flash at door (visual confirm)
+    4. Optional: 2kHz tone with 500ms fade-in (hear it, dog ignores it)
+
+OPTION C — FULL FARTS INTEGRATION ($20):
+  Use F.A.R.T.S. ESP32 template.
+  Swap actuators/fart.h → actuators/hushbell.h
+  Same firmware. Same MQTT. Same fleet management.
+  Now your doorbell is part of your robot fleet.
+  Because why not.</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Firmware Sketch</h2>
+                </div>
+                <pre><code>// actuators/hushbell.h
+#define TRANSDUCER_PIN 12
+#define LED_PIN 4
+#define BUZZER_PIN 25
+
+void actuator_init() {
+  pinMode(TRANSDUCER_PIN, OUTPUT);
+  ledcSetup(0, 40, 8);          // 40 Hz, 8-bit resolution
+  ledcAttachPin(TRANSDUCER_PIN, 0);
+  ledcSetup(1, 2000, 8);        // 2kHz for optional tone
+  ledcAttachPin(BUZZER_PIN, 1);
+}
+
+void actuator_fire(String params) {
+  // Sub-bass pulse: 40 Hz for 3 seconds
+  ledcWrite(0, 200);
+
+  // Optional gentle tone: fade in over 500ms
+  for (int vol = 0; vol < 128; vol += 2) {
+    ledcWrite(1, vol);
+    delay(8);                    // 500ms total fade-in
+  }
+
+  // Hold for 2 seconds
+  delay(2000);
+
+  // Fade out
+  for (int vol = 128; vol > 0; vol -= 2) {
+    ledcWrite(1, vol);
+    delay(8);
+  }
+
+  ledcWrite(0, 0);
+  ledcWrite(1, 0);
+
+  // Send push notification via MQTT
+  // mqtt.publish("home/doorbell/ring", "SOMEONE_AT_DOOR");
+}</code></pre>
+                <div class="callout">The point is not merely silence. The point is controlled notification with minimal canine collateral damage.</div>
+
+                <div class="closing-lines">ding dong is dead.
+the new sound is a hum</div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Return To The Hall</h2>
+                <p>HUSHBELL belongs in the Hall of Fame because the constraint is humane, the build path is plausible, and the refusal to startle the dog is the product insight.</p>
+                <div class="cta-buttons">
+                    <a href="hushbell-full-spec.html" class="btn btn-primary">View Full Spec</a>
+                    <a href="hall-of-fame.html" class="btn btn-secondary">View Hall of Fame</a>
+                    <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

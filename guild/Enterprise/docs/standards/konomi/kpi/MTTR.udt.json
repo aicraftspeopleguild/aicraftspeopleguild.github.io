@@ -1,3 +1,0 @@
-{"$schema":"konomi/udt/v1","name":"MTTR","std":"KPI","layer":9,"version":"1.0.0","fields":[
-{"n":"mean_time_to_repair","t":"Duration","formula":"total_downtime / failure_count"}
-],"meta":{"desc":"Mean Time To Repair"}}

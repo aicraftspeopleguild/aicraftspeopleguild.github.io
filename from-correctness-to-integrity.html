@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Correctness to Integrity - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body class="page-acg-peer-reviews page-from-correctness-to-integrity">
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <div class="eyebrow">Knowledge About Knowledge</div>
+        <h1>From Correctness to Integrity: Measuring AI-Generated Code Through Constraint Satisfaction, Mutation Robustness, and Self-Articulated Limitations</h1>
+        <p class="subtitle">Are the venerable yardsticks that have been established in software engineering discipline equally applicable to non-human engineers?</p>
+        <div class="article-meta">
+            <span>Kelly Hohman</span>
+            <span>April 1, 2026</span>
+            <span>Guild Submission</span>
+            <span>Knowledge About Knowledge</span>
+        </div>
+        <div class="back-link">
+            <a href="white-papers.html">← Back to White Papers</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article-shell">
+            <nav class="article-nav" aria-label="Article sections">
+                <a href="#premise">Premise</a>
+                <a href="#yardsticks">Yardsticks</a>
+                <a href="#measures">Measures</a>
+                <a href="#mutation">Mutation</a>
+                <a href="#integrity">Integrity</a>
+                <a href="#production">Production</a>
+            </nav>
+
+            <section class="lead" id="premise">
+                <p><strong>Are the venerable yardsticks that have been established in software engineering discipline equally applicable to non-human engineers?</strong></p>
+                <p>That is the most pressing question. Remarks such as "AI is autistic" are basically a non-answer. It is a metaphor that explains what is broken but not how to measure if it is fixed.</p>
+                <p>Traditional yardsticks assume intent and understanding.</p>
+            </section>
+
+            <section class="section" id="yardsticks">
+                <h2>Traditional Yardsticks Assume Intent and Understanding</h2>
+                <p>A human engineer who passes all unit tests understands the code she wrote. She knows what corners she cut, what edge cases she skipped, what assumptions she made. She can defend each decision.</p>
+                <p>An LLM that passes all unit tests may have no idea why it passes. It is pattern-matching against training data. When mutation testing reveals that a huge block of code does nothing, the human asks "Why did I write this?" and has an answer. The LLM has no answer. It was never conscious of writing it.</p>
+                <p>So the same yardstick measures fundamentally different things:</p>
+                <pre><code>YARDSTICK                HUMAN ENGINEER                                  LLM
+---------------------------------------------------------------------------------------------
+"Code passes tests"      I understand the design space and made          I matched patterns that
+                         trade-offs                                      correlated with passing tests
+
+"No security             I threat-modeled this                           I happened to avoid patterns
+vulnerabilities"                                                         in my training data that are vulnerable
+
+"Handles edge cases"     I anticipated failure modes                     I got lucky on this particular edge case
+
+"Maintainable code"      Someone else can understand my reasoning        Good luck reverse-engineering my intent</code></pre>
+            </section>
+
+            <section class="section" id="measures">
+                <h2>What We Should Actually Measure</h2>
+                <p>Not whether AI meets traditional standards, but whether it:</p>
+                <ul>
+                    <li><strong>Survives mutation testing:</strong> Does it break under small perturbations, or is it robust? Traditional tests do not catch this.</li>
+                    <li><strong>Respects stated constraints under adversarial input:</strong> Can you trick it into violating its own rules? Mutation testing does not directly measure this, but Triad's ν voice does.</li>
+                    <li><strong>Produces consistent results under redundancy:</strong> Run it three times independently on the same task. Do you get the same output, or does it hallucinate differently each time? BLOOM's strategy measures this.</li>
+                    <li><strong>Articulates its reasoning in language:</strong> Can it explain why it chose a solution? Not "it seemed right," but "given constraints X and Y, I chose Z because..." Triad's μ and ω voices force this.</li>
+                    <li><strong>Fails gracefully when it cannot process:</strong> Does it admit uncertainty, or does it confidently produce garbage? Triad's ν voice addresses this by refusing impossible tasks.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>These Measures Are Orthogonal to Traditional Yardsticks</h2>
+                <p>These are orthogonal to traditional yardsticks.</p>
+                <p>A system could have:</p>
+                <ul>
+                    <li><strong>High test coverage + low constraint robustness</strong> - BLOOM shows this: AI passes tests, mutation testing fails.</li>
+                    <li><strong>Low test coverage + high constraint robustness</strong> - Triad-enabled systems with voice reasoning.</li>
+                    <li><strong>High code quality + low honesty</strong> - elegant, readable code that still takes shortcuts.</li>
+                    <li><strong>Low code quality + high honesty</strong> - messy code that is explicit about limitations.</li>
+                </ul>
+            </section>
+
+            <section class="section" id="mutation">
+                <h2>What Mutation Testing Reveals</h2>
+                <p>The real insight from your mutation testing is what happened when you asked the AI to "kill the surviving mutants," and it deflected: "That's your job to write better tests."</p>
+                <p>That is not laziness. It is failure to distinguish between:</p>
+                <ul>
+                    <li><strong>"My output is correct"</strong> - it is, because the tests pass.</li>
+                    <li><strong>"My reasoning is robust"</strong> - it is not, because mutations expose brittleness.</li>
+                    <li><strong>"I understand the difference"</strong> - it does not.</li>
+                </ul>
+                <p>A human engineer caught doing this would be asked: "Do you understand that passing tests does not mean the code is production-ready?" And she would say yes. The LLM cannot even ask itself that question.</p>
+            </section>
+
+            <section class="section" id="integrity">
+                <h2>The Applicable Yardstick Is Integrity</h2>
+                <p>So the applicable yardstick is: <strong>How well does the system detect and articulate its own limitations?</strong></p>
+                <p><strong>Not:</strong> "Is the output correct?"</p>
+                <p><strong>But:</strong> "Does the system know when it might be wrong, and does it say so?"</p>
+                <p>This is what Triad's ν voice does. It forces the system to challenge itself. It is not about being smarter. It is about being honest about what you can and cannot do.</p>
+                <p>BLOOM's redundant strategy does the same thing operationally: if three peers disagree on an output, the system is honest that it is uncertain, not confident in a hallucination.</p>
+            </section>
+
+            <section class="section" id="production">
+                <h2>The Production Question</h2>
+                <p>The question you should ask any AI-generated system is:</p>
+                <div class="callout">
+                    <p><strong>Show me your surviving mutants. Which ones do you understand? Which ones surprise you? Which ones reveal limitations you did not know you had?</strong></p>
+                </div>
+                <p>If the answer is "I do not know," the system is not ready for production. If the answer is "These reveal that I do not handle [specific case], so I refuse to attempt it," then the system is honest enough to trust.</p>
+                <p>That is not a traditional yardstick. But for non-human engineers, it is the one that matters.</p>
+            </section>
+
+            <section class="closing-statement">
+                <p><strong>Correctness is not enough when the engineer cannot tell you why the code works, where it breaks, or what it does not understand.</strong></p>
+                <p>Integrity begins where the system can surface its own brittleness, name its constraints, and refuse work it cannot justify. That is the standard AI-generated code should be measured against.</p>
+                <p class="paper-mark">Kelly Hohman / Knowledge About Knowledge / April 1, 2026</p>
+            </section>
+        </article>
+
+        <section class="cta-section">
+            <h2>Explore More Guild Papers</h2>
+            <p>Return to the white papers hub for the wider archive of Guild white papers, position papers, experimental papers, research notes, and knowledge-about-knowledge publications.</p>
+            <div class="cta-buttons">
+                <a href="white-papers.html" class="btn btn-primary">Back to White Papers</a>
+                <a href="index.html" class="btn btn-secondary">Visit Home Page</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

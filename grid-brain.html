@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Brain - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+            --color-note: #6B5CA5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--color-note) 0%,
+                var(--color-bronze) 50%,
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        .eyebrow {
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-bronze);
+            margin-bottom: 0.85rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.45s forwards;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+        }
+
+        .subtitle {
+            font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 920px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            color: var(--color-parchment);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+        }
+
+        .article-meta span {
+            padding: 0.35rem 0.85rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: rgba(166, 124, 82, 0.08);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1.2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.95s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-shell {
+            margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .article-nav {
+            display: flex;
+            gap: 0.9rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .article-nav a {
+            text-decoration: none;
+            color: var(--color-rust);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            padding: 0.8rem 1.1rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: var(--color-highlight);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .article-nav a:hover {
+            color: var(--color-ink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px var(--color-shadow);
+        }
+
+        .lead,
+        .callout,
+        .closing-statement {
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .lead {
+            background: linear-gradient(180deg, var(--color-highlight) 0%, white 100%);
+            border-left: 4px solid var(--color-note);
+        }
+
+        .lead p {
+            font-size: 1.16rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+        }
+
+        .lead p + p,
+        .callout p + p {
+            margin-top: 1rem;
+        }
+
+        .callout {
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-bronze);
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-rust);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 110px;
+            height: 4px;
+            background: var(--color-bronze);
+            margin-top: 0.8rem;
+        }
+
+        .section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            color: var(--color-ink);
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .section p,
+        .section li,
+        .callout p {
+            font-size: 1.06rem;
+            line-height: 1.82;
+            color: var(--color-graphite);
+        }
+
+        .section p + p {
+            margin-top: 1rem;
+        }
+
+        .section ul,
+        .section ol {
+            margin: 1rem 0 0 1.5rem;
+        }
+
+        .section li + li {
+            margin-top: 0.65rem;
+        }
+
+        strong {
+            color: var(--color-rust);
+        }
+
+        pre {
+            margin: 1.5rem 0;
+            padding: 1.25rem 1.4rem;
+            background: var(--color-ink);
+            color: var(--color-parchment);
+            overflow-x: auto;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            box-shadow: inset 0 0 0 1px rgba(166, 124, 82, 0.2);
+            white-space: pre;
+        }
+
+        code {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        a.inline-link {
+            color: var(--color-rust);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a.inline-link:hover {
+            color: var(--color-note);
+        }
+
+        .closing-statement {
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing-statement::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(107, 92, 165, 0.22), transparent 55%);
+        }
+
+        .closing-statement p {
+            position: relative;
+            color: var(--color-parchment);
+            font-size: 1.14rem;
+            line-height: 1.9;
+        }
+
+        .closing-statement p + p {
+            margin-top: 1rem;
+        }
+
+        .paper-mark {
+            margin-top: 2.2rem;
+            text-align: center;
+            color: var(--color-bronze);
+            letter-spacing: 0.06em;
+        }
+
+        .cta-section {
+            margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.18rem;
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4);
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .article-shell,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .lead,
+            .callout,
+            .closing-statement {
+                padding: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <div class="eyebrow">Research note</div>
+        <h1>Grid Brain</h1>
+        <p class="subtitle">Bloom Prompt - GitHub Pages App - Lightning Factory Directory</p>
+        <div class="article-meta">
+            <span>GitHub Pages directory</span>
+            <span>Vanilla HTML/JS/CSS</span>
+            <span>Zero dependencies</span>
+            <span>teslasolar.github.io/lightning-factory/grid-brain/</span>
+        </div>
+        <div class="back-link">
+            <a href="white-papers.html">&larr; Back to White Papers</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article-shell">
+            <nav class="article-nav" aria-label="Article sections">
+                <a href="#meta">Meta</a>
+                <a href="#structure">Directory Structure</a>
+                <a href="#design">Shared Design</a>
+                <a href="#tools">Tool Set</a>
+                <a href="#api">API Stub</a>
+                <a href="#build">Build Order</a>
+                <a href="#hardware">Future Hardware</a>
+            </nav>
+
+            <section class="lead" id="meta">
+                <p><strong>Grid Brain is a research note for an interactive static-tool directory, not a backend product spec.</strong></p>
+                <p>
+                    The proposal is to build a GitHub Pages subdirectory under Lightning Factory that hosts eight standalone tools for exploring power-grid electromagnetic frequencies, brainwave overlap, harmonic pollution, exposure estimates, and the EEG blind spot. Every tool is intended to be one HTML file, work offline, and remain decoupled from future hardware through a small API stub.
+                </p>
+            </section>
+
+            <section class="callout">
+                <p>
+                    <strong>Target deploy path:</strong>
+                    <a class="inline-link" href="https://teslasolar.github.io/lightning-factory/grid-brain/">teslasolar.github.io/lightning-factory/grid-brain/</a>
+                </p>
+                <p>
+                    Phase 1 is static only. Hardware integration is explicitly deferred behind the <code>api.js</code> boundary so the UI layer can ship first and remain stable when live sensors or resonator control arrive later.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Meta</h2>
+                <pre><code>name: grid-brain
+repo: teslasolar/lightning-factory
+path: /grid-brain/
+type: GitHub Pages directory (static HTML/JS/CSS)
+deploy: teslasolar.github.io/lightning-factory/grid-brain/
+purpose: interactive tools for understanding power grid EMF vs brainwaves
+backend: none for Phase 1, API stub for future hardware integration
+stack: vanilla HTML/JS, Web Audio API, Canvas, zero dependencies</code></pre>
+            </section>
+
+            <section class="section" id="structure">
+                <h2>Directory Structure</h2>
+                <pre><code>lightning-factory/
+|-- index.html                    # existing site root
+|-- grid-brain/
+|   |-- index.html                # directory hub (links all tools)
+|   |-- api.js                    # API stub (localStorage now, hardware later)
+|   |-- style.css                 # shared dark theme
+|   |-- overlap.html              # Tool 1: frequency overlap visualizer
+|   |-- calculator.html           # Tool 2: induced current calculator
+|   |-- harmonics.html            # Tool 3: harmonic stack analyzer
+|   |-- exposure.html             # Tool 4: personal exposure estimator
+|   |-- compare.html              # Tool 5: 50Hz vs 60Hz country comparison
+|   |-- blindspot.html            # Tool 6: the EEG blind spot explainer
+|   |-- hum.html                  # Tool 7: 55Hz vagal hum generator
+|   `-- monitor.html              # Tool 8: live microphone FFT
+`-- ...</code></pre>
+                <p>
+                    The architecture is deliberately flat. Each tool is standalone, the shared styling is centralized in one CSS file, and the only shared logic boundary is the API stub. That keeps the build order flexible and limits coupling between visualizers, calculators, and future hardware hooks.
+                </p>
+            </section>
+
+            <section class="section" id="design">
+                <h2>Shared Design</h2>
+                <pre><code>background: "#0a0a0f"
+accent_grid: "#DCA030" (amber for power/grid elements)
+accent_brain: "#00C8DC" (cyan for neural elements)
+accent_overlap: "#CC3333" (red for danger/overlap zones)
+accent_safe: "#33CC66" (green for Schumann/vagal)
+font: "Space Mono", monospace
+responsive: mobile first
+nav: bottom bar linking all 8 tools + index</code></pre>
+                <p>
+                    The note fixes a clear visual language: dark background, amber for grid, cyan for neural, red for overlap or conflict, and green for safe or resonant states. The constraint is intentional. These are science/explainer tools, so the visual system needs to stay legible and consistent across all eight pages.
+                </p>
+            </section>
+
+            <section class="section" id="tools">
+                <h2>Tool Set</h2>
+
+                <h3>Tool 1: Frequency Overlap</h3>
+                <p>
+                    A canvas spectrum from 0 to 200 Hz, with brainwave bands rendered as regions and grid frequency drawn as a draggable line. Harmonics appear as dimmer lines, overlap zones pulse red, and the user can switch among 50 Hz, 60 Hz, or custom values.
+                </p>
+                <p>
+                    Controls include harmonic visibility, band toggles, zoom into the 30 to 100 Hz gamma range, and explanation popups for both bands and overlap zones.
+                </p>
+
+                <h3>Tool 2: Induced Current Calculator</h3>
+                <p>
+                    This tool applies Faraday's Law with the sequence <code>E = A x B x 2pi f</code> and <code>I = E / R</code>. Users enter grid frequency, magnetic field, tissue loop area, and body resistance.
+                </p>
+                <p>
+                    Presets span home through MRI ranges, and the output is rendered as induced current in nA, compared visually against a neural firing range from 1 to 100 nA, with plain-language assessment and green/amber/red/purple states.
+                </p>
+
+                <h3>Tool 3: Harmonic Analyzer</h3>
+                <p>
+                    A spectrum view of the fundamental plus harmonics through the 13th order, with amplitude decreasing by a simple <code>1/n</code> model. A dirty-electricity toggle adds broadband noise between harmonics, and a brain overlay marks which harmonics intersect which brainwave bands.
+                </p>
+
+                <h3>Tool 4: Exposure Estimator</h3>
+                <p>
+                    A questionnaire-driven estimator using country, home type, bed-to-breaker distance, work environment, electronics hours, and phone-charging proximity to generate a 24-hour average and peak exposure estimate.
+                </p>
+                <p>
+                    The note explicitly constrains the tone: always calm, always practical. The exemplar line is, "Your exposure is well within safety limits. Distance is your friend."
+                </p>
+
+                <h3>Tool 5: World Frequency Map</h3>
+                <p>
+                    An emoji-grid world map with 50 Hz countries in orange, 60 Hz countries in red, and split-frequency Japan in purple. Clicking a country reveals frequency, voltage, exposure estimate, and distance from 40 Hz gamma.
+                </p>
+                <p>
+                    A side panel would show population-weighted distribution, average gamma distance by population, and a Japan anomaly callout, backed by hardcoded JSON for roughly 50 countries.
+                </p>
+
+                <h3>Tool 6: EEG Blind Spot</h3>
+                <p>
+                    A simulated EEG built in JavaScript as a sum of sine waves, shown in both time and frequency domains. The four steps are: raw signal, notch filter at 50/60 Hz, low-pass at 50 Hz, and a final "what's missing" view highlighted in red.
+                </p>
+                <p>
+                    The central claim is the note's key insight: the notch filter removes grid noise and brain activity at the same frequency, so neuroscience cannot distinguish between them inside that filtered gap.
+                </p>
+
+                <h3>Tool 7: 55 Hz Hum Generator</h3>
+                <p>
+                    A Web Audio API oscillator with a slider from 50 to 60 Hz, markers at 50, 55, and 60, waveform selection, and an oscilloscope view. It can optionally overlay a 4:6 breath timer so the hum runs on the exhale and silence on the inhale.
+                </p>
+
+                <h3>Tool 8: Live Room Monitor</h3>
+                <p>
+                    A client-side microphone FFT using <code>getUserMedia</code> and a 2048-point spectrum. It marks 50 Hz, 60 Hz, 55 Hz, and harmonics at 100/120 Hz, and reports peak frequency, amplitude at grid frequencies, detected grid mode, and dirty-electricity indicators.
+                </p>
+                <p>
+                    The privacy requirement is explicit: no audio recorded, no transmission, clear mic-active state, and one-click stop.
+                </p>
+            </section>
+
+            <section class="section" id="api">
+                <h2>API Stub</h2>
+                <pre><code>const GridBrainAPI = {
+  // Phase 1: localStorage
+  saveReading(data) { /* -> localStorage */ },
+  getReadings() { /* -> from localStorage */ },
+  exportReadings() { /* -> download JSON */ },
+  clearReadings() { /* -> wipe */ },
+
+  // Phase 2 stubs: hardware sensor
+  connectSensor() { return { status: "mock" } },
+  getLiveReading() { return { frequency: 60, amplitude: 0.1, unit: "uT", source: "mock" } },
+  startLogging(interval) { /* mock readings -> localStorage */ },
+  stopLogging() {},
+
+  // Phase 3 stubs: resonator control
+  setCounterFrequency(hz) { return { status: "not_implemented" } },
+  getResonatorStatus() { return { status: "not_implemented" } }
+}</code></pre>
+                <p>
+                    This separation is one of the note's most practical ideas. The UI layer talks only to <code>api.js</code>. When hardware exists, the implementation behind that boundary changes, but the tool pages do not. The note is clear that localStorage is enough for Phase 1.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Index Page</h2>
+                <p>
+                    The directory hub is proposed as a simple card index under the heading "Grid Brain" with the subtitle "Power Grid vs Your Brain."
+                </p>
+                <pre><code>Frequency Overlap   -> "See where the grid meets your gamma"
+Current Calculator -> "How much current does the grid induce in you?"
+Harmonic Analyzer  -> "What harmonics fill your building?"
+Exposure Estimator -> "What's your 24-hour EMF profile?"
+World Frequency Map-> "50Hz or 60Hz? Depends where you are"
+The Blind Spot     -> "Why neuroscience can't see this"
+55Hz Hum Generator -> "Your frequency, not the grid's"
+Live Room Monitor  -> "What frequency is YOUR room humming at?"</code></pre>
+                <p>
+                    The footer links back to Lightning Factory, and the easter egg remains intentionally silly: clicking the lightning bolt in the header seven times reveals <code>510,510</code>.
+                </p>
+            </section>
+
+            <section class="section" id="build">
+                <h2>Build Order</h2>
+                <pre><code>p=2   Directory + index.html + style.css + api.js (skeleton)
+p=3   overlap.html (the core visualization, everything else references it)
+p=5   calculator.html + blindspot.html (the science tools)
+p=7   hum.html + monitor.html (the interactive/audio tools)
+p=11  harmonics.html + exposure.html (the analysis tools)
+p=13  compare.html (the world map, most data to hardcode)
+p=17  Connect api.js to hardware (future phase)</code></pre>
+                <p>
+                    The sequence prioritizes the reusable shell and the core visual overlap model first, then the explanation tools, then audio/monitor interaction, then heavier analysis and data work. Because every tool is standalone, the order is advisory rather than mandatory.
+                </p>
+            </section>
+
+            <section class="section" id="hardware">
+                <h2>Future Hardware</h2>
+                <p>
+                    Phase 2 introduces a USB or BLE gaussmeter, probably via an inexpensive ESP32-class module, so <code>monitor.html</code> can read live field measurements through the same API boundary.
+                </p>
+                <p>
+                    Phase 3 introduces the resonator path: measure with the monitor, calculate with the calculator, generate a counter-frequency with the resonator, and verify reduction back in the monitor. In other words, the note sketches a future closed loop without entangling the Phase 1 static-tool implementation in that hardware commitment.
+                </p>
+            </section>
+
+            <section class="closing-statement">
+                <p><strong>Grid Brain is intentionally small in implementation and large in explanatory reach.</strong></p>
+                <p>
+                    Every tool is one HTML file. Every tool works offline. The API stub is localStorage now and hardware later. The note's thesis is that the blind spot has been there for decades, and a lightweight, dependency-free toolset can make it visible to users without waiting for a backend platform.
+                </p>
+                <p class="paper-mark">Grid Brain / Research Note / teslasolar.github.io/lightning-factory/grid-brain/</p>
+            </section>
+        </article>
+
+        <section class="cta-section">
+            <h2>Explore More Guild Papers</h2>
+            <p>Return to the white papers hub for the full set of Guild white papers, position papers, experimental papers, and research notes.</p>
+            <div class="cta-buttons">
+                <a href="white-papers.html" class="btn btn-primary">Back to White Papers</a>
+                <a href="index.html" class="btn btn-secondary">Visit Home Page</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild</p>
+        <p>Research notes and long-form technical writing for AI-assisted engineering.</p>
+        <a href="https://github.com/alexbunardzic-1/aicraftspeopleguild.github.io" target="_blank" rel="noopener noreferrer" class="github-link">
+            View on GitHub
+        </a>
+    </footer>
+</body>
+</html>

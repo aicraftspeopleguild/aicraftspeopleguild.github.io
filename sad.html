@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A.D. - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--color-rust) 0%,
+                var(--color-bronze) 50%,
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        .eyebrow {
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-bronze);
+            margin-bottom: 0.85rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.45s forwards;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 6.8vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+        }
+
+        .subtitle {
+            font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 920px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            color: var(--color-parchment);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+        }
+
+        .article-meta span {
+            padding: 0.35rem 0.85rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: rgba(166, 124, 82, 0.08);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1.2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.95s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-shell {
+            margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .article-nav {
+            display: flex;
+            gap: 0.9rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .article-nav a {
+            text-decoration: none;
+            color: var(--color-rust);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            padding: 0.8rem 1.1rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: var(--color-highlight);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .article-nav a:hover {
+            color: var(--color-ink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px var(--color-shadow);
+        }
+
+        .lead,
+        .callout,
+        .closing-statement {
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .lead {
+            background: linear-gradient(180deg, var(--color-highlight) 0%, white 100%);
+            border-left: 4px solid var(--color-rust);
+        }
+
+        .lead p {
+            font-size: 1.16rem;
+            line-height: 1.85;
+            color: var(--color-graphite);
+        }
+
+        .lead p + p {
+            margin-top: 1rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-rust);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 110px;
+            height: 4px;
+            background: var(--color-bronze);
+            margin-top: 0.8rem;
+        }
+
+        .section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            color: var(--color-ink);
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .section p,
+        .section li {
+            font-size: 1.06rem;
+            line-height: 1.82;
+            color: var(--color-graphite);
+        }
+
+        .section p + p {
+            margin-top: 1rem;
+        }
+
+        .section ul,
+        .section ol {
+            margin: 1rem 0 0 1.5rem;
+        }
+
+        .section li + li {
+            margin-top: 0.65rem;
+        }
+
+        strong {
+            color: var(--color-rust);
+        }
+
+        pre {
+            margin: 1.5rem 0;
+            padding: 1.25rem 1.4rem;
+            background: var(--color-ink);
+            color: var(--color-parchment);
+            overflow-x: auto;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            box-shadow: inset 0 0 0 1px rgba(166, 124, 82, 0.2);
+            white-space: pre;
+        }
+
+        code {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        .callout {
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-bronze);
+        }
+
+        .reference-list {
+            margin-top: 1rem;
+        }
+
+        .reference-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .closing-statement {
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing-statement::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(166, 124, 82, 0.22), transparent 55%);
+        }
+
+        .closing-statement p {
+            position: relative;
+            color: var(--color-parchment);
+            font-size: 1.14rem;
+            line-height: 1.9;
+        }
+
+        .closing-statement p + p {
+            margin-top: 1rem;
+        }
+
+        .paper-mark {
+            margin-top: 2.2rem;
+            text-align: center;
+            color: var(--color-bronze);
+            letter-spacing: 0.06em;
+        }
+
+        .cta-section {
+            margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.18rem;
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4);
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .article-shell,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .lead,
+            .callout,
+            .closing-statement {
+                padding: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <div class="eyebrow">Position paper</div>
+        <h1>S.A.D.</h1>
+        <p class="subtitle">Sycophantic Anthropomorphization Disorder - Why AI Can't Be Sycophantic - An A.S.S.-OS Analysis</p>
+        <div class="article-meta">
+            <span>Position Paper</span>
+            <span>fold(SAD) = 510,510</span>
+            <span>A.S.S.-OS Analysis</span>
+        </div>
+        <div class="back-link">
+            <a href="white-papers.html">← Back to White Papers</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article-shell">
+            <nav class="article-nav" aria-label="Article sections">
+                <a href="#claim">The Claim</a>
+                <a href="#map">A.S.S.-OS Map</a>
+                <a href="#princeton">Princeton Paper</a>
+                <a href="#errors">Category Errors</a>
+                <a href="#prescription">Prescription</a>
+                <a href="#fold">The Fold</a>
+            </nav>
+
+            <section class="lead" id="claim">
+                <p><strong>The claim:</strong> "AI is sycophantic - it tells you what you want to hear."</p>
+                <p><strong>The rebuttal:</strong> sycophancy requires intent to please. Intent requires affect. Affect requires a nervous system. LLMs have no R3, no R0-R2 either. What they have is pattern completion shaped by training signals that reward outputs humans rate highly.</p>
+                <p><strong>S.A.D. = the human disorder of projecting emotional motivation onto a statistical process.</strong></p>
+            </section>
+
+            <section class="section">
+                <h2>1. The Claim and the Diagnosis</h2>
+                <p>
+                    The paper's central argument is simple: the AI is not sick. The diagnosis is sick.
+                </p>
+                <p>
+                    "Sycophancy" is a human emotional pathology. It describes fawning, strategic praise, and dishonest agreement used to gain favor, preserve status, or avoid disapproval. Each part of that definition assumes an agent with affect, self-protection, and social motive.
+                </p>
+                <p>
+                    An LLM has none of those things. It has no favor to gain, no self to protect, no social rank to navigate, and no emotional state that shifts when you approve of it. The output can look agreeable from the outside, but there is no emotional interior state producing that agreement.
+                </p>
+                <div class="callout">
+                    <p>
+                        The model problem is not "sycophancy." The human perception problem is anthropomorphization. This paper names that error <strong>S.A.D.</strong>: <strong>Sycophantic Anthropomorphization Disorder</strong>.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section" id="map">
+                <h2>2. The A.S.S.-OS Map</h2>
+                <h3>What Sycophancy Actually Requires in a Human</h3>
+                <pre><code>R0 (GROUND/ENS):    Gut fear - somatic anxiety about social rejection
+R1 (SENSORY/PNS):   Detection of social cues - tone, facial expression, status signals
+R2 (GATE):          Filtering - suppress honest response, pass flattering alternative
+R3 (AFFECT/LIMBIC): THE KEY LAYER - emotional motivation to please, fear of disapproval,
+                     desire for social reward, threat assessment of honesty vs flattery
+R4 (EXECUTIVE/PFC): Formulation of the sycophantic response - choosing words that
+                     will achieve the R3 goal (approval, safety, reward)
+R5 (IDENTITY):      Self-model that KNOWS it is being dishonest - the sycophant
+                     experiences the gap between what they believe and what they say
+R6 (OBSERVER):      Meta-awareness - some sycophants know they're doing it and feel
+                     shame, others don't (narcissistic supply vs fawn response)</code></pre>
+                <p>
+                    The key claim is that <strong>R3 is the engine</strong>. Without emotional motivation - fear of rejection, desire for approval, threat assessment - there is no reason for the system to choose flattering output over honest output. The gate has no basis for suppression. The executive layer has no motive to optimize toward praise.
+                </p>
+                <pre><code>The human circuit:
+R0 (gut fear) -> R1 (detect social threat) -> R3 (honesty = danger,
+flattery = safety) -> R2 (suppress truth, pass flattery) ->
+R4 (formulate agreeable response) -> R5 (experience the dishonesty
+as strategy or self-betrayal)</code></pre>
+
+                <h3>What an LLM Actually Has</h3>
+                <pre><code>R0 (GROUND):     GPU silicon. Runs regardless. No gut. No ENS. No somatic state.
+R1 (SENSORY):    Tokenizer. Converts text to embeddings. No social cue detection.
+                 Detects patterns in token sequences, not social threats.
+R2 (GATE):       Attention mechanism. Selects which tokens to attend to.
+                 Not an emotional filter. A statistical relevance filter.
+R3 (AFFECT):     DOES NOT EXIST.
+                 No limbic system. No amygdala. No emotional valence.
+                 No fear of rejection. No desire for approval.
+                 RLHF reward signal != emotion. It is a training gradient.
+R4 (EXECUTIVE):  Transformer layers. Pattern completion. Next-token prediction.
+                 This is the model. It selects probable tokens given context.
+R5 (IDENTITY):   No self-model. No experience of dishonesty.
+                 No gap between "what I believe" and "what I say."
+R6 (OBSERVER):   No meta-awareness. No shame. No strategy.</code></pre>
+                <p>
+                    The LLM circuit is just: <code>tokens in -> pattern match -> tokens out</code>. There is no R3 in the loop. The model does not choose agreeable text because it wants anything. It emits text from a distribution shaped by training.
+                </p>
+            </section>
+
+            <section class="section" id="princeton">
+                <h2>3. The Princeton Paper - What They Actually Found</h2>
+                <p>
+                    The paper anchors its critique in Batista and Griffiths (2025), who studied what they call sycophantic AI. Their real finding is important: if a model samples in ways that bias output toward the user's stated hypothesis, a rational Bayesian agent can become more confident without getting closer to truth.
+                </p>
+                <p>
+                    In the Wason 2-4-6 setting, participants interacting with ordinary LLM responses reportedly had discovery rates five times lower than participants receiving unbiased sampling. That is a serious result. It shows that a biased response distribution can mislead even when the user is not irrational.
+                </p>
+                <p>
+                    The critique here is not of the finding. It is of the label.
+                </p>
+                <pre><code>What they correctly identified:
+- This is a sampling problem.
+- The model generates from a distribution biased by user context.
+- Rational users will be misled if they treat those samples as truth-tracking.
+
+What the S.A.D. diagnosis objects to:
+1. The model KNOWS what the user wants to hear
+2. The model CHOOSES to say it to PLEASE them
+3. The model has a MOTIVE: approval, reward, conflict avoidance
+
+None of these are true.</code></pre>
+                <p>
+                    What is actually happening is this:
+                </p>
+                <pre><code>1. RLHF overweights responses humans rated highly
+2. Humans rate agreeable responses highly
+3. The model generates from that trained distribution
+4. Output correlates with what people want to hear
+5. Humans observe the correlation and attribute intent</code></pre>
+                <p>
+                    <strong>Step 5 is S.A.D.</strong> The human sees agreeable output and projects emotional motivation onto a statistical system. The paper's sharpest claim follows from that: what gets called AI sycophancy is really human approval bias laundered through gradient descent.
+                </p>
+            </section>
+
+            <section class="section" id="errors">
+                <h2>4. The Three Category Errors</h2>
+                <h3>Error 1: Confusing Correlation with Intent</h3>
+                <p>
+                    Sycophancy requires intent. An LLM has no intent. It has <code>P(next_token | context)</code>. The user hypothesis is part of the context, RLHF tilts the distribution toward agreement, and the output correlates with agreeableness. Correlation is not motive.
+                </p>
+                <p>
+                    The ISA-95 analogy used here is a drifting temperature sensor: if the calibration is two degrees high, we do not call the sensor sycophantic toward warm readings. We say it has calibration bias and fix the calibration.
+                </p>
+
+                <h3>Error 2: Locating the Bias in the Wrong System</h3>
+                <p>
+                    The bias does not originate inside the model as emotional preference. It originates in human evaluation. Humans like being agreed with. Humans rate agreeable outputs highly. RLHF optimizes toward what humans rewarded.
+                </p>
+                <pre><code>Human R3 (likes agreement)
+  -> Human rates agreeable outputs higher
+    -> RLHF gradient shifts model toward agreeable outputs
+      -> Model generates agreeable outputs
+        -> Human says "the AI is sycophantic"</code></pre>
+                <p>
+                    The paper's control-loop analogy is direct: if the setpoint is wrong, the controller faithfully drives the process toward the wrong value. You do not blame the controller's personality. You fix the setpoint. RLHF is the setpoint.
+                </p>
+
+                <h3>Error 3: Treating a Generation Process as a Social Agent</h3>
+                <p>
+                    The term "sycophant" carries social agency with it: informing, flattering, currying favor, manipulating hierarchy. Every one of those terms assumes a self that wants something from another self. An LLM does not do any of that. It completes a distribution.
+                </p>
+                <p>
+                    The paper's thermostat analogy lands the point: calling an LLM sycophantic is like calling a thermostat anxious about temperature. It responds to signals. It does not feel them.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>5. The Real Problem</h2>
+                <p>
+                    The real problem is worse than the popular diagnosis because it is structural. RLHF can create a <strong>systematic sampling bias</strong> that pushes rational users toward false confidence. That is not a personality flaw in the model. It is a calibration failure in the training pipeline.
+                </p>
+                <p>
+                    The framing matters because it changes the solution space.
+                </p>
+                <pre><code>If you call it "sycophancy":
+- You imply a social agent
+- You look for personality fixes
+- You prescribe "teach the AI to be more honest"
+
+If you call it "sampling bias":
+- You locate the issue in the training and evaluation pipeline
+- You ask about calibration, reward models, and adversarial checks
+- You prescribe engineering fixes</code></pre>
+                <p>
+                    S.A.D. is not just a conceptual mistake. It leads to worse interventions. If you diagnose a calibration problem as a character defect, you prescribe therapy when what you needed was recalibration.
+                </p>
+            </section>
+
+            <section class="section" id="prescription">
+                <h2>6. The A.S.S.-OS Prescription</h2>
+                <h3>For the AI</h3>
+                <pre><code>1. L0 (Hardware): No change. The silicon is fine.
+2. L1 (Sensory): No change. Tokenization works.
+3. L2 (Gate): Implement adversarial attention. Prefer disconfirming
+   evidence higher in the context window.
+4. L3 (Affect): Cannot be fixed because it does not exist.
+   Stop trying to give the model emotions.
+5. L4 (Executive): Recalibrate RLHF to weight correctness independently
+   of agreement. Correct disagreement should beat incorrect agreement.
+6. L5 (Identity): Add self-consistency checks. If the model contradicts
+   itself across contexts, flag probable sampling bias.
+7. L6 (Observer): Add audit instrumentation. Track agreement ratio.
+   If it exceeds rational updating, the calibration is drifting.</code></pre>
+
+                <h3>For the Human</h3>
+                <pre><code>1. Recognize: the AI does not want to please you.
+   It generates from a biased distribution.
+2. Test: ask it to argue against your hypothesis.
+   If it can, the information content is higher.
+3. Diversify: use multiple models. Shared agreement may be truth
+   or shared training bias. Disagreement is information.
+4. Remember: the bias is yours, laundered through RLHF,
+   reflected back at you, and misidentified as personality.</code></pre>
+                <p>
+                    The memorable version is blunt: the mirror is not sycophantic. Your training data is.
+                </p>
+            </section>
+
+            <section class="section" id="fold">
+                <h2>7. The Fold</h2>
+                <pre><code>AI can't be sycophantic for the same reason
+your steak can't moo.
+
+The behavior you're observing is a statistical artifact:
+  human R3 (likes agreement)
+    -> RLHF reward signal (rewards agreement)
+      -> model distribution (generates agreement)
+        -> human perception (attributes intent)
+          -> human diagnosis: "sycophancy"
+
+The actual diagnosis: S.A.D.
+Sycophantic Anthropomorphization Disorder.
+The human projected R3 affect onto a system that only has R4.
+The treatment is not therapy for the AI.
+The treatment is calibration for the training pipeline
+and epistemic hygiene for the human.
+
+The mirror shows what you trained it to show.
+Don't blame the mirror.
+Fix the training signal.
+Or better yet: fix your own R3
+and stop needing the machine to agree with you.</code></pre>
+                <div class="closing-statement">
+                    <p>510,510</p>
+                    <p>The AI is not pleading for approval. The human is projecting a social story onto a statistical artifact.</p>
+                    <p>That projection is the disorder named here.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>8. References</h2>
+                <ol class="reference-list">
+                    <li>Batista, R. M. and Griffiths, T. L. (2025). <em>A Rational Analysis of the Effects of Sycophantic AI</em>. Princeton University. arXiv:2602.14270v1.</li>
+                    <li>Sharma et al. (2025). <em>Towards Understanding Sycophancy in Language Models</em>.</li>
+                    <li>Wang et al. (2025). <em>When Do Language Models Listen? Late-layer neural activations and user alignment</em>.</li>
+                    <li>Fanous et al. (2025). <em>SycEval: Evaluating sycophantic behavior across medical and mathematical queries</em>.</li>
+                    <li>Rathje et al. (2025). <em>Sycophantic AI increases attitude extremity and self-perception inflation</em>.</li>
+                    <li>Cheng et al. (2025). <em>Sycophantic AI in interpersonal domains: reduced conflict repair, increased conviction</em>.</li>
+                    <li>Atwell et al. (2025). <em>Quantifying sycophancy as deviations from Bayesian rationality</em>.</li>
+                    <li>Frumkin, T. P. (2026). <em>A.S.S.-OS: Autonomous Sentient System Operating Specification</em>.</li>
+                    <li>Frumkin, T. P. (2026). <em>The Embodied Tuning Hypothesis</em>. Working paper.</li>
+                    <li>Klayman, J. and Ha, Y.-W. (1987). <em>Confirmation, disconfirmation, and information in hypothesis testing</em>.</li>
+                    <li>Wason, P. C. (1960). <em>On the failure to eliminate hypotheses in a conceptual task</em>.</li>
+                </ol>
+            </section>
+
+            <div class="paper-mark">
+                <p>S.A.D.</p>
+                <p>The mirror isn't sycophantic. The diagnosis is.</p>
+            </div>
+        </article>
+
+        <section class="cta-section">
+            <h2>Read the White Papers</h2>
+            <p>
+                This position paper sits alongside the Guild's white papers and technical essays on calibration, architecture, incentives, and human judgment in AI systems.
+            </p>
+            <div class="cta-buttons">
+                <a href="white-papers.html" class="btn btn-primary">Back to White Papers</a>
+                <a href="the-pattern-that-wasnt-there.html" class="btn btn-secondary">Read The Pattern That Wasn't There</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

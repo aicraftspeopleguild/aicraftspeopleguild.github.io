@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Craftspeople Guild Code of Conduct</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--color-rust) 0%,
+                var(--color-bronze) 50%,
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .guild-mark {
+            text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guild-mark .emblem {
+            font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 840px;
+            margin: 0 auto 2rem;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .back-link {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+
+        .back-link a {
+            color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link a:hover {
+            color: var(--color-rust);
+        }
+
+        .container {
+            max-width: 1020px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .document-content {
+            margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .document-nav {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .document-nav a {
+            text-decoration: none;
+            color: var(--color-rust);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            padding: 0.85rem 1.25rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: var(--color-highlight);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .document-nav a:hover {
+            color: var(--color-ink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px var(--color-shadow);
+        }
+
+        .document-block + .document-block {
+            margin-top: 4.5rem;
+            padding-top: 4.5rem;
+            border-top: 4px double rgba(166, 124, 82, 0.35);
+        }
+
+        .document-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-rust);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .document-block h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+        }
+
+        .intro-block,
+        .document-note {
+            font-size: 1.12rem;
+            line-height: 1.8;
+            color: var(--color-graphite);
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-rust);
+            padding: 2rem;
+        }
+
+        .intro-block {
+            margin-bottom: 2rem;
+        }
+
+        .intro-block h3,
+        .document-note h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--color-ink);
+            margin-bottom: 1rem;
+        }
+
+        .document-note {
+            margin-bottom: 3rem;
+        }
+
+        .document-note p + p,
+        .intro-block p + p {
+            margin-top: 1rem;
+        }
+
+        .article {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(166, 124, 82, 0.25);
+        }
+
+        .document-block > .article:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .article-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-number {
+            flex: 0 0 auto;
+            min-width: 3rem;
+            padding: 0.55rem 0.8rem;
+            background: var(--color-rust);
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .article h3,
+        .rule-item h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-ink);
+        }
+
+        .article h3 {
+            font-size: 1.9rem;
+            line-height: 1.2;
+        }
+
+        .article > p,
+        .rule-item p,
+        .article li,
+        .table-note,
+        .version-note {
+            font-size: 1.06rem;
+            line-height: 1.8;
+            color: var(--color-graphite);
+        }
+
+        .article > p + p {
+            margin-top: 1rem;
+        }
+
+        .rule-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .rule-item {
+            padding: 1.35rem 1.5rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.85) 0%, white 100%);
+            border-top: 3px solid var(--color-bronze);
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+
+        .rule-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .rule-item p + p {
+            margin-top: 0.75rem;
+        }
+
+        .article ul,
+        .rule-item ul {
+            margin: 0.85rem 0 0 1.5rem;
+        }
+
+        .article li + li,
+        .rule-item li + li {
+            margin-top: 0.55rem;
+        }
+
+        strong {
+            color: var(--color-rust);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin-top: 1rem;
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+            background: white;
+        }
+
+        thead {
+            background: var(--color-graphite);
+            color: var(--color-parchment);
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(166, 124, 82, 0.2);
+            vertical-align: top;
+        }
+
+        tbody tr:nth-child(even) {
+            background: rgba(245, 241, 232, 0.55);
+        }
+
+        .table-note {
+            margin-top: 1rem;
+        }
+
+        .version-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(166, 124, 82, 0.25);
+            text-align: center;
+            letter-spacing: 0.04em;
+        }
+
+        .cta-section {
+            margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-rust);
+            color: white;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--color-bronze);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .document-content,
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .intro-block,
+            .document-note {
+                padding: 1.5rem;
+            }
+
+            .article-header {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .article-number {
+                min-width: 0;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <h1>Code of Conduct</h1>
+        <p class="subtitle">Professional behaviour, participation terms, and enforcement standards for Guild members and sessions.</p>
+        <div class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="document-content">
+            <nav class="document-nav" aria-label="Document sections">
+                <a href="#conduct">Code of Conduct</a>
+                <a href="#terms">Terms of Service</a>
+            </nav>
+
+            <section class="document-block" id="conduct">
+                <h2>Code of Conduct</h2>
+
+                <div class="intro-block">
+                    <h3>Preamble</h3>
+                    <p>
+                        The AI Craftspeople Guild is a collective of software professionals who insist on professional standards in an industry prone to hype. This Code of Conduct governs behaviour within the Guild, its RoundTable sessions, and all affiliated channels.
+                    </p>
+                </div>
+
+                <div class="document-note">
+                    <p>
+                        <strong>The enforcement test.</strong> Every rule in this document describes (a) what behaviour is prohibited, (b) how a violation is detected or reported, and (c) what happens when a violation is confirmed. If a rule cannot satisfy all three, it does not belong in a code of conduct.
+                    </p>
+                </div>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">1</div>
+                        <h3>Professional Conduct</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>1.1 Treat fellow members with respect.</h4>
+                            <p>Disagreement on technical matters is expected and encouraged. Personal attacks, harassment, discrimination, and intimidation are not tolerated under any circumstances.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>1.2 Engage in good faith.</h4>
+                            <p>When presenting work, findings, or opinions, represent them honestly. Do not misattribute results, exaggerate capabilities, or suppress failures.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>1.3 No gatekeeping.</h4>
+                            <p>Members shall not dismiss, exclude, or diminish contributions based on a participant's level of experience, geographic origin, employer, or choice of tools. The Guild spans multiple countries, industries, and career stages.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">2</div>
+                        <h3>Epistemic Standards</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>2.1 Evidence over assertion.</h4>
+                            <p>Claims about AI capabilities must be accompanied by one of the following: (a) a reproducible demonstration, (b) a cited source with methodology, or (c) an explicit qualifier such as "in my experience" or "anecdotally."</p>
+                            <p>Unqualified superlatives such as "AI always," "AI never," and "AI will replace" are treated as conduct violations on par with other forms of professional misrepresentation.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>2.2 The right to challenge.</h4>
+                            <p>Any member may invoke a "citation needed" challenge during a session. The speaker may then qualify, cite, or retract. This is a professional courtesy, not a confrontation. The goal is calibration, not punishment.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>2.3 Failures are contributions.</h4>
+                            <p>Sharing failures, limitations, and unexpected behaviours encountered in AI work counts as a valid Guild contribution. Deliberately withholding known failure modes of a tool or technique while promoting its successes is a form of misrepresentation under Section 1.2.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>2.4 Disclose your tools.</h4>
+                            <p>When sharing work, insights, or demonstrations, members shall disclose the AI tools involved, the role those tools played, and any significant manual intervention that was required.</p>
+                            <p>This extends to Guild operations: any Guild document or resource substantially produced with AI assistance must carry a disclosure note. Disclosure is about reproducibility, not confession.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">3</div>
+                        <h3>AI Ethics</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>3.1 Augmentation, not replacement.</h4>
+                            <p>The Guild advocates for AI as a tool that amplifies human craft. Members shall not promote the wholesale replacement of human judgement, review, or accountability in contexts where safety, quality, or dignity are at stake.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>3.2 Informed consent and disclosure.</h4>
+                            <p>Members shall not deploy or promote AI systems that conceal their AI nature from end users. Where AI is involved in generating content, making decisions, or interacting with people, that involvement must be disclosed to those affected.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>3.3 Refuse unethical work.</h4>
+                            <p>Members have a professional duty to refuse participation in AI systems designed to deceive, manipulate, or cause harm. When in doubt, raise the concern with the Guild community.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">4</div>
+                        <h3>RoundTable Session Conduct</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>4.1 Inclusive discussion.</h4>
+                            <p>RoundTable sessions are collaborative discussions, not presentations. Allow space for all participants to contribute.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>4.2 Constructive challenge.</h4>
+                            <p>Challenge ideas on their merits. When disagreeing, offer an alternative or ask a clarifying question rather than dismissing outright.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>4.3 Stay grounded.</h4>
+                            <p>Discussions should prioritise practical experience and concrete examples over abstract theorising. The Guild values real accounts of what worked, what failed, and what was learned.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>4.4 Consent gradient.</h4>
+                            <p>At the start of each session, participants select their consent tier for recording and attribution:</p>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Tier</th>
+                                            <th>Label</th>
+                                            <th>What may be shared</th>
+                                            <th>Attribution</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Open</td>
+                                            <td>Full recording, transcript, direct quotes</td>
+                                            <td>Named</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Attributed Summary</td>
+                                            <td>Written summary with speaker names</td>
+                                            <td>Named, no direct quotes without approval</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Chatham House</td>
+                                            <td>Insights may be shared; speakers may not be identified</td>
+                                            <td>Anonymous</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Vault</td>
+                                            <td>Nothing leaves the session</td>
+                                            <td>No recording, no notes, no paraphrasing</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="table-note">The session operates at the most restrictive tier chosen by any participant for a given segment. A participant may change their tier at any point during the session.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">5</div>
+                        <h3>Membership and Governance</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>5.1 Signatory commitment.</h4>
+                            <p>Membership is established by signing the Guild manifesto. By signing, members commit to upholding this Code of Conduct and contributing to the Guild's mission.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>5.2 No fees, no hierarchy.</h4>
+                            <p>The Guild does not charge membership fees. There is no formal hierarchy among signatories. The organiser role is administrative, not authoritative.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>5.3 Active contribution.</h4>
+                            <p>Membership is free but not without obligation. Signatories commit to at least one contribution per year from the following:</p>
+                            <ul>
+                                <li>Share a practical account (success or failure) in a Guild session.</li>
+                                <li>Publish an honest evaluation of an AI tool or practice.</li>
+                                <li>Mentor someone less experienced in AI-augmented development.</li>
+                                <li>Contribute a correction or refinement to an existing Guild resource.</li>
+                            </ul>
+                            <p>Members who do not fulfil any contribution within 12 months are moved to observer status. They may attend sessions but may not participate in Guild governance decisions. Re-engagement restores full membership immediately with no re-application required.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>5.4 Conduct review.</h4>
+                            <p>If a member's behaviour is reported as violating this Code, the matter will be reviewed by a panel of three signatories (excluding the reporter and the subject), drawn where possible from different countries or regions.</p>
+                            <p>The review process shall be:</p>
+                            <ul>
+                                <li><strong>Deliberate:</strong> a minimum 72-hour cooling-off period between report and outcome. No conduct decisions may be issued during or immediately after a live session.</li>
+                                <li><strong>Private:</strong> conducted through direct communication, not public channels.</li>
+                                <li><strong>Fair:</strong> the subject shall have the opportunity to respond before any decision is made.</li>
+                                <li><strong>Proportionate:</strong> outcomes range from a private conversation to removal of signatory status, depending on severity.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>5.5 Removal.</h4>
+                            <p>A signatory may be removed by consensus of the reviewing panel for sustained or severe violations. Removal is a last resort, applied only when a member demonstrates unwillingness to correct behaviour after being given the opportunity to do so.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>5.6 Good faith exit.</h4>
+                            <p>Any member may leave the Guild at any time for any reason. The Guild will not publicly disclose the reason for a member's departure or removal.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">6</div>
+                        <h3>Enforcement</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>6.1 Reporting.</h4>
+                            <p>Reports of violations may be submitted to the Guild organiser or any two signatories.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>6.2 Confidentiality.</h4>
+                            <p>All reports will be treated confidentially.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>6.3 Timeliness.</h4>
+                            <p>The Guild commits to acknowledging reports within 7 days and resolving them within 30 days.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>6.4 Calibration over punishment.</h4>
+                            <p>Repeated unsubstantiated claims (Section 2.1) result in a cooling-off period from session participation, not expulsion. The goal is calibration, not punishment.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">7</div>
+                        <h3>Review and Sunset</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>7.1 Annual review.</h4>
+                            <p>This Code of Conduct is reviewed annually by the Guild membership.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>7.2 Sunset clause.</h4>
+                            <p>Any rule that has never been invoked in two consecutive years is a candidate for removal. Either the behaviour does not occur, or the rule is unenforceable. Both are reasons to simplify.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section class="document-block" id="terms">
+                <h2>Terms of Service</h2>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">1</div>
+                        <h3>Nature of Agreement</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>1.1 Informal collective.</h4>
+                            <p>The AI Craftspeople Guild is an informal professional collective, not a registered legal entity. These Terms represent a shared voluntary commitment among signatories rather than a legally binding contract enforceable in any jurisdiction.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>1.2 Multijurisdictional framing.</h4>
+                            <p>This deliberate framing acknowledges that Guild members span multiple countries and legal systems. The Terms create no legal obligations beyond the social commitment to professional conduct described herein.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">2</div>
+                        <h3>Scope and Acceptance</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>2.1 Covered activity.</h4>
+                            <p>These Terms govern participation in the Guild, including its RoundTable discussion sessions, online channels, and any affiliated events or publications.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>2.2 Acceptance.</h4>
+                            <p>By signing the Guild manifesto or participating in any Guild activity, you agree to these Terms and the accompanying Code of Conduct.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">3</div>
+                        <h3>Intellectual Property</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>3.1 Your work remains yours.</h4>
+                            <p>The Guild does not claim ownership of any intellectual property, code, designs, or ideas that members bring to or discuss during Guild activities.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>3.2 The insight and the implementation.</h4>
+                            <p>The Guild operates a split-ownership model for knowledge shared in sessions:</p>
+                            <ul>
+                                <li><strong>Insights:</strong> lessons learned, patterns observed, mistakes made, become Guild commons under Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0) upon sharing. Any member may reference, teach, or write about the insight with attribution.</li>
+                                <li><strong>Implementations:</strong> proprietary code, client names, architecture specifics, and trade secrets, remain the exclusive property of the contributor. Members shall not extract proprietary implementation details from shared accounts for competitive use.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>3.3 AI-generated content.</h4>
+                            <p>Where members share or discuss content generated with the assistance of AI tools, they shall identify it as such and disclose the tools used (see Code of Conduct, Section 2.4). The member sharing AI-generated content is responsible for its accuracy and appropriateness.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>3.4 Guild publications.</h4>
+                            <p>Content published under the Guild's name (articles, position papers, website content) is licensed under CC BY-SA 4.0 unless otherwise stated. Contributors retain the right to republish their own contributions independently.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">4</div>
+                        <h3>Recording and Consent</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>4.1 Consent gradient.</h4>
+                            <p>Recording is governed by the consent gradient described in the Code of Conduct (Section 4.4).</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>4.2 Member-only distribution by default.</h4>
+                            <p>Where recording occurs under Tier 1 or Tier 2, recorded material may only be distributed to Guild members unless all recorded participants consent to broader distribution.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>4.3 Right of withdrawal.</h4>
+                            <p>A participant may request that their contributions be removed from a recording after the session. The Guild will make reasonable efforts to comply within 30 days.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>4.4 Non-commercial use.</h4>
+                            <p>The Guild shall not use recordings for commercial purposes without the explicit consent of all recorded participants.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">5</div>
+                        <h3>Privacy and Data Protection</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>5.1 Personal data.</h4>
+                            <p>The Guild collects only the information provided through the signatory form (name, title, organisation, and optionally email). Signatory names, titles, and organisations are displayed publicly on the Guild website.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>5.2 Communication.</h4>
+                            <p>Member email addresses, where provided, will be used solely for Guild-related communications and will not be shared with third parties.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>5.3 Data subject rights.</h4>
+                            <p>Members in any jurisdiction may request access to, correction of, or deletion of their personal data at any time. Requests will be fulfilled within 30 days.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>5.4 Data minimisation.</h4>
+                            <p>The Guild shall not collect or retain personal data beyond what is necessary for the purposes described in these Terms.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">6</div>
+                        <h3>Liability</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>6.1 No professional advice.</h4>
+                            <p>Discussions, opinions, and recommendations shared within the Guild do not constitute professional, legal, or technical advice. Members act on information shared in Guild activities at their own discretion and risk.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>6.2 No warranty.</h4>
+                            <p>The Guild provides its activities, channels, and publications on an &quot;as is&quot; basis without warranty of any kind, express or implied.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>6.3 No personal liability.</h4>
+                            <p>Members agree not to hold the Guild, its organiser, or fellow signatories personally liable for any loss, damage, or consequence arising from participation in Guild activities.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">7</div>
+                        <h3>Dispute Resolution</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>7.1 Direct dialogue first.</h4>
+                            <p>Disputes between members should first be addressed through direct dialogue.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>7.2 Regional mediation panel.</h4>
+                            <p>If direct resolution is unsuccessful, either party may request mediation through a panel of three Guild members drawn from different regions. The panel's authority is limited to membership-related outcomes (guidance, warning, suspension, removal).</p>
+                            <p>The panel cannot impose fines, demand apologies, or create obligations beyond the scope of these Terms.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>7.3 Deliberation minimum.</h4>
+                            <p>The 72-hour deliberation minimum described in the Code of Conduct (Section 5.4) applies to all formal dispute proceedings.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article">
+                    <div class="article-header">
+                        <div class="article-number">8</div>
+                        <h3>Modifications</h3>
+                    </div>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>8.1 Update authority.</h4>
+                            <p>These Terms may be updated by the Guild organiser with input from signatories.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>8.2 Notice period.</h4>
+                            <p>Material changes will be communicated to members at least 14 days before taking effect.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>8.3 Acceptance by participation.</h4>
+                            <p>Continued participation after the effective date constitutes acceptance of the updated Terms.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>8.4 Shared sunset review.</h4>
+                            <p>These Terms are subject to the same two-year sunset review as the Code of Conduct (Section 7.2).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <p class="version-note">Version 1.0 | AI Craftspeople Guild | 2026</p>
+            </section>
+        </div>
+
+        <section class="cta-section">
+            <h2>Read the Guild Documents</h2>
+            <p>
+                The manifesto states the principles. The charter defines the Guild. This document governs conduct and participation.
+            </p>
+            <div class="cta-buttons">
+                <a href="aicraftspeopleguild-manifesto.html" class="btn btn-primary">
+                    <span>Read the Manifesto</span>
+                </a>
+                <a href="charter.html" class="btn btn-secondary">
+                    <span>Read the Charter</span>
+                </a>
+                <a href="index.html" class="btn btn-secondary">
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            © 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

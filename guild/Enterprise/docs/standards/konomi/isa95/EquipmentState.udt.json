@@ -1,3 +1,0 @@
-{"$schema":"konomi/udt/v1","name":"EquipmentState","std":"ISA-95","layer":2,"version":"1.0.0",
-"enum":["Idle","Running","Faulted","Maintenance","Offline"],
-"meta":{"desc":"High-level equipment state enum"}}

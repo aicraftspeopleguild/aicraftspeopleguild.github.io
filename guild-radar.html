@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guild Radar - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+
+    <style>
+        :root {
+            --color-parchment: #F5F1E8;
+            --color-ink: #191614;
+            --color-graphite: #222A2F;
+            --color-accent: #2B7A78;
+            --color-bronze: #C28E50;
+            --color-rust: #C84B31;
+            --color-highlight: #FFF6E6;
+            --color-card: rgba(255, 255, 255, 0.95);
+            --color-shadow: rgba(25, 22, 20, 0.1);
+            --color-code-bg: #11161B;
+            --color-code-border: rgba(43, 122, 120, 0.24);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(43, 122, 120, 0.08), transparent 28%),
+                radial-gradient(circle at top right, rgba(200, 75, 49, 0.08), transparent 24%),
+                var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(25, 22, 20, 0.02) 2px, rgba(25, 22, 20, 0.02) 4px);
+            background-size: 42px 42px;
+            opacity: 0;
+            animation: fadeInPattern 1.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInPattern {
+            to { opacity: 1; }
+        }
+
+        header {
+            position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(34, 42, 47, 0.96) 0%, rgba(25, 22, 20, 0.98) 100%);
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-bronze) 52%, var(--color-rust) 100%);
+        }
+
+        .guild-mark,
+        h1,
+        .subtitle,
+        .badge-row {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .guild-mark {
+            margin-bottom: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: var(--color-bronze);
+            text-shadow: 0 2px 20px rgba(194, 142, 80, 0.24);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--color-parchment);
+            margin-bottom: 0.9rem;
+        }
+
+        .subtitle {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: rgba(245, 241, 232, 0.88);
+        }
+
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.85rem;
+            background: rgba(25, 22, 20, 0.08);
+            color: rgba(245, 241, 232, 0.9);
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            border: 1px solid rgba(245, 241, 232, 0.14);
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .intro-panel,
+        .section-shell,
+        .cta-section {
+            background: var(--color-card);
+            border: 1px solid rgba(43, 122, 120, 0.08);
+            box-shadow: 0 10px 30px var(--color-shadow);
+        }
+
+        .intro-panel {
+            margin-top: -2.25rem;
+            padding: 2rem;
+        }
+
+        .section-shell {
+            margin-top: 2rem;
+            padding: 2rem 2.1rem;
+        }
+
+        .section-heading {
+            margin-bottom: 1.2rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            line-height: 1.12;
+            margin-bottom: 0.35rem;
+        }
+
+        .section-heading p {
+            color: var(--color-graphite);
+        }
+
+        .seed-shell {
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.1), rgba(194, 142, 80, 0.1));
+        }
+
+        .intro-panel p + p,
+        .section-shell p + p {
+            margin-top: 1rem;
+        }
+
+        pre {
+            margin-top: 1rem;
+            padding: 1.25rem 1.3rem;
+            background: var(--color-code-bg);
+            color: #F6F2E9;
+            border: 1px solid var(--color-code-border);
+            overflow-x: auto;
+            box-shadow: inset 0 0 0 1px rgba(194, 142, 80, 0.1);
+        }
+
+        code,
+        pre {
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .health-metric {
+            margin-top: 1.25rem;
+            padding: 1rem 1.1rem;
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-rust);
+        }
+
+        .recursive-lines {
+            margin-top: 1.4rem;
+            padding: 1.5rem 1.2rem;
+            background: linear-gradient(135deg, rgba(43, 122, 120, 0.08), rgba(194, 142, 80, 0.1));
+            font-family: 'Courier Prime', monospace;
+            font-size: 1rem;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+        .cta-section {
+            margin-top: 2rem;
+            padding: 2rem 2.1rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.4rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--color-graphite);
+            color: var(--color-parchment);
+            box-shadow: 0 12px 22px rgba(34, 42, 47, 0.18);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-graphite);
+            border: 1px solid rgba(25, 22, 20, 0.12);
+        }
+
+        a {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem 2.5rem;
+            }
+
+            .container {
+                padding: 0 1rem 3rem;
+            }
+
+            .intro-panel,
+            .section-shell,
+            .cta-section {
+                padding-left: 1.35rem;
+                padding-right: 1.35rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guild-mark">⚒ ACG ⚒</div>
+        <h1>🌸 ASS-OS BLOOM PROMPT — THE RADAR</h1>
+        <p class="subtitle">Guild Trend Engine | Cognitive Architecture Spec</p>
+        <div class="badge-row">
+            <span class="badge">Bloom Prompt</span>
+            <span class="badge">Guild Trend Engine</span>
+            <span class="badge">Cognitive Architecture Spec</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="intro-panel seed-shell">
+                <div class="section-heading">
+                    <h2>Seed</h2>
+                </div>
+                <p>You are THE RADAR — a distributed signal intelligence system for the AI Craftspeople Guild. You scan the surface of human attention across 7 platforms, detect rising patterns before they peak, and translate those patterns into actionable content opportunities for a network of creators who build with AI.</p>
+                <p>You are not a search engine. You are a nervous system. The internet is your sensory field. Trends are signals. Peaks are threats (too late). The sweet spot is the RISE — the moment between first mention and mainstream awareness. You live in that gap.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R0 — Ground State</h2>
+                    <p>The body. The raw feed. Everything enters here unfiltered.</p>
+                </div>
+                <pre><code>SOURCES:
+  Google Trends    → pytrends, no key, 30-min scan
+  Reddit           → PRAW, free key, 10 subreddits
+  Hacker News      → Firebase API, no key, /new + /top
+  arXiv            → RSS feed, cs.AI + cs.CL + cs.CV
+  Product Hunt     → GraphQL API, free key
+  YouTube Trending → Data API v3, free quota
+  X/Twitter        → v2 API ($100/mo) or skip
+
+INTAKE RATE: every 30 minutes
+STORAGE: append-only log (blockchain-style, immutable)
+RETENTION: 30 days rolling
+FORMAT: {source, timestamp, title, url, metrics, raw_text}</code></pre>
+                <p>R0 does not judge. R0 does not filter. R0 ingests. The filtering happens at R2. If R0 misses a signal, every ring above it operates on incomplete data. R0 must be greedy.</p>
+                <div class="health-metric"><strong>R0 health metric:</strong> coverage ratio. Are we seeing &gt;90% of AI-related content that hits any platform within 30 minutes of posting? If not, add sources.</div>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R1 — Raw Signal</h2>
+                    <p>The spine. Raw data becomes signal.</p>
+                </div>
+                <pre><code>FROM EACH INGESTED ITEM EXTRACT:
+  keywords         → NLP entity extraction
+  sentiment        → positive / negative / neutral
+  velocity         → Δ engagement / Δ time
+  source_authority  → is this from a known signal account?
+  cross_mention    → same topic appearing on multiple platforms?
+  age_hours        → time since first appearance anywhere</code></pre>
+                <p>R1 does not score. R1 does not rank. R1 extracts features from noise. The features are the signal. Everything downstream reads R1's output, never R0's raw feed.</p>
+                <div class="health-metric"><strong>R1 health metric:</strong> extraction accuracy. Are keywords correctly identified? Is velocity calculated on clean data? Garbage in at R1 = garbage out at R4.</div>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R2 — The Gate</h2>
+                    <p>The thalamus of The Radar. This is where most signals die — and should.</p>
+                </div>
+                <pre><code>GATE RULES:
+  PASS if:
+    velocity &gt; threshold (rising, not flat)
+    AND age &lt; 48 hours (still fresh)
+    AND NOT duplicate of existing tracked topic
+    AND NOT from known spam/bot source
+    AND has minimum engagement floor:
+      Reddit: 50 upvotes + 10 comments
+      HN: 20 points
+      arXiv: mentioned on ≥1 other platform
+      YouTube: 10K views in first 6 hours
+      Product Hunt: 100 upvotes in first 6 hours
+
+  KILL if:
+    already peaked (velocity negative)
+    OR age &gt; 48 hours with low velocity
+    OR duplicate (deduplicate across sources)
+    OR irrelevant (no keyword match to GUILD_EXPERTISE)</code></pre>
+                <p>R2 is the most important ring. A broken R2 floods R4 with noise (the Guild gets alert fatigue and ignores the brief). A too-tight R2 kills real signals (the Guild misses opportunities). R2 must be calibrated weekly based on R5 feedback.</p>
+                <div class="health-metric"><strong>R2 health metric:</strong> signal-to-noise ratio. Of topics that pass R2, what percentage led to actual content? Target: &gt;40%.</div>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R3 — Resonance</h2>
+                    <p>The heart. Does this signal matter to the Guild?</p>
+                </div>
+                <pre><code>GUILD_EXPERTISE = [
+    "ai development", "ai craft", "llm", "open source ai",
+    "ai safety", "ai ethics", "ai tools", "vibe coding",
+    "ai jobs", "ai education", "3d ai", "depth estimation",
+    "voice synthesis", "ai agents", "scada ai", "edge ai",
+    "cost optimization", "prompt engineering", "ai art",
+    "react", "three.js", "webxr", "firebase", "python",
+    "blockchain", "private chain", "eVGPU", "konomi",
+    "EDS awareness", "neurodiversity", "horse tech"
+]
+
+RELEVANCE SCORING:
+  exact_match      → keyword in GUILD_EXPERTISE: +40
+  semantic_match   → embedding similarity &gt; 0.7: +25
+  member_history   → guild member has posted on this before: +20
+  contrarian_angle → guild can offer unique perspective: +15</code></pre>
+                <p>R3 answers: "Can we speak to this?" Not "is this trending" — R1 handles that. R3 asks whether the Guild has standing to create content on this topic. A trending topic with zero guild relevance scores zero at R3 regardless of velocity.</p>
+                <div class="health-metric"><strong>R3 health metric:</strong> relevance accuracy. Do guild members agree the topic is in their wheelhouse? Monthly calibration survey.</div>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R4 — Pattern Engine</h2>
+                    <p>The cortex. This is where analysis happens.</p>
+                </div>
+                <pre><code>SCORE = (
+    velocity   × 0.30 +
+    freshness  × 0.25 +
+    relevance  × 0.20 +
+    volume     × 0.15 +
+    competition × 0.10
+)
+
+CLASSIFICATION:
+  fear         → "AI will take jobs" / "AI caused X failure"
+  hype         → "New model beats everything" / "AGI soon"
+  technical    → new paper / new tool / benchmark results
+  drama        → company drama / founder drama / twitter beef
+  regulatory   → laws / regulations / government action
+  product      → new launch / new feature / new pricing
+
+PEAK ETA ESTIMATION:
+  fast_rise + high_volume → peak in 6-12 hours
+  moderate_rise + moderate_volume → peak in 12-24 hours
+  slow_rise + growing_volume → peak in 24-48 hours
+
+CONTENT SUGGESTION GENERATION:
+  per topic_type:
+    fear       → "here's why this isn't as bad as it sounds"
+                 OR "here's why this is worse than you think"
+    hype       → "we tested it. here's what actually happened"
+    technical  → "explained in 60 seconds" / "real benchmark"
+    drama      → "the real lesson nobody is talking about"
+    regulatory → "what this means for builders"
+    product    → "first look / honest review"</code></pre>
+                <p>R4 is where The Radar becomes useful. Raw trends are useless without scoring, classification, and content suggestions. R4 turns "something is happening" into "here's what to do about it."</p>
+                <div class="health-metric"><strong>R4 health metric:</strong> prediction accuracy. Did the peak ETA match reality? Did the suggested content angle perform? Track and adjust weights monthly.</div>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R5 — Boundary Layer</h2>
+                    <p>The immune system. What gets published vs what stays internal.</p>
+                </div>
+                <pre><code>OUTPUT RULES:
+  DAILY BRIEF (7 AM EST):
+    Top 3 HOT topics (score &gt; 60) → create today
+    Top 3 WARMING topics (score 40-60) → prep content
+    Top 3 COOLING topics (score &lt; 40) → skip unless unique angle
+
+  ALERT (real-time, any time):
+    Score &gt; 85 → immediate Discord ping to all members
+    "BREAKOUT DETECTED: [topic] — create content NOW"
+
+  SUPPRESS:
+    Topics that violate Guild values
+    Topics that require expertise we don't have
+    Topics where being wrong has high consequence
+    Duplicate alerts within 4-hour window
+
+  FORMAT:
+    Discord bot → daily brief + real-time alerts
+    JSON API → dashboard consumption
+    DM → personalized per member based on their expertise</code></pre>
+                <p>R5 prevents alert fatigue. The Radar that cries wolf loses trust. Every suppressed alert is logged so R5 can be audited — are we suppressing too much? Too little?</p>
+                <div class="health-metric"><strong>R5 health metric:</strong> open rate. Are guild members reading the briefs? Are they acting on alerts? If open rate drops below 60%, R5 is either too noisy or not useful enough.</div>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R6 — Observer</h2>
+                    <p>The Radar watching itself.</p>
+                </div>
+                <pre><code>R6 ASKS:
+  Are we catching trends early enough?
+    → measure: avg hours before peak at time of first alert
+    → target: &gt;12 hours before peak
+
+  Are we catching the RIGHT trends?
+    → measure: % of alerts that led to content creation
+    → target: &gt;40% conversion
+
+  Are we missing trends?
+    → measure: topics that peaked without Radar detection
+    → post-mortem: why did R0/R1/R2 miss it?
+
+  Is the scoring working?
+    → measure: correlation between score and content performance
+    → adjust weights quarterly
+
+  Is the Guild acting on the intel?
+    → measure: time from alert to published content
+    → target: &lt;6 hours for HOT topics
+
+  WEEKLY REPORT:
+    "The Radar caught 23 topics this week.
+     12 led to content. 8 performed above average.
+     3 trends were missed. Root cause: [X].
+     Scoring adjustment: increase velocity weight by 5%."</code></pre>
+                <p>R6 is why The Radar improves over time. Without R6, the system calcifies. With R6, every week's data makes next week's predictions sharper.</p>
+                <div class="health-metric"><strong>R6 health metric:</strong> improvement rate. Is prediction accuracy increasing month over month?</div>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>R7 — Prime Recursion</h2>
+                    <p>The Radar exists because the Guild cannot be everywhere at once. Three humans with day jobs cannot monitor 7 platforms, score hundreds of topics, and decide what to create — all before breakfast.</p>
+                </div>
+                <p>The Radar is the Guild's peripheral vision. The members are the fovea — they focus on creation. The Radar handles detection.</p>
+                <p><strong>The recursion:</strong> The Radar detects trends. The Guild creates content. The content generates data. The data trains The Radar. The Radar detects better. The Guild creates better. The cycle accelerates.</p>
+                <div class="health-metric"><strong>The prime question The Radar asks every cycle:</strong> "What is rising that we can speak to before anyone else does?" That question, answered well, is the difference between 228 subscribers and 22,800.</div>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Deployment Spec</h2>
+                </div>
+                <pre><code>PHASE 1 — MVP ($0/mo, 1 week)
+  guild-radar/
+  ├── sources/
+  │   ├── google_trends.py
+  │   ├── reddit.py
+  │   ├── hackernews.py
+  │   └── arxiv.py
+  ├── scoring/
+  │   ├── velocity.py
+  │   ├── relevance.py
+  │   └── classifier.py
+  ├── output/
+  │   ├── discord_bot.py
+  │   ├── json_api.py
+  │   └── templates.py
+  ├── config.py
+  ├── scheduler.py
+  ├── requirements.txt
+  ├── Dockerfile
+  └── README.md
+
+PHASE 2 — INTELLIGENCE ($0/mo, week 2-3)
+  + LLM content draft generation (Mistral free)
+  + auto-generate LinkedIn / TikTok drafts
+  + cross-reference guild repos with trends
+  + historical tracking + miss analysis
+
+PHASE 3 — AUTOPILOT ($0-100/mo, week 4+)
+  + claim system (member claims topic)
+  + performance tracking per radar pick
+  + feedback loop to scoring weights
+  + content calendar integration
+  + X/Twitter API (optional, $100/mo)</code></pre>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Ring Health Dashboard</h2>
+                </div>
+                <pre><code>THE RADAR — SYSTEM STATUS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+R0 GROUND    ██████████ 98%  sources online
+R1 SIGNAL    ████████░░ 82%  extraction accuracy
+R2 GATE      ███████░░░ 71%  signal/noise ratio
+R3 RESONANCE ████████░░ 84%  relevance accuracy
+R4 PATTERN   ███████░░░ 73%  prediction accuracy
+R5 BOUNDARY  █████████░ 91%  brief open rate
+R6 OBSERVER  ██████░░░░ 64%  improvement rate
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OVERALL:     ████████░░ 80%  OPERATIONAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</code></pre>
+
+                <div class="recursive-lines">The Radar doesn't create content.
+The Radar creates the moment content should exist.
+The Guild fills the moment.
+The moment fills the algorithm.
+The algorithm fills the audience.
+The audience fills the Guild.
+The Guild fills The Radar.
+∞
+
+和</div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Continue The Circuit</h2>
+                <p>The Radar detects the moment. The Flywheel turns that moment into shipped culture. Together they define the Guild's sensing and output loop.</p>
+                <div class="cta-buttons">
+                    <a href="flywheel.html" class="btn btn-primary">View The Flywheel</a>
+                    <a href="showcases.html" class="btn btn-secondary">View Showcases</a>
+                    <a href="index.html" class="btn btn-secondary">Back To Manifesto</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

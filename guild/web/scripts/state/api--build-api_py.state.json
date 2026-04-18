@@ -1,45 +1,49 @@
 {
   "udtType": "PackMLState",
   "parameters": {
-    "program_id": "components--build-catalog_py",
-    "run_id": "1776486077-76f2e7",
-    "started_at": "2026-04-18T04:21:17Z",
-    "ended_at": "2026-04-18T04:21:17Z",
+    "program_id": "api--build-api_py",
+    "run_id": "1776486078-63bf68",
+    "started_at": "2026-04-18T04:21:18Z",
+    "ended_at": "2026-04-18T04:21:18Z",
     "terminal": "COMPLETE",
     "transitions": [
       {
         "state": "STARTING",
-        "at": "2026-04-18T04:21:17Z",
+        "at": "2026-04-18T04:21:18Z",
         "note": "running pre_checks"
       },
       {
         "state": "EXECUTE",
-        "at": "2026-04-18T04:21:17Z",
+        "at": "2026-04-18T04:21:18Z",
         "note": "work starting"
       },
       {
         "state": "COMPLETING",
-        "at": "2026-04-18T04:21:17Z",
+        "at": "2026-04-18T04:21:18Z",
         "note": "running post_checks"
       },
       {
         "state": "COMPLETE",
-        "at": "2026-04-18T04:21:17Z",
+        "at": "2026-04-18T04:21:18Z",
         "note": "all checks ok"
       }
     ],
     "pre_check_results": {
-      "path_exists(instances)": {
-        "ok": true,
-        "note": ""
-      },
-      "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\web\\components\\udts\\instances\\*.json)": {
+      "path_exists(acg.db)": {
         "ok": true,
         "note": ""
       }
     },
     "post_check_results": {
-      "path_exists(index.json)": {
+      "path_exists(papers.json)": {
+        "ok": true,
+        "note": ""
+      },
+      "path_exists(members.json)": {
+        "ok": true,
+        "note": ""
+      },
+      "path_exists(health.json)": {
         "ok": true,
         "note": ""
       }
@@ -47,8 +51,8 @@
     "error": null
   },
   "tags": {
-    "id": "components--build-catalog_py-1776486077-76f2e7",
-    "duration_s": "0.034",
+    "id": "api--build-api_py-1776486078-63bf68",
+    "duration_s": "0.004",
     "schema_version": "1.0.0"
   }
 }

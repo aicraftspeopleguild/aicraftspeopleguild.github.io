@@ -1,12 +1,19 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-04-18T04:08:57Z",
+  "generated_at": "2026-04-18T04:21:18Z",
   "schema_version": "1.0.0",
   "counts": {
-    "programs": 17,
-    "categories": 9
+    "programs": 18,
+    "categories": 10
   },
   "programs": [
+    {
+      "id": "api--build-api_py",
+      "name": "Build Api",
+      "category": "misc",
+      "path": "guild/web/scripts/api/build-api.py",
+      "last_state": "COMPLETE"
+    },
     {
       "id": "apps--build-whitepaper-apps_py",
       "name": "Build Whitepaper Apps",

@@ -93,6 +93,7 @@ case "${1:-help}" in
   perspective)             node   "$HERE/perspective-build.js" ;;
   programs:build)          python "$HERE/build-programs.py" ;;
   db:init)                 python "$REPO/guild/web/database/init-db.py" ;;
+  api:build)               python "$HERE/api/build-api.py" ;;
   test:links)              python "$HERE/test-links.py" ;;
   fix:links)               python "$HERE/fix-data-links.py" ;;
   docs:split-catalog)      python "$HERE/docs/split-catalog.py" ;;

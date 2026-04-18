@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-04-18T04:38:12Z",
+  "generated_at": "2026-04-18T04:41:59Z",
   "schema_version": "1.0.0",
   "counts": {
-    "programs": 18,
+    "programs": 19,
     "categories": 10
   },
   "programs": [
@@ -12,6 +12,13 @@
       "name": "Build Api",
       "category": "misc",
       "path": "guild/web/scripts/api/build-api.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "api--build-runtime-tags_py",
+      "name": "Build Runtime Tags",
+      "category": "misc",
+      "path": "guild/web/scripts/api/build-runtime-tags.py",
       "last_state": "COMPLETE"
     },
     {

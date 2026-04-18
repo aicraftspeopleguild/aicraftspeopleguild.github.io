@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "schema": "acg/dense-token · §0",
+    "updatedAt": 1776487319669,
+    "source": "guild/web/scripts/api/build-runtime-tags.py",
+    "about": "Live runtime state of the ACG enterprise — regen on every build"
+  },
+  "sys": {
+    "startedAt": {
+      "value": 1776487319669,
+      "quality": "good",
+      "type": "DateTime"
+    },
+    "buildAt": {
+      "value": 1776487319669,
+      "quality": "good",
+      "type": "DateTime"
+    },
+    "apiVersion": {
+      "value": "1.0",
+      "quality": "good",
+      "type": "String"
+    }
+  },
+  "enterprise": {
+    "paperCount": {
+      "value": 24,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "memberCount": {
+      "value": 8,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "programCount": {
+      "value": 19,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "runCount": {
+      "value": 4,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "tagEdges": {
+      "value": 4,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "authoredLinks": {
+      "value": 6,
+      "quality": "good",
+      "type": "Counter"
+    }
+  },
+  "catalog": {
+    "latestPaperDate": {
+      "value": "Medium, 2 February 2026",
+      "quality": "good",
+      "type": "DateTime"
+    },
+    "typeBreakdown": {
+      "value": {
+        "experimental": 2,
+        "knowledge-about-knowledge": 2,
+        "position": 3,
+        "published": 17
+      },
+      "quality": "good",
+      "type": "JSON"
+    }
+  },
+  "pipeline": {
+    "lastCompleteCount": {
+      "value": 4,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "lastAbortedCount": {
+      "value": 0,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "stateFileCount": {
+      "value": 4,
+      "quality": "good",
+      "type": "Counter"
+    }
+  },
+  "identity": {
+    "host": {
+      "value": "aicraftspeopleguild.github.io",
+      "quality": "good",
+      "type": "String"
+    },
+    "repoUrl": {
+      "value": "github.com/aicraftspeopleguild/aicraftspeopleguild.github.io",
+      "quality": "good",
+      "type": "String"
+    },
+    "deployMode": {
+      "value": "github-pages-static",
+      "quality": "good",
+      "type": "String"
+    }
+  }
+}

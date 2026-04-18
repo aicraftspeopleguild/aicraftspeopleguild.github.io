@@ -24,9 +24,8 @@ const pending=new Map();             // offer_id -> RTCPeerConnection
 const PENDING_TTL_MS=60000;
 // Some public trackers (webtorrent.dev behind Cloudflare) routinely
 // take 5-10 s for the WSS handshake on a cold connection even when
-// they're healthy. Our headless probe (bin/p2p-test.py) confirmed
-// cold starts up to ~8 s, so keep this generous to avoid flapping.
-const CONNECT_TIMEOUT_MS=15000;
+// they're healthy. Keep this generous so we don't flap.
+const CONNECT_TIMEOUT_MS=10000;
 const RECONNECT_BACKOFF_MS=[3000,6000,12000,30000,60000];
 // Stop retrying a URL after this many failed attempts in a row — keeps
 // the log readable when a tracker is permanently offline.

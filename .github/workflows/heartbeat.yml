@@ -58,6 +58,7 @@ jobs:
           python guild/Enterprise/L4/svg/build-readme-hero.py
           python guild/Enterprise/L4/svg/build-readme-controls.py
           python guild/Enterprise/L4/svg/build-readme-api.py
+          python guild/Enterprise/L4/svg/build-scada-dashboard.py
 
       - name: Commit SVG widgets if changed
         run: |

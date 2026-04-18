@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 24" width="160" height="24" role="img" aria-label="{{LABEL}}">
+  <!-- TOKENS: LABEL  BG_COLOR  BORDER_COLOR  TEXT_COLOR -->
+  <!-- defaults: LABEL="tag"  BG_COLOR="#161b22"  BORDER_COLOR="#30363d"  TEXT_COLOR="#8b949e" -->
+  <defs><style>.t{font-family:'SFMono-Regular',Consolas,monospace;font-size:11px;text-anchor:middle}</style></defs>
+  <rect width="160" height="24" rx="12" fill="{{BG_COLOR}}" stroke="{{BORDER_COLOR}}" stroke-width="1"/>
+  <text x="80" y="16.5" class="t" fill="{{TEXT_COLOR}}">{{LABEL}}</text>
+</svg>

@@ -8,64 +8,40 @@
 
 ---
 
-## ▣ STATUS BOARD
+## ▣ SCADA dashboard · live
 
-**`REPO`**  
+<div align="center"><a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/scada-dashboard.svg" alt="ACG SCADA dashboard · CATALOG · ENTERPRISE · PIPELINE · IDENTITY · TAGS · FAULTS · HEARTBEAT" width="1040"/></a></div>
+
+One SVG reads every public endpoint + `state.db` + the GitHub-Issue tag bus on every `demo.heartbeat` bump. The workflow regenerates and commits it back so the dashboard above stays current without a viewer-side script.
+
+<details><summary>repo badges (GitHub-side stats)</summary>
+
 ![Pages](https://img.shields.io/github/deployments/aicraftspeopleguild/aicraftspeopleguild.github.io/github-pages?label=pages&color=1a5c4c&style=flat-square)
 ![Last commit](https://img.shields.io/github/last-commit/aicraftspeopleguild/aicraftspeopleguild.github.io?label=last+commit&color=1a5c4c&style=flat-square)
-![Commit activity](https://img.shields.io/github/commit-activity/w/aicraftspeopleguild/aicraftspeopleguild.github.io?label=commits%2Fwk&color=4a8868&style=flat-square)
+![Commits/wk](https://img.shields.io/github/commit-activity/w/aicraftspeopleguild/aicraftspeopleguild.github.io?label=commits%2Fwk&color=4a8868&style=flat-square)
 ![Contributors](https://img.shields.io/github/contributors/aicraftspeopleguild/aicraftspeopleguild.github.io?label=contributors&color=4a8868&style=flat-square)
 ![Stars](https://img.shields.io/github/stars/aicraftspeopleguild/aicraftspeopleguild.github.io?label=stars&color=c47a20&style=flat-square)
 ![Forks](https://img.shields.io/github/forks/aicraftspeopleguild/aicraftspeopleguild.github.io?label=forks&color=8d95a0&style=flat-square)
 ![Code size](https://img.shields.io/github/languages/code-size/aicraftspeopleguild/aicraftspeopleguild.github.io?label=code+size&color=1c2128&style=flat-square)
-![Repo size](https://img.shields.io/github/repo-size/aicraftspeopleguild/aicraftspeopleguild.github.io?label=repo+size&color=1c2128&style=flat-square)
-![Issues open](https://img.shields.io/github/issues/aicraftspeopleguild/aicraftspeopleguild.github.io?label=issues+open&color=c47a20&style=flat-square)
-![Issues closed](https://img.shields.io/github/issues-closed/aicraftspeopleguild/aicraftspeopleguild.github.io?label=issues+closed&color=1a5c4c&style=flat-square)
-![PRs open](https://img.shields.io/github/issues-pr/aicraftspeopleguild/aicraftspeopleguild.github.io?label=PRs+open&color=6f42c1&style=flat-square)
-![PRs closed](https://img.shields.io/github/issues-pr-closed/aicraftspeopleguild/aicraftspeopleguild.github.io?label=PRs+closed&color=4a8868&style=flat-square)
+![Issues open](https://img.shields.io/github/issues/aicraftspeopleguild/aicraftspeopleguild.github.io?label=issues&color=c47a20&style=flat-square)
+![PRs open](https://img.shields.io/github/issues-pr/aicraftspeopleguild/aicraftspeopleguild.github.io?label=PRs&color=6f42c1&style=flat-square)
 ![Top lang](https://img.shields.io/github/languages/top/aicraftspeopleguild/aicraftspeopleguild.github.io?label=top+lang&color=1c2128&style=flat-square)
-![Lang count](https://img.shields.io/github/languages/count/aicraftspeopleguild/aicraftspeopleguild.github.io?label=languages&color=8d95a0&style=flat-square)
 
-**`CATALOG · health.json`**  
-![papers](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json&query=%24.paperCount&label=papers&color=1a5c4c&style=flat-square)
-![members](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json&query=%24.memberCount&label=members&color=4a8868&style=flat-square)
-![last build](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json&query=%24.lastUpdated&label=last+build&color=4a8868&style=flat-square)
-![api version](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json&query=%24.apiVersion&label=api&color=8d95a0&style=flat-square)
+</details>
 
-**`ENTERPRISE · L4 tags`**  
-![enterprise.paperCount](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.enterprise.paperCount.value&label=enterprise.papers&color=1a5c4c&style=flat-square)
-![enterprise.memberCount](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.enterprise.memberCount.value&label=enterprise.members&color=4a8868&style=flat-square)
-![enterprise.programCount](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.enterprise.programCount.value&label=enterprise.programs&color=4a8868&style=flat-square)
-![enterprise.runCount](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.enterprise.runCount.value&label=enterprise.runs&color=c47a20&style=flat-square)
-![enterprise.tagEdges](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.enterprise.tagEdges.value&label=enterprise.tagEdges&color=6f42c1&style=flat-square)
-![enterprise.authoredLinks](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.enterprise.authoredLinks.value&label=enterprise.authoredLinks&color=6f42c1&style=flat-square)
+<details><summary>individual widgets (heartbeat · pipeline-pulse · tag-grid · status-dashboard · api)</summary>
 
-**`PIPELINE · L3`**  
-![pipeline.complete](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.complete.value&label=pipeline.complete&color=1a5c4c&style=flat-square)
-![pipeline.aborted](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.aborted.value&label=pipeline.aborted&color=b85c5c&style=flat-square)
-![pipeline.states](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.pipeline.states.value&label=pipeline.states&color=8d95a0&style=flat-square)
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/heartbeat.svg" alt="💓 demo.heartbeat" width="720"/></a>
 
-**`IDENTITY · deploy`**  
-![host](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.identity.host.value&label=host&color=1c2128&style=flat-square)
-![deploy mode](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.identity.deployMode.value&label=deploy&color=4a8868&style=flat-square)
-![apiVersion](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.identity.apiVersion.value&label=api&color=8d95a0&style=flat-square)
-![latest paper](https://img.shields.io/badge/dynamic/json?url=https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json&query=%24.catalog.latestPaperTitle.value&label=latest+paper&color=c47a20&style=flat-square)
+<img src="guild/Enterprise/L2/hmi/web/assets/svg/pipeline-pulse.svg" alt="Pipeline pulse" width="720"/>
 
-**`DYNAMIC · GitHub-Issue tags`** — issue-body JSON read live via the terminal's `watch` command · SVG widgets regenerated on every bump.
+<img src="guild/Enterprise/L2/hmi/web/assets/svg/tag-grid.svg" alt="Tag grid" width="920"/>
 
-<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="guild/Enterprise/L2/hmi/web/assets/svg/heartbeat.svg" alt="💓 demo.heartbeat — click to open the terminal" width="720"/></a>
+<img src="guild/Enterprise/L2/hmi/web/assets/svg/status-dashboard.svg" alt="Status dashboard" width="960"/>
 
-<div align="center"><img src="guild/Enterprise/L2/hmi/web/assets/svg/status-dashboard.svg" alt="Status dashboard · CATALOG · ENTERPRISE · PIPELINE · HEARTBEAT" width="960"/></div>
+</details>
 
-<div align="center"><img src="guild/Enterprise/L2/hmi/web/assets/svg/pipeline-pulse.svg" alt="Pipeline pulse · complete / aborted / sparkline / success rate" width="720"/></div>
-
-<div align="center"><img src="guild/Enterprise/L2/hmi/web/assets/svg/tag-grid.svg" alt="Open GitHub-Issue tags grid" width="920"/></div>
-
-[![heartbeat](https://img.shields.io/github/issues-search?query=repo%3Ateslasolar%2Faicraftspeopleguild.github.io%20label%3Atag%20in%3Atitle%20%22tag%3Ademo.heartbeat%22&label=💓%20demo.heartbeat&color=1a5c4c&style=flat-square)](https://github.com/teslasolar/aicraftspeopleguild.github.io/issues?q=is:issue+label:tag+%22tag:demo.heartbeat%22)
-[![terminal-cmd](https://img.shields.io/github/issues-search?query=repo%3Ateslasolar%2Faicraftspeopleguild.github.io%20label%3Atag%20in%3Atitle%20%22tag%3Ademo.terminal-cmd%22&label=⌘%20demo.terminal-cmd&color=6f42c1&style=flat-square)](https://github.com/teslasolar/aicraftspeopleguild.github.io/issues?q=is:issue+label:tag+%22tag:demo.terminal-cmd%22)
-[![tag count](https://img.shields.io/github/issues-search?query=repo%3Ateslasolar%2Faicraftspeopleguild.github.io%20label%3Atag%20is%3Aopen&label=open%20tag%20issues&color=4a8868&style=flat-square)](https://github.com/teslasolar/aicraftspeopleguild.github.io/issues?q=is:open+label:tag)
-
-> Heartbeat is bumped by `.github/workflows/heartbeat.yml` every push to main + every 15 min; the workflow then regenerates `guild/Enterprise/L2/hmi/web/assets/svg/heartbeat.svg` and commits it back, so GitHub's rendered README shows the latest frame. The live value + history sit in issue #4. Open the terminal and run `watch demo.heartbeat` to tail it.
+> The SCADA dashboard + every widget is regenerated by `.github/workflows/heartbeat.yml` on every push to main + every 15 min. Source of truth for live tags is [GitHub Issues labeled `tag`](https://github.com/teslasolar/aicraftspeopleguild.github.io/issues?q=is:open+label:tag). Open the terminal and run `watch demo.heartbeat` to tail value changes as they happen.
 
 ---
 

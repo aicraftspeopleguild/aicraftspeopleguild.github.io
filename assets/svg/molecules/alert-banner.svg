@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 52" width="720" height="52" role="img" aria-label="{{SEVERITY}}: {{MSG}}">
+  <!-- TOKENS: SEVERITY  MSG  COLOR  BG_COLOR  TS -->
+  <!-- severity presets:
+       INFO:  COLOR="#79c0ff"  BG_COLOR="#0d1f2e"
+       OK:    COLOR="#3fb950"  BG_COLOR="#1b3a27"
+       WARN:  COLOR="#e3b341"  BG_COLOR="#3a2e10"
+       ERROR: COLOR="#ff7b72"  BG_COLOR="#3a1010"  -->
+  <defs><style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style></defs>
+  <rect width="720" height="52" rx="6" fill="{{BG_COLOR}}" stroke="{{COLOR}}" stroke-width="1" stroke-opacity=".35"/>
+  <!-- left severity accent bar -->
+  <rect x="0" y="0" width="4" height="52" rx="2" fill="{{COLOR}}"/>
+  <!-- severity dot -->
+  <circle cx="22" cy="26" r="6" fill="{{COLOR}}"/>
+  <!-- severity label (bold, colored) -->
+  <text x="36" y="30" class="t" font-size="11" font-weight="700" fill="{{COLOR}}">{{SEVERITY}}</text>
+  <!-- message -->
+  <text x="110" y="30" class="t" font-size="11" fill="#e6edf3">{{MSG}}</text>
+  <!-- timestamp (right-aligned, dim) -->
+  <text x="704" y="30" class="t" font-size="10" fill="#484f58" text-anchor="end">{{TS}}</text>
+</svg>

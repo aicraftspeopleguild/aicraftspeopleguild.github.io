@@ -1,15 +1,8 @@
 # ⚒ ACG · Guild HMI
 
-*AI Craftspeople Guild — ISA-95 live control-plane · static JSON API · browser P2P mesh*
+<div align="center"><img src="guild/Enterprise/L4/svg/readme-hero.svg" alt="AI Craftspeople Guild · ISA-95 live control-plane" width="1040"/></div>
 
-<a href="https://aicraftspeopleguild.github.io/"><img alt="site" src="https://img.shields.io/badge/⚒-open_guild-1a5c4c?style=for-the-badge&labelColor=faf6f0"></a>
-<a href="https://aicraftspeopleguild.github.io/aicraftspeopleguild-manifesto.html"><img alt="manifesto" src="https://img.shields.io/badge/📜-manifesto-c47a20?style=for-the-badge&labelColor=faf6f0"></a>
-<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L1/forms/submit/"><img alt="submit" src="https://img.shields.io/badge/📝-submit_paper-6f42c1?style=for-the-badge&labelColor=faf6f0"></a>
-<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/p2p/"><img alt="p2p" src="https://img.shields.io/badge/🛰-p2p_mesh-1a5c4c?style=for-the-badge&labelColor=faf6f0"></a>
-<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/"><img alt="enterprise" src="https://img.shields.io/badge/🎛-controls-4a8868?style=for-the-badge&labelColor=faf6f0"></a>
-<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img alt="terminal" src="https://img.shields.io/badge/⌨-live_terminal-1c2128?style=for-the-badge&labelColor=faf6f0"></a>
-
----
+<div align="center"><img src="guild/Enterprise/L4/svg/readme-controls.svg" alt="ACG controls · jump into an app" width="1040"/></div>
 
 <div align="center"><a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/"><img src="terminal.svg" alt="ACG CLI terminal — click to open" width="720"/></a></div>
 
@@ -77,6 +70,8 @@
 ---
 
 ## 📡 API
+
+<div align="center"><img src="guild/Enterprise/L4/svg/readme-api.svg" alt="live API endpoints · status chips" width="1040"/></div>
 
 Static JSON rebuilt on every push · served from GitHub Pages · CORS open.
 

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 296" width="1040" height="296" role="img" aria-label="ACG live API endpoints">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1040" height="36" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1040" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1040" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">📡 live API endpoints · static JSON · CORS open</text>
+<rect y="36" width="1040" height="260" fill="url(#gBg)"/>
+<g style="transform-origin:28px 72px">
+    <circle cx="28" cy="72" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="28" cy="72" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="28" cy="72" r="5" class="g"/>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/health.json" target="_blank"><text x="50" y="76" class="t vs">health.json</text><text x="50" y="92" class="t sub">/guild/Enterprise/L4/api/health.json</text></a>
+<g><rect x="880" y="62" rx="11" width="92" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="926" y="77" text-anchor="middle" class="t" font-size="11" fill="#3fb950">200 · 0KB</text></g>
+<g style="transform-origin:28px 116px">
+    <circle cx="28" cy="116" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="28" cy="116" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="28" cy="116" r="5" class="g"/>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/papers.json" target="_blank"><text x="50" y="120" class="t vs">papers.json</text><text x="50" y="136" class="t sub">/guild/Enterprise/L4/api/papers.json</text></a>
+<g><rect x="880" y="106" rx="11" width="100" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="930" y="121" text-anchor="middle" class="t" font-size="11" fill="#3fb950">200 · 11KB</text></g>
+<g style="transform-origin:28px 160px">
+    <circle cx="28" cy="160" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="28" cy="160" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="28" cy="160" r="5" class="g"/>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/members.json" target="_blank"><text x="50" y="164" class="t vs">members.json</text><text x="50" y="180" class="t sub">/guild/Enterprise/L4/api/members.json</text></a>
+<g><rect x="880" y="150" rx="11" width="92" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="926" y="165" text-anchor="middle" class="t" font-size="11" fill="#3fb950">200 · 3KB</text></g>
+<g style="transform-origin:28px 204px">
+    <circle cx="28" cy="204" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="28" cy="204" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="28" cy="204" r="5" class="g"/>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/state.json" target="_blank"><text x="50" y="208" class="t vs">state.json</text><text x="50" y="224" class="t sub">/guild/Enterprise/L4/api/state.json</text></a>
+<g><rect x="880" y="194" rx="11" width="92" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="926" y="209" text-anchor="middle" class="t" font-size="11" fill="#3fb950">200 · 1KB</text></g>
+<g style="transform-origin:28px 248px">
+    <circle cx="28" cy="248" r="8" fill="none" stroke="#a371f7" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="28" cy="248" r="8" fill="none" stroke="#a371f7" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="28" cy="248" r="5" class="p"/>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/runtime/tags.json" target="_blank"><text x="50" y="252" class="t vs">runtime tags</text><text x="50" y="268" class="t sub">/guild/Enterprise/L4/runtime/tags.json</text></a>
+<g><rect x="880" y="238" rx="11" width="92" height="22" fill="none" stroke="#3fb950" stroke-width="1" opacity=".6"/><text x="926" y="253" text-anchor="middle" class="t" font-size="11" fill="#3fb950">200 · 2KB</text></g>
+</svg>

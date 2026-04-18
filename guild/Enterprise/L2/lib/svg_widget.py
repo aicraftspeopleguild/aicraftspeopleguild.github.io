@@ -143,3 +143,91 @@ def sparkline(x: int, y: int, w: int, h: int, values: list,
         f'<polyline fill="none" stroke="{stroke}" stroke-width="2" '
         f'stroke-linecap="round" stroke-linejoin="round" points="{poly}"/>'
     )
+
+
+# ── atomic additions ────────────────────────────────────────────────────
+
+def chip(x: int, y: int, text: str, color_class: str = "g",
+         min_w: int = 60, pad: int = 10) -> str:
+    fg = {"g": P['green'], "a": P['amber'], "r": P['red'],
+          "p": P['purple'], "o": P['orange']}.get(color_class, P['text'])
+    w = max(min_w, len(text) * 8 + pad * 2)
+    return (
+        f'<g><rect x="{x}" y="{y-16}" rx="11" width="{w}" height="22" '
+        f'fill="none" stroke="{fg}" stroke-width="1" opacity=".6"/>'
+        f'<text x="{x + w//2}" y="{y-1}" text-anchor="middle" class="t" '
+        f'font-size="11" fill="{fg}">{esc(text)}</text></g>'
+    )
+
+
+def bar(x: int, y: int, w: int, h: int, pct: float,
+        color_class: str = "g") -> str:
+    fill_w = max(0, min(w, int(w * pct)))
+    fg = {"g": P['green'], "a": P['amber'], "r": P['red'],
+          "p": P['purple'], "o": P['orange']}.get(color_class, P['green'])
+    return (
+        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{h//2}" '
+        f'fill="{P["bg_a"]}" stroke="{P["border"]}" stroke-width="1"/>'
+        f'<rect x="{x}" y="{y}" width="{fill_w}" height="{h}" rx="{h//2}" fill="{fg}"/>'
+    )
+
+
+def divider(x: int, y: int, w: int) -> str:
+    return f'<line x1="{x}" y1="{y}" x2="{x+w}" y2="{y}" stroke="{P["border"]}" stroke-width="1"/>'
+
+
+def section_heading(x: int, y: int, text: str, color_class: str = "g") -> str:
+    fg = {"g": P['green'], "a": P['amber'], "r": P['red'],
+          "p": P['purple'], "o": P['orange']}.get(color_class, P['green'])
+    return (
+        f'<text x="{x}" y="{y}" class="t lb" fill="{fg}">{esc(text)}</text>'
+        f'<line x1="{x}" y1="{y+6}" x2="{x+80}" y2="{y+6}" stroke="{fg}" stroke-width="2"/>'
+    )
+
+
+def emoji_badge(x: int, y: int, emoji: str, label: str,
+                color_class: str = "g") -> str:
+    fg = {"g": P['green'], "a": P['amber'], "r": P['red'],
+          "p": P['purple'], "o": P['orange']}.get(color_class, P['text'])
+    return (
+        f'<text x="{x}" y="{y}" class="t" font-size="20">{esc(emoji)}</text>'
+        f'<text x="{x+28}" y="{y}" class="t va" fill="{fg}">{esc(label)}</text>'
+    )
+
+
+# ── molecule additions ─────────────────────────────────────────────────
+
+def stat_block(x: int, y: int, w: int, h: int,
+               label: str, value, sub: str = "",
+               color_class: str = "g") -> str:
+    """Card: section heading + big value + optional subtitle."""
+    bg, _ = panel(x, y, w, h)
+    return (
+        bg +
+        section_heading(x + 14, y + 22, label, color_class) +
+        f'<text x="{x + 14}" y="{y + 54}" class="t va">{esc(value)}</text>' +
+        (f'<text x="{x + 14}" y="{y + h - 10}" class="t sub">{esc(sub)}</text>' if sub else '')
+    )
+
+
+def link_card(x: int, y: int, w: int, h: int,
+              title: str, url: str, emoji: str = "→") -> str:
+    """Clickable nav card with emoji + title + url preview."""
+    bg, _ = panel(x, y, w, h)
+    u = url.replace("https://", "").replace("http://", "")
+    return (
+        f'<a href="{esc(url)}" target="_blank">' +
+        bg +
+        f'<text x="{x + 14}" y="{y + h//2 + 4}" class="t" font-size="18">{esc(emoji)}</text>'
+        f'<text x="{x + 44}" y="{y + h//2 - 3}" class="t vs">{esc(title)}</text>'
+        f'<text x="{x + 44}" y="{y + h//2 + 13}" class="t sub">{esc(u[:44])}</text>'
+        + '</a>'
+    )
+
+
+def row_kv(x: int, y: int, w: int,
+           label: str, value, value_class: str = "vs") -> str:
+    return (
+        f'<text x="{x}" y="{y}" class="t sub">{esc(label)}</text>'
+        f'<text x="{x + w}" y="{y}" text-anchor="end" class="t {value_class}">{esc(value)}</text>'
+    )

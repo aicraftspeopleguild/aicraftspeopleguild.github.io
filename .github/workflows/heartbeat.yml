@@ -55,6 +55,9 @@ jobs:
           python guild/Enterprise/L4/svg/build-status-dashboard.py
           python guild/Enterprise/L4/svg/build-tag-grid.py
           python guild/Enterprise/L4/svg/build-pipeline-pulse.py
+          python guild/Enterprise/L4/svg/build-readme-hero.py
+          python guild/Enterprise/L4/svg/build-readme-controls.py
+          python guild/Enterprise/L4/svg/build-readme-api.py
 
       - name: Commit SVG widgets if changed
         run: |

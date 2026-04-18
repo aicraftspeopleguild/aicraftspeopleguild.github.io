@@ -21,7 +21,7 @@ Best for: first-time contributors; guest authors without a GitHub account.
 
 ## 3. Site-Hosted HTML Form
 
-`guild/l1-sensing/forms/submit/index.html` — a static form on the Guild site that
+`guild/Enterprise/L1/forms/submit/index.html` — a static form on the Guild site that
 posts submissions via a Google Forms action (same backend as channel 2)
 so no server is required.
 

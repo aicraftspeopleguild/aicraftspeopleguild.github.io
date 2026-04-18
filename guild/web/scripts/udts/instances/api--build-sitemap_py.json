@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Build Sitemap",
+    "path": "guild/web/scripts/api/build-sitemap.py",
+    "language": "python",
+    "category": "misc",
+    "purpose": "Build /sitemap.xml at repo root from Path UDT instances.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "misc",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "api--build-sitemap_py",
+    "state_log": "state/api--build-sitemap_py.state.json",
+    "last_state": "COMPLETE",
+    "last_run_at": "2026-04-18T05:14:17Z",
+    "last_duration": "0.005",
+    "schema_version": "1.0.0"
+  }
+}

@@ -10,7 +10,7 @@
 | PR opened / synced    | GitHub `pull_request` event    | Per PR action        |
 | PR merged             | GitHub `push` to main          | Per merge            |
 | Manifesto sign        | Google Form submit             | Per submission       |
-| Submission form       | `/guild/l1-sensing/forms/submit/` POST      | Per submission       |
+| Submission form       | `/guild/Enterprise/L1/forms/submit/` POST      | Per submission       |
 | Paper file modified   | Workflow path filter           | Per PR               |
 | Ingest run kick-off   | `.github/workflows/paper-index`| Per trigger event    |
 

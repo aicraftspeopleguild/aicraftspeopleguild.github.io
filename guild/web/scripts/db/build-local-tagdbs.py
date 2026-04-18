@@ -27,7 +27,7 @@ TARGETS = [
     REPO / "guild" / "web" / "components",
     REPO / "guild" / "web" / "scripts",
     REPO / "guild" / "apps" / "whitepapers",
-    REPO / "guild" / "l2-scada",
+    REPO / "guild" / "Enterprise" / "L2",
 ]
 
 SCHEMA = """

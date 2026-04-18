@@ -31,7 +31,7 @@ See [docs/templates/](../../templates/) — each UDT is defined once in YAML/Pyt
 | `/api/members.json`                 | `Member[]`                             |
 | `/api/health.json`                  | `{paperCount, memberCount, lastUpdated}` |
 
-All three are built by `guild/web/scripts/api/build-api.py` from the SQLite DB (`guild/l4-erp/database/acg.db`) which is itself seeded from UDT instances. Each build writes to `guild/l4-erp/api/` and is served as-is from GitHub Pages.
+All three are built by `guild/web/scripts/api/build-api.py` from the SQLite DB (`guild/Enterprise/L4/database/acg.db`) which is itself seeded from UDT instances. Each build writes to `guild/Enterprise/L4/api/` and is served as-is from GitHub Pages.
 
 ## CLI (`acg`)
 

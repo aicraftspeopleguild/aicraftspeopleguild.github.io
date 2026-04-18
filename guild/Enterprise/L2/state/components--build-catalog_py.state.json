@@ -1,49 +1,45 @@
 {
   "udtType": "PackMLState",
   "parameters": {
-    "program_id": "api--build-csv-catalog_py",
-    "run_id": "1776489120-25796c",
-    "started_at": "2026-04-18T05:12:00Z",
-    "ended_at": "2026-04-18T05:12:00Z",
+    "program_id": "components--build-catalog_py",
+    "run_id": "1776489447-7993d0",
+    "started_at": "2026-04-18T05:17:27Z",
+    "ended_at": "2026-04-18T05:17:27Z",
     "terminal": "COMPLETE",
     "transitions": [
       {
         "state": "STARTING",
-        "at": "2026-04-18T05:12:00Z",
+        "at": "2026-04-18T05:17:27Z",
         "note": "running pre_checks"
       },
       {
         "state": "EXECUTE",
-        "at": "2026-04-18T05:12:00Z",
+        "at": "2026-04-18T05:17:27Z",
         "note": "work starting"
       },
       {
         "state": "COMPLETING",
-        "at": "2026-04-18T05:12:00Z",
+        "at": "2026-04-18T05:17:27Z",
         "note": "running post_checks"
       },
       {
         "state": "COMPLETE",
-        "at": "2026-04-18T05:12:00Z",
+        "at": "2026-04-18T05:17:27Z",
         "note": "all checks ok"
       }
     ],
     "pre_check_results": {
-      "path_exists(acg.db)": {
+      "path_exists(instances)": {
+        "ok": true,
+        "note": ""
+      },
+      "has_files(C:\\Users\\frumk\\Desktop\\ACG\\aicraftspeopleguild.github.io\\guild\\web\\components\\udts\\instances\\*.json)": {
         "ok": true,
         "note": ""
       }
     },
     "post_check_results": {
-      "path_exists(papers.csv)": {
-        "ok": true,
-        "note": ""
-      },
-      "path_exists(members.csv)": {
-        "ok": true,
-        "note": ""
-      },
-      "path_exists(paths.csv)": {
+      "path_exists(index.json)": {
         "ok": true,
         "note": ""
       }
@@ -51,8 +47,8 @@
     "error": null
   },
   "tags": {
-    "id": "api--build-csv-catalog_py-1776489120-25796c",
-    "duration_s": "0.009",
+    "id": "components--build-catalog_py-1776489447-7993d0",
+    "duration_s": "0.034",
     "schema_version": "1.0.0"
   }
 }

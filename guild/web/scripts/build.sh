@@ -42,7 +42,7 @@ node guild/web/scripts/perspective-build.js
 
 echo ""
 echo "[build] 9/12 Initialize SQLite databases (aggregate + per-directory tag.db)"
-python guild/l4-erp/database/init-db.py
+python guild/Enterprise/L4/database/init-db.py
 python guild/web/scripts/db/build-local-tagdbs.py
 
 echo ""
@@ -50,9 +50,10 @@ echo "[build] 10/12 Build static JSON API (/api/*.json)"
 python guild/web/scripts/api/build-api.py
 
 echo ""
-echo "[build] 11/12 Build runtime tags + dense CSV catalog (token-efficient)"
+echo "[build] 11/12 Build runtime tags + CSV catalogs + sitemap.xml"
 python guild/web/scripts/api/build-runtime-tags.py
 python guild/web/scripts/api/build-csv-catalog.py
+python guild/web/scripts/api/build-sitemap.py
 
 echo ""
 echo "[build] 12/12 Done. dist/ contains $(ls guild/web/dist/*.html 2>/dev/null | wc -l) pages."

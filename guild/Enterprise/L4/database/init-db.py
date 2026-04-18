@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Initialize guild/l4-erp/database/acg.db from UDT instances.
+"""Initialize guild/Enterprise/L4/database/acg.db from UDT instances.
 
 Creates (or refreshes) the schema, then seeds papers + members + programs +
 packml_runs from the canonical JSON source. Idempotent: running it again
 reloads from the latest instance files.
 
-Usage:  python guild/l4-erp/database/init-db.py
+Usage:  python guild/Enterprise/L4/database/init-db.py
 """
 import sys
 from pathlib import Path
@@ -17,7 +17,7 @@ import db
 import load_papers, load_members, load_programs
 
 def main():
-    print(f"[db] opening {db.DB_PATH.relative_to(HERE.parents[2])}")
+    print(f"[db] opening {db.DB_PATH.relative_to(HERE.parents[3])}")
     conn = db.connect()
     try:
         print("[db] applying schemas")

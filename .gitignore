@@ -11,8 +11,8 @@ node_modules/
 package-lock.json
 
 # SQLite databases (regenerable from UDT instances)
-guild/l4-erp/database/*.db
-guild/l4-erp/database/*.db-journal
+guild/Enterprise/L4/database/*.db
+guild/Enterprise/L4/database/*.db-journal
 
 # P2P app runtime SQLite (generated from tags.json on the client)
 guild/apps/p2p/controls/db/*.sqlite

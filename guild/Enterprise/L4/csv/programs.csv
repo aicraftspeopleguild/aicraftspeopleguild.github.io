@@ -2,6 +2,7 @@ id,name,category,language,last_state
 api--build-api_py,Build Api,misc,python,COMPLETE
 api--build-csv-catalog_py,Build Csv Catalog,misc,python,COMPLETE
 api--build-runtime-tags_py,Build Runtime Tags,misc,python,COMPLETE
+api--build-sitemap_py,Build Sitemap,misc,python,COMPLETE
 apps--build-whitepaper-apps_py,Build Whitepaper Apps,apps-pipeline,python,COMPLETE
 build_js,Build,build-orchestrator,node,IDLE
 build_sh,Build,build-orchestrator,bash,IDLE

@@ -2,7 +2,7 @@
 
 Field-by-field spec for the Google Form that collects submissions
 when authors can't open a PR. Create the form at docs.google.com,
-then paste the form-action URL into `guild/l1-sensing/forms/submit/index.html`.
+then paste the form-action URL into `guild/Enterprise/L1/forms/submit/index.html`.
 
 ## Fields
 

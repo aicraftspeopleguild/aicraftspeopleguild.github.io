@@ -2,9 +2,9 @@
 import json
 from pathlib import Path
 
-GUILD_DIR    = Path(__file__).resolve().parents[3]
+GUILD_DIR    = Path(__file__).resolve().parents[4]
 INSTANCES    = GUILD_DIR / "web" / "scripts" / "udts" / "instances"
-STATE_DIR    = GUILD_DIR / "l2-scada" / "state"   # state moved to L2
+STATE_DIR    = GUILD_DIR / "Enterprise" / "L2" / "state"   # state moved to L2
 
 def load(conn):
     conn.execute("DELETE FROM program_tags")

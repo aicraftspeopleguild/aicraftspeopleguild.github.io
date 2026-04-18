@@ -51,7 +51,7 @@
         },
         "type": "acg.display.html",
         "props": {
-          "html": "<div class=\"footer-links\"><a href=\"#/charter\">Charter</a> <a href=\"#/code-of-conduct\">Code of Conduct</a> <a href=\"guild/l1-sensing/forms/submit/\">Submit</a></div>"
+          "html": "<div class=\"footer-links\"><a href=\"#/charter\">Charter</a> <a href=\"#/code-of-conduct\">Code of Conduct</a> <a href=\"guild/Enterprise/L1/forms/submit/\">Submit</a></div>"
         },
         "children": []
       },

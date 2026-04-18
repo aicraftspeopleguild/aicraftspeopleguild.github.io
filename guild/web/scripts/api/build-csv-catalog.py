@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export dense CSV catalogs of Guild tags and relations to guild/l4-erp/csv/.
+Export dense CSV catalogs of Guild tags and relations to guild/Enterprise/L4/csv/.
 
 Dense format: one header row + one data row per record, no quoting unless
 needed. These files are the token-efficient alternative to the JSON
@@ -21,8 +21,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve()
 REPO = HERE.parents[4]
-CSV_DIR = REPO / "guild" / "l4-erp" / "csv"
-DB_LIB  = REPO / "guild" / "l4-erp" / "database" / "lib"
+CSV_DIR = REPO / "guild" / "Enterprise" / "L4" / "csv"
+DB_LIB  = REPO / "guild" / "Enterprise" / "L4" / "database" / "lib"
 PATHS_DIR = REPO / "guild" / "web" / "components" / "udts" / "instances" / "paths"
 
 sys.path.insert(0, str(REPO / "guild" / "web" / "scripts" / "lib"))
@@ -99,7 +99,7 @@ def main():
 if __name__ == "__main__":
     with Process(
         "api--build-csv-catalog_py",
-        pre_checks=[path_exists(REPO / "guild" / "l4-erp" / "database" / "acg.db")],
+        pre_checks=[path_exists(REPO / "guild" / "Enterprise" / "L4" / "database" / "acg.db")],
         post_checks=[
             path_exists(CSV_DIR / "papers.csv"),
             path_exists(CSV_DIR / "members.csv"),

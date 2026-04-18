@@ -5,7 +5,7 @@
     "path": "guild/web/scripts/api/build-runtime-tags.py",
     "language": "python",
     "category": "misc",
-    "purpose": "Build guild/l4-erp/runtime/tags.json — Ignition-style live tags reflecting",
+    "purpose": "Build guild/Enterprise/L4/runtime/tags.json — Ignition-style live tags reflecting",
     "inputs": [],
     "outputs": [],
     "depends_on": [],
@@ -20,8 +20,8 @@
     "id": "api--build-runtime-tags_py",
     "state_log": "state/api--build-runtime-tags_py.state.json",
     "last_state": "COMPLETE",
-    "last_run_at": "2026-04-18T05:09:04Z",
-    "last_duration": "0.021",
+    "last_run_at": "2026-04-18T05:11:59Z",
+    "last_duration": "0.022",
     "schema_version": "1.0.0"
   }
 }

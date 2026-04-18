@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build guild/l4-erp/runtime/tags.json — Ignition-style live tags reflecting
+Build guild/Enterprise/L4/runtime/tags.json — Ignition-style live tags reflecting
 current Guild enterprise state. Follows the Konomi Value UDT pattern:
 
   { "value": <v>, "quality": "good|stale|bad|uncertain", "type": "<UDT>" }
@@ -14,11 +14,11 @@ from datetime import datetime, timezone
 HERE = Path(__file__).resolve()
 REPO = HERE.parents[4]
 sys.path.insert(0, str(REPO / "guild" / "web" / "scripts" / "lib"))
-sys.path.insert(0, str(REPO / "guild" / "l4-erp" / "database" / "lib"))
+sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L4" / "database" / "lib"))
 from packml import Process, path_exists
 import db as acgdb
 
-OUT = REPO / "guild" / "l4-erp" / "runtime" / "tags.json"
+OUT = REPO / "guild" / "Enterprise" / "L4" / "runtime" / "tags.json"
 
 def now_ms():
     return int(datetime.now(timezone.utc).timestamp() * 1000)
@@ -35,7 +35,7 @@ def tag(v, quality="good", t="String"):
 
 def build_tags(conn):
     ts = now_ms()
-    state_dir = REPO / "guild" / "l2-scada" / "state"
+    state_dir = REPO / "guild" / "Enterprise" / "L2" / "state"
     state_files = list(state_dir.glob("*.state.json")) if state_dir.exists() else []
     last_complete = 0
     aborts = 0
@@ -104,7 +104,7 @@ def main():
 if __name__ == "__main__":
     with Process(
         "api--build-runtime-tags_py",
-        pre_checks=[path_exists(REPO / "guild" / "l4-erp" / "database" / "acg.db")],
+        pre_checks=[path_exists(REPO / "guild" / "Enterprise" / "L4" / "database" / "acg.db")],
         post_checks=[path_exists(OUT)],
     ):
         main()

@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-04-18T05:11:58Z",
+  "generated_at": "2026-04-18T05:17:28Z",
   "schema_version": "1.0.0",
   "counts": {
-    "programs": 22,
+    "programs": 23,
     "categories": 10
   },
   "programs": [
@@ -26,6 +26,13 @@
       "name": "Build Runtime Tags",
       "category": "misc",
       "path": "guild/web/scripts/api/build-runtime-tags.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "api--build-sitemap_py",
+      "name": "Build Sitemap",
+      "category": "misc",
+      "path": "guild/web/scripts/api/build-sitemap.py",
       "last_state": "COMPLETE"
     },
     {

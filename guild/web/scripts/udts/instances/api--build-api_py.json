@@ -5,7 +5,7 @@
     "path": "guild/web/scripts/api/build-api.py",
     "language": "python",
     "category": "misc",
-    "purpose": "Build the static JSON API at guild/l4-erp/api/ from the SQLite database.",
+    "purpose": "Build the static JSON API at guild/Enterprise/L4/api/ from the SQLite database.",
     "inputs": [],
     "outputs": [],
     "depends_on": [],
@@ -20,8 +20,8 @@
     "id": "api--build-api_py",
     "state_log": "state/api--build-api_py.state.json",
     "last_state": "COMPLETE",
-    "last_run_at": "2026-04-18T05:09:04Z",
-    "last_duration": "0.005",
+    "last_run_at": "2026-04-18T05:11:59Z",
+    "last_duration": "0.004",
     "schema_version": "1.0.0"
   }
 }

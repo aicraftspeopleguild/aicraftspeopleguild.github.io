@@ -55,7 +55,7 @@ ACGP2P's `controls/db/tags.json` is a live JSON tag database that dashboards
 read directly (via shields.io dynamic badges). We ported the shape and
 generate our own from the SQLite catalog every build:
 
-`guild/l4-erp/runtime/tags.json` carries `sys`, `enterprise`, `catalog`,
+`guild/Enterprise/L4/runtime/tags.json` carries `sys`, `enterprise`, `catalog`,
 `pipeline`, `identity` tag groups — each field a Konomi Value record.
 Consumed by the site's dashboards and by external clients via the API v1.0
 surface.
@@ -84,5 +84,5 @@ OAuth for the Guild, this pattern is the model.
 - `docs/templates/konomi/README.md`
 - `docs/templates/konomi/base/*.udt.json` — 8 primitives
 - `docs/templates/konomi/meta/_std.json` — Konomi layer manifest
-- `guild/l4-erp/runtime/tags.json` — live enterprise tag snapshot
+- `guild/Enterprise/L4/runtime/tags.json` — live enterprise tag snapshot
 - `guild/web/scripts/api/build-runtime-tags.py` — generator

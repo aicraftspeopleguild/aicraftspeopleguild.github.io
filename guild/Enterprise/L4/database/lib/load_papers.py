@@ -2,8 +2,8 @@
 import json
 from pathlib import Path
 
-# parents[3] = guild/; UDT instances still live under guild/web/white-papers
-INSTANCES = Path(__file__).resolve().parents[3] / "web" / "white-papers" / "udts" / "instances"
+# parents[4] = guild/; UDT instances still live under guild/web/white-papers
+INSTANCES = Path(__file__).resolve().parents[4] / "web" / "white-papers" / "udts" / "instances"
 
 def load(conn):
     """Upsert every paper UDT instance. Clears existing rows first."""

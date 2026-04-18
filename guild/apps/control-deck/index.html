@@ -74,6 +74,7 @@
 <header>
   <h1>⚒ ACG control deck<small>· drive the live dashboard</small></h1>
   <span class="spacer"></span>
+  <a id="back-chip" style="display:none">↩ back</a>
   <a href="../terminal/">⌨ terminal</a>
   <a href="../whiteboard/">🖍 whiteboard</a>
   <a href="../../../index.html">⚒ guild</a>
@@ -236,17 +237,32 @@ async function runCmd(title, body='') {
   }
 }
 
-// If the visitor arrived via a README badge (hash has `back=` or we
-// came from github.com) and the action fired cleanly, navigate back
-// after 3s so the whole click feels like "did it from the README".
-function maybeReturn() {
+// Self-find the "back" destination. Priority:
+//   1. explicit ?back= in URL hash
+//   2. document.referrer  (set by GitHub's README link-through)
+//   3. stored last-source in localStorage
+// Whatever resolves wins; we also persist it so repeat visits
+// re-use the same source.
+function findBack() {
   const q = new URLSearchParams(location.hash.slice(1));
-  const back = q.get('back') ||
-               (document.referrer.includes('github.com') ? document.referrer : '');
+  const explicit = q.get('back');
+  if (explicit) { localStorage.setItem('acg_back', explicit); return explicit; }
+
+  const ref = document.referrer;
+  if (ref && /github\.com|github\.io/.test(ref) && !ref.includes('/control-deck/')) {
+    localStorage.setItem('acg_back', ref);
+    return ref;
+  }
+
+  return localStorage.getItem('acg_back') || '';
+}
+
+function maybeReturn() {
+  const back = findBack();
   if (!back) return;
   let n = 3;
   const tick = () => {
-    log(`↩ returning in ${n}s — ${back.slice(0,60)}`, 'info');
+    log(`↩ returning in ${n}s — ${back.slice(0, 60)}`, 'info');
     if (n-- <= 0) location.href = back;
     else setTimeout(tick, 1000);
   };
@@ -327,6 +343,16 @@ function autoFire() {
 }
 autoFire();
 window.addEventListener('hashchange', autoFire);
+
+// ── back chip (manual escape hatch if auto-return doesn't fire)
+(function renderBackChip() {
+  const back = findBack();
+  if (!back) return;
+  const el = $('back-chip');
+  el.href = back;
+  el.textContent = '↩ ' + back.replace(/^https?:\/\//, '').slice(0, 36);
+  el.style.display = '';
+})();
 
 // ── boot log
 log('control deck ready · ' + (loadTok() ? 'authed' : 'anonymous'), 'ok');

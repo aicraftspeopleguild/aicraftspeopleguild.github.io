@@ -4,10 +4,10 @@
 
 <div align="center">
 
-[![bump heartbeat](https://img.shields.io/badge/💓-bump_heartbeat-1a5c4c?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=bump-heartbeat&back=https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io)
-[![rebuild SVGs](https://img.shields.io/badge/🔁-rebuild_svgs-a371f7?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=rebuild-svgs&back=https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io)
-[![rebuild API](https://img.shields.io/badge/📡-rebuild_api-f0883e?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=rebuild-api&back=https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io)
-[![clear faults](https://img.shields.io/badge/✅-clear_faults-3fb950?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=clear-faults&back=https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io)
+[![bump heartbeat](https://img.shields.io/badge/💓-bump_heartbeat-1a5c4c?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=bump-heartbeat)
+[![rebuild SVGs](https://img.shields.io/badge/🔁-rebuild_svgs-a371f7?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=rebuild-svgs)
+[![rebuild API](https://img.shields.io/badge/📡-rebuild_api-f0883e?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=rebuild-api)
+[![clear faults](https://img.shields.io/badge/✅-clear_faults-3fb950?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/#action=clear-faults)
 [![control deck](https://img.shields.io/badge/🎛-control_deck-6f42c1?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/control-deck/)
 
 [![open terminal](https://img.shields.io/badge/⌨-terminal-1c2128?style=for-the-badge)](https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/terminal/)

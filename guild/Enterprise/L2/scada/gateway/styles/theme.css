@@ -2,30 +2,30 @@
  * Single source of truth for colours + type. Every page (main chat,
  * sandbox launcher, sandbox tools) consumes these variables.
  *
- * Warm parchment / guild aesthetic — teal accent, amber/sage status,
- * Source Serif for display, DM Sans for body, JetBrains Mono for code.
+ * Warm parchment / guild aesthetic — rust/bronze accent,
+ * Playfair Display for display, Work Sans for body, Courier Prime for code.
  */
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap');
 
 :root{
   /* surface */
-  --bg:#faf6f0;
-  --bg2:#f5ede0;
+  --bg:#F5F1E8;
+  --bg2:#ede8de;
   --card:#fff;
-  --inp:#faf6f0;
+  --inp:#F5F1E8;
   --bd:#e4ddd0;
-  --bd2:#ede8de;
-  --sh:rgba(40,30,15,.08);
+  --bd2:#ddd8ce;
+  --sh:rgba(26,22,20,.08);
 
   /* ink */
-  --tx:#1a2332;
-  --dm:#5a6672;
-  --ft:#8d95a0;
+  --tx:#1A1614;
+  --dm:#5a5250;
+  --ft:#8d8580;
 
-  /* accent family (teal · guild primary) */
-  --tl:#1a5c4c;
-  --tl2:#2d7a68;
-  --tlb:#e8f4f0;
+  /* accent family (rust · guild primary) */
+  --tl:#C84B31;
+  --tl2:#A67C52;
+  --tlb:#fdf0ed;
 
   /* status */
   --sg:#4a8868;  --sgb:#e8f2ec;    /* sage / good       */
@@ -33,9 +33,9 @@
   --rs:#b85c5c;  --rsb:#fce8e8;    /* rose / error      */
 
   /* mono (used by terminals, sha pills, code) */
-  --mono-bg:#1c2128;
-  --mono-bg2:#2d3138;
-  --mono-tx:#c9d1d9;
+  --mono-bg:#2D3436;
+  --mono-bg2:#3d4446;
+  --mono-tx:#F5F1E8;
   --mono-green:#7ee787;
   --mono-blue:#79c0ff;
   --mono-purple:#d2a8ff;
@@ -43,9 +43,9 @@
   --mono-amber:#e3b341;
 
   /* type */
-  --ff-display: 'Source Serif 4', Georgia, serif;
-  --ff-body:    'DM Sans', system-ui, -apple-system, sans-serif;
-  --ff-mono:    'JetBrains Mono', 'Fira Code', Menlo, monospace;
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body:    'Work Sans', system-ui, -apple-system, sans-serif;
+  --ff-mono:    'Courier Prime', 'Courier New', monospace;
 
   /* radius */
   --r-sm:6px;

@@ -35,7 +35,7 @@
     <circle cx="1000" cy="18" r="8" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
   </g>
   <circle cx="1000" cy="18" r="5" class="g"/>
-<text x="988" y="22" text-anchor="end" class="t" font-size="11" fill="#79c0ff">💓 2026-04-18 09:22Z</text>
+<text x="988" y="22" text-anchor="end" class="t" font-size="11" fill="#79c0ff">💓 2026-04-18 09:37Z</text>
 <text x="24" y="70" class="t lb" fill="#3fb950">CATALOG · /api/health.json</text><line x1="24" y1="76" x2="104" y2="76" stroke="#3fb950" stroke-width="2"/>
 <rect x="24" y="86" width="244" height="96" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="38" y="108" class="t lb" fill="#3fb950">papers</text><line x1="38" y1="114" x2="118" y2="114" stroke="#3fb950" stroke-width="2"/><text x="38" y="140" class="t va">24</text>
 <rect x="280" y="86" width="244" height="96" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><text x="294" y="108" class="t lb" fill="#f0883e">members</text><line x1="294" y1="114" x2="374" y2="114" stroke="#f0883e" stroke-width="2"/><text x="294" y="140" class="t va">8</text>
@@ -81,7 +81,7 @@
     <circle cx="302" cy="634" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
     <circle cx="302" cy="634" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
   </g>
-  <circle cx="302" cy="634" r="6" class="g"/><text x="320" y="638" class="t lb">demo.heartbeat</text><text x="294" y="670" class="t va">1776504149</text><text x="294" y="672" class="t sub">#4 · 5 edits</text>
+  <circle cx="302" cy="634" r="6" class="g"/><text x="320" y="638" class="t lb">demo.heartbeat</text><text x="294" y="670" class="t va">1776505076</text><text x="294" y="672" class="t sub">#4 · 6 edits</text>
 <text x="24" y="800" class="t lb" fill="#f85149">FAULTS · active</text><line x1="24" y1="806" x2="104" y2="806" stroke="#f85149" stroke-width="2"/>
 <g style="transform-origin:48px 830px">
     <circle cx="48" cy="830" r="11" fill="none" stroke="#f85149" stroke-width="2" opacity=".5" class="pulse"/>

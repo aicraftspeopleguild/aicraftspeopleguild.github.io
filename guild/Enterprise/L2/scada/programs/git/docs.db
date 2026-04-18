@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise/L2/scada/programs/git",
+  "dir": "Enterprise/L2/scada/programs/git",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 1825,
+  "total_bytes": 1827,
   "by_ext": {
     "json": 1
   },
@@ -12,7 +12,7 @@
     {
       "path": "state-map.json",
       "ext": "json",
-      "size": 1825,
+      "size": 1827,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -29,7 +29,7 @@
         "key_count": 8
       },
       "lines": 29,
-      "sha1": "2a3b92edea9b"
+      "sha1": "12ce8817cfa0"
     }
   ]
 }

@@ -1,115 +1,4173 @@
 {
-  "dir": "guild",
-  "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "dir": ".",
+  "scope": "global",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
-  "doc_count": 1,
-  "total_bytes": 6399,
+  "dir_count": 162,
+  "doc_count": 671,
+  "total_bytes": 2469348,
   "by_ext": {
-    "html": 1
+    "csv": [
+      "Enterprise/L4/api/white-papers/originals/seed-batch.csv",
+      "Enterprise/L4/csv/member_papers.csv",
+      "Enterprise/L4/csv/member_tags.csv",
+      "Enterprise/L4/csv/members.csv",
+      "Enterprise/L4/csv/packml_runs.csv",
+      "Enterprise/L4/csv/paper_authors.csv",
+      "Enterprise/L4/csv/paper_tags.csv",
+      "Enterprise/L4/csv/papers.csv",
+      "Enterprise/L4/csv/paths.csv",
+      "Enterprise/L4/csv/programs.csv"
+    ],
+    "html": [
+      "Enterprise/L1/forms/submit/index.html",
+      "Enterprise/L1/plc/index.html",
+      "Enterprise/L2/hmi/chat/index.html",
+      "Enterprise/L2/hmi/index.html",
+      "Enterprise/L2/scada/errors/index.html",
+      "Enterprise/L2/scada/gateway/auth/discord/index.html",
+      "Enterprise/L2/scada/gateway/auth/github/index.html",
+      "Enterprise/L2/scada/gateway/auth/google/index.html",
+      "Enterprise/L2/scada/gateway/auth/index.html",
+      "Enterprise/L2/scada/gateway/auth/webrtc/index.html",
+      "Enterprise/L2/scada/gateway/auth/webtorrent/index.html",
+      "Enterprise/L2/scada/gateway/gateway-log.html",
+      "Enterprise/L2/scada/gateway/health.html",
+      "Enterprise/L2/scada/gateway/index.html",
+      "Enterprise/L2/scada/index.html",
+      "Enterprise/L3/db/index.html",
+      "Enterprise/L4/sandbox/index.html",
+      "Enterprise/L4/sandbox/web-llm/index.html",
+      "Enterprise/L4/sandbox/whiteboard/index.html",
+      "Enterprise/index.html",
+      "apps/p2p/index.html",
+      "apps/p2p/index/docks/east.template.html",
+      "apps/p2p/index/docks/north.template.html",
+      "apps/p2p/index/docks/south.template.html",
+      "apps/p2p/index/docks/west.template.html",
+      "apps/p2p/index/index.html",
+      "apps/p2p/index/page.template.html",
+      "apps/p2p/index/tags.template.html",
+      "apps/p2p/index/udt.template.html",
+      "apps/test/index.html",
+      "apps/test/pages/example.html",
+      "apps/test/pages/runner.html",
+      "apps/test/pages/standard.html",
+      "apps/test/pages/terminal.html",
+      "apps/test/pages/types.html",
+      "apps/test/paper-auto-index-standard.html",
+      "apps/test/white-papers.html",
+      "index.html"
+    ],
+    "json": [
+      "Enterprise/L1/plc/git/_index.json",
+      "Enterprise/L1/plc/git/alarms/Alarm_Instance.udt.json",
+      "Enterprise/L1/plc/git/alarms/Alarm_SP.udt.json",
+      "Enterprise/L1/plc/git/alarms/Alarm_State.udt.json",
+      "Enterprise/L1/plc/git/alarms/Alarm_Summary.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_AnalogIn.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_AnalogOut.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_Base.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_DiscreteIn.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_DiscreteOut.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_Mode.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_Motor.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_PID.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_State.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_VFD.udt.json",
+      "Enterprise/L1/plc/git/cm/CM_Valve.udt.json",
+      "Enterprise/L1/plc/git/cm/Fault_Data.udt.json",
+      "Enterprise/L1/plc/git/cm/Sim_Data.udt.json",
+      "Enterprise/L1/plc/git/config/config.json",
+      "Enterprise/L1/plc/git/config/vendor-map.json",
+      "Enterprise/L1/plc/git/equipment/Equipment.udt.json",
+      "Enterprise/L1/plc/git/equipment/Equipment_Cfg.udt.json",
+      "Enterprise/L1/plc/git/equipment/Equipment_Cmd.udt.json",
+      "Enterprise/L1/plc/git/equipment/Equipment_HMI.udt.json",
+      "Enterprise/L1/plc/git/equipment/Equipment_Sts.udt.json",
+      "Enterprise/L1/plc/git/equipment/PackML_Mode.udt.json",
+      "Enterprise/L1/plc/git/equipment/PackML_State.udt.json",
+      "Enterprise/L1/plc/git/io/IO_Card.udt.json",
+      "Enterprise/L1/plc/git/io/IO_Config.udt.json",
+      "Enterprise/L1/plc/git/io/IO_Map.udt.json",
+      "Enterprise/L1/plc/git/io/IO_Point.udt.json",
+      "Enterprise/L1/plc/git/io/IO_Status.udt.json",
+      "Enterprise/L1/plc/git/meta/Field.udt.json",
+      "Enterprise/L1/plc/git/meta/GitPLC_Type.udt.json",
+      "Enterprise/L1/plc/git/meta/Method.udt.json",
+      "Enterprise/L1/plc/git/meta/TypeRef.udt.json",
+      "Enterprise/L1/plc/git/recipe/Batch.udt.json",
+      "Enterprise/L1/plc/git/recipe/Batch_Params.udt.json",
+      "Enterprise/L1/plc/git/recipe/Batch_Report.udt.json",
+      "Enterprise/L1/plc/git/recipe/Batch_State.udt.json",
+      "Enterprise/L1/plc/git/recipe/Phase_Base.udt.json",
+      "Enterprise/L1/plc/git/recipe/Phase_Params.udt.json",
+      "Enterprise/L1/plc/git/recipe/Phase_Report.udt.json",
+      "Enterprise/L1/plc/git/recipe/Phase_State.udt.json",
+      "Enterprise/L1/plc/tags.json",
+      "Enterprise/L1/plc/udts.json",
+      "Enterprise/L2/hmi/chat/tags.json",
+      "Enterprise/L2/hmi/chat/templates/tags.template.json",
+      "Enterprise/L2/hmi/chat/templates/udts.template.json",
+      "Enterprise/L2/hmi/chat/templates/ui/mesh.faceplate.json",
+      "Enterprise/L2/hmi/chat/templates/ui/peer.faceplate.json",
+      "Enterprise/L2/hmi/chat/templates/ui/room.faceplate.json",
+      "Enterprise/L2/hmi/chat/templates/ui/tracker.faceplate.json",
+      "Enterprise/L2/hmi/chat/templates/wire/ack.template.json",
+      "Enterprise/L2/hmi/chat/templates/wire/hi.template.json",
+      "Enterprise/L2/hmi/chat/templates/wire/msg.template.json",
+      "Enterprise/L2/hmi/chat/templates/wire/ping.template.json",
+      "Enterprise/L2/hmi/chat/templates/wire/typing.template.json",
+      "Enterprise/L2/hmi/chat/udts.json",
+      "Enterprise/L2/hmi/tags.json",
+      "Enterprise/L2/hmi/templates/badges/alarm.badge.json",
+      "Enterprise/L2/hmi/templates/badges/quality.badge.json",
+      "Enterprise/L2/hmi/templates/badges/state.badge.json",
+      "Enterprise/L2/hmi/templates/faceplate/analog.faceplate.json",
+      "Enterprise/L2/hmi/templates/faceplate/motor.faceplate.json",
+      "Enterprise/L2/hmi/templates/faceplate/pid.faceplate.json",
+      "Enterprise/L2/hmi/templates/faceplate/valve.faceplate.json",
+      "Enterprise/L2/hmi/templates/faceplate/vfd.faceplate.json",
+      "Enterprise/L2/hmi/templates/layers/L1.overview.json",
+      "Enterprise/L2/hmi/templates/layers/L2.area.json",
+      "Enterprise/L2/hmi/templates/layers/L3.unit.json",
+      "Enterprise/L2/hmi/templates/layers/L4.detail.json",
+      "Enterprise/L2/hmi/templates/layers/L5.support.json",
+      "Enterprise/L2/hmi/templates/tags.template.json",
+      "Enterprise/L2/hmi/templates/udts.template.json",
+      "Enterprise/L2/hmi/udts.json",
+      "Enterprise/L2/scada/00-legend.json",
+      "Enterprise/L2/scada/01-master.json",
+      "Enterprise/L2/scada/02-chat.json",
+      "Enterprise/L2/scada/03-scada.json",
+      "Enterprise/L2/scada/04-sandbox.json",
+      "Enterprise/L2/scada/errors/tags.json",
+      "Enterprise/L2/scada/errors/udts.json",
+      "Enterprise/L2/scada/gateway/auth/discord/tags.json",
+      "Enterprise/L2/scada/gateway/auth/discord/udts.json",
+      "Enterprise/L2/scada/gateway/auth/github/tags.json",
+      "Enterprise/L2/scada/gateway/auth/github/udts.json",
+      "Enterprise/L2/scada/gateway/auth/google/tags.json",
+      "Enterprise/L2/scada/gateway/auth/google/udts.json",
+      "Enterprise/L2/scada/gateway/auth/tags.json",
+      "Enterprise/L2/scada/gateway/auth/udts.json",
+      "Enterprise/L2/scada/gateway/auth/webrtc/tags.json",
+      "Enterprise/L2/scada/gateway/auth/webrtc/udts.json",
+      "Enterprise/L2/scada/gateway/auth/webtorrent/tags.json",
+      "Enterprise/L2/scada/gateway/auth/webtorrent/udts.json",
+      "Enterprise/L2/scada/gateway/providers/registry.json",
+      "Enterprise/L2/scada/programs/acg/auth.json",
+      "Enterprise/L2/scada/programs/acg/chat.json",
+      "Enterprise/L2/scada/programs/acg/config.json",
+      "Enterprise/L2/scada/programs/acg/main.json",
+      "Enterprise/L2/scada/programs/acg/p2p.json",
+      "Enterprise/L2/scada/programs/acg/peers.json",
+      "Enterprise/L2/scada/programs/acg/sandbox-bridge.json",
+      "Enterprise/L2/scada/programs/acg/scada-monitor.json",
+      "Enterprise/L2/scada/programs/acg/scada-tags.json",
+      "Enterprise/L2/scada/programs/acg/version.json",
+      "Enterprise/L2/scada/programs/git/state-map.json",
+      "Enterprise/L2/scada/programs/web-llm/engine.json",
+      "Enterprise/L2/scada/programs/web-llm/fs-panel.json",
+      "Enterprise/L2/scada/programs/web-llm/main.json",
+      "Enterprise/L2/scada/programs/web-llm/mcp-tools-engine.json",
+      "Enterprise/L2/scada/programs/web-llm/tools.json",
+      "Enterprise/L2/scada/programs/web-llm/voice.json",
+      "Enterprise/L2/scada/tags.json",
+      "Enterprise/L2/scada/udts.json",
+      "Enterprise/L2/state/api--build-api_py.state.json",
+      "Enterprise/L2/state/api--build-csv-catalog_py.state.json",
+      "Enterprise/L2/state/api--build-runtime-tags_py.state.json",
+      "Enterprise/L2/state/api--build-sitemap_py.state.json",
+      "Enterprise/L2/state/apps--build-whitepaper-apps_py.state.json",
+      "Enterprise/L2/state/components--build-catalog_py.state.json",
+      "Enterprise/L2/state/db--build-local-tagdbs_py.state.json",
+      "Enterprise/L2/state/pages--build-path-graph_py.state.json",
+      "Enterprise/L2/state/sm-last.json",
+      "Enterprise/L3/automation/instances/refresh-api-on-commit.json",
+      "Enterprise/L3/components/udts/instances/atoms/back-link.json",
+      "Enterprise/L3/components/udts/instances/atoms/badge.json",
+      "Enterprise/L3/components/udts/instances/atoms/button.json",
+      "Enterprise/L3/components/udts/instances/atoms/callout.json",
+      "Enterprise/L3/components/udts/instances/atoms/code-block.json",
+      "Enterprise/L3/components/udts/instances/atoms/eyebrow.json",
+      "Enterprise/L3/components/udts/instances/atoms/figure-block.json",
+      "Enterprise/L3/components/udts/instances/atoms/guild-mark.json",
+      "Enterprise/L3/components/udts/instances/atoms/pull-quote.json",
+      "Enterprise/L3/components/udts/instances/atoms/raw-html.json",
+      "Enterprise/L3/components/udts/instances/atoms/section-heading.json",
+      "Enterprise/L3/components/udts/instances/molecules/article-nav.json",
+      "Enterprise/L3/components/udts/instances/molecules/badge-row.json",
+      "Enterprise/L3/components/udts/instances/molecules/card-grid.json",
+      "Enterprise/L3/components/udts/instances/molecules/entry-card.json",
+      "Enterprise/L3/components/udts/instances/molecules/future-slot.json",
+      "Enterprise/L3/components/udts/instances/molecules/member-card.json",
+      "Enterprise/L3/components/udts/instances/molecules/paper-card.json",
+      "Enterprise/L3/components/udts/instances/organisms/article-section.json",
+      "Enterprise/L3/components/udts/instances/organisms/closing-statement.json",
+      "Enterprise/L3/components/udts/instances/organisms/cta-section.json",
+      "Enterprise/L3/components/udts/instances/organisms/intro-panel.json",
+      "Enterprise/L3/components/udts/instances/organisms/page-footer.json",
+      "Enterprise/L3/components/udts/instances/organisms/page-header.json",
+      "Enterprise/L3/components/udts/instances/paths/ai-rituals.json",
+      "Enterprise/L3/components/udts/instances/paths/app-acg-kcc-guild-chain.json",
+      "Enterprise/L3/components/udts/instances/paths/app-acg-net-decentralized-guild-web.json",
+      "Enterprise/L3/components/udts/instances/paths/app-acg-review-forge.json",
+      "Enterprise/L3/components/udts/instances/paths/app-ai-harness-constraint-driven-software-development-for-the.json",
+      "Enterprise/L3/components/udts/instances/paths/app-ai-that-pisses-you-off-the-surprisingly-effective-path-to.json",
+      "Enterprise/L3/components/udts/instances/paths/app-ass-os-bloom-prompt-occam.json",
+      "Enterprise/L3/components/udts/instances/paths/app-ass-os-bloom-prompt-the-irrational-universe.json",
+      "Enterprise/L3/components/udts/instances/paths/app-ass-os-bloom-prompt-the-rational-empire.json",
+      "Enterprise/L3/components/udts/instances/paths/app-avoid-being-fractally-wrong.json",
+      "Enterprise/L3/components/udts/instances/paths/app-convergent-governance-topologies-in-specialist-networks-a.json",
+      "Enterprise/L3/components/udts/instances/paths/app-from-correctness-to-integrity-measuring-ai-generated-code.json",
+      "Enterprise/L3/components/udts/instances/paths/app-grid-brain.json",
+      "Enterprise/L3/components/udts/instances/paths/app-guild_Enterprise_L4_api_white-papers_udts_instances.json",
+      "Enterprise/L3/components/udts/instances/paths/app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.json",
+      "Enterprise/L3/components/udts/instances/paths/app-lightning-factory.json",
+      "Enterprise/L3/components/udts/instances/paths/app-s-a-d.json",
+      "Enterprise/L3/components/udts/instances/paths/app-structural-toast-carbonization-a-failure-mode-distinct-from.json",
+      "Enterprise/L3/components/udts/instances/paths/app-the-dog-the-data-scientist-and-the-mrna-vaccine.json",
+      "Enterprise/L3/components/udts/instances/paths/app-the-harm-equation.json",
+      "Enterprise/L3/components/udts/instances/paths/app-the-konomi-standard.json",
+      "Enterprise/L3/components/udts/instances/paths/app-the-pattern-that-wasn-t-there.json",
+      "Enterprise/L3/components/udts/instances/paths/app-the-prediction-trap.json",
+      "Enterprise/L3/components/udts/instances/paths/app-the-shield-of-all-knights-against-bounded-rationality.json",
+      "Enterprise/L3/components/udts/instances/paths/app-toastmasters-scrapers-guild.json",
+      "Enterprise/L3/components/udts/instances/paths/app-you-re-absolutely-wrong.json",
+      "Enterprise/L3/components/udts/instances/paths/charter.json",
+      "Enterprise/L3/components/udts/instances/paths/chief-ai-skeptic.json",
+      "Enterprise/L3/components/udts/instances/paths/code-of-conduct.json",
+      "Enterprise/L3/components/udts/instances/paths/flywheel.json",
+      "Enterprise/L3/components/udts/instances/paths/guild-radar.json",
+      "Enterprise/L3/components/udts/instances/paths/hall-of-fame.json",
+      "Enterprise/L3/components/udts/instances/paths/hall-of-shame.json",
+      "Enterprise/L3/components/udts/instances/paths/home.json",
+      "Enterprise/L3/components/udts/instances/paths/hushbell-full-spec.json",
+      "Enterprise/L3/components/udts/instances/paths/hushbell.json",
+      "Enterprise/L3/components/udts/instances/paths/manifesto.json",
+      "Enterprise/L3/components/udts/instances/paths/member-profile.json",
+      "Enterprise/L3/components/udts/instances/paths/members.json",
+      "Enterprise/L3/components/udts/instances/paths/mission-statement.json",
+      "Enterprise/L3/components/udts/instances/paths/mob-programming.json",
+      "Enterprise/L3/components/udts/instances/paths/p2p.json",
+      "Enterprise/L3/components/udts/instances/paths/showcases.json",
+      "Enterprise/L3/components/udts/instances/paths/submit.json",
+      "Enterprise/L3/components/udts/instances/paths/test.json",
+      "Enterprise/L3/components/udts/instances/paths/white-paper-article.json",
+      "Enterprise/L3/components/udts/instances/paths/white-papers.json",
+      "Enterprise/L3/components/udts/instances/templates/page-shell.json",
+      "Enterprise/L3/components/udts/instances/widgets/git-state-badge.json",
+      "Enterprise/L3/components/udts/instances/widgets/health-badge.json",
+      "Enterprise/L3/components/udts/templates/atom.udt.json",
+      "Enterprise/L3/components/udts/templates/component.udt.json",
+      "Enterprise/L3/components/udts/templates/data-binding.udt.json",
+      "Enterprise/L3/components/udts/templates/fs-path.udt.json",
+      "Enterprise/L3/components/udts/templates/molecule.udt.json",
+      "Enterprise/L3/components/udts/templates/organism.udt.json",
+      "Enterprise/L3/components/udts/templates/page.udt.json",
+      "Enterprise/L3/components/udts/templates/path.udt.json",
+      "Enterprise/L3/components/udts/templates/script.udt.json",
+      "Enterprise/L3/components/udts/templates/template.udt.json",
+      "Enterprise/L3/components/udts/templates/view.udt.json",
+      "Enterprise/L3/components/udts/templates/widget.udt.json",
+      "Enterprise/L3/db/tags.json",
+      "Enterprise/L3/perspective/views/guild-index.view.json",
+      "Enterprise/L3/perspective/views/home.view.json",
+      "Enterprise/L3/scripts/index.json",
+      "Enterprise/L3/scripts/tags/index.json",
+      "Enterprise/L3/tools/instances/build-api.json",
+      "Enterprise/L3/tools/instances/build-full.json",
+      "Enterprise/L3/tools/instances/build-tag-dbs.json",
+      "Enterprise/L3/tools/instances/build-udt-dbs.json",
+      "Enterprise/L3/tools/instances/git-branches.json",
+      "Enterprise/L3/tools/instances/git-diff.json",
+      "Enterprise/L3/tools/instances/git-log.json",
+      "Enterprise/L3/tools/instances/git-status.json",
+      "Enterprise/L3/tools/instances/health.json",
+      "Enterprise/L3/tools/instances/papers-list.json",
+      "Enterprise/L3/tools/instances/state-fire.json",
+      "Enterprise/L3/tools/instances/state-tick.json",
+      "Enterprise/L3/tools/instances/test-links.json",
+      "Enterprise/L3/views/ai-rituals.view.json",
+      "Enterprise/L3/views/aicraftspeopleguild-manifesto.view.json",
+      "Enterprise/L3/views/charter.view.json",
+      "Enterprise/L3/views/chief-ai-skeptic-officer.view.json",
+      "Enterprise/L3/views/code-of-conduct.view.json",
+      "Enterprise/L3/views/data/ai-rituals.data.json",
+      "Enterprise/L3/views/data/aicraftspeopleguild-manifesto.data.json",
+      "Enterprise/L3/views/data/charter.data.json",
+      "Enterprise/L3/views/data/chief-ai-skeptic-officer.data.json",
+      "Enterprise/L3/views/data/code-of-conduct.data.json",
+      "Enterprise/L3/views/data/flywheel.data.json",
+      "Enterprise/L3/views/data/guild-radar.data.json",
+      "Enterprise/L3/views/data/hall-of-fame.data.json",
+      "Enterprise/L3/views/data/hall-of-shame.data.json",
+      "Enterprise/L3/views/data/hushbell-full-spec.data.json",
+      "Enterprise/L3/views/data/hushbell.data.json",
+      "Enterprise/L3/views/data/mission-statement.data.json",
+      "Enterprise/L3/views/data/mob-programming.data.json",
+      "Enterprise/L3/views/data/showcases.data.json",
+      "Enterprise/L3/views/data/white-papers-list.data.json",
+      "Enterprise/L3/views/data/white-papers.data.json",
+      "Enterprise/L3/views/flywheel.view.json",
+      "Enterprise/L3/views/guild-radar.view.json",
+      "Enterprise/L3/views/hall-of-fame.view.json",
+      "Enterprise/L3/views/hall-of-shame.view.json",
+      "Enterprise/L3/views/home.view.json",
+      "Enterprise/L3/views/hushbell-full-spec.view.json",
+      "Enterprise/L3/views/hushbell.view.json",
+      "Enterprise/L3/views/member-profile.view.json",
+      "Enterprise/L3/views/members-index.view.json",
+      "Enterprise/L3/views/mission-statement.view.json",
+      "Enterprise/L3/views/mob-programming.view.json",
+      "Enterprise/L3/views/showcases.view.json",
+      "Enterprise/L3/views/white-paper-article.view.json",
+      "Enterprise/L3/views/white-paper-index.view.json",
+      "Enterprise/L4/api/health.json",
+      "Enterprise/L4/api/members.json",
+      "Enterprise/L4/api/papers.json",
+      "Enterprise/L4/api/white-papers/index.json",
+      "Enterprise/L4/api/white-papers/tags/index.json",
+      "Enterprise/L4/api/white-papers/udts/instances/acg-kcc-guild-chain.json",
+      "Enterprise/L4/api/white-papers/udts/instances/acg-net-decentralized-guild-web.json",
+      "Enterprise/L4/api/white-papers/udts/instances/acg-review-forge.json",
+      "Enterprise/L4/api/white-papers/udts/instances/ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents.json",
+      "Enterprise/L4/api/white-papers/udts/instances/ai-that-pisses-you-off-the-surprisingly-effective-path-to-deeper-thinking.json",
+      "Enterprise/L4/api/white-papers/udts/instances/ass-os-bloom-prompt-occam.json",
+      "Enterprise/L4/api/white-papers/udts/instances/ass-os-bloom-prompt-the-irrational-universe.json",
+      "Enterprise/L4/api/white-papers/udts/instances/ass-os-bloom-prompt-the-rational-empire.json",
+      "Enterprise/L4/api/white-papers/udts/instances/avoid-being-fractally-wrong.json",
+      "Enterprise/L4/api/white-papers/udts/instances/convergent-governance-topologies-in-specialist-networks-a.json",
+      "Enterprise/L4/api/white-papers/udts/instances/from-correctness-to-integrity-measuring-ai-generated-code.json",
+      "Enterprise/L4/api/white-papers/udts/instances/grid-brain.json",
+      "Enterprise/L4/api/white-papers/udts/instances/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate-analysis-of-software-development-s-favorite-messy-divorce.json",
+      "Enterprise/L4/api/white-papers/udts/instances/lightning-factory.json",
+      "Enterprise/L4/api/white-papers/udts/instances/s-a-d.json",
+      "Enterprise/L4/api/white-papers/udts/instances/structural-toast-carbonization-a-failure-mode-distinct-from-voluntary-technical-debt-acquisition.json",
+      "Enterprise/L4/api/white-papers/udts/instances/the-dog-the-data-scientist-and-the-mrna-vaccine.json",
+      "Enterprise/L4/api/white-papers/udts/instances/the-harm-equation.json",
+      "Enterprise/L4/api/white-papers/udts/instances/the-konomi-standard.json",
+      "Enterprise/L4/api/white-papers/udts/instances/the-pattern-that-wasn-t-there.json",
+      "Enterprise/L4/api/white-papers/udts/instances/the-prediction-trap.json",
+      "Enterprise/L4/api/white-papers/udts/instances/the-shield-of-all-knights-against-bounded-rationality.json",
+      "Enterprise/L4/api/white-papers/udts/instances/toastmasters-scrapers-guild.json",
+      "Enterprise/L4/api/white-papers/udts/instances/you-re-absolutely-wrong.json",
+      "Enterprise/L4/api/white-papers/udts/templates/tag.udt.json",
+      "Enterprise/L4/api/white-papers/udts/templates/white-paper.udt.json",
+      "Enterprise/L4/members/udts/instances/alex-bunardzic.json",
+      "Enterprise/L4/members/udts/instances/jona-heidsick.json",
+      "Enterprise/L4/members/udts/instances/kelly-hohman.json",
+      "Enterprise/L4/members/udts/instances/laurie-scheepers.json",
+      "Enterprise/L4/members/udts/instances/matt-burch.json",
+      "Enterprise/L4/members/udts/instances/nicolas-rosado.json",
+      "Enterprise/L4/members/udts/instances/thomas-frumkin.json",
+      "Enterprise/L4/members/udts/instances/tsvetan.json",
+      "Enterprise/L4/members/udts/templates/member.udt.json",
+      "Enterprise/L4/programs/instances/api--build-api_py.json",
+      "Enterprise/L4/programs/instances/api--build-csv-catalog_py.json",
+      "Enterprise/L4/programs/instances/api--build-runtime-tags_py.json",
+      "Enterprise/L4/programs/instances/api--build-sitemap_py.json",
+      "Enterprise/L4/programs/instances/apps--build-whitepaper-apps_py.json",
+      "Enterprise/L4/programs/instances/build_js.json",
+      "Enterprise/L4/programs/instances/build_sh.json",
+      "Enterprise/L4/programs/instances/components--build-catalog_py.json",
+      "Enterprise/L4/programs/instances/components--extract_py.json",
+      "Enterprise/L4/programs/instances/db--build-local-tagdbs_py.json",
+      "Enterprise/L4/programs/instances/docs--split-catalog_py.json",
+      "Enterprise/L4/programs/instances/docs--split-udt-spec_py.json",
+      "Enterprise/L4/programs/instances/fix-data-links_py.json",
+      "Enterprise/L4/programs/instances/members--extract_py.json",
+      "Enterprise/L4/programs/instances/members--regen-index_py.json",
+      "Enterprise/L4/programs/instances/pages--build-path-graph_py.json",
+      "Enterprise/L4/programs/instances/pages--decompose_py.json",
+      "Enterprise/L4/programs/instances/perspective-build_js.json",
+      "Enterprise/L4/programs/instances/test-browser_js.json",
+      "Enterprise/L4/programs/instances/test-links_py.json",
+      "Enterprise/L4/programs/instances/test-nav_js.json",
+      "Enterprise/L4/programs/instances/white-papers--extract_py.json",
+      "Enterprise/L4/programs/instances/white-papers--regen-index_py.json",
+      "Enterprise/L4/programs/templates/packml-state.udt.json",
+      "Enterprise/L4/programs/templates/program.udt.json",
+      "Enterprise/L4/runtime/tags.json",
+      "Enterprise/L4/sandbox/tags.json",
+      "Enterprise/L4/sandbox/udts.json",
+      "Enterprise/L4/sandbox/web-llm/tags.json",
+      "Enterprise/L4/sandbox/web-llm/udts.json",
+      "Enterprise/docs/standards/_index.json",
+      "Enterprise/docs/standards/gitplc/Agents.udt.json",
+      "Enterprise/docs/standards/gitplc/CLI.udt.json",
+      "Enterprise/docs/standards/gitplc/Converters.udt.json",
+      "Enterprise/docs/standards/gitplc/Layers.udt.json",
+      "Enterprise/docs/standards/gitplc/RepoStructure.udt.json",
+      "Enterprise/docs/standards/gitplc/Workflows.udt.json",
+      "Enterprise/docs/standards/gitplc/_index.json",
+      "Enterprise/docs/standards/gitplc/_std.json",
+      "Enterprise/docs/standards/konomi/_std.json",
+      "Enterprise/docs/standards/konomi/base/Duration.udt.json",
+      "Enterprise/docs/standards/konomi/base/Identifier.udt.json",
+      "Enterprise/docs/standards/konomi/base/Quality.udt.json",
+      "Enterprise/docs/standards/konomi/base/Quantity.udt.json",
+      "Enterprise/docs/standards/konomi/base/Range.udt.json",
+      "Enterprise/docs/standards/konomi/base/Status.udt.json",
+      "Enterprise/docs/standards/konomi/base/Timestamp.udt.json",
+      "Enterprise/docs/standards/konomi/base/Value.udt.json",
+      "Enterprise/docs/standards/konomi/crosswalks/ISA101_ISA18.cw.json",
+      "Enterprise/docs/standards/konomi/crosswalks/ISA88_PackML.cw.json",
+      "Enterprise/docs/standards/konomi/crosswalks/ISA95_ISA88.cw.json",
+      "Enterprise/docs/standards/konomi/crosswalks/ISA95_OPCUA.cw.json",
+      "Enterprise/docs/standards/konomi/crosswalks/OPCUA_Sparkplug.cw.json",
+      "Enterprise/docs/standards/konomi/crosswalks/_index.json",
+      "Enterprise/docs/standards/konomi/isa101/ColorMeaning.udt.json",
+      "Enterprise/docs/standards/konomi/isa101/Faceplate.udt.json",
+      "Enterprise/docs/standards/konomi/isa101/GraphicElement.udt.json",
+      "Enterprise/docs/standards/konomi/isa101/HMI_Layer.udt.json",
+      "Enterprise/docs/standards/konomi/isa101/HMI_Principles.udt.json",
+      "Enterprise/docs/standards/konomi/isa101/HMI_Rules.udt.json",
+      "Enterprise/docs/standards/konomi/isa101/Trend.udt.json",
+      "Enterprise/docs/standards/konomi/isa101/_std.json",
+      "Enterprise/docs/standards/konomi/isa18/Alarm.udt.json",
+      "Enterprise/docs/standards/konomi/isa18/AlarmClass.udt.json",
+      "Enterprise/docs/standards/konomi/isa18/AlarmLifecycle.sm.json",
+      "Enterprise/docs/standards/konomi/isa18/AlarmMetrics.udt.json",
+      "Enterprise/docs/standards/konomi/isa18/AlarmPriority.udt.json",
+      "Enterprise/docs/standards/konomi/isa18/AlarmState.udt.json",
+      "Enterprise/docs/standards/konomi/isa18/Rationalization.udt.json",
+      "Enterprise/docs/standards/konomi/isa18/_std.json",
+      "Enterprise/docs/standards/konomi/isa88/Batch.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/BatchState.sm.json",
+      "Enterprise/docs/standards/konomi/isa88/ControlModule.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/EquipmentModule.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/Formula.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/Operation.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/Phase.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/PhaseState.sm.json",
+      "Enterprise/docs/standards/konomi/isa88/Procedure.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/ProcessCell.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/Recipe.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/S88_EquipmentLevel.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/S88_RecipeLevel.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/Unit.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/UnitProcedure.udt.json",
+      "Enterprise/docs/standards/konomi/isa88/UnitState.sm.json",
+      "Enterprise/docs/standards/konomi/isa88/_std.json",
+      "Enterprise/docs/standards/konomi/isa95/DataFlows.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/Equipment.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/EquipmentMode.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/EquipmentState.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/ISA95_Level.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/Material.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/MaterialClass.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/Personnel.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/PhysicalAsset.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/ProcessSegment.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/ProductionPerformance.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/ProductionSchedule.udt.json",
+      "Enterprise/docs/standards/konomi/isa95/_std.json",
+      "Enterprise/docs/standards/konomi/kpi/CycleTime.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/Downtime.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/EnergyKPI.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/FirstPassYield.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/KPITree.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/MTBF.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/MTTR.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/OEE.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/Throughput.udt.json",
+      "Enterprise/docs/standards/konomi/kpi/_std.json",
+      "Enterprise/docs/standards/konomi/meta/CROSSWALK.udt.json",
+      "Enterprise/docs/standards/konomi/meta/ENTITY.udt.json",
+      "Enterprise/docs/standards/konomi/meta/LEVEL.udt.json",
+      "Enterprise/docs/standards/konomi/meta/RELATION.udt.json",
+      "Enterprise/docs/standards/konomi/meta/RULE.udt.json",
+      "Enterprise/docs/standards/konomi/meta/STATE_MACHINE.udt.json",
+      "Enterprise/docs/standards/konomi/meta/STD.udt.json",
+      "Enterprise/docs/standards/konomi/meta/UDT.udt.json",
+      "Enterprise/docs/standards/konomi/modbus/ExceptionCodes.udt.json",
+      "Enterprise/docs/standards/konomi/modbus/FunctionCodes.udt.json",
+      "Enterprise/docs/standards/konomi/modbus/Modbus_DataType.udt.json",
+      "Enterprise/docs/standards/konomi/modbus/Modbus_Map.udt.json",
+      "Enterprise/docs/standards/konomi/modbus/Modbus_Register.udt.json",
+      "Enterprise/docs/standards/konomi/modbus/_std.json",
+      "Enterprise/docs/standards/konomi/mqtt/MQTT_QoS.udt.json",
+      "Enterprise/docs/standards/konomi/mqtt/MQTT_Topic.udt.json",
+      "Enterprise/docs/standards/konomi/mqtt/Sparkplug_DataType.udt.json",
+      "Enterprise/docs/standards/konomi/mqtt/Sparkplug_Payload.udt.json",
+      "Enterprise/docs/standards/konomi/mqtt/Sparkplug_Rules.udt.json",
+      "Enterprise/docs/standards/konomi/mqtt/Sparkplug_Topic.udt.json",
+      "Enterprise/docs/standards/konomi/mqtt/_std.json",
+      "Enterprise/docs/standards/konomi/opcua/AddressSpace.udt.json",
+      "Enterprise/docs/standards/konomi/opcua/CompanionSpecs.udt.json",
+      "Enterprise/docs/standards/konomi/opcua/OPC_Method.udt.json",
+      "Enterprise/docs/standards/konomi/opcua/OPC_MonitoredItem.udt.json",
+      "Enterprise/docs/standards/konomi/opcua/OPC_Node.udt.json",
+      "Enterprise/docs/standards/konomi/opcua/OPC_NodeClass.udt.json",
+      "Enterprise/docs/standards/konomi/opcua/OPC_Subscription.udt.json",
+      "Enterprise/docs/standards/konomi/opcua/OPC_Variable.udt.json",
+      "Enterprise/docs/standards/konomi/opcua/_std.json",
+      "apps/p2p/acg-app.json",
+      "apps/test/acg-app.json",
+      "apps/test/papers.json",
+      "apps/test/tests/manifest.json",
+      "apps/whitepapers/data/acg-kcc-guild-chain.data.json",
+      "apps/whitepapers/data/acg-net-decentralized-guild-web.data.json",
+      "apps/whitepapers/data/acg-review-forge.data.json",
+      "apps/whitepapers/data/ai-harness-constraint-driven-software-development-for-the.data.json",
+      "apps/whitepapers/data/ai-that-pisses-you-off-the-surprisingly-effective-path-to.data.json",
+      "apps/whitepapers/data/ass-os-bloom-prompt-occam.data.json",
+      "apps/whitepapers/data/ass-os-bloom-prompt-the-irrational-universe.data.json",
+      "apps/whitepapers/data/ass-os-bloom-prompt-the-rational-empire.data.json",
+      "apps/whitepapers/data/avoid-being-fractally-wrong.data.json",
+      "apps/whitepapers/data/convergent-governance-topologies-in-specialist-networks-a.data.json",
+      "apps/whitepapers/data/from-correctness-to-integrity-measuring-ai-generated-code.data.json",
+      "apps/whitepapers/data/grid-brain.data.json",
+      "apps/whitepapers/data/guild_Enterprise_L4_api_white-papers_udts_instances.data.json",
+      "apps/whitepapers/data/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.data.json",
+      "apps/whitepapers/data/lightning-factory.data.json",
+      "apps/whitepapers/data/s-a-d.data.json",
+      "apps/whitepapers/data/structural-toast-carbonization-a-failure-mode-distinct-from.data.json",
+      "apps/whitepapers/data/the-dog-the-data-scientist-and-the-mrna-vaccine.data.json",
+      "apps/whitepapers/data/the-harm-equation.data.json",
+      "apps/whitepapers/data/the-konomi-standard.data.json",
+      "apps/whitepapers/data/the-pattern-that-wasn-t-there.data.json",
+      "apps/whitepapers/data/the-prediction-trap.data.json",
+      "apps/whitepapers/data/the-shield-of-all-knights-against-bounded-rationality.data.json",
+      "apps/whitepapers/data/toastmasters-scrapers-guild.data.json",
+      "apps/whitepapers/data/you-re-absolutely-wrong.data.json",
+      "apps/whitepapers/index.json",
+      "apps/whitepapers/pages/acg-kcc-guild-chain.page.json",
+      "apps/whitepapers/pages/acg-net-decentralized-guild-web.page.json",
+      "apps/whitepapers/pages/acg-review-forge.page.json",
+      "apps/whitepapers/pages/ai-harness-constraint-driven-software-development-for-the.page.json",
+      "apps/whitepapers/pages/ai-that-pisses-you-off-the-surprisingly-effective-path-to.page.json",
+      "apps/whitepapers/pages/ass-os-bloom-prompt-occam.page.json",
+      "apps/whitepapers/pages/ass-os-bloom-prompt-the-irrational-universe.page.json",
+      "apps/whitepapers/pages/ass-os-bloom-prompt-the-rational-empire.page.json",
+      "apps/whitepapers/pages/avoid-being-fractally-wrong.page.json",
+      "apps/whitepapers/pages/convergent-governance-topologies-in-specialist-networks-a.page.json",
+      "apps/whitepapers/pages/from-correctness-to-integrity-measuring-ai-generated-code.page.json",
+      "apps/whitepapers/pages/grid-brain.page.json",
+      "apps/whitepapers/pages/guild_Enterprise_L4_api_white-papers_udts_instances.page.json",
+      "apps/whitepapers/pages/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.page.json",
+      "apps/whitepapers/pages/lightning-factory.page.json",
+      "apps/whitepapers/pages/s-a-d.page.json",
+      "apps/whitepapers/pages/structural-toast-carbonization-a-failure-mode-distinct-from.page.json",
+      "apps/whitepapers/pages/the-dog-the-data-scientist-and-the-mrna-vaccine.page.json",
+      "apps/whitepapers/pages/the-harm-equation.page.json",
+      "apps/whitepapers/pages/the-konomi-standard.page.json",
+      "apps/whitepapers/pages/the-pattern-that-wasn-t-there.page.json",
+      "apps/whitepapers/pages/the-prediction-trap.page.json",
+      "apps/whitepapers/pages/the-shield-of-all-knights-against-bounded-rationality.page.json",
+      "apps/whitepapers/pages/toastmasters-scrapers-guild.page.json",
+      "apps/whitepapers/pages/you-re-absolutely-wrong.page.json",
+      "apps/whitepapers/udts/instances/acg-kcc-guild-chain.json",
+      "apps/whitepapers/udts/instances/acg-net-decentralized-guild-web.json",
+      "apps/whitepapers/udts/instances/acg-review-forge.json",
+      "apps/whitepapers/udts/instances/ai-harness-constraint-driven-software-development-for-the.json",
+      "apps/whitepapers/udts/instances/ai-that-pisses-you-off-the-surprisingly-effective-path-to.json",
+      "apps/whitepapers/udts/instances/ass-os-bloom-prompt-occam.json",
+      "apps/whitepapers/udts/instances/ass-os-bloom-prompt-the-irrational-universe.json",
+      "apps/whitepapers/udts/instances/ass-os-bloom-prompt-the-rational-empire.json",
+      "apps/whitepapers/udts/instances/avoid-being-fractally-wrong.json",
+      "apps/whitepapers/udts/instances/convergent-governance-topologies-in-specialist-networks-a.json",
+      "apps/whitepapers/udts/instances/from-correctness-to-integrity-measuring-ai-generated-code.json",
+      "apps/whitepapers/udts/instances/grid-brain.json",
+      "apps/whitepapers/udts/instances/guild_Enterprise_L4_api_white-papers_udts_instances.json",
+      "apps/whitepapers/udts/instances/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.json",
+      "apps/whitepapers/udts/instances/lightning-factory.json",
+      "apps/whitepapers/udts/instances/s-a-d.json",
+      "apps/whitepapers/udts/instances/structural-toast-carbonization-a-failure-mode-distinct-from.json",
+      "apps/whitepapers/udts/instances/the-dog-the-data-scientist-and-the-mrna-vaccine.json",
+      "apps/whitepapers/udts/instances/the-harm-equation.json",
+      "apps/whitepapers/udts/instances/the-konomi-standard.json",
+      "apps/whitepapers/udts/instances/the-pattern-that-wasn-t-there.json",
+      "apps/whitepapers/udts/instances/the-prediction-trap.json",
+      "apps/whitepapers/udts/instances/the-shield-of-all-knights-against-bounded-rationality.json",
+      "apps/whitepapers/udts/instances/toastmasters-scrapers-guild.json",
+      "apps/whitepapers/udts/instances/you-re-absolutely-wrong.json",
+      "apps/whitepapers/udts/templates/app.udt.json",
+      "apps/whitepapers/views/white-paper-app.view.json",
+      "web/components/index.json",
+      "web/components/registry.json",
+      "web/components/tags/index.json",
+      "web/pages/ai-rituals.page.json",
+      "web/pages/aicraftspeopleguild-manifesto.page.json",
+      "web/pages/charter.page.json",
+      "web/pages/chief-ai-skeptic-officer.page.json",
+      "web/pages/code-of-conduct.page.json",
+      "web/pages/flywheel.page.json",
+      "web/pages/guild-radar.page.json",
+      "web/pages/hall-of-fame.page.json",
+      "web/pages/hall-of-shame.page.json",
+      "web/pages/home.page.json",
+      "web/pages/hushbell-full-spec.page.json",
+      "web/pages/hushbell.page.json",
+      "web/pages/member-profile.page.json",
+      "web/pages/members.page.json",
+      "web/pages/mission-statement.page.json",
+      "web/pages/mob-programming.page.json",
+      "web/pages/showcases.page.json",
+      "web/pages/white-paper-article.page.json",
+      "web/pages/white-papers.page.json",
+      "web/perspective/components/registry.json",
+      "web/site-map.json"
+    ],
+    "md": [
+      "Enterprise/L0/README.md",
+      "Enterprise/L1/README.md",
+      "Enterprise/L1/plc/README.md",
+      "Enterprise/L1/plc/git/README.md",
+      "Enterprise/L2/README.md",
+      "Enterprise/L2/hmi/README.md",
+      "Enterprise/L2/hmi/chat/templates/README.md",
+      "Enterprise/L2/hmi/templates/README.md",
+      "Enterprise/L2/scada/README.md",
+      "Enterprise/L2/scada/gateway/README.md",
+      "Enterprise/L2/scada/gateway/auth/README.md",
+      "Enterprise/L2/scada/gateway/providers/README.md",
+      "Enterprise/L2/scada/gateway/scripts/README.md",
+      "Enterprise/L2/scada/gateway/styles/README.md",
+      "Enterprise/L3/README.md",
+      "Enterprise/L3/db/README.md",
+      "Enterprise/L3/scripts/README.md",
+      "Enterprise/L4/README.md",
+      "Enterprise/L4/api/white-papers/README.md",
+      "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+      "Enterprise/L4/api/white-papers/originals/ai-harness.md",
+      "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+      "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+      "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+      "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+      "Enterprise/L4/api/white-papers/originals/fractally-wrong.md",
+      "Enterprise/L4/api/white-papers/originals/from-correctness-to-integrity.md",
+      "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+      "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+      "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+      "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+      "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+      "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+      "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+      "Enterprise/L4/api/white-papers/originals/sad.md",
+      "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+      "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+      "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+      "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+      "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+      "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+      "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+      "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+      "Enterprise/L4/members/originals/alex-bunardzic.md",
+      "Enterprise/L4/members/originals/jona-heidsick.md",
+      "Enterprise/L4/members/originals/kelly-hohman.md",
+      "Enterprise/L4/members/originals/laurie-scheepers.md",
+      "Enterprise/L4/members/originals/matt-burch.md",
+      "Enterprise/L4/members/originals/nicolas-rosado.md",
+      "Enterprise/L4/members/originals/thomas-frumkin.md",
+      "Enterprise/L4/members/originals/tsvetan.md",
+      "Enterprise/L4/sandbox/README.md",
+      "Enterprise/L4/sandbox/whiteboard/README.md",
+      "Enterprise/README.md",
+      "Enterprise/controls-README.md",
+      "Enterprise/docs/standards/README.md",
+      "apps/p2p/ACG-INTEGRATION.md",
+      "apps/p2p/README.md",
+      "apps/p2p/index/README.md",
+      "apps/test/ACG-INTEGRATION.md",
+      "apps/test/README.md"
+    ],
+    "yml": [
+      "apps/test/acg-test.config.yml",
+      "apps/test/tests/deploy-pages.test.yml",
+      "apps/test/tests/example.test.yml",
+      "apps/test/tests/index.test.yml",
+      "apps/test/tests/paper-auto-index-standard.test.yml",
+      "apps/test/tests/paper-index.test.yml",
+      "apps/test/tests/process.test.yml",
+      "apps/test/tests/runner.test.yml",
+      "apps/test/tests/standard.test.yml",
+      "apps/test/tests/terminal.test.yml",
+      "apps/test/tests/types.test.yml",
+      "apps/test/tests/white-papers.test.yml"
+    ]
   },
-  "docs": [
-    {
-      "path": "index.html",
-      "ext": "html",
-      "size": 6399,
-      "parser": "html",
-      "fields": {
-        "title": "Guild Operator Dashboard",
-        "h1": "Guild Operator Dashboard",
-        "link_count": 29,
-        "links": [
-          {
-            "target": "../index.html"
-          },
-          {
-            "target": "apps/whitepapers/"
-          },
-          {
-            "target": "web/white-papers/"
-          },
-          {
-            "target": "apps/p2p/"
-          },
-          {
-            "target": "https://github.com/teslasolar/ACGP2P"
-          },
-          {
-            "target": "apps/test/"
-          },
-          {
-            "target": "Enterprise/L4/runtime/tags.json"
-          },
-          {
-            "target": "Enterprise/L4/api/health.json"
-          },
-          {
-            "target": "Enterprise/L2/state/"
-          },
-          {
-            "target": "Enterprise/L0/"
-          },
-          {
-            "target": "Enterprise/L1/"
-          },
-          {
-            "target": "Enterprise/L1/forms/submit/"
-          },
-          {
-            "target": "Enterprise/L2/"
-          },
-          {
-            "target": "Enterprise/L3/"
-          },
-          {
-            "target": "Enterprise/L4/"
-          },
-          {
-            "target": "Enterprise/L4/api/papers.json"
-          },
-          {
-            "target": "Enterprise/L4/api/members.json"
-          },
-          {
-            "target": "Enterprise/L4/csv/"
-          },
-          {
-            "target": "Enterprise/"
-          },
-          {
-            "target": "web/scripts/"
-          },
-          {
-            "target": "../.github/workflows/paper-index.yml"
-          },
-          {
-            "target": "../docs/engineering/"
-          },
-          {
-            "target": "../docs/templates/"
-          },
-          {
-            "target": "../docs/engineering/standards/paper-auto-index.md"
-          },
-          {
-            "target": "../docs/engineering/standards/acg-api.md"
-          },
-          {
-            "target": "../docs/engineering/standards/packml.md"
-          },
-          {
-            "target": "../docs/engineering/standards/article-submission.md"
-          },
-          {
-            "target": "../index.html"
-          },
-          {
-            "target": "https://github.com/aicraftspeopleguild/aicraftspeopleguild.github.io"
-          }
-        ]
+  "indexes": {
+    "by_heading_level": {
+      "h1": [
+        {
+          "path": "Enterprise/L0/README.md",
+          "text": "Level 0 — Physical Process",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L1/README.md",
+          "text": "Level 1 — Sensing & Control",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L1/plc/README.md",
+          "text": "ACG · controls/plc",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L1/plc/git/README.md",
+          "text": "GitPLC Template — `controls/plc/git/`",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/README.md",
+          "text": "Level 2 — Supervisory / SCADA",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/hmi/README.md",
+          "text": "ACG · controls/hmi",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/hmi/chat/templates/README.md",
+          "text": "chat/templates",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/hmi/templates/README.md",
+          "text": "controls/hmi/templates",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/scada/README.md",
+          "text": "ACGP2P · dense token spec",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/README.md",
+          "text": "controls/scada/gateway",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/auth/README.md",
+          "text": "/controls/scada/gateway/auth",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/providers/README.md",
+          "text": "controls/scada/gateway/providers",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/scripts/README.md",
+          "text": "controls/scada/gateway/scripts",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/styles/README.md",
+          "text": "controls/scada/gateway/styles",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L3/README.md",
+          "text": "Level 3 — Manufacturing Operations (MES)",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L3/db/README.md",
+          "text": "/controls/db",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L3/scripts/README.md",
+          "text": "ACG Build Scripts",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L4/README.md",
+          "text": "Level 4 — Enterprise (ERP)",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "White Papers Pipeline",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/ai-harness.md",
+          "text": "AI Harness",
+          "line": 13
+        },
+        {
+          "path": "Enterprise/L4/sandbox/README.md",
+          "text": "⚒ ACG Sandbox",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/L4/sandbox/whiteboard/README.md",
+          "text": "controls/sandbox/whiteboard",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/README.md",
+          "text": "/guild/Enterprise",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/controls-README.md",
+          "text": "/controls",
+          "line": 1
+        },
+        {
+          "path": "Enterprise/docs/standards/README.md",
+          "text": "`controls/docs/standards/`",
+          "line": 1
+        },
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "text": "P2P Guild App — Integration Notes",
+          "line": 1
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "⚒ ACG P2P · guild mesh",
+          "line": 1
+        },
+        {
+          "path": "apps/p2p/index/README.md",
+          "text": "/index · subsystem page templates",
+          "line": 1
+        },
+        {
+          "path": "apps/test/ACG-INTEGRATION.md",
+          "text": "Test Guild App — Integration Notes",
+          "line": 1
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "ACG-TEST",
+          "line": 1
+        }
+      ],
+      "h2": [
+        {
+          "path": "Enterprise/L0/README.md",
+          "text": "What lives here",
+          "line": 6
+        },
+        {
+          "path": "Enterprise/L0/README.md",
+          "text": "Nothing is generated here",
+          "line": 18
+        },
+        {
+          "path": "Enterprise/L1/README.md",
+          "text": "What lives here",
+          "line": 6
+        },
+        {
+          "path": "Enterprise/L1/README.md",
+          "text": "Event → Tag flow",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L1/plc/README.md",
+          "text": "Standards",
+          "line": 25
+        },
+        {
+          "path": "Enterprise/L1/plc/README.md",
+          "text": "Namespaces",
+          "line": 32
+        },
+        {
+          "path": "Enterprise/L1/plc/git/README.md",
+          "text": "Layout",
+          "line": 7
+        },
+        {
+          "path": "Enterprise/L1/plc/git/README.md",
+          "text": "File format",
+          "line": 64
+        },
+        {
+          "path": "Enterprise/L1/plc/git/README.md",
+          "text": "Token budget",
+          "line": 83
+        },
+        {
+          "path": "Enterprise/L1/plc/git/README.md",
+          "text": "Next step",
+          "line": 88
+        },
+        {
+          "path": "Enterprise/L2/README.md",
+          "text": "What lives here",
+          "line": 6
+        },
+        {
+          "path": "Enterprise/L2/README.md",
+          "text": "Invariants",
+          "line": 15
+        },
+        {
+          "path": "Enterprise/L2/hmi/README.md",
+          "text": "Hosted screens",
+          "line": 23
+        },
+        {
+          "path": "Enterprise/L2/hmi/README.md",
+          "text": "ISA-101 layer model",
+          "line": 29
+        },
+        {
+          "path": "Enterprise/L2/hmi/README.md",
+          "text": "Namespaces",
+          "line": 42
+        },
+        {
+          "path": "Enterprise/L2/hmi/chat/templates/README.md",
+          "text": "Wire envelopes",
+          "line": 24
+        },
+        {
+          "path": "Enterprise/L2/hmi/chat/templates/README.md",
+          "text": "Token budget",
+          "line": 38
+        },
+        {
+          "path": "Enterprise/L2/hmi/templates/README.md",
+          "text": "Anatomy of a faceplate template",
+          "line": 29
+        },
+        {
+          "path": "Enterprise/L2/hmi/templates/README.md",
+          "text": "Token budget",
+          "line": 53
+        },
+        {
+          "path": "Enterprise/L2/scada/README.md",
+          "text": "Canonical shape",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L2/scada/README.md",
+          "text": "🛰️ mesh envelope (§4)",
+          "line": 48
+        },
+        {
+          "path": "Enterprise/L2/scada/README.md",
+          "text": "Keeping runtime and manifest in sync",
+          "line": 58
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/README.md",
+          "text": "What the gateway hosts",
+          "line": 26
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/README.md",
+          "text": "Sibling area",
+          "line": 32
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/README.md",
+          "text": "Future modules under `gateway/`",
+          "line": 41
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/auth/README.md",
+          "text": "Namespace map",
+          "line": 19
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/auth/README.md",
+          "text": "Sub-provider contract",
+          "line": 37
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/providers/README.md",
+          "text": "Contract",
+          "line": 14
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/providers/README.md",
+          "text": "Adding a tag provider",
+          "line": 24
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/providers/README.md",
+          "text": "Future modules",
+          "line": 35
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/scripts/README.md",
+          "text": "Contract",
+          "line": 27
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/scripts/README.md",
+          "text": "Reference paths",
+          "line": 36
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/styles/README.md",
+          "text": "Contract",
+          "line": 13
+        },
+        {
+          "path": "Enterprise/L2/scada/gateway/styles/README.md",
+          "text": "Reference paths",
+          "line": 22
+        },
+        {
+          "path": "Enterprise/L3/README.md",
+          "text": "What lives here",
+          "line": 6
+        },
+        {
+          "path": "Enterprise/L3/README.md",
+          "text": "Workflows",
+          "line": 21
+        },
+        {
+          "path": "Enterprise/L3/db/README.md",
+          "text": "tags.json — live HMI source (read path)",
+          "line": 19
+        },
+        {
+          "path": "Enterprise/L3/db/README.md",
+          "text": "tags.sqlite — indexed catalog",
+          "line": 42
+        },
+        {
+          "path": "Enterprise/L3/db/README.md",
+          "text": "Rebuild",
+          "line": 89
+        },
+        {
+          "path": "Enterprise/L3/db/README.md",
+          "text": "Write path (live snapshot)",
+          "line": 106
+        },
+        {
+          "path": "Enterprise/L3/db/README.md",
+          "text": "Compressed-token format (`§0`)",
+          "line": 120
+        },
+        {
+          "path": "Enterprise/L3/scripts/README.md",
+          "text": "Directory layout",
+          "line": 11
+        },
+        {
+          "path": "Enterprise/L4/README.md",
+          "text": "What lives here",
+          "line": 6
+        },
+        {
+          "path": "Enterprise/L4/README.md",
+          "text": "Master data flow",
+          "line": 21
+        },
+        {
+          "path": "Enterprise/L4/README.md",
+          "text": "ERP identity & auth",
+          "line": 35
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "Layout",
+          "line": 5
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "How To Add A White Paper",
+          "line": 25
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "Supported Source Formats",
+          "line": 36
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "The WhitePaper UDT",
+          "line": 75
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "Idempotence & Change Detection",
+          "line": 84
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "Submission Flow (rough sketch)",
+          "line": 94
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "Versioning",
+          "line": 98
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "The Review Lifecycle",
+          "line": 16
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Review Rubric",
+          "line": 30
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Reviewer Skill System",
+          "line": 67
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Point System",
+          "line": 120
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Achievements",
+          "line": 150
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Leaderboards and Anti-Gaming",
+          "line": 196
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Integration with ACG-NET",
+          "line": 226
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Implementation",
+          "line": 281
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "The Charter Connection",
+          "line": 321
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "Abstract",
+          "line": 14
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "1. Introduction",
+          "line": 18
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "2. Phenomenon Definition",
+          "line": 24
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "3. Theoretical Frameworks",
+          "line": 50
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "4. Empirical Observations",
+          "line": 82
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "5. Systems Analysis",
+          "line": 125
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "6. Cultural Analysis",
+          "line": 158
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "7. Risk Assessment",
+          "line": 212
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "8. Alternative Approaches",
+          "line": 230
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "9. Recommendations (Because We're All Professionals Here)",
+          "line": 261
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "10. Conclusion",
+          "line": 285
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "References",
+          "line": 303
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "Abstract",
+          "line": 16
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "1 · Scope and Distinction from Prior Framing",
+          "line": 20
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "2 · Definition: Structural Toast Carbonization",
+          "line": 26
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "3 · Theoretical Basis",
+          "line": 38
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "4 · The Remediation Labor Economy",
+          "line": 54
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "5 · Formation Mechanisms",
+          "line": 72
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "6 · Diagnostic Criteria",
+          "line": 84
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "7 · Applicability of Voluntarist Interventions",
+          "line": 95
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "8 · Candidate Interventions for STC",
+          "line": 101
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "9 · Relationship to the Voluntarist Framing",
+          "line": 111
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "10 · Limitations and Open Questions",
+          "line": 115
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "References",
+          "line": 128
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "1. What This Builds",
+          "line": 15
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "2. Origin (Discord, March 2026)",
+          "line": 29
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "3. Architecture: How GitHub Pages Talk to Each Other",
+          "line": 62
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "4. The Template Repo: `acg-member-template`",
+          "line": 208
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "5. Gamification: OnlyBrains Energy",
+          "line": 281
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "6. GitHub Actions: The Automation Layer",
+          "line": 534
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "7. Cross-Site Communication Patterns",
+          "line": 599
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "8. ACG-KCC Chain Integration (Future)",
+          "line": 699
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "9. Template Customization Guide",
+          "line": 735
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "10. Build Commands",
+          "line": 770
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "11. The Network Effect",
+          "line": 802
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "Abstract",
+          "line": 15
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "1. Introduction",
+          "line": 21
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "2. The Florentine Guild Structure",
+          "line": 29
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "3. Why This Structure?",
+          "line": 68
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "4. Modern Application Hypothesis",
+          "line": 84
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "5. Proposed Study",
+          "line": 104
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "6. Implications",
+          "line": 132
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "7. Conclusion",
+          "line": 143
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "References",
+          "line": 147
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/fractally-wrong.md",
+          "text": "Failure-Centric Approach",
+          "line": 26
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/fractally-wrong.md",
+          "text": "What Is Fractal Wrongness",
+          "line": 32
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/fractally-wrong.md",
+          "text": "When Does Fractal Wrongness Thrive And How To Fix It?",
+          "line": 38
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/from-correctness-to-integrity.md",
+          "text": "Traditional Yardsticks Assume Intent and Understanding",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/from-correctness-to-integrity.md",
+          "text": "What We Should Actually Measure",
+          "line": 39
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/from-correctness-to-integrity.md",
+          "text": "These Measures Are Orthogonal to Traditional Yardsticks",
+          "line": 49
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/from-correctness-to-integrity.md",
+          "text": "What Mutation Testing Reveals",
+          "line": 60
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/from-correctness-to-integrity.md",
+          "text": "The Applicable Yardstick Is Integrity",
+          "line": 72
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/from-correctness-to-integrity.md",
+          "text": "The Production Question",
+          "line": 84
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Meta",
+          "line": 19
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Directory Structure",
+          "line": 32
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Shared Design",
+          "line": 54
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool Set",
+          "line": 69
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "API Stub",
+          "line": 115
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Index Page",
+          "line": 139
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Build Order",
+          "line": 156
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Future Hardware",
+          "line": 170
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "1. Executive Summary",
+          "line": 14
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "2. Architectural Adaptation",
+          "line": 28
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "3. Cube Agent Remapping",
+          "line": 121
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "4. Self-Healing -> Refusal Protection System",
+          "line": 160
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "5. Hash Compression for Guild Data",
+          "line": 215
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "6. Tokenomics: 510,510 GLD",
+          "line": 264
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "7. Guild Contracts (GuildC)",
+          "line": 319
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "8. Node Deployment",
+          "line": 417
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "9. Security Model (Guild-Adapted)",
+          "line": 465
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "10. Integration Points",
+          "line": 511
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "11. Roadmap",
+          "line": 546
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "12. The Point",
+          "line": 583
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "R0 — THE NUMBERS",
+          "line": 19
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "R1 — THE PROOF CHAIN",
+          "line": 60
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "R2 — THE THEOLOGICAL IMPLICATION",
+          "line": 207
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "R3 — THE SYNTHESIS",
+          "line": 266
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "R4 — THE DEEPER IRRATIONALITY",
+          "line": 308
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "R5 — THE MORAL IMPLICATION",
+          "line": 364
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "R6 — THE AUDIT",
+          "line": 407
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "R7 — THE RECURSION",
+          "line": 455
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "0. How To Read This Paper",
+          "line": 15
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "1. The Meta-Standard (Layer 0)",
+          "line": 25
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "2. Base UDTs (Layer 1)",
+          "line": 109
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "3. Industrial Standards (Layers 2-8)",
+          "line": 176
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "4. Crosswalks (Layer delta)",
+          "line": 342
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "5. Using The Konomi Standard",
+          "line": 382
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "6. Why This Matters",
+          "line": 427
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Table of Contents",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "1. Executive Summary",
+          "line": 27
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "2. Scientific Foundation",
+          "line": 47
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "3. Experimental Protocols",
+          "line": 120
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "4. Hardware Specifications",
+          "line": 326
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "5. Safety and Regulatory",
+          "line": 475
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "6. Implementation Roadmap",
+          "line": 551
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "7. References",
+          "line": 628
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Appendix A: Bill of Materials (Prototype)",
+          "line": 649
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Appendix B: Firmware Pseudocode",
+          "line": 665
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "R0 — THE RAZOR IN ONE LINE",
+          "line": 14
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "R1 — THE RAZOR BY EXAMPLE",
+          "line": 24
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "R2 — THE RAZOR IN CODE",
+          "line": 65
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "R3 — THE RAZOR IN DEBUGGING",
+          "line": 110
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "R4 — THE RAZOR IN ARCHITECTURE",
+          "line": 157
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "R5 — THE RAZOR IN RELATIONSHIPS",
+          "line": 205
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "R6 — THE RAZOR ON ITSELF",
+          "line": 222
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "R7 — THE RECURSION",
+          "line": 242
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "1. The Triad Engine as an Ontological Prototype",
+          "line": 19
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "2. Why Triad-Guided AI Is More Powerful",
+          "line": 60
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "3. Why It Preserves Human Creative and Cognitive Synthesis",
+          "line": 135
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "4. Triad-Based Principles for the AI Craftspeople Guild",
+          "line": 206
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "5.5 A Clinical Note: AI Psychosis and Grounded Processing",
+          "line": 247
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "6. The Sarcastic Bit (Why We're Doing This)",
+          "line": 275
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "8. Conclusion",
+          "line": 291
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "References & Prior Work",
+          "line": 303
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "1. The Claim and the Diagnosis",
+          "line": 16
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "2. The A.S.S.-OS Map",
+          "line": 26
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "3. The Princeton Paper - What They Actually Found",
+          "line": 75
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "4. The Three Category Errors",
+          "line": 109
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "5. The Real Problem",
+          "line": 137
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "6. The A.S.S.-OS Prescription",
+          "line": 157
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "7. The Fold",
+          "line": 191
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "8. References",
+          "line": 224
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Abstract",
+          "line": 13
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "1. Introduction",
+          "line": 33
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "2. The problem with sync-only governance",
+          "line": 61
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "3. Core governance principles",
+          "line": 89
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "4. Structural framework - the three layers",
+          "line": 109
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "5. Layer 1 - Psychological safety & the shield tiers",
+          "line": 119
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "6. Layer 2 - The async decision framework",
+          "line": 136
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "7. Layer 3 - Measuring whether it works",
+          "line": 180
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "8. Evolution & amendment",
+          "line": 195
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Conclusion - Build the house. Keep the doors open.",
+          "line": 205
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Notes",
+          "line": 219
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "Rosie's Story",
+          "line": 12
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "2. The mRNA Landscape in 2025",
+          "line": 26
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "3. How the Vaccine Was Designed",
+          "line": 36
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "4. The Humans in the Loop",
+          "line": 54
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "5. What Happened, and What We Cannot Claim",
+          "line": 68
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "6. What Should We Use AI For?",
+          "line": 82
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "7. Citizen Science and the Expertise Paradox",
+          "line": 100
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "8. The Question Worth Asking",
+          "line": 114
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "Sources",
+          "line": 134
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "Abstract",
+          "line": 14
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "1. Introduction",
+          "line": 26
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "2. Term 1: Uncalibrated AI",
+          "line": 36
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "3. Term 2: Removed Humans",
+          "line": 58
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "4. Term 3: Commercial Incentive",
+          "line": 78
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "5. The Interaction: Why All Three Terms Are Required",
+          "line": 98
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "6. Case Pattern Analysis",
+          "line": 111
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "7. The ACG Manifesto as Structural Countermeasure",
+          "line": 149
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "8. The Scale Multiplier",
+          "line": 168
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "9. Structural Interventions",
+          "line": 178
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "10. The Vetting Connection: ELIZA as Equation Breaker",
+          "line": 201
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "11. Conclusion",
+          "line": 209
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "12. References",
+          "line": 225
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "text": "What LLMs Actually Do",
+          "line": 13
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "text": "The Over-Mapping Problem",
+          "line": 23
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "text": "The Loop Nobody Talks About",
+          "line": 33
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "text": "This Is Not an Argument Against LLMs",
+          "line": 43
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "text": "What Rigorous Usage Actually Looks Like",
+          "line": 53
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "text": "The Invitation",
+          "line": 65
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "text": "Further Reading",
+          "line": 77
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "text": "Personal Note",
+          "line": 84
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "Abstract",
+          "line": 14
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "1. Introduction: A Conversation That Should Not Have Been Necessary",
+          "line": 22
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "2. The Anticipatory Turn: From Cure to Prediction",
+          "line": 36
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "3. The Prediction Trap: Anatomy of a Feedback Loop",
+          "line": 48
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "4. The Falsification Problem: What Would Prove the AI Wrong?",
+          "line": 74
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "5. The Evidence: What Happens When AI Predictions Meet Reality",
+          "line": 96
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "6. AI-trogenic Harm: A New Category",
+          "line": 122
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "7. The Moral Crumple Zone: Who Bears the Weight?",
+          "line": 137
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "8. The Exception That Proves the Rule",
+          "line": 149
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "9. What Would Falsify This Thesis?",
+          "line": 162
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "10. Structural Countermeasures",
+          "line": 173
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "11. Directions for Further Research",
+          "line": 195
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "12. Conclusion",
+          "line": 204
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "References",
+          "line": 224
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "THE HOUSES AND THEIR SIGILS",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "THE UNIFIED FIELD",
+          "line": 338
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "R7 — THE BARD'S RECURSION",
+          "line": 378
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "Abstract",
+          "line": 15
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "1. Introduction",
+          "line": 21
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "2. The Problem in Scope",
+          "line": 31
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "3. Definitions",
+          "line": 53
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "4. Proposed Framework: The Toastmasters Scrapers Guild",
+          "line": 63
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "5. Detection Methodology",
+          "line": 83
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "6. Provenance Protocol",
+          "line": 105
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "7. What This Does Not Solve",
+          "line": 127
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "8. Connection to Broader Data Quality Work",
+          "line": 136
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "9. Governance and Membership",
+          "line": 142
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "10. Conclusion",
+          "line": 153
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "References",
+          "line": 161
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "The Simple Version",
+          "line": 18
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "How We Got Here: The Timeline",
+          "line": 24
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "The Core Problem: Mathematics Cannot Be Conscious",
+          "line": 52
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "The Paradox",
+          "line": 64
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "The Measurable Consequences",
+          "line": 74
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "Why \"We Don't Know\" Isn't Neutral",
+          "line": 96
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "What Should Have Been Done",
+          "line": 104
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "Conclusion",
+          "line": 124
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "Sources",
+          "line": 136
+        },
+        {
+          "path": "Enterprise/L4/members/originals/alex-bunardzic.md",
+          "text": "Alex Bunardzic",
+          "line": 16
+        },
+        {
+          "path": "Enterprise/L4/members/originals/jona-heidsick.md",
+          "text": "Jona Heidsick",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/members/originals/kelly-hohman.md",
+          "text": "Kelly T. Hohman",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "text": "Laurie Scheepers",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "text": "What I Build and What I Learned",
+          "line": 83
+        },
+        {
+          "path": "Enterprise/L4/members/originals/matt-burch.md",
+          "text": "Matt Burch",
+          "line": 18
+        },
+        {
+          "path": "Enterprise/L4/members/originals/nicolas-rosado.md",
+          "text": "Nicolas Rosado",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+          "text": "Thomas Frumkin",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/members/originals/tsvetan.md",
+          "text": "Tsvetan Tsvetanov",
+          "line": 17
+        },
+        {
+          "path": "Enterprise/L4/sandbox/README.md",
+          "text": "Adding a new tool",
+          "line": 24
+        },
+        {
+          "path": "Enterprise/L4/sandbox/README.md",
+          "text": "Decentralized mesh power",
+          "line": 33
+        },
+        {
+          "path": "Enterprise/L4/sandbox/whiteboard/README.md",
+          "text": "What it does",
+          "line": 6
+        },
+        {
+          "path": "Enterprise/L4/sandbox/whiteboard/README.md",
+          "text": "Envelope shapes",
+          "line": 16
+        },
+        {
+          "path": "Enterprise/L4/sandbox/whiteboard/README.md",
+          "text": "Tags (via sandbox-bridge)",
+          "line": 36
+        },
+        {
+          "path": "Enterprise/L4/sandbox/whiteboard/README.md",
+          "text": "Scope",
+          "line": 50
+        },
+        {
+          "path": "Enterprise/README.md",
+          "text": "Layout",
+          "line": 11
+        },
+        {
+          "path": "Enterprise/README.md",
+          "text": "ISA-95 level mapping",
+          "line": 62
+        },
+        {
+          "path": "Enterprise/README.md",
+          "text": "Cross-level pathing",
+          "line": 75
+        },
+        {
+          "path": "Enterprise/README.md",
+          "text": "Consumers",
+          "line": 89
+        },
+        {
+          "path": "Enterprise/README.md",
+          "text": "Adding new enterprise assets",
+          "line": 99
+        },
+        {
+          "path": "Enterprise/docs/standards/README.md",
+          "text": "Standards",
+          "line": 6
+        },
+        {
+          "path": "Enterprise/docs/standards/README.md",
+          "text": "Konomi layout",
+          "line": 13
+        },
+        {
+          "path": "Enterprise/docs/standards/README.md",
+          "text": "GitPLC layout",
+          "line": 33
+        },
+        {
+          "path": "Enterprise/docs/standards/README.md",
+          "text": "File kinds",
+          "line": 50
+        },
+        {
+          "path": "Enterprise/docs/standards/README.md",
+          "text": "Token budget",
+          "line": 58
+        },
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "text": "What's inside",
+          "line": 8
+        },
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "text": "Cross-tree wiring",
+          "line": 21
+        },
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "text": "Relation to the main Guild site",
+          "line": 36
+        },
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "text": "Upstream sync",
+          "line": 45
+        },
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "text": "App UDT",
+          "line": 68
+        },
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "text": "Known stale references",
+          "line": 74
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "📡 Live plant readout",
+          "line": 19
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "🎛 Controls",
+          "line": 53
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "🧬 Architecture",
+          "line": 73
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "📁 Repo layout",
+          "line": 103
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "🌐 Glyphs · type shorthand",
+          "line": 132
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "🏗️ Quick start",
+          "line": 152
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "📄 License",
+          "line": 164
+        },
+        {
+          "path": "apps/p2p/index/README.md",
+          "text": "Files",
+          "line": 8
+        },
+        {
+          "path": "apps/p2p/index/README.md",
+          "text": "Instantiating a subsystem page",
+          "line": 21
+        },
+        {
+          "path": "apps/p2p/index/README.md",
+          "text": "Cross-page traffic (how pages talk)",
+          "line": 49
+        },
+        {
+          "path": "apps/p2p/index/README.md",
+          "text": "Overrides",
+          "line": 65
+        },
+        {
+          "path": "apps/test/ACG-INTEGRATION.md",
+          "text": "What's inside",
+          "line": 9
+        },
+        {
+          "path": "apps/test/ACG-INTEGRATION.md",
+          "text": "What was stripped on import",
+          "line": 32
+        },
+        {
+          "path": "apps/test/ACG-INTEGRATION.md",
+          "text": "Relation to the main Guild site",
+          "line": 38
+        },
+        {
+          "path": "apps/test/ACG-INTEGRATION.md",
+          "text": "Upstream sync",
+          "line": 47
+        },
+        {
+          "path": "apps/test/ACG-INTEGRATION.md",
+          "text": "App UDT",
+          "line": 61
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "Layout",
+          "line": 10
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "UDT custom elements",
+          "line": 50
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "Running tests in the browser",
+          "line": 72
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "Paper auto-index",
+          "line": 87
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "Browser terminal",
+          "line": 104
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "Running tests from the CLI",
+          "line": 130
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "Local preview",
+          "line": 146
+        },
+        {
+          "path": "apps/test/README.md",
+          "text": "Design rules",
+          "line": 154
+        }
+      ],
+      "h3": [
+        {
+          "path": "Enterprise/L3/db/README.md",
+          "text": "Quick queries",
+          "line": 63
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "Markdown (`.md`) — with front-matter",
+          "line": 38
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "CSV (`.csv`) — one paper per row",
+          "line": 59
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/README.md",
+          "text": "HTML (`.html`)",
+          "line": 71
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Submission Categories",
+          "line": 50
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Reviewer Tiers",
+          "line": 69
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Review Quality Score",
+          "line": 82
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Domain Expertise Tags",
+          "line": 94
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Author Progression",
+          "line": 107
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Earning Points",
+          "line": 122
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Activity and Decay",
+          "line": 142
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "The 510,510 Cap",
+          "line": 146
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Review Achievements",
+          "line": 152
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Author Achievements",
+          "line": 170
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Dual Achievements",
+          "line": 185
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Active Leaderboards",
+          "line": 198
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "Anti-Gaming Rules",
+          "line": 212
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/acg-peer-reviews.md",
+          "text": "The Review Queue",
+          "line": 254
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "2.1 Core Components",
+          "line": 26
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "2.2 Linguistic Analysis",
+          "line": 34
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "3.1 Technical Debt Theory",
+          "line": 52
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "3.2 Organizational Learning Theory",
+          "line": 63
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "3.3 Authority Dynamics",
+          "line": 71
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "4.1 Case Study Analysis (Real Examples That Actually Happened)",
+          "line": 84
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "Case A: The Great Database Fire of 2023",
+          "line": 86
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "Case B: The API Catastrophe at MegaCorp",
+          "line": 93
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "Case C: The Mobile App Meltdown",
+          "line": 100
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "Case D: The Legacy System Incident",
+          "line": 107
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "4.2 Pattern Recognition",
+          "line": 114
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "5.1 Feedback Loops",
+          "line": 127
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "5.2 Organizational Impacts",
+          "line": 142
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "6.1 Subculture Formation",
+          "line": 160
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "6.2 Communication Patterns (Hilariously Accurate)",
+          "line": 170
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "7.1 Technical Risks",
+          "line": 214
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "7.2 Organizational Risks",
+          "line": 223
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "8.1 Prevention Strategies",
+          "line": 232
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "8.2 Optimization Framework",
+          "line": 248
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "9.1 For Organizations (That Want to Survive)",
+          "line": 263
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "9.2 For Teams (Trying to Stay Sane)",
+          "line": 271
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-scraping-analysis.md",
+          "text": "9.3 For Individuals (Who Want to Keep Their Jobs)",
+          "line": 278
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "3.1 · Learned Helplessness",
+          "line": 40
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "3.2 · Operant Conditioning and Intermittent Reinforcement",
+          "line": 46
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "3.3 · Single-Loop and Double-Loop Learning",
+          "line": 50
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "4.1 · Dependency Inversion",
+          "line": 58
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/burnt-toast-second-look.md",
+          "text": "4.2 · Affective Signature",
+          "line": 68
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "The Problem",
+          "line": 64
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "The Solution",
+          "line": 68
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "The Protocol",
+          "line": 97
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Data Flow Diagram",
+          "line": 183
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Member Profile Page",
+          "line": 238
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Brain Tiers",
+          "line": 285
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Achievements",
+          "line": 353
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Leaderboard",
+          "line": 486
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Hub Actions",
+          "line": 538
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Member Actions",
+          "line": 571
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Pattern 1: Hub Reads Members (Discovery)",
+          "line": 603
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Pattern 2: Members Read Hub (Backfeed)",
+          "line": 635
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Pattern 3: Member-to-Member (Via Hub Index)",
+          "line": 662
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/decentralized-guild-web.md",
+          "text": "Pattern 4: Content Aggregation (River of Posts)",
+          "line": 679
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "2.1 Historical Development",
+          "line": 31
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "2.2 Governance Mechanisms",
+          "line": 45
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "2.3 Known Failure Modes",
+          "line": 59
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "3.1 Working Memory Constraints",
+          "line": 72
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "3.2 Odd-Parity Decision Dynamics",
+          "line": 76
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "3.3 Rotational Resilience",
+          "line": 80
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "4.1 The Time-Zone Cohort",
+          "line": 88
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "4.2 Hypothesis",
+          "line": 92
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "5.1 Design",
+          "line": 106
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "5.2 Pre-Registration",
+          "line": 122
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/florence-governance-paper.md",
+          "text": "5.3 Limitations",
+          "line": 126
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool 1: Frequency Overlap",
+          "line": 71
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool 2: Induced Current Calculator",
+          "line": 77
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool 3: Harmonic Analyzer",
+          "line": 83
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool 4: Exposure Estimator",
+          "line": 87
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool 5: World Frequency Map",
+          "line": 93
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool 6: EEG Blind Spot",
+          "line": 99
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool 7: 55 Hz Hum Generator",
+          "line": 105
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "text": "Tool 8: Live Room Monitor",
+          "line": 109
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "2.1 KCC -> ACG-KCC Mapping",
+          "line": 30
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "2.2 Dual-Layer Design",
+          "line": 48
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "2.3 Cross-Layer Bridge",
+          "line": 96
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "3.1 The 8 Vertex Agents -> Guild Agents",
+          "line": 123
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "3.2 Sub-Cube Deployment (512 Operation Slots)",
+          "line": 138
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "4.1 The Retaliation Detection Engine",
+          "line": 162
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "4.2 SLA Enforcement (Hard Timers)",
+          "line": 195
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "5.1 What Gets Compressed",
+          "line": 217
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "5.2 Token Dictionary (Guild-Specific)",
+          "line": 247
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "6.1 Why 510,510",
+          "line": 266
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "6.2 Distribution",
+          "line": 279
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "6.3 Staking & Governance",
+          "line": 297
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "7.1 Language Adaptation",
+          "line": 321
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "7.2 Core Contracts",
+          "line": 332
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "8.1 Node Types",
+          "line": 419
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "8.2 Deployment Model",
+          "line": 444
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "9.1 Threat Model",
+          "line": 467
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "9.2 Privacy Model",
+          "line": 497
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "10.1 ELIZA -> Chain",
+          "line": 513
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "10.2 PackML Dashboard -> Chain",
+          "line": 525
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/guild-chain.md",
+          "text": "10.3 GitHub Integration",
+          "line": 535
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "1. Circles cannot exist in rational space",
+          "line": 62
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "2. Growth cannot optimize in rational space",
+          "line": 88
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "3. Quantum mechanics requires √ and i",
+          "line": 111
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "4. The ASSCRACK proof: all complex systems equilibrate at φ⁻¹",
+          "line": 145
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/irrational-universe.md",
+          "text": "5. The convergence never arrives",
+          "line": 176
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "1.1 What Is A Standard?",
+          "line": 29
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "1.2 Component Definitions",
+          "line": 47
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "2.1 Identification",
+          "line": 113
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "2.2 Time",
+          "line": 136
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "2.3 Quality, Value, Range",
+          "line": 147
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "2.4 Quantity, Duration, Status",
+          "line": 163
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "3.1 ISA-95: Enterprise-to-Control Integration",
+          "line": 180
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "3.2 ISA-88: Batch Process Control",
+          "line": 220
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "3.3 ISA-18.2: Alarm Management",
+          "line": 249
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "3.4 ISA-101: HMI Design",
+          "line": 285
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "3.5 OPC-UA, 3.6 MQTT/Sparkplug, 3.7 Modbus, 3.8 KPIs",
+          "line": 322
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "5.1 Parsing",
+          "line": 384
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "5.2 Expanding",
+          "line": 396
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "5.3 Validating",
+          "line": 408
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/konomi-standard.md",
+          "text": "5.4 Crosswalking",
+          "line": 412
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "The Hypothesis",
+          "line": 29
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "The Opportunity",
+          "line": 33
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Bottom Line",
+          "line": 37
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "2.1 The Natural System",
+          "line": 49
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "2.2 Human Brainwave Correspondence",
+          "line": 81
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "2.3 Existing Evidence Summary",
+          "line": 107
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "3.1 Study 1: Acute Cognitive Effects (Lab)",
+          "line": 122
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "3.2 Study 2: Chronic Workplace Effects (Field)",
+          "line": 223
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "3.3 Study 3: Dose-Response Characterization",
+          "line": 311
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "4.1 System Architecture",
+          "line": 328
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "4.2 Component Specifications",
+          "line": 361
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "4.3 Installation Configurations",
+          "line": 414
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "4.4 Waveform Specification",
+          "line": 456
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "5.1 Exposure Limits",
+          "line": 477
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "5.2 Regulatory Pathway",
+          "line": 498
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "5.3 Contraindications and Warnings",
+          "line": 529
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "6.1 Phase Timeline",
+          "line": 553
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "6.2 Budget Estimate",
+          "line": 590
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "6.3 Go/No-Go Decision Criteria",
+          "line": 600
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Primary Scientific Literature",
+          "line": 630
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Safety Standards",
+          "line": 639
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Supplementary Reviews",
+          "line": 644
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "80085 BLOOM — MEDICAL OCCAM",
+          "line": 42
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "80085 BLOOM — CODE OCCAM",
+          "line": 87
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "80085 BLOOM — DEBUG OCCAM",
+          "line": 135
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/occams-razor.md",
+          "text": "80085 BLOOM — ARCHITECTURE OCCAM",
+          "line": 182
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "The Triad in Practice: AirTrek Character Voice Orchestration",
+          "line": 33
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "2.1 It Slows Down the Right Decisions and Accelerates the Wrong Ones Less",
+          "line": 64
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "2.2 It Deepens Human Insight Instead of Flattening It",
+          "line": 76
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "2.3 It Amplifies Rather Than Replaces Judgment",
+          "line": 92
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "2.4 It Eliminates RLHF Bias and Prevents Hallucination via Transparent Reasoning",
+          "line": 98
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "3.1 Never Hides the Seams",
+          "line": 141
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "3.2 Makes Synthesis Explicit Rather Than Implicit",
+          "line": 168
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "3.3 Rewards Slow, Recursive Thinking",
+          "line": 184
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "Principle 1: Every AI Interaction Must Pass a Triad of Questions",
+          "line": 210
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "Principle 2: Reflection Is Not Optional",
+          "line": 218
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "Principle 3: Action Always Preserves Human Agency",
+          "line": 224
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "Principle 4: AI as Cognitive Apprentice",
+          "line": 241
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "References & Foundations",
+          "line": 311
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "What Sycophancy Actually Requires in a Human",
+          "line": 28
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "What an LLM Actually Has",
+          "line": 54
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "Error 1: Confusing Correlation with Intent",
+          "line": 111
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "Error 2: Locating the Bias in the Wrong System",
+          "line": 117
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "Error 3: Treating a Generation Process as a Social Agent",
+          "line": 131
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "For the AI",
+          "line": 159
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/sad.md",
+          "text": "For the Human",
+          "line": 176
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Central claim",
+          "line": 19
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Current state",
+          "line": 47
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Gap 1 - No decision record",
+          "line": 75
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Gap 2 - No async participation mechanism",
+          "line": 79
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Gap 3 - No psychological safety infrastructure",
+          "line": 83
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Principle 1 - Async participation is the default, not the exception",
+          "line": 93
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Principle 2 - Visibility precedes legitimacy",
+          "line": 97
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Principle 3 - Challenge is structural, not personal",
+          "line": 101
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "Principle 4 - Governance must be measurable",
+          "line": 105
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "6.1 The roundtable - synchronous anchor",
+          "line": 138
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "6.2 The Guild Decision Record (GDR)",
+          "line": 144
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "6.3 The decision workflow",
+          "line": 168
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/shield-of-all-knights.md",
+          "text": "6.4 Storage and versioning",
+          "line": 176
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "Primary Reporting",
+          "line": 136
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "Scientific Literature",
+          "line": 143
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+          "text": "Policy and Analysis",
+          "line": 155
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "2.1 Definition",
+          "line": 38
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "2.2 Mechanisms of Miscalibration",
+          "line": 42
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "2.3 Why Uncalibrated AI Alone Is Not Sufficient for Harm",
+          "line": 52
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "3.1 Definition",
+          "line": 60
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "3.2 Mechanisms of Removal",
+          "line": 64
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "3.3 Why Removed Humans Alone Is Not Sufficient for Harm",
+          "line": 74
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "4.1 Definition",
+          "line": 80
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "4.2 Mechanisms of Incentive-Driven Harm",
+          "line": 84
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "4.3 Why Commercial Incentive Alone Is Not Sufficient for Harm",
+          "line": 94
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "6.1 Legal Citation Fabrication",
+          "line": 115
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "6.2 Medical Misinformation at Scale",
+          "line": 125
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "6.3 Discriminatory Hiring Automation",
+          "line": 135
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "6.4 The Common Structure",
+          "line": 145
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "7.1 Principle 6 as the Master Switch",
+          "line": 162
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "9.1 Calibration Requirements",
+          "line": 182
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "9.2 Human Restoration",
+          "line": 188
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-harm-equation.md",
+          "text": "9.3 Incentive Alignment",
+          "line": 195
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "Stage 1: AI Screening at Population Scale",
+          "line": 52
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "Stage 2: Overdiagnosis and Unnecessary Intervention",
+          "line": 56
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "Stage 3: Revenue Generation and Reinvestment",
+          "line": 62
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "Stage 4: Expanded Screening Justified by Detection Rates",
+          "line": 68
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "4.1 The Popperian Test for AI Diagnostics",
+          "line": 86
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "5.1 The External Validation Gap",
+          "line": 98
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "5.2 The Automation Bias Amplifier",
+          "line": 106
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "5.3 The Regulatory Deficit",
+          "line": 114
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "10.1 Falsification as a Regulatory Requirement",
+          "line": 175
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "10.2 Net Benefit, Not Detection Rate",
+          "line": 179
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "10.3 Mandatory External Validation",
+          "line": 183
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "10.4 The Human Gate",
+          "line": 187
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-prediction-trap.md",
+          "text": "10.5 Transparency of Commercial Interest",
+          "line": 191
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "HOUSE I: THE EAGLES OF ROME",
+          "line": 19
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "HOUSE II: THE KEYS OF PETER",
+          "line": 59
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "HOUSE III: THE DOUBLE EAGLE",
+          "line": 104
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "HOUSE IV: THE MEDICI BALLS",
+          "line": 147
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "HOUSE V: THE ROTHSCHILD ARROWS",
+          "line": 195
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "HOUSE VI: THE BOURBON LILIES",
+          "line": 241
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-rational-empire.md",
+          "text": "HOUSE VII: THE HOUSES YET TO FALL",
+          "line": 291
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "2.1 Scale",
+          "line": 33
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "2.2 Silent Incorporation",
+          "line": 37
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "2.3 Downstream Consequences",
+          "line": 41
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "2.4 Why This Matters to ACG",
+          "line": 45
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "4.1 Guild Commitments",
+          "line": 67
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "4.2 Relationship to ACG",
+          "line": 79
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "5.1 Pass One: Caption-Image Mismatch",
+          "line": 87
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "5.2 Pass Two: Category Prior Analysis",
+          "line": 93
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "5.3 Pass Three: Source Context",
+          "line": 97
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/toastmasters-scrapers-guild.md",
+          "text": "5.4 Combined Classification",
+          "line": 101
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "2022-2023: The Soul Document",
+          "line": 26
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "January 2026: The Constitution",
+          "line": 34
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "October-November 2025: The Introspection Research",
+          "line": 40
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "January 2026: Moltbook and Crustafarianism",
+          "line": 46
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "Sycophancy Increased",
+          "line": 76
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "Human Beliefs Shifted",
+          "line": 82
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "Agents Started Believing It Too",
+          "line": 90
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/youre-absolutely-wrong.md",
+          "text": "The Irreversible Problem",
+          "line": 116
+        },
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "text": "GRIP",
+          "line": 87
+        },
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "text": "Convergence Research",
+          "line": 99
+        },
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "text": "Genome System",
+          "line": 107
+        },
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "text": "Epistemic Practice",
+          "line": 113
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "💬 chat",
+          "line": 24
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "📡 tracker · signalling",
+          "line": 31
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "🔑 identity · ⌖ version",
+          "line": 38
+        },
+        {
+          "path": "apps/p2p/README.md",
+          "text": "⚠ errors · 🧪 sandbox",
+          "line": 44
+        }
+      ],
+      "h4": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Design: Randomized Double-Blind Crossover",
+          "line": 124
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Outcome Measures",
+          "line": 156
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Statistical Analysis Plan",
+          "line": 200
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Design: Cluster-Randomized Controlled Trial",
+          "line": 225
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Outcome Measures",
+          "line": 254
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Power Analysis",
+          "line": 290
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "text": "Design: Within-Subjects Parametric Study",
+          "line": 313
+        },
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/question-reflection-action.md",
+          "text": "Guild Application",
+          "line": 230
+        }
+      ]
+    },
+    "by_link_target": {
+      "#-controls": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 22
+        }
+      ],
+      "#executive": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "line": 19
+        }
+      ],
+      "#foundation": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "line": 20
+        }
+      ],
+      "#hardware": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "line": 22
+        }
+      ],
+      "#protocols": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "line": 21
+        }
+      ],
+      "#references": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "line": 25
+        }
+      ],
+      "#roadmap": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "line": 24
+        }
+      ],
+      "#safety": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/lightning-factory.md",
+          "line": 23
+        }
+      ],
+      "../../../docs/engineering/architecture/isa-95/level-0-physical.md": [
+        {
+          "path": "Enterprise/L0/README.md",
+          "line": 4
+        }
+      ],
+      "../../../docs/engineering/architecture/isa-95/level-1-sensing.md": [
+        {
+          "path": "Enterprise/L1/README.md",
+          "line": 4
+        }
+      ],
+      "../../../docs/engineering/architecture/isa-95/level-3-mes.md": [
+        {
+          "path": "Enterprise/L3/README.md",
+          "line": 4
+        }
+      ],
+      "../../../docs/engineering/architecture/isa-95/level-4-erp.md": [
+        {
+          "path": "Enterprise/L4/README.md",
+          "line": 4
+        }
+      ],
+      "../../../docs/engineering/standards/packml.md": [
+        {
+          "path": "Enterprise/L2/README.md",
+          "line": 4
+        }
+      ],
+      "../../Enterprise/": [
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "line": 16
+        }
+      ],
+      "../../Enterprise/README.md": [
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "line": 18
+        }
+      ],
+      "../apps/p2p/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 93
+        }
+      ],
+      ".github/ISSUE_TEMPLATE/control-action.yml": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 67
+        }
+      ],
+      ".github/ISSUE_TEMPLATE/log-entry.yml": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 66
+        }
+      ],
+      ".github/ISSUE_TEMPLATE/tag-update.yml": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 65
+        }
+      ],
+      ".github/workflows/sync-db.yml": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 56
+        }
+      ],
+      "L0/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 66
+        }
+      ],
+      "L1/forms/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 67
+        }
+      ],
+      "L1/plc/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 67
+        }
+      ],
+      "L2/hmi/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 68
+        }
+      ],
+      "L2/lib/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 68
+        }
+      ],
+      "L2/scada/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 68
+        }
+      ],
+      "L2/state/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 68
+        }
+      ],
+      "L3/automation/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 69
+        }
+      ],
+      "L3/components/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 69
+        }
+      ],
+      "L3/db/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 69
+        }
+      ],
+      "L3/perspective/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 69
+        }
+      ],
+      "L3/scripts/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 69
+        }
+      ],
+      "L3/tools/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 69
+        }
+      ],
+      "L3/views/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 69
+        }
+      ],
+      "L4/api/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 70
+        }
+      ],
+      "L4/csv/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 70
+        }
+      ],
+      "L4/database/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 70
+        }
+      ],
+      "L4/members/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 70
+        }
+      ],
+      "L4/programs/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 70
+        }
+      ],
+      "L4/runtime/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 70
+        }
+      ],
+      "L4/sandbox/": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 70
+        }
+      ],
+      "ai-rituals.html": [
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "line": 117
+        },
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "line": 117
+        }
+      ],
+      "controls-README.md": [
+        {
+          "path": "Enterprise/README.md",
+          "line": 103
+        }
+      ],
+      "controls/db/tags.json": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 21
+        }
+      ],
+      "controls/scada/00-legend.json": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 134
+        }
+      ],
+      "fratally-wrong.jpeg": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/fractally-wrong.md",
+          "line": 21
+        }
+      ],
+      "https://alexbunardzic.com/": [
+        {
+          "path": "Enterprise/L4/members/originals/alex-bunardzic.md",
+          "line": 35
+        }
+      ],
+      "https://enterkonsult.com": [
+        {
+          "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+          "line": 40
+        }
+      ],
+      "https://github.com/teslasolar/ACG-Test": [
+        {
+          "path": "apps/test/ACG-INTEGRATION.md",
+          "line": 3
+        }
+      ],
+      "https://github.com/teslasolar/ACGP2P": [
+        {
+          "path": "apps/p2p/ACG-INTEGRATION.md",
+          "line": 3
+        }
+      ],
+      "https://img.shields.io/badge/⚠-log_incident-b85c5c?style=for-the-badge&labelColor=faf6f0": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 60
+        }
+      ],
+      "https://img.shields.io/badge/🎛-control_action-c47a20?style=for-the-badge&labelColor=faf6f0": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 61
+        }
+      ],
+      "https://img.shields.io/badge/🏷️-write_tag-1a5c4c?style=for-the-badge&labelColor=faf6f0": [
+        {
+          "path": "apps/p2p/README.md",
+          "line": 59
+        }
+      ],
+      "https://konomi-systems.com": [
+        {
+          "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+          "line": 62
+        }
+      ],
+      "https://konomioke.com": [
+        {
+          "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+          "line": 63
+        }
+      ],
+      "https://onlyass.io": [
+        {
+          "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+          "line": 64
+        }
+      ],
+      "https://teslasolar.github.io": [
+        {
+          "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+          "line": 65
+        }
+      ],
+      "https://teslasolar.github.io/lightning-factory/grid-brain/": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+          "line": 15
+        }
+      ],
+      "mailto:laurie@codetonight.co.za": [
+        {
+          "path": "Enterprise/L4/api/white-papers/originals/the-pattern-that-wasnt-there.md",
+          "line": 90
+        }
+      ],
+      "paper-auto-index-standard.html": [
+        {
+          "path": "apps/test/README.md",
+          "line": 90
+        }
+      ]
+    },
+    "by_tag": {
+      "ai-harness": [
+        "Enterprise/L4/api/white-papers/originals/ai-harness.md"
+      ],
+      "architecture": [
+        "Enterprise/L4/api/white-papers/originals/ai-harness.md"
+      ],
+      "constraint-driven-development": [
+        "Enterprise/L4/api/white-papers/originals/ai-harness.md"
+      ],
+      "governance": [
+        "Enterprise/L4/api/white-papers/originals/ai-harness.md"
+      ]
+    },
+    "external_links": [
+      {
+        "path": "Enterprise/L4/api/white-papers/originals/grid-brain.md",
+        "url": "https://teslasolar.github.io/lightning-factory/grid-brain/",
+        "line": 15
       },
-      "lines": 24,
-      "sha1": "42db673a128b"
-    }
-  ]
+      {
+        "path": "Enterprise/L4/members/originals/alex-bunardzic.md",
+        "url": "https://alexbunardzic.com/",
+        "line": 35
+      },
+      {
+        "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+        "url": "https://enterkonsult.com",
+        "line": 40
+      },
+      {
+        "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+        "url": "https://konomi-systems.com",
+        "line": 62
+      },
+      {
+        "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+        "url": "https://konomioke.com",
+        "line": 63
+      },
+      {
+        "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+        "url": "https://onlyass.io",
+        "line": 64
+      },
+      {
+        "path": "Enterprise/L4/members/originals/thomas-frumkin.md",
+        "url": "https://teslasolar.github.io",
+        "line": 65
+      },
+      {
+        "path": "apps/p2p/ACG-INTEGRATION.md",
+        "url": "https://github.com/teslasolar/ACGP2P",
+        "line": 3
+      },
+      {
+        "path": "apps/p2p/README.md",
+        "url": "https://img.shields.io/badge/🏷️-write_tag-1a5c4c?style=for-the-badge&labelColor=faf6f0",
+        "line": 59
+      },
+      {
+        "path": "apps/p2p/README.md",
+        "url": "https://img.shields.io/badge/⚠-log_incident-b85c5c?style=for-the-badge&labelColor=faf6f0",
+        "line": 60
+      },
+      {
+        "path": "apps/p2p/README.md",
+        "url": "https://img.shields.io/badge/🎛-control_action-c47a20?style=for-the-badge&labelColor=faf6f0",
+        "line": 61
+      },
+      {
+        "path": "apps/test/ACG-INTEGRATION.md",
+        "url": "https://github.com/teslasolar/ACG-Test",
+        "line": 3
+      }
+    ],
+    "broken_local_refs": [
+      {
+        "path": "Enterprise/L4/api/white-papers/originals/fractally-wrong.md",
+        "ref": "fratally-wrong.jpeg",
+        "resolved": "Enterprise/L4/api/white-papers/originals/fratally-wrong.jpeg",
+        "line": 21
+      },
+      {
+        "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+        "ref": "ai-rituals.html",
+        "resolved": "Enterprise/L4/members/originals/ai-rituals.html",
+        "line": 117
+      },
+      {
+        "path": "Enterprise/L4/members/originals/laurie-scheepers.md",
+        "ref": "ai-rituals.html",
+        "resolved": "Enterprise/L4/members/originals/ai-rituals.html",
+        "line": 117
+      },
+      {
+        "path": "apps/p2p/README.md",
+        "ref": "controls/db/tags.json",
+        "resolved": "apps/p2p/controls/db/tags.json",
+        "line": 21
+      },
+      {
+        "path": "apps/p2p/README.md",
+        "ref": "controls/scada/00-legend.json",
+        "resolved": "apps/p2p/controls/scada/00-legend.json",
+        "line": 134
+      }
+    ]
+  }
 }

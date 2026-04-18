@@ -1,18 +1,18 @@
 {
-  "dir": "Enterprise/L4/members/udts/instances",
+  "dir": "Enterprise/L3/components/udts/instances/molecules",
   "scope": "local",
   "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
-  "doc_count": 8,
-  "total_bytes": 34422,
+  "doc_count": 7,
+  "total_bytes": 9165,
   "by_ext": {
-    "json": 8
+    "json": 7
   },
   "docs": [
     {
-      "path": "alex-bunardzic.json",
+      "path": "article-nav.json",
       "ext": "json",
-      "size": 2069,
+      "size": 848,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -23,13 +23,13 @@
         ],
         "key_count": 3
       },
-      "lines": 28,
-      "sha1": "3c73a0393847"
+      "lines": 29,
+      "sha1": "2ba33f80a693"
     },
     {
-      "path": "jona-heidsick.json",
+      "path": "badge-row.json",
       "ext": "json",
-      "size": 2866,
+      "size": 753,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -40,13 +40,13 @@
         ],
         "key_count": 3
       },
-      "lines": 32,
-      "sha1": "ec5daee1f341"
+      "lines": 31,
+      "sha1": "40d2157558f4"
     },
     {
-      "path": "kelly-hohman.json",
+      "path": "card-grid.json",
       "ext": "json",
-      "size": 3979,
+      "size": 1457,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -57,13 +57,13 @@
         ],
         "key_count": 3
       },
-      "lines": 28,
-      "sha1": "26e337ddfe78"
+      "lines": 54,
+      "sha1": "5ed75f5f084d"
     },
     {
-      "path": "laurie-scheepers.json",
+      "path": "entry-card.json",
       "ext": "json",
-      "size": 8707,
+      "size": 985,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -74,13 +74,13 @@
         ],
         "key_count": 3
       },
-      "lines": 33,
-      "sha1": "9b024f538399"
+      "lines": 37,
+      "sha1": "87c5e19f1ebf"
     },
     {
-      "path": "matt-burch.json",
+      "path": "future-slot.json",
       "ext": "json",
-      "size": 4657,
+      "size": 1097,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -91,13 +91,13 @@
         ],
         "key_count": 3
       },
-      "lines": 30,
-      "sha1": "1fcd5341d8f0"
+      "lines": 43,
+      "sha1": "43b5bd760b6a"
     },
     {
-      "path": "nicolas-rosado.json",
+      "path": "member-card.json",
       "ext": "json",
-      "size": 4477,
+      "size": 2085,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -108,13 +108,13 @@
         ],
         "key_count": 3
       },
-      "lines": 32,
-      "sha1": "3bed4b6240b8"
+      "lines": 63,
+      "sha1": "3c1c384cc0bf"
     },
     {
-      "path": "thomas-frumkin.json",
+      "path": "paper-card.json",
       "ext": "json",
-      "size": 4825,
+      "size": 1940,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -125,25 +125,8 @@
         ],
         "key_count": 3
       },
-      "lines": 28,
-      "sha1": "4bbe794f2e44"
-    },
-    {
-      "path": "tsvetan.json",
-      "ext": "json",
-      "size": 2842,
-      "parser": "json",
-      "fields": {
-        "shape": "dict",
-        "top_level_keys": [
-          "parameters",
-          "tags",
-          "udtType"
-        ],
-        "key_count": 3
-      },
-      "lines": 28,
-      "sha1": "e2504e2ba58a"
+      "lines": 64,
+      "sha1": "9f22f9ce7101"
     }
   ]
 }

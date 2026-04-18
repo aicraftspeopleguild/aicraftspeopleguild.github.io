@@ -1,12 +1,12 @@
 {
-  "dir": "guild/Enterprise/L2/state",
+  "dir": "Enterprise/L2/state",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
-  "doc_count": 8,
-  "total_bytes": 11159,
+  "doc_count": 9,
+  "total_bytes": 11242,
   "by_ext": {
-    "json": 8
+    "json": 9
   },
   "docs": [
     {
@@ -24,7 +24,7 @@
         "key_count": 3
       },
       "lines": 58,
-      "sha1": "7bbd363449f3"
+      "sha1": "82bf81e5ab66"
     },
     {
       "path": "api--build-csv-catalog_py.state.json",
@@ -144,6 +144,22 @@
       },
       "lines": 54,
       "sha1": "8cce5fbfc5e8"
+    },
+    {
+      "path": "sm-last.json",
+      "ext": "json",
+      "size": 83,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "git:state",
+          "git:state:last_tick_at"
+        ],
+        "key_count": 2
+      },
+      "lines": 4,
+      "sha1": "c54deb9c612d"
     }
   ]
 }

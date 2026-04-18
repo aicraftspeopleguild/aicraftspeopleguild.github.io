@@ -1,7 +1,7 @@
 {
-  "dir": "guild/Enterprise/L4/api/white-papers",
+  "dir": "Enterprise/L4/api/white-papers",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 2,
   "total_bytes": 21557,

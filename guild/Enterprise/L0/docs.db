@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise/L0",
+  "dir": "Enterprise/L0",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 1114,
+  "total_bytes": 1125,
   "by_ext": {
     "md": 1
   },
@@ -12,7 +12,7 @@
     {
       "path": "README.md",
       "ext": "md",
-      "size": 1114,
+      "size": 1125,
       "parser": "markdown",
       "fields": {
         "frontmatter": {},
@@ -36,17 +36,17 @@
         "links": [
           {
             "text": "ISA-95 L0 spec",
-            "target": "../../docs/engineering/architecture/isa-95/level-0-physical.md",
+            "target": "../../../docs/engineering/architecture/isa-95/level-0-physical.md",
             "line": 4
           }
         ],
         "images": [],
         "code_langs": {},
-        "word_count": 137,
+        "word_count": 139,
         "h1": "Level 0 — Physical Process"
       },
       "lines": 25,
-      "sha1": "96e72684dce0"
+      "sha1": "9e5b440475cc"
     }
   ]
 }

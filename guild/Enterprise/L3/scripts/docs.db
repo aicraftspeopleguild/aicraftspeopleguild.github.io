@@ -1,10 +1,10 @@
 {
-  "dir": "guild/web/scripts",
+  "dir": "Enterprise/L3/scripts",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 2,
-  "total_bytes": 6320,
+  "total_bytes": 6350,
   "by_ext": {
     "json": 1,
     "md": 1
@@ -32,7 +32,7 @@
     {
       "path": "README.md",
       "ext": "md",
-      "size": 1387,
+      "size": 1417,
       "parser": "markdown",
       "fields": {
         "frontmatter": {},
@@ -54,11 +54,11 @@
           "bash": 1,
           "(none)": 1
         },
-        "word_count": 157,
+        "word_count": 160,
         "h1": "ACG Build Scripts"
       },
       "lines": 34,
-      "sha1": "082c520df0f6"
+      "sha1": "391883491a17"
     }
   ]
 }

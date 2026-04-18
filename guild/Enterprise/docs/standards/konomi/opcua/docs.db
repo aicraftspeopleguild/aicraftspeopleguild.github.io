@@ -1,7 +1,7 @@
 {
-  "dir": "guild/Enterprise/docs/standards/konomi/opcua",
+  "dir": "Enterprise/docs/standards/konomi/opcua",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 9,
   "total_bytes": 3207,

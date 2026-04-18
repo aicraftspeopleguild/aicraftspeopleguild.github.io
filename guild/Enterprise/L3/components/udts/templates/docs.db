@@ -1,14 +1,36 @@
 {
-  "dir": "guild/web/components/udts/templates",
+  "dir": "Enterprise/L3/components/udts/templates",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
-  "doc_count": 6,
-  "total_bytes": 11791,
+  "doc_count": 12,
+  "total_bytes": 20318,
   "by_ext": {
-    "json": 6
+    "json": 12
   },
   "docs": [
+    {
+      "path": "atom.udt.json",
+      "ext": "json",
+      "size": 1306,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "$schema",
+          "constraints",
+          "description",
+          "extends",
+          "parameters",
+          "tags",
+          "udtType",
+          "version"
+        ],
+        "key_count": 8
+      },
+      "lines": 28,
+      "sha1": "3441e4afdb93"
+    },
     {
       "path": "component.udt.json",
       "ext": "json",
@@ -30,6 +52,25 @@
       "sha1": "b0b059098d2f"
     },
     {
+      "path": "data-binding.udt.json",
+      "ext": "json",
+      "size": 1100,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "$schema",
+          "description",
+          "parameters",
+          "udtType",
+          "version"
+        ],
+        "key_count": 5
+      },
+      "lines": 14,
+      "sha1": "9d6a0b0c299d"
+    },
+    {
       "path": "fs-path.udt.json",
       "ext": "json",
       "size": 3144,
@@ -48,6 +89,50 @@
       },
       "lines": 29,
       "sha1": "03a537754782"
+    },
+    {
+      "path": "molecule.udt.json",
+      "ext": "json",
+      "size": 1544,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "$schema",
+          "constraints",
+          "description",
+          "extends",
+          "parameters",
+          "tags",
+          "udtType",
+          "version"
+        ],
+        "key_count": 8
+      },
+      "lines": 30,
+      "sha1": "acede4aa6b53"
+    },
+    {
+      "path": "organism.udt.json",
+      "ext": "json",
+      "size": 1567,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "$schema",
+          "constraints",
+          "description",
+          "extends",
+          "parameters",
+          "tags",
+          "udtType",
+          "version"
+        ],
+        "key_count": 8
+      },
+      "lines": 31,
+      "sha1": "35295ceb174b"
     },
     {
       "path": "page.udt.json",
@@ -107,6 +192,28 @@
       "sha1": "32fff4156453"
     },
     {
+      "path": "template.udt.json",
+      "ext": "json",
+      "size": 1367,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "$schema",
+          "constraints",
+          "description",
+          "extends",
+          "parameters",
+          "tags",
+          "udtType",
+          "version"
+        ],
+        "key_count": 8
+      },
+      "lines": 28,
+      "sha1": "fb680b711d10"
+    },
+    {
       "path": "view.udt.json",
       "ext": "json",
       "size": 750,
@@ -125,6 +232,28 @@
       },
       "lines": 17,
       "sha1": "f83696348fa1"
+    },
+    {
+      "path": "widget.udt.json",
+      "ext": "json",
+      "size": 1643,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "$schema",
+          "constraints",
+          "description",
+          "extends",
+          "parameters",
+          "tags",
+          "udtType",
+          "version"
+        ],
+        "key_count": 8
+      },
+      "lines": 30,
+      "sha1": "820a4ceab1ee"
     }
   ]
 }

@@ -30,39 +30,54 @@ CREATE TABLE manifest (
 CREATE TABLE tags (
     name  TEXT NOT NULL,
     file  TEXT NOT NULL,
-    PRIMARY KEY (name, file)
+    dir   TEXT,
+    PRIMARY KEY (name, file, dir)
 );
 CREATE INDEX idx_tags_name ON tags(name);
+CREATE INDEX idx_tags_dir  ON tags(dir);
 CREATE TABLE udt_types (
-    name  TEXT PRIMARY KEY,
-    count INTEGER NOT NULL
+    name  TEXT NOT NULL,
+    dir   TEXT,
+    count INTEGER NOT NULL,
+    PRIMARY KEY (name, dir)
 );
+CREATE INDEX idx_udt_types_dir ON udt_types(dir);
 CREATE TABLE sections (
-    name  TEXT PRIMARY KEY,
-    count INTEGER NOT NULL
+    name  TEXT NOT NULL,
+    dir   TEXT,
+    count INTEGER NOT NULL,
+    PRIMARY KEY (name, dir)
 );
 CREATE TABLE kinds (
-    ext   TEXT PRIMARY KEY,
-    count INTEGER NOT NULL
+    ext   TEXT NOT NULL,
+    dir   TEXT,
+    count INTEGER NOT NULL,
+    PRIMARY KEY (ext, dir)
 );
 CREATE TABLE refs (
     bucket TEXT NOT NULL,
     name   TEXT NOT NULL,
+    dir    TEXT,
     count  INTEGER NOT NULL,
-    PRIMARY KEY (bucket, name)
+    PRIMARY KEY (bucket, name, dir)
 );
 CREATE INDEX idx_refs_bucket ON refs(bucket);
 CREATE TABLE ids (
-    id    TEXT PRIMARY KEY,
-    count INTEGER NOT NULL
+    id    TEXT NOT NULL,
+    dir   TEXT,
+    count INTEGER NOT NULL,
+    PRIMARY KEY (id, dir)
 );
 CREATE TABLE udts (
-    id       TEXT PRIMARY KEY,
+    id       TEXT NOT NULL,
+    dir      TEXT,
     file     TEXT,
     udt_type TEXT,
-    body     TEXT
+    body     TEXT,
+    PRIMARY KEY (id, dir)
 );
 CREATE INDEX idx_udts_type ON udts(udt_type);
+CREATE INDEX idx_udts_dir  ON udts(dir);
 """
 
 GLOBAL_EXTRA = """
@@ -120,41 +135,52 @@ def _manifest_rows(d: dict) -> list[tuple[str, str]]:
     return [(k, str(d[k])) for k in keys if k in d]
 
 
-def _write_common(con: sqlite3.Connection, d: dict) -> None:
-    con.executemany("INSERT INTO manifest(key,value) VALUES (?,?)", _manifest_rows(d))
+def _s(v):
+    if v is None: return None
+    return v if isinstance(v, str) else json.dumps(v, ensure_ascii=False, sort_keys=True)
 
+
+def _ingest_one(con: sqlite3.Connection, d: dict, dir_rel: str) -> None:
+    """Insert one dir's slice (tags/udt_types/sections/kinds/refs/ids/udts)
+    into the DB, stamped with dir_rel. Used by write_local (dir='.') and
+    write_global (dir=each local dir)."""
     for tag_name, info in (d.get("tags") or {}).items():
         files = info.get("files") if isinstance(info, dict) else []
         for f in files or []:
-            con.execute("INSERT OR IGNORE INTO tags(name,file) VALUES (?,?)", (tag_name, f))
-
+            con.execute("INSERT OR IGNORE INTO tags(name,file,dir) VALUES (?,?,?)",
+                        (tag_name, f, dir_rel))
     for name, cnt in (d.get("udt_types") or {}).items():
-        con.execute("INSERT OR REPLACE INTO udt_types(name,count) VALUES (?,?)", (name, int(cnt)))
+        con.execute("INSERT OR REPLACE INTO udt_types(name,dir,count) VALUES (?,?,?)",
+                    (name, dir_rel, int(cnt)))
     for name, cnt in (d.get("sections") or {}).items():
-        con.execute("INSERT OR REPLACE INTO sections(name,count) VALUES (?,?)", (name, int(cnt)))
+        con.execute("INSERT OR REPLACE INTO sections(name,dir,count) VALUES (?,?,?)",
+                    (name, dir_rel, int(cnt)))
     for ext, cnt in (d.get("kinds") or {}).items():
-        con.execute("INSERT OR REPLACE INTO kinds(ext,count) VALUES (?,?)", (ext, int(cnt)))
+        con.execute("INSERT OR REPLACE INTO kinds(ext,dir,count) VALUES (?,?,?)",
+                    (ext, dir_rel, int(cnt)))
     for bucket, inner in (d.get("refs") or {}).items():
         for name, cnt in (inner or {}).items():
-            con.execute("INSERT OR REPLACE INTO refs(bucket,name,count) VALUES (?,?,?)",
-                        (bucket, name, int(cnt)))
+            con.execute("INSERT OR REPLACE INTO refs(bucket,name,dir,count) VALUES (?,?,?,?)",
+                        (bucket, name, dir_rel, int(cnt)))
     for uid, cnt in (d.get("ids") or {}).items():
-        con.execute("INSERT OR REPLACE INTO ids(id,count) VALUES (?,?)", (uid, int(cnt)))
-
-    def _s(v):
-        if v is None: return None
-        return v if isinstance(v, str) else json.dumps(v, ensure_ascii=False, sort_keys=True)
-
+        con.execute("INSERT OR REPLACE INTO ids(id,dir,count) VALUES (?,?,?)",
+                    (uid, dir_rel, int(cnt)))
     for u in d.get("udts") or []:
         if not isinstance(u, dict): continue
         body = u.get("body") or u
         con.execute(
-            "INSERT OR REPLACE INTO udts(id,file,udt_type,body) VALUES (?,?,?,?)",
+            "INSERT OR REPLACE INTO udts(id,dir,file,udt_type,body) VALUES (?,?,?,?,?)",
             (_s(u.get("id") or u.get("file")),
+             dir_rel,
              _s(u.get("file")),
              _s(u.get("udtType")),
              json.dumps(body, ensure_ascii=False, sort_keys=True)),
         )
+
+
+def _write_common(con: sqlite3.Connection, d: dict) -> None:
+    con.executemany("INSERT INTO manifest(key,value) VALUES (?,?)", _manifest_rows(d))
+    _ingest_one(con, d, d.get("dir") or ".")
 
 
 def _write_global_extra(con: sqlite3.Connection, d: dict) -> None:
@@ -213,5 +239,20 @@ def write_global(db_path: str | Path, d: dict) -> None:
     con = _fresh(Path(db_path), GLOBAL_EXTRA)
     _write_common(con, d)
     _write_global_extra(con, d)
+    con.commit()
+    con.close()
+
+
+def write_consolidated(db_path: str | Path, global_d: dict, local_dbs: dict) -> None:
+    """Root tag.db containing EVERY local dir's full content stamped with dir.
+    Replaces the need for per-directory tag.db files."""
+    con = _fresh(Path(db_path), GLOBAL_EXTRA)
+    # Manifest only from global
+    con.executemany("INSERT INTO manifest(key,value) VALUES (?,?)", _manifest_rows(global_d))
+    # Graph tables only populated from the global rollup
+    _write_global_extra(con, global_d)
+    # Ingest each local dir's slice, preserving dir attribution
+    for dir_rel, ld in local_dbs.items():
+        _ingest_one(con, ld, dir_rel)
     con.commit()
     con.close()

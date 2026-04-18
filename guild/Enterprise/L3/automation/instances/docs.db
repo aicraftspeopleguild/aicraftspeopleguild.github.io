@@ -1,29 +1,30 @@
 {
-  "dir": "Enterprise/L3/scripts/tags",
+  "dir": "Enterprise/L3/automation/instances",
   "scope": "local",
   "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 4363,
+  "total_bytes": 787,
   "by_ext": {
     "json": 1
   },
   "docs": [
     {
-      "path": "index.json",
+      "path": "refresh-api-on-commit.json",
       "ext": "json",
-      "size": 4363,
+      "size": 787,
       "parser": "json",
       "fields": {
         "shape": "dict",
         "top_level_keys": [
-          "generated_at",
-          "tags"
+          "parameters",
+          "tags",
+          "udtType"
         ],
-        "key_count": 2
+        "key_count": 3
       },
-      "lines": 168,
-      "sha1": "76bdb7acb9e2"
+      "lines": 26,
+      "sha1": "36713e508725"
     }
   ]
 }

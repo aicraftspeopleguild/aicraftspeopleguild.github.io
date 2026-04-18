@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise/L4/api",
+  "dir": "Enterprise/L4/api",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 3,
-  "total_bytes": 16239,
+  "total_bytes": 3662,
   "by_ext": {
     "json": 3
   },
@@ -12,7 +12,7 @@
     {
       "path": "health.json",
       "ext": "json",
-      "size": 188,
+      "size": 187,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -26,7 +26,7 @@
         "key_count": 5
       },
       "lines": 7,
-      "sha1": "51c6e16c22ec"
+      "sha1": "923f66930840"
     },
     {
       "path": "members.json",
@@ -43,14 +43,14 @@
     {
       "path": "papers.json",
       "ext": "json",
-      "size": 12578,
+      "size": 2,
       "parser": "json",
       "fields": {
         "shape": "list",
-        "length": 24
+        "length": 0
       },
-      "lines": 319,
-      "sha1": "5c8ba2e1e9a9"
+      "lines": 1,
+      "sha1": "97d170e1550e"
     }
   ]
 }

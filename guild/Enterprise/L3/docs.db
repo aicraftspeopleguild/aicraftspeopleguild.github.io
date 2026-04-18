@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise/L3",
+  "dir": "Enterprise/L3",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 1721,
+  "total_bytes": 1709,
   "by_ext": {
     "md": 1
   },
@@ -12,7 +12,7 @@
     {
       "path": "README.md",
       "ext": "md",
-      "size": 1721,
+      "size": 1709,
       "parser": "markdown",
       "fields": {
         "frontmatter": {},
@@ -36,17 +36,17 @@
         "links": [
           {
             "text": "ISA-95 L3 spec",
-            "target": "../../docs/engineering/architecture/isa-95/level-3-mes.md",
+            "target": "../../../docs/engineering/architecture/isa-95/level-3-mes.md",
             "line": 4
           }
         ],
         "images": [],
         "code_langs": {},
-        "word_count": 173,
+        "word_count": 156,
         "h1": "Level 3 — Manufacturing Operations (MES)"
       },
       "lines": 29,
-      "sha1": "e523bab1f162"
+      "sha1": "c501c648a512"
     }
   ]
 }

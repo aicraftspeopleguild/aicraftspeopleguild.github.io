@@ -1,29 +1,30 @@
 {
-  "dir": "Enterprise/L3/scripts/tags",
+  "dir": "Enterprise/L3/components/udts/instances/templates",
   "scope": "local",
   "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 4363,
+  "total_bytes": 3145,
   "by_ext": {
     "json": 1
   },
   "docs": [
     {
-      "path": "index.json",
+      "path": "page-shell.json",
       "ext": "json",
-      "size": 4363,
+      "size": 3145,
       "parser": "json",
       "fields": {
         "shape": "dict",
         "top_level_keys": [
-          "generated_at",
-          "tags"
+          "parameters",
+          "tags",
+          "udtType"
         ],
-        "key_count": 2
+        "key_count": 3
       },
-      "lines": 168,
-      "sha1": "76bdb7acb9e2"
+      "lines": 120,
+      "sha1": "66b298944d9f"
     }
   ]
 }

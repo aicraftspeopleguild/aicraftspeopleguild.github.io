@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise/L4",
+  "dir": "Enterprise/L4",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 1693,
+  "total_bytes": 1704,
   "by_ext": {
     "md": 1
   },
@@ -12,7 +12,7 @@
     {
       "path": "README.md",
       "ext": "md",
-      "size": 1693,
+      "size": 1704,
       "parser": "markdown",
       "fields": {
         "frontmatter": {},
@@ -41,7 +41,7 @@
         "links": [
           {
             "text": "ISA-95 L4 spec",
-            "target": "../../docs/engineering/architecture/isa-95/level-4-erp.md",
+            "target": "../../../docs/engineering/architecture/isa-95/level-4-erp.md",
             "line": 4
           }
         ],
@@ -49,11 +49,11 @@
         "code_langs": {
           "(none)": 1
         },
-        "word_count": 174,
+        "word_count": 170,
         "h1": "Level 4 — Enterprise (ERP)"
       },
       "lines": 39,
-      "sha1": "5aab2d2534c6"
+      "sha1": "62fdfa565ba9"
     }
   ]
 }

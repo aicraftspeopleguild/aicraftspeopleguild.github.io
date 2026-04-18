@@ -1,7 +1,7 @@
 {
-  "dir": "guild/Enterprise/L1/plc/git/equipment",
+  "dir": "Enterprise/L1/plc/git/equipment",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 7,
   "total_bytes": 4282,

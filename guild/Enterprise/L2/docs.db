@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise/L2",
+  "dir": "Enterprise/L2",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 1003,
+  "total_bytes": 1006,
   "by_ext": {
     "md": 1
   },
@@ -12,7 +12,7 @@
     {
       "path": "README.md",
       "ext": "md",
-      "size": 1003,
+      "size": 1006,
       "parser": "markdown",
       "fields": {
         "frontmatter": {},
@@ -36,17 +36,17 @@
         "links": [
           {
             "text": "ACG-STD-PACKML-2026",
-            "target": "../../docs/engineering/standards/packml.md",
+            "target": "../../../docs/engineering/standards/packml.md",
             "line": 4
           }
         ],
         "images": [],
         "code_langs": {},
-        "word_count": 101,
+        "word_count": 96,
         "h1": "Level 2 — Supervisory / SCADA"
       },
       "lines": 21,
-      "sha1": "2d32f93fc99b"
+      "sha1": "efe4bc6e059c"
     }
   ]
 }

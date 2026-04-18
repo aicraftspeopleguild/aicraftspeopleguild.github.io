@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise",
+  "dir": "Enterprise",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 3,
-  "total_bytes": 14545,
+  "total_bytes": 15500,
   "by_ext": {
     "html": 1,
     "md": 2
@@ -52,7 +52,7 @@
     {
       "path": "README.md",
       "ext": "md",
-      "size": 4979,
+      "size": 5934,
       "parser": "markdown",
       "fields": {
         "frontmatter": {},
@@ -70,115 +70,150 @@
           {
             "level": 2,
             "text": "ISA-95 level mapping",
-            "line": 53
+            "line": 62
           },
           {
             "level": 2,
             "text": "Cross-level pathing",
-            "line": 66
+            "line": 75
           },
           {
             "level": 2,
             "text": "Consumers",
-            "line": 80
+            "line": 89
           },
           {
             "level": 2,
             "text": "Adding new enterprise assets",
-            "line": 90
+            "line": 99
           }
         ],
         "links": [
           {
             "text": "L0/",
             "target": "L0/",
-            "line": 57
+            "line": 66
           },
           {
             "text": "L1/plc/",
             "target": "L1/plc/",
-            "line": 58
+            "line": 67
           },
           {
             "text": "L1/forms/",
             "target": "L1/forms/",
-            "line": 58
+            "line": 67
+          },
+          {
+            "text": "L2/lib/",
+            "target": "L2/lib/",
+            "line": 68
           },
           {
             "text": "L2/scada/",
             "target": "L2/scada/",
-            "line": 59
+            "line": 68
           },
           {
             "text": "L2/hmi/",
             "target": "L2/hmi/",
-            "line": 59
+            "line": 68
           },
           {
             "text": "L2/state/",
             "target": "L2/state/",
-            "line": 59
+            "line": 68
           },
           {
-            "text": "L2/tag.db",
-            "target": "L2/tag.db",
-            "line": 59
+            "text": "L3/scripts/",
+            "target": "L3/scripts/",
+            "line": 69
+          },
+          {
+            "text": "L3/views/",
+            "target": "L3/views/",
+            "line": 69
+          },
+          {
+            "text": "L3/components/",
+            "target": "L3/components/",
+            "line": 69
+          },
+          {
+            "text": "L3/perspective/",
+            "target": "L3/perspective/",
+            "line": 69
+          },
+          {
+            "text": "L3/tools/",
+            "target": "L3/tools/",
+            "line": 69
+          },
+          {
+            "text": "L3/automation/",
+            "target": "L3/automation/",
+            "line": 69
           },
           {
             "text": "L3/db/",
             "target": "L3/db/",
-            "line": 60
-          },
-          {
-            "text": "L2/scada/errors/",
-            "target": "L2/scada/errors/",
-            "line": 60
+            "line": 69
           },
           {
             "text": "L4/api/",
             "target": "L4/api/",
-            "line": 61
+            "line": 70
+          },
+          {
+            "text": "L4/members/",
+            "target": "L4/members/",
+            "line": 70
+          },
+          {
+            "text": "L4/programs/",
+            "target": "L4/programs/",
+            "line": 70
           },
           {
             "text": "L4/csv/",
             "target": "L4/csv/",
-            "line": 61
+            "line": 70
           },
           {
             "text": "L4/database/",
             "target": "L4/database/",
-            "line": 61
+            "line": 70
           },
           {
             "text": "L4/runtime/",
             "target": "L4/runtime/",
-            "line": 61
+            "line": 70
           },
           {
             "text": "L4/sandbox/",
             "target": "L4/sandbox/",
-            "line": 61
+            "line": 70
           },
           {
             "text": "`guild/apps/p2p/`",
             "target": "../apps/p2p/",
-            "line": 84
+            "line": 93
           },
           {
             "text": "controls-README.md",
             "target": "controls-README.md",
-            "line": 94
+            "line": 103
           }
         ],
         "images": [],
         "code_langs": {
           "(none)": 2
         },
-        "word_count": 529,
+        "word_count": 612,
         "h1": "/guild/Enterprise"
       },
-      "lines": 99,
-      "sha1": "92eca6527a77"
+      "lines": 108,
+      "sha1": "6fe02fdb9d78"
     }
   ]
 }

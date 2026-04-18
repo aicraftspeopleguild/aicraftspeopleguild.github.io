@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise/L4/runtime",
+  "dir": "Enterprise/L4/runtime",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 2332,
+  "total_bytes": 2342,
   "by_ext": {
     "json": 1
   },
@@ -12,7 +12,7 @@
     {
       "path": "tags.json",
       "ext": "json",
-      "size": 2332,
+      "size": 2342,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -27,7 +27,7 @@
         "key_count": 6
       },
       "lines": 108,
-      "sha1": "3717de4f8f34"
+      "sha1": "6b0ff2c3a1db"
     }
   ]
 }

@@ -44,7 +44,7 @@ from pathlib import Path, PurePosixPath
 HERE = Path(__file__).resolve()
 REPO = HERE.parents[5]
 sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
-from tagdb_sqlite import write_local, write_global  # noqa: E402
+from tagdb_sqlite import write_consolidated  # noqa: E402
 
 EXCLUDE_DIRS = {
     ".git", ".github", ".vscode", ".idea",
@@ -418,20 +418,29 @@ def main() -> int:
         rel = rel_posix(d)
         local_dbs[rel] = build_local(d, rel)
 
-    written = 0
+    # Retire any per-directory tag.db files — root tag.db is the single
+    # source of truth now, with every local dir's slice stamped by `dir`.
+    removed_local = 0
     for d in dirs:
         rel = rel_posix(d)
         if rel == ".":
             continue
-        write_local(d / DB_FILE, local_dbs[rel])
-        written += 1
+        f = d / DB_FILE
+        if f.exists():
+            try:
+                f.unlink()
+                removed_local += 1
+            except Exception:
+                pass
 
     url_paths = load_url_paths()
     url_graph = build_url_path_graph(url_paths)
     fs_graph  = build_fs_path_graph(rel_paths, children_map, descendants)
 
     global_db = build_global(local_dbs, url_graph, fs_graph)
-    write_global(REPO / DB_FILE, global_db)
+    write_consolidated(REPO / DB_FILE, global_db, local_dbs)
+    print(f"[tag.db] removed {removed_local} per-directory tag.db files")
+    written = 0
 
     retired = retire_legacy()
 

@@ -1,10 +1,10 @@
 {
-  "dir": "guild/Enterprise/L1",
+  "dir": "Enterprise/L1",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 1,
-  "total_bytes": 1111,
+  "total_bytes": 1124,
   "by_ext": {
     "md": 1
   },
@@ -12,7 +12,7 @@
     {
       "path": "README.md",
       "ext": "md",
-      "size": 1111,
+      "size": 1124,
       "parser": "markdown",
       "fields": {
         "frontmatter": {},
@@ -36,7 +36,7 @@
         "links": [
           {
             "text": "ISA-95 L1 spec",
-            "target": "../../docs/engineering/architecture/isa-95/level-1-sensing.md",
+            "target": "../../../docs/engineering/architecture/isa-95/level-1-sensing.md",
             "line": 4
           }
         ],
@@ -44,11 +44,11 @@
         "code_langs": {
           "json": 1
         },
-        "word_count": 130,
+        "word_count": 131,
         "h1": "Level 1 — Sensing & Control"
       },
       "lines": 26,
-      "sha1": "5643da2aa71c"
+      "sha1": "d36190d52712"
     }
   ]
 }

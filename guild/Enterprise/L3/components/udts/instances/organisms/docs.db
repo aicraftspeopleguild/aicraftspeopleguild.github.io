@@ -1,18 +1,18 @@
 {
-  "dir": "Enterprise/L4/members/udts/instances",
+  "dir": "Enterprise/L3/components/udts/instances/organisms",
   "scope": "local",
   "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
-  "doc_count": 8,
-  "total_bytes": 34422,
+  "doc_count": 6,
+  "total_bytes": 9566,
   "by_ext": {
-    "json": 8
+    "json": 6
   },
   "docs": [
     {
-      "path": "alex-bunardzic.json",
+      "path": "article-section.json",
       "ext": "json",
-      "size": 2069,
+      "size": 1144,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -23,13 +23,13 @@
         ],
         "key_count": 3
       },
-      "lines": 28,
-      "sha1": "3c73a0393847"
+      "lines": 47,
+      "sha1": "8962706808cd"
     },
     {
-      "path": "jona-heidsick.json",
+      "path": "closing-statement.json",
       "ext": "json",
-      "size": 2866,
+      "size": 1294,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -40,13 +40,13 @@
         ],
         "key_count": 3
       },
-      "lines": 32,
-      "sha1": "ec5daee1f341"
+      "lines": 47,
+      "sha1": "b609c4fab6ec"
     },
     {
-      "path": "kelly-hohman.json",
+      "path": "cta-section.json",
       "ext": "json",
-      "size": 3979,
+      "size": 2454,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -57,13 +57,13 @@
         ],
         "key_count": 3
       },
-      "lines": 28,
-      "sha1": "26e337ddfe78"
+      "lines": 90,
+      "sha1": "e3a413c6beb7"
     },
     {
-      "path": "laurie-scheepers.json",
+      "path": "intro-panel.json",
       "ext": "json",
-      "size": 8707,
+      "size": 922,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -74,13 +74,13 @@
         ],
         "key_count": 3
       },
-      "lines": 33,
-      "sha1": "9b024f538399"
+      "lines": 39,
+      "sha1": "9b64df697a6e"
     },
     {
-      "path": "matt-burch.json",
+      "path": "page-footer.json",
       "ext": "json",
-      "size": 4657,
+      "size": 1220,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -91,13 +91,13 @@
         ],
         "key_count": 3
       },
-      "lines": 30,
-      "sha1": "1fcd5341d8f0"
+      "lines": 47,
+      "sha1": "f9c913b59995"
     },
     {
-      "path": "nicolas-rosado.json",
+      "path": "page-header.json",
       "ext": "json",
-      "size": 4477,
+      "size": 2532,
       "parser": "json",
       "fields": {
         "shape": "dict",
@@ -108,42 +108,8 @@
         ],
         "key_count": 3
       },
-      "lines": 32,
-      "sha1": "3bed4b6240b8"
-    },
-    {
-      "path": "thomas-frumkin.json",
-      "ext": "json",
-      "size": 4825,
-      "parser": "json",
-      "fields": {
-        "shape": "dict",
-        "top_level_keys": [
-          "parameters",
-          "tags",
-          "udtType"
-        ],
-        "key_count": 3
-      },
-      "lines": 28,
-      "sha1": "4bbe794f2e44"
-    },
-    {
-      "path": "tsvetan.json",
-      "ext": "json",
-      "size": 2842,
-      "parser": "json",
-      "fields": {
-        "shape": "dict",
-        "top_level_keys": [
-          "parameters",
-          "tags",
-          "udtType"
-        ],
-        "key_count": 3
-      },
-      "lines": 28,
-      "sha1": "e2504e2ba58a"
+      "lines": 91,
+      "sha1": "7cc6e5b427e7"
     }
   ]
 }

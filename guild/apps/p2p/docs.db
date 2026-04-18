@@ -1,7 +1,7 @@
 {
-  "dir": "guild/apps/p2p",
+  "dir": "apps/p2p",
   "scope": "local",
-  "generated_at": "2026-04-18T06:17:47Z",
+  "generated_at": "2026-04-18T07:04:35Z",
   "schema_version": "1.0.0",
   "doc_count": 4,
   "total_bytes": 20169,

@@ -47,7 +47,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve()
-REPO = HERE.parents[4]
+REPO = HERE.parents[5]
 
 EXCLUDE_DIRS = {
     ".git", ".github", ".vscode", ".idea",

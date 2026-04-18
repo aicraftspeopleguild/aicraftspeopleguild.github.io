@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Build Csv Catalog",
+    "path": "guild/web/scripts/api/build-csv-catalog.py",
+    "language": "python",
+    "category": "misc",
+    "purpose": "Export dense CSV catalogs of Guild tags and relations to guild/l4-erp/csv/.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "misc",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "api--build-csv-catalog_py",
+    "state_log": "state/api--build-csv-catalog_py.state.json",
+    "last_state": "COMPLETE",
+    "last_run_at": "2026-04-18T04:59:06Z",
+    "last_duration": "0.010",
+    "schema_version": "1.0.0"
+  }
+}

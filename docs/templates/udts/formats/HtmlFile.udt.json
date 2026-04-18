@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"HtmlFile","layer":9,"version":"1.0.0","fields":[
+{"n":"path","t":"STRING"},
+{"n":"ext","t":"ENUM","values":["html","htm"]},
+{"n":"doctype","t":"STRING","nullable":true},
+{"n":"title","t":"STRING","nullable":true},
+{"n":"meta_tags","t":"JSON","desc":"[{name,content}] from <meta>"},
+{"n":"scripts","t":"STRING[]","desc":"External script srcs"},
+{"n":"stylesheets","t":"STRING[]","desc":"External CSS hrefs"},
+{"n":"acg_paper","t":"JSON","nullable":true,"desc":"Parsed acg-paper: YAML comment if present"},
+{"n":"sha256","t":"STRING"}
+],"meta":{"desc":"HTML document. Used for rendered pages, form bodies, paper snapshots."}}

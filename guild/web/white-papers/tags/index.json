@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T04:57:07Z",
+  "generated_at": "2026-04-18T05:00:43Z",
   "tags": {
     "ai-harness": {
       "udtType": "Tag",
@@ -13,7 +13,7 @@
           "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
         ],
         "count": 1,
-        "last_updated": "2026-04-18T04:57:07Z"
+        "last_updated": "2026-04-18T05:00:43Z"
       }
     },
     "architecture": {
@@ -28,7 +28,7 @@
           "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
         ],
         "count": 1,
-        "last_updated": "2026-04-18T04:57:07Z"
+        "last_updated": "2026-04-18T05:00:43Z"
       }
     },
     "governance": {
@@ -43,7 +43,7 @@
           "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
         ],
         "count": 1,
-        "last_updated": "2026-04-18T04:57:07Z"
+        "last_updated": "2026-04-18T05:00:43Z"
       }
     },
     "constraint-driven-development": {
@@ -58,7 +58,7 @@
           "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
         ],
         "count": 1,
-        "last_updated": "2026-04-18T04:57:07Z"
+        "last_updated": "2026-04-18T05:00:43Z"
       }
     }
   }

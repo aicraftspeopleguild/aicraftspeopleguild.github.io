@@ -95,6 +95,8 @@ case "${1:-help}" in
   programs:build)          python "$HERE/build-programs.py" ;;
   db:init)                 python "$REPO/guild/l4-erp/database/init-db.py" ;;
   api:build)               python "$HERE/api/build-api.py" ;;
+  api:csv)                 python "$HERE/api/build-csv-catalog.py" ;;
+  api:tags)                python "$HERE/api/build-runtime-tags.py" ;;
   test:links)              python "$HERE/test-links.py" ;;
   fix:links)               python "$HERE/fix-data-links.py" ;;
   docs:split-catalog)      python "$HERE/docs/split-catalog.py" ;;

@@ -49,8 +49,9 @@ echo "[build] 10/12 Build static JSON API (/api/*.json)"
 python guild/web/scripts/api/build-api.py
 
 echo ""
-echo "[build] 11/12 Build runtime tags (Konomi-style live tags)"
+echo "[build] 11/12 Build runtime tags + dense CSV catalog (token-efficient)"
 python guild/web/scripts/api/build-runtime-tags.py
+python guild/web/scripts/api/build-csv-catalog.py
 
 echo ""
 echo "[build] 12/12 Done. dist/ contains $(ls guild/web/dist/*.html 2>/dev/null | wc -l) pages."

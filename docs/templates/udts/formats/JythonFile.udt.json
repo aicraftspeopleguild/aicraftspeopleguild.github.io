@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"JythonFile","layer":9,"version":"1.0.0","extends":"Python2File","fields":[
+{"n":"jython_version","t":"STRING","default":"2.7"},
+{"n":"java_imports","t":"STRING[]","desc":"from java.lang import ..."},
+{"n":"uses_jvm_types","t":"BOOL","desc":"Imports com.inductiveautomation.* or similar JVM classes"},
+{"n":"ignition_context","t":"ENUM","values":["gateway","vision","perspective","designer","none"],"desc":"Where the script runs inside an Ignition gateway, if applicable"}
+],"meta":{"desc":"Jython 2.7 — Python running on the JVM. Primary use: Ignition Perspective / Vision scripts. JVM interop only."}}

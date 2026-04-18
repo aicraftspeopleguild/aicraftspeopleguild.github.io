@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"Interface","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"module","t":"STRING"},
+{"n":"language","t":"ENUM","values":["typescript","java","go","rust"]},
+{"n":"methods","t":"JSON","desc":"Array of method signatures"},
+{"n":"extends","t":"STRING[]","nullable":true},
+{"n":"file","t":"STRING"}
+],"meta":{"desc":"A contract — pure signature set with no implementation (TS interface, Go interface, Java interface, Rust trait)"}}

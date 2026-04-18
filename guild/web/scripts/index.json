@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-04-18T04:57:08Z",
+  "generated_at": "2026-04-18T05:00:44Z",
   "schema_version": "1.0.0",
   "counts": {
-    "programs": 20,
+    "programs": 21,
     "categories": 10
   },
   "programs": [
@@ -12,6 +12,13 @@
       "name": "Build Api",
       "category": "misc",
       "path": "guild/web/scripts/api/build-api.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "api--build-csv-catalog_py",
+      "name": "Build Csv Catalog",
+      "category": "misc",
+      "path": "guild/web/scripts/api/build-csv-catalog.py",
       "last_state": "COMPLETE"
     },
     {

@@ -2,8 +2,9 @@
 // Boots the mesh (join/bcast/peers), renders a shared canvas, broadcasts
 // strokes over WebRTC data channels via t:'wb' messages. Plugin hook
 // registerPeerHandler routes inbound strokes from peers into the canvas.
-import {myId,myNm,myEm} from '../../Enterprise/L2/scada/gateway/scripts/config.js';
+import {myId,myNm,myEm,TRACKERS} from '../../Enterprise/L2/scada/gateway/scripts/config.js';
 import {join,bcast,wsReady,announce} from '../../Enterprise/L2/scada/gateway/scripts/p2p.js';
+import {TRACKER} from '../../Enterprise/L2/scada/gateway/scripts/scada/providers.js';
 import {pm,registerPeerHandler,updPeers} from '../../Enterprise/L2/scada/gateway/scripts/peers.js';
 import {log} from '../../Enterprise/L2/scada/gateway/scripts/ui.js';
 import {startAuth} from '../../Enterprise/L2/scada/gateway/scripts/auth.js';
@@ -117,21 +118,35 @@ setInterval(updateCounts,1500);
 
 // ── tracker / peer status chip
 const joinedAt=Date.now();
+function trackerStates(){
+  const out=[];
+  for(let i=0;i<TRACKERS.length;i++){
+    const v=TRACKER.read('trackers.'+i);
+    const tr=v?.value||{};
+    out.push({url:TRACKERS[i],state:tr.state||'unknown'});
+  }
+  return out;
+}
 function updateNetChip(){
   const chip=$('wb-net'),txt=$('wb-net-txt');
   if(!chip)return;
   const age=(Date.now()-joinedAt)/1000;
+  const tracks=trackerStates();
+  const open=tracks.filter(t=>t.state==='connected').length;
+  const total=tracks.length;
+  chip.title=tracks.map(t=>`${t.state.padEnd(12)} ${t.url}`).join('\n')||'tracker status unavailable';
   if(!wsReady()){
     chip.className='wb-net '+(age<5?'connecting':'offline');
-    txt.textContent=age<5?'connecting to trackers…':'trackers offline · retrying';
+    txt.textContent=age<5?'connecting to trackers…':`trackers offline (0/${total}) · retrying`;
     return;
   }
+  const suffix=total>1?` (${open}/${total})`:'';
   if(pm.size===0){
     chip.className='wb-net lonely';
-    txt.textContent=age<15?'tracker up · looking for peers…':'tracker up · waiting for peers';
+    txt.textContent=(age<15?'tracker up · looking for peers…':'tracker up · waiting for peers')+suffix;
   }else{
     chip.className='wb-net connected';
-    txt.textContent=`${pm.size} peer${pm.size===1?'':'s'} connected`;
+    txt.textContent=`${pm.size} peer${pm.size===1?'':'s'} connected`+suffix;
   }
 }
 setInterval(updateNetChip,1500);

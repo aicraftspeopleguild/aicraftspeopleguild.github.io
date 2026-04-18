@@ -2,9 +2,13 @@
 // sequential fallback), so peers find each other via the union. Keep
 // it short — most public WSS trackers have come and gone. Trim dead
 // ones via /health.html.
+//
+// 2026-04: tracker.webtorrent.dev handshakes have been timing out for
+// weeks. Dropped from the default list to stop the error spam.
+// openwebtorrent.com alone is enough for peers in the same room to
+// find each other. Put webtorrent.dev back when it recovers.
 export const TRACKERS=[
   'wss://tracker.openwebtorrent.com',
-  'wss://tracker.webtorrent.dev',
 ];
 
 export const ICE={iceServers:[

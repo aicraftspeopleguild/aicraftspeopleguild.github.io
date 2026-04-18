@@ -1,0 +1,43 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "FutureSlot",
+    "tag": "div",
+    "cssClass": "future-slot",
+    "description": "Dashed-border placeholder card for content that is planned but not yet published.",
+    "category": "composite",
+    "props": {
+      "title": {
+        "type": "String",
+        "required": true
+      },
+      "content": {
+        "type": "String",
+        "required": false
+      },
+      "href": {
+        "type": "URL",
+        "required": false
+      },
+      "linked": {
+        "type": "Boolean",
+        "required": false,
+        "default": false
+      }
+    },
+    "slots": [],
+    "template": "<div class=\"future-slot {{ #linked }}future-slot-link{{ /linked }}\"><h3>{{ title }}</h3><p>{{ content }}</p></div>",
+    "atomicLevel": "molecule"
+  },
+  "tags": {
+    "id": "future-slot",
+    "file_path": "guild/web/components/future-slot.json",
+    "dependencies": [],
+    "used_by_views": [
+      "white-paper-index",
+      "members-index",
+      "hall-of-fame"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

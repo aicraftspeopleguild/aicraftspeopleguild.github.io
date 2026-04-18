@@ -1,0 +1,47 @@
+{
+  "dir": "guild/Enterprise/L3/components/udts/instances/widgets",
+  "scope": "local",
+  "generated_at": "2026-04-18T07:14:29Z",
+  "schema_version": "1.0.0",
+  "doc_count": 2,
+  "total_bytes": 2683,
+  "by_ext": {
+    "json": 2
+  },
+  "docs": [
+    {
+      "path": "git-state-badge.json",
+      "ext": "json",
+      "size": 1376,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 31,
+      "sha1": "f0501867c22e"
+    },
+    {
+      "path": "health-badge.json",
+      "ext": "json",
+      "size": 1307,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 32,
+      "sha1": "bc7bee6425aa"
+    }
+  ]
+}

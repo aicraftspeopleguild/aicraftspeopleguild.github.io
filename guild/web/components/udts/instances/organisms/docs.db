@@ -1,0 +1,115 @@
+{
+  "dir": "guild/Enterprise/L3/components/udts/instances/organisms",
+  "scope": "local",
+  "generated_at": "2026-04-18T07:14:29Z",
+  "schema_version": "1.0.0",
+  "doc_count": 6,
+  "total_bytes": 9566,
+  "by_ext": {
+    "json": 6
+  },
+  "docs": [
+    {
+      "path": "article-section.json",
+      "ext": "json",
+      "size": 1144,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 47,
+      "sha1": "8962706808cd"
+    },
+    {
+      "path": "closing-statement.json",
+      "ext": "json",
+      "size": 1294,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 47,
+      "sha1": "b609c4fab6ec"
+    },
+    {
+      "path": "cta-section.json",
+      "ext": "json",
+      "size": 2454,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 90,
+      "sha1": "e3a413c6beb7"
+    },
+    {
+      "path": "intro-panel.json",
+      "ext": "json",
+      "size": 922,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 39,
+      "sha1": "9b64df697a6e"
+    },
+    {
+      "path": "page-footer.json",
+      "ext": "json",
+      "size": 1220,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 47,
+      "sha1": "f9c913b59995"
+    },
+    {
+      "path": "page-header.json",
+      "ext": "json",
+      "size": 2532,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 91,
+      "sha1": "7cc6e5b427e7"
+    }
+  ]
+}

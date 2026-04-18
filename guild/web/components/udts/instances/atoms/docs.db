@@ -1,0 +1,200 @@
+{
+  "dir": "guild/Enterprise/L3/components/udts/instances/atoms",
+  "scope": "local",
+  "generated_at": "2026-04-18T07:14:29Z",
+  "schema_version": "1.0.0",
+  "doc_count": 11,
+  "total_bytes": 8815,
+  "by_ext": {
+    "json": 11
+  },
+  "docs": [
+    {
+      "path": "back-link.json",
+      "ext": "json",
+      "size": 765,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 32,
+      "sha1": "84630519b1cc"
+    },
+    {
+      "path": "badge.json",
+      "ext": "json",
+      "size": 687,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 30,
+      "sha1": "d03188ffe5a9"
+    },
+    {
+      "path": "button.json",
+      "ext": "json",
+      "size": 993,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 44,
+      "sha1": "278fd61f05d2"
+    },
+    {
+      "path": "callout.json",
+      "ext": "json",
+      "size": 670,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 28,
+      "sha1": "2445469d1b7e"
+    },
+    {
+      "path": "code-block.json",
+      "ext": "json",
+      "size": 789,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 32,
+      "sha1": "1e248ab372c8"
+    },
+    {
+      "path": "eyebrow.json",
+      "ext": "json",
+      "size": 696,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 30,
+      "sha1": "8f0b8705ebec"
+    },
+    {
+      "path": "figure-block.json",
+      "ext": "json",
+      "size": 1106,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 45,
+      "sha1": "424fcae169d3"
+    },
+    {
+      "path": "guild-mark.json",
+      "ext": "json",
+      "size": 609,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 23,
+      "sha1": "a6b630b9b27a"
+    },
+    {
+      "path": "pull-quote.json",
+      "ext": "json",
+      "size": 816,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 33,
+      "sha1": "9e282806b985"
+    },
+    {
+      "path": "raw-html.json",
+      "ext": "json",
+      "size": 835,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 34,
+      "sha1": "e3ad531d0999"
+    },
+    {
+      "path": "section-heading.json",
+      "ext": "json",
+      "size": 849,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 34,
+      "sha1": "c4a8d77fbe58"
+    }
+  ]
+}

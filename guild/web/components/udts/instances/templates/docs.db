@@ -1,0 +1,30 @@
+{
+  "dir": "guild/Enterprise/L3/components/udts/instances/templates",
+  "scope": "local",
+  "generated_at": "2026-04-18T07:14:29Z",
+  "schema_version": "1.0.0",
+  "doc_count": 1,
+  "total_bytes": 3145,
+  "by_ext": {
+    "json": 1
+  },
+  "docs": [
+    {
+      "path": "page-shell.json",
+      "ext": "json",
+      "size": 3145,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 120,
+      "sha1": "66b298944d9f"
+    }
+  ]
+}

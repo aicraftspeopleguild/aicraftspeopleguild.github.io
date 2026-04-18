@@ -1,0 +1,120 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "PageShell",
+    "tag": "fragment",
+    "cssClass": "",
+    "description": "Logical page body wrapper. Emits <header> with guild-mark/title/subtitle/back-link, then <main class=\"container\">children</main>, then <footer>. The build.js wraps this with <!DOCTYPE html><html><head>...</head><body>[shell]</body></html>. The 'fragment' tag is a sentinel telling the renderer not to wrap output in an element.",
+    "props": {
+      "title": {
+        "type": "String",
+        "required": true
+      },
+      "bodyClass": {
+        "type": "String",
+        "required": false
+      },
+      "stylesheets": {
+        "type": "StringArray",
+        "required": false
+      },
+      "subtitle": {
+        "type": "String",
+        "required": false
+      },
+      "eyebrow": {
+        "type": "String",
+        "required": false
+      },
+      "backHref": {
+        "type": "URL",
+        "required": false
+      },
+      "backLabel": {
+        "type": "String",
+        "required": false
+      },
+      "meta": {
+        "type": "StringArray",
+        "required": false
+      }
+    },
+    "slots": [
+      "default"
+    ],
+    "template": "<div class=\"page-shell\">{{ #eyebrow }}<p class=\"eyebrow\">{{ eyebrow }}</p>{{ /eyebrow }}{{ #backHref }}<div class=\"back-link\"><a href=\"{{ backHref }}\">\u2190 {{ backLabel }}</a></div>{{ /backHref }}{{ slot:default }}</div>",
+    "atomicLevel": "template",
+    "inputs": [
+      {
+        "key": "title",
+        "dataType": "String",
+        "source": "page.title",
+        "required": true
+      },
+      {
+        "key": "bodyClass",
+        "dataType": "String",
+        "source": "page.bodyClass",
+        "required": false
+      },
+      {
+        "key": "stylesheets",
+        "dataType": "String[]",
+        "source": "page.stylesheets",
+        "required": false
+      },
+      {
+        "key": "subtitle",
+        "dataType": "String",
+        "source": "page.subtitle",
+        "required": false
+      },
+      {
+        "key": "eyebrow",
+        "dataType": "String",
+        "source": "page.eyebrow",
+        "required": false
+      },
+      {
+        "key": "backHref",
+        "dataType": "URL",
+        "source": "page.backHref",
+        "required": false
+      },
+      {
+        "key": "backLabel",
+        "dataType": "String",
+        "source": "page.backLabel",
+        "required": false
+      },
+      {
+        "key": "meta",
+        "dataType": "String[]",
+        "source": "page.meta",
+        "required": false
+      }
+    ]
+  },
+  "tags": {
+    "id": "page-shell",
+    "file_path": "guild/web/components/page-shell.json",
+    "dependencies": [
+      "page-header",
+      "page-footer",
+      "guild-mark"
+    ],
+    "used_by_views": [
+      "home",
+      "white-paper-index",
+      "white-paper-article",
+      "members-index",
+      "member-profile",
+      "charter",
+      "flywheel",
+      "mob-programming",
+      "hall-of-fame",
+      "hall-of-shame"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

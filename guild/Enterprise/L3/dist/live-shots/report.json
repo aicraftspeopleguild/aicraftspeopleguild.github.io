@@ -1,10 +1,10 @@
 {
-  "base": "https://teslasolar.github.io/aicraftspeopleguild.github.io/",
-  "at": "2026-04-18T07:29:09.655Z",
+  "base": "http://127.0.0.1:8765/",
+  "at": "2026-04-18T07:40:26.730Z",
   "results": [
     {
       "slug": "home",
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/",
+      "url": "http://127.0.0.1:8765/",
       "ok": true,
       "title": "AI Craftspeople Guild - Professional Code of Conduct",
       "hasApp": true,
@@ -15,51 +15,51 @@
     },
     {
       "slug": "charter",
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/charter",
+      "url": "http://127.0.0.1:8765/#/charter",
       "ok": true,
-      "title": "AI Craftspeople Guild - Professional Code of Conduct",
+      "title": "Guild Charter — AI Craftspeople Guild",
       "hasApp": true,
-      "appPreview": "Error loading page.",
-      "bodyLen": 523,
+      "appPreview": "← Back to Home\nPreamble\n\nWe are living through a profound change in the making of software. Artificial intelligence has expanded what software professionals can produce, how quickly they can produce i",
+      "bodyLen": 10314,
       "is404": false,
       "shot": "Enterprise\\L3\\dist\\live-shots\\charter.png"
     },
     {
       "slug": "conduct",
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/code-of-conduct",
+      "url": "http://127.0.0.1:8765/#/code-of-conduct",
       "ok": true,
-      "title": "AI Craftspeople Guild - Professional Code of Conduct",
+      "title": "Code of Conduct — AI Craftspeople Guild",
       "hasApp": true,
-      "appPreview": "Error loading page.",
-      "bodyLen": 525,
+      "appPreview": "← Back to Home\nCode of Conduct Terms of Service\nPreamble\n\nThe AI Craftspeople Guild is a collective of software professionals who insist on professional standards in an industry prone to hype. This Co",
+      "bodyLen": 13729,
       "is404": false,
       "shot": "Enterprise\\L3\\dist\\live-shots\\conduct.png"
     },
     {
       "slug": "papers",
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
+      "url": "http://127.0.0.1:8765/#/white-papers",
       "ok": true,
-      "title": "AI Craftspeople Guild - Professional Code of Conduct",
+      "title": "White Papers — AI Craftspeople Guild",
       "hasApp": true,
-      "appPreview": "Error loading page.",
-      "bodyLen": 522,
+      "appPreview": "← Back to Home\n<p>The Guild catalog has 25 publications. Source of truth: <code>guild/Enterprise/L4/api/white-papers/originals/*.md</code>.</p>\nAvailable Papers\n\n25 publications in the Guild catalog.\n",
+      "bodyLen": 5602,
       "is404": false,
       "shot": "Enterprise\\L3\\dist\\live-shots\\papers.png"
     },
     {
       "slug": "members",
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members",
+      "url": "http://127.0.0.1:8765/#/members",
       "ok": true,
-      "title": "AI Craftspeople Guild - Professional Code of Conduct",
+      "title": "Guild Members — AI Craftspeople Guild",
       "hasApp": true,
-      "appPreview": "Error loading page.",
-      "bodyLen": 523,
+      "appPreview": "← Back to Home\nCurrent Members\nJoin the Guild\nRead the CharterBack to Home",
+      "bodyLen": 578,
       "is404": false,
       "shot": "Enterprise\\L3\\dist\\live-shots\\members.png"
     },
     {
       "slug": "submit",
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L1/forms/submit/",
+      "url": "http://127.0.0.1:8765/guild/Enterprise/L1/forms/submit/",
       "ok": true,
       "title": "Submit an Article — AI Craftspeople Guild",
       "hasApp": false,
@@ -69,168 +69,6 @@
       "shot": "Enterprise\\L3\\dist\\live-shots\\submit.png"
     }
   ],
-  "consoleErrors": [
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/charter",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/charter",
-      "text": "ACGRenderer navigate failed: Error: Fetch failed: guild/web/views/charter.view.json (404)\n    at https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/renderer.js:247:26\n    at async Promise.all (index 0)"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/charter",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/charter",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/charter",
-      "text": "ACGRenderer navigate failed: Error: Fetch failed: guild/web/views/charter.view.json (404)\n    at https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/renderer.js:247:26\n    at async Promise.all (index 0)"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/charter",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/code-of-conduct",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/code-of-conduct",
-      "text": "ACGRenderer navigate failed: Error: Fetch failed: guild/web/views/data/code-of-conduct.data.json (404)\n    at https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/renderer.js:247:26\n    at async Promise.all (index 1)"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/code-of-conduct",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/code-of-conduct",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/code-of-conduct",
-      "text": "ACGRenderer navigate failed: Error: Fetch failed: guild/web/views/data/code-of-conduct.data.json (404)\n    at https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/renderer.js:247:26\n    at async Promise.all (index 1)"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/code-of-conduct",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
-      "text": "ACGRenderer navigate failed: Error: Fetch failed: guild/web/views/white-paper-index.view.json (404)\n    at https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/renderer.js:247:26\n    at async Promise.all (index 0)"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
-      "text": "ACGRenderer navigate failed: Error: Fetch failed: guild/web/views/white-paper-index.view.json (404)\n    at https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/renderer.js:247:26\n    at async Promise.all (index 0)"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/white-papers",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members",
-      "text": "ACGRenderer navigate failed: Error: Fetch failed: guild/web/views/members-index.view.json (404)\n    at https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/renderer.js:247:26\n    at async Promise.all (index 0)"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members",
-      "text": "ACGRenderer navigate failed: Error: Fetch failed: guild/web/views/members-index.view.json (404)\n    at https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/renderer.js:247:26\n    at async Promise.all (index 0)"
-    }
-  ],
-  "networkFails": [
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/charter.view.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/data/charter.data.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/charter.view.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/data/charter.data.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/data/code-of-conduct.data.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/code-of-conduct.view.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/data/code-of-conduct.data.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/code-of-conduct.view.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/white-paper-index.view.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/data/white-papers-list.data.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/data/white-papers.data.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/white-paper-index.view.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/data/white-papers-list.data.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/data/white-papers.data.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/members-index.view.json",
-      "status": 404
-    },
-    {
-      "url": "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/web/views/members-index.view.json",
-      "status": 404
-    }
-  ]
+  "consoleErrors": [],
+  "networkFails": []
 }

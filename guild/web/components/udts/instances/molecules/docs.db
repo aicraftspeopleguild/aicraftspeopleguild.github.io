@@ -1,0 +1,132 @@
+{
+  "dir": "guild/Enterprise/L3/components/udts/instances/molecules",
+  "scope": "local",
+  "generated_at": "2026-04-18T07:14:29Z",
+  "schema_version": "1.0.0",
+  "doc_count": 7,
+  "total_bytes": 9165,
+  "by_ext": {
+    "json": 7
+  },
+  "docs": [
+    {
+      "path": "article-nav.json",
+      "ext": "json",
+      "size": 848,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 29,
+      "sha1": "2ba33f80a693"
+    },
+    {
+      "path": "badge-row.json",
+      "ext": "json",
+      "size": 753,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 31,
+      "sha1": "40d2157558f4"
+    },
+    {
+      "path": "card-grid.json",
+      "ext": "json",
+      "size": 1457,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 54,
+      "sha1": "5ed75f5f084d"
+    },
+    {
+      "path": "entry-card.json",
+      "ext": "json",
+      "size": 985,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 37,
+      "sha1": "87c5e19f1ebf"
+    },
+    {
+      "path": "future-slot.json",
+      "ext": "json",
+      "size": 1097,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 43,
+      "sha1": "43b5bd760b6a"
+    },
+    {
+      "path": "member-card.json",
+      "ext": "json",
+      "size": 2085,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 63,
+      "sha1": "3c1c384cc0bf"
+    },
+    {
+      "path": "paper-card.json",
+      "ext": "json",
+      "size": 1940,
+      "parser": "json",
+      "fields": {
+        "shape": "dict",
+        "top_level_keys": [
+          "parameters",
+          "tags",
+          "udtType"
+        ],
+        "key_count": 3
+      },
+      "lines": 64,
+      "sha1": "9f22f9ce7101"
+    }
+  ]
+}

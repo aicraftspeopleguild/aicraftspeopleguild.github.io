@@ -35,18 +35,19 @@ jobs:
       - name: Validate index
         run: node .github/scripts/validate-index.js
 
-      - name: Generate HTML index
-        run: node .github/scripts/generate-html.js
+      # HTML rendering is the responsibility of the main build pipeline
+      # (guild/web/scripts/build.sh -> dist/ is gitignored). The auto-index
+      # workflow only commits papers.json so the API catalog stays in sync.
 
       - name: Commit updated index
         run: |
           git config user.name  "guild-bot"
           git config user.email "bot@aicraftspeopleguild.com"
-          git add papers.json guild/web/dist/white-papers.html
+          git add papers.json
           if git diff --cached --quiet; then
-            echo "No index changes to commit."
+            echo "No papers.json changes to commit."
           else
-            git commit -m "auto-index: update paper listing"
+            git commit -m "auto-index: update papers.json"
             git push
           fi
 

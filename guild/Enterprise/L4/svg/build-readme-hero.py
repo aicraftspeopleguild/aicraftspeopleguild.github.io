@@ -19,7 +19,7 @@ sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import svg_widget as S
 import gh_tag
 
-OUT  = REPO / "guild" / "Enterprise" / "L4" / "svg" / "readme-hero.svg"
+OUT  = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "readme-hero.svg"
 BASE = "https://teslasolar.github.io/aicraftspeopleguild.github.io"
 
 

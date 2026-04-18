@@ -25,7 +25,7 @@ REPO = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import gh_tag
 
-OUT = REPO / "guild" / "Enterprise" / "L4" / "svg" / "heartbeat.svg"
+OUT = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "heartbeat.svg"
 
 
 def render(value, updated_at: str, description: str) -> str:

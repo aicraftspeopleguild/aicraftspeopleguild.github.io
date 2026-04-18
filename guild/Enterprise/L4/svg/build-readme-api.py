@@ -14,7 +14,7 @@ REPO = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import svg_widget as S
 
-OUT  = REPO / "guild" / "Enterprise" / "L4" / "svg" / "readme-api.svg"
+OUT  = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "readme-api.svg"
 BASE = "https://teslasolar.github.io/aicraftspeopleguild.github.io"
 
 ENDPOINTS = [

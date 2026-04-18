@@ -22,7 +22,7 @@ sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import svg_widget as S
 import gh_tag
 
-OUT = REPO / "guild" / "Enterprise" / "L4" / "svg" / "tag-grid.svg"
+OUT = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "tag-grid.svg"
 
 
 def render() -> str:

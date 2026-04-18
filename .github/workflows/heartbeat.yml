@@ -63,7 +63,7 @@ jobs:
         run: |
           git config user.name  "acg-heartbeat-bot"
           git config user.email "acg-heartbeat-bot@users.noreply.github.com"
-          git add guild/Enterprise/L4/svg/*.svg
+          git add guild/Enterprise/L2/hmi/web/assets/svg/*.svg
           if git diff --cached --quiet; then
             echo "no SVG change"
           else

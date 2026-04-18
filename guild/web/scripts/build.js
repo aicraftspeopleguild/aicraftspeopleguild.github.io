@@ -167,9 +167,22 @@ function renderNode(node, ctx, components) {
 }
 
 // ── Full Page HTML Wrapper ──────────────────────────────────────────
+
+/** Convert a stylesheet path stored in page.json into a path that resolves
+ *  from inside guild/web/dist/. Both web-relative ("style/main.css") and
+ *  repo-rooted ("guild/web/style/main.css") inputs become "../style/main.css". */
+function relativizeAssetForDist(p) {
+  if (!p) return p;
+  if (/^https?:\/\//.test(p)) return p;
+  // Strip leading guild/web/ if present
+  let rel = p.replace(/^guild\/web\//, '');
+  // dist/ is a sibling of style/, assets/, etc., so go up one
+  return '../' + rel.replace(/^\.\//, '').replace(/^\/+/, '');
+}
+
 function wrapDocument(title, stylesheets, bodyHTML, extraHead = '') {
   const styles = (stylesheets || []).map(
-    s => `<link rel="stylesheet" href="${escapeHtml(s)}">`
+    s => `<link rel="stylesheet" href="${escapeHtml(relativizeAssetForDist(s))}">`
   ).join('\n    ');
   return `<!DOCTYPE html>
 <html lang="en">

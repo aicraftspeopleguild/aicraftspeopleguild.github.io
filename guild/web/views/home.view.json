@@ -65,9 +65,9 @@
             "heading": "Join the Guild",
             "description": "Sign the manifesto and become part of a professional community.",
             "primaryText": "Read the Manifesto",
-            "primaryHref": "guild/web/aicraftspeopleguild-manifesto.html",
+            "primaryHref": "#/manifesto",
             "secondaryText": "View White Papers",
-            "secondaryHref": "guild/web/white-papers.html"
+            "secondaryHref": "#/white-papers"
           }
         }
       ]

@@ -39,10 +39,46 @@ def load_template_version():
 def render_markdown(md_text):
     if not md_text:
         return ""
-    return markdown.markdown(
+    html = markdown.markdown(
         md_text,
         extensions=["fenced_code", "tables", "attr_list", "toc"]
     )
+    return rewrite_paper_links(html)
+
+# White paper bodies were extracted when papers lived as siblings to their
+# images (e.g., href="fratally-wrong.jpeg"). The rendered apps now live in
+# guild/web/dist/, so image refs need an explicit ../white-papers/ prefix.
+import re as _re
+PAPER_IMAGE_PATTERN = _re.compile(
+    r'((?:href|src)\s*=\s*["\'])(?!https?://|#|/|\.\./|data:|mailto:)([\w\-]+\.(?:png|jpe?g|gif|svg|webp|mp4|pdf))(["\'])',
+    _re.IGNORECASE
+)
+def rewrite_paper_links(html):
+    """Rewrite links inside paper body to work from guild/web/dist/app-X.html."""
+    # 1. Bare image refs -> ../white-papers/<img>
+    html = PAPER_IMAGE_PATTERN.sub(
+        lambda m: m.group(1) + '../white-papers/' + m.group(2) + m.group(3),
+        html
+    )
+    # 2. Absolute prod URLs to deleted paper HTML files -> hash routes
+    html = _re.sub(
+        r'(href\s*=\s*["\'])https?://aicraftspeopleguild\.github\.io/guild/web/white-papers/([a-z][\w-]*?)\.html(["\'])',
+        lambda m: m.group(1) + '#/whitepapers/' + m.group(2) + m.group(3),
+        html
+    )
+    # 3. Relative paper HTML refs (e.g., ../white-papers/foo.html) -> hash route
+    html = _re.sub(
+        r'(href\s*=\s*["\'])(?:\.\./)?white-papers/([a-z][\w-]*?)\.html(["\'])',
+        lambda m: m.group(1) + '#/whitepapers/' + m.group(2) + m.group(3),
+        html
+    )
+    # 4. Sibling .html refs from inter-paper markdown links -> hash route
+    html = _re.sub(
+        r'(href\s*=\s*["\'])(?!https?://|#|/|\.\.?/|mailto:)([a-z][\w-]*?)\.html(["\'])',
+        lambda m: m.group(1) + '#/whitepapers/' + m.group(2) + m.group(3),
+        html
+    )
+    return html
 
 def safe_slug(slug, max_len=60):
     """Truncate overly long slugs at word boundaries to stay under Windows MAX_PATH."""

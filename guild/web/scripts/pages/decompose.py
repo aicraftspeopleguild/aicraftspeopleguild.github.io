@@ -75,9 +75,32 @@ def parse(html_path):
         inner = "".join(str(c) for c in main.children)
         # Normalize whitespace
         inner = re.sub(r"\n\s*\n\s*\n+", "\n\n", inner).strip()
+        # Rewrite stale internal links to match current dist/ slugs
+        inner = rewrite_internal_links(inner)
         data["body"] = inner
 
     return data
+
+# Map old-style filenames (from when pages were at static/foo.html) to
+# the current dist/ output slugs (from Path UDT IDs).
+LINK_REWRITES = {
+    "aicraftspeopleguild-manifesto.html": "manifesto.html",
+    "chief-ai-skeptic-officer.html":      "chief-ai-skeptic.html",
+    "../web/dist/white-papers.html":      "white-papers.html",
+    "../web/dist/members.html":           "members.html",
+    "../../../index.html":                "../../index.html",
+}
+
+def rewrite_internal_links(html):
+    """Rewrite known stale internal links to current dist/ slugs."""
+    for old, new in LINK_REWRITES.items():
+        # href="old"  ->  href="new"   (also handles src="" via greedy attribute match)
+        html = re.sub(
+            rf'((?:href|src)\s*=\s*["\']){re.escape(old)}(["\'])',
+            lambda m: m.group(1) + new + m.group(2),
+            html
+        )
+    return html
 
 def build_view(slug, meta):
     return {

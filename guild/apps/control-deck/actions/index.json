@@ -1,0 +1,11 @@
+{
+  "udtType": "ControlActionIndex",
+  "description": "Ordered manifest of ControlAction instances loaded at boot by modules/cmd.js. Add a new file here + a new entry and the button appears — no code change.",
+  "actions": [
+    "bump-heartbeat.json",
+    "rebuild-svgs.json",
+    "rebuild-api.json",
+    "clear-faults.json"
+  ],
+  "schema_version": "1.0.0"
+}

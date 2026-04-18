@@ -4,70 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>⚒ ACG · control deck</title>
-<style>
-  :root{
-    --bg:#0d1117;--chrome:#161b22;--card:#161b22;--bd:#30363d;
-    --tx:#e6edf3;--dm:#8b949e;--ft:#6e7681;
-    --g:#3fb950;--p:#a371f7;--o:#f0883e;--r:#f85149;--b:#79c0ff;
-    --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
-    --body:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100vh;margin:0;background:var(--bg);color:var(--tx);font-family:var(--body);font-size:13px;overflow:hidden}
-  body{display:flex;flex-direction:column}
-  header{background:var(--chrome);border-bottom:1px solid var(--bd);padding:10px 16px;display:flex;align-items:center;gap:10px;font-size:12px}
-  header h1{font-size:15px;margin:0;font-weight:600}
-  header h1 small{color:var(--dm);font-weight:400;margin-left:6px}
-  header .spacer{flex:1}
-  header a{color:var(--b);text-decoration:none;font-size:11px;padding:4px 10px;border-radius:4px;border:1px solid transparent}
-  header a:hover{background:#1f2937;border-color:var(--bd)}
-
-  main{flex:1;display:grid;grid-template-columns:420px 1fr;gap:14px;padding:14px;overflow:hidden}
-  section{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:14px;overflow:auto}
-  h2{margin:0 0 10px;font-size:10px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:1.6px;border-bottom:1px solid var(--bd);padding-bottom:6px}
-  .row{display:flex;gap:8px;margin:8px 0}
-  label{font-size:11px;color:var(--dm);font-weight:600;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
-  input,select,textarea,button{background:#0b1018;color:var(--tx);border:1px solid var(--bd);border-radius:4px;padding:7px 10px;font-family:var(--mono);font-size:12px;width:100%}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--g)}
-  textarea{min-height:70px;resize:vertical}
-  button{cursor:pointer;font-family:var(--body);font-weight:600;width:auto;padding:7px 14px}
-  button.primary{background:var(--g);border-color:var(--g);color:#0d1117}
-  button.primary:hover{background:#4ecf61}
-  button.danger{background:transparent;border-color:var(--r);color:var(--r)}
-  button.danger:hover{background:#f8514922}
-  button.purple{background:var(--p);border-color:var(--p);color:#fff}
-  button.purple:hover{background:#b28cff}
-  .hint{font-size:10px;color:var(--ft);margin-top:4px}
-  .chip{display:inline-block;padding:3px 8px;border-radius:20px;font-family:var(--mono);font-size:10px;background:#1a5c4c22;color:var(--g);border:1px solid var(--g);margin-right:6px}
-  .chip.r{background:#f8514922;color:var(--r);border-color:var(--r)}
-  .chip.p{background:#a371f722;color:var(--p);border-color:var(--p)}
-  .chip.o{background:#f0883e22;color:var(--o);border-color:var(--o)}
-
-  .auth{display:flex;align-items:center;gap:8px;margin:6px 0 14px;padding:8px 10px;border-radius:6px;background:#0b1018;border:1px solid var(--bd);font-size:11px}
-  .auth.on{border-color:var(--g)}
-  .auth.off{border-color:var(--r)}
-  .auth .dot{width:8px;height:8px;border-radius:50%;background:var(--ft)}
-  .auth.on .dot{background:var(--g)}
-  .auth.off .dot{background:var(--r)}
-
-  .tagrow{display:flex;justify-content:space-between;align-items:center;padding:5px 8px;border-bottom:1px solid var(--bd);font-size:11px}
-  .tagrow:last-child{border-bottom:none}
-  .tagrow .k{font-family:var(--mono);color:var(--b)}
-  .tagrow .v{font-family:var(--mono);color:var(--tx)}
-
-  .log{font-family:var(--mono);font-size:11px;background:#0b1018;border:1px solid var(--bd);border-radius:6px;padding:8px 10px;max-height:140px;overflow:auto;margin-top:6px}
-  .log .ok{color:var(--g)}
-  .log .err{color:var(--r)}
-  .log .info{color:var(--dm)}
-
-  .preview{padding:0;display:flex;flex-direction:column}
-  .preview .tabs{display:flex;gap:4px;padding:8px;border-bottom:1px solid var(--bd);flex-wrap:wrap}
-  .preview .tab{background:transparent;border:1px solid var(--bd);color:var(--dm);padding:4px 10px;border-radius:14px;cursor:pointer;font-size:10px;font-family:var(--mono)}
-  .preview .tab.on{background:var(--g);border-color:var(--g);color:#0d1117}
-  .preview .frame{flex:1;overflow:auto;background:#0b1018;padding:12px;text-align:center}
-  .preview .frame img{max-width:100%;height:auto}
-  .preview .meta{padding:6px 12px;font-size:10px;color:var(--dm);border-top:1px solid var(--bd);display:flex;justify-content:space-between}
-</style>
+<link rel="stylesheet" href="./control-deck.css">
 </head>
 <body>
 
@@ -88,17 +25,10 @@
       <span id="auth-text">not connected · paste a GitHub PAT to write</span>
     </div>
     <input type="password" id="tok" placeholder="GitHub PAT (repo scope) · saved to localStorage only">
-    <div class="hint">Stored in localStorage, sent only to api.github.com. Leave empty to use the pre-filled-issue fallback — every action still works, just takes one extra click on GitHub.</div>
+    <div class="hint">Stored in localStorage, sent only to api.github.com. Leave empty to use the pre-filled-issue fallback.</div>
 
     <h2 style="margin-top:16px">⚒ cmd actions</h2>
-    <div class="row">
-      <button class="primary" data-cmd="cmd:bump-heartbeat">💓 bump heartbeat</button>
-      <button class="purple" data-cmd="cmd:rebuild-svgs">🔁 rebuild SVGs</button>
-    </div>
-    <div class="row">
-      <button data-cmd="cmd:rebuild-api">📡 rebuild API</button>
-      <button class="danger" data-cmd="cmd:clear-faults">✅ clear faults</button>
-    </div>
+    <div id="action-buttons"><div class="hint">loading actions…</div></div>
 
     <h2 style="margin-top:16px">⚒ write an arbitrary tag</h2>
     <div class="row">
@@ -140,20 +70,8 @@
   </section>
 
   <section class="preview">
-    <div class="tabs" id="tabs">
-      <button class="tab on" data-svg="scada-dashboard">scada dashboard</button>
-      <button class="tab" data-svg="heartbeat">heartbeat</button>
-      <button class="tab" data-svg="tag-activity">tag activity</button>
-      <button class="tab" data-svg="tag-grid">tag grid</button>
-      <button class="tab" data-svg="pipeline-pulse">pipeline</button>
-      <button class="tab" data-svg="fault-timeline">faults</button>
-      <button class="tab" data-svg="cmd-panel">cmd panel</button>
-      <button class="tab" data-svg="scada-network">network</button>
-      <button class="tab" data-svg="commit-activity">commits</button>
-      <button class="tab" data-svg="tag-heatmap">heatmap</button>
-      <button class="tab" data-svg="architecture">arch</button>
-    </div>
-    <div class="frame"><img id="svg-frame" src="../../Enterprise/L2/hmi/web/assets/svg/scada-dashboard.svg?cb=0" alt="live preview"></div>
+    <div class="tabs" id="tabs"><span class="hint" style="padding:4px 10px">loading preview tabs…</span></div>
+    <div class="frame"><img id="svg-frame" alt="live preview"></div>
     <div class="meta">
       <span id="meta-left">scada-dashboard.svg</span>
       <span id="meta-right">auto-refresh every 10s · click tab to switch</span>
@@ -161,202 +79,6 @@
   </section>
 </main>
 
-<script>
-'use strict';
-const REPO = 'teslasolar/aicraftspeopleguild.github.io';
-const PAGES_BASE = 'https://teslasolar.github.io/aicraftspeopleguild.github.io';
-const SVG_DIR = '../../Enterprise/L2/hmi/web/assets/svg/';
-
-const $ = id => document.getElementById(id);
-const log = (msg, cls='info') => {
-  const d = document.createElement('div');
-  d.className = cls;
-  d.textContent = new Date().toISOString().slice(11,19) + '  ' + msg;
-  $('log').prepend(d);
-};
-
-// ── Auth
-function loadTok(){ return localStorage.getItem('acg_gh_pat') || '' }
-function saveTok(v){
-  if (v) localStorage.setItem('acg_gh_pat', v);
-  else localStorage.removeItem('acg_gh_pat');
-  renderAuth();
-}
-function renderAuth(){
-  const has = !!loadTok();
-  const chip = $('auth-chip'), t = $('auth-text');
-  if (has) { chip.className = 'auth on'; t.textContent = 'token loaded · direct writes enabled'; }
-  else     { chip.className = 'auth off'; t.textContent = 'no token · uses pre-filled issue fallback'; }
-}
-$('tok').addEventListener('change', e => saveTok(e.target.value.trim()));
-$('tok').value = loadTok();
-renderAuth();
-
-// ── GitHub API helper
-async function gh(method, path, body) {
-  const tok = loadTok();
-  if (!tok) throw new Error('no token · click "open pre-filled issue" instead');
-  const r = await fetch('https://api.github.com' + path, {
-    method,
-    headers: {
-      'Authorization': 'Bearer ' + tok,
-      'Accept': 'application/vnd.github+json',
-      'Content-Type': 'application/json',
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  if (!r.ok) throw new Error('github ' + r.status + ': ' + (await r.text()).slice(0,120));
-  return r.json();
-}
-
-// ── Open pre-filled issue
-function issueUrl(title, body, labels='cmd') {
-  const q = new URLSearchParams({ title, body: body || '', labels });
-  return `https://github.com/${REPO}/issues/new?${q.toString()}`;
-}
-
-// ── cmd action buttons: open issue OR (if tok) POST directly
-async function runCmd(title, body='') {
-  const tok = loadTok();
-  if (!tok) {
-    window.open(issueUrl(title, body), '_blank');
-    log('opened issue form · ' + title, 'info');
-    return;
-  }
-  try {
-    log('POSTing issue ' + title + ' …', 'info');
-    const res = await gh('POST', `/repos/${REPO}/issues`, {
-      title, body, labels: ['cmd']
-    });
-    log('✓ issue #' + res.number + ' queued — cmd workflow runs next', 'ok');
-    setTimeout(refreshSvg, 12000);
-    setTimeout(refreshSvg, 45000);
-    maybeReturn();
-  } catch (e) {
-    log('✗ ' + e.message, 'err');
-  }
-}
-
-// Self-find the "back" destination. Priority:
-//   1. explicit ?back= in URL hash
-//   2. document.referrer  (set by GitHub's README link-through)
-//   3. stored last-source in localStorage
-// Whatever resolves wins; we also persist it so repeat visits
-// re-use the same source.
-function findBack() {
-  const q = new URLSearchParams(location.hash.slice(1));
-  const explicit = q.get('back');
-  if (explicit) { localStorage.setItem('acg_back', explicit); return explicit; }
-
-  const ref = document.referrer;
-  if (ref && /github\.com|github\.io/.test(ref) && !ref.includes('/control-deck/')) {
-    localStorage.setItem('acg_back', ref);
-    return ref;
-  }
-
-  return localStorage.getItem('acg_back') || '';
-}
-
-function maybeReturn() {
-  const back = findBack();
-  if (!back) return;
-  let n = 3;
-  const tick = () => {
-    log(`↩ returning in ${n}s — ${back.slice(0, 60)}`, 'info');
-    if (n-- <= 0) location.href = back;
-    else setTimeout(tick, 1000);
-  };
-  tick();
-}
-document.querySelectorAll('[data-cmd]').forEach(b => {
-  b.addEventListener('click', () => runCmd(b.dataset.cmd, b.textContent));
-});
-
-// ── Tag write
-$('write-direct').addEventListener('click', async () => {
-  const path = $('tag-path').value.trim();
-  const value = $('tag-value').value;
-  const type = $('tag-type').value;
-  const quality = $('tag-quality').value;
-  const desc = $('tag-desc').value;
-  if (!path) { log('path required', 'err'); return; }
-  const title = `cmd:tag-write path=${path} value=${value}`;
-  const body = desc || `type=${type} quality=${quality}`;
-  await runCmd(title, body);
-});
-$('write-issue').addEventListener('click', () => {
-  const path = $('tag-path').value.trim();
-  const value = $('tag-value').value;
-  const title = `cmd:tag-write path=${path} value=${value}`;
-  window.open(issueUrl(title, $('tag-desc').value), '_blank');
-  log('opened tag-write issue form', 'info');
-});
-
-// ── SVG preview + tab switch + cache-busting
-let currentSvg = 'scada-dashboard';
-document.querySelectorAll('.tab').forEach(t => {
-  t.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
-    t.classList.add('on');
-    currentSvg = t.dataset.svg;
-    refreshSvg();
-    $('meta-left').textContent = currentSvg + '.svg';
-  });
-});
-function refreshSvg() {
-  $('svg-frame').src = SVG_DIR + currentSvg + '.svg?cb=' + Date.now();
-}
-setInterval(refreshSvg, 10000);
-
-// ── auto-fire on URL hash — README badges land here with #action=<cmd>
-// so the reader's click chain is: README badge → this page opens →
-// action fires automatically → receipt renders. Single click, no
-// GitHub issue form shown (if a PAT is saved).
-function parseHash() {
-  const q = new URLSearchParams(location.hash.slice(1));
-  return {
-    action: q.get('action') || '',
-    path:   q.get('path')   || '',
-    value:  q.get('value')  || '',
-  };
-}
-function autoFire() {
-  const h = parseHash();
-  if (!h.action) return;
-  const map = {
-    'bump-heartbeat': () => runCmd('cmd:bump-heartbeat', 'fired from README'),
-    'rebuild-svgs':   () => runCmd('cmd:rebuild-svgs',   'fired from README'),
-    'rebuild-api':    () => runCmd('cmd:rebuild-api',    'fired from README'),
-    'clear-faults':   () => runCmd('cmd:clear-faults',   'fired from README'),
-    'tag-write':      () => {
-      if (h.path)  $('tag-path').value  = h.path;
-      if (h.value) $('tag-value').value = h.value;
-      if (h.path && h.value) runCmd(`cmd:tag-write path=${h.path} value=${h.value}`, 'fired from README');
-    },
-  };
-  if (map[h.action]) {
-    log('auto-firing #action=' + h.action, 'ok');
-    setTimeout(map[h.action], 500);  // tiny delay so viewer sees auth state first
-  } else {
-    log('unknown action: ' + h.action, 'err');
-  }
-}
-autoFire();
-window.addEventListener('hashchange', autoFire);
-
-// ── back chip (manual escape hatch if auto-return doesn't fire)
-(function renderBackChip() {
-  const back = findBack();
-  if (!back) return;
-  const el = $('back-chip');
-  el.href = back;
-  el.textContent = '↩ ' + back.replace(/^https?:\/\//, '').slice(0, 36);
-  el.style.display = '';
-})();
-
-// ── boot log
-log('control deck ready · ' + (loadTok() ? 'authed' : 'anonymous'), 'ok');
-</script>
-
+<script type="module" src="./modules/main.js"></script>
 </body>
 </html>

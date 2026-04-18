@@ -74,7 +74,11 @@ export function wire(dc,rid){
       if(pm.has(pid)){pm.get(pid).msgsIn++;pm.get(pid).lastSeen=Date.now();publishPeer(pid)}
       CHAT.inc('msgsIn');CHAT.write('lastMsgAt',Date.now(),{type:'DateTime'});
       addMsg(pid,info.name,info.emoji,m.txt,false,info.avatar);
-    }else if(m.t && _extraHandlers.has(m.t)){
+    }
+    // Plugin observers: fire for every typed message (including `hi`
+    // and `msg`) so apps like terminal/whiteboard can tap into chat
+    // traffic alongside the built-in dispatcher.
+    if(m.t && _extraHandlers.has(m.t)){
       try{_extraHandlers.get(m.t)(m,rid)}catch(er){log('plugin('+m.t+') err: '+er.message,'er')}
     }
   }catch(er){log('parse err','er')}};

@@ -591,6 +591,22 @@ async function boot() {
 }
 
 boot();
+
+// Expose helpers so the p2p chat bridge module can register commands
+// and render incoming messages into the same terminal.
+window.ACG_TERMINAL = { COMMANDS, line, blank, kv, esc, echoCmd, ENDPOINTS };
 </script>
+
+<!-- hidden DOM the mesh scripts expect -->
+<div style="display:none">
+  <span id="cIn"></span><button id="sBtn"></button>
+  <ul id="pList"></ul><div id="msgList"></div>
+  <div id="log"></div>
+  <input id="rIn" value="acg-guild">
+  <button id="jBtn"></button>
+  <span id="mId"></span>
+</div>
+
+<script type="module" src="./terminal-chat.js"></script>
 </body>
 </html>

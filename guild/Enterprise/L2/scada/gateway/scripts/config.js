@@ -3,12 +3,13 @@
 // it short — most public WSS trackers have come and gone. Trim dead
 // ones via /health.html.
 //
-// 2026-04: tracker.webtorrent.dev handshakes have been timing out for
-// weeks. Dropped from the default list to stop the error spam.
-// openwebtorrent.com alone is enough for peers in the same room to
-// find each other. Put webtorrent.dev back when it recovers.
+// 2026-04: headless probe (bin/p2p-test.py) confirms BOTH trackers
+// cross-forward offers in both directions. webtorrent.dev is slow on
+// cold connect (>5 s handshake through Cloudflare), so p2p.js uses a
+// generous CONNECT_TIMEOUT_MS to accommodate it.
 export const TRACKERS=[
   'wss://tracker.openwebtorrent.com',
+  'wss://tracker.webtorrent.dev',
 ];
 
 export const ICE={iceServers:[

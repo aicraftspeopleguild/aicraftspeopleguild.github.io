@@ -18,9 +18,11 @@ REPO = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import svg_widget as S
 import gh_tag
+import site_base
 
 OUT  = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "readme-hero.svg"
-BASE = "https://teslasolar.github.io/aicraftspeopleguild.github.io"
+BASE = site_base.site_base()
+HOST_LABEL = BASE.split("://", 1)[-1]
 
 
 def _get(url):
@@ -58,7 +60,7 @@ def render() -> str:
         parts.append(S.chip(400, chip_y, f'💓 {S.pretty_ts(hb.get("value"))}', "g"))
 
     # Right-side quick links
-    parts.append(f'<text x="{w-20}" y="92" text-anchor="end" class="t lo">teslasolar.github.io/aicraftspeopleguild.github.io</text>')
+    parts.append(f'<text x="{w-20}" y="92" text-anchor="end" class="t lo">{S.esc(HOST_LABEL)}</text>')
     parts.append(f'<text x="{w-20}" y="116" text-anchor="end" class="t sub">pages static · CORS open · rebuilt on push</text>')
 
     parts.append("</svg>")

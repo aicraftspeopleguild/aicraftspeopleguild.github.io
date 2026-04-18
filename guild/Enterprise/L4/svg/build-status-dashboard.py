@@ -22,9 +22,10 @@ REPO = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 import svg_widget as S
 import gh_tag
+import site_base
 
 OUT      = REPO / "guild" / "Enterprise" / "L2" / "hmi" / "web" / "assets" / "svg" / "status-dashboard.svg"
-BASE_URL = "https://teslasolar.github.io/aicraftspeopleguild.github.io"
+BASE_URL = site_base.site_base()
 
 
 def _get(url):

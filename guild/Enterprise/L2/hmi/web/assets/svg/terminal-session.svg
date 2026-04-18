@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 350" width="1040" height="350" role="img" aria-label="ACG terminal session · example onboarding flow">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1040" height="36" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1040" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1040" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⌨ guild@acg:~  ·  live terminal transcript · click to launch</text>
+<rect y="36" width="1040" height="314" fill="#0b1018"/>
+<a href="https://aicraftspeopleguild.github.io/guild/apps/terminal/" target="_blank">
+<text x="20" y="58" class="t" font-size="12" fill="#3fb950">guild@acg:~$ </text>
+<text x="130" y="58" class="t" font-size="12" fill="#e6edf3">acg health</text>
+<text x="44" y="80" class="t" font-size="12" fill="#79c0ff">{ "paperCount": 24, "memberCount": 8, "apiVersion": "1.0", "lastUpdated": "live" }</text>
+<text x="20" y="102" class="t" font-size="12" fill="#3fb950">guild@acg:~$ </text>
+<text x="130" y="102" class="t" font-size="12" fill="#e6edf3">acg tag:read demo.heartbeat</text>
+<text x="44" y="124" class="t" font-size="12" fill="#79c0ff">tag:demo.heartbeat → 1776507911 · good · 2026-04-18 10:25Z</text>
+<text x="20" y="146" class="t" font-size="12" fill="#3fb950">guild@acg:~$ </text>
+<text x="130" y="146" class="t" font-size="12" fill="#e6edf3">chat hello</text>
+<text x="44" y="168" class="t" font-size="12" fill="#3fb950">[→ 2 peers]  hello</text>
+<text x="44" y="190" class="t" font-size="12" fill="#f0883e">[mferguson]  hi! catch me in the whiteboard?</text>
+<text x="20" y="212" class="t" font-size="12" fill="#3fb950">guild@acg:~$ </text>
+<text x="130" y="212" class="t" font-size="12" fill="#e6edf3">join paper-review</text>
+<text x="44" y="234" class="t" font-size="11" fill="#8b949e" font-style="italic">→ joining room paper-review</text>
+<text x="20" y="256" class="t" font-size="12" fill="#3fb950">guild@acg:~$ </text>
+<text x="130" y="256" class="t" font-size="12" fill="#e6edf3">watch demo.heartbeat</text>
+<text x="44" y="278" class="t" font-size="11" fill="#8b949e" font-style="italic">(press ^C to stop)</text>
+<text x="44" y="300" class="t" font-size="13" fill="#f85149" font-weight="700">💓  2026-04-18 10:25Z</text>
+<text x="20" y="322" class="t" font-size="12" fill="#3fb950">guild@acg:~$ </text>
+<text x="130" y="322" class="t" font-size="12" fill="#e6edf3">█</text>
+</a>
+</svg>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔔 Alarms · ACG</title>
+<link rel="stylesheet" href="../gateway/styles/theme.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0);color:var(--tx);font-family:var(--ff-body);font-size:13px;overflow:hidden;display:flex;flex-direction:column}
+.hd{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:0 1px 3px var(--sh);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hd h1{font-family:var(--ff-display);font-weight:700;font-size:17px;letter-spacing:.3px}
+.hd h1 span{font-weight:400;color:var(--dm);font-size:13px;margin-left:6px}
+.hd a{color:var(--tl);text-decoration:none;font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--r-sm);border:1px solid transparent}
+.hd a:hover{background:var(--tlb);border-color:var(--tl)}
+.hd .spacer{flex:1}
+.hd .sum{font-family:var(--ff-mono);font-size:11px;color:var(--dm)}
+.hd .sum b{color:var(--rs)}
+.hd .cadence{font-family:var(--ff-mono);font-size:11px;color:var(--sg)}
+
+.ctl{padding:10px 20px;background:var(--card);border-bottom:1px solid var(--bd2);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ctl label{font-size:11px;color:var(--dm);font-weight:500}
+.ctl select{padding:5px 10px;background:var(--inp);border:1px solid var(--bd);border-radius:var(--r-sm);font-family:var(--ff-mono);font-size:11px;color:var(--tx);outline:none}
+.ctl select:focus{border-color:var(--tl)}
+.ctl .sep{width:1px;height:18px;background:var(--bd);margin:0 4px}
+
+.wrap{flex:1;overflow:auto;padding:16px 20px}
+.alarm-grid{display:flex;flex-direction:column;gap:8px;max-width:1100px;margin:0 auto}
+.alarm-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r-md);padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 1px 3px var(--sh);transition:box-shadow .1s}
+.alarm-card:hover{box-shadow:0 2px 8px var(--sh)}
+.alarm-card.sev-error{border-left:3px solid var(--rs)}
+.alarm-card.sev-warn{border-left:3px solid var(--am)}
+.alarm-card.sev-info{border-left:3px solid var(--tl)}
+.alarm-card.acked{opacity:.55}
+.sev-badge{flex-shrink:0;min-width:48px;text-align:center;padding:4px 8px;border-radius:20px;font-family:var(--ff-mono);font-size:10px;font-weight:700;letter-spacing:.5px}
+.sev-badge.error{background:rgba(184,92,92,.15);color:var(--rs)}
+.sev-badge.warn{background:rgba(180,140,60,.15);color:var(--am)}
+.sev-badge.info{background:var(--tlb);color:var(--tl)}
+.alarm-body{flex:1}
+.alarm-tag{font-family:var(--ff-mono);font-size:12px;font-weight:600;color:var(--tx)}
+.alarm-msg{margin-top:3px;font-size:12px;color:var(--dm)}
+.alarm-meta{margin-top:5px;font-family:var(--ff-mono);font-size:10px;color:var(--ft);display:flex;gap:12px;flex-wrap:wrap}
+.alarm-meta span b{color:var(--dm)}
+.alarm-ack{flex-shrink:0;padding:5px 12px;border:1px solid var(--bd);border-radius:var(--r-sm);font-family:var(--ff-body);font-size:11px;font-weight:600;cursor:pointer;background:var(--inp);color:var(--dm)}
+.alarm-ack:hover{border-color:var(--tl);color:var(--tl)}
+.alarm-ack.acked{background:var(--tlb);border-color:var(--tl);color:var(--tl)}
+
+.all-clear{padding:40px;text-align:center;color:var(--sg);font-family:var(--ff-display);font-size:16px;font-style:italic}
+.history-hd{font-family:var(--ff-display);font-size:12px;font-weight:700;color:var(--ft);text-transform:uppercase;letter-spacing:1px;margin:20px 0 8px;max-width:1100px;margin-left:auto;margin-right:auto}
+</style>
+</head>
+<body>
+<div class="hd">
+  <h1>🔔 Alarms<span>· ACG fault annunciator</span></h1>
+  <a href="../index.html">← scada</a>
+  <a href="../../state/index.html">📊 state</a>
+  <a href="../../../index.html">enterprise</a>
+  <span class="spacer"></span>
+  <span class="sum" id="sum">—</span>
+  <span class="cadence" id="cadence">—</span>
+</div>
+<div class="ctl">
+  <label>Severity</label>
+  <select id="f-sev"><option value="">ALL</option><option value="error">ERROR</option><option value="warn">WARN</option><option value="info">INFO</option></select>
+  <div class="sep"></div>
+  <label>Status</label>
+  <select id="f-ack"><option value="">ALL</option><option value="active">Active only</option><option value="acked">Acked</option></select>
+</div>
+<div class="wrap" id="wrap"></div>
+
+<script>
+const STATE_API  = '../../../L4/api/state.json';
+const REFRESH_MS = 5000;
+
+let acked = new Set(JSON.parse(localStorage.getItem('acg.alarms.acked') || '[]'));
+let allFaults = [];
+let allHistory = [];
+
+function relTs(ts) {
+  if (!ts) return '—';
+  const d = (Date.now() - new Date(ts)) / 1000;
+  if (d < 60) return `${Math.round(d)}s ago`;
+  if (d < 3600) return `${Math.round(d/60)}m ago`;
+  return `${Math.round(d/3600)}h ago`;
+}
+
+function saveAck() {
+  localStorage.setItem('acg.alarms.acked', JSON.stringify([...acked]));
+}
+
+function renderCard(f) {
+  const isAcked = acked.has(String(f.fault_id));
+  const sev = (f.severity || 'error').toLowerCase();
+  return `<div class="alarm-card sev-${sev}${isAcked ? ' acked' : ''}" data-id="${f.fault_id}">
+    <span class="sev-badge ${sev}">${sev.toUpperCase()}</span>
+    <div class="alarm-body">
+      <div class="alarm-tag">${f.tag ?? ''}</div>
+      <div class="alarm-msg">${f.message ?? ''}</div>
+      <div class="alarm-meta">
+        <span><b>raised:</b> ${relTs(f.raised_at)}</span>
+        <span><b>kind:</b> ${f.kind ?? '—'}</span>
+        ${f.ack_at ? `<span><b>acked:</b> ${relTs(f.ack_at)}</span>` : ''}
+      </div>
+    </div>
+    <button class="alarm-ack${isAcked ? ' acked' : ''}" data-id="${f.fault_id}">${isAcked ? 'Acked ✓' : 'Ack'}</button>
+  </div>`;
+}
+
+function render() {
+  const sevF = document.getElementById('f-sev').value;
+  const ackF = document.getElementById('f-ack').value;
+  const wrap = document.getElementById('wrap');
+
+  let faults = allFaults.filter(f => {
+    if (sevF && (f.severity||'').toLowerCase() !== sevF) return false;
+    if (ackF === 'active' && acked.has(String(f.fault_id))) return false;
+    if (ackF === 'acked' && !acked.has(String(f.fault_id))) return false;
+    return true;
+  });
+
+  const sum = document.getElementById('sum');
+  const active = allFaults.filter(f => !acked.has(String(f.fault_id))).length;
+  sum.innerHTML = `<b>${active}</b> active · ${allFaults.length} total`;
+
+  if (!faults.length) {
+    wrap.innerHTML = '<div class="all-clear">✅ All clear — no matching alarms</div>';
+    return;
+  }
+
+  wrap.innerHTML = `<div class="alarm-grid">${faults.map(renderCard).join('')}</div>`;
+
+  wrap.querySelectorAll('.alarm-ack').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      if (acked.has(id)) acked.delete(id); else acked.add(id);
+      saveAck();
+      render();
+    });
+  });
+}
+
+async function refresh() {
+  try {
+    const st = await fetch(STATE_API + '?t=' + Date.now()).then(r => r.json());
+    allFaults = st?.faults_active ?? [];
+  } catch {
+    allFaults = [];
+  }
+  render();
+  document.getElementById('cadence').textContent = 'updated ' + new Date().toLocaleTimeString();
+}
+
+document.getElementById('f-sev').addEventListener('change', render);
+document.getElementById('f-ack').addEventListener('change', render);
+
+refresh();
+setInterval(refresh, REFRESH_MS);
+</script>
+</body>
+</html>

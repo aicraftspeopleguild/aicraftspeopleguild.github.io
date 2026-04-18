@@ -1,0 +1,13 @@
+{
+  "udtType": "Query",
+  "parameters": {
+    "id":          "enterprise:paper-count",
+    "name":        "Enterprise paper count",
+    "description": "COUNT(*) over acg.db papers — authoritative source for enterprise.paperCount.",
+    "db":          "acg",
+    "sql":         "SELECT COUNT(*) FROM papers",
+    "output_tag":  "enterprise.paperCount",
+    "enabled":     true
+  },
+  "tags": { "id": "query-paper-count", "schema_version": "1.0.0" }
+}

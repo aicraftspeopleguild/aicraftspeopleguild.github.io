@@ -12,53 +12,109 @@
 # }
 # @end-tag-event
 """
-Build guild/Enterprise/L4/runtime/tags.json — Ignition-style live tags reflecting
-current Guild enterprise state. Follows the Konomi Value UDT pattern:
+Build guild/Enterprise/L4/runtime/tags.json — Ignition-style live tags.
 
-  { "value": <v>, "quality": "good|stale|bad|uncertain", "type": "<UDT>" }
+Catalog layout (matches the spec):
 
-Inspired by ACGP2P's controls/db/tags.json. Regenerated on every build.
+  CATALOG · health.json     papers · members · last build · api version
+  ENTERPRISE · L4           paperCount memberCount programCount runCount
+                            tagEdges authoredLinks
+  PIPELINE · L3             complete · aborted · states
+  IDENTITY · deploy         host · deployMode · sys.apiVersion · latestPaper
+
+Sources: guild/Enterprise/L4/database/acg.db + L2/state/state.db +
+L4/api/health.json. Regenerated every pipeline.build.status COMPLETE.
 """
-import json, sys
-from pathlib import Path
+import json, sqlite3, sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 HERE = Path(__file__).resolve()
-REPO = HERE.parents[4]
-sys.path.insert(0, str(REPO / "guild" / "web" / "scripts" / "lib"))
+REPO = HERE.parents[5]
+sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L2" / "lib"))
 sys.path.insert(0, str(REPO / "guild" / "Enterprise" / "L4" / "database" / "lib"))
-from packml import Process, path_exists
-import db as acgdb
 
-OUT = REPO / "guild" / "Enterprise" / "L4" / "runtime" / "tags.json"
+try:
+    import db as acgdb  # L4 ERP store
+except Exception:
+    acgdb = None
 
-def now_ms():
+STATE_DB = REPO / "guild" / "Enterprise" / "L2" / "state" / "state.db"
+HEALTH   = REPO / "guild" / "Enterprise" / "L4" / "api" / "health.json"
+OUT      = REPO / "guild" / "Enterprise" / "L4" / "runtime" / "tags.json"
+
+
+def now_ms() -> int:
     return int(datetime.now(timezone.utc).timestamp() * 1000)
 
-def count(conn, sql):
-    return conn.execute(sql).fetchone()[0]
 
-def scalar(conn, sql, default=None):
-    row = conn.execute(sql).fetchone()
-    return row[0] if row and row[0] is not None else default
-
-def tag(v, quality="good", t="String"):
+def tag(v, quality: str = "good", t: str = "String") -> dict:
     return {"value": v, "quality": quality, "type": t}
 
-def build_tags(conn):
+
+def _count(conn, sql):
+    try:
+        return conn.execute(sql).fetchone()[0]
+    except Exception:
+        return 0
+
+
+def _scalar(conn, sql, default=None):
+    try:
+        r = conn.execute(sql).fetchone()
+        return r[0] if r and r[0] is not None else default
+    except Exception:
+        return default
+
+
+def build_tags() -> dict:
     ts = now_ms()
-    state_dir = REPO / "guild" / "Enterprise" / "L2" / "state"
-    state_files = list(state_dir.glob("*.state.json")) if state_dir.exists() else []
-    last_complete = 0
-    aborts = 0
-    for f in state_files:
+
+    # CATALOG — proxy health.json (source of truth for public counts)
+    health = {}
+    if HEALTH.exists():
         try:
-            d = json.loads(f.read_text(encoding="utf-8"))
-            t_ = d.get("parameters", {}).get("terminal")
-            if t_ == "COMPLETE":
-                last_complete += 1
-            elif t_ == "ABORTED":
-                aborts += 1
+            health = json.loads(HEALTH.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+
+    enterprise = {}
+    catalog_extras = {}
+    if acgdb is not None:
+        try:
+            conn = acgdb.connect()
+        except Exception:
+            conn = None
+        if conn is not None:
+            try:
+                enterprise = {
+                    "paperCount":    tag(_count(conn, "SELECT COUNT(*) FROM papers"),        "good", "Counter"),
+                    "memberCount":   tag(_count(conn, "SELECT COUNT(*) FROM members"),       "good", "Counter"),
+                    "programCount":  tag(_count(conn, "SELECT COUNT(*) FROM programs"),      "good", "Counter"),
+                    "runCount":      tag(_count(conn, "SELECT COUNT(*) FROM packml_runs"),   "good", "Counter"),
+                    "tagEdges":      tag(_count(conn, "SELECT COUNT(*) FROM paper_tags"),    "good", "Counter"),
+                    "authoredLinks": tag(_count(conn, "SELECT COUNT(*) FROM member_papers"), "good", "Counter"),
+                }
+                catalog_extras["latestPaperDate"] = tag(
+                    _scalar(conn, "SELECT MAX(publication_date) FROM papers", ""),
+                    "good", "DateTime",
+                )
+                catalog_extras["latestPaperTitle"] = tag(
+                    _scalar(conn, "SELECT title FROM papers ORDER BY publication_date DESC LIMIT 1", ""),
+                    "good", "String",
+                )
+            finally:
+                conn.close()
+
+    # PIPELINE from state.db (primary) + L2/state/*.state.json (legacy)
+    complete = aborted = states = 0
+    if STATE_DB.exists():
+        try:
+            s = sqlite3.connect(str(STATE_DB))
+            complete = _count(s, "SELECT COUNT(*) FROM pipeline_runs WHERE ok=1")
+            aborted  = _count(s, "SELECT COUNT(*) FROM pipeline_runs WHERE ok=0")
+            states   = _count(s, "SELECT COUNT(*) FROM events")
+            s.close()
         except Exception:
             pass
 
@@ -66,57 +122,42 @@ def build_tags(conn):
         "_meta": {
             "schema":    "acg/dense-token · §0",
             "updatedAt": ts,
-            "source":    "guild/web/scripts/api/build-runtime-tags.py",
-            "about":     "Live runtime state of the ACG enterprise — regen on every build"
-        },
-        "sys": {
-            "startedAt":  tag(ts, "good", "DateTime"),
-            "buildAt":    tag(ts, "good", "DateTime"),
-            "apiVersion": tag("1.0", "good", "String"),
-        },
-        "enterprise": {
-            "paperCount":    tag(count(conn, "SELECT COUNT(*) FROM papers"),        "good", "Counter"),
-            "memberCount":   tag(count(conn, "SELECT COUNT(*) FROM members"),       "good", "Counter"),
-            "programCount":  tag(count(conn, "SELECT COUNT(*) FROM programs"),      "good", "Counter"),
-            "runCount":      tag(count(conn, "SELECT COUNT(*) FROM packml_runs"),   "good", "Counter"),
-            "tagEdges":      tag(count(conn, "SELECT COUNT(*) FROM paper_tags"),    "good", "Counter"),
-            "authoredLinks": tag(count(conn, "SELECT COUNT(*) FROM member_papers"), "good", "Counter"),
+            "source":    "guild/Enterprise/L4/api/scripts/build-runtime-tags.py",
+            "about":     "Live runtime state · CATALOG · ENTERPRISE · PIPELINE · IDENTITY"
         },
         "catalog": {
-            "latestPaperDate": tag(scalar(conn, "SELECT MAX(publication_date) FROM papers", ""), "good", "DateTime"),
-            "typeBreakdown":   tag({row[0]: row[1] for row in conn.execute(
-                "SELECT status, COUNT(*) FROM papers GROUP BY status"
-            )}, "good", "JSON"),
+            "papers":     tag(health.get("paperCount"),  "good", "Counter"),
+            "members":    tag(health.get("memberCount"), "good", "Counter"),
+            "lastBuild":  tag(health.get("lastUpdated"), "good", "DateTime"),
+            "apiVersion": tag(health.get("apiVersion"),  "good", "String"),
+            **catalog_extras,
         },
+        "enterprise": enterprise,
         "pipeline": {
-            "lastCompleteCount": tag(last_complete, "good", "Counter"),
-            "lastAbortedCount":  tag(aborts,        "good" if aborts == 0 else "bad", "Counter"),
-            "stateFileCount":    tag(len(state_files), "good", "Counter"),
+            "complete": tag(complete, "good", "Counter"),
+            "aborted":  tag(aborted,  "good" if aborted == 0 else "bad", "Counter"),
+            "states":   tag(states,   "good", "Counter"),
         },
         "identity": {
-            "host":       tag("aicraftspeopleguild.github.io", "good", "String"),
-            "repoUrl":    tag("github.com/aicraftspeopleguild/aicraftspeopleguild.github.io", "good", "String"),
-            "deployMode": tag("github-pages-static", "good", "String"),
-        }
+            "host":        tag("aicraftspeopleguild.github.io", "good", "String"),
+            "deployMode":  tag("github-pages-static",           "good", "String"),
+            "apiVersion":  tag(health.get("apiVersion", "1.0"), "good", "String"),
+            "latestPaper": catalog_extras.get("latestPaperTitle", tag("", "uncertain", "String")),
+            "repoUrl":     tag("github.com/aicraftspeopleguild/aicraftspeopleguild.github.io", "good", "String"),
+        },
     }
 
-def main():
+
+def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    conn = acgdb.connect()
-    try:
-        tags = build_tags(conn)
-    finally:
-        conn.close()
-    OUT.write_text(json.dumps(tags, indent=2, ensure_ascii=False), encoding="utf-8")
+    tags = build_tags()
+    OUT.write_text(json.dumps(tags, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"[runtime-tags] wrote {OUT.relative_to(REPO)}")
-    print(f"  enterprise: {tags['enterprise']['paperCount']['value']} papers, "
-          f"{tags['enterprise']['memberCount']['value']} members, "
-          f"{tags['enterprise']['runCount']['value']} PackML runs")
+    print(f"  catalog:    papers={tags['catalog']['papers']['value']} members={tags['catalog']['members']['value']}")
+    ent = ", ".join(f"{k}={v['value']}" for k, v in tags["enterprise"].items())
+    print(f"  enterprise: {ent}")
+    print(f"  pipeline:   complete={tags['pipeline']['complete']['value']} aborted={tags['pipeline']['aborted']['value']} states={tags['pipeline']['states']['value']}")
+
 
 if __name__ == "__main__":
-    with Process(
-        "api--build-runtime-tags_py",
-        pre_checks=[path_exists(REPO / "guild" / "Enterprise" / "L4" / "database" / "acg.db")],
-        post_checks=[path_exists(OUT)],
-    ):
-        main()
+    main()

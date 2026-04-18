@@ -1,18 +1,23 @@
 {
   "_meta": {
     "schema": "acg/dense-token · §0",
-    "updatedAt": 1776490544519,
+    "updatedAt": 1776498152207,
     "source": "guild/Enterprise/L4/api/scripts/build-runtime-tags.py",
-    "about": "Live runtime state of the ACG enterprise — regen on every build"
+    "about": "Live runtime state · CATALOG · ENTERPRISE · PIPELINE · IDENTITY"
   },
-  "sys": {
-    "startedAt": {
-      "value": 1776490544519,
+  "catalog": {
+    "papers": {
+      "value": 0,
       "quality": "good",
-      "type": "DateTime"
+      "type": "Counter"
     },
-    "buildAt": {
-      "value": 1776490544519,
+    "members": {
+      "value": 8,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "lastBuild": {
+      "value": "2026-04-18T06:49:01Z",
       "quality": "good",
       "type": "DateTime"
     },
@@ -20,11 +25,21 @@
       "value": "1.0",
       "quality": "good",
       "type": "String"
+    },
+    "latestPaperDate": {
+      "value": "",
+      "quality": "good",
+      "type": "DateTime"
+    },
+    "latestPaperTitle": {
+      "value": "",
+      "quality": "good",
+      "type": "String"
     }
   },
   "enterprise": {
     "paperCount": {
-      "value": 24,
+      "value": 0,
       "quality": "good",
       "type": "Counter"
     },
@@ -44,46 +59,29 @@
       "type": "Counter"
     },
     "tagEdges": {
-      "value": 4,
-      "quality": "good",
-      "type": "Counter"
-    },
-    "authoredLinks": {
-      "value": 6,
-      "quality": "good",
-      "type": "Counter"
-    }
-  },
-  "catalog": {
-    "latestPaperDate": {
-      "value": "Medium, 2 February 2026",
-      "quality": "good",
-      "type": "DateTime"
-    },
-    "typeBreakdown": {
-      "value": {
-        "experimental": 2,
-        "knowledge-about-knowledge": 2,
-        "position": 3,
-        "published": 17
-      },
-      "quality": "good",
-      "type": "JSON"
-    }
-  },
-  "pipeline": {
-    "lastCompleteCount": {
-      "value": 8,
-      "quality": "good",
-      "type": "Counter"
-    },
-    "lastAbortedCount": {
       "value": 0,
       "quality": "good",
       "type": "Counter"
     },
-    "stateFileCount": {
-      "value": 8,
+    "authoredLinks": {
+      "value": 0,
+      "quality": "good",
+      "type": "Counter"
+    }
+  },
+  "pipeline": {
+    "complete": {
+      "value": 1,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "aborted": {
+      "value": 0,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "states": {
+      "value": 29,
       "quality": "good",
       "type": "Counter"
     }
@@ -94,13 +92,23 @@
       "quality": "good",
       "type": "String"
     },
-    "repoUrl": {
-      "value": "github.com/aicraftspeopleguild/aicraftspeopleguild.github.io",
+    "deployMode": {
+      "value": "github-pages-static",
       "quality": "good",
       "type": "String"
     },
-    "deployMode": {
-      "value": "github-pages-static",
+    "apiVersion": {
+      "value": "1.0",
+      "quality": "good",
+      "type": "String"
+    },
+    "latestPaper": {
+      "value": "",
+      "quality": "good",
+      "type": "String"
+    },
+    "repoUrl": {
+      "value": "github.com/aicraftspeopleguild/aicraftspeopleguild.github.io",
       "quality": "good",
       "type": "String"
     }

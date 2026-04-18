@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🏷 Tag Write · ACG</title>
+<link rel="stylesheet" href="../../../L2/scada/gateway/styles/theme.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{min-height:100%;background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0);color:var(--tx);font-family:var(--ff-body);font-size:13px}
+.hd{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:0 1px 3px var(--sh);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hd h1{font-family:var(--ff-display);font-weight:700;font-size:17px;letter-spacing:.3px}
+.hd h1 span{font-weight:400;color:var(--dm);font-size:13px;margin-left:6px}
+.hd a{color:var(--tl);text-decoration:none;font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--r-sm);border:1px solid transparent}
+.hd a:hover{background:var(--tlb);border-color:var(--tl)}
+.hd .spacer{flex:1}
+.wrap{padding:24px;max-width:640px;margin:0 auto}
+.form-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r-md);padding:24px;box-shadow:0 1px 6px var(--sh)}
+.form-card h2{font-family:var(--ff-display);font-size:16px;font-weight:700;color:var(--tx);margin-bottom:6px}
+.form-card .lede{font-size:12px;color:var(--dm);line-height:1.5;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bd2)}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.field label{font-size:11px;font-weight:600;color:var(--dm);text-transform:uppercase;letter-spacing:.5px}
+.field .hint{font-size:10px;color:var(--ft);margin-top:1px}
+.field input,.field select,.field textarea{padding:8px 10px;background:var(--inp);border:1px solid var(--bd);border-radius:var(--r-sm);font-family:var(--ff-mono);font-size:12px;color:var(--tx);outline:none;transition:border-color .12s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--tl)}
+.field textarea{resize:vertical;min-height:80px;font-size:11px}
+.field input.required:invalid{border-color:var(--am)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.actions{display:flex;gap:10px;margin-top:6px}
+.btn-primary{flex:1;padding:10px;background:var(--tl);color:#fff;border:none;border-radius:var(--r-sm);font-family:var(--ff-body);font-size:13px;font-weight:700;cursor:pointer}
+.btn-primary:hover{background:var(--tl2)}
+.btn-reset{padding:10px 18px;background:var(--inp);color:var(--dm);border:1px solid var(--bd);border-radius:var(--r-sm);font-family:var(--ff-body);font-size:12px;font-weight:600;cursor:pointer}
+.btn-reset:hover{border-color:var(--tl);color:var(--tl)}
+.info-box{background:var(--bg);border:1px solid var(--bd2);border-radius:var(--r-sm);padding:10px 12px;font-size:11px;color:var(--dm);line-height:1.5;margin-bottom:20px}
+.info-box code{font-family:var(--ff-mono);background:var(--bd2);padding:1px 4px;border-radius:3px;color:var(--tx)}
+</style>
+</head>
+<body>
+<div class="hd">
+  <h1>🏷 Tag Write<span>· ACG control input</span></h1>
+  <a href="../submit/index.html">← submit paper</a>
+  <a href="../../plc/index.html">plc</a>
+  <a href="../../../index.html">enterprise</a>
+  <span class="spacer"></span>
+</div>
+<div class="wrap">
+  <div class="form-card">
+    <h2>🏷️ Write a tag value</h2>
+    <p class="lede">Submits a GitHub Issue pre-filled with the tag write request. The <code>sync-db</code> workflow merges the value into <code>controls/db/tags.json</code> and commits to <code>main</code>.</p>
+    <div class="info-box">
+      See <code>controls/scada/gateway/providers/registry.json</code> for the owning provider of each namespace.<br>
+      Values must be JSON-encoded: <code>"hello"</code>, <code>42</code>, <code>true</code>, <code>null</code>, <code>{"key":"val"}</code>.
+    </div>
+    <form id="form" novalidate>
+      <div class="field">
+        <label>Tag path *</label>
+        <input id="path" required placeholder="room.peerCount" spellcheck="false">
+        <span class="hint">Dot-separated namespace path, e.g. <code>room.peerCount</code>, <code>errors.byLevel.ERROR.count</code></span>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Value *</label>
+          <input id="value" required placeholder="7">
+          <span class="hint">JSON-encoded scalar or object</span>
+        </div>
+        <div class="field">
+          <label>Quality *</label>
+          <select id="quality">
+            <option value="good">good</option>
+            <option value="stale">stale</option>
+            <option value="bad">bad</option>
+            <option value="uncertain">uncertain</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Source (optional)</label>
+        <input id="source" placeholder="room.py · p2p" spellcheck="false">
+        <span class="hint">Module / provider that owns this tag</span>
+      </div>
+      <div class="field">
+        <label>Reason (optional)</label>
+        <textarea id="reason" placeholder="Why this value is being written now…" rows="3"></textarea>
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn-primary">Open GitHub Issue →</button>
+        <button type="reset" class="btn-reset">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+const GITHUB_ISSUE_URL = 'https://github.com/teslasolar/aicraftspeopleguild.github.io/issues/new';
+
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault();
+  const path    = document.getElementById('path').value.trim();
+  const value   = document.getElementById('value').value.trim();
+  const quality = document.getElementById('quality').value;
+  const source  = document.getElementById('source').value.trim();
+  const reason  = document.getElementById('reason').value.trim();
+
+  if (!path || !value) {
+    alert('Tag path and value are required.');
+    return;
+  }
+
+  const title = `🏷️ ${path} = ${value}`;
+  const body = [
+    `### Tag path\n${path}`,
+    `### Value\n${value}`,
+    `### Quality\n${quality}`,
+    source ? `### Source\n${source}` : null,
+    reason ? `### Reason\n${reason}` : null,
+  ].filter(Boolean).join('\n\n');
+
+  const url = new URL(GITHUB_ISSUE_URL);
+  url.searchParams.set('title', title);
+  url.searchParams.set('labels', 'acg-db,tag-update');
+  url.searchParams.set('body', body);
+  window.open(url.toString(), '_blank', 'noopener');
+});
+</script>
+</body>
+</html>

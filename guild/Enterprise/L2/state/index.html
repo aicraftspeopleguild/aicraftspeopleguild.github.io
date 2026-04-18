@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📊 PackML State · ACG</title>
+<link rel="stylesheet" href="../scada/gateway/styles/theme.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:linear-gradient(135deg,#faf6f0,#f0e8d8 50%,#f5ece0);color:var(--tx);font-family:var(--ff-body);font-size:13px;overflow:hidden;display:flex;flex-direction:column}
+.hd{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);box-shadow:0 1px 3px var(--sh);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hd h1{font-family:var(--ff-display);font-weight:700;font-size:17px;letter-spacing:.3px}
+.hd h1 span{font-weight:400;color:var(--dm);font-size:13px;margin-left:6px}
+.hd a{color:var(--tl);text-decoration:none;font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--r-sm);border:1px solid transparent}
+.hd a:hover{background:var(--tlb);border-color:var(--tl)}
+.hd .spacer{flex:1}
+.hd .cadence{font-family:var(--ff-mono);font-size:11px;color:var(--sg)}
+.wrap{flex:1;overflow:auto;padding:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:1200px;margin:0 auto}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:var(--r-md);overflow:hidden;box-shadow:0 1px 4px var(--sh)}
+.panel-hd{padding:10px 14px;background:var(--bg2);border-bottom:1px solid var(--bd);font-family:var(--ff-display);font-size:13px;font-weight:700;color:var(--tx);display:flex;align-items:center;gap:8px}
+.panel-hd .badge{font-size:10px;font-family:var(--ff-mono);padding:2px 7px;border-radius:20px;background:var(--inp);border:1px solid var(--bd);color:var(--dm)}
+.panel-body{padding:14px}
+
+/* state pill */
+.state-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:20px;font-family:var(--ff-mono);font-size:15px;font-weight:700;letter-spacing:.5px;border:2px solid currentColor}
+.state-pill.RUNNING{color:var(--sg);background:rgba(69,160,90,.1)}
+.state-pill.COMPLETE{color:var(--tl);background:var(--tlb)}
+.state-pill.IDLE{color:var(--dm);background:var(--bg)}
+.state-pill.ABORTING,.state-pill.ABORTED{color:var(--rs);background:rgba(184,92,92,.1)}
+.state-pill.STARTING,.state-pill.COMPLETING{color:var(--am);background:rgba(180,140,60,.1)}
+.state-pill::before{content:'';width:8px;height:8px;border-radius:50%;background:currentColor}
+
+/* summary kpi grid */
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:var(--bg);border:1px solid var(--bd2);border-radius:var(--r-sm);padding:10px;text-align:center}
+.kpi .val{font-family:var(--ff-mono);font-size:20px;font-weight:700;color:var(--tx)}
+.kpi .lbl{font-size:10px;color:var(--ft);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
+.kpi.warn .val{color:var(--am)}
+.kpi.bad .val{color:var(--rs)}
+.kpi.ok .val{color:var(--sg)}
+
+/* faults */
+table.faults{width:100%;border-collapse:collapse;font-size:11px}
+table.faults thead{background:var(--bg2)}
+table.faults th{text-align:left;padding:7px 10px;font-weight:600;color:var(--dm);border-bottom:1px solid var(--bd);letter-spacing:.3px}
+table.faults td{padding:6px 10px;border-bottom:1px solid var(--bd2);font-family:var(--ff-mono);vertical-align:top;word-break:break-word}
+table.faults td.sev-error{color:var(--rs);font-weight:700}
+table.faults td.sev-warn{color:var(--am);font-weight:700}
+table.faults tr:last-child td{border:none}
+table.faults tr:hover{background:var(--bg2)}
+
+/* last event */
+.event-row{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--bd2);font-size:12px;align-items:flex-start}
+.event-row:last-child{border:none}
+.event-row .ets{font-family:var(--ff-mono);font-size:10px;color:var(--ft);white-space:nowrap;flex-shrink:0;margin-top:1px}
+.event-row .ekind{font-family:var(--ff-mono);font-size:10px;padding:2px 6px;border-radius:20px;background:var(--tlb);color:var(--tl);flex-shrink:0;margin-top:0}
+.event-row .edet{color:var(--dm);flex:1;font-family:var(--ff-mono);font-size:11px}
+.event-row .edet b{color:var(--tx)}
+
+.sm-box{display:flex;flex-direction:column;gap:12px}
+.sm-ts{font-family:var(--ff-mono);font-size:11px;color:var(--ft);margin-top:4px}
+
+.empty-faults{padding:20px;text-align:center;color:var(--sg);font-family:var(--ff-display);font-style:italic;font-size:12px}
+</style>
+</head>
+<body>
+<div class="hd">
+  <h1>📊 PackML State<span>· ACG build pipeline</span></h1>
+  <a href="../scada/index.html">← scada</a>
+  <a href="../../index.html">enterprise</a>
+  <a href="../scada/alarms/index.html">🔔 alarms</a>
+  <span class="spacer"></span>
+  <span class="cadence" id="cadence">—</span>
+</div>
+<div class="wrap">
+  <div class="grid" id="grid">
+    <div class="panel"><div class="panel-hd">PackML State</div><div class="panel-body" id="sm-panel">…</div></div>
+    <div class="panel"><div class="panel-hd">Pipeline KPIs</div><div class="panel-body" id="kpi-panel">…</div></div>
+    <div class="panel"><div class="panel-hd">Active Faults <span class="badge" id="fault-badge">0</span></div><div class="panel-body" id="fault-panel">…</div></div>
+    <div class="panel"><div class="panel-hd">Last Events</div><div class="panel-body" id="event-panel">…</div></div>
+  </div>
+</div>
+
+<script>
+const STATE_API  = '../../L4/api/state.json';
+const SM_LAST    = './sm-last.json';
+const REFRESH_MS = 5000;
+
+function fmtTs(ts) {
+  if (!ts) return '—';
+  try { return new Date(ts).toLocaleString(); } catch { return ts; }
+}
+
+function relTs(ts) {
+  if (!ts) return '—';
+  const d = (Date.now() - new Date(ts)) / 1000;
+  if (d < 60) return `${Math.round(d)}s ago`;
+  if (d < 3600) return `${Math.round(d/60)}m ago`;
+  return `${Math.round(d/3600)}h ago`;
+}
+
+async function refresh() {
+  let st, sm;
+  try { st = await fetch(STATE_API).then(r => r.json()); } catch { st = null; }
+  try { sm = await fetch(SM_LAST + '?t=' + Date.now()).then(r => r.json()); } catch { sm = null; }
+
+  const s = st?.summary ?? {};
+  const state = sm?.['git:state'] ?? s.repo_state ?? 'UNKNOWN';
+  const tick  = sm?.['git:state:last_tick_at'] ?? s.last_event?.at ?? null;
+
+  // State panel
+  const smEl = document.getElementById('sm-panel');
+  smEl.innerHTML = `
+    <div class="sm-box">
+      <span class="state-pill ${state}">${state}</span>
+      <div class="sm-ts">last tick: ${fmtTs(tick)} (${relTs(tick)})</div>
+    </div>`;
+
+  // KPIs
+  const kpiEl = document.getElementById('kpi-panel');
+  const fa = s.faults_active ?? 0;
+  kpiEl.innerHTML = `
+    <div class="kpi-grid">
+      <div class="kpi ok"><div class="val">${s.pipeline_runs ?? '—'}</div><div class="lbl">pipeline runs</div></div>
+      <div class="kpi ${s.pipeline_failures ? 'bad' : ''}"><div class="val">${s.pipeline_failures ?? '—'}</div><div class="lbl">failures</div></div>
+      <div class="kpi"><div class="val">${s.tool_runs ?? '—'}</div><div class="lbl">tool runs</div></div>
+      <div class="kpi ${s.tool_failures ? 'warn' : ''}"><div class="val">${s.tool_failures ?? '—'}</div><div class="lbl">tool errors</div></div>
+      <div class="kpi"><div class="val">${s.tag_values ?? '—'}</div><div class="lbl">tag values</div></div>
+      <div class="kpi ${fa ? 'bad' : 'ok'}"><div class="val">${fa}</div><div class="lbl">active faults</div></div>
+    </div>`;
+
+  // Faults
+  const fEl  = document.getElementById('fault-panel');
+  const fBdg = document.getElementById('fault-badge');
+  const faults = st?.faults_active ?? [];
+  fBdg.textContent = faults.length;
+  if (!faults.length) {
+    fEl.innerHTML = '<div class="empty-faults">✅ No active faults</div>';
+  } else {
+    fEl.innerHTML = `<table class="faults">
+      <thead><tr><th>Severity</th><th>Tag</th><th>Message</th><th>Raised</th></tr></thead>
+      <tbody>${faults.map(f => `
+        <tr>
+          <td class="sev-${f.severity}">${f.severity}</td>
+          <td>${f.tag ?? ''}</td>
+          <td>${f.message ?? ''}</td>
+          <td>${relTs(f.raised_at)}</td>
+        </tr>`).join('')}
+      </tbody></table>`;
+  }
+
+  // Last event + last pipeline run
+  const evEl = document.getElementById('event-panel');
+  const ev = s.last_event;
+  const pr = s.last_pipeline_run;
+  let rows = '';
+  if (pr) rows += `<div class="event-row">
+    <span class="ets">${relTs(pr.started_at)}</span>
+    <span class="ekind">pipeline</span>
+    <span class="edet">id: <b>${pr.pipeline_id}</b> · ${pr.ok ? '✅ ok' : '❌ failed'}</span></div>`;
+  if (ev) rows += `<div class="event-row">
+    <span class="ets">${relTs(ev.at)}</span>
+    <span class="ekind">${ev.kind}</span>
+    <span class="edet"><b>${ev.tag}</b> → ${ev.from_state ?? ''} ▸ ${ev.to_state ?? ''}</span></div>`;
+  evEl.innerHTML = rows || '<div style="color:var(--ft);font-size:11px;padding:8px">No events.</div>';
+
+  document.getElementById('cadence').textContent = 'updated ' + new Date().toLocaleTimeString();
+}
+
+refresh();
+setInterval(refresh, REFRESH_MS);
+</script>
+</body>
+</html>

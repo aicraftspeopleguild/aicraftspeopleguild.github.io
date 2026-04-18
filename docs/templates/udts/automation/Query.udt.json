@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Query",
+  "version": "1.0.0",
+  "description": "A named SQL query stored in tag.db.queries. Executed on demand by the query:run Tool or fired automatically when its trigger tag transitions. Result is coerced to a scalar/JSON and written to output_tag (optional).",
+  "parameters": {
+    "id":           { "dataType": "String", "required": true },
+    "name":         { "dataType": "String", "required": true },
+    "description":  { "dataType": "String", "required": false },
+    "db":           { "dataType": "String", "required": true, "enum": ["state", "tag", "acg"],
+                      "description": "Which SQLite: L2/state/state.db, root tag.db, or L4/database/acg.db" },
+    "sql":          { "dataType": "String", "required": true,
+                      "description": "SELECT only. Parameter bindings via :name are looked up in inputs at runtime." },
+    "output_tag":   { "dataType": "String", "required": false,
+                      "description": "Tag written with the result (scalar if single cell, JSON otherwise)." },
+    "trigger":      { "dataType": "JSON",   "required": false,
+                      "description": "Optional on_transition binding — when set, query fires on a matching state-machine event." },
+    "enabled":      { "dataType": "Boolean","required": false, "default": true }
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "schema_version": { "dataType": "String" }
+  }
+}

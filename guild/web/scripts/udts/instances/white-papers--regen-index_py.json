@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Regen Index",
+    "path": "guild/web/scripts/white-papers/regen-index.py",
+    "language": "python",
+    "category": "white-papers-pipeline",
+    "purpose": "Regenerate guild/web/static/white-papers.html from UDT instances.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "white-papers-pipeline",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "white-papers--regen-index_py",
+    "state_log": "",
+    "last_state": "IDLE",
+    "last_run_at": "",
+    "last_duration": "",
+    "schema_version": "1.0.0"
+  }
+}

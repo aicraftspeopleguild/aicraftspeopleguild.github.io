@@ -11,10 +11,14 @@ For each guild/web/white-papers/udts/instances/<slug>.json:
 
 The build step (build.js) then renders each app to dist/apps/<slug>.html.
 """
-import json
+import json, sys
 from pathlib import Path
 from datetime import datetime, timezone
 import markdown
+
+# PackML wrapper (scripts/lib/packml.py)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "lib"))
+from packml import Process, path_exists, has_files
 
 REPO = Path(__file__).resolve().parents[4]
 WP_INSTANCES = REPO / "guild" / "web" / "white-papers" / "udts" / "instances"
@@ -238,4 +242,18 @@ def main():
     print(f"  index.json       (manifest)")
 
 if __name__ == "__main__":
-    main()
+    with Process(
+        "apps--build-whitepaper-apps_py",
+        pre_checks=[
+            path_exists(WP_INSTANCES),
+            has_files(WP_INSTANCES / "*.json", min_count=10),
+            path_exists(APP_TEMPLATE),
+        ],
+        post_checks=[
+            has_files(APP_DIR / "udts" / "instances" / "*.json", min_count=10),
+            has_files(APP_DIR / "data" / "*.json", min_count=10),
+            has_files(APP_DIR / "pages" / "*.json", min_count=10),
+            path_exists(APP_DIR / "index.json"),
+        ],
+    ):
+        main()

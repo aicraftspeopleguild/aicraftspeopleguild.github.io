@@ -256,6 +256,12 @@ function build() {
       skipped++;
       continue;
     }
+    // Paths whose `page` is an HTML file (e.g., /submit) are direct-served,
+    // no view tree to render. Skip them silently.
+    if (!pageFile.endsWith('.json')) {
+      skipped++;
+      continue;
+    }
     const page = loadJSON(pageFile);
     const pgParams = page.parameters;
 

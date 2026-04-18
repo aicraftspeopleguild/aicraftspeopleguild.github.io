@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Build",
+    "path": "guild/web/scripts/build.sh",
+    "language": "bash",
+    "category": "build-orchestrator",
+    "purpose": "ACG site build pipeline",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "build-orchestrator",
+      "bash"
+    ]
+  },
+  "tags": {
+    "id": "build_sh",
+    "state_log": "",
+    "last_state": "IDLE",
+    "last_run_at": "",
+    "last_duration": "",
+    "schema_version": "1.0.0"
+  }
+}

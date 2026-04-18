@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Extract",
+    "path": "guild/web/scripts/members/extract.py",
+    "language": "python",
+    "category": "members-pipeline",
+    "purpose": "Extract member profiles from HTML into markdown originals + Member UDT instances.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "members-pipeline",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "members--extract_py",
+    "state_log": "",
+    "last_state": "IDLE",
+    "last_run_at": "",
+    "last_duration": "",
+    "schema_version": "1.0.0"
+  }
+}

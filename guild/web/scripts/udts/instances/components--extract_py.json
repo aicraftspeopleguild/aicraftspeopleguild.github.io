@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Extract",
+    "path": "guild/web/scripts/components/extract.py",
+    "language": "python",
+    "category": "components-pipeline",
+    "purpose": "Extract Component UDT instances from engineering docs.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "components-pipeline",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "components--extract_py",
+    "state_log": "",
+    "last_state": "IDLE",
+    "last_run_at": "",
+    "last_duration": "",
+    "schema_version": "1.0.0"
+  }
+}

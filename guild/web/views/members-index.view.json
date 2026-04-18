@@ -10,7 +10,7 @@
         "subtitle": "{{ page.subtitle }}",
         "bodyClass": "page-members",
         "stylesheets": ["style/main.css"],
-        "backHref": "../../index.html",
+        "backHref": "../../../index.html",
         "backLabel": "Back to Home"
       },
       "children": [
@@ -51,7 +51,7 @@
             "primaryText": "Read the Charter",
             "primaryHref": "charter.html",
             "secondaryText": "Back to Home",
-            "secondaryHref": "../../index.html"
+            "secondaryHref": "../../../index.html"
           }
         }
       ]

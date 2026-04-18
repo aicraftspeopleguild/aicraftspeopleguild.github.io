@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Build Whitepaper Apps",
+    "path": "guild/web/scripts/apps/build-whitepaper-apps.py",
+    "language": "python",
+    "category": "apps-pipeline",
+    "purpose": "Generate one App per white paper UDT instance.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "apps-pipeline",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "apps--build-whitepaper-apps_py",
+    "state_log": "state/apps--build-whitepaper-apps_py.state.json",
+    "last_state": "COMPLETE",
+    "last_run_at": "2026-04-18T03:41:37Z",
+    "last_duration": "0.227",
+    "schema_version": "1.0.0"
+  }
+}

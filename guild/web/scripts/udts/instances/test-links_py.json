@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Test Links",
+    "path": "guild/web/scripts/test-links.py",
+    "language": "python",
+    "category": "test-orchestrator",
+    "purpose": "Test internal href/src links across index.html + all built dist/ pages.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "test-orchestrator",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "test-links_py",
+    "state_log": "",
+    "last_state": "IDLE",
+    "last_run_at": "",
+    "last_duration": "",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,83 @@
+/* Article submission form styling — complements main.css */
+.submit-form { max-width: 780px; margin: 2rem auto; }
+.submit-form fieldset {
+    border: 1px solid rgba(166,124,82,0.25);
+    background: linear-gradient(180deg, rgba(245,241,232,0.9) 0%, white 100%);
+    border-radius: 4px;
+    padding: 1.5rem 1.6rem;
+    margin-bottom: 1.5rem;
+}
+.submit-form legend {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--color-rust);
+    padding: 0 0.5rem;
+}
+.submit-form label {
+    display: block;
+    margin-bottom: 1.1rem;
+    font-weight: 600;
+    color: var(--color-ink);
+}
+.submit-form label.checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-weight: 400;
+}
+.submit-form input[type="text"],
+.submit-form input[type="email"],
+.submit-form select,
+.submit-form textarea {
+    width: 100%;
+    margin-top: 0.4rem;
+    padding: 0.65rem 0.85rem;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    background: white;
+    color: var(--color-ink);
+    transition: border-color 0.2s;
+}
+.submit-form textarea {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+.submit-form input:focus, .submit-form select:focus, .submit-form textarea:focus {
+    border-color: var(--color-bronze);
+    outline: none;
+}
+.submit-form .req { color: var(--color-rust); }
+.submit-form small {
+    display: block;
+    margin-top: 0.3rem;
+    color: var(--color-graphite);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+.submit-form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.05rem;
+    margin-top: 1rem;
+}
+.form-status {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 3px;
+    display: none;
+}
+.form-status.success {
+    display: block;
+    background: rgba(46,106,87,0.12);
+    color: #2e6a57;
+    border-left: 3px solid #2e6a57;
+}
+.form-status.error {
+    display: block;
+    background: rgba(200,75,49,0.12);
+    color: var(--color-rust);
+    border-left: 3px solid var(--color-rust);
+}

@@ -9,9 +9,13 @@ From components/udts/instances/*.json, produce:
 This mirrors the white-papers pipeline (ingest.py) pattern of inverted-
 indexing authored instances into derived catalogs.
 """
-import json, glob
+import json, glob, sys
 from pathlib import Path
 from datetime import datetime, timezone
+
+# Import the PackML wrapper (scripts/lib/packml.py)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "lib"))
+from packml import Process, path_exists, has_files
 
 HERE = Path(__file__).resolve().parent
 COMPONENTS_DIR = HERE.parent.parent / "components"
@@ -94,4 +98,15 @@ def main():
     print(f"  index.json          (manifest)")
 
 if __name__ == "__main__":
-    main()
+    with Process(
+        "components--build-catalog_py",
+        pre_checks=[
+            path_exists(INSTANCES_DIR),
+            has_files(INSTANCES_DIR / "*.json", min_count=10),
+        ],
+        post_checks=[
+            path_exists(TAGS_DIR / "index.json"),
+            path_exists(COMPONENTS_DIR / "index.json"),
+        ],
+    ):
+        main()

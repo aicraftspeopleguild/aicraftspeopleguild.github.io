@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Fix Data Links",
+    "path": "guild/web/scripts/fix-data-links.py",
+    "language": "python",
+    "category": "fix-orchestrator",
+    "purpose": "One-shot fixer for stale links in views/data/*.data.json and apps/data.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "fix-orchestrator",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "fix-data-links_py",
+    "state_log": "",
+    "last_state": "IDLE",
+    "last_run_at": "",
+    "last_duration": "",
+    "schema_version": "1.0.0"
+  }
+}

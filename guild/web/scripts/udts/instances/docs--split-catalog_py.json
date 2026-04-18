@@ -1,0 +1,27 @@
+{
+  "udtType": "Program",
+  "parameters": {
+    "name": "Split Catalog",
+    "path": "guild/web/scripts/docs/split-catalog.py",
+    "language": "python",
+    "category": "docs-pipeline",
+    "purpose": "Split docs/engineering/component-catalog/index.md into per-component files.",
+    "inputs": [],
+    "outputs": [],
+    "depends_on": [],
+    "pre_checks": [],
+    "post_checks": [],
+    "tags": [
+      "docs-pipeline",
+      "python"
+    ]
+  },
+  "tags": {
+    "id": "docs--split-catalog_py",
+    "state_log": "",
+    "last_state": "IDLE",
+    "last_run_at": "",
+    "last_duration": "",
+    "schema_version": "1.0.0"
+  }
+}

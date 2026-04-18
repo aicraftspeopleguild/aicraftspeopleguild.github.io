@@ -16,21 +16,35 @@ guild/Enterprise/
 ├── index.html             🎛 controls landing (NESW dock)
 ├── controls-README.md     upstream-authored controls README (pre-split)
 │
+├── L0/                    physical process
+│   └── README.md          human work: authoring, mobbing (no sensors)
+│
 ├── L1/                    sensing & manipulation · PLC
-│   └── plc/               🔧 GitPLC universal PLC namespace + UDT templates
+│   ├── forms/             📝 article-submission forms (event router)
+│   ├── plc/               🔧 GitPLC universal PLC namespace + UDT templates
+│   └── README.md
 │
 ├── L2/                    monitoring & supervisory
 │   ├── scada/             🖥  tag plant · gateway host · errors ring buffer
 │   │   ├── gateway/       🛰  host for namespace modules (auth.*, sub-providers)
 │   │   └── errors/        ⚠  gateway-log ring buffer · owns errors.*
-│   └── hmi/               🖼  ISA-101 operator interface · palette · faceplates
-│       └── chat/          💬 P2P chat screen · owns chat.* room.* tracker.* signal.*
+│   ├── hmi/               🖼  ISA-101 operator interface · palette · faceplates
+│   │   └── chat/          💬 P2P chat screen · owns chat.* room.* tracker.* signal.*
+│   ├── state/             📊 PackML state-machine snapshots (*.state.json)
+│   ├── tag.db             🗄️ local-tier tag database
+│   └── README.md
 │
-├── L3/                    manufacturing operations · historian
-│   └── db/                🗄️ canonical tag snapshot (tags.json)
+├── L3/                    manufacturing operations · MES · historian
+│   ├── db/                🗄️ p2p canonical tag snapshot (tags.json, tags.sqlite)
+│   └── README.md          build pipeline doc
 │
-├── L4/                    business / enterprise
-│   └── sandbox/           🧪 browser-only tool workshops · owns sandbox.*
+├── L4/                    business / enterprise · ERP
+│   ├── api/               📡 static JSON API (papers/members/health)
+│   ├── csv/               📑 dense CSV catalogs
+│   ├── database/          🗄️ SQLite ERP store (acg.db + init-db.py)
+│   ├── runtime/           ⚡ live enterprise tag snapshot (tags.json)
+│   ├── sandbox/           🧪 browser-only tool workshops · owns sandbox.*
+│   └── README.md
 │
 └── docs/
     └── standards/         📐 Konomi meta-standard + GitPLC standard
@@ -40,11 +54,11 @@ guild/Enterprise/
 
 | Level | Role                          | Contents                                                    |
 |-------|-------------------------------|-------------------------------------------------------------|
-| **L0** | Physical process              | *(none — mesh is fully virtual; no physical sensors)*       |
-| **L1** | Sensing & manipulation / PLC  | [L1/plc/](L1/plc/)                                          |
-| **L2** | Monitoring & supervisory      | [L2/scada/](L2/scada/), [L2/hmi/](L2/hmi/)                  |
+| **L0** | Physical process              | [L0/](L0/) — human authoring/mobbing (mesh is fully virtual) |
+| **L1** | Sensing & manipulation / PLC  | [L1/plc/](L1/plc/), [L1/forms/](L1/forms/)                  |
+| **L2** | Monitoring & supervisory      | [L2/scada/](L2/scada/), [L2/hmi/](L2/hmi/), [L2/state/](L2/state/), [L2/tag.db](L2/tag.db) |
 | **L3** | Manufacturing ops / historian | [L3/db/](L3/db/), [L2/scada/errors/](L2/scada/errors/) *(logically L3, lives under scada)* |
-| **L4** | Business / enterprise         | [L4/sandbox/](L4/sandbox/)                                  |
+| **L4** | Business / enterprise · ERP   | [L4/api/](L4/api/), [L4/csv/](L4/csv/), [L4/database/](L4/database/), [L4/runtime/](L4/runtime/), [L4/sandbox/](L4/sandbox/) |
 
 `docs/` is not a control level — it holds the standards (Konomi, GitPLC)
 that govern the levels above.

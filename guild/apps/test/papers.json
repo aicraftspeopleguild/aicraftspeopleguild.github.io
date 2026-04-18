@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ACG-STD-AUTOPARSE-2026",
+    "type": "standard",
+    "title": "Paper Auto-Index Standard",
+    "author": "AI Craftspeople Guild",
+    "date": "2026-04-17",
+    "status": "published",
+    "tags": [
+      "automation",
+      "github-actions",
+      "indexing",
+      "white-papers",
+      "standards"
+    ],
+    "abstract": "Defines the frontmatter format, parser rules, and GitHub Action pipeline for automatically indexing Guild publications when submitted via Pull Request. This document uses its own frontmatter format, making it self-validating.",
+    "slug": "paper-auto-index-standard",
+    "url": "paper-auto-index-standard.html"
+  }
+]

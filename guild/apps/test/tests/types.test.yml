@@ -1,0 +1,63 @@
+# tests/types.test.yml
+# The Types page demonstrates every UDT via live custom elements.
+
+test: Types page
+target: pages/types.html
+
+exists:
+  expect: present
+  reason: "the Types page is the per-type reference and must be served"
+
+watches:
+  - path: "udt-expectation"
+    expect: triggered
+    reason: "UDT:Expectation is the base of everything and must appear on the Types page"
+
+  - path: "udt-eventtrigger"
+    expect: triggered
+    reason: "UDT:EventTrigger is the trigger type and must demonstrate a concrete instance"
+
+  - path: "udt-pathwatch"
+    expect: triggered
+    reason: "UDT:PathWatch must demonstrate a concrete file-path check"
+
+  - path: "udt-guardrail"
+    expect: triggered
+    reason: "UDT:Guardrail must demonstrate a must-not-fire condition"
+
+  - path: "udt-secret"
+    expect: triggered
+    reason: "UDT:Secret must demonstrate a named configured secret"
+
+  - path: "udt-notification"
+    expect: triggered
+    reason: "UDT:Notification must demonstrate the outbound notification shape"
+
+  - path: "udt-field"
+    expect: triggered
+    reason: "UDT:Notification contains fields (recipient, sender, subject, body) via udt-field"
+
+  - path: "article.type-card"
+    expect: triggered
+    reason: "each type is documented inside a type-card container"
+
+secrets:
+  - name: assets/udt-elements.js
+    expect: configured
+    reason: "UDT custom elements must load or the page renders as bare unknown tags"
+
+guardrails:
+  - condition: "udt-expectation[data-missing-reason]"
+    reason: "no UDT:Expectation on this page may lack a reason — the spec forbids it"
+
+  - condition: "udt-eventtrigger[data-missing-reason]"
+    reason: "no UDT:EventTrigger may lack a reason"
+
+  - condition: "udt-pathwatch[data-missing-reason]"
+    reason: "no UDT:PathWatch may lack a reason"
+
+  - condition: "udt-guardrail[data-missing-reason]"
+    reason: "no UDT:Guardrail may lack a reason"
+
+  - condition: "udt-secret[data-missing-reason]"
+    reason: "no UDT:Secret may lack a reason"

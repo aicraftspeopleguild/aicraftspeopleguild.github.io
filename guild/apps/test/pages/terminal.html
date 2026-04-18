@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Terminal · ACG-TEST</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="module" src="../assets/udt-elements.js"></script>
+  <script type="module" src="../assets/terminal.js"></script>
+</head>
+<body data-page="terminal">
+  <header class="site">
+    <a class="brand" href="../index.html">ACG-TEST</a>
+    <nav class="site-nav">
+      <a href="./standard.html">Standard</a>
+      <a href="./types.html">Types</a>
+      <a href="./example.html">Example</a>
+      <a href="./runner.html">Runner</a>
+      <a href="./terminal.html" aria-current="page">Terminal</a>
+      <a href="../white-papers.html">Papers</a>
+    </nav>
+  </header>
+
+  <main class="prose">
+    <h1>Terminal</h1>
+    <p class="lede">
+      A browser-side terminal for the ACG-TEST runner. Targets local files,
+      remote URLs, raw GitHub content, or pasted YAML. Type <code>help</code>
+      to list commands.
+    </p>
+
+    <section id="terminal" class="terminal" aria-label="ACG-TEST terminal">
+      <pre id="term-output" class="term-output" aria-live="polite"></pre>
+      <form id="term-form" class="term-form" autocomplete="off">
+        <label for="term-input" class="term-prompt">acg-test &#10095;</label>
+        <input id="term-input" class="term-input" type="text"
+               autocomplete="off" autocapitalize="off" spellcheck="false"
+               aria-label="terminal command input">
+      </form>
+    </section>
+
+    <dialog id="paste-dialog">
+      <form method="dialog" id="paste-form">
+        <h2>Paste a .test.yml</h2>
+        <p class="quiet">Paste any ACG-TEST YAML below. The runner will parse and execute it as if it were loaded from the current site.</p>
+        <textarea id="paste-area" rows="18" spellcheck="false"
+                  placeholder="test: ...&#10;target: ...&#10;exists:&#10;  expect: present&#10;  reason: ..."></textarea>
+        <div class="dialog-actions">
+          <button value="cancel">Cancel</button>
+          <button value="run" id="paste-run">Run</button>
+        </div>
+      </form>
+    </dialog>
+
+    <h2>Page verification</h2>
+    <div id="site-summary" class="summary" data-scope="terminal">Run <code>run</code> to populate this summary.</div>
+  </main>
+
+  <footer class="site">
+    <p>ACG-TEST v1.0 · Konomi Standard · AI Craftspeople Guild</p>
+  </footer>
+</body>
+</html>

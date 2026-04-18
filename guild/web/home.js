@@ -149,16 +149,18 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll for in-page anchor links ONLY (e.g. "#manifesto", "#sign").
+        // Route hashes (#/charter, #/members, ...) must fall through to the
+        // hashchange listener in renderer.js. Without this guard, the code was
+        // calling document.querySelector("#/charter") — invalid selector → throws —
+        // and preventDefault() was blocking the hash change before the route fired.
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#' || href.startsWith('#/')) return;  // route hashes
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                let target;
+                try { target = document.querySelector(href); } catch { return; }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });

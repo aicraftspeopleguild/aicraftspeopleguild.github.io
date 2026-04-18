@@ -1,0 +1,60 @@
+# tests/paper-auto-index-standard.test.yml
+# The standard document itself, rendered as a paper at the repo root.
+# This test verifies the page renders and that the self-validation claim
+# holds: the file carries the frontmatter, and the parser indexes it.
+
+test: Paper Auto-Index Standard page
+target: paper-auto-index-standard.html
+
+exists:
+  expect: present
+  reason: "the standard is a publication and must be reachable at its canonical URL"
+
+watches:
+  - path: "h1"
+    expect: triggered
+    reason: "every paper carries one H1 for readers and screen readers"
+
+  - path: "#part-1"
+    expect: triggered
+    reason: "Part 1 Frontmatter block must be anchor-linkable"
+
+  - path: "#part-4"
+    expect: triggered
+    reason: "Part 4 Parser steps must be anchor-linkable"
+
+  - path: "#part-10"
+    expect: triggered
+    reason: "Part 10 Test spec must be anchor-linkable"
+
+  - path: "#part-11"
+    expect: triggered
+    reason: "Part 11 Self-validation must be anchor-linkable"
+
+  - path: "nav.site-nav a[href$='white-papers.html']"
+    expect: triggered
+    reason: "the paper must link back to the index so readers can navigate laterally"
+
+secrets:
+  - name: papers.json
+    expect: configured
+    reason: "the generated index must exist, proving the parser can read this file"
+
+  - name: white-papers.html
+    expect: configured
+    reason: "the generated human index must exist"
+
+  - name: .github/scripts/parse-papers.js
+    expect: configured
+    reason: "the parser script must be present so the workflow can run"
+
+  - name: .github/workflows/paper-index.yml
+    expect: configured
+    reason: "the workflow that calls the parser must exist"
+
+guardrails:
+  - condition: "h1 ~ h1"
+    reason: "no paper may have more than one top heading"
+
+  - condition: "article.paper-card"
+    reason: "the standard is an article body, not an index card listing"

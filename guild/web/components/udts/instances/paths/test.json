@@ -1,0 +1,27 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/test",
+    "label": "ACG Test Harness",
+    "page": "guild/apps/test/index.html",
+    "section": "engineering",
+    "parent": "home",
+    "order": 60,
+    "dynamic": false,
+    "params": [],
+    "methods": ["GET"],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "test",
+    "full_url": "https://aicraftspeopleguild.github.io/guild/apps/test/",
+    "children": [],
+    "breadcrumb": ["home", "test"],
+    "depth": 1,
+    "view_id": "",
+    "last_verified": "2026-04-18T00:00:00Z",
+    "schema_version": "1.0.0"
+  }
+}

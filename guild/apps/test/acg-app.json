@@ -1,0 +1,24 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "ACG-TEST — Konomi Standard Test Harness",
+    "slug": "test",
+    "kind": "guild-app",
+    "description": "Reference implementation of the Konomi Standard for UDT-nested GitHub Actions testing. Self-testing GitHub Pages site: every page has a .test.yml file and an in-browser runner verifies each step. Includes a browser terminal for ad-hoc test execution and the Paper Auto-Index Standard reference. Originally developed as github.com/teslasolar/ACG-Test; imported here as a self-contained Guild app.",
+    "source_type": "External",
+    "source_path": "https://github.com/teslasolar/ACG-Test",
+    "view": "guild/apps/test/index.html",
+    "route": "/guild/apps/test/",
+    "section": "engineering",
+    "stylesheets": [],
+    "status": "published",
+    "tags": ["testing", "konomi", "udt", "github-actions", "guild-app"]
+  },
+  "tags": {
+    "id": "test",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/test/",
+    "view_id": "external",
+    "ingested_at": "2026-04-18T00:00:00Z",
+    "schema_version": "1.0.0"
+  }
+}

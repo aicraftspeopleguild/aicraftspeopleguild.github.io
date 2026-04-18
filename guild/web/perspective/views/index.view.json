@@ -1,0 +1,118 @@
+{
+  "custom": {
+    "output": "index.html",
+    "bodyClass": "",
+    "stylesheets": ["guild/web/style/home.css"],
+    "headExtra": "<style>body:not(.has-route) #app{display:none;}body.has-route>header,body.has-route>main,body.has-route>footer{display:none;}</style>",
+    "bodyExtra": "<div id=\"app\"></div>\n<iframe name=\"hidden_iframe\" id=\"hidden_iframe\" style=\"display:none;\"></iframe>\n<script src=\"guild/web/home.js\" defer></script>\n<script src=\"guild/web/renderer.js\"></script>\n<script>if(typeof ACGRenderer!=='undefined'){ACGRenderer.init({siteMap:'guild/web/site-map.json',components:'guild/web/components/registry.json',mountPoint:'#app',analyticsId:'G-Z1CEF69ZSH'});}</script>"
+  },
+  "params": {
+    "title": "AI Craftspeople Guild - Professional Code of Conduct",
+    "heading": "AI Craftspeople Guild",
+    "subtitle": "Professional Code of Conduct for Engineers Using AI to Create Automated Solutions"
+  },
+  "propConfig": {},
+  "props": {},
+  "root": {
+    "meta": { "name": "root" },
+    "type": "acg.container.page",
+    "props": {},
+    "propConfig": {},
+    "children": [
+      {
+        "meta": { "name": "TopNav", "slot": "head" },
+        "type": "acg.nav.top",
+        "props": { "label": "Primary" },
+        "children": [
+          { "meta": { "name": "n1" }, "type": "acg.display.link", "props": { "href": "#manifesto",        "text": "Manifesto" } },
+          { "meta": { "name": "n2" }, "type": "acg.display.link", "props": { "href": "#/white-papers",    "text": "White Papers" } },
+          { "meta": { "name": "n3" }, "type": "acg.display.link", "props": { "href": "#/rituals",         "text": "AI Rituals" } },
+          { "meta": { "name": "n4" }, "type": "acg.display.link", "props": { "href": "#/mob-programming", "text": "Mob Programming" } },
+          { "meta": { "name": "n5" }, "type": "acg.display.link", "props": { "href": "#/flywheel",        "text": "Flywheel" } },
+          { "meta": { "name": "n6" }, "type": "acg.display.link", "props": { "href": "#/showcases",       "text": "Showcases" } },
+          { "meta": { "name": "n7" }, "type": "acg.display.link", "props": { "href": "#/members",         "text": "Members" } },
+          { "meta": { "name": "n8" }, "type": "acg.display.link", "props": { "href": "#/hall-of-fame",    "text": "Hall of Fame" } },
+          { "meta": { "name": "n9" }, "type": "acg.display.link", "props": { "href": "#/hall-of-shame",   "text": "Hall of Shame" } },
+          { "meta": { "name": "n10"}, "type": "acg.display.link", "props": { "href": "#/mission",         "text": "Mission Statement" } },
+          { "meta": { "name": "n11"}, "type": "acg.display.link", "props": { "href": "#/charter",         "text": "Charter" } },
+          { "meta": { "name": "n12"}, "type": "acg.display.link", "props": { "href": "#/code-of-conduct", "text": "Conduct" } },
+          { "meta": { "name": "n13"}, "type": "acg.display.link", "props": { "href": "guild/web/submit/", "text": "Submit" } }
+        ]
+      },
+      { "meta": { "name": "Emblem",   "slot": "head" }, "type": "acg.display.emblem",  "props": { "text": "⚒ ACG ⚒" }, "children": [] },
+      { "meta": { "name": "Title",    "slot": "head" }, "type": "acg.display.heading", "props": { "level": 1 },
+        "propConfig": { "props.text": { "binding": { "type": "property", "config": { "path": "view.params.heading" } } } }, "children": [] },
+      { "meta": { "name": "Subtitle", "slot": "head" }, "type": "acg.display.text",    "props": {},
+        "propConfig": { "props.text": { "binding": { "type": "property", "config": { "path": "view.params.subtitle" } } } }, "children": [] },
+
+      {
+        "meta": { "name": "Context" },
+        "type": "acg.container.section",
+        "props": { "variant": "context-section" },
+        "children": [
+          { "meta": { "name": "ContextText" }, "type": "acg.display.html",
+            "props": { "html": "<p>The recent rapid advancement of AI/LLM technology has introduced considerable confusion, disorientation, and with it alarming amounts of <strong>false promises</strong>, <strong>snake oil sales tactics</strong>, and <strong>sleazy shilling</strong>. Our duty as software professionals is to prevent such degradation of quality by insisting on a high watermark professional code of ethics.</p>" }, "children": [] }
+        ]
+      },
+
+      {
+        "meta": { "name": "ManifestoSection" },
+        "type": "acg.container.section",
+        "props": { "variant": "manifesto-section" },
+        "children": [
+          { "meta": { "name": "ManifestoAnchor" }, "type": "acg.display.html", "props": { "html": "<div class=\"manifesto-header\" id=\"manifesto\"><h2>ACG Manifesto</h2></div>" }, "children": [] },
+          {
+            "meta": { "name": "ManifestoGrid" },
+            "type": "acg.container.grid",
+            "props": { "variant": "manifesto-grid" },
+            "children": [
+              { "meta": { "name": "CardInnovation" }, "type": "acg.card.manifesto",
+                "props": { "icon": "🚀", "title": "Embracing Innovation", "body": "We, software development professionals, are <strong>exploring the innovations made available</strong> by the development in the Artificial Intelligence space." }, "children": [] },
+              { "meta": { "name": "CardQuality" }, "type": "acg.card.manifesto",
+                "props": { "icon": "⚠️", "title": "Demanding Quality", "body": "We are concerned about the proliferation of <strong>half-baked, barely verified and tested content</strong> that current AI/LLM technology is notorious for delivering." }, "children": [] },
+              { "meta": { "name": "CardSafety" }, "type": "acg.card.manifesto",
+                "props": { "icon": "🛡️", "title": "Ensuring Safety & Security", "body": "We insist that a <strong>proper harness be provided</strong> to ensure engineering quality, safety, security, and legal liability for all products delivered with the assistance of AI technology." }, "children": [] },
+              { "meta": { "name": "CardProtect" }, "type": "acg.card.manifesto",
+                "props": { "icon": "🧠", "title": "Protecting Humans", "body": "We advocate the need for <strong>psychological safety</strong> of humans who are exposed to any products and content generated by AI." }, "children": [] },
+              { "meta": { "name": "CardReadFull" }, "type": "acg.display.html",
+                "props": { "html": "<a href=\"#/manifesto\" class=\"manifesto-card manifesto-card-link\"><span class=\"icon\">📜</span><h3>Read Full Manifesto</h3><p>Explore the complete code of conduct including our principles on <strong>user agency</strong>, <strong>informed consent</strong>, and the professional <strong>duty to refuse</strong> unethical work.</p></a>" }, "children": [] }
+            ]
+          }
+        ]
+      },
+
+      {
+        "meta": { "name": "SignatureForm" },
+        "type": "acg.display.html",
+        "props": { "html": "<section id=\"sign\" class=\"signature-section\"><h2>Sign the Manifesto</h2><p>Join fellow professionals committed to excellence in AI-assisted development</p><form id=\"signatureForm\" class=\"signature-form\" action=\"https://docs.google.com/forms/d/e/1FAIpQLSf79pCLYUMfgHUYW2HeJrWZEsJqE4uvt-BVUJter52Dd6RMcw/formResponse\" method=\"POST\" target=\"hidden_iframe\"><div class=\"form-group\"><label for=\"name\">Name <span class=\"required\">*</span></label><input type=\"text\" id=\"name\" name=\"entry.1444049175\" required></div><div class=\"form-group\"><label for=\"title\">Title / Role</label><input type=\"text\" id=\"title\" name=\"entry.1208485608\" placeholder=\"e.g., Senior Software Engineer\"><small>Optional - helps others understand your perspective</small></div><div class=\"form-group\"><label for=\"organization\">Organization</label><input type=\"text\" id=\"organization\" name=\"entry.1920033105\" placeholder=\"e.g., Company name or Independent\"><small>Optional</small></div><div class=\"form-group\"><label for=\"email\">Email</label><input type=\"email\" id=\"email\" name=\"entry.1514577890\" placeholder=\"For verification (not displayed publicly)\"><small>Optional - only for preventing spam</small></div><button type=\"submit\" class=\"btn-sign\" id=\"submitBtn\">Sign the Manifesto</button><div id=\"formStatus\" class=\"form-status\"></div></form><div class=\"signatories-display\"><h3>Signatories</h3><div id=\"signatoriesCount\" class=\"signatories-count\">Loading signatures...</div><div id=\"signatoriesList\" class=\"signatories-grid\"><div class=\"loading\">Loading signatories</div></div></div></section>" },
+        "children": []
+      },
+
+      {
+        "meta": { "name": "JoinCta" },
+        "type": "acg.nav.cta",
+        "props": { "heading": "Join the Movement", "description": "Stand with us in championing integrity, transparency, and professional excellence in AI-assisted development." },
+        "children": [
+          { "meta": { "name": "b1" }, "type": "acg.display.link", "props": { "href": "https://github.com/aicraftspeopleguild", "text": "Visit Our GitHub" } },
+          { "meta": { "name": "b2" }, "type": "acg.display.link", "props": { "href": "#sign", "text": "Sign the Manifesto" } },
+          { "meta": { "name": "b3" }, "type": "acg.display.link", "props": { "href": "#/manifesto", "text": "Read Full Manifesto" } },
+          { "meta": { "name": "b4" }, "type": "acg.display.link", "props": { "href": "#/charter", "text": "Read the Charter" } }
+        ]
+      },
+
+      {
+        "meta": { "name": "WorshipZone" },
+        "type": "acg.display.html",
+        "props": { "html": "<section class=\"worship-zone\"><h2>AI Craftspeople Guild is a worship free zone</h2><figure><img src=\"guild/web/assets/worship-free-zone.png\" alt=\"AI Craftspeople Guild is a worship free zone\"></figure></section>" },
+        "children": []
+      },
+
+      {
+        "meta": { "name": "Footer", "slot": "footer" },
+        "type": "acg.display.html",
+        "props": { "html": "<p>AI Craftspeople Guild (ACG)</p><p>Advocating for professional standards in AI-assisted software development</p><a href=\"https://github.com/aicraftspeopleguild\" class=\"github-link\"><span>⚡</span> <span>github.com/aicraftspeopleguild</span></a><div class=\"footer-links\"><a href=\"#/charter\">Charter</a><a href=\"#/code-of-conduct\">Code of Conduct</a></div><p style=\"margin-top:2rem;font-size:0.85rem;\">© 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.</p>" },
+        "children": []
+      }
+    ]
+  }
+}

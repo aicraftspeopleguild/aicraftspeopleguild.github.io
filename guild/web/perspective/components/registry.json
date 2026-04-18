@@ -78,6 +78,13 @@
       "cssClass": "guild-mark",
       "template": "<div class=\"emblem\">{{ text }}</div>"
     },
+    "acg.nav.top": {
+      "tag": "nav",
+      "cssClass": "top-nav",
+      "slots": ["default"],
+      "propsToAttr": { "label": "aria-label" },
+      "template": "{{ slot:default }}"
+    },
     "acg.nav.back-link": {
       "tag": "div",
       "cssClass": "back-link",

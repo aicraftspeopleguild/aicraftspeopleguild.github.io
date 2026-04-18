@@ -153,20 +153,38 @@ function renderNode(node, ctx, registry) {
   return `<${tag}${attrs}>${inner}</${tag}>`;
 }
 
-function wrapDocument(title, bodyHTML) {
+function wrapDocument(title, bodyHTML, custom) {
+  custom = custom || {};
+  // Default CSS: main.css from dist/ perspective (../style/main.css).
+  // Any view may override via view.custom.stylesheets (array of repo-relative paths).
+  const sheets = custom.stylesheets || ['../style/main.css'];
+  const sheetLinks = sheets.map(s => `<link rel="stylesheet" href="${escapeHtml(s)}">`).join('\n    ');
+  const headExtra = custom.headExtra || '';
+  const bodyExtra = custom.bodyExtra || '';
+  const bodyAttrs = custom.bodyClass ? ` class="${escapeHtml(custom.bodyClass)}"` : '';
+  const analyticsId = custom.analyticsId || 'G-Z1CEF69ZSH';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${escapeHtml(title)} — AI Craftspeople Guild</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${escapeHtml(title)}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${escapeHtml(analyticsId)}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${escapeHtml(analyticsId)}');
+    </script>
+    ${sheetLinks}
+    ${headExtra}
 </head>
-<body>
+<body${bodyAttrs}>
 ${bodyHTML}
+${bodyExtra}
 </body>
 </html>
 `;
@@ -190,7 +208,15 @@ function renderView(viewFile, dataFile) {
 
   const body = renderNode(view.root, ctx, registry);
   const title = ctx.view.params.title || ctx.view.params.defaultTitle || 'ACG';
-  return wrapDocument(title, body);
+  return wrapDocument(title, body, view.custom || {});
+}
+
+// Determine output path for a view. If view.custom.output is set, it's
+// treated as repo-rooted; otherwise default to guild/web/dist/p-<slug>.html
+function outputPath(view, slug) {
+  const out = view && view.custom && view.custom.output;
+  if (out) return path.join(REPO_ROOT, out);
+  return path.join(DIST_DIR, `p-${slug}.html`);
 }
 
 function main() {
@@ -203,10 +229,14 @@ function main() {
   for (const vf of views) {
     const slug = vf.replace(/\.view\.json$/, '');
     const dataFile = path.join(PSP_DIR, 'data', `${slug}.data.json`);
-    const html = renderView(path.join(viewsDir, vf), dataFile);
-    const out = path.join(DIST_DIR, `p-${slug}.html`);
+    const viewFile = path.join(viewsDir, vf);
+    const view = loadJSON(viewFile);
+    const html = renderView(viewFile, dataFile);
+    const out = outputPath(view, slug);
+    fs.mkdirSync(path.dirname(out), { recursive: true });
     fs.writeFileSync(out, html, 'utf8');
-    console.log(`[perspective] ${slug} → dist/p-${slug}.html (${html.length} bytes)`);
+    const rel = path.relative(REPO_ROOT, out).split(path.sep).join('/');
+    console.log(`[perspective] ${slug} → ${rel} (${html.length} bytes)`);
     count++;
   }
   console.log(`[perspective] rendered ${count} views`);

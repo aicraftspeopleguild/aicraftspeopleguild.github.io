@@ -1,0 +1,13 @@
+{
+  "udtType": "ControlAction",
+  "parameters": {
+    "id": "rebuild-api",
+    "label": "📡 rebuild API",
+    "title": "cmd:rebuild-api",
+    "body": "Rerun init-db + build-api + build-runtime-tags + build-state.",
+    "category": "cmd",
+    "color": "",
+    "order": 30
+  },
+  "tags": { "id": "action-rebuild-api", "schema_version": "1.0.0" }
+}

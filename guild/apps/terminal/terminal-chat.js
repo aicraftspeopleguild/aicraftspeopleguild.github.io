@@ -78,7 +78,19 @@ setTimeout(() => {
 // ── GitHub-Issue-backed tag DB ─────────────────────────────────────────
 // Browser-side read-only client for the same tag DB that gh_tag.py drives.
 // Hits the unauthenticated GitHub API — good for 60 req/hr per IP.
-const GH_REPO = 'teslasolar/aicraftspeopleguild.github.io';
+// Self-detects repo from the page host so the same code works on
+// teslasolar.github.io/aicraftspeopleguild.github.io and the org host.
+function _detectGhRepo() {
+  const host = location.hostname;
+  if (host.endsWith('.github.io')) {
+    const owner = host.replace(/\.github\.io$/, '');
+    const first = (location.pathname.split('/').filter(Boolean)[0]) || '';
+    if (first.endsWith('.github.io')) return `${owner}/${first}`;
+    return `${owner}/${host}`;
+  }
+  return 'teslasolar/aicraftspeopleguild.github.io';
+}
+const GH_REPO = _detectGhRepo();
 const GH_API  = 'https://api.github.com';
 
 function _parseFencedJSON(body) {

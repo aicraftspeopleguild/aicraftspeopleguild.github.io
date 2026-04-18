@@ -1,0 +1,13 @@
+{
+  "udtType": "ControlAction",
+  "parameters": {
+    "id": "rebuild-svgs",
+    "label": "🔁 rebuild SVGs",
+    "title": "cmd:rebuild-svgs",
+    "body": "Regenerate every SvgOrganism without bumping heartbeat.",
+    "category": "cmd",
+    "color": "purple",
+    "order": 20
+  },
+  "tags": { "id": "action-rebuild-svgs", "schema_version": "1.0.0" }
+}

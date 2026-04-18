@@ -1,0 +1,383 @@
+{
+  "udtType": "StateMachineScript",
+  "count": 47,
+  "generated": "2026-04-18T10:16:09Z",
+  "instances": [
+    {
+      "slug": "components-extract-on-build-start",
+      "id": "components-extract-on-build-start",
+      "script_file": "guild/Enterprise/L2/lib/tag_event_parser.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "pipeline.build.step.00.status"
+    },
+    {
+      "slug": "apps-build-whitepapers-on-papers-changed",
+      "id": "apps-build-whitepapers:on-papers-changed",
+      "script_file": "guild/Enterprise/L3/scripts/apps/build-whitepaper-apps.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "papers.count"
+    },
+    {
+      "slug": "build-programs-on-packml-state-updated",
+      "id": "build-programs:on-packml-state-updated",
+      "script_file": "guild/Enterprise/L3/scripts/build-programs.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "packml.state.updated"
+    },
+    {
+      "slug": "build-js-on-views-changed",
+      "id": "build-js:on-views-changed",
+      "script_file": "guild/Enterprise/L3/scripts/build.js",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "views.source.changed"
+    },
+    {
+      "slug": "components-build-catalog-on-components-updated",
+      "id": "components-build-catalog:on-components-updated",
+      "script_file": "guild/Enterprise/L3/scripts/components/build-catalog.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "components.source.updated"
+    },
+    {
+      "slug": "components-extract-on-build-start",
+      "id": "components-extract:on-build-start",
+      "script_file": "guild/Enterprise/L3/scripts/components/extract.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "pipeline.build.status"
+    },
+    {
+      "slug": "split-catalog-on-docs-changed",
+      "id": "split-catalog:on-docs-changed",
+      "script_file": "guild/Enterprise/L3/scripts/docs/split-catalog.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "docs.engineering.changed"
+    },
+    {
+      "slug": "split-udt-spec-on-docs-changed",
+      "id": "split-udt-spec:on-docs-changed",
+      "script_file": "guild/Enterprise/L3/scripts/docs/split-udt-spec.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "docs.engineering.tech-spec.changed"
+    },
+    {
+      "slug": "fix-data-links-on-build-complete",
+      "id": "fix-data-links:on-build-complete",
+      "script_file": "guild/Enterprise/L3/scripts/fix-data-links.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "pipeline.build.status"
+    },
+    {
+      "slug": "members-extract-on-members-changed",
+      "id": "members-extract:on-members-changed",
+      "script_file": "guild/Enterprise/L3/scripts/members/extract.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "members.source.changed"
+    },
+    {
+      "slug": "members-regen-on-members-changed",
+      "id": "members-regen:on-members-changed",
+      "script_file": "guild/Enterprise/L3/scripts/members/regen-index.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "members.count"
+    },
+    {
+      "slug": "build-path-graph-on-paths-changed",
+      "id": "build-path-graph:on-paths-changed",
+      "script_file": "guild/Enterprise/L3/scripts/pages/build-path-graph.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "paths.source.changed"
+    },
+    {
+      "slug": "decompose-on-html-changed",
+      "id": "decompose:on-html-changed",
+      "script_file": "guild/Enterprise/L3/scripts/pages/decompose.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "pages.source.changed"
+    },
+    {
+      "slug": "gen-docs-db-on-docs-changed",
+      "id": "gen-docs-db:on-docs-changed",
+      "script_file": "guild/Enterprise/L3/scripts/paths/gen-docs-db.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "docs.content.changed"
+    },
+    {
+      "slug": "gen-fs-paths-on-fs-changed",
+      "id": "gen-fs-paths:on-fs-changed",
+      "script_file": "guild/Enterprise/L3/scripts/paths/gen-fs-paths.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "fs.structure.changed"
+    },
+    {
+      "slug": "gen-script-db-on-scripts-changed",
+      "id": "gen-script-db:on-scripts-changed",
+      "script_file": "guild/Enterprise/L3/scripts/paths/gen-script-db.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "scripts.source.changed"
+    },
+    {
+      "slug": "gen-tag-db-on-commit",
+      "id": "gen-tag-db:on-commit",
+      "script_file": "guild/Enterprise/L3/scripts/paths/gen-tag-db.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "git:state"
+    },
+    {
+      "slug": "perspective-build-on-components-changed",
+      "id": "perspective-build:on-components-changed",
+      "script_file": "guild/Enterprise/L3/scripts/perspective-build.js",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "components.registry.changed"
+    },
+    {
+      "slug": "test-browser-on-release-request",
+      "id": "test-browser:on-release-request",
+      "script_file": "guild/Enterprise/L3/scripts/test-browser.js",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "release.request"
+    },
+    {
+      "slug": "test-links-on-build-complete",
+      "id": "test-links:on-build-complete",
+      "script_file": "guild/Enterprise/L3/scripts/test-links.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "pipeline.build.status"
+    },
+    {
+      "slug": "test-live-on-release-request",
+      "id": "test-live:on-release-request",
+      "script_file": "guild/Enterprise/L3/scripts/test-live.js",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "release.request"
+    },
+    {
+      "slug": "test-nav-on-release-request",
+      "id": "test-nav:on-release-request",
+      "script_file": "guild/Enterprise/L3/scripts/test-nav.js",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "release.request"
+    },
+    {
+      "slug": "white-papers-extract-on-originals-changed",
+      "id": "white-papers-extract:on-originals-changed",
+      "script_file": "guild/Enterprise/L3/scripts/white-papers/extract.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "white-papers.originals.changed"
+    },
+    {
+      "slug": "white-papers-regen-on-papers-changed",
+      "id": "white-papers-regen:on-papers-changed",
+      "script_file": "guild/Enterprise/L3/scripts/white-papers/regen-index.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "papers.count"
+    },
+    {
+      "slug": "build-csv-catalog-on-api-updated",
+      "id": "build-csv-catalog:on-api-updated",
+      "script_file": "guild/Enterprise/L4/api/scripts/build-csv-catalog.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "api.papers.json.updated"
+    },
+    {
+      "slug": "build-runtime-tags-on-state-change",
+      "id": "build-runtime-tags:on-state-change",
+      "script_file": "guild/Enterprise/L4/api/scripts/build-runtime-tags.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "state.db.updated"
+    },
+    {
+      "slug": "build-sitemap-on-paths-changed",
+      "id": "build-sitemap:on-paths-changed",
+      "script_file": "guild/Enterprise/L4/api/scripts/build-sitemap.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "paths.graph.rebuilt_at"
+    },
+    {
+      "slug": "build-state-on-state-change",
+      "id": "build-state:on-state-change",
+      "script_file": "guild/Enterprise/L4/api/scripts/build-state.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "pipeline.build.status"
+    },
+    {
+      "slug": "build-architecture-svg-on-heartbeat",
+      "id": "build-architecture-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-architecture.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-chat-llm-teaser-svg-on-heartbeat",
+      "id": "build-chat-llm-teaser-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-chat-llm-teaser.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-cmd-panel-svg-on-heartbeat",
+      "id": "build-cmd-panel-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-cmd-panel.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-commit-activity-svg-on-heartbeat",
+      "id": "build-commit-activity-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-commit-activity.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-fault-timeline-svg-on-heartbeat",
+      "id": "build-fault-timeline-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-fault-timeline.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-heartbeat-svg-on-heartbeat",
+      "id": "build-heartbeat-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-heartbeat.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-members-strip-svg-on-heartbeat",
+      "id": "build-members-strip-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-members-strip.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-paper-roulette-svg-on-heartbeat",
+      "id": "build-paper-roulette-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-paper-roulette.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-pipeline-pulse-svg-on-heartbeat",
+      "id": "build-pipeline-pulse-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-pipeline-pulse.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-readme-api-svg-on-heartbeat",
+      "id": "build-readme-api-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-readme-api.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-readme-controls-svg-on-heartbeat",
+      "id": "build-readme-controls-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-readme-controls.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-readme-hero-svg-on-heartbeat",
+      "id": "build-readme-hero-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-readme-hero.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-scada-dashboard-svg-on-heartbeat",
+      "id": "build-scada-dashboard-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-scada-dashboard.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-scada-network-svg-on-heartbeat",
+      "id": "build-scada-network-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-scada-network.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-status-dashboard-svg-on-heartbeat",
+      "id": "build-status-dashboard-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-status-dashboard.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-tag-activity-svg-on-heartbeat",
+      "id": "build-tag-activity-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-tag-activity.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-tag-grid-svg-on-heartbeat",
+      "id": "build-tag-grid-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-tag-grid.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-tag-heatmap-svg-on-heartbeat",
+      "id": "build-tag-heatmap-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-tag-heatmap.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    },
+    {
+      "slug": "build-widget-gallery-svg-on-heartbeat",
+      "id": "build-widget-gallery-svg:on-heartbeat",
+      "script_file": "guild/Enterprise/L4/svg/build-widget-gallery.py",
+      "enabled": true,
+      "kind": "on_transition",
+      "listens_tag": "demo.heartbeat"
+    }
+  ]
+}

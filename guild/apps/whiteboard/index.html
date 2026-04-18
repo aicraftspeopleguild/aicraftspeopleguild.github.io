@@ -16,6 +16,13 @@
   .wb-hd a:hover,.wb-hd button:hover{background:var(--tlb);border-color:var(--tl)}
   .wb-hd input[type=text]{padding:5px 10px;border:1px solid var(--bd);border-radius:var(--r-sm);background:var(--inp);color:var(--tx);font-family:var(--ff-mono);font-size:12px;width:160px}
   .wb-me{font-family:var(--ff-mono);font-size:11px;color:var(--dm);padding:3px 8px;background:var(--tlb);border-radius:20px}
+  .wb-net{display:inline-flex;align-items:center;gap:6px;font-family:var(--ff-mono);font-size:11px;color:var(--dm);padding:3px 10px;border:1px solid var(--bd);border-radius:20px}
+  .wb-net .dot{width:7px;height:7px;border-radius:50%;background:#8b949e;transition:background .3s}
+  .wb-net.connecting .dot{background:#e3b341;animation:pulse 1.2s ease-in-out infinite}
+  .wb-net.connected .dot{background:#3fb950}
+  .wb-net.lonely .dot{background:#e3b341}
+  .wb-net.offline .dot{background:#f85149}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 
   .wb-tools{flex:0 0 auto;display:flex;gap:10px;align-items:center;padding:8px 16px;background:var(--card);border-bottom:1px solid var(--bd);flex-wrap:wrap}
   .wb-tools label{font-size:11px;color:var(--dm);font-weight:600}
@@ -45,6 +52,7 @@
   <label>Room</label>
   <input type="text" id="rIn" value="acg-whiteboard" placeholder="room">
   <button id="jBtn">Join</button>
+  <span class="wb-net" id="wb-net" title="tracker status"><span class="dot"></span><span id="wb-net-txt">connecting…</span></span>
   <span class="wb-me">⚒ <span id="mId">…</span></span>
   <a href="../p2p/">🛰 mesh</a>
   <a href="../../../index.html">⚒ guild</a>

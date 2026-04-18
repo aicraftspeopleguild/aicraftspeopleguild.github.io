@@ -1,0 +1,58 @@
+/* ═══ ACG UDT editor · compressed form styles ═══
+   Dense, spreadsheet-feel editor for a whole UDT on one screen. */
+:root{
+  --bg:#0d1117;--chrome:#161b22;--card:#161b22;--bd:#30363d;
+  --tx:#e6edf3;--dm:#8b949e;--ft:#6e7681;
+  --g:#3fb950;--p:#a371f7;--o:#f0883e;--r:#f85149;--b:#79c0ff;--y:#e3b341;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+  --body:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100vh;margin:0;background:var(--bg);color:var(--tx);font-family:var(--body);font-size:12px;overflow:hidden}
+body{display:flex;flex-direction:column}
+
+header{background:var(--chrome);border-bottom:1px solid var(--bd);padding:8px 14px;display:flex;align-items:center;gap:10px;font-size:11px}
+header h1{font-size:14px;margin:0;font-weight:600}
+header h1 small{color:var(--dm);font-weight:400;margin-left:6px;font-size:10px}
+header .spacer{flex:1}
+header label{font-size:10px;color:var(--dm);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+header select{background:#0b1018;color:var(--tx);border:1px solid var(--bd);border-radius:4px;padding:3px 6px;font-family:var(--mono);font-size:11px}
+header a{color:var(--b);text-decoration:none;font-size:10px;padding:3px 8px;border-radius:4px;border:1px solid transparent}
+header a:hover{background:#1f2937;border-color:var(--bd)}
+
+#auth-row{background:var(--chrome);border-bottom:1px solid var(--bd);padding:6px 14px;display:flex;align-items:center;gap:8px;font-size:11px}
+#auth-row input[type=password]{flex:1;max-width:320px;background:#0b1018;color:var(--tx);border:1px solid var(--bd);border-radius:4px;padding:4px 8px;font-family:var(--mono);font-size:11px}
+#auth-row button{background:#0b1018;color:var(--tx);border:1px solid var(--bd);border-radius:4px;padding:4px 12px;font-family:var(--body);font-size:11px;font-weight:600;cursor:pointer}
+#auth-row button:hover{border-color:var(--g);color:var(--g)}
+#auth-row button.primary{background:var(--g);border-color:var(--g);color:#0d1117}
+#auth-row button.primary:hover{background:#4ecf61}
+.auth{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:12px;background:#0b1018;border:1px solid var(--bd);font-size:10px;font-family:var(--mono)}
+.auth .dot{width:7px;height:7px;border-radius:50%;background:var(--ft)}
+.auth.on{border-color:var(--g)} .auth.on .dot{background:var(--g)}
+.auth.off{border-color:var(--r)} .auth.off .dot{background:var(--r)}
+.stats{font-family:var(--mono);font-size:10px;color:var(--dm)}
+.stats b{color:var(--tx)}
+
+main{flex:1;overflow:auto;padding:10px 14px}
+.sect{margin-bottom:12px}
+.sect h2{margin:0 0 4px;font-size:10px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:1.6px;border-bottom:1px solid var(--bd);padding-bottom:3px}
+.sect .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px 0;background:var(--bd);border:1px solid var(--bd);border-radius:4px;overflow:hidden}
+.row{display:grid;grid-template-columns:120px 70px 1fr;align-items:center;background:var(--card);padding:3px 6px;gap:6px;min-height:26px}
+.row:hover{background:#1a2030}
+.row.dirty{background:#1e1a10}
+.row.dirty:hover{background:#252014}
+.row .lbl{font-family:var(--mono);font-size:10px;color:var(--dm);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .lbl.req::after{content:"*";color:var(--o);margin-left:2px}
+.row .typ{font-family:var(--mono);font-size:9px;color:var(--ft);text-transform:lowercase;text-align:right}
+.row input,.row select,.row textarea{background:transparent;color:var(--tx);border:none;border-bottom:1px dashed transparent;padding:2px 4px;font-family:var(--mono);font-size:11px;width:100%}
+.row input:focus,.row select:focus,.row textarea:focus{outline:none;border-bottom-color:var(--g);background:#0b1018}
+.row.dirty input,.row.dirty select,.row.dirty textarea{color:var(--y)}
+.row input[type=checkbox]{width:auto}
+.row input[type=number]{font-variant-numeric:tabular-nums}
+.row .unit{font-family:var(--mono);font-size:9px;color:var(--ft);white-space:nowrap}
+.row .wrap{display:flex;align-items:center;gap:4px;min-width:0}
+.row .wrap input,.row .wrap select{flex:1;min-width:0}
+
+.log{flex:0 0 auto;max-height:110px;overflow:auto;background:#0b1018;border-top:1px solid var(--bd);padding:4px 10px;font-family:var(--mono);font-size:10px;line-height:1.5}
+.log .ok{color:var(--g)} .log .err{color:var(--r)} .log .info{color:var(--dm)} .log .warn{color:var(--y)}
+.hint{color:var(--ft);font-style:italic}

@@ -115,6 +115,27 @@ function updateCounts(){
 }
 setInterval(updateCounts,1500);
 
+// ── tracker / peer status chip
+const joinedAt=Date.now();
+function updateNetChip(){
+  const chip=$('wb-net'),txt=$('wb-net-txt');
+  if(!chip)return;
+  const age=(Date.now()-joinedAt)/1000;
+  if(!wsReady()){
+    chip.className='wb-net '+(age<5?'connecting':'offline');
+    txt.textContent=age<5?'connecting to trackers…':'trackers offline · retrying';
+    return;
+  }
+  if(pm.size===0){
+    chip.className='wb-net lonely';
+    txt.textContent=age<15?'tracker up · looking for peers…':'tracker up · waiting for peers';
+  }else{
+    chip.className='wb-net connected';
+    txt.textContent=`${pm.size} peer${pm.size===1?'':'s'} connected`;
+  }
+}
+setInterval(updateNetChip,1500);
+
 // ── go
 window.addEventListener('resize',fitCanvas);
 fitCanvas();
@@ -123,5 +144,7 @@ log('peer: '+myId+' (20 bytes ✓)','hi');
 
 startErrorCapture();
 startAuth();
-setTimeout(()=>join(roomName),300);
-setInterval(()=>{if(wsReady())announce()},30000);
+setTimeout(()=>{join(roomName);updateNetChip();},300);
+// fast re-announce for first 60s so a new joiner finds us quickly, then relax
+let fast=setInterval(()=>{if(wsReady())announce()},5000);
+setTimeout(()=>{clearInterval(fast);setInterval(()=>{if(wsReady())announce()},30000);},60000);

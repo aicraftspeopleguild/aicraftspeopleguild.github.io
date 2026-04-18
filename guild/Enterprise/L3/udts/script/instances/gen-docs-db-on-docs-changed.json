@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "gen-docs-db-on-docs-changed",
+  "parameters": {
+    "id": "gen-docs-db:on-docs-changed",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L3/scripts/paths/gen-docs-db.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "docs.content.changed",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "docs.db.rebuilt_at"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

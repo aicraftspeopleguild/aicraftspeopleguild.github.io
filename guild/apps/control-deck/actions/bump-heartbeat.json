@@ -1,0 +1,13 @@
+{
+  "udtType": "ControlAction",
+  "parameters": {
+    "id": "bump-heartbeat",
+    "label": "💓 bump heartbeat",
+    "title": "cmd:bump-heartbeat",
+    "body": "Bump demo.heartbeat tag — triggers full SVG regeneration.",
+    "category": "cmd",
+    "color": "primary",
+    "order": 10
+  },
+  "tags": { "id": "action-bump-heartbeat", "schema_version": "1.0.0" }
+}

@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "build-state-on-state-change",
+  "parameters": {
+    "id": "build-state:on-state-change",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L4/api/scripts/build-state.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "pipeline.build.status",
+    "listens_from": "*",
+    "listens_to": "COMPLETE",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "api.state.json"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

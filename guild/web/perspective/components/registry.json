@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "acg.* component type registry. Each entry maps a Perspective-style type name to a renderer definition (tag + cssClass + prop handling).",
+  "types": {
+    "acg.container.page": {
+      "tag": "fragment",
+      "cssClass": "",
+      "slots": ["head", "default", "footer"],
+      "template": "<header>{{ slot:head }}</header><main class=\"container\">{{ slot:default }}</main><footer>{{ slot:footer }}</footer>",
+      "description": "Page shell: header + main + footer. The builder wraps this in <!DOCTYPE html><html><head>...</head><body>...</body></html>."
+    },
+    "acg.container.section": {
+      "tag": "section",
+      "cssClass": "",
+      "slots": ["default"],
+      "propsToClass": ["variant"],
+      "template": "{{ slot:default }}"
+    },
+    "acg.container.main": {
+      "tag": "main",
+      "cssClass": "container",
+      "slots": ["default"],
+      "template": "{{ slot:default }}"
+    },
+    "acg.container.grid": {
+      "tag": "div",
+      "cssClass": "",
+      "slots": ["default"],
+      "propsToClass": ["variant"],
+      "template": "{{ slot:default }}"
+    },
+    "acg.container.flex": {
+      "tag": "div",
+      "cssClass": "flex",
+      "slots": ["default"],
+      "template": "{{ slot:default }}"
+    },
+    "acg.display.heading": {
+      "tag": "h{{ level }}",
+      "cssClass": "",
+      "template": "{{ text }}"
+    },
+    "acg.display.text": {
+      "tag": "p",
+      "cssClass": "",
+      "template": "{{ text }}"
+    },
+    "acg.display.html": {
+      "tag": "fragment",
+      "cssClass": "",
+      "template": "{{{ html }}}"
+    },
+    "acg.display.markdown": {
+      "tag": "div",
+      "cssClass": "markdown-body",
+      "template": "{{{ html }}}"
+    },
+    "acg.display.badge": {
+      "tag": "span",
+      "cssClass": "badge",
+      "template": "{{ text }}"
+    },
+    "acg.display.link": {
+      "tag": "a",
+      "cssClass": "",
+      "propsToAttr": { "href": "href", "target": "target", "rel": "rel" },
+      "template": "{{ text }}"
+    },
+    "acg.display.image": {
+      "tag": "img",
+      "cssClass": "",
+      "propsToAttr": { "src": "src", "alt": "alt", "loading": "loading" },
+      "selfClosing": true
+    },
+    "acg.display.emblem": {
+      "tag": "div",
+      "cssClass": "guild-mark",
+      "template": "<div class=\"emblem\">{{ text }}</div>"
+    },
+    "acg.nav.back-link": {
+      "tag": "div",
+      "cssClass": "back-link",
+      "template": "<a href=\"{{ href }}\">← {{ label }}</a>"
+    },
+    "acg.nav.cta": {
+      "tag": "section",
+      "cssClass": "cta-section",
+      "slots": ["default"],
+      "template": "{{ #heading }}<h2>{{ heading }}</h2>{{ /heading }}{{ #description }}<p>{{ description }}</p>{{ /description }}<div class=\"cta-actions\">{{ slot:default }}</div>"
+    },
+    "acg.card.paper": {
+      "tag": "article",
+      "cssClass": "paper-card",
+      "template": "<div class=\"paper-meta\">{{ #author }}<span>{{ author }}</span>{{ /author }}{{ #date }}<span>{{ date }}</span>{{ /date }}{{ #docNumber }}<span>{{ docNumber }}</span>{{ /docNumber }}</div><h3>{{ title }}</h3><p>{{ summary }}</p><div class=\"paper-actions\"><a href=\"{{ href }}\" class=\"btn btn-primary\">Read</a></div>"
+    },
+    "acg.card.manifesto": {
+      "tag": "div",
+      "cssClass": "manifesto-card",
+      "template": "<span class=\"icon\">{{ icon }}</span><h3>{{ title }}</h3><p>{{{ body }}}</p>"
+    }
+  }
+}

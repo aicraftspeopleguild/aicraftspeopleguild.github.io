@@ -90,6 +90,8 @@ case "${1:-help}" in
   components:catalog)      python "$HERE/components/build-catalog.py" ;;
   pages:decompose)         python "$HERE/pages/decompose.py" ;;
   apps:papers)             python "$HERE/apps/build-whitepaper-apps.py" ;;
+  perspective)             node   "$HERE/perspective-build.js" ;;
+  programs:build)          python "$HERE/build-programs.py" ;;
   test:links)              python "$HERE/test-links.py" ;;
   fix:links)               python "$HERE/fix-data-links.py" ;;
   docs:split-catalog)      python "$HERE/docs/split-catalog.py" ;;

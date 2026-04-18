@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-04-18T03:41:38Z",
+  "generated_at": "2026-04-18T03:53:42Z",
   "schema_version": "1.0.0",
   "counts": {
-    "programs": 15,
+    "programs": 16,
     "categories": 9
   },
   "programs": [
@@ -82,6 +82,13 @@
       "name": "Decompose",
       "category": "pages-pipeline",
       "path": "guild/web/scripts/pages/decompose.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "perspective-build_js",
+      "name": "Perspective Build",
+      "category": "build-orchestrator",
+      "path": "guild/web/scripts/perspective-build.js",
       "last_state": "IDLE"
     },
     {

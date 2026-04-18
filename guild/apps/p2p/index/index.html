@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>⚒ ACG · subsystem index</title>
-<link rel="stylesheet" href="../../../Enterprise/controls/scada/gateway/styles/section.css">
+<link rel="stylesheet" href="../../../Enterprise/L2/scada/gateway/styles/section.css">
 </head>
 <body>
 <div id="section"></div>
 
 <script type="module">
-import {bridge} from '../../../Enterprise/controls/sandbox/shared/mesh-bridge.js';
+import {bridge} from '../../../Enterprise/L4/sandbox/shared/mesh-bridge.js';
 import {buildDockShell, SUBSYSTEMS} from './renderer.js';
 
 const $  = id => document.getElementById(id);
@@ -28,7 +28,7 @@ const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 const fmtTs=ts=>ts?new Date(ts).toLocaleTimeString():'—';
 
 const basePath    = '../';                         // p2p app root
-const ctrlRoot    = '../../../Enterprise/';         // parent of controls/  (so ctrlRoot + s.path works when s.path starts with 'controls/')
+const entRoot     = '../../../Enterprise/';        // Enterprise (controls) root — SUBSYSTEMS paths are L*/.. relative to here
 const docks = buildDockShell($('section'));
 
 // N — logo + shell
@@ -36,17 +36,17 @@ docks.n.append(
   el('div',{class:'dock-n-logo'},['⚒ ACG directory', el('span',{},' · subsystem sitemap')]),
   el('nav',{class:'dock-n-shell'},[
     el('a',{href:basePath},'⚒ mesh'),
-    el('a',{href:ctrlRoot+'controls/scada/gateway/gateway-log.html'},'⚠ log'),
-    el('a',{href:ctrlRoot+'controls/scada/gateway/health.html'},'⚕ health'),
-    el('a',{href:ctrlRoot+'controls/hmi/chat/#scada'},'🖥 scada drawer'),
+    el('a',{href:entRoot+'L2/scada/gateway/gateway-log.html'},'⚠ log'),
+    el('a',{href:entRoot+'L2/scada/gateway/health.html'},'⚕ health'),
+    el('a',{href:entRoot+'L2/hmi/chat/#scada'},'🖥 scada drawer'),
   ])
 );
 
 // W — subsystem nav
-// SUBSYSTEMS[*].path is 'controls/...' relative to the Enterprise root.
+// SUBSYSTEMS[*].path is 'L*/…' relative to the Enterprise root.
 docks.w.append(
   el('h4',{},'Subsystems'),
-  el('nav',{class:'dock-w-nav'}, SUBSYSTEMS.map(s=>el('a',{href:ctrlRoot+s.path+'/'},[s.glyph+' '+s.name]))),
+  el('nav',{class:'dock-w-nav'}, SUBSYSTEMS.map(s=>el('a',{href:entRoot+s.path+'/'},[s.glyph+' '+s.name]))),
   el('hr',{class:'dock-sep'}),
   el('h4',{},'Controls'),
   el('div',{class:'dock-w-actions'},[

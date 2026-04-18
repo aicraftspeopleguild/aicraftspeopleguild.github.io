@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>⚒ ACG P2P · guild mesh</title>
-<link rel="stylesheet" href="../../Enterprise/controls/scada/gateway/styles/section.css">
+<link rel="stylesheet" href="../../Enterprise/L2/gateway/styles/section.css">
 <style>
   body{overflow:auto}
   .land{max-width:1040px;margin:0 auto;padding:28px 26px 60px;display:flex;flex-direction:column;gap:22px}
@@ -40,10 +40,10 @@
     <h1>⚒ ACG P2P<span>· guild mesh</span></h1>
     <span class="spacer"></span>
     <a id="ver" href="https://github.com/teslasolar/ACGP2P" target="_blank" rel="noopener" title="commit sha">⌖ …</a>
-    <a href="../../Enterprise/controls/">🎛 controls</a>
+    <a href="../../Enterprise/">🎛 controls</a>
     <a href="index/">🗂 directory</a>
-    <a href="../../Enterprise/controls/scada/gateway/gateway-log.html">⚠ log</a>
-    <a href="../../Enterprise/controls/scada/gateway/health.html">⚕ health</a>
+    <a href="../../Enterprise/L2/scada/gateway/gateway-log.html">⚠ log</a>
+    <a href="../../Enterprise/L2/gateway/health.html">⚕ health</a>
   </header>
 
   <!-- tier 1: operator login (automatic, peer-id = bearer) -->
@@ -74,35 +74,35 @@
   <section class="land-section">
     <h2>Open</h2>
     <div class="ctrl-grid">
-      <a class="ctrl-card" href="../../Enterprise/controls/hmi/chat/">
+      <a class="ctrl-card" href="../../Enterprise/L2/hmi/chat/">
         <h3>💬 Guild Chat<span class="ctrl-tag ready">ready</span></h3>
         <p>Open the P2P chat mesh. WebRTC datachannels · WebTorrent trackers · no server stores messages.</p>
-        <code>Enterprise/controls/hmi/chat/</code>
+        <code>Enterprise/L2/hmi/chat/</code>
       </a>
-      <a class="ctrl-card" href="../../Enterprise/controls/">
+      <a class="ctrl-card" href="../../Enterprise/">
         <h3>🎛 Controls</h3>
-        <p>SCADA, HMI, PLC, alarms, gateway, sandbox — every ACG control-plane subsystem.</p>
-        <code>Enterprise/controls/</code>
+        <p>SCADA, HMI, PLC, alarms, gateway, sandbox — every ACG control-plane subsystem (organised L1–L4).</p>
+        <code>Enterprise/</code>
       </a>
-      <a class="ctrl-card" href="../../Enterprise/controls/sandbox/">
+      <a class="ctrl-card" href="../../Enterprise/L4/sandbox/">
         <h3>🧪 Sandbox</h3>
         <p>Browser-only tool workshops: WebLLM, voice, virtual filesystem, git-lite.</p>
-        <code>Enterprise/controls/sandbox/</code>
+        <code>Enterprise/L4/sandbox/</code>
       </a>
-      <a class="ctrl-card" href="../../Enterprise/controls/scada/gateway/">
+      <a class="ctrl-card" href="../../Enterprise/L2/scada/gateway/">
         <h3>🛰 Gateway</h3>
         <p>SCADA gateway host — styles, scripts, tag-provider registry, auth module.</p>
-        <code>Enterprise/controls/scada/gateway/</code>
+        <code>Enterprise/L2/scada/gateway/</code>
       </a>
       <a class="ctrl-card" href="index/">
         <h3>🗂 Directory</h3>
         <p>Subsystem index — every provider's UDTs + live tag table in one place.</p>
         <code>index/</code>
       </a>
-      <a class="ctrl-card" href="../../Enterprise/controls/db/">
+      <a class="ctrl-card" href="../../Enterprise/L3/db/">
         <h3>🗄️ Tag DB</h3>
         <p>Canonical snapshot the README HMI + shields.io badges read from.</p>
-        <code>Enterprise/controls/db/</code>
+        <code>Enterprise/L3code>
       </a>
     </div>
   </section>
@@ -114,9 +114,9 @@
 </main>
 
 <script type="module">
-import {myId,myNm,myEm} from '../../Enterprise/controls/scada/gateway/scripts/config.js';
-import {startAuth,getProfile,onProfileChange} from '../../Enterprise/controls/scada/gateway/scripts/auth.js';
-import {startVersion} from '../../Enterprise/controls/scada/gateway/scripts/version.js';
+import {myId,myNm,myEm} from '../../Enterprise/L2/scada/gateway/scripts/config.js';
+import {startAuth,getProfile,onProfileChange} from '../../Enterprise/L2/scada/gateway/scripts/auth.js';
+import {startVersion} from '../../Enterprise/L2/gateway/scripts/version.js';
 
 document.getElementById('op-em').textContent=myEm;
 document.getElementById('op-id').textContent=myNm+' · '+myId;

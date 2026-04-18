@@ -70,6 +70,119 @@ setInterval(() => { if (wsReady()) announce(); }, 30000);
 setTimeout(() => {
   T.blank();
   T.line(`  <span class="line-dim">p2p chat bridge active · peer </span><span class="line-key">${myId.slice(-8)}</span><span class="line-dim"> · room </span><span class="line-key">${roomName}</span>`);
-  T.line(`  <span class="line-dim">try: </span><span class="line-key">chat hello</span><span class="line-dim"> · </span><span class="line-key">peers</span><span class="line-dim"> · </span><span class="line-key">join &lt;room&gt;</span>`);
+  T.line(`  <span class="line-dim">try: </span><span class="line-key">chat hello</span><span class="line-dim"> · </span><span class="line-key">peers</span><span class="line-dim"> · </span><span class="line-key">join &lt;room&gt;</span><span class="line-dim"> · </span><span class="line-key">heartbeat</span><span class="line-dim"> · </span><span class="line-key">watch demo.heartbeat</span>`);
   T.blank();
 }, 1500);
+
+
+// ── GitHub-Issue-backed tag DB ─────────────────────────────────────────
+// Browser-side read-only client for the same tag DB that gh_tag.py drives.
+// Hits the unauthenticated GitHub API — good for 60 req/hr per IP.
+const GH_REPO = 'teslasolar/aicraftspeopleguild.github.io';
+const GH_API  = 'https://api.github.com';
+
+function _parseFencedJSON(body) {
+  if (!body) return {};
+  let t = String(body).trim();
+  if (t.startsWith('```')) {
+    t = t.split('\n').slice(1).join('\n');
+    if (t.endsWith('```')) t = t.slice(0, -3);
+    if (t.trimStart().startsWith('json')) t = t.trimStart().slice(4).trimStart();
+  }
+  try { return JSON.parse(t); } catch { return { raw: body }; }
+}
+
+async function ghFindIssue(path) {
+  // No search API (indexing lag) — walk label=tag issues by title.
+  for (const state of ['open', 'closed']) {
+    const r = await fetch(`${GH_API}/repos/${GH_REPO}/issues?labels=tag&state=${state}&per_page=100`, {
+      headers: { Accept: 'application/vnd.github+json' }
+    });
+    if (!r.ok) throw new Error(`github ${r.status}`);
+    const list = await r.json();
+    const hit = list.find(i => i.title === `tag:${path}`);
+    if (hit) return hit;
+  }
+  return null;
+}
+
+async function ghReadTag(path) {
+  const iss = await ghFindIssue(path);
+  if (!iss) return { ok: false, error: `no tag '${path}' on ${GH_REPO}` };
+  let body = iss.body;
+  if (iss.comments > 0) {
+    const cr = await fetch(iss.comments_url + '?per_page=100', {
+      headers: { Accept: 'application/vnd.github+json' }
+    });
+    if (cr.ok) {
+      const cs = await cr.json();
+      if (cs.length) body = cs[cs.length - 1].body;
+    }
+  }
+  const v = _parseFencedJSON(body);
+  return {
+    ok: true, path, issue: iss.number, url: iss.html_url,
+    value: v.value, quality: v.quality || 'good', type: v.type,
+    description: v.description, updated_at: v.updated_at || iss.updated_at,
+  };
+}
+
+T.COMMANDS['gh-tag:read'] = async (args) => {
+  const path = args.path || (args._rest && args._rest[0]);
+  if (!path) { T.line('  <span class="line-err">✗ usage: gh-tag:read path=demo.heartbeat</span>'); T.blank(); return; }
+  try {
+    const r = await ghReadTag(path);
+    if (!r.ok) { T.line(`  <span class="line-err">✗ ${T.esc(r.error)}</span>`); T.blank(); return; }
+    T.blank();
+    T.kv('path      ', r.path);
+    T.kv('value     ', r.value == null ? '—' : JSON.stringify(r.value), 'line-ok');
+    T.kv('quality   ', r.quality, 'line-dim');
+    T.kv('type      ', r.type || '—', 'line-dim');
+    T.kv('updated_at', r.updated_at, 'line-dim');
+    T.kv('issue     ', `#${r.issue} · ${r.url}`, 'line-dim');
+    T.blank();
+  } catch (e) { T.line(`  <span class="line-err">✗ ${T.esc(e.message)}</span>`); T.blank(); }
+};
+
+T.COMMANDS['heartbeat'] = async () => {
+  try {
+    const r = await ghReadTag('demo.heartbeat');
+    if (!r.ok) { T.line(`  <span class="line-err">✗ ${T.esc(r.error)}</span>`); T.blank(); return; }
+    const cmd = await ghReadTag('demo.terminal-cmd');
+    T.blank();
+    T.line(`  <span class="line-ok">💓</span> <span class="line-key">demo.heartbeat</span>  <span class="line-val">${T.esc(String(r.value))}</span>  <span class="line-dim">· updated ${T.esc(r.updated_at||'—')}</span>`);
+    if (cmd.ok) T.line(`  <span class="line-dim">↳ last command: </span><span class="line-val">${T.esc(String(cmd.value))}</span>`);
+    T.blank();
+  } catch (e) { T.line(`  <span class="line-err">✗ ${T.esc(e.message)}</span>`); T.blank(); }
+};
+
+// watch <path> — poll every 15s and print when the value changes. `watch` alone
+// (no arg) watches demo.heartbeat. `watch off` stops all watchers.
+const _watchers = new Map();
+T.COMMANDS['watch'] = async (args) => {
+  const arg0 = (args._rest && args._rest[0]) || 'demo.heartbeat';
+  if (arg0 === 'off') {
+    for (const [, id] of _watchers) clearInterval(id);
+    _watchers.clear();
+    T.line('  <span class="line-dim">· all watchers stopped</span>'); T.blank(); return;
+  }
+  if (_watchers.has(arg0)) {
+    T.line(`  <span class="line-dim">already watching </span><span class="line-key">${T.esc(arg0)}</span>`); T.blank(); return;
+  }
+  let last = null;
+  const tick = async () => {
+    try {
+      const r = await ghReadTag(arg0);
+      if (!r.ok) return;
+      const v = JSON.stringify(r.value);
+      if (v !== last) {
+        T.line(`  <span class="line-purple">◉ watch </span><span class="line-key">${T.esc(arg0)}</span><span class="line-dim"> → </span><span class="line-val">${T.esc(v)}</span><span class="line-dim"> @ ${T.esc(r.updated_at||'')}</span>`);
+        last = v;
+      }
+    } catch {}
+  };
+  await tick();
+  _watchers.set(arg0, setInterval(tick, 15000));
+  T.line(`  <span class="line-ok">◉ watching </span><span class="line-key">${T.esc(arg0)}</span><span class="line-dim"> (15s poll · </span><span class="line-key">watch off</span><span class="line-dim"> to stop)</span>`);
+  T.blank();
+};

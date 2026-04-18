@@ -8,18 +8,33 @@ Tag ↔ Issue mapping
   labels   tag, ns:<namespace>       e.g. ns:live, ns:enterprise
   history  each comment is a new Value/Quality/Timestamp record
 
-Read path uses the unauthenticated GitHub API (60 req/hr public rate
-limit). Writes require GITHUB_TOKEN env var (PAT with `public_repo` or
-`repo` scope). Target repo defaults to
-aicraftspeopleguild/aicraftspeopleguild.github.io and can be overridden
-via GH_TAG_REPO env.
+Reads use the unauthenticated GitHub API (60 req/hr public rate limit).
+Writes need a token — resolved in this order:
+  1. GITHUB_TOKEN env var (e.g. set in CI)
+  2. `gh auth token` output if the GitHub CLI is installed + logged in
+  3. empty -> reads only
+
+Target repo defaults to aicraftspeopleguild/aicraftspeopleguild.github.io
+and can be overridden via GH_TAG_REPO env.
 """
-import json, os, urllib.request, urllib.parse
+import json, os, subprocess, urllib.request, urllib.parse
 from datetime import datetime, timezone
 
 REPO = os.environ.get("GH_TAG_REPO", "aicraftspeopleguild/aicraftspeopleguild.github.io")
 API  = "https://api.github.com"
-TOK  = os.environ.get("GITHUB_TOKEN", "").strip()
+
+
+def _token() -> str:
+    t = os.environ.get("GITHUB_TOKEN", "").strip()
+    if t: return t
+    try:
+        r = subprocess.run(["gh", "auth", "token"], capture_output=True,
+                           text=True, timeout=3)
+        if r.returncode == 0 and r.stdout.strip():
+            return r.stdout.strip()
+    except Exception:
+        pass
+    return ""
 
 
 def _now():
@@ -29,8 +44,9 @@ def _now():
 def _req(method: str, path: str, body=None) -> dict:
     url = f"{API}{path}"
     headers = {"Accept": "application/vnd.github+json", "User-Agent": "acg-gh-tag/1.0"}
-    if TOK:
-        headers["Authorization"] = f"Bearer {TOK}"
+    tok = _token()
+    if tok:
+        headers["Authorization"] = f"Bearer {tok}"
     data = None
     if body is not None:
         data = json.dumps(body).encode("utf-8")
@@ -70,13 +86,22 @@ def _fence(d: dict) -> str:
 
 
 def _find_issue(path: str) -> dict | None:
-    """Search by exact title match tag:<path>."""
+    """Find by exact title match tag:<path>. Uses the issues-list endpoint
+    (immediate) not search (30s+ indexing lag for new issues)."""
     title = f"tag:{path}"
-    q = urllib.parse.quote(f'repo:{REPO} in:title "{title}" is:issue')
-    data = _req("GET", f"/search/issues?q={q}&per_page=5")
-    for item in data.get("items") or []:
-        if item.get("title") == title:
-            return item
+    # Walk open + closed label=tag issues; page through up to 300.
+    for state in ("open", "closed"):
+        page = 1
+        while page <= 3:
+            data = _req("GET", f"/repos/{REPO}/issues?labels=tag&state={state}&per_page=100&page={page}")
+            if not isinstance(data, list) or not data:
+                break
+            for item in data:
+                if item.get("title") == title:
+                    return item
+            if len(data) < 100:
+                break
+            page += 1
     return None
 
 
@@ -136,8 +161,10 @@ def list_tags(ns: str = "") -> dict:
 def write(path: str = "", value=None, quality: str = "good",
           type: str = "String", description: str = "") -> dict:
     """Append a new comment with the current Value/Quality/Timestamp."""
-    if not path:    return {"ok": False, "error": "path required"}
-    if not TOK:     return {"ok": False, "error": "GITHUB_TOKEN required to write"}
+    if not path:
+        return {"ok": False, "error": "path required"}
+    if not _token():
+        return {"ok": False, "error": "no auth available — set GITHUB_TOKEN or install/login `gh` CLI"}
 
     iss = _find_issue(path)
     payload = {

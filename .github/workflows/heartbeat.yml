@@ -1,0 +1,49 @@
+name: heartbeat
+
+# Bumps the dynamic tag `demo.heartbeat` on every push to main + every
+# 15 minutes on a cron. Readers:
+#   - README badge (shields.io img-dynamic-json)
+#   - terminal `heartbeat` / `watch demo.heartbeat`
+#   - any future GH webhook -> state:fire
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Bump demo.heartbeat tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TAG_REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json, os, sys, urllib.request, urllib.parse
+          from datetime import datetime, timezone
+
+          sys.path.insert(0, 'guild/Enterprise/L2/lib')
+          import gh_tag
+
+          # bump value = seconds since epoch (monotonic) so anyone reading
+          # downstream can compute freshness
+          val = int(datetime.now(timezone.utc).timestamp())
+          out = gh_tag.write(
+              path='demo.heartbeat', value=val, quality='good',
+              type='Counter',
+              description=f'bumped at {datetime.now(timezone.utc).isoformat()} by heartbeat workflow',
+          )
+          print(json.dumps(out, indent=2))
+          PY

@@ -1,0 +1,14 @@
+{
+  "udtType": "Api",
+  "parameters": {
+    "id":          "state",
+    "name":        "Live state.json watcher",
+    "description": "Watch /api/state.json so any tooling subscribed to api.state.faults_active gets notified when the live fault count changes.",
+    "url":         "https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/api/state.json",
+    "output_tag":  "api.state.faults_active",
+    "watch_field": "summary.faults_active",
+    "interval_s":  60,
+    "enabled":     true
+  },
+  "tags": { "id": "api-state", "schema_version": "1.0.0" }
+}

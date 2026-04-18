@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"Sparkplug_Rules","std":"MQTT+Sparkplug","layer":7,"version":"1.0.0",
+"rules":{
+"R1":"NBIRTH before any NDATA",
+"R2":"seq increments 0-255 wrap",
+"R3":"LWT configured for NDEATH",
+"R4":"alias for bandwidth optimization",
+"R5":"store-forward on disconnect"
+},"meta":{"desc":"Sparkplug B conformance rules"}}

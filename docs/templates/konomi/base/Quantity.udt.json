@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Quantity","layer":1,"version":"1.0.0","fields":[
+{"n":"value","t":"REAL"},
+{"n":"unit","t":"STRING"},
+{"n":"uncertainty","t":"REAL","nullable":true}
+],"meta":{"desc":"Number + unit + optional uncertainty"}}

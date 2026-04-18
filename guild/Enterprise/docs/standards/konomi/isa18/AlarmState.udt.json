@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"AlarmState","std":"ISA-18.2","layer":5,"version":"1.0.0",
+"states":{
+"NORM":{"active":false,"acked":true,"suppress":false},
+"UNACK":{"active":true,"acked":false,"suppress":false,"note":"needs attention"},
+"ACKED":{"active":true,"acked":true,"suppress":false,"note":"aware, still active"},
+"RTN_UNACK":{"active":false,"acked":false,"suppress":false,"note":"cleared unacked"},
+"SHELVED":{"active":"any","acked":"any","suppress":true},
+"OUT_OF_SERVICE":{"active":"any","acked":"any","suppress":true,"oos":true}
+},"meta":{"desc":"Alarm state flag combinations"}}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "SvgMolecule",
+  "extends": "Component",
+  "version": "1.0.0",
+  "description": "Mid-level SVG widget composing a handful of atoms. Still data-agnostic (no fetch), but may accept structured props (arrays of strings, coordinate lists, etc.). Examples: tag_card, stat_block, link_card, labeled_sparkline, row_kv.",
+  "parameters": {
+    "name":         { "dataType": "String",      "required": true },
+    "atomicLevel":  { "dataType": "String",      "required": true, "const": "molecule" },
+    "renderer":     { "dataType": "String",      "required": true, "description": "module:function" },
+    "composes":     { "dataType": "StringArray", "required": false, "description": "SvgAtom ids used" },
+    "props":        { "dataType": "JSON",        "required": false },
+    "description":  { "dataType": "String",      "required": false }
+  },
+  "constraints": {
+    "may_compose": ["SvgAtom", "SvgMolecule"],
+    "forbidden_compose": ["SvgOrganism"],
+    "no_direct_data_fetch": true
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "schema_version": { "dataType": "String" }
+  }
+}

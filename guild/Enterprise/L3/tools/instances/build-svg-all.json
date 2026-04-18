@@ -1,0 +1,16 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:svg-all",
+    "name": "Rebuild every SvgOrganism",
+    "description": "Walk tag.db.udts for every SvgOrganism instance and invoke its entry generator. Produces all 7 live SVGs under guild/Enterprise/L2/hmi/web/assets/svg/ in one shot.",
+    "category": "build",
+    "entry": "guild/Enterprise/L2/lib/svg_build_all.py:build",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"JSON"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","build","batch","udt-driven"]
+  },
+  "tags": { "id": "build-svg-all", "schema_version": "1.0.0" }
+}

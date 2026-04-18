@@ -1,0 +1,17 @@
+{
+  "§":          "A.D.TAGS",
+  "🏗️":         "🎮",
+  "name":       "auth.discord · tag catalog",
+  "owner":      "auth/discord/provider.py",
+  "namespaces": ["auth.discord"],
+  "flow":       "implicit grant — response_type=token — pure browser, no proxy",
+
+  "tags": [
+    { "path": "auth.discord.clientId",   "type": "String",              "desc": "OAuth app client id (configured in OAUTH.DISCORD)" },
+    { "path": "auth.discord.profile",    "type": "UDT:DiscordProfile",  "desc": "last successful /users/@me response" },
+    { "path": "auth.discord.signedIn",   "type": "Boolean" },
+    { "path": "auth.discord.signedInAt", "type": "DateTime" },
+    { "path": "auth.discord.tokenExpiresAt", "type": "DateTime",        "desc": "derived from OAuth expires_in" },
+    { "path": "auth.discord.lastError",  "type": "String" }
+  ]
+}

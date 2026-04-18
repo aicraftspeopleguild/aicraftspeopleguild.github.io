@@ -1,0 +1,26 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "build-scada-network-svg-on-heartbeat",
+  "parameters": {
+    "id": "build-scada-network-svg:on-heartbeat",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L4/svg/build-scada-network.py",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "demo.heartbeat",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "guild/Enterprise/L2/hmi/web/assets/svg/scada-network.svg"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

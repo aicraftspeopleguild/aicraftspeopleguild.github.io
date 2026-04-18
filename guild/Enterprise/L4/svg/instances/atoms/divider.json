@@ -1,0 +1,28 @@
+{
+  "udtType": "SvgAtom",
+  "parameters": {
+    "name": "Divider",
+    "atomicLevel": "atom",
+    "renderer": "svg_widget:divider",
+    "description": "1-pixel horizontal rule.",
+    "props": {
+      "x": {
+        "type": "Number",
+        "required": true
+      },
+      "y": {
+        "type": "Number",
+        "required": true
+      },
+      "w": {
+        "type": "Number",
+        "required": true
+      }
+    }
+  },
+  "tags": {
+    "id": "divider",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/atoms/divider.json"
+  }
+}

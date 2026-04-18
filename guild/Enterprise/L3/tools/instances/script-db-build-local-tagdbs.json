@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:db:build-local-tagdbs",
+    "name": "script · build-local-tagdbs",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/db/build-local-tagdbs.py. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/db/build-local-tagdbs.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "db"
+    ]
+  },
+  "tags": {
+    "id": "script-db-build-local-tagdbs",
+    "schema_version": "1.0.0"
+  }
+}

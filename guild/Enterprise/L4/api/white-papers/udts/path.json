@@ -1,0 +1,42 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L4/api/white-papers/udts",
+    "label": "udts",
+    "parent": "guild/Enterprise/L4/api/white-papers",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L4_api_white-papers_udts",
+    "fs_path": "guild/Enterprise/L4/api/white-papers/udts",
+    "depth": 6,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L4",
+      "guild_Enterprise_L4_api",
+      "guild_Enterprise_L4_api_white-papers",
+      "guild_Enterprise_L4_api_white-papers_udts"
+    ],
+    "children": [
+      "guild/Enterprise/L4/api/white-papers/udts/instances",
+      "guild/Enterprise/L4/api/white-papers/udts/templates"
+    ],
+    "siblings": [
+      "guild/Enterprise/L4/api/white-papers/originals",
+      "guild/Enterprise/L4/api/white-papers/tags"
+    ],
+    "descendants": 2,
+    "file_count": 1,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

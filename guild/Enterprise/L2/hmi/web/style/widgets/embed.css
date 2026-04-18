@@ -1,0 +1,14 @@
+﻿/* -- Embed placeholder / error states ------------------------------ */
+.embed-pending,
+.embed-error {
+  display:      flex;
+  align-items:  center;
+  justify-content: center;
+  min-height:   80px;
+  font-size:    0.8rem;
+  color:        var(--color-ink-muted, #94a3b8);
+  border:       1px dashed var(--widget-border);
+  border-radius:var(--widget-radius);
+}
+
+.embed-error { color: var(--q-bad-color); border-color: #fca5a5; }

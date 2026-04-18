@@ -1,0 +1,11 @@
+{"$schema":"hmi/badge/v1","name":"Quality_Badge","isaLayer":"L3-L4","glyph":"⚪",
+"binds":"<tag>.quality",
+"source":"OPC-UA Quality / Konomi base/Quality.udt.json",
+"states":[
+{"value":"good",      "dot":"🟢","code":192,"color":"Running"},
+{"value":"stale",     "dot":"🟡","code":64, "color":"Warning"},
+{"value":"uncertain", "dot":"⚪", "code":64, "color":"Transition"},
+{"value":"bad",       "dot":"🔴","code":0,  "color":"Alarm"},
+{"value":"substituted","dot":"🔵","code":16,"color":"Manual"}
+],
+"meta":{"desc":"OPC-UA-style tag-quality pill, renders next to every live value"}}

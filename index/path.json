@@ -1,0 +1,42 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "index",
+    "label": "index",
+    "parent": ".",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "index",
+    "fs_path": "index",
+    "depth": 1,
+    "breadcrumb": [
+      "root",
+      "index"
+    ],
+    "children": [
+      "index/docks"
+    ],
+    "siblings": [
+      "bin",
+      "docs",
+      "guild"
+    ],
+    "descendants": 1,
+    "file_count": 7,
+    "subdir_count": 1,
+    "kinds": {
+      "html": 1,
+      "json": 3,
+      "db": 2,
+      "md": 1
+    },
+    "route_bindings": [
+      "home"
+    ],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

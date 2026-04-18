@@ -1,0 +1,19 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "AI Craftspeople Guild",
+    "slug": "home",
+    "route": "/",
+    "view": "views/home.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "home",
+    "status": "published"
+  },
+  "tags": {
+    "id": "home",
+    "view_id": "home",
+    "schema_version": "1.0.0"
+  }
+}

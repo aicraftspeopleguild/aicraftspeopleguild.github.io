@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"JsFile","layer":9,"version":"1.0.0","fields":[
+{"n":"path","t":"STRING"},
+{"n":"ext","t":"ENUM","values":["js","mjs","cjs"]},
+{"n":"module_kind","t":"ENUM","values":["esm","cjs","script"]},
+{"n":"imports","t":"STRING[]"},
+{"n":"exports","t":"STRING[]"},
+{"n":"functions","t":"STRING[]","desc":"Top-level Function IDs (links to Function UDT)"},
+{"n":"classes","t":"STRING[]","desc":"Class IDs"},
+{"n":"target_runtime","t":"ENUM","values":["node","browser","both"]},
+{"n":"sha256","t":"STRING"}
+],"meta":{"desc":"JavaScript source. ACG uses both Node (build scripts) and browser (renderer) flavours."}}

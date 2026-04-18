@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:widget-gallery-svg",
+    "name": "Render widget-gallery.svg",
+    "description": "Render widget-gallery.svg \u2014 gallery of every SvgOrganism from tag.db.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-widget-gallery.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "svg",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "svg",
+      "readme",
+      "build"
+    ]
+  },
+  "tags": {
+    "id": "build-widget-gallery-svg",
+    "schema_version": "1.0.0"
+  }
+}

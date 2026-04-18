@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "ACG Manifesto",
+    "slug": "aicraftspeopleguild-manifesto",
+    "route": "/aicraftspeopleguild-manifesto",
+    "view": "views/aicraftspeopleguild-manifesto.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "about",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/aicraftspeopleguild-manifesto.data.json"
+    }
+  },
+  "tags": {
+    "id": "aicraftspeopleguild-manifesto",
+    "view_id": "aicraftspeopleguild-manifesto",
+    "schema_version": "1.0.0"
+  }
+}

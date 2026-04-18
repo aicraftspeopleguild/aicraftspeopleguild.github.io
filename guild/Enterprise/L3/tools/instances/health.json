@@ -1,0 +1,25 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "health",
+    "name": "Guild health",
+    "description": "Current enterprise vitals: paperCount, memberCount, lastUpdated, apiVersion.",
+    "category": "query",
+    "entry": "guild/Enterprise/L4/api/health.json",
+    "language": "bash",
+    "inputs": [],
+    "outputs": [{"name":"health","type":"Health","description":"Vitals object"}],
+    "adapters": ["CliAdapter","ApiAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["health","vitals","read-only"],
+    "mcp": {
+      "mcp_name": "health",
+      "input_schema": {"type":"object","properties":{}}
+    },
+    "api": {
+      "method": "GET",
+      "path": "/guild/Enterprise/L4/api/health.json",
+      "static": true
+    }
+  },
+  "tags": { "id": "health", "schema_version": "1.0.0" }
+}

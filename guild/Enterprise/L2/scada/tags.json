@@ -1,0 +1,24 @@
+{
+  "§":          "3.TAGS",
+  "🏗️":         "🖥️",
+  "name":       "scada · tag catalog",
+  "owner":      "scada/provider.py",
+  "namespaces": ["sys", "version"],
+
+  "tags": [
+    { "path": "sys.startedAt",      "type": "DateTime", "desc": "page load epoch" },
+    { "path": "sys.uptimeSec",      "type": "Counter", "unit": "s", "desc": "seconds since load" },
+    { "path": "sys.myId",           "type": "String", "desc": "20-byte peer id '-ACG001-xxxxxxxxxxxx'" },
+    { "path": "sys.myNm",           "type": "String", "desc": "8-char peer name (last 8 of myId)" },
+    { "path": "sys.myEm",           "type": "String", "desc": "emoji badge derived from myId" },
+    { "path": "sys.trackerCount",   "type": "Counter", "desc": "size of TRACKERS fallback chain" },
+    { "path": "sys.userAgent",      "type": "String" },
+
+    { "path": "version.sha",        "type": "String",   "desc": "full commit SHA (cached)" },
+    { "path": "version.shortSha",   "type": "String",   "desc": "first 7 chars" },
+    { "path": "version.committedAt","type": "DateTime" },
+    { "path": "version.message",    "type": "String" },
+    { "path": "version.url",        "type": "String" },
+    { "path": "version.rateLimited","type": "Boolean",  "desc": "true if GitHub API returned 403 last poll" }
+  ]
+}

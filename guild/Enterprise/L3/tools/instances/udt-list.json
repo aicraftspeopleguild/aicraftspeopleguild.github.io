@@ -1,0 +1,23 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "udt:list",
+    "name": "List UDT instances in tag.db",
+    "description": "Enumerate UDTs stored in tag.db.udts. Optional udt_type (e.g. Tool, Program, Paper, Script) and dir_prefix filters.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/udt_query.py:list_udts",
+    "language": "python",
+    "inputs": [
+      {"name":"udt_type","type":"String","required":false},
+      {"name":"dir_prefix","type":"String","required":false}
+    ],
+    "outputs": [{"name":"udts","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["udt","list","read-only"],
+    "mcp": {
+      "mcp_name":"udt_list",
+      "input_schema":{"type":"object","properties":{"udt_type":{"type":"string"},"dir_prefix":{"type":"string"}}}
+    }
+  },
+  "tags": { "id": "udt-list", "schema_version": "1.0.0" }
+}

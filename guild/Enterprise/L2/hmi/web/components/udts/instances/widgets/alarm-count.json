@@ -1,0 +1,41 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "AlarmCount",
+    "tag": "span",
+    "cssClass": "alarm-badge",
+    "atomicLevel": "widget",
+    "description": "Live active alarm count badge. WidgetRuntime.AlarmPoller polls state.json and fills the count. Adds .alarm-badge-active when count > 0.",
+    "propsToAttr": {
+      "src":  "data-alarm-src",
+      "href": "data-alarm-href"
+    },
+    "props": {
+      "src": {
+        "type": "String",
+        "required": true,
+        "description": "URL of state.json, e.g. guild/Enterprise/L4/api/state.json"
+      },
+      "href": {
+        "type": "String",
+        "required": false,
+        "description": "Optional click-through URL to the alarms screen"
+      },
+      "label": {
+        "type": "String",
+        "required": false,
+        "default": "alarms",
+        "description": "Initial / fallback label text"
+      }
+    },
+    "slots": [],
+    "template": "{{ label }}"
+  },
+  "tags": {
+    "id": "alarm-count",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/alarm-count.json",
+    "source_kind": "poll",
+    "embeddable_in": ["Organism", "Template"],
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/whitepapers/from-correctness-to-integrity-measuring-ai-generated-code",
+    "label": "From Correctness to Integrity: Measuring AI-Generated Code Through Constraint Satisfaction, Mutation Robustness, and Self-Articulated Limitations",
+    "page": "guild/apps/whitepapers/pages/from-correctness-to-integrity-measuring-ai-generated-code.page.json",
+    "section": "resources",
+    "parent": "white-papers",
+    "order": 100,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "app-from-correctness-to-integrity-measuring-ai-generated-code",
+    "full_url": "https://aicraftspeopleguild.github.io/whitepapers/from-correctness-to-integrity-measuring-ai-generated-code",
+    "children": [],
+    "breadcrumb": [
+      "home",
+      "white-papers",
+      "app-from-correctness-to-integrity-measuring-ai-generated-code"
+    ],
+    "depth": 2,
+    "view_id": "white-paper-app",
+    "last_verified": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

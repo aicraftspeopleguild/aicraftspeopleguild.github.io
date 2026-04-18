@@ -1,0 +1,130 @@
+{
+  "§": "P",
+  "name": "ACG · provider registry",
+  "desc": "Tag-provider registry hosted by the SCADA gateway. One row per subsystem; each row points at the Jython 2.7 provider module plus its declarative UDT + tag catalogs. The browser runtime at /L2/scada/gateway/scripts/scada/providers.js mirrors this list.",
+  "host": "L2/scada/gateway/",
+  "registry_path": "L2/scada/gateway/providers/registry.json",
+
+  "runtime": {
+    "jython":  "2.7",
+    "browser": "ES modules",
+    "bridge":  "BroadcastChannel('acg-mesh')"
+  },
+
+  "subsystems": [
+    {
+      "id": "💬 chat",
+      "dir": "L2/hmi/chat/",
+      "provider": "L2/hmi/chat/provider.py",
+      "udts": "L2/hmi/chat/udts.json",
+      "tags": "L2/hmi/chat/tags.json",
+      "templates": "L2/hmi/chat/templates/",
+      "screen": "L2/hmi/chat/index.html",
+      "browser": ["L2/scada/gateway/scripts/config.js", "L2/scada/gateway/scripts/p2p.js", "L2/scada/gateway/scripts/peers.js", "L2/scada/gateway/scripts/chat.js"],
+      "namespaces": ["chat", "room", "tracker", "peers", "signal"]
+    },
+    {
+      "id": "🔑 auth",
+      "dir": "L2/scada/gateway/auth/",
+      "provider": "L2/scada/gateway/auth/provider.py",
+      "udts": "L2/scada/gateway/auth/udts.json",
+      "tags": "L2/scada/gateway/auth/tags.json",
+      "browser": ["L2/scada/gateway/scripts/auth.js"],
+      "host": "L2/scada/gateway/",
+      "subProviders": [
+        "L2/scada/gateway/auth/webrtc/",
+        "L2/scada/gateway/auth/webtorrent/",
+        "L2/scada/gateway/auth/discord/",
+        "L2/scada/gateway/auth/github/",
+        "L2/scada/gateway/auth/google/"
+      ],
+      "namespaces": ["auth"]
+    },
+    {
+      "id": "📡 auth.webrtc",
+      "dir": "L2/scada/gateway/auth/webrtc/",
+      "provider": "L2/scada/gateway/auth/webrtc/provider.py",
+      "udts": "L2/scada/gateway/auth/webrtc/udts.json",
+      "tags": "L2/scada/gateway/auth/webrtc/tags.json",
+      "browser": ["L2/scada/gateway/scripts/config.js", "L2/scada/gateway/scripts/p2p.js"],
+      "namespaces": ["auth.webrtc"]
+    },
+    {
+      "id": "🌊 auth.webtorrent",
+      "dir": "L2/scada/gateway/auth/webtorrent/",
+      "provider": "L2/scada/gateway/auth/webtorrent/provider.py",
+      "udts": "L2/scada/gateway/auth/webtorrent/udts.json",
+      "tags": "L2/scada/gateway/auth/webtorrent/tags.json",
+      "browser": ["L2/scada/gateway/scripts/config.js", "L2/scada/gateway/scripts/p2p.js"],
+      "namespaces": ["auth.webtorrent"]
+    },
+    {
+      "id": "🖥️ scada",
+      "dir": "L2/scada/",
+      "provider": "L2/scada/provider.py",
+      "udts":     "L2/scada/udts.json",
+      "tags":     "L2/scada/tags.json",
+      "specs":    ["L2/scada/00-legend.json", "L2/scada/01-master.json", "L2/scada/02-chat.json", "L2/scada/03-scada.json", "L2/scada/04-sandbox.json"],
+      "programs": "L2/scada/programs/",
+      "browser":  ["L2/scada/gateway/scripts/scada/tags.js", "L2/scada/gateway/scripts/scada/providers.js", "L2/scada/gateway/scripts/scada/monitor.js", "L2/scada/gateway/scripts/scada/udt.js"],
+      "namespaces": ["sys", "version"]
+    },
+    {
+      "id": "⚠ errors",
+      "dir": "L2/scada/errors/",
+      "provider": "L2/scada/errors/provider.py",
+      "udts": "L2/scada/errors/udts.json",
+      "tags": "L2/scada/errors/tags.json",
+      "browser": ["L2/scada/gateway/scripts/errors.js"],
+      "viewer": "gateway-log.html",
+      "namespaces": ["errors"]
+    },
+    {
+      "id": "🗄️ db",
+      "dir": "L3/db/",
+      "tags": "L3/db/tags.json",
+      "viewer": "L3/db/index.html",
+      "catalog": "L3/db/tags.sqlite",
+      "catalog_schema": "L3/db/sql/schema.sql",
+      "catalog_seed": "L3/db/sql/seed.sql",
+      "build": "L3/db/build.py",
+      "desc": "Canonical tag snapshot (tags.json) read by the README HMI + shields.io badges, plus the indexed catalog (tags.sqlite) rebuilt by L3/db/build.py from every manifest in the project. GitHub Action .github/workflows/rebuild-db.yml rebuilds on every manifest change.",
+      "namespaces": ["*"]
+    },
+    {
+      "id": "🖼 hmi",
+      "dir": "L2/hmi/",
+      "provider": "L2/hmi/provider.py",
+      "udts":     "L2/hmi/udts.json",
+      "tags":     "L2/hmi/tags.json",
+      "standards":["docs/standards/konomi/isa101/"],
+      "namespaces": ["hmi"]
+    },
+    {
+      "id": "🔧 plc",
+      "dir": "L1/plc/",
+      "provider": "L1/plc/provider.py",
+      "udts":     "L1/plc/udts.json",
+      "tags":     "L1/plc/tags.json",
+      "templates":"L1/plc/git/",
+      "standards":["docs/standards/gitplc/"],
+      "namespaces": ["plc"]
+    },
+    {
+      "id": "🧪 sandbox",
+      "dir": "L4/sandbox/",
+      "provider": "L4/sandbox/provider.py",
+      "udts": "L4/sandbox/udts.json",
+      "tags": "L4/sandbox/tags.json",
+      "browser": ["L2/scada/gateway/scripts/sandbox-bridge.js", "L4/sandbox/shared/mesh-bridge.js", "L4/sandbox/**"],
+      "tools": [
+        {"id":"🧠 web-llm",    "dir":"L4/sandbox/web-llm/",    "status":"ready"},
+        {"id":"🖍 whiteboard", "dir":"L4/sandbox/whiteboard/", "status":"ready",
+         "namespaces":["sandbox.whiteboard"]}
+      ],
+      "namespaces": ["sandbox"]
+    }
+  ],
+
+  "和": true
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Batch_Report",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "actual_size", "type": "REAL"},
+    {"name": "yield", "type": "REAL"},
+    {"name": "quality_grade", "type": "STRING", "length": 10},
+    {"name": "deviations", "type": "UDINT"},
+    {"name": "events", "type": "STRUCT", "array": true, "of": {"ts": "DT", "type": "DINT", "msg": "STRING"}}
+  ],
+  "meta": {"desc": "Completed batch results and event log"}
+}

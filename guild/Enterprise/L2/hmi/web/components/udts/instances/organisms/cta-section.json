@@ -1,0 +1,90 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "CTASection",
+    "tag": "section",
+    "cssClass": "cta-section",
+    "description": "Call-to-action section with rotating gradient background and primary/secondary buttons.",
+    "props": {
+      "heading": {
+        "type": "String",
+        "required": true
+      },
+      "description": {
+        "type": "String",
+        "required": false
+      },
+      "primaryText": {
+        "type": "String",
+        "required": false
+      },
+      "primaryHref": {
+        "type": "URL",
+        "required": false
+      },
+      "secondaryText": {
+        "type": "String",
+        "required": false
+      },
+      "secondaryHref": {
+        "type": "URL",
+        "required": false
+      }
+    },
+    "slots": [],
+    "template": "<section class=\"cta-section\"><h2>{{ heading }}</h2>{{ #description }}<p>{{ description }}</p>{{ /description }}<div class=\"cta-actions\">{{ #primaryHref }}<a href=\"{{ primaryHref }}\" class=\"btn btn-primary\">{{ primaryText }}</a>{{ /primaryHref }}{{ #secondaryHref }}<a href=\"{{ secondaryHref }}\" class=\"btn btn-secondary\">{{ secondaryText }}</a>{{ /secondaryHref }}</div></section>",
+    "atomicLevel": "organism",
+    "inputs": [
+      {
+        "key": "heading",
+        "dataType": "String",
+        "source": "page.heading",
+        "required": true
+      },
+      {
+        "key": "description",
+        "dataType": "String",
+        "source": "page.description",
+        "required": false
+      },
+      {
+        "key": "primaryText",
+        "dataType": "String",
+        "source": "page.primaryText",
+        "required": false
+      },
+      {
+        "key": "primaryHref",
+        "dataType": "URL",
+        "source": "page.primaryHref",
+        "required": false
+      },
+      {
+        "key": "secondaryText",
+        "dataType": "String",
+        "source": "page.secondaryText",
+        "required": false
+      },
+      {
+        "key": "secondaryHref",
+        "dataType": "URL",
+        "source": "page.secondaryHref",
+        "required": false
+      }
+    ]
+  },
+  "tags": {
+    "id": "cta-section",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/cta-section.json",
+    "dependencies": [
+      "button"
+    ],
+    "used_by_views": [
+      "page-shell",
+      "home",
+      "white-paper-index",
+      "members-index"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

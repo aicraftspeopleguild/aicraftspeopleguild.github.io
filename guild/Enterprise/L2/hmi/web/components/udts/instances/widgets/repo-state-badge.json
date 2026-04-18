@@ -1,0 +1,30 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "ReposStateBadge",
+    "tag": "aside",
+    "cssClass": "widget widget-state",
+    "description": "Live repo-state dashboard. Fetches /api/state.json (produced by build:state from state.db) and renders tag_values / events / tool_runs / faults_active. Highlights active faults with a red chip.",
+    "atomicLevel": "widget",
+    "source": {
+      "kind": "api",
+      "ref":  "guild/Enterprise/L4/api/state.json",
+      "interval_s": 30,
+      "expects": {
+        "summary":       "JSON",
+        "faults_active": "JSON[]"
+      }
+    },
+    "props": {},
+    "composes": ["Badge"],
+    "template": "<aside class=\"widget widget-state\" data-widget=\"repo-state\"><div class=\"widget-body\"><span class=\"badge\">tags <strong>{{ summary.tag_values }}</strong></span><span class=\"badge\">events <strong>{{ summary.events }}</strong></span><span class=\"badge\">tool runs <strong>{{ summary.tool_runs }}</strong> / <em>{{ summary.tool_failures }}</em> fail</span><span class=\"badge\">pipelines <strong>{{ summary.pipeline_runs }}</strong> / <em>{{ summary.pipeline_failures }}</em> fail</span><span class=\"badge badge-fault\"><strong>{{ summary.faults_active }}</strong> active faults</span></div>{{ #summary.last_event }}<p class=\"widget-meta\">last event: {{ summary.last_event.kind }} on <code>{{ summary.last_event.tag }}</code> {{ summary.last_event.from_state }} → {{ summary.last_event.to_state }} at {{ summary.last_event.at }}</p>{{ /summary.last_event }}</aside>"
+  },
+  "tags": {
+    "id": "repo-state-badge",
+    "file_path": "guild/Enterprise/L3/components/udts/instances/widgets/repo-state-badge.json",
+    "source_kind": "api",
+    "source_ref": "guild/Enterprise/L4/api/state.json",
+    "embeddable_in": ["Organism", "Template"],
+    "schema_version": "1.0.0"
+  }
+}

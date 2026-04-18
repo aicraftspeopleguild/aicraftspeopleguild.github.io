@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"Review","layer":9,"version":"1.0.0","fields":[
+{"n":"pr_number","t":"DINT","desc":"References PullRequest.number"},
+{"n":"reviewer","t":"STRING"},
+{"n":"state","t":"ENUM","values":["pending","commented","approved","changes_requested","dismissed"]},
+{"n":"body","t":"STRING","nullable":true},
+{"n":"submitted_at","t":"Timestamp","nullable":true},
+{"n":"commit_sha","t":"STRING","nullable":true,"desc":"The PR HEAD SHA reviewed"}
+],"meta":{"desc":"A review event on a pull request."}}

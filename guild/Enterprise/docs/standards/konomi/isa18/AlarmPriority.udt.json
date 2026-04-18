@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"AlarmPriority","std":"ISA-18.2","layer":5,"version":"1.0.0",
+"priorities":{
+"P1":{"name":"Emergency","response":"Immediate","time":"<1min","color":"Red","sound":"Continuous"},
+"P2":{"name":"High","response":"Prompt","time":"<10min","color":"Orange","sound":"Fast"},
+"P3":{"name":"Medium","response":"Timely","time":"<1hr","color":"Yellow","sound":"Slow"},
+"P4":{"name":"Low","response":"Awareness","time":"Shift","color":"Cyan","sound":"None"}
+},"meta":{"desc":"Four-priority alarm classification"}}

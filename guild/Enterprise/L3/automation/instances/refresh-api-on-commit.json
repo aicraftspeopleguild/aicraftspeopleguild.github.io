@@ -1,0 +1,26 @@
+{
+  "udtType": "Script",
+  "parameters": {
+    "id": "refresh-api-on-commit",
+    "name": "Refresh static API on commit",
+    "description": "When git:state transitions HOLD -> COMPLETE (commit just landed), regenerate the static API so /api/health.json reflects the new paperCount/memberCount without waiting for the next build.",
+    "enabled": true,
+    "trigger": {
+      "kind": "on_transition",
+      "tag": "git:state",
+      "from": "HOLD",
+      "to": "COMPLETE"
+    },
+    "action": {
+      "tool_id": "build:api",
+      "inputs": {}
+    }
+  },
+  "tags": {
+    "id": "refresh-api-on-commit",
+    "file_path": "guild/Enterprise/L3/automation/instances/refresh-api-on-commit.json",
+    "bound_tag": "git:state",
+    "bound_tool": "build:api",
+    "schema_version": "1.0.0"
+  }
+}

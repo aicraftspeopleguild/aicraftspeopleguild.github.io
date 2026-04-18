@@ -1,0 +1,39 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/engineering/component-catalog",
+    "label": "component-catalog",
+    "parent": "docs/engineering",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_engineering_component-catalog",
+    "fs_path": "docs/engineering/component-catalog",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_engineering",
+      "docs_engineering_component-catalog"
+    ],
+    "children": [],
+    "siblings": [
+      "docs/engineering/architecture",
+      "docs/engineering/standards",
+      "docs/engineering/tech-spec",
+      "docs/engineering/urs"
+    ],
+    "descendants": 0,
+    "file_count": 28,
+    "subdir_count": 0,
+    "kinds": {
+      "md": 26,
+      "db": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

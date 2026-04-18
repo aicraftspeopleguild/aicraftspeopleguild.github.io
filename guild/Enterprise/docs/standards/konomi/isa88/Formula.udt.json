@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Formula","std":"ISA-88","layer":3,"version":"1.0.0","fields":[
+{"n":"inputs","t":"STRUCT","array":true,"of":{"material":"STRING","qty":"REAL","uom":"STRING"}},
+{"n":"outputs","t":"STRUCT","array":true,"of":{"material":"STRING","qty":"REAL","uom":"STRING"}},
+{"n":"params","t":"STRUCT","array":true,"of":{"name":"STRING","value":"ANY","uom":"STRING"}}
+],"meta":{"desc":"Recipe formula: materials and parameters"}}

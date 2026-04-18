@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"Faceplate","std":"ISA-101","layer":4,"version":"1.0.0","fields":[
+{"n":"equipment","t":"REF"},
+{"n":"title","t":"STRING"},
+{"n":"pv_display","t":"STRUCT","array":true,"of":{"tag":"STRING","label":"STRING","format":"STRING","unit":"STRING"}},
+{"n":"sp_input","t":"STRUCT","array":true,"of":{"tag":"STRING","label":"STRING","min":"REAL","max":"REAL","unit":"STRING"}},
+{"n":"commands","t":"STRUCT","array":true,"of":{"cmd":"STRING","label":"STRING","confirm":"BOOL"}},
+{"n":"status","t":"STRUCT","of":{"state":"STRING","mode":"STRING","alarms":"ANY"}},
+{"n":"nav","t":"STRING","array":true}
+],"meta":{"desc":"Equipment faceplate definition"}}

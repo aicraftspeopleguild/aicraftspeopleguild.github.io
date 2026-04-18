@@ -1,0 +1,38 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/docs/standards/gitplc",
+    "label": "gitplc",
+    "parent": "guild/Enterprise/docs/standards",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_docs_standards_gitplc",
+    "fs_path": "guild/Enterprise/docs/standards/gitplc",
+    "depth": 5,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_docs",
+      "guild_Enterprise_docs_standards",
+      "guild_Enterprise_docs_standards_gitplc"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/docs/standards/konomi"
+    ],
+    "descendants": 0,
+    "file_count": 10,
+    "subdir_count": 0,
+    "kinds": {
+      "json": 8,
+      "db": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

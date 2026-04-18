@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"Workflow","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"path","t":"STRING","desc":".github/workflows/<file>.yml"},
+{"n":"triggers","t":"STRING[]","desc":"on: events — pull_request, push, schedule, workflow_dispatch"},
+{"n":"jobs","t":"STRING[]","desc":"Top-level job names"},
+{"n":"permissions","t":"JSON","nullable":true},
+{"n":"runs_on","t":"STRING[]","desc":"Union of runner labels across jobs"},
+{"n":"enabled","t":"BOOL","default":true}
+],"meta":{"desc":"A GitHub Actions workflow definition (the YAML, not a single run)."}}

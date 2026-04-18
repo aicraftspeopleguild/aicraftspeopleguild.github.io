@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"FormatIndex","layer":9,"version":"1.0.0",
+"desc":"Inventory of file-format and language UDTs the ACG pipeline recognises.",
+"formats":{
+"text":  ["TextFile","MarkdownFile","YamlFile","CsvFile"],
+"web":   ["HtmlFile","CssFile","JsFile"],
+"python":["PythonFile","Python2File","Python3File","JythonFile"]
+},"note":"Each UDT below is a thin Konomi record: path, sha256, lines, metadata."}

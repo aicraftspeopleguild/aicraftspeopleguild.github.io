@@ -1,0 +1,7 @@
+{"$schema":"konomi/udt/v1","name":"Personnel","std":"ISA-95","layer":2,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"name","t":"STRING"},
+{"n":"role","t":"STRING"},
+{"n":"qualifications","t":"STRING","array":true},
+{"n":"schedule","t":"REF"}
+],"meta":{"desc":"Personnel role + qualifications"}}

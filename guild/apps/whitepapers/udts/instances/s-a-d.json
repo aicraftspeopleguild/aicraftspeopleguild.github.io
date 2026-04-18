@@ -1,0 +1,29 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "S.A.D.",
+    "slug": "s-a-d",
+    "kind": "white-paper",
+    "description": "Sycophantic Anthropomorphization Disorder - Why AI Can't Be Sycophantic - An A.S.S.-OS Analysis",
+    "source_type": "WhitePaper",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/s-a-d.json",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/s-a-d.data.json"
+    },
+    "route": "/whitepapers/s-a-d",
+    "section": "resources",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "status": "published",
+    "tags": []
+  },
+  "tags": {
+    "id": "s-a-d",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/s-a-d/",
+    "view_id": "white-paper-app",
+    "ingested_at": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

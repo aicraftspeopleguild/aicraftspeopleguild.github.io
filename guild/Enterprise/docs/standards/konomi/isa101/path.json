@@ -1,0 +1,48 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/docs/standards/konomi/isa101",
+    "label": "isa101",
+    "parent": "guild/Enterprise/docs/standards/konomi",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_docs_standards_konomi_isa101",
+    "fs_path": "guild/Enterprise/docs/standards/konomi/isa101",
+    "depth": 6,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_docs",
+      "guild_Enterprise_docs_standards",
+      "guild_Enterprise_docs_standards_konomi",
+      "guild_Enterprise_docs_standards_konomi_isa101"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/docs/standards/konomi/base",
+      "guild/Enterprise/docs/standards/konomi/crosswalks",
+      "guild/Enterprise/docs/standards/konomi/isa18",
+      "guild/Enterprise/docs/standards/konomi/isa88",
+      "guild/Enterprise/docs/standards/konomi/isa95",
+      "guild/Enterprise/docs/standards/konomi/kpi",
+      "guild/Enterprise/docs/standards/konomi/meta",
+      "guild/Enterprise/docs/standards/konomi/modbus",
+      "guild/Enterprise/docs/standards/konomi/mqtt",
+      "guild/Enterprise/docs/standards/konomi/opcua"
+    ],
+    "descendants": 0,
+    "file_count": 10,
+    "subdir_count": 0,
+    "kinds": {
+      "json": 8,
+      "db": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "§":    "P.UDT",
+  "🏗️":  "🔧",
+  "name": "plc · UDTs",
+  "owner":"L1/plc/provider.py",
+  "note": "GitPLC transfer-layer UDTs. Concrete templates live at /L1/plc/git/. Standard descriptor at /docs/standards/gitplc/.",
+
+  "types": {
+    "Project": {
+      "fields": {
+        "name":    "s",
+        "vendor":  "e[ab|siemens|codesys|beckhoff|omron|mitsubishi|universal]",
+        "version": "s",
+        "isaLevel":"e[ProcessCell|Unit|EM|CM]"
+      },
+      "desc":  "GitPLC project header (mirrors config/config.json)."
+    },
+    "TypeSummary": {
+      "fields": { "name": "s", "base": "s?", "version": "s", "fields": "i", "kind": "s" },
+      "desc":  "One loaded UDT template (summary row)."
+    },
+    "EquipmentNode": {
+      "fields": {
+        "path":     "s",
+        "level":    "e[ProcessCell|Unit|EM|CM]",
+        "children": "i",
+        "state":    "s?",
+        "mode":     "s?"
+      },
+      "desc":  "Node in the ISA-88 equipment tree."
+    },
+    "SyncStatus": {
+      "fields": {
+        "vendor": "s",
+        "mode":   "e[upload|download|idle]",
+        "target": "s?",
+        "ts":     "ms",
+        "ok":     "b"
+      },
+      "desc":  "Last sync attempt against a live PLC."
+    },
+    "GitHead": {
+      "fields": { "hash": "s", "subject": "s", "ts": "ms", "dirty": "b" },
+      "desc":  "HEAD commit of the gitplc project."
+    }
+  }
+}

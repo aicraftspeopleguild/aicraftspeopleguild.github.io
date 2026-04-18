@@ -1,0 +1,21 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "CM_AnalogOut",
+  "vendor": null,
+  "base": "CM_Base",
+  "version": "1.0.0",
+  "fields": [
+    {"name": "sp", "type": "REAL"},
+    {"name": "value", "type": "REAL"},
+    {"name": "output", "type": "INT", "dir": "out"},
+    {"name": "scale.eng_lo", "type": "REAL"},
+    {"name": "scale.eng_hi", "type": "REAL"},
+    {"name": "scale.raw_lo", "type": "INT"},
+    {"name": "scale.raw_hi", "type": "INT"},
+    {"name": "ramp.enable", "type": "BOOL"},
+    {"name": "ramp.rate", "type": "REAL"},
+    {"name": "limits.lo", "type": "REAL"},
+    {"name": "limits.hi", "type": "REAL"}
+  ],
+  "meta": {"desc": "Scaled analog output with ramp and limits"}
+}

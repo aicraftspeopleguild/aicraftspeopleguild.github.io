@@ -1,0 +1,222 @@
+{
+  "version": "1.0.0",
+  "base": "guild/Enterprise/L2/hmi/web/",
+  "generated_at": "2026-04-17T19:58:22Z",
+  "path_udts": "components/udts/instances/paths/",
+  "routes": [
+    {
+      "id": "manifesto",
+      "path": "/manifesto",
+      "page": "pages/aicraftspeopleguild-manifesto.page.json",
+      "label": "Manifesto",
+      "dynamic": false,
+      "section": "about",
+      "parent": "home",
+      "order": 10
+    },
+    {
+      "id": "charter",
+      "path": "/charter",
+      "page": "pages/charter.page.json",
+      "label": "Charter",
+      "dynamic": false,
+      "section": "about",
+      "parent": "home",
+      "order": 20
+    },
+    {
+      "id": "code-of-conduct",
+      "path": "/code-of-conduct",
+      "page": "pages/code-of-conduct.page.json",
+      "label": "Code of Conduct",
+      "dynamic": false,
+      "section": "about",
+      "parent": "home",
+      "order": 30
+    },
+    {
+      "id": "mission-statement",
+      "path": "/mission",
+      "page": "pages/mission-statement.page.json",
+      "label": "Mission Statement",
+      "dynamic": false,
+      "section": "about",
+      "parent": "home",
+      "order": 40
+    },
+    {
+      "id": "chief-ai-skeptic",
+      "path": "/chief-ai-skeptic",
+      "page": "pages/chief-ai-skeptic-officer.page.json",
+      "label": "Chief AI Skeptic Officer",
+      "dynamic": false,
+      "section": "about",
+      "parent": "home",
+      "order": 50
+    },
+    {
+      "id": "members",
+      "path": "/members",
+      "page": "pages/members.page.json",
+      "label": "Members",
+      "dynamic": false,
+      "section": "community",
+      "parent": "home",
+      "order": 10
+    },
+    {
+      "id": "member-profile",
+      "path": "/members/:slug",
+      "page": "pages/member-profile.page.json",
+      "label": "Member Profile",
+      "dynamic": true,
+      "section": "community",
+      "parent": "members",
+      "order": 11
+    },
+    {
+      "id": "showcases",
+      "path": "/showcases",
+      "page": "pages/showcases.page.json",
+      "label": "Showcases",
+      "dynamic": false,
+      "section": "community",
+      "parent": "home",
+      "order": 20
+    },
+    {
+      "id": "flywheel",
+      "path": "/flywheel",
+      "page": "pages/flywheel.page.json",
+      "label": "Flywheel",
+      "dynamic": false,
+      "section": "community",
+      "parent": "home",
+      "order": 30
+    },
+    {
+      "id": "guild-radar",
+      "path": "/guild-radar",
+      "page": "pages/guild-radar.page.json",
+      "label": "Guild Radar",
+      "dynamic": false,
+      "section": "community",
+      "parent": "home",
+      "order": 40
+    },
+    {
+      "id": "home",
+      "path": "/",
+      "page": "pages/home.page.json",
+      "label": "Home",
+      "dynamic": false,
+      "section": "meta",
+      "parent": null,
+      "order": 0
+    },
+    {
+      "id": "hall-of-fame",
+      "path": "/hall-of-fame",
+      "page": "pages/hall-of-fame.page.json",
+      "label": "Hall of Fame",
+      "dynamic": false,
+      "section": "recognition",
+      "parent": "home",
+      "order": 10
+    },
+    {
+      "id": "hall-of-shame",
+      "path": "/hall-of-shame",
+      "page": "pages/hall-of-shame.page.json",
+      "label": "Hall of Shame",
+      "dynamic": false,
+      "section": "recognition",
+      "parent": "home",
+      "order": 20
+    },
+    {
+      "id": "white-papers",
+      "path": "/white-papers",
+      "page": "pages/white-papers.page.json",
+      "label": "White Papers",
+      "dynamic": false,
+      "section": "resources",
+      "parent": "home",
+      "order": 10
+    },
+    {
+      "id": "white-paper-article",
+      "path": "/white-papers/:slug",
+      "page": "pages/white-paper-article.page.json",
+      "label": "White Paper",
+      "dynamic": true,
+      "section": "resources",
+      "parent": "white-papers",
+      "order": 11
+    },
+    {
+      "id": "ai-rituals",
+      "path": "/rituals",
+      "page": "pages/ai-rituals.page.json",
+      "label": "AI Rituals",
+      "dynamic": false,
+      "section": "resources",
+      "parent": "home",
+      "order": 20
+    },
+    {
+      "id": "mob-programming",
+      "path": "/mob-programming",
+      "page": "pages/mob-programming.page.json",
+      "label": "Mob Programming",
+      "dynamic": false,
+      "section": "resources",
+      "parent": "home",
+      "order": 30
+    },
+    {
+      "id": "hushbell",
+      "path": "/hushbell",
+      "page": "pages/hushbell.page.json",
+      "label": "Hushbell",
+      "dynamic": false,
+      "section": "resources",
+      "parent": "home",
+      "order": 40
+    },
+    {
+      "id": "hushbell-full-spec",
+      "path": "/hushbell/spec",
+      "page": "pages/hushbell-full-spec.page.json",
+      "label": "Hushbell Full Spec",
+      "dynamic": false,
+      "section": "resources",
+      "parent": "hushbell",
+      "order": 41
+    }
+  ],
+  "sections": {
+    "resources": [
+      "white-papers",
+      "ai-rituals",
+      "mob-programming",
+      "hushbell"
+    ],
+    "about": [
+      "manifesto",
+      "charter",
+      "code-of-conduct",
+      "mission-statement"
+    ],
+    "community": [
+      "members",
+      "showcases",
+      "flywheel",
+      "guild-radar"
+    ],
+    "recognition": [
+      "hall-of-fame",
+      "hall-of-shame"
+    ]
+  }
+}

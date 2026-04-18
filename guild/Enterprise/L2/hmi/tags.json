@@ -1,0 +1,28 @@
+{
+  "§": "H.TAGS",
+  "🏗️": "🖼",
+  "name": "hmi · tag catalog",
+  "owner": "L2/hmi/provider.py",
+  "namespaces": ["hmi"],
+  "navHistorySize": 50,
+
+  "tags": [
+    { "path": "hmi.layer.current",  "type": "e[L1|L2|L3|L4|L5]", "desc": "currently active ISA-101 screen layer" },
+    { "path": "hmi.nav.path",       "type": "s",                 "desc": "current page path" },
+    { "path": "hmi.nav.history",    "type": "Array<NavTarget>",  "desc": "last N=50 navigations (FIFO)" },
+
+    { "pathPattern": "hmi.alarms.summary.p<N>", "cardinality": "many", "type": "UDT:AlarmBadge",
+      "desc": "active + unacked count per priority N ∈ {1..4}" },
+    { "path": "hmi.alarms.summary.total",       "type": "i", "desc": "total active alarms across all priorities" },
+    { "path": "hmi.alarms.summary.unacked",     "type": "i", "desc": "total unacked alarms" },
+
+    { "pathPattern": "hmi.palette.<state>",     "cardinality": "many", "type": "UDT:ColorMeaning",
+      "desc": "semantic color for state ∈ {Normal,Running,Stopped,Warning,Alarm,Fault,Maint,Disabled,Manual,Transition}" },
+
+    { "pathPattern": "hmi.faceplates.<tag>",    "cardinality": "many", "type": "UDT:Faceplate",
+      "desc": "registered faceplate per equipment tag" },
+
+    { "pathPattern": "hmi.layers.<id>",         "cardinality": "many", "type": "UDT:ScreenLayer",
+      "desc": "metadata for each ISA-101 layer id ∈ {L1..L5}" }
+  ]
+}

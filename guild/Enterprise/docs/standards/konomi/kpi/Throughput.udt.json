@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Throughput","std":"KPI","layer":9,"version":"1.0.0","fields":[
+{"n":"value","t":"REAL"},
+{"n":"unit","t":"STRING","desc":"units/hour"},
+{"n":"period","t":"Duration"}
+],"meta":{"desc":"Production throughput rate"}}

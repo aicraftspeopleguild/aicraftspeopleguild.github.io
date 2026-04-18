@@ -1,0 +1,58 @@
+{
+  "udtType": "PackMLState",
+  "parameters": {
+    "program_id": "api--build-api_py",
+    "run_id": "1776498894-33b362",
+    "started_at": "2026-04-18T07:54:54Z",
+    "ended_at": "2026-04-18T07:54:54Z",
+    "terminal": "COMPLETE",
+    "transitions": [
+      {
+        "state": "STARTING",
+        "at": "2026-04-18T07:54:54Z",
+        "note": "running pre_checks"
+      },
+      {
+        "state": "EXECUTE",
+        "at": "2026-04-18T07:54:54Z",
+        "note": "work starting"
+      },
+      {
+        "state": "COMPLETING",
+        "at": "2026-04-18T07:54:54Z",
+        "note": "running post_checks"
+      },
+      {
+        "state": "COMPLETE",
+        "at": "2026-04-18T07:54:54Z",
+        "note": "all checks ok"
+      }
+    ],
+    "pre_check_results": {
+      "path_exists(acg.db)": {
+        "ok": true,
+        "note": ""
+      }
+    },
+    "post_check_results": {
+      "path_exists(papers.json)": {
+        "ok": true,
+        "note": ""
+      },
+      "path_exists(members.json)": {
+        "ok": true,
+        "note": ""
+      },
+      "path_exists(health.json)": {
+        "ok": true,
+        "note": ""
+      }
+    },
+    "error": null
+  },
+  "tags": {
+    "id": "api--build-api_py-1776498894-33b362",
+    "duration_s": "0.004",
+    "schema_version": "1.0.0"
+  }
+}

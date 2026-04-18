@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"Quality","layer":1,"version":"1.0.0","fields":[
+{"n":"value","t":"DINT"},
+{"n":"flags.good","t":"BOOL"},
+{"n":"flags.bad","t":"BOOL"},
+{"n":"flags.uncertain","t":"BOOL"},
+{"n":"flags.substituted","t":"BOOL"},
+{"n":"flags.limited","t":"BOOL"}
+],"codes":{"GOOD":192,"BAD":0,"UNCERTAIN":64,"SUBSTITUTED":"+16","LIMITED":"+4"},
+"meta":{"desc":"OPC-style value quality"}}

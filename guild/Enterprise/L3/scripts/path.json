@@ -1,0 +1,59 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/scripts",
+    "label": "scripts",
+    "parent": "guild/web",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_scripts",
+    "fs_path": "guild/web/scripts",
+    "depth": 3,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_scripts"
+    ],
+    "children": [
+      "guild/web/scripts/api",
+      "guild/web/scripts/apps",
+      "guild/web/scripts/components",
+      "guild/web/scripts/db",
+      "guild/web/scripts/docs",
+      "guild/web/scripts/lib",
+      "guild/web/scripts/members",
+      "guild/web/scripts/pages",
+      "guild/web/scripts/paths",
+      "guild/web/scripts/tags",
+      "guild/web/scripts/udts",
+      "guild/web/scripts/white-papers"
+    ],
+    "siblings": [
+      "guild/Enterprise/L2/hmi/web/assets",
+      "guild/Enterprise/L2/hmi/web/components",
+      "guild/web/members",
+      "guild/Enterprise/L2/hmi/web/pages",
+      "guild/Enterprise/L2/hmi/web/perspective",
+      "guild/Enterprise/L2/hmi/web/style",
+      "guild/Enterprise/L2/hmi/web/views"
+    ],
+    "descendants": 14,
+    "file_count": 14,
+    "subdir_count": 12,
+    "kinds": {
+      "py": 3,
+      "js": 5,
+      "sh": 2,
+      "db": 2,
+      "json": 1,
+      "md": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

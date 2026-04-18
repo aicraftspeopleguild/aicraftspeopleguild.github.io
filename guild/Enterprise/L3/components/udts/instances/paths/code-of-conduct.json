@@ -1,0 +1,32 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/code-of-conduct",
+    "label": "Code of Conduct",
+    "page": "pages/code-of-conduct.page.json",
+    "section": "about",
+    "parent": "home",
+    "order": 30,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "code-of-conduct",
+    "full_url": "https://aicraftspeopleguild.github.io/code-of-conduct",
+    "children": [],
+    "breadcrumb": [
+      "about",
+      "code-of-conduct"
+    ],
+    "depth": 1,
+    "view_id": "static-page",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

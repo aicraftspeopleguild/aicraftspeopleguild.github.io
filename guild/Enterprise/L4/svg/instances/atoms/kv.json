@@ -1,0 +1,36 @@
+{
+  "udtType": "SvgAtom",
+  "parameters": {
+    "name": "Kv",
+    "atomicLevel": "atom",
+    "renderer": "svg_widget:kv",
+    "description": "Stacked label / big value pair.",
+    "props": {
+      "x": {
+        "type": "Number",
+        "required": true
+      },
+      "y": {
+        "type": "Number",
+        "required": true
+      },
+      "label": {
+        "type": "String",
+        "required": true
+      },
+      "value": {
+        "type": "String",
+        "required": true
+      },
+      "value_class": {
+        "type": "String",
+        "required": true
+      }
+    }
+  },
+  "tags": {
+    "id": "kv",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/atoms/kv.json"
+  }
+}

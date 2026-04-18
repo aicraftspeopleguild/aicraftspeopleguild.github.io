@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "Guild Charter",
+    "slug": "charter",
+    "route": "/charter",
+    "view": "views/charter.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "about",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/charter.data.json"
+    }
+  },
+  "tags": {
+    "id": "charter",
+    "view_id": "charter",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{"$schema":"konomi/udt/v1","name":"MQTT_Topic","std":"MQTT+Sparkplug","layer":7,"version":"1.0.0",
+"format":"{namespace}/{group}/{edge}/{device}/{point}",
+"example":"spBv1.0/Plant1/DCMD/PLC01/Output1",
+"fields":[
+{"n":"namespace","t":"STRING"},
+{"n":"group","t":"STRING"},
+{"n":"edge","t":"STRING"},
+{"n":"device","t":"STRING","nullable":true},
+{"n":"point","t":"STRING","nullable":true}
+],"meta":{"desc":"Conventional MQTT topic shape"}}

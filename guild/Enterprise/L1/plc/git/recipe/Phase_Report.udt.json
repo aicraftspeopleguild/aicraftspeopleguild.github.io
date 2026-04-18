@@ -1,0 +1,16 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Phase_Report",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "actual_temp", "type": "REAL"},
+    {"name": "actual_time", "type": "TIME"},
+    {"name": "actual_level", "type": "REAL"},
+    {"name": "material_in", "type": "REAL"},
+    {"name": "material_out", "type": "REAL"},
+    {"name": "energy", "type": "REAL"},
+    {"name": "custom", "type": "REAL", "array": true, "dims": [20]}
+  ],
+  "meta": {"desc": "Phase execution report values"}
+}

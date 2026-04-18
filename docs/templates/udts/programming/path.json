@@ -1,0 +1,40 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/templates/udts/programming",
+    "label": "programming",
+    "parent": "docs/templates/udts",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_templates_udts_programming",
+    "fs_path": "docs/templates/udts/programming",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_templates",
+      "docs_templates_udts",
+      "docs_templates_udts_programming"
+    ],
+    "children": [],
+    "siblings": [
+      "docs/templates/udts/formats",
+      "docs/templates/udts/git",
+      "docs/templates/udts/render",
+      "docs/templates/udts/tools"
+    ],
+    "descendants": 0,
+    "file_count": 8,
+    "subdir_count": 0,
+    "kinds": {
+      "json": 6,
+      "db": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

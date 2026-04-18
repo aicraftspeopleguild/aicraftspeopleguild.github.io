@@ -1,0 +1,27 @@
+{
+  "§": "2.3",
+  "🏗️": "👥",
+  "name": "peers",
+  "module": "L2/scada/gateway/scripts/peers.js",
+
+  "📦": {
+    "pm": "m peerId:s20 → 🏗️👥{ name:s emoji:s avatar:s? dcs:Set<🔌> connectedAt:ms msgsIn:i msgsOut:i lastSeen:ms }"
+  },
+
+  "🏗️": {
+    "Peer": { "id":"s20", "name":"s", "emoji":"s", "avatar":"s?", "state":"e[open|closed]", "channels":"i", "connectedAt":"ms", "msgsIn":"i", "msgsOut":"i", "lastSeen":"ms" }
+  },
+
+  "→": [
+    { "name": "meCard",            "out": "{name:s,emoji:s,avatar:s?}", "flow": "auth.profile ∨ {myNm,myEm}" },
+    { "name": "publishPeer",       "in": "pid:s20",                     "flow": "PEERS.write(pid, 🏗️Peer) ∨ del if ∅dcs" },
+    { "name": "publishPeerCount",  "flow": "ROOM.write(peerCount, |pm ∩ open| + 1)" },
+    { "name": "wire",              "in": "🔌,rid:s20",                  "flow": "🔌.on{open→pm.add ⊕ send👋 ⊕ publishPeer, close→pm.delete, msg→parse{hi|msg} ⊕ updPeers ⊕ publishPeer}" },
+    { "name": "updPeers",          "flow": "rebuild #pList ⊕ publishPeerCount" }
+  ],
+
+  "↑🖥️": ["peers.<peerId>", "room.peerCount"],
+  "↓🖥️": ["auth.profile"],
+
+  "和": true
+}

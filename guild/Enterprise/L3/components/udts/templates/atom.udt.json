@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Atom",
+  "extends": "Component",
+  "version": "1.0.0",
+  "description": "Atomic UI primitive — single HTML element, no nested components, no data dependencies. Props are scalar-only (no arrays of objects). Pure presentation.",
+  "parameters": {
+    "name":        { "dataType": "String",      "required": true,  "description": "PascalCase" },
+    "tag":         { "dataType": "String",      "required": true,  "description": "HTML element tag" },
+    "cssClass":    { "dataType": "String",      "required": false },
+    "description": { "dataType": "String",      "required": false },
+    "atomicLevel": { "dataType": "String",      "required": true,  "const": "atom" },
+    "props":       { "dataType": "JSON",        "required": false, "description": "Scalar props only: String, URL, Number, Boolean, Enum" },
+    "template":    { "dataType": "String",      "required": true }
+  },
+  "constraints": {
+    "no_nested_components": true,
+    "no_slots": true,
+    "no_inputs": true,
+    "scalar_props_only": true
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "used_by":        { "dataType": "StringArray" },
+    "schema_version": { "dataType": "String" }
+  }
+}

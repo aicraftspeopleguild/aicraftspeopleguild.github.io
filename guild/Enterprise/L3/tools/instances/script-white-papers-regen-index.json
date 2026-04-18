@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:white-papers:regen-index",
+    "name": "script · regen-index",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/white-papers/regen-index.py. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/white-papers/regen-index.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "white-papers"
+    ]
+  },
+  "tags": {
+    "id": "script-white-papers-regen-index",
+    "schema_version": "1.0.0"
+  }
+}

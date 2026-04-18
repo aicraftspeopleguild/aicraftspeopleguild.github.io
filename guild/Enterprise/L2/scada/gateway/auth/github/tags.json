@@ -1,0 +1,21 @@
+{
+  "§":          "A.G.TAGS",
+  "🏗️":         "🐙",
+  "name":       "auth.github · tag catalog",
+  "owner":      "auth/github/provider.py",
+  "namespaces": ["auth.github"],
+  "flow":       "device flow — requires CORS proxy (OAUTH.GITHUB.proxyUrl)",
+
+  "tags": [
+    { "path": "auth.github.clientId",        "type": "String",             "desc": "OAuth app client id" },
+    { "path": "auth.github.proxyUrl",        "type": "String",             "desc": "CORS proxy that relays /device/code + /access_token" },
+    { "path": "auth.github.profile",         "type": "UDT:GithubProfile",  "desc": "last successful /user response" },
+    { "path": "auth.github.signedIn",        "type": "Boolean" },
+    { "path": "auth.github.signedInAt",      "type": "DateTime" },
+    { "path": "auth.github.deviceCodeInFlight", "type": "Boolean",         "desc": "true while polling /access_token" },
+    { "path": "auth.github.verificationUri", "type": "String",             "desc": "URL user enters user_code at" },
+    { "path": "auth.github.userCode",        "type": "String",             "desc": "short code the user types on github.com/login/device" },
+    { "path": "auth.github.pollCount",       "type": "Counter" },
+    { "path": "auth.github.lastError",       "type": "String" }
+  ]
+}

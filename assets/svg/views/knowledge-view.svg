@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 780" width="720" height="780"
+     role="img" aria-label="{{FEED_VIEW_TITLE}} — knowledge base view">
+  <!--
+  ══════════════════════════════════════════════════════════════════════════
+  VIEW: knowledge-view.svg
+  Composition (top → bottom):
+    [36px]  titlebar
+    [16px]  gap
+    [52px]  ZONE A — divider + section label
+    [16px]  gap
+    [64px]  ZONE B — tag chips (topic filters)
+    [16px]  gap
+    [300px] ZONE C — paper feed (organisms/paper-feed variant, 6 rows)
+    [16px]  gap
+    [24px]  ZONE D — count row
+    [16px]  gap
+    [160px] ZONE E — kv-list (paper metadata)
+    [16px]  gap
+    [20px]  footer
+  ══════════════════════════════════════════════════════════════════════════
+  TOKENS (55 total):
+    FEED_VIEW_TITLE  FEED_VIEW_TS  FEED_VIEW_TOTAL
+
+    Tags ×6: T1_LB T1_BG T1_BO T1_TX  T2 … T6 (same 4 tokens each)
+
+    Papers ×6: P1_NUM P1_TITLE P1_TAGS P1_DT  … P6
+
+    KV metadata ×4 rows: K1_KEY K1_VAL K1_CO  K2  K3  K4
+
+    Section label: SEC_LB
+  -->
+  <defs>
+    <linearGradient id="kg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#0d1117" stop-opacity=".9"/>
+    </linearGradient>
+    <style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style>
+  </defs>
+
+  <rect width="720" height="780" rx="10" fill="url(#kg)"/>
+
+  <!-- ══ TITLEBAR ════════════════════════════════════════════════════ -->
+  <rect x="0" y="0"  width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10"  fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="360" y="22" text-anchor="middle" class="t" font-size="11" fill="#8b949e">&#x1F4DA; {{FEED_VIEW_TITLE}}</text>
+
+  <!-- ══ ZONE A — SECTION DIVIDER (y=52) ═════════════════════════════ -->
+  <line x1="16" y1="72" x2="248" y2="72" stroke="#21262d" stroke-width="1"/>
+  <rect x="248" y="60" width="224" height="24" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="360" y="77" class="t" font-size="10" fill="#8b949e" text-anchor="middle" letter-spacing="2">{{SEC_LB}}</text>
+  <line x1="472" y1="72" x2="704" y2="72" stroke="#21262d" stroke-width="1"/>
+
+  <!-- ══ ZONE B — TAG CHIP ROW (y=90) ════════════════════════════════ -->
+  <!-- chips: 6 × ~108px wide -->
+  <rect x="16"  y="90" width="100" height="24" rx="12" fill="{{T1_BG}}" stroke="{{T1_BO}}" stroke-width="1"/>
+  <text x="66"  y="107" class="t" font-size="10" fill="{{T1_TX}}" text-anchor="middle">{{T1_LB}}</text>
+  <rect x="124" y="90" width="100" height="24" rx="12" fill="{{T2_BG}}" stroke="{{T2_BO}}" stroke-width="1"/>
+  <text x="174" y="107" class="t" font-size="10" fill="{{T2_TX}}" text-anchor="middle">{{T2_LB}}</text>
+  <rect x="232" y="90" width="100" height="24" rx="12" fill="{{T3_BG}}" stroke="{{T3_BO}}" stroke-width="1"/>
+  <text x="282" y="107" class="t" font-size="10" fill="{{T3_TX}}" text-anchor="middle">{{T3_LB}}</text>
+  <rect x="340" y="90" width="100" height="24" rx="12" fill="{{T4_BG}}" stroke="{{T4_BO}}" stroke-width="1"/>
+  <text x="390" y="107" class="t" font-size="10" fill="{{T4_TX}}" text-anchor="middle">{{T4_LB}}</text>
+  <rect x="448" y="90" width="100" height="24" rx="12" fill="{{T5_BG}}" stroke="{{T5_BO}}" stroke-width="1"/>
+  <text x="498" y="107" class="t" font-size="10" fill="{{T5_TX}}" text-anchor="middle">{{T5_LB}}</text>
+  <rect x="556" y="90" width="100" height="24" rx="12" fill="{{T6_BG}}" stroke="{{T6_BO}}" stroke-width="1"/>
+  <text x="606" y="107" class="t" font-size="10" fill="{{T6_TX}}" text-anchor="middle">{{T6_LB}}</text>
+  <!-- clear/reset chip -->
+  <text x="700" y="107" class="t" font-size="10" fill="#484f58" text-anchor="end">clear ×</text>
+
+  <!-- ══ ZONE C — PAPER FEED (y=130) ═════════════════════════════════ -->
+  <!-- column headers -->
+  <text x="16"  y="148" class="t" font-size="10" fill="#484f58" letter-spacing="1">#</text>
+  <text x="52"  y="148" class="t" font-size="10" fill="#484f58" letter-spacing="1">TITLE</text>
+  <text x="526" y="148" class="t" font-size="10" fill="#484f58" letter-spacing="1">TAGS</text>
+  <text x="704" y="148" class="t" font-size="10" fill="#484f58" letter-spacing="1" text-anchor="end">DATE</text>
+  <line x1="16" y1="154" x2="704" y2="154" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Paper rows: 48px each, baselines at +28/+40 -->
+  <!-- P1 -->
+  <text x="16"  y="180" class="t" font-size="11" fill="#a371f7">{{P1_NUM}}</text>
+  <text x="52"  y="180" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{P1_TITLE}}</text>
+  <text x="52"  y="194" class="t" font-size="10" fill="#484f58">{{P1_TAGS}}</text>
+  <text x="704" y="182" class="t" font-size="10" fill="#484f58" text-anchor="end">{{P1_DT}}</text>
+  <line x1="16" y1="202" x2="704" y2="202" stroke="#161b22" stroke-width="1"/>
+  <!-- P2 -->
+  <text x="16"  y="228" class="t" font-size="11" fill="#a371f7">{{P2_NUM}}</text>
+  <text x="52"  y="228" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{P2_TITLE}}</text>
+  <text x="52"  y="242" class="t" font-size="10" fill="#484f58">{{P2_TAGS}}</text>
+  <text x="704" y="230" class="t" font-size="10" fill="#484f58" text-anchor="end">{{P2_DT}}</text>
+  <line x1="16" y1="250" x2="704" y2="250" stroke="#161b22" stroke-width="1"/>
+  <!-- P3 -->
+  <text x="16"  y="276" class="t" font-size="11" fill="#a371f7">{{P3_NUM}}</text>
+  <text x="52"  y="276" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{P3_TITLE}}</text>
+  <text x="52"  y="290" class="t" font-size="10" fill="#484f58">{{P3_TAGS}}</text>
+  <text x="704" y="278" class="t" font-size="10" fill="#484f58" text-anchor="end">{{P3_DT}}</text>
+  <line x1="16" y1="298" x2="704" y2="298" stroke="#161b22" stroke-width="1"/>
+  <!-- P4 -->
+  <text x="16"  y="324" class="t" font-size="11" fill="#a371f7">{{P4_NUM}}</text>
+  <text x="52"  y="324" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{P4_TITLE}}</text>
+  <text x="52"  y="338" class="t" font-size="10" fill="#484f58">{{P4_TAGS}}</text>
+  <text x="704" y="326" class="t" font-size="10" fill="#484f58" text-anchor="end">{{P4_DT}}</text>
+  <line x1="16" y1="346" x2="704" y2="346" stroke="#161b22" stroke-width="1"/>
+  <!-- P5 -->
+  <text x="16"  y="372" class="t" font-size="11" fill="#a371f7">{{P5_NUM}}</text>
+  <text x="52"  y="372" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{P5_TITLE}}</text>
+  <text x="52"  y="386" class="t" font-size="10" fill="#484f58">{{P5_TAGS}}</text>
+  <text x="704" y="374" class="t" font-size="10" fill="#484f58" text-anchor="end">{{P5_DT}}</text>
+  <line x1="16" y1="394" x2="704" y2="394" stroke="#161b22" stroke-width="1"/>
+  <!-- P6 -->
+  <text x="16"  y="420" class="t" font-size="11" fill="#a371f7">{{P6_NUM}}</text>
+  <text x="52"  y="420" class="t" font-size="12" font-weight="600" fill="#e6edf3">{{P6_TITLE}}</text>
+  <text x="52"  y="434" class="t" font-size="10" fill="#484f58">{{P6_TAGS}}</text>
+  <text x="704" y="422" class="t" font-size="10" fill="#484f58" text-anchor="end">{{P6_DT}}</text>
+
+  <!-- ══ ZONE D — COUNT ROW (y=450) ══════════════════════════════════ -->
+  <line x1="16" y1="450" x2="704" y2="450" stroke="#21262d" stroke-width="1"/>
+  <text x="16"  y="466" class="t" font-size="10" fill="#79c0ff">showing 6 of {{FEED_VIEW_TOTAL}} papers</text>
+  <text x="704" y="466" class="t" font-size="10" fill="#484f58" text-anchor="end">next page &#x2192;</text>
+
+  <!-- ══ ZONE E — KV METADATA CARD (y=482) ═══════════════════════════ -->
+  <rect x="16" y="482" width="688" height="172" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="360" y="500" class="t" font-size="10" fill="#484f58" text-anchor="middle" letter-spacing="2">COLLECTION METADATA</text>
+  <line x1="32" y1="506" x2="688" y2="506" stroke="#21262d" stroke-width="1"/>
+
+  <!-- kv row 1 -->
+  <text x="40"  y="526" class="t" font-size="11" fill="#8b949e">{{K1_KEY}}</text>
+  <rect x="220" y="512" width="450" height="20" rx="2" fill="#0d1117"/>
+  <text x="230" y="526" class="t" font-size="11" fill="{{K1_CO}}">{{K1_VAL}}</text>
+  <line x1="32" y1="540" x2="688" y2="540" stroke="#21262d" stroke-width=".5"/>
+  <!-- kv row 2 -->
+  <text x="40"  y="560" class="t" font-size="11" fill="#8b949e">{{K2_KEY}}</text>
+  <rect x="220" y="546" width="450" height="20" rx="2" fill="#0d1117"/>
+  <text x="230" y="560" class="t" font-size="11" fill="{{K2_CO}}">{{K2_VAL}}</text>
+  <line x1="32" y1="574" x2="688" y2="574" stroke="#21262d" stroke-width=".5"/>
+  <!-- kv row 3 -->
+  <text x="40"  y="594" class="t" font-size="11" fill="#8b949e">{{K3_KEY}}</text>
+  <rect x="220" y="580" width="450" height="20" rx="2" fill="#0d1117"/>
+  <text x="230" y="594" class="t" font-size="11" fill="{{K3_CO}}">{{K3_VAL}}</text>
+  <line x1="32" y1="608" x2="688" y2="608" stroke="#21262d" stroke-width=".5"/>
+  <!-- kv row 4 -->
+  <text x="40"  y="628" class="t" font-size="11" fill="#8b949e">{{K4_KEY}}</text>
+  <rect x="220" y="614" width="450" height="20" rx="2" fill="#0d1117"/>
+  <text x="230" y="628" class="t" font-size="11" fill="{{K4_CO}}">{{K4_VAL}}</text>
+  <line x1="32" y1="642" x2="688" y2="642" stroke="#21262d" stroke-width=".5"/>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════════════ -->
+  <line x1="16"  y1="670" x2="704" y2="670" stroke="#21262d" stroke-width="1"/>
+  <text x="16"  y="686" class="t" font-size="10" fill="#79c0ff">{{FEED_VIEW_TS}}</text>
+  <text x="704" y="686" class="t" font-size="10" fill="#484f58" text-anchor="end">aicraftspeopleguild.github.io</text>
+</svg>

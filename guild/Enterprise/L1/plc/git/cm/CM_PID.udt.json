@@ -1,0 +1,12 @@
+{"$schema":"gitplc/udt/v1","name":"CM_PID","base":"CM_Base","version":"1.0.0","fields":[
+{"name":"sp","type":"REAL"},{"name":"pv","type":"REAL"},{"name":"cv","type":"REAL"},
+{"name":"tune.kp","type":"REAL"},{"name":"tune.ki","type":"REAL"},
+{"name":"tune.kd","type":"REAL"},{"name":"tune.ts","type":"TIME"},
+{"name":"limits.cv_hi","type":"REAL"},{"name":"limits.cv_lo","type":"REAL"},
+{"name":"limits.db","type":"REAL"},
+{"name":"sts.error","type":"REAL"},{"name":"sts.p_term","type":"REAL"},
+{"name":"sts.i_term","type":"REAL"},{"name":"sts.d_term","type":"REAL"},
+{"name":"sts.saturated","type":"BOOL"},
+{"name":"cfg.reverse","type":"BOOL"},{"name":"cfg.anti_windup","type":"BOOL"},
+{"name":"cfg.track_enable","type":"BOOL"},{"name":"cfg.track_value","type":"REAL"}
+],"meta":{"desc":"Closed-loop PID"}}

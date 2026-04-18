@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"ToolsIndex","layer":9,"version":"1.0.0",
+"desc":"One Tool -> many entry points. A Tool UDT declares the callable; each adapter UDT exposes it in a different surface (CLI, HTTP API, MCP, structured logger, test harness).",
+"entities":["Tool","CliAdapter","ApiAdapter","McpAdapter","LoggerWrapper","TestWrapper"],
+"flow":"Tool <- CliAdapter (bin/acg)  /  Tool <- ApiAdapter (static JSON or HTTP)  /  Tool <- McpAdapter (MCP server)  /  Tool <- LoggerWrapper (JSONL sink)  /  Tool <- TestWrapper (pytest-style)",
+"note":"Guild tools live at guild/Enterprise/L3/tools/instances/. bin/acg is the CLI entry."}

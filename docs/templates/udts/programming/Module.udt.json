@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"Module","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING"},
+{"n":"path","t":"STRING","desc":"Repo-relative file path"},
+{"n":"language","t":"ENUM","values":["python","javascript","typescript","bash","sql"]},
+{"n":"imports","t":"STRING[]","desc":"Modules this one depends on"},
+{"n":"exports","t":"STRING[]","desc":"Names publicly exposed"},
+{"n":"functions","t":"STRING[]","desc":"Function IDs in this module"},
+{"n":"classes","t":"STRING[]","desc":"Class IDs in this module"},
+{"n":"lines","t":"DINT","nullable":true},
+{"n":"sha256","t":"STRING","nullable":true}
+],"meta":{"desc":"A source file or package — collection of Functions and Classes"}}

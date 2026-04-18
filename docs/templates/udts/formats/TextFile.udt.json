@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"TextFile","layer":9,"version":"1.0.0","fields":[
+{"n":"path","t":"STRING"},
+{"n":"ext","t":"ENUM","values":["txt"]},
+{"n":"bytes","t":"DINT"},
+{"n":"lines","t":"DINT"},
+{"n":"encoding","t":"STRING","default":"utf-8"},
+{"n":"sha256","t":"STRING"}
+],"meta":{"desc":"Plain-text file with no parse semantics"}}

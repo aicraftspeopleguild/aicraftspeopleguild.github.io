@@ -1,0 +1,33 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/whitepapers/ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+    "label": "AI That Pisses You Off: The Surprisingly Effective Path to Deeper Thinking",
+    "page": "guild/apps/whitepapers/pages/ai-that-pisses-you-off-the-surprisingly-effective-path-to.page.json",
+    "section": "resources",
+    "parent": "white-papers",
+    "order": 100,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+    "full_url": "https://aicraftspeopleguild.github.io/whitepapers/ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+    "children": [],
+    "breadcrumb": [
+      "home",
+      "white-papers",
+      "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to"
+    ],
+    "depth": 2,
+    "view_id": "white-paper-app",
+    "last_verified": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

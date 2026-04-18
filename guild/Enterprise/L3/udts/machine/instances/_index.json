@@ -1,0 +1,12 @@
+{
+  "udtType": "Machine",
+  "count": 1,
+  "generated": "2026-04-18T10:16:09Z",
+  "instances": [
+    {
+      "slug": "line-1",
+      "id": "line-1",
+      "name": "Line 1 · Filler"
+    }
+  ]
+}

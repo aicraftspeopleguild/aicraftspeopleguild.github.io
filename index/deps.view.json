@@ -1,0 +1,159 @@
+{
+  "custom": {
+    "output": "index/deps.html",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/home.css"
+    ],
+    "headExtra": "<style>body{background:#faf6f0;}.deps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;margin:1.25rem 0;}.deps-card{background:white;border-left:3px solid var(--color-bronze,#A67C52);padding:.85rem 1.1rem;box-shadow:0 2px 6px rgba(0,0,0,.05);}.deps-card h3{margin:0 0 .4rem;color:var(--color-rust,#C84B31);font-size:1rem;}.deps-card code{font-family:'Courier Prime',monospace;font-size:.85rem;background:rgba(26,22,20,.06);padding:.1rem .35rem;border-radius:2px;word-break:break-all;}.deps-card ul{margin:.3rem 0;padding-left:1.2rem;font-size:.85rem;}.deps-note{font-size:.78rem;color:#666;margin-top:.3rem;}</style>"
+  },
+  "params": {},
+  "propConfig": {},
+  "props": {},
+  "root": {
+    "meta": {
+      "name": "IndexDepsRoot"
+    },
+    "type": "acg.container.dock-layout",
+    "props": {},
+    "children": [
+      {
+        "meta": {
+          "name": "Head",
+          "slot": "north"
+        },
+        "type": "acg.dock.north",
+        "children": [
+          {
+            "meta": {
+              "name": "Em"
+            },
+            "type": "acg.display.emblem",
+            "props": {
+              "text": "⚒ INDEX DEPS ⚒"
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "H"
+            },
+            "type": "acg.display.heading",
+            "props": {
+              "level": 1,
+              "text": "Root index.html — Manifest"
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "S"
+            },
+            "type": "acg.display.text",
+            "props": {
+              "text": "Every script, component, and template the root index page depends on. Regenerated from index-manifest.json on every build."
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "B"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<div class=\"back-link\"><a href=\"index.html\">← Home</a> · <a href=\"guild/\">Operator Dashboard →</a></div>"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "meta": {
+          "name": "Body",
+          "slot": "body"
+        },
+        "type": "acg.container.body",
+        "children": [
+          {
+            "meta": {
+              "name": "S1"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<h2>Source of Truth</h2><div class=\"deps-grid\"><div class=\"deps-card\"><h3>View</h3><p><code>guild/Enterprise/L2/hmi/web/perspective/views/index.view.json</code></p><p class=\"deps-note\">Perspective component tree; rebuild with <code>./README.sh perspective</code></p></div><div class=\"deps-card\"><h3>Builder</h3><p><code>guild/web/scripts/perspective-build.js</code></p><p class=\"deps-note\">Reads the view, resolves bindings, emits HTML</p></div><div class=\"deps-card\"><h3>Output</h3><p><code>index.html</code> (repo root)</p><p class=\"deps-note\">This very page's source-of-truth is the view above — NOT this HTML.</p></div></div>"
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "S2"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<h2>Head Assets (loaded on first paint)</h2><div class=\"deps-grid\"><div class=\"deps-card\"><h3>Fonts</h3><p><a href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700\">Google Fonts</a></p><p class=\"deps-note\">Playfair Display · Work Sans · Courier Prime</p></div><div class=\"deps-card\"><h3>Stylesheet</h3><p><a href=\"guild/Enterprise/L2/hmi/web/style/home.css\"><code>guild/Enterprise/L2/hmi/web/style/home.css</code></a></p></div><div class=\"deps-card\"><h3>Analytics</h3><p><code>G-Z1CEF69ZSH</code></p><p class=\"deps-note\">gtag.js from googletagmanager</p></div></div>"
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "S3"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<h2>Body Scripts (end of body)</h2><div class=\"deps-grid\"><div class=\"deps-card\"><h3>home.js</h3><p><a href=\"guild/Enterprise/L2/hmi/web/home.js\"><code>guild/Enterprise/L2/hmi/web/home.js</code></a></p><p class=\"deps-note\">Signatories loader, sign-form handler, smooth-scroll for in-page anchors (SKIPS <code>#/</code> route hashes)</p></div><div class=\"deps-card\"><h3>renderer.js</h3><p><a href=\"guild/Enterprise/L2/hmi/web/renderer.js\"><code>guild/Enterprise/L2/hmi/web/renderer.js</code></a></p><p class=\"deps-note\">Client-side view engine: currentRoute, matchRoute, renderNode, loadAllComponents, navigate</p></div><div class=\"deps-card\"><h3>ACGRenderer.init</h3><p><code>{siteMap, components, mountPoint, analyticsId}</code></p><p class=\"deps-note\">Inline init call, end of body</p></div></div>"
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "S4"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<h2>Runtime Fetches (on navigation)</h2><div class=\"deps-grid\"><div class=\"deps-card\"><h3>Site Map</h3><p><a href=\"guild/Enterprise/L2/hmi/web/site-map.json\"><code>guild/Enterprise/L2/hmi/web/site-map.json</code></a></p></div><div class=\"deps-card\"><h3>Registry</h3><p><a href=\"guild/Enterprise/L2/hmi/web/components/registry.json\"><code>components/registry.json</code></a></p></div><div class=\"deps-card\"><h3>Page</h3><p><code>guild/Enterprise/L2/hmi/web/pages/&lt;slug&gt;.page.json</code></p></div><div class=\"deps-card\"><h3>View</h3><p><code>guild/Enterprise/L2/hmi/web/views/&lt;slug&gt;.view.json</code></p></div><div class=\"deps-card\"><h3>Data</h3><p><code>guild/Enterprise/L2/hmi/web/views/data/&lt;slug&gt;.data.json</code></p></div><div class=\"deps-card\"><h3>Components</h3><p><code>guild/Enterprise/L2/hmi/web/components/udts/instances/*.json</code></p><p class=\"deps-note\">All loaded upfront at init, cached for all routes</p></div></div>"
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "S5"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<h2>Perspective Components Used by Shell</h2><div class=\"deps-grid\"><div class=\"deps-card\"><h3>Layout</h3><ul><li><code>acg.container.dock-layout</code></li><li><code>acg.dock.north</code></li><li><code>acg.container.body</code></li><li><code>acg.dock.south</code></li></ul></div><div class=\"deps-card\"><h3>Navigation</h3><ul><li><code>acg.nav.top</code></li><li><code>acg.display.link</code></li><li><code>acg.nav.cta</code></li></ul></div><div class=\"deps-card\"><h3>Content</h3><ul><li><code>acg.display.emblem</code></li><li><code>acg.display.heading</code></li><li><code>acg.display.text</code></li><li><code>acg.display.html</code></li><li><code>acg.card.manifesto</code></li></ul></div></div><p class=\"deps-note\">Full catalog: <a href=\"guild/Enterprise/L2/hmi/web/perspective/components/registry.json\">registry.json</a></p>"
+            },
+            "children": []
+          },
+          {
+            "meta": {
+              "name": "S6"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<h2>Raw Manifest</h2><p>All of the above as JSON: <a href=\"index-manifest.json\"><code>index-manifest.json</code></a></p>"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "meta": {
+          "name": "Foot",
+          "slot": "south"
+        },
+        "type": "acg.dock.south",
+        "children": [
+          {
+            "meta": {
+              "name": "F1"
+            },
+            "type": "acg.display.html",
+            "props": {
+              "html": "<p>Rebuild with <code>./README.sh perspective</code> · <a href=\"index.html\">Home</a> · <a href=\"guild/\">Operator Dashboard</a></p>"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

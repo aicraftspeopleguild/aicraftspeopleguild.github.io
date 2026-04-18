@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"Compiler","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING","desc":"e.g., tsc, babel, pyc, rustc"},
+{"n":"kind","t":"ENUM","values":["compiler","transpiler","bundler","linker","interpreter","generator"]},
+{"n":"input_lang","t":"STRING"},
+{"n":"output_lang","t":"STRING"},
+{"n":"invocation","t":"STRING","desc":"Command-line or API entry"},
+{"n":"modules","t":"STRING[]","desc":"Module IDs this compiler processes"},
+{"n":"artifacts","t":"STRING[]","desc":"Output artefact paths"},
+{"n":"options","t":"JSON","nullable":true},
+{"n":"version","t":"STRING","nullable":true}
+],"meta":{"desc":"A code transformer — compiler, transpiler, bundler, or code-gen pipeline"}}

@@ -1,0 +1,21 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "PackML_State",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "current", "type": "DINT"},
+    {"name": "target", "type": "DINT"},
+    {"name": "last", "type": "DINT"},
+    {"name": "timer", "type": "TIME"}
+  ],
+  "enum": {
+    "0": "Undefined",
+    "1": "Clearing", "2": "Stopped", "3": "Starting", "4": "Idle",
+    "5": "Suspended", "6": "Execute", "7": "Stopping", "8": "Aborting",
+    "9": "Aborted", "10": "Holding", "11": "Held", "12": "Unholding",
+    "13": "Suspending", "14": "Unsuspending", "15": "Resetting",
+    "16": "Completing", "17": "Complete"
+  },
+  "meta": {"desc": "PackML 17-state machine per ISA-TR88.00.02"}
+}

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 400" width="1040" height="400" role="img" aria-label="ACG ISA-95 architecture">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1040" height="400" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1040" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1040" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ architecture · ISA-95 levels · click a tier</text>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L4/" target="_blank"><rect x="400" y="60" width="240" height="52" rx="6" fill="#161b22" stroke="#c47a20" stroke-width="2"/><text x="414" y="90" class="t" font-size="14" font-weight="700" fill="#c47a20">L4</text><text x="456" y="84" class="t vs">ERP · business</text><text x="456" y="100" class="t sub">/api/*.json · runtime/tags.json · acg.db · members · papers</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L3/" target="_blank"><rect x="328" y="116" width="385" height="52" rx="6" fill="#161b22" stroke="#a371f7" stroke-width="2"/><text x="342" y="146" class="t" font-size="14" font-weight="700" fill="#a371f7">L3</text><text x="384" y="140" class="t vs">MES · ops</text><text x="384" y="156" class="t sub">build pipeline · L3/scripts · L3/tools · state.db</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L2/" target="_blank"><rect x="255" y="172" width="530" height="52" rx="6" fill="#161b22" stroke="#4a8868" stroke-width="2"/><text x="269" y="202" class="t" font-size="14" font-weight="700" fill="#4a8868">L2</text><text x="311" y="196" class="t vs">SCADA · HMI</text><text x="311" y="212" class="t sub">tag plant · gateway · hmi · PackML · renderer</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L1/" target="_blank"><rect x="183" y="228" width="675" height="52" rx="6" fill="#161b22" stroke="#79c0ff" stroke-width="2"/><text x="197" y="258" class="t" font-size="14" font-weight="700" fill="#79c0ff">L1</text><text x="239" y="252" class="t vs">sensing · PLC</text><text x="239" y="268" class="t sub">GitPLC UDTs · submit form</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/Enterprise/L0/" target="_blank"><rect x="110" y="284" width="820" height="52" rx="6" fill="#161b22" stroke="#8b949e" stroke-width="2"/><text x="124" y="314" class="t" font-size="14" font-weight="700" fill="#8b949e">L0</text><text x="166" y="308" class="t vs">physical · people</text><text x="166" y="324" class="t sub">authors · mobbers · reviewers</text></a>
+<text x="520" y="386" text-anchor="middle" class="t sub">Each row is a clickable deep-link to its Enterprise directory.</text>
+</svg>

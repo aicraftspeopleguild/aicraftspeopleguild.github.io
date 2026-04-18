@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Organism",
+  "extends": "Component",
+  "version": "1.0.0",
+  "description": "Topic-specific semantic region (header, footer, article body, CTA). Composes atoms and molecules. Must declare explicit data inputs — NO hardcoded copy, no literal lists, no magic strings in the template.",
+  "parameters": {
+    "name":         { "dataType": "String",      "required": true },
+    "tag":          { "dataType": "String",      "required": true },
+    "cssClass":     { "dataType": "String",      "required": false },
+    "description":  { "dataType": "String",      "required": false },
+    "atomicLevel":  { "dataType": "String",      "required": true, "const": "organism" },
+    "composes":     { "dataType": "StringArray", "required": false },
+    "inputs":       { "dataType": "DataBinding[]","required": true, "description": "Data inputs this organism needs. References page-level data keys." },
+    "slots":        { "dataType": "StringArray", "required": false },
+    "template":     { "dataType": "String",      "required": true }
+  },
+  "constraints": {
+    "may_compose": ["Atom", "Molecule", "Organism"],
+    "forbidden_compose": ["Template", "Widget"],
+    "no_hardcoded_content": true,
+    "inputs_required": true
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "dependencies":   { "dataType": "StringArray" },
+    "used_by":        { "dataType": "StringArray" },
+    "schema_version": { "dataType": "String" }
+  }
+}

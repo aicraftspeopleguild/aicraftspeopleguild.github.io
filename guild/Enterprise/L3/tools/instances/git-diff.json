@@ -1,0 +1,51 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "git:diff",
+    "name": "Git diff stat",
+    "description": "One-line diffstat summary for staged + unstaged changes.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/git_ops.py:diff_stat",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "diff",
+        "type": "DiffStat"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "McpAdapter",
+      "LoggerWrapper",
+      "TestWrapper"
+    ],
+    "tags": [
+      "git",
+      "diff",
+      "read-only"
+    ],
+    "mcp": {
+      "mcp_name": "git_diff",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    "test_cases": [
+      {
+        "name": "returns ok",
+        "inputs": {},
+        "expect": {
+          "field": "ok",
+          "op": "eq",
+          "value": true
+        }
+      }
+    ]
+  },
+  "tags": {
+    "id": "git-diff",
+    "schema_version": "1.0.0"
+  }
+}

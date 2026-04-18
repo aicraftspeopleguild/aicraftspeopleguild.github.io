@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"GitTag","layer":9,"version":"1.0.0","fields":[
+{"n":"name","t":"STRING","desc":"e.g. v1.2.0"},
+{"n":"sha","t":"STRING","desc":"Commit SHA the tag points at"},
+{"n":"kind","t":"ENUM","values":["lightweight","annotated"]},
+{"n":"tagger","t":"STRING","nullable":true},
+{"n":"date","t":"Timestamp","nullable":true},
+{"n":"message","t":"STRING","nullable":true}
+],"meta":{"desc":"A git ref in refs/tags/. Named GitTag to distinguish from our Konomi Tag."}}

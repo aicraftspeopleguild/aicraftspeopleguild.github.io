@@ -1,0 +1,15 @@
+{"$schema":"gitplc/udt/v1","name":"Alarm_Instance","version":"1.0.0","fields":[
+{"name":"id","type":"UDINT"},
+{"name":"tag","type":"STRING","length":40},
+{"name":"type","type":"ENUM","values":["HI","HIHI","LO","LOLO","DEV","ROG","DISC"]},
+{"name":"priority","type":"DINT"},
+{"name":"state","type":"Alarm_State"},
+{"name":"sp","type":"REAL"},{"name":"pv","type":"REAL"},
+{"name":"times.in","type":"DT"},{"name":"times.ack","type":"DT"},{"name":"times.out","type":"DT"},
+{"name":"user_ack","type":"STRING","length":20},
+{"name":"msg","type":"STRING","length":80},
+{"name":"help","type":"STRING","length":255},
+{"name":"shelved","type":"BOOL"},
+{"name":"shelve_until","type":"DT"},
+{"name":"suppressed","type":"BOOL"}
+],"meta":{"desc":"Runtime alarm instance"}}

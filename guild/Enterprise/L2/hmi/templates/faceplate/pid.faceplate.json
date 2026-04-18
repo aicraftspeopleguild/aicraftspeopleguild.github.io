@@ -1,0 +1,24 @@
+{"$schema":"hmi/faceplate/v1","name":"PID_Faceplate","udt":"CM_PID","isaLayer":"L3","glyph":"🎛",
+"bindings":{
+"pv":   ["pv","cv","sts.error","sts.saturated"],
+"sp":   ["sp"],
+"mode": "mode.current",
+"state":"state.current",
+"alarm":"sts.saturated"
+},
+"palette":["Running","Stopped","Manual","Warning","Fault"],
+"trend":{
+"tags":[
+{"path":"pv","color":"Running"},
+{"path":"sp","color":"Transition"},
+{"path":"cv","color":"Warning"}
+],
+"timespan":"30min","sample":"1s"
+},
+"writes":[
+{"tag":"sp","label":"SP","unit":"eng","format":"0.00","confirm":false},
+{"tag":"tune.kp","label":"Kp","format":"0.000","layer":"L4"},
+{"tag":"tune.ki","label":"Ki","format":"0.000","layer":"L4"},
+{"tag":"tune.kd","label":"Kd","format":"0.000","layer":"L4"}
+],
+"meta":{"desc":"Closed-loop PID — PV/SP/CV trend, bumpless tuning on L4"}}

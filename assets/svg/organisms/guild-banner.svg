@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" width="720" height="180"
+     role="img" aria-label="AI Craftspeople Guild — {{TAGLINE}}">
+  <!--
+  TOKENS (8 total):
+    TAGLINE   — short description line
+    LOCATION  — e.g. "github.com/aicraftspeopleguild"
+    PAPERS    — integer count
+    MEMBERS   — integer count
+    COMMITS   — integer count
+    STATUS    — e.g. "LIVE" or "BUILDING"
+    TS        — ISO timestamp
+    VERSION   — e.g. "v1.0.0"
+  -->
+  <defs>
+    <linearGradient id="gg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0"  stop-color="#0d1117"/>
+      <stop offset="1"  stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .pulse{animation:p 2s ease-out infinite;transform-origin:650px 82px}
+      @keyframes p{
+        0%  {transform:scale(1);opacity:.7}
+        60% {transform:scale(2.4);opacity:0}
+        100%{transform:scale(2.4);opacity:0}
+      }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="720" height="180" rx="10" fill="url(#gg)"/>
+
+  <!-- ── TITLEBAR ───────────────────────────────────────────────────── -->
+  <rect x="0" y="0" width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="360" y="22" text-anchor="middle" class="t" font-size="11" fill="#8b949e">&#x2692;  ACG  ·  AI Craftspeople Guild</text>
+
+  <!-- ── LEFT: BRAND MARK + NAME (x=16–270) ────────────────────────── -->
+  <text x="16"  y="96"  class="t" font-size="42" fill="#3fb950">&#x2692;</text>
+  <text x="66"  y="68"  class="t" font-size="15" font-weight="700" fill="#e6edf3">AI CRAFTSPEOPLE GUILD</text>
+  <text x="66"  y="88"  class="t" font-size="12" fill="#8b949e">{{TAGLINE}}</text>
+  <text x="66"  y="108" class="t" font-size="10" fill="#484f58">{{LOCATION}}</text>
+
+  <!-- ── CENTER: 3 STATS (x=280–490) ───────────────────────────────── -->
+  <!-- papers -->
+  <text x="310" y="58"  text-anchor="middle" class="t" font-size="9" fill="#8b949e" letter-spacing="1">PAPERS</text>
+  <text x="310" y="90"  text-anchor="middle" class="t" font-size="30" font-weight="700" fill="#e6edf3">{{PAPERS}}</text>
+  <line x1="348" y1="50" x2="348" y2="104" stroke="#21262d" stroke-width="1"/>
+  <!-- members -->
+  <text x="390" y="58"  text-anchor="middle" class="t" font-size="9" fill="#8b949e" letter-spacing="1">MEMBERS</text>
+  <text x="390" y="90"  text-anchor="middle" class="t" font-size="30" font-weight="700" fill="#a371f7">{{MEMBERS}}</text>
+  <line x1="428" y1="50" x2="428" y2="104" stroke="#21262d" stroke-width="1"/>
+  <!-- commits -->
+  <text x="468" y="58"  text-anchor="middle" class="t" font-size="9" fill="#8b949e" letter-spacing="1">COMMITS</text>
+  <text x="468" y="90"  text-anchor="middle" class="t" font-size="30" font-weight="700" fill="#79c0ff">{{COMMITS}}</text>
+
+  <!-- ── RIGHT: PULSE + STATUS (x=500–704) ─────────────────────────── -->
+  <!-- animated pulse rings -->
+  <circle class="pulse" cx="650" cy="82" r="16" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+  <circle class="pulse" cx="650" cy="82" r="16" fill="none" stroke="#3fb950" stroke-width="1.5" style="animation-delay:.55s"/>
+  <!-- solid dot -->
+  <circle cx="650" cy="82" r="9" fill="#3fb950"/>
+  <!-- status label -->
+  <text x="650" y="112" text-anchor="middle" class="t" font-size="9"  fill="#8b949e" letter-spacing="1">STATUS</text>
+  <text x="650" y="124" text-anchor="middle" class="t" font-size="12" font-weight="700" fill="#3fb950">{{STATUS}}</text>
+
+  <!-- ── SEPARATOR ──────────────────────────────────────────────────── -->
+  <line x1="16" y1="132" x2="704" y2="132" stroke="#21262d" stroke-width="1"/>
+
+  <!-- ── ECG STRIP (y=132–175, center y=154) ───────────────────────── -->
+  <!-- Path: flat segments with ECG spikes every 120px. Animated draw left→right then repeat. -->
+  <path d="M0,154 L60,154 L68,154 L72,136 L76,173 L80,142 L84,154
+           L180,154 L188,154 L192,136 L196,173 L200,142 L204,154
+           L300,154 L308,154 L312,136 L316,173 L320,142 L324,154
+           L420,154 L428,154 L432,136 L436,173 L440,142 L444,154
+           L540,154 L548,154 L552,136 L556,173 L560,142 L564,154
+           L660,154 L668,154 L672,136 L676,173 L680,142 L684,154
+           L720,154"
+        fill="none" stroke="#3fb950" stroke-width="1.5" opacity=".55"
+        stroke-dasharray="2000" stroke-dashoffset="2000">
+    <animate attributeName="stroke-dashoffset"
+             from="2000" to="0" dur="5s" begin="0s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+  <text x="16"  y="172" class="t" font-size="9" fill="#484f58">{{TS}}</text>
+  <text x="704" y="172" text-anchor="end" class="t" font-size="9" fill="#484f58">{{VERSION}}</text>
+</svg>

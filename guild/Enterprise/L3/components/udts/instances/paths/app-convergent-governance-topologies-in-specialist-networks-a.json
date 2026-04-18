@@ -1,0 +1,33 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/whitepapers/convergent-governance-topologies-in-specialist-networks-a",
+    "label": "Convergent Governance Topologies in Specialist Networks: A Comparative Analysis of Medieval Florentine Guild Structure and Modern Distributed Organizations",
+    "page": "guild/apps/whitepapers/pages/convergent-governance-topologies-in-specialist-networks-a.page.json",
+    "section": "resources",
+    "parent": "white-papers",
+    "order": 100,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "app-convergent-governance-topologies-in-specialist-networks-a",
+    "full_url": "https://aicraftspeopleguild.github.io/whitepapers/convergent-governance-topologies-in-specialist-networks-a",
+    "children": [],
+    "breadcrumb": [
+      "home",
+      "white-papers",
+      "app-convergent-governance-topologies-in-specialist-networks-a"
+    ],
+    "depth": 2,
+    "view_id": "white-paper-app",
+    "last_verified": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

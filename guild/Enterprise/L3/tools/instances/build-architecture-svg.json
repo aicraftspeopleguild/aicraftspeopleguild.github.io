@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:architecture-svg",
+    "name": "Render architecture.svg",
+    "description": "Render architecture.svg \u2014 ISA-95 pyramid with clickable tiers.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-architecture.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "svg",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "svg",
+      "readme",
+      "build"
+    ]
+  },
+  "tags": {
+    "id": "build-architecture-svg",
+    "schema_version": "1.0.0"
+  }
+}

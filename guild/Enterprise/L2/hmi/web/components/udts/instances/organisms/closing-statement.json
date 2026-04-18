@@ -1,0 +1,47 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "ClosingStatement",
+    "tag": "div",
+    "cssClass": "closing-statement",
+    "description": "Dark gradient closing block at the end of white papers with light text.",
+    "props": {
+      "content": {
+        "type": "String",
+        "required": true
+      },
+      "paperMark": {
+        "type": "String",
+        "required": false,
+        "description": "Centered mark text below closing"
+      }
+    },
+    "slots": [],
+    "template": "<div class=\"closing-statement\"><p>{{ content }}</p></div>{{ #paperMark }}<p class=\"paper-mark\">{{ paperMark }}</p>{{ /paperMark }}",
+    "atomicLevel": "organism",
+    "inputs": [
+      {
+        "key": "content",
+        "dataType": "String",
+        "source": "page.content",
+        "required": true
+      },
+      {
+        "key": "paperMark",
+        "dataType": "String",
+        "source": "page.paperMark",
+        "required": false,
+        "description": "Centered mark text below closing"
+      }
+    ]
+  },
+  "tags": {
+    "id": "closing-statement",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/closing-statement.json",
+    "dependencies": [],
+    "used_by_views": [
+      "white-paper-article"
+    ],
+    "schema_version": "1.0.0"
+  }
+}

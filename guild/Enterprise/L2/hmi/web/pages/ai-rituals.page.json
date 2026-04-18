@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "AI Rituals",
+    "slug": "ai-rituals",
+    "route": "/ai-rituals",
+    "view": "views/ai-rituals.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "resources",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/ai-rituals.data.json"
+    }
+  },
+  "tags": {
+    "id": "ai-rituals",
+    "view_id": "ai-rituals",
+    "schema_version": "1.0.0"
+  }
+}

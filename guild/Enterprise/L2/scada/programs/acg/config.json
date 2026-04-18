@@ -1,0 +1,24 @@
+{
+  "§": "2.1",
+  "🏗️": "⚙️",
+  "name": "config",
+  "module": "L2/scada/gateway/scripts/config.js",
+
+  "⚙️": {
+    "TRACKERS":   "a[s40]",
+    "ICE":        { "iceServers": "a[o]" },
+    "N_OFFERS":   10,
+    "myId":       "s20",
+    "myNm":       "s8",
+    "myEm":       "s",
+    "OAUTH":      {
+      "DISCORD": { "clientId": "s", "redirectUri": "s", "scope": "s" },
+      "GITHUB":  { "clientId": "s", "proxyUrl": "s", "scope": "s" }
+    }
+  },
+
+  "→": [],
+
+  "↑🖥️": [],
+  "和": true
+}

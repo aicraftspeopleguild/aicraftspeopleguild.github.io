@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:members:extract",
+    "name": "script · extract",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/members/extract.py. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/members/extract.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "members"
+    ]
+  },
+  "tags": {
+    "id": "script-members-extract",
+    "schema_version": "1.0.0"
+  }
+}

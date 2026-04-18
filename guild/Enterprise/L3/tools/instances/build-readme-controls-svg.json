@@ -1,0 +1,15 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:readme-controls-svg",
+    "name": "Render readme-controls.svg",
+    "description": "Grid of link_card molecules for the main ACG apps (terminal, whiteboard, p2p mesh, submit form, controls, manifesto). Clickable within the SVG itself.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-readme-controls.py",
+    "language": "python",
+    "inputs": [], "outputs": [{"name":"svg","type":"file"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","readme","controls","render"]
+  },
+  "tags": { "id": "build-readme-controls-svg", "schema_version": "1.0.0" }
+}

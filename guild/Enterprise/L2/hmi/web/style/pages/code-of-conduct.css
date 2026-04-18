@@ -1,0 +1,541 @@
+﻿/* code-of-conduct.html */
+.page-code-of-conduct {
+--color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+}
+
+.page-code-of-conduct,
+.page-code-of-conduct * {
+margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+}
+
+.page-code-of-conduct {
+font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+}
+
+.page-code-of-conduct::before {
+content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+}
+
+.page-code-of-conduct header {
+position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-code-of-conduct header::after {
+content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--color-rust) 0%,
+                var(--color-bronze) 50%,
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+}
+
+.page-code-of-conduct .guild-mark {
+text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.page-code-of-conduct .guild-mark .emblem {
+font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+}
+
+.page-code-of-conduct h1 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.page-code-of-conduct .subtitle {
+font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 840px;
+            margin: 0 auto 2rem;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.page-code-of-conduct .back-link {
+text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+.page-code-of-conduct .back-link a {
+color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+}
+
+.page-code-of-conduct .back-link a:hover {
+color: var(--color-rust);
+}
+
+.page-code-of-conduct .container {
+max-width: 1020px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-code-of-conduct .document-content {
+margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+}
+
+.page-code-of-conduct .document-nav {
+display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+}
+
+.page-code-of-conduct .document-nav a {
+text-decoration: none;
+            color: var(--color-rust);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            padding: 0.85rem 1.25rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: var(--color-highlight);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.page-code-of-conduct .document-nav a:hover {
+color: var(--color-ink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px var(--color-shadow);
+}
+
+.page-code-of-conduct .document-block + .document-block {
+margin-top: 4.5rem;
+            padding-top: 4.5rem;
+            border-top: 4px double rgba(166, 124, 82, 0.35);
+}
+
+.page-code-of-conduct .document-block h2 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-rust);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+}
+
+.page-code-of-conduct .document-block h2::after {
+content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--color-bronze);
+}
+
+.page-code-of-conduct .intro-block,
+.page-code-of-conduct .document-note {
+font-size: 1.12rem;
+            line-height: 1.8;
+            color: var(--color-graphite);
+            background: var(--color-parchment);
+            border-left: 4px solid var(--color-rust);
+            padding: 2rem;
+}
+
+.page-code-of-conduct .intro-block {
+margin-bottom: 2rem;
+}
+
+.page-code-of-conduct .intro-block h3,
+.page-code-of-conduct .document-note h3 {
+font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--color-ink);
+            margin-bottom: 1rem;
+}
+
+.page-code-of-conduct .document-note {
+margin-bottom: 3rem;
+}
+
+.page-code-of-conduct .document-note p + p,
+.page-code-of-conduct .intro-block p + p {
+margin-top: 1rem;
+}
+
+.page-code-of-conduct .article {
+margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(166, 124, 82, 0.25);
+}
+
+.page-code-of-conduct .document-block > .article:last-of-type {
+margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+}
+
+.page-code-of-conduct .article-header {
+display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+}
+
+.page-code-of-conduct .article-number {
+flex: 0 0 auto;
+            min-width: 3rem;
+            padding: 0.55rem 0.8rem;
+            background: var(--color-rust);
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-align: center;
+}
+
+.page-code-of-conduct .article h3,
+.page-code-of-conduct .rule-item h4 {
+font-family: 'Playfair Display', serif;
+            color: var(--color-ink);
+}
+
+.page-code-of-conduct .article h3 {
+font-size: 1.9rem;
+            line-height: 1.2;
+}
+
+.page-code-of-conduct .article > p,
+.page-code-of-conduct .rule-item p,
+.page-code-of-conduct .article li,
+.page-code-of-conduct .table-note,
+.page-code-of-conduct .version-note {
+font-size: 1.06rem;
+            line-height: 1.8;
+            color: var(--color-graphite);
+}
+
+.page-code-of-conduct .article > p + p {
+margin-top: 1rem;
+}
+
+.page-code-of-conduct .rule-list {
+display: grid;
+            gap: 1rem;
+            margin-top: 1.25rem;
+}
+
+.page-code-of-conduct .rule-item {
+padding: 1.35rem 1.5rem;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0.85) 0%, white 100%);
+            border-top: 3px solid var(--color-bronze);
+            box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.page-code-of-conduct .rule-item h4 {
+font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+}
+
+.page-code-of-conduct .rule-item p + p {
+margin-top: 0.75rem;
+}
+
+.page-code-of-conduct .article ul,
+.page-code-of-conduct .rule-item ul {
+margin: 0.85rem 0 0 1.5rem;
+}
+
+.page-code-of-conduct .article li + li,
+.page-code-of-conduct .rule-item li + li {
+margin-top: 0.55rem;
+}
+
+.page-code-of-conduct strong {
+color: var(--color-rust);
+}
+
+.page-code-of-conduct .table-wrap {
+overflow-x: auto;
+            margin-top: 1rem;
+            box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.page-code-of-conduct table {
+width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+            background: white;
+}
+
+.page-code-of-conduct thead {
+background: var(--color-graphite);
+            color: var(--color-parchment);
+}
+
+.page-code-of-conduct th,
+.page-code-of-conduct td {
+padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(166, 124, 82, 0.2);
+            vertical-align: top;
+}
+
+.page-code-of-conduct tbody tr:nth-child(even) {
+background: rgba(245, 241, 232, 0.55);
+}
+
+.page-code-of-conduct .table-note {
+margin-top: 1rem;
+}
+
+.page-code-of-conduct .version-note {
+margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(166, 124, 82, 0.25);
+            text-align: center;
+            letter-spacing: 0.04em;
+}
+
+.page-code-of-conduct .cta-section {
+margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+}
+
+.page-code-of-conduct .cta-section::before {
+content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+}
+
+.page-code-of-conduct .cta-section h2 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-parchment);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-code-of-conduct .cta-section p {
+font-size: 1.2rem;
+            color: var(--color-bronze);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-code-of-conduct .cta-buttons {
+display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+}
+
+.page-code-of-conduct .btn {
+font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+}
+
+.page-code-of-conduct .btn-primary {
+background: var(--color-rust);
+            color: white;
+}
+
+.page-code-of-conduct .btn-primary::before {
+content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+}
+
+.page-code-of-conduct .btn-primary:hover::before {
+width: 300px;
+            height: 300px;
+}
+
+.page-code-of-conduct .btn-primary:hover {
+transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 75, 49, 0.4);
+}
+
+.page-code-of-conduct .btn-secondary {
+background: transparent;
+            color: var(--color-parchment);
+            border: 2px solid var(--color-bronze);
+}
+
+.page-code-of-conduct .btn-secondary:hover {
+background: var(--color-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4);
+}
+
+.page-code-of-conduct .btn span {
+position: relative;
+            z-index: 1;
+}
+
+.page-code-of-conduct footer {
+background: var(--color-ink);
+            color: var(--color-bronze);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+}
+
+.page-code-of-conduct footer p {
+font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+}
+
+.page-code-of-conduct footer a {
+color: var(--color-rust);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+}
+
+.page-code-of-conduct footer a:hover {
+color: var(--color-bronze);
+}
+
+.page-code-of-conduct .github-link {
+display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(166, 124, 82, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+}
+
+.page-code-of-conduct .github-link:hover {
+background: rgba(166, 124, 82, 0.2);
+            transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .page-code-of-conduct header {
+padding: 3rem 1.5rem 2rem;
+    }
+
+    .page-code-of-conduct .document-content,
+    .page-code-of-conduct .cta-section {
+padding: 2rem 1.5rem;
+    }
+
+    .page-code-of-conduct .intro-block,
+    .page-code-of-conduct .document-note {
+padding: 1.5rem;
+    }
+
+    .page-code-of-conduct .article-header {
+flex-direction: column;
+                gap: 0.75rem;
+    }
+
+    .page-code-of-conduct .article-number {
+min-width: 0;
+    }
+
+    .page-code-of-conduct .cta-buttons {
+flex-direction: column;
+                align-items: center;
+    }
+
+    .page-code-of-conduct .btn {
+width: 100%;
+                max-width: 320px;
+    }
+}
+

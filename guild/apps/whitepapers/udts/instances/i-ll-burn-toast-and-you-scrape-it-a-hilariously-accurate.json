@@ -1,0 +1,29 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "\\\"I'll Burn Toast and You Scrape It\\\": A Hilariously Accurate Analysis of Software Development's Favorite Messy Divorce",
+    "slug": "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+    "kind": "white-paper",
+    "description": "Submitted by: Kelly Hohman",
+    "source_type": "WhitePaper",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate-analysis-of-software-development-s-favorite-messy-divorce.json",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.data.json"
+    },
+    "route": "/whitepapers/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+    "section": "resources",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "status": "published",
+    "tags": []
+  },
+  "tags": {
+    "id": "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate/",
+    "view_id": "white-paper-app",
+    "ingested_at": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

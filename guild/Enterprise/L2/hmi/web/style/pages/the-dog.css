@@ -1,0 +1,387 @@
+﻿/* the-dog-the-data-scientist-and-the-mrna-vaccine.html */
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine {
+--color-parchment: #F5F1E8;
+            --color-ink: #1A1614;
+            --color-rust: #C84B31;
+            --color-bronze: #A67C52;
+            --color-graphite: #2D3436;
+            --color-highlight: #FFF4E0;
+            --color-shadow: rgba(26, 22, 20, 0.08);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine,
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine * {
+margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine {
+font-family: 'Work Sans', sans-serif;
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine::before {
+content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(26, 22, 20, 0.02) 2px, rgba(26, 22, 20, 0.02) 4px);
+            background-size: 40px 40px;
+            opacity: 0;
+            animation: fadeInPattern 2s ease-out forwards;
+            pointer-events: none;
+            z-index: 0;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine header {
+position: relative;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+            overflow: hidden;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine header::after {
+content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--color-rust) 0%,
+                var(--color-bronze) 50%,
+                var(--color-rust) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .guild-mark {
+text-align: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .guild-mark .emblem {
+font-family: 'Courier Prime', monospace;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-bronze);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .eyebrow {
+text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-bronze);
+            margin-bottom: 0.85rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.45s forwards;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine h1 {
+font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.6rem);
+            font-weight: 900;
+            color: var(--color-parchment);
+            text-align: center;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .subtitle {
+font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-bronze);
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-meta {
+display: flex;
+            justify-content: center;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            color: var(--color-parchment);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-meta span {
+padding: 0.35rem 0.85rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: rgba(166, 124, 82, 0.08);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .back-link {
+text-align: center;
+            margin-top: 1.2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.95s forwards;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .back-link a {
+color: var(--color-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .back-link a:hover {
+color: var(--color-rust);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .container {
+max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-shell {
+margin: 5rem auto;
+            background: white;
+            padding: 4rem 3rem;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+            opacity: 0;
+            animation: fadeInScale 1s ease-out 1s forwards;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-nav {
+display: flex;
+            gap: 0.9rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-nav a {
+text-decoration: none;
+            color: var(--color-rust);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            padding: 0.8rem 1.1rem;
+            border: 1px solid rgba(166, 124, 82, 0.35);
+            background: var(--color-highlight);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-nav a:hover {
+color: var(--color-ink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px var(--color-shadow);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .lead {
+padding: 2.2rem;
+            background: linear-gradient(180deg, var(--color-highlight) 0%, white 100%);
+            border-left: 4px solid var(--color-rust);
+            margin-bottom: 3rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .lead h2 {
+font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--color-ink);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .lead p + p,
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section p + p,
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section p + ul,
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section p + ol,
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section ul + p,
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section ol + p,
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .quote-block + p {
+margin-top: 1rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section {
+margin-bottom: 3rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section h2 {
+font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--color-ink);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section h3 {
+font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            margin: 1.6rem 0 0.7rem;
+            color: var(--color-rust);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section ul,
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section ol {
+padding-left: 1.4rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .section li + li {
+margin-top: 0.45rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .quote-block {
+margin: 1.5rem 0;
+            padding: 1.4rem 1.5rem;
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-bronze);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .quote-block blockquote {
+font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            line-height: 1.5;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .quote-block p {
+margin-top: 0.8rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .callout {
+margin-bottom: 2rem;
+            padding: 1.2rem 1.4rem;
+            background: rgba(200, 75, 49, 0.08);
+            border: 1px solid rgba(200, 75, 49, 0.18);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .closing-statement {
+margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(26, 22, 20, 0.12);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .closing-statement p + p {
+margin-top: 1rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .paper-mark {
+font-family: 'Courier Prime', monospace;
+            color: var(--color-rust);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .cta-section {
+text-align: center;
+            margin: 0 auto 5rem;
+            padding: 3rem 2rem;
+            background: white;
+            box-shadow:
+                0 4px 6px var(--color-shadow),
+                0 10px 20px var(--color-shadow);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .cta-section h2 {
+font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.7rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .cta-buttons {
+margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .btn {
+display: inline-block;
+            padding: 0.9rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .btn:hover {
+transform: translateY(-2px);
+            box-shadow: 0 8px 18px var(--color-shadow);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .btn-primary {
+background: var(--color-rust);
+            color: white;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .btn-secondary {
+background: var(--color-highlight);
+            color: var(--color-ink);
+            border: 1px solid rgba(166, 124, 82, 0.35);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine footer {
+text-align: center;
+            padding: 2rem;
+            color: var(--color-graphite);
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine footer p + p {
+margin-top: 0.35rem;
+}
+
+.page-the-dog-the-data-scientist-and-the-mrna-vaccine .github-link {
+display: inline-block;
+            margin-top: 0.8rem;
+            color: var(--color-rust);
+            text-decoration: none;
+            font-weight: 600;
+}
+
+@media (max-width: 820px) {
+    .page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-shell {
+padding: 2rem 1.4rem;
+                margin: 3rem auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-the-dog-the-data-scientist-and-the-mrna-vaccine header {
+padding: 3rem 1rem 2.5rem;
+    }
+
+    .page-the-dog-the-data-scientist-and-the-mrna-vaccine .container {
+padding: 0 1rem;
+    }
+
+    .page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-nav {
+gap: 0.6rem;
+    }
+
+    .page-the-dog-the-data-scientist-and-the-mrna-vaccine .article-nav a {
+width: 100%;
+                text-align: center;
+    }
+
+    .page-the-dog-the-data-scientist-and-the-mrna-vaccine .cta-buttons {
+flex-direction: column;
+                align-items: center;
+    }
+
+    .page-the-dog-the-data-scientist-and-the-mrna-vaccine .btn {
+width: 100%;
+                max-width: 320px;
+    }
+}
+

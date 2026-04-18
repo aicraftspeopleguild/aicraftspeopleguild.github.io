@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "White Paper",
+    "slug": "white-paper-article",
+    "route": "/white-papers/:slug",
+    "view": "views/white-paper-article.view.json",
+    "data": {
+      "paper": "white-papers/udts/instances/:slug.json"
+    },
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "resources",
+    "parent_slug": "white-papers",
+    "status": "published"
+  },
+  "tags": {
+    "id": "white-paper-article",
+    "view_id": "white-paper-article",
+    "schema_version": "1.0.0"
+  }
+}

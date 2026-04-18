@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"Actor","layer":9,"version":"1.0.0","fields":[
+{"n":"login","t":"STRING","desc":"GitHub handle"},
+{"n":"kind","t":"ENUM","values":["user","bot","organization"]},
+{"n":"id","t":"DINT","nullable":true},
+{"n":"name","t":"STRING","nullable":true}
+],"meta":{"desc":"The entity that performed a git/GitHub action — Commit.author, Review.reviewer, WorkflowRun.actor all resolve to an Actor."}}

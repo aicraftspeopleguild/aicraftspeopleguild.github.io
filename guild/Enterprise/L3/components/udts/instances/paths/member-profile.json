@@ -1,0 +1,34 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/members/:slug",
+    "label": "Member Profile",
+    "page": "pages/member-profile.page.json",
+    "section": "community",
+    "parent": "members",
+    "order": 11,
+    "dynamic": true,
+    "params": [
+      "slug"
+    ],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": false,
+    "access": "public"
+  },
+  "tags": {
+    "id": "member-profile",
+    "full_url": "https://aicraftspeopleguild.github.io/members/:slug",
+    "children": [],
+    "breadcrumb": [
+      "community",
+      "member-profile"
+    ],
+    "depth": 1,
+    "view_id": "member-profile",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

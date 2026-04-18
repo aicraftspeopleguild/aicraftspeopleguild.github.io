@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1016 274" width="1016" height="274" role="img" aria-label="ACG cmd panel">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1016" height="36" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1016" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1016" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="508" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ cmd panel · click a button to file a pre-filled issue</text>
+<rect y="36" width="1016" height="238" fill="url(#gBg)"/>
+<a href="https://github.com/teslasolar/aicraftspeopleguild.github.io/issues/new?title=cmd%3Abump-heartbeat&amp;labels=cmd&amp;body=Click+Submit+to+fire+cmd%3Abump-heartbeat.+The+dashboard+SVG+will+refresh+with+the+new+timestamp+within+60s." target="_blank"><rect x="14" y="56" width="320" height="84" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><g style="transform-origin:42px 86px">
+    <circle cx="42" cy="86" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="42" cy="86" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="42" cy="86" r="6" class="g"/><text x="316" y="88" text-anchor="end" class="t" font-size="24">🔄</text><text x="62" y="90" class="t vs">bump heartbeat</text><text x="28" y="118" class="t sub">cmd:bump-heartbeat</text><text x="28" y="132" class="t" font-size="10" fill="#8b949e">click → opens a pre-filled GitHub issue</text></a>
+<a href="https://github.com/teslasolar/aicraftspeopleguild.github.io/issues/new?title=cmd%3Arebuild-svgs&amp;labels=cmd&amp;body=Regenerate+every+SvgOrganism+%28heartbeat%2C+scada-dashboard%2C+tag-grid%2C+%E2%80%A6%29+without+bumping+the+heartbeat." target="_blank"><rect x="348" y="56" width="320" height="84" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><g style="transform-origin:376px 86px">
+    <circle cx="376" cy="86" r="9" fill="none" stroke="#a371f7" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="376" cy="86" r="9" fill="none" stroke="#a371f7" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="376" cy="86" r="6" class="p"/><text x="650" y="88" text-anchor="end" class="t" font-size="24">🔁</text><text x="396" y="90" class="t vs">rebuild SVGs</text><text x="362" y="118" class="t sub">cmd:rebuild-svgs</text><text x="362" y="132" class="t" font-size="10" fill="#8b949e">click → opens a pre-filled GitHub issue</text></a>
+<a href="https://github.com/teslasolar/aicraftspeopleguild.github.io/issues/new?title=cmd%3Arebuild-api&amp;labels=cmd&amp;body=Rerun+init-db.py+%2B+build-api.py+%2B+build-runtime-tags.py+%2B+build-state.py." target="_blank"><rect x="682" y="56" width="320" height="84" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><g style="transform-origin:710px 86px">
+    <circle cx="710" cy="86" r="9" fill="none" stroke="#f0883e" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="710" cy="86" r="9" fill="none" stroke="#f0883e" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="710" cy="86" r="6" class="o"/><text x="984" y="88" text-anchor="end" class="t" font-size="24">📡</text><text x="730" y="90" class="t vs">rebuild API</text><text x="696" y="118" class="t sub">cmd:rebuild-api</text><text x="696" y="132" class="t" font-size="10" fill="#8b949e">click → opens a pre-filled GitHub issue</text></a>
+<a href="https://github.com/teslasolar/aicraftspeopleguild.github.io/issues/new?title=cmd%3Aclear-faults&amp;labels=cmd&amp;body=Clear+every+currently+active+fault+in+state.db." target="_blank"><rect x="14" y="154" width="320" height="84" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><g style="transform-origin:42px 184px">
+    <circle cx="42" cy="184" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="42" cy="184" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="42" cy="184" r="6" class="g"/><text x="316" y="186" text-anchor="end" class="t" font-size="24">✅</text><text x="62" y="188" class="t vs">clear faults</text><text x="28" y="216" class="t sub">cmd:clear-faults</text><text x="28" y="230" class="t" font-size="10" fill="#8b949e">click → opens a pre-filled GitHub issue</text></a>
+<a href="https://github.com/teslasolar/aicraftspeopleguild.github.io/issues/new?title=cmd%3Atag-write+path%3Ddemo.example+value%3D1&amp;labels=cmd&amp;body=Update+the+title+to+%60cmd%3Atag-write+path%3D%3Cpath%3E+value%3D%3Cvalue%3E%60+before+submitting." target="_blank"><rect x="348" y="154" width="320" height="84" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><g style="transform-origin:376px 184px">
+    <circle cx="376" cy="184" r="9" fill="none" stroke="#a371f7" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="376" cy="184" r="9" fill="none" stroke="#a371f7" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="376" cy="184" r="6" class="p"/><text x="650" y="186" text-anchor="end" class="t" font-size="24">⚒</text><text x="396" y="188" class="t vs">write a tag</text><text x="362" y="216" class="t sub">cmd:tag-write path=demo.example value=1</text><text x="362" y="230" class="t" font-size="10" fill="#8b949e">click → opens a pre-filled GitHub issue</text></a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/guild/apps/whiteboard/" target="_blank"><rect x="682" y="154" width="320" height="84" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/><g style="transform-origin:710px 184px">
+    <circle cx="710" cy="184" r="9" fill="none" stroke="#f0883e" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="710" cy="184" r="9" fill="none" stroke="#f0883e" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="710" cy="184" r="6" class="o"/><text x="984" y="186" text-anchor="end" class="t" font-size="24">🖍</text><text x="730" y="188" class="t vs">open whiteboard</text><text x="696" y="216" class="t sub">open-whiteboard</text><text x="696" y="230" class="t" font-size="10" fill="#8b949e">click → opens a pre-filled GitHub issue</text></a>
+<text x="508" y="264" text-anchor="middle" class="t sub">Submit the issue on GitHub. The cmd workflow runs it, comments the receipt, and closes it automatically.</text>
+</svg>

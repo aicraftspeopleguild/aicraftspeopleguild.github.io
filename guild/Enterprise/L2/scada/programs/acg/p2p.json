@@ -1,0 +1,48 @@
+{
+  "§": "2.2",
+  "🏗️": "📡",
+  "name": "p2p",
+  "module": "L2/scada/gateway/scripts/p2p.js",
+  "desc": "Multi-tracker WebRTC signalling. Fans out to every tracker in TRACKERS[] in parallel; peers find each other via the union of connected trackers, not one chosen tracker. Per-URL reconnect with exponential back-off.",
+
+  "📦": {
+    "hash":              "s40",
+    "room":              "s",
+    "reTimer":           "timeoutId?",
+    "sockets":           "m url → 🔌",
+    "reconnectTimers":   "m url → timeoutId",
+    "reconnectAttempts": "m url → i",
+    "pending":           "m offerId → RTCPeerConnection"
+  },
+
+  "⚙️": {
+    "PENDING_TTL_MS":        60000,
+    "CONNECT_TIMEOUT_MS":    6000,
+    "RECONNECT_BACKOFF_MS":  "[3000, 6000, 12000, 30000, 60000]"
+  },
+
+  "→": [
+    { "name": "mkHash",           "in": "name:s",         "out": "s40",                 "flow": "SHA1('acg:'+name) → hex" },
+    { "name": "waitIce",          "in": "pc, ms=4000",    "out": "Promise",             "flow": "pc.iceGatheringState==='complete' ∨ timeout" },
+    { "name": "mkOffers",         "in": "n:i",            "out": "a[{offer_id,offer}]", "flow": "∀ i<n → RTCPC ⊕ wire(🔌,uuid) ⊕ createOffer ⊕ waitIce ⊕ schedule PENDING_TTL_MS reap" },
+    { "name": "onOffer",          "in": "msg:o, sock:🔌", "flow": "RTCPC ⊕ setRemote(offer) ⊕ createAnswer ⊕ waitIce ⊕ sock.send (reply on same tracker)" },
+    { "name": "onAnswer",         "in": "msg:o",          "flow": "pending.delete(offer_id) ⊕ setRemote(answer) — first tracker to deliver wins" },
+    { "name": "announce",         "in": "∅",              "flow": "mkOffers(N_OFFERS) → ∀ open 🔌 → sock.send({action:announce,…})" },
+    { "name": "connectTracker",   "in": "url:s",          "flow": "if already open/connecting bail ⊕ new WebSocket ⊕ 6s timeout ⊕ onopen: announce(this sock) ⊕ onclose: scheduleReconnect" },
+    { "name": "scheduleReconnect","in": "url:s",          "flow": "attempts[url]++ ⊕ setTimeout(connectTracker, back-off[min(n, max)])" },
+    { "name": "join",             "in": "rName:s",        "flow": "close all 🔌 ⊕ clear(pm, pending, timers) ⊕ ∀ TRACKERS → connectTracker(url) in parallel" },
+    { "name": "bcast",            "in": "msg:o",          "out": "i peerCount",         "flow": "∀ 🔌∈pm.dcs.open → dc.send(JSON)" },
+    { "name": "wsReady",          "out": "b",             "flow": "openSockets().length > 0" }
+  ],
+
+  "↑🖥️": [
+    "room.name", "room.hash", "room.joinedAt", "room.data",
+    "tracker.current", "tracker.state", "tracker.count",
+    "tracker.announces", "tracker.lastAnnounceAt",
+    "tracker.trackers.<idx>",
+    "signal.last", "signal.offersIn", "signal.answersIn", "signal.answersOut"
+  ],
+  "↓🖥️": [],
+
+  "和": true
+}

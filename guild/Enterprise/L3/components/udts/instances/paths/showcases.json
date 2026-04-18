@@ -1,0 +1,32 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/showcases",
+    "label": "Showcases",
+    "page": "pages/showcases.page.json",
+    "section": "community",
+    "parent": "home",
+    "order": 20,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "showcases",
+    "full_url": "https://aicraftspeopleguild.github.io/showcases",
+    "children": [],
+    "breadcrumb": [
+      "community",
+      "showcases"
+    ],
+    "depth": 1,
+    "view_id": "static-page",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

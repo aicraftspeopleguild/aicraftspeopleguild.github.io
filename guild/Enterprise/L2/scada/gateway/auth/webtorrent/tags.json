@@ -1,0 +1,24 @@
+{
+  "§":          "A.T.TAGS",
+  "🏗️":         "🌊",
+  "name":       "auth.webtorrent · tag catalog",
+  "owner":      "auth/webtorrent/provider.py",
+  "namespaces": ["auth.webtorrent"],
+  "flow":       "BitTorrent-style announce over WebSocket trackers; fallback chain with health probe",
+
+  "tags": [
+    { "path": "auth.webtorrent.room",         "type": "String",             "desc": "current room name (SHA-1 → info_hash)" },
+    { "path": "auth.webtorrent.infoHash",     "type": "String",             "desc": "SHA-1(\"acg:\"+room)" },
+
+    { "pathPattern": "auth.webtorrent.trackers.<idx>", "cardinality": "many", "type": "UDT:TrackerEndpoint",
+      "desc": "one row per tracker in the fallback chain (idx = 0..N-1)" },
+    { "path": "auth.webtorrent.activeTracker","type": "String",             "desc": "URL of the tracker currently announced-to" },
+
+    { "path": "auth.webtorrent.announce",     "type": "UDT:AnnounceState",  "desc": "most recent announce packet" },
+    { "path": "auth.webtorrent.peers",        "type": "UDT:PeerDiscovery",  "desc": "rolling peer-discovery counters" },
+
+    { "path": "auth.webtorrent.signedIn",     "type": "Boolean",            "desc": "true while at least one tracker is open" },
+    { "path": "auth.webtorrent.signedInAt",   "type": "DateTime" },
+    { "path": "auth.webtorrent.lastError",    "type": "String" }
+  ]
+}

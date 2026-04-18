@@ -1,0 +1,24 @@
+id,name,category,language,last_state
+api--build-api_py,Build Api,misc,python,COMPLETE
+api--build-csv-catalog_py,Build Csv Catalog,misc,python,COMPLETE
+api--build-runtime-tags_py,Build Runtime Tags,misc,python,COMPLETE
+api--build-sitemap_py,Build Sitemap,misc,python,COMPLETE
+apps--build-whitepaper-apps_py,Build Whitepaper Apps,apps-pipeline,python,COMPLETE
+build_js,Build,build-orchestrator,node,IDLE
+build_sh,Build,build-orchestrator,bash,IDLE
+components--build-catalog_py,Build Catalog,components-pipeline,python,COMPLETE
+components--extract_py,Extract,components-pipeline,python,IDLE
+db--build-local-tagdbs_py,Build Local Tagdbs,misc,python,COMPLETE
+docs--split-catalog_py,Split Catalog,docs-pipeline,python,IDLE
+docs--split-udt-spec_py,Split Udt Spec,docs-pipeline,python,IDLE
+fix-data-links_py,Fix Data Links,fix-orchestrator,python,IDLE
+members--extract_py,Extract,members-pipeline,python,IDLE
+members--regen-index_py,Regen Index,members-pipeline,python,IDLE
+pages--build-path-graph_py,Build Path Graph,pages-pipeline,python,COMPLETE
+pages--decompose_py,Decompose,pages-pipeline,python,IDLE
+perspective-build_js,Perspective Build,build-orchestrator,node,IDLE
+test-browser_js,Test Browser,test-orchestrator,node,IDLE
+test-links_py,Test Links,test-orchestrator,python,IDLE
+test-nav_js,Test Nav,test-orchestrator,node,IDLE
+white-papers--extract_py,Extract,white-papers-pipeline,python,IDLE
+white-papers--regen-index_py,Regen Index,white-papers-pipeline,python,IDLE

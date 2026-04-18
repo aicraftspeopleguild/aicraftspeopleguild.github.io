@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:tag-activity-svg",
+    "name": "Render tag-activity.svg",
+    "description": "Render tag-activity.svg \u2014 rolling feed of last 12 writes from state.db.tag_history.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-tag-activity.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "svg",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "svg",
+      "readme",
+      "build"
+    ]
+  },
+  "tags": {
+    "id": "build-tag-activity-svg",
+    "schema_version": "1.0.0"
+  }
+}

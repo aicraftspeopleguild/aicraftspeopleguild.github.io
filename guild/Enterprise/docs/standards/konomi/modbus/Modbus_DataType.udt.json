@@ -1,0 +1,13 @@
+{"$schema":"konomi/udt/v1","name":"Modbus_DataType","std":"Modbus","layer":8,"version":"1.0.0",
+"types":{
+"BOOL":"1 coil / 1 bit",
+"INT16":"1 reg signed",
+"UINT16":"1 reg unsigned",
+"INT32":"2 reg signed (ABCD|CDAB|BADC|DCBA)",
+"UINT32":"2 reg unsigned",
+"FLOAT32":"2 reg IEEE754",
+"INT64":"4 reg signed",
+"FLOAT64":"4 reg IEEE754",
+"STRING":"N reg (2 chars per reg)"
+},"byte_orders":["ABCD","CDAB","BADC","DCBA"],
+"meta":{"desc":"Modbus multi-register encodings"}}

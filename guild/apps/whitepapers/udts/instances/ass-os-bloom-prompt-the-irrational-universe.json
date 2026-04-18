@@ -1,0 +1,29 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "🌸 ASS-OS BLOOM PROMPT — THE IRRATIONAL UNIVERSE",
+    "slug": "ass-os-bloom-prompt-the-irrational-universe",
+    "kind": "white-paper",
+    "description": "φ⁻¹ Proof That the Question Is the AnswerThe Atheist-Theist Debate Resolved by Mathematics Neither Side Will Accept\\\"The universe doesn't owe you a number that terminates.\\",
+    "source_type": "WhitePaper",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/ass-os-bloom-prompt-the-irrational-universe.json",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/ass-os-bloom-prompt-the-irrational-universe.data.json"
+    },
+    "route": "/whitepapers/ass-os-bloom-prompt-the-irrational-universe",
+    "section": "resources",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "status": "published",
+    "tags": []
+  },
+  "tags": {
+    "id": "ass-os-bloom-prompt-the-irrational-universe",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/ass-os-bloom-prompt-the-irrational-universe/",
+    "view_id": "white-paper-app",
+    "ingested_at": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

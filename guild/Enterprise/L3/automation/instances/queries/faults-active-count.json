@@ -1,0 +1,13 @@
+{
+  "udtType": "Query",
+  "parameters": {
+    "id":          "faults:active-count",
+    "name":        "Active faults (count)",
+    "description": "Number of active faults in state.db. Written to state.faults.active_count on each run.",
+    "db":          "state",
+    "sql":         "SELECT COUNT(*) FROM faults WHERE active=1",
+    "output_tag":  "state.faults.active_count",
+    "enabled":     true
+  },
+  "tags": { "id": "query-faults-active-count", "schema_version": "1.0.0" }
+}

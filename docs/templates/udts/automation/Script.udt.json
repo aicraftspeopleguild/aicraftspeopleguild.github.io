@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "Script",
+  "version": "1.0.0",
+  "description": "A piece of logic attached to a tag and driven by a trigger. The state-machine runner (guild/web/scripts/lib/state_machine.py) loads every Script instance, matches events against its trigger, and invokes the referenced Tool UDT through run_with_logger. Equivalent to Ignition Tag Change Scripts + Gateway Events.",
+  "parameters": {
+    "id":          { "dataType": "String", "required": true,  "description": "kebab-case unique id" },
+    "name":        { "dataType": "String", "required": true },
+    "description": { "dataType": "String", "required": false },
+    "enabled":     { "dataType": "Boolean","required": false, "default": true },
+    "trigger": {
+      "dataType": "JSON",
+      "required": true,
+      "description": "Trigger discriminator. Supported kinds: on_transition, on_change, on_interval, on_boot",
+      "shape": {
+        "kind":     { "type":"String", "enum":["on_transition","on_change","on_interval","on_boot"] },
+        "tag":      { "type":"String", "description":"Target tag path, e.g. `git:state`, `health:paperCount`" },
+        "from":     { "type":"String", "optional":true, "description":"Required for on_transition" },
+        "to":       { "type":"String", "optional":true, "description":"Required for on_transition" },
+        "interval_s": { "type":"Number","optional":true, "description":"Required for on_interval" }
+      }
+    },
+    "condition":   { "dataType": "String", "required": false, "description": "Optional gate expression (e.g. `branch==main`) evaluated against event context. If false, the script is skipped." },
+    "action": {
+      "dataType": "JSON",
+      "required": true,
+      "description": "What to run when the trigger fires. Points at a Tool UDT.",
+      "shape": {
+        "tool_id": { "type":"String", "description":"Tool UDT id, e.g. `build:api`, `git:status`" },
+        "inputs":  { "type":"JSON",   "optional":true, "description":"Inputs passed to the tool" }
+      }
+    }
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "bound_tag":      { "dataType": "String", "description":"Tag the script listens on; mirrors parameters.trigger.tag" },
+    "bound_tool":     { "dataType": "String", "description":"Tool the script invokes; mirrors parameters.action.tool_id" },
+    "schema_version": { "dataType": "String" }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/scada/programs/web-llm",
+    "label": "web-llm",
+    "parent": "guild/Enterprise/L2/scada/programs",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L2_scada_programs_web-llm",
+    "fs_path": "guild/Enterprise/L2/scada/programs/web-llm",
+    "depth": 6,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L2",
+      "guild_Enterprise_L2_scada",
+      "guild_Enterprise_L2_scada_programs",
+      "guild_Enterprise_L2_scada_programs_web-llm"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/Enterprise/L2/scada/programs/acg",
+      "guild/Enterprise/L2/scada/programs/git"
+    ],
+    "descendants": 0,
+    "file_count": 8,
+    "subdir_count": 0,
+    "kinds": {
+      "db": 2,
+      "json": 6
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

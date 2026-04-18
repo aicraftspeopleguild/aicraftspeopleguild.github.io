@@ -1,0 +1,99 @@
+# tests/paper-index.test.yml
+# Canonical ACG-TEST test for the paper-index workflow, per Part 10 of the
+# Paper Auto-Index Standard (ACG-STD-AUTOPARSE-2026).
+
+test: Paper Auto-Index
+workflow: .github/workflows/paper-index.yml
+
+exists:
+  expect: present
+  reason: "the indexer workflow must exist"
+
+triggers:
+  - event: pull_request
+    paths: ["*.html", "*.md", "*.meta.yml"]
+    expect: triggered
+    reason: "any paper file type should trigger indexing"
+
+  - event: push
+    expect: not triggered
+    reason: "only PRs trigger the index, not direct pushes"
+
+watches:
+  - path: paper-auto-index-standard.html
+    expect: triggered
+    reason: "new HTML papers at the repo root must be scanned"
+
+  - path: research.md
+    expect: triggered
+    reason: "markdown papers should be scanned"
+
+  - path: analysis.meta.yml
+    expect: triggered
+    reason: "PDF sidecar files should be scanned"
+
+  - path: assets/style.css
+    expect: not triggered
+    reason: "non-paper files should be ignored"
+
+  - path: index.html
+    expect: not triggered
+    reason: "homepage has no acg-paper frontmatter, should be skipped"
+
+frontmatter:
+  required:
+    - field: title
+      expect: present
+      reason: "every paper must have a title"
+
+    - field: author
+      expect: present
+      reason: "every paper must credit its author"
+
+    - field: type
+      expect: present
+      reason: "papers must be classified by type"
+
+    - field: abstract
+      expect: present
+      reason: "the index card needs a description"
+
+  auto-filled:
+    - field: id
+      expect: configured
+      reason: "auto-assigned, never duplicated, never reassigned"
+
+    - field: date
+      expect: configured
+      reason: "defaults to today if omitted"
+
+    - field: tags
+      expect: configured
+      reason: "auto-extracted from title and abstract if omitted"
+
+output:
+  - file: papers.json
+    expect: present
+    reason: "machine-readable index must be generated"
+
+  - file: white-papers.html
+    expect: present
+    reason: "human-readable index must be regenerated"
+
+secrets:
+  - name: .github/scripts/parse-papers.js
+    expect: configured
+    reason: "the parser script must exist and be runnable"
+
+guardrails:
+  - condition: HTML file without acg-paper block
+    expect: not triggered
+    reason: "non-paper pages like index.html must be ignored"
+
+  - condition: duplicate paper ID
+    expect: not triggered
+    reason: "IDs must be unique across all papers"
+
+  - condition: paper missing required fields
+    expect: not triggered
+    reason: "parser warns on PR and does not generate broken cards"

@@ -1,0 +1,39 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "ParamCard",
+    "tag": "div",
+    "cssClass": "param-card",
+    "description": "Reusable card that receives all content through props and params — analogous to an Ignition Perspective embeddable view with view.params. Compose it inside acg.view.embed and pass params: { title, subtitle, meta, variant } to customize each instance independently.",
+    "slots": ["default"],
+    "propsToClass": ["variant"],
+    "props": {
+      "title": {
+        "type": "String",
+        "required": true,
+        "description": "Card heading — bind to {{ params.title }} when embedded"
+      },
+      "subtitle": {
+        "type": "String",
+        "required": false,
+        "description": "Secondary heading line"
+      },
+      "meta": {
+        "type": "String",
+        "required": false,
+        "description": "Small metadata line (timestamp, author, type, etc.)"
+      },
+      "variant": {
+        "type": "String",
+        "required": false,
+        "description": "CSS variant class: primary | secondary | warning | danger"
+      }
+    },
+    "template": "<div class=\"param-card-hd\"><div class=\"param-card-title\">{{ title }}</div>{{ #subtitle }}<div class=\"param-card-subtitle\">{{ subtitle }}</div>{{ /subtitle }}{{ #meta }}<div class=\"param-card-meta\">{{ meta }}</div>{{ /meta }}</div><div class=\"param-card-body\">{{ slot:default }}</div>"
+  },
+  "tags": {
+    "id": "param-card",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/molecules/param-card.json",
+    "schema_version": "1.0.0"
+  }
+}

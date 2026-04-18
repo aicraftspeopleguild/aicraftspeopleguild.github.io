@@ -1,0 +1,64 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/apps/whitepapers/pages",
+    "label": "pages",
+    "parent": "guild/apps/whitepapers",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_apps_whitepapers_pages",
+    "fs_path": "guild/apps/whitepapers/pages",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_apps",
+      "guild_apps_whitepapers",
+      "guild_apps_whitepapers_pages"
+    ],
+    "children": [],
+    "siblings": [
+      "guild/apps/whitepapers/data",
+      "guild/apps/whitepapers/udts",
+      "guild/apps/whitepapers/views"
+    ],
+    "descendants": 0,
+    "file_count": 26,
+    "subdir_count": 0,
+    "kinds": {
+      "json": 24,
+      "db": 2
+    },
+    "route_bindings": [
+      "app-acg-kcc-guild-chain",
+      "app-acg-net-decentralized-guild-web",
+      "app-acg-review-forge",
+      "app-ai-harness-constraint-driven-software-development-for-the",
+      "app-ai-that-pisses-you-off-the-surprisingly-effective-path-to",
+      "app-ass-os-bloom-prompt-occam",
+      "app-ass-os-bloom-prompt-the-irrational-universe",
+      "app-ass-os-bloom-prompt-the-rational-empire",
+      "app-avoid-being-fractally-wrong",
+      "app-convergent-governance-topologies-in-specialist-networks-a",
+      "app-from-correctness-to-integrity-measuring-ai-generated-code",
+      "app-grid-brain",
+      "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+      "app-lightning-factory",
+      "app-s-a-d",
+      "app-structural-toast-carbonization-a-failure-mode-distinct-from",
+      "app-the-dog-the-data-scientist-and-the-mrna-vaccine",
+      "app-the-harm-equation",
+      "app-the-konomi-standard",
+      "app-the-pattern-that-wasn-t-there",
+      "app-the-prediction-trap",
+      "app-the-shield-of-all-knights-against-bounded-rationality",
+      "app-toastmasters-scrapers-guild",
+      "app-you-re-absolutely-wrong"
+    ],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

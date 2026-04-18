@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "App",
+  "version": "1.0.0",
+  "description": "An addressable, deployable rendering unit. Wraps a content source (white paper, page, dashboard) with metadata, route, view binding, and lifecycle. Apps are the user-facing surface; their content can be sourced from any UDT instance.",
+  "parameters": {
+    "name":        { "dataType": "String",      "required": true,  "description": "Human-readable app name" },
+    "slug":        { "dataType": "String",      "required": true,  "description": "URL slug" },
+    "kind":        { "dataType": "String",      "required": true,  "description": "App kind: white-paper | page | dashboard | tool" },
+    "description": { "dataType": "String",      "required": false },
+    "source_type": { "dataType": "String",      "required": false, "description": "UDT type the app is sourced from (e.g., WhitePaper, Member)" },
+    "source_path": { "dataType": "String",      "required": false, "description": "Path to source UDT instance JSON" },
+    "view":        { "dataType": "String",      "required": true,  "description": "Path to View instance to render with" },
+    "data":        { "dataType": "JSON",        "required": false, "description": "Map of named data sources for the view" },
+    "route":       { "dataType": "String",      "required": true,  "description": "URL route pattern" },
+    "section":     { "dataType": "String",      "required": false, "description": "Navigation section" },
+    "stylesheets": { "dataType": "StringArray", "required": false },
+    "status":      { "dataType": "String",      "required": false, "default": "published", "description": "draft | published | archived" },
+    "tags":        { "dataType": "StringArray", "required": false }
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "url":            { "dataType": "String", "description": "Full canonical URL" },
+    "view_id":        { "dataType": "String" },
+    "ingested_at":    { "dataType": "String" },
+    "schema_version": { "dataType": "String" }
+  }
+}

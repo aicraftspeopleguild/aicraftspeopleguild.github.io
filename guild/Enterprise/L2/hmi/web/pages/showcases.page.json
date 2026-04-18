@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "Showcases",
+    "slug": "showcases",
+    "route": "/showcases",
+    "view": "views/showcases.view.json",
+    "stylesheets": [
+      "style/main.css"
+    ],
+    "section": "community",
+    "parent_slug": "home",
+    "status": "published",
+    "data": {
+      "page": "views/data/showcases.data.json"
+    }
+  },
+  "tags": {
+    "id": "showcases",
+    "view_id": "showcases",
+    "schema_version": "1.0.0"
+  }
+}

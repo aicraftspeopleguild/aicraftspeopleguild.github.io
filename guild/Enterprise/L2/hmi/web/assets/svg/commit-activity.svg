@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 240" width="1040" height="240" role="img" aria-label="commit activity">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1040" height="240" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1040" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1040" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ commit activity · github.com/teslasolar/aicraftspeopleguild.github.io</text>
+<text x="24" y="70" class="t lb g">last 12 weeks</text>
+<text x="24" y="96" class="t va">161</text>
+<text x="24" y="114" class="t sub">commits</text>
+<polyline fill="none" stroke="#3fb950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="24.0,188.0 60.4,156.0 96.7,186.7 133.1,188.0 169.5,188.0 205.8,188.0 242.2,188.0 278.5,128.0 314.9,154.7 351.3,158.7 387.6,176.0 424.0,141.3"/>
+<line x1="440" y1="56" x2="441" y2="56" stroke="#30363d" stroke-width="1"/>
+<line x1="460" y1="56" x2="460" y2="216" stroke="#30363d"/>
+<text x="480" y="70" class="t lb p">last 8 commits</text>
+<text x="480" y="96" class="t" font-size="11" fill="#79c0ff">520cbc3</text>
+<text x="540" y="96" class="t sub">2026-04-18</text>
+<text x="620" y="96" class="t" font-size="11" fill="#e6edf3">Merge teslasolar branch bot regens</text>
+<text x="480" y="114" class="t" font-size="11" fill="#79c0ff">6287818</text>
+<text x="540" y="114" class="t sub">2026-04-18</text>
+<text x="620" y="114" class="t" font-size="11" fill="#e6edf3">4 more expansive SVG organisms: fault-timeline, commit-activity, sca</text>
+<text x="480" y="132" class="t" font-size="11" fill="#79c0ff">19f773d</text>
+<text x="540" y="132" class="t sub">2026-04-18</text>
+<text x="620" y="132" class="t" font-size="11" fill="#e6edf3">Merge origin/main (PR #18 + #19) into rewrite</text>
+<text x="480" y="150" class="t" font-size="11" fill="#79c0ff">df07c00</text>
+<text x="540" y="150" class="t sub">2026-04-18</text>
+<text x="620" y="150" class="t" font-size="11" fill="#e6edf3">Merge pull request #6 from teslasolar/main</text>
+<text x="480" y="168" class="t" font-size="11" fill="#79c0ff">528add9</text>
+<text x="540" y="168" class="t sub">2026-04-18</text>
+<text x="620" y="168" class="t" font-size="11" fill="#e6edf3">Merge teslasolar/main bot regens</text>
+<text x="480" y="186" class="t" font-size="11" fill="#79c0ff">adcf234</text>
+<text x="540" y="186" class="t sub">2026-04-18</text>
+<text x="620" y="186" class="t" font-size="11" fill="#e6edf3">Merge teslasolar branch bot regens</text>
+<text x="480" y="204" class="t" font-size="11" fill="#79c0ff">9859aaf</text>
+<text x="540" y="204" class="t sub">2026-04-18</text>
+<text x="620" y="204" class="t" font-size="11" fill="#e6edf3">Merge origin branch (auto-index + bot SVG)</text>
+<text x="480" y="222" class="t" font-size="11" fill="#79c0ff">cd54733</text>
+<text x="540" y="222" class="t sub">2026-04-18</text>
+<text x="620" y="222" class="t" font-size="11" fill="#e6edf3">heartbeat: regenerate SVG widget frames</text>
+</svg>

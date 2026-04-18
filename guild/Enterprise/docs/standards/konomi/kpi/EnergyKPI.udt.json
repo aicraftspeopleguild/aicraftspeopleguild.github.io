@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"EnergyKPI","std":"KPI","layer":9,"version":"1.0.0","fields":[
+{"n":"kwh_per_unit","t":"REAL"},
+{"n":"kwh_per_batch","t":"REAL"},
+{"n":"peak_demand","t":"REAL"},
+{"n":"power_factor","t":"PCT"}
+],"meta":{"desc":"Energy consumption metrics"}}

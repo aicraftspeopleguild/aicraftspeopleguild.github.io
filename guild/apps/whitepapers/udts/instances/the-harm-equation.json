@@ -1,0 +1,29 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "The Harm Equation",
+    "slug": "the-harm-equation",
+    "kind": "white-paper",
+    "description": "Uncalibrated AI + Removed Humans + Commercial Incentive = Harm at Scale",
+    "source_type": "WhitePaper",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/the-harm-equation.json",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/the-harm-equation.data.json"
+    },
+    "route": "/whitepapers/the-harm-equation",
+    "section": "resources",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "status": "published",
+    "tags": []
+  },
+  "tags": {
+    "id": "the-harm-equation",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/the-harm-equation/",
+    "view_id": "white-paper-app",
+    "ingested_at": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

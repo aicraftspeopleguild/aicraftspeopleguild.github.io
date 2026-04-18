@@ -1,0 +1,52 @@
+{
+  "udtType": "SvgMolecule",
+  "parameters": {
+    "name": "TagCard",
+    "atomicLevel": "molecule",
+    "renderer": "svg_widget:tag_card",
+    "description": "Self-contained pulse-dot + label + big value + sub card.",
+    "composes": [
+      "PulseDot",
+      "Panel"
+    ],
+    "props": {
+      "x": {
+        "type": "Number",
+        "required": true
+      },
+      "y": {
+        "type": "Number",
+        "required": true
+      },
+      "w": {
+        "type": "Number",
+        "required": true
+      },
+      "h": {
+        "type": "Number",
+        "required": true
+      },
+      "label": {
+        "type": "String",
+        "required": true
+      },
+      "value": {
+        "type": "String",
+        "required": true
+      },
+      "color_class": {
+        "type": "String",
+        "required": true
+      },
+      "subtitle": {
+        "type": "String",
+        "required": true
+      }
+    }
+  },
+  "tags": {
+    "id": "tag-card",
+    "schema_version": "1.0.0",
+    "file_path": "guild/Enterprise/L4/svg/instances/molecules/tag-card.json"
+  }
+}

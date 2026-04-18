@@ -1,0 +1,38 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L1/forms",
+    "label": "forms",
+    "parent": "guild/Enterprise/L1",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L1_forms",
+    "fs_path": "guild/Enterprise/L1/forms",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L1",
+      "guild_Enterprise_L1_forms"
+    ],
+    "children": [
+      "guild/Enterprise/L1/forms/submit"
+    ],
+    "siblings": [
+      "guild/Enterprise/L1/plc"
+    ],
+    "descendants": 1,
+    "file_count": 1,
+    "subdir_count": 1,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

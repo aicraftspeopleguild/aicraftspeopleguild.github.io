@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 540" width="1040" height="540" role="img" aria-label="ACG subsystem network">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<defs>
+  <marker id="arrow-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#79c0ff"/></marker>
+  <marker id="arrow-w" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3fb950"/></marker>
+  <marker id="arrow-t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f0883e"/></marker>
+</defs>
+<rect width="1040" height="540" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1040" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1040" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="520" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ ACG subsystem network · read (blue) · write (green) · trigger (orange)</text>
+<line x1="140" y1="220" x2="140" y2="100" stroke="#3fb950" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-w)" />
+<text x="140" y="156" text-anchor="middle" class="t" font-size="9" fill="#8b949e">bump heartbeat</text>
+<line x1="140" y1="220" x2="900" y2="220" stroke="#3fb950" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-w)" />
+<text x="520" y="216" text-anchor="middle" class="t" font-size="9" fill="#8b949e">regen</text>
+<line x1="140" y1="220" x2="720" y2="220" stroke="#3fb950" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-w)" />
+<text x="430" y="216" text-anchor="middle" class="t" font-size="9" fill="#8b949e">build</text>
+<line x1="140" y1="220" x2="720" y2="340" stroke="#3fb950" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-w)" />
+<text x="430" y="276" text-anchor="middle" class="t" font-size="9" fill="#8b949e">build</text>
+<line x1="140" y1="100" x2="140" y2="220" stroke="#f0883e" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-t)" stroke-dasharray="4 4"/>
+<text x="140" y="156" text-anchor="middle" class="t" font-size="9" fill="#8b949e">issues/cmd</text>
+<line x1="520" y1="340" x2="900" y2="220" stroke="#79c0ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-r)" />
+<line x1="520" y1="100" x2="900" y2="220" stroke="#79c0ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-r)" />
+<line x1="340" y1="220" x2="900" y2="400" stroke="#79c0ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-r)" />
+<line x1="720" y1="220" x2="900" y2="400" stroke="#79c0ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-r)" />
+<line x1="720" y1="220" x2="900" y2="220" stroke="#79c0ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-r)" />
+<line x1="720" y1="340" x2="900" y2="220" stroke="#79c0ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-r)" />
+<line x1="900" y1="400" x2="140" y2="100" stroke="#3fb950" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-w)" />
+<text x="520" y="246" text-anchor="middle" class="t" font-size="9" fill="#8b949e">gh-tag:write</text>
+<line x1="900" y1="400" x2="520" y2="340" stroke="#3fb950" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-w)" />
+<text x="710" y="366" text-anchor="middle" class="t" font-size="9" fill="#8b949e">tag:write</text>
+<line x1="140" y1="400" x2="900" y2="400" stroke="#f0883e" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-t)" stroke-dasharray="4 4"/>
+<text x="520" y="396" text-anchor="middle" class="t" font-size="9" fill="#8b949e">chat</text>
+<line x1="140" y1="400" x2="520" y2="480" stroke="#f0883e" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow-t)" stroke-dasharray="4 4"/>
+<circle cx="140" cy="100" r="32" fill="#a371f722" stroke="#a371f7" stroke-width="2"/>
+<text x="140" y="106" text-anchor="middle" class="t" font-size="22">🐙</text>
+<text x="140" y="146" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">GitHub Issues</text>
+<circle cx="140" cy="220" r="32" fill="#a371f722" stroke="#a371f7" stroke-width="2"/>
+<text x="140" y="226" text-anchor="middle" class="t" font-size="22">⚙</text>
+<text x="140" y="266" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">.github/workflows</text>
+<circle cx="520" cy="340" r="32" fill="#f0883e22" stroke="#f0883e" stroke-width="2"/>
+<text x="520" y="346" text-anchor="middle" class="t" font-size="22">🗄</text>
+<text x="520" y="386" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">state.db</text>
+<circle cx="520" cy="100" r="32" fill="#1a5c4c22" stroke="#3fb950" stroke-width="2"/>
+<text x="520" y="106" text-anchor="middle" class="t" font-size="22">🗄</text>
+<text x="520" y="146" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">tag.db</text>
+<circle cx="340" cy="220" r="32" fill="#1a5c4c22" stroke="#3fb950" stroke-width="2"/>
+<text x="340" y="226" text-anchor="middle" class="t" font-size="22">📚</text>
+<text x="340" y="266" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">docs.db</text>
+<circle cx="720" cy="220" r="32" fill="#1a5c4c22" stroke="#3fb950" stroke-width="2"/>
+<text x="720" y="226" text-anchor="middle" class="t" font-size="22">📡</text>
+<text x="720" y="266" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">/api/*.json</text>
+<circle cx="720" cy="340" r="32" fill="#1a5c4c22" stroke="#3fb950" stroke-width="2"/>
+<text x="720" y="346" text-anchor="middle" class="t" font-size="22">⚡</text>
+<text x="720" y="386" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">runtime/tags.json</text>
+<circle cx="900" cy="220" r="32" fill="#f0883e22" stroke="#f0883e" stroke-width="2"/>
+<text x="900" y="226" text-anchor="middle" class="t" font-size="22">🖼</text>
+<text x="900" y="266" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">assets/svg/*.svg</text>
+<circle cx="900" cy="400" r="32" fill="#a371f722" stroke="#a371f7" stroke-width="2"/>
+<text x="900" y="406" text-anchor="middle" class="t" font-size="22">⌨</text>
+<text x="900" y="446" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">terminal</text>
+<circle cx="520" cy="480" r="32" fill="#a371f722" stroke="#a371f7" stroke-width="2"/>
+<text x="520" y="486" text-anchor="middle" class="t" font-size="22">🧠</text>
+<text x="520" y="526" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">WebLLM sandbox</text>
+<circle cx="140" cy="400" r="32" fill="#f0883e22" stroke="#f0883e" stroke-width="2"/>
+<text x="140" y="406" text-anchor="middle" class="t" font-size="22">🛰</text>
+<text x="140" y="446" text-anchor="middle" class="t" font-size="11" fill="#e6edf3">p2p mesh</text>
+<circle cx="24" cy="516" r="4" fill="#79c0ff"/><text x="36" y="520" class="t sub">read</text>
+<circle cx="110" cy="516" r="4" fill="#3fb950"/><text x="122" y="520" class="t sub">write</text>
+<circle cx="200" cy="516" r="4" fill="#f0883e"/><text x="212" y="520" class="t sub">trigger (event-driven)</text>
+</svg>

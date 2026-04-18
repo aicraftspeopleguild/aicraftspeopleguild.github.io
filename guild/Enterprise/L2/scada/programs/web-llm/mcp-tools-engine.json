@@ -1,0 +1,84 @@
+{
+  "§": "4.2.5",
+  "🏗️": "🧰",
+  "name": "mcp-tools-engine",
+  "module":       "L4/sandbox/web-llm/modules/mcp-tools-engine.js",
+  "modules_split":[
+    "L4/sandbox/web-llm/modules/mcp/repo.js",
+    "L4/sandbox/web-llm/modules/mcp/vfs.js",
+    "L4/sandbox/web-llm/modules/mcp/git.js",
+    "L4/sandbox/web-llm/modules/mcp/preview.js",
+    "L4/sandbox/web-llm/modules/mcp/scaffold.js",
+    "L4/sandbox/web-llm/modules/mcp/tools.js"
+  ],
+  "udts": "L4/sandbox/web-llm/udts.json",
+  "tags": "L4/sandbox/web-llm/tags.json",
+  "desc": "Virtual filesystem + git-lite + previewer + scaffolds + fenced LLM-tool parser/dispatcher. The monolithic mcp-tools-engine.js is now a thin re-export shim; every concern lives in its own file under mcp/.",
+
+  "📦": {
+    "repo (mcp/repo.js)": {
+      "name":        "s",
+      "branch":      "s",
+      "files":       "m path:s → { content:s, mtime:ms }",
+      "directories": "Set<s> (explicit mkdir targets)",
+      "commits":     "a [{ id:s7, message:s, ts:ms, branch:s, snapshot:o }]",
+      "branches":    "m name:s → { head:s7? }",
+      "staged":      "m (reserved)"
+    }
+  },
+
+  "🏗️": {
+    "VFile":           "path:s, type:e, size:i, mtime:ms",
+    "Directory":       "path:s, entries:a[s], fileCount:i, mtime:ms",
+    "FileTree":        "root:s, nodes:a[{path,type,size?}], fileCount:i",
+    "Commit":          "id:s7, message:s, ts:ms, files:i",
+    "Branch":          "name:s, head:s7?, commitCount:i",
+    "Status":          "clean:b, added:a[s], modified:a[s], deleted:a[s], commits:i",
+    "Diff":            "ref:s?, added:a[s], modified:a[s], deleted:a[s]",
+    "Preview":         "path:s, sizeBytes:i, inlined:a[{path,kind}], ts:ms",
+    "ExportArtifact":  "format:e[json|bundle], size:i, ts:ms",
+    "Scaffold":        "kind:e[vanilla|spa|markdown|canvas], files:a[s], entry:s?",
+    "ToolCall":        "name:s, args:o, ok:b, result:s?, ts:ms"
+  },
+
+  "→vfs (mcp/vfs.js)": [
+    "createFile(path,content?) · editFile(path,content) · patchFile(path,old,new)",
+    "deleteFile(path) · readFile(path) · listFiles(prefix='/') · searchFiles(query) · getAllFiles()",
+    "mkdir(path) · moveFile(from,to) · copyFile(from,to) · tree(prefix='/')"
+  ],
+
+  "→git (mcp/git.js)": [
+    "initRepo(name) · commitChanges(msg) · getLog(n=20) · getDiff(ref?)",
+    "getStatus() · checkout(ref) · branch(name) · listBranches() · getRepoState()",
+    "exportRepo() · importRepo(json)"
+  ],
+
+  "→preview (mcp/preview.js)": [
+    "getPreviewableFiles() · getPreviewHTML(path)",
+    "getPreviewBlobUrl(path) · bundle(path)"
+  ],
+
+  "→scaffold (mcp/scaffold.js)": [
+    "scaffold(kind) · SCAFFOLD_KINDS = [vanilla, spa, markdown, canvas]"
+  ],
+
+  "→llm-tools (mcp/tools.js)": [
+    "parseToolCalls(text) · executeTool(name,args) · buildToolSystemPrompt()"
+  ],
+
+  "⚡dispatch": [
+    "create_file","edit_file","patch_file","delete_file","read_file","list_files","search_files",
+    "mkdir","mv","cp","tree",
+    "commit","status","diff","log","branch","checkout",
+    "preview","bundle",
+    "scaffold","export","import"
+  ],
+
+  "↑🛰️ (sandbox.web-llm via bridge)": [
+    "create_file","edit_file","patch_file","delete_file",
+    "mkdir","mv","cp","tree",
+    "init_repo","commit","status","diff","checkout","branch",
+    "preview","bundle","scaffold","export","import","tool_call"
+  ],
+  "和": true
+}

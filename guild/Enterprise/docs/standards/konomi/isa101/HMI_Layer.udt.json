@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"HMI_Layer","std":"ISA-101","layer":4,"version":"1.0.0",
+"layers":{
+"L1":{"name":"Overview","scope":"Plant/Site","info":"KPIs,Status,Alarms","nav":"→L2"},
+"L2":{"name":"Area","scope":"Process Area","info":"Flows,States,Trends","nav":"→L1,→L3"},
+"L3":{"name":"Unit","scope":"Equipment","info":"Faceplate,Control","nav":"→L2,→L4"},
+"L4":{"name":"Detail","scope":"Diagnostic","info":"Config,Tuning","nav":"→L3,→L5"},
+"L5":{"name":"Support","scope":"Maintenance","info":"Calibration,History","nav":"→L4"}
+},"meta":{"desc":"Five-layer HMI screen hierarchy"}}

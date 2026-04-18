@@ -1,0 +1,47 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/web/members/udts",
+    "label": "udts",
+    "parent": "guild/web/members",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_web_members_udts",
+    "fs_path": "guild/web/members/udts",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_web",
+      "guild_web_members",
+      "guild_web_members_udts"
+    ],
+    "children": [
+      "guild/web/members/udts/instances",
+      "guild/web/members/udts/templates"
+    ],
+    "siblings": [
+      "guild/web/members/alex-bunardzic",
+      "guild/web/members/jona-heidsick",
+      "guild/web/members/kelly-hohman",
+      "guild/web/members/laurie-scheepers",
+      "guild/web/members/matt-burch",
+      "guild/web/members/nicolas-rosado",
+      "guild/web/members/originals",
+      "guild/web/members/thomas-frumkin",
+      "guild/web/members/tsvetan"
+    ],
+    "descendants": 2,
+    "file_count": 1,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

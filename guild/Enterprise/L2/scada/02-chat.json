@@ -1,0 +1,48 @@
+{
+  "§": 2,
+  "🏗️": "💬",
+  "name": "Chat",
+  "module": ["L2/scada/gateway/scripts/config.js", "L2/scada/gateway/scripts/p2p.js", "L2/scada/gateway/scripts/peers.js", "L2/scada/gateway/scripts/chat.js"],
+
+  "⚙️": {
+    "trackers":  "a[s4]",
+    "ice":       "o",
+    "nOffers":   10,
+    "reannounce":"30s"
+  },
+
+  "📡": {
+    "ws":    "🔌?",
+    "idx":   "i",
+    "state": "e[🟢|trying|🔴]"
+  },
+
+  "m👥": "peerId → 🏗️👥{ id:s20 name:s emoji:s dcs:Set<🔌> }",
+  "m🔌": "offerId → RTCPeerConnection",
+
+  "📦🏠": {
+    "name":      "s",
+    "hash":      "s40",
+    "joinedAt":  "ms",
+    "peerCount": "i"
+  },
+
+  "🏗️": {
+    "📨": { "t": "\"msg\"", "id": "s20", "txt": "s", "ts": "ms" },
+    "👋": { "t": "\"hi\"",  "id": "s20", "nm":  "s", "em": "s" }
+  },
+
+  "→": [
+    { "name": "join",     "in": "room:s",  "flow": "📡.connect → announce → await👥" },
+    { "name": "announce", "in": "∅",       "flow": "mkOffers(n) → 📡.send" },
+    { "name": "onOffer",  "in": "msg:o",   "flow": "pc.answer → wire(🔌)" },
+    { "name": "onAnswer", "in": "msg:o",   "flow": "pc.setRemote" },
+    { "name": "wire",     "in": "🔌,id",   "flow": "🔌.on{open,close,msg} → m👥.update" },
+    { "name": "bcast",    "in": "msg:o",   "flow": "∀🔌.send(JSON)" },
+    { "name": "send",     "in": "txt:s",   "flow": "bcast(📨) ⊕ addMsg(self)" }
+  ],
+
+  "↑🖥️": ["room.*", "tracker.*", "peers.*", "chat.*", "signal.*"],
+
+  "和": true
+}

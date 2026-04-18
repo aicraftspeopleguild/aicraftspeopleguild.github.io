@@ -1,0 +1,45 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L2/hmi",
+    "label": "hmi",
+    "parent": "guild/Enterprise/L2",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L2_hmi",
+    "fs_path": "guild/Enterprise/L2/hmi",
+    "depth": 4,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L2",
+      "guild_Enterprise_L2_hmi"
+    ],
+    "children": [
+      "guild/Enterprise/L2/hmi/chat",
+      "guild/Enterprise/L2/hmi/templates"
+    ],
+    "siblings": [
+      "guild/Enterprise/L2/logs",
+      "guild/Enterprise/L2/scada",
+      "guild/Enterprise/L2/state"
+    ],
+    "descendants": 8,
+    "file_count": 7,
+    "subdir_count": 2,
+    "kinds": {
+      "db": 2,
+      "html": 1,
+      "py": 1,
+      "md": 1,
+      "json": 2
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

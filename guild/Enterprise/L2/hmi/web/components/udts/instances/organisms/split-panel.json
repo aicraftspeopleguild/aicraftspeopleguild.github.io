@@ -1,0 +1,30 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "SplitPanel",
+    "tag": "div",
+    "cssClass": "split-panel",
+    "description": "Two-column layout with named left/right slots. Column ratio is configurable via the node's style binding: { '--split-ratio': '1fr 2fr' }. Collapses to a single column below the breakpoint.",
+    "slots": ["left", "right"],
+    "props": {
+      "gap": {
+        "type": "String",
+        "required": false,
+        "default": "1.5rem",
+        "description": "CSS gap between columns"
+      },
+      "align": {
+        "type": "String",
+        "required": false,
+        "default": "stretch",
+        "description": "align-items value: stretch | start | center | end"
+      }
+    },
+    "template": "<div class=\"split-left\">{{ slot:left }}</div><div class=\"split-right\">{{ slot:right }}</div>"
+  },
+  "tags": {
+    "id": "split-panel",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/organisms/split-panel.json",
+    "schema_version": "1.0.0"
+  }
+}

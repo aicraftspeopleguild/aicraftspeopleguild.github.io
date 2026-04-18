@@ -1,0 +1,27 @@
+{
+  "§": "4.2.1",
+  "🏗️": "🧠",
+  "name": "engine",
+  "module": "L4/sandbox/web-llm/modules/engine.js",
+
+  "📦": { "webllm":"module?", "engine":"MLCEngine?", "modelId":"s?" },
+
+  "→": [
+    { "name": "checkGPU",   "out": "{ok:b,vendor?:s,architecture?:s,reason?:s}", "flow": "navigator.gpu.requestAdapter ⊕ MODEL.write(gpu)" },
+    { "name": "loadModel",  "in": "id:s, onProgress?",                           "flow": "import(@mlc-ai/web-llm) ⊕ CreateMLCEngine ⊕ MODEL.write(current,🏗️Model) ⊕ ENGINE.write(ready,true)" },
+    { "name": "streamChat", "in": "messages:a, opts:{max_tokens?,temperature?}", "out": "AsyncGenerator<s>", "flow": "engine.chat.completions.create(stream:true) ⊕ ENGINE.write(generating,streamedTokens,lastLatencyMs)" },
+    { "name": "isReady",    "out": "b" },
+    { "name": "getEngine",  "out": "MLCEngine?" },
+    { "name": "getModelId", "out": "s?" }
+  ],
+
+  "↑🖥️(via 🛰️)": [
+    "sandbox.web-llm.model.current",
+    "sandbox.web-llm.model.gpu",
+    "sandbox.web-llm.engine.ready",
+    "sandbox.web-llm.engine.generating",
+    "sandbox.web-llm.engine.streamedTokens",
+    "sandbox.web-llm.engine.lastLatencyMs"
+  ],
+  "和": true
+}

@@ -1,0 +1,11 @@
+{"$schema":"gitplc/udt/v1","name":"CM_AnalogIn","base":"CM_Base","version":"1.0.0","fields":[
+{"name":"input","type":"INT","dir":"in"},
+{"name":"raw","type":"INT"},{"name":"value","type":"REAL"},
+{"name":"scale.raw_lo","type":"INT"},{"name":"scale.raw_hi","type":"INT"},
+{"name":"scale.eng_lo","type":"REAL"},{"name":"scale.eng_hi","type":"REAL"},
+{"name":"scale.clamp","type":"BOOL"},
+{"name":"filter.enable","type":"BOOL"},{"name":"filter.factor","type":"REAL"},
+{"name":"alarms.hihi","type":"Alarm_SP"},{"name":"alarms.hi","type":"Alarm_SP"},
+{"name":"alarms.lo","type":"Alarm_SP"},{"name":"alarms.lolo","type":"Alarm_SP"},
+{"name":"alarms.roc","type":"Alarm_SP"}
+],"meta":{"desc":"Scaled AI with alarm SPs"}}

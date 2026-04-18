@@ -1,0 +1,29 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "FaultTimeline",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-fault-timeline.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/fault-timeline.svg",
+    "sources": [
+      "state.db.faults"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "PulseDot",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1040,
+      "h": "dynamic"
+    },
+    "description": "Fault timeline \u00b7 every active + cleared fault in state.db as a horizontal bar."
+  },
+  "tags": {
+    "id": "fault-timeline",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/fault-timeline.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/fault-timeline.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"Step","layer":9,"version":"1.0.0","fields":[
+{"n":"job_id","t":"DINT"},
+{"n":"number","t":"DINT","desc":"Order within the job, 1-based"},
+{"n":"name","t":"STRING"},
+{"n":"uses","t":"STRING","nullable":true,"desc":"actions/checkout@v4 etc."},
+{"n":"run","t":"STRING","nullable":true,"desc":"Inline shell body"},
+{"n":"conclusion","t":"STRING","nullable":true},
+{"n":"duration_s","t":"REAL","nullable":true}
+],"meta":{"desc":"A single step in a Job — either `uses:` an action or `run:` a shell command."}}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 32" width="200" height="32" role="img" aria-label="{{LABEL}} level {{LEVEL_TEXT}}">
+  <!-- TOKENS: D1_FILL D2_FILL D3_FILL D4_FILL D5_FILL  LABEL  LEVEL_TEXT -->
+  <!-- generator: for level N, set D1..DN = "#3fb950", D(N+1)..D5 = "#21262d" -->
+  <!-- example level 3/5: D1_FILL="#3fb950" D2_FILL="#3fb950" D3_FILL="#3fb950" D4_FILL="#21262d" D5_FILL="#21262d" -->
+  <defs><style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style></defs>
+  <rect width="200" height="32" rx="4" fill="#0d1117"/>
+  <circle cx="14" cy="16" r="5" fill="{{D1_FILL}}"/>
+  <circle cx="30" cy="16" r="5" fill="{{D2_FILL}}"/>
+  <circle cx="46" cy="16" r="5" fill="{{D3_FILL}}"/>
+  <circle cx="62" cy="16" r="5" fill="{{D4_FILL}}"/>
+  <circle cx="78" cy="16" r="5" fill="{{D5_FILL}}"/>
+  <text x="94"  y="21" class="t" font-size="11" fill="#8b949e">{{LABEL}}</text>
+  <text x="188" y="21" class="t" font-size="11" fill="#e6edf3" text-anchor="end">{{LEVEL_TEXT}}</text>
+</svg>

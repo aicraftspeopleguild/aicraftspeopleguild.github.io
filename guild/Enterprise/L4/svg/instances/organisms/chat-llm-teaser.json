@@ -1,0 +1,29 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "ChatLlmTeaser",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-chat-llm-teaser.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/chat-llm-teaser.svg",
+    "sources": [
+      "WebLLM sandbox"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "Chip",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1040,
+      "h": 260
+    },
+    "description": "Headline teaser card for /guild/Enterprise/L4/sandbox/web-llm/. WebLLM runs a quantized Phi-3 / Llama-3.2 via WebGPU entirely in-browser."
+  },
+  "tags": {
+    "id": "chat-llm-teaser",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/chat-llm-teaser.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/chat-llm-teaser.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

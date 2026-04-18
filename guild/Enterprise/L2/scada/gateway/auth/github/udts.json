@@ -1,0 +1,31 @@
+{
+  "§":    "A.G.UDT",
+  "🏗️":   "🐙",
+  "name": "auth.github · UDTs",
+  "owner":"auth/github/provider.py",
+
+  "types": {
+    "GithubProfile": {
+      "fields": {
+        "provider":  "\"github\"",
+        "id":        "s",
+        "login":     "s",
+        "name":      "s?",
+        "avatar_url":"s",
+        "html_url":  "s?",
+        "bio":       "s?"
+      },
+      "desc": "Response shape from GET https://api.github.com/user"
+    },
+    "DeviceCode": {
+      "fields": {
+        "device_code":      "s",
+        "user_code":        "s",
+        "verification_uri": "s",
+        "expires_in":       "i",
+        "interval":         "i"
+      },
+      "desc": "POST /login/device/code response (via configured CORS proxy)."
+    }
+  }
+}

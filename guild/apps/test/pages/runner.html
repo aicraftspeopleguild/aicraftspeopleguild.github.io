@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Test Runner · ACG-TEST</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="module" src="../assets/udt-elements.js"></script>
+  <script type="module" src="../assets/test-runner.js"></script>
+</head>
+<body data-page="runner">
+  <header class="site">
+    <a class="brand" href="../index.html">ACG-TEST</a>
+    <nav class="site-nav">
+      <a href="./standard.html">Standard</a>
+      <a href="./types.html">Types</a>
+      <a href="./example.html">Example</a>
+      <a href="./runner.html" aria-current="page">Runner</a>
+      <a href="./terminal.html">Terminal</a>
+      <a href="../white-papers.html">Papers</a>
+    </nav>
+  </header>
+
+  <main class="prose">
+    <h1>Test Runner</h1>
+    <p class="lede">
+      Live in-browser runner. Loads every <code>.test.yml</code>, fetches the
+      target page, and verifies each expectation against the live DOM. Every
+      step of the build process has a verdict here.
+    </p>
+
+    <section>
+      <h2>Process steps</h2>
+      <p>
+        Tests before code, per the standard's design rules. These phases are
+        driven by the same test artifacts shown below.
+      </p>
+      <ol id="process-steps" class="process" aria-live="polite">
+        <li data-step="scaffold">scaffold blank test file&nbsp;&mdash; <span class="r">pending</span></li>
+        <li data-step="fail">watch test fail&nbsp;&mdash; <span class="r">pending</span></li>
+        <li data-step="write">write the page / workflow&nbsp;&mdash; <span class="r">pending</span></li>
+        <li data-step="pass">watch test pass&nbsp;&mdash; <span class="r">pending</span></li>
+        <li data-step="commit">commit the test + code&nbsp;&mdash; <span class="r">pending</span></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Tests in this repo</h2>
+      <div id="test-list" aria-live="polite">Discovering tests&hellip;</div>
+    </section>
+
+    <section>
+      <h2>Summary</h2>
+      <div id="site-summary" class="summary" data-scope="all">Loading&hellip;</div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <p>ACG-TEST v1.0 · Konomi Standard · AI Craftspeople Guild</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "§": "A.UDT",
+  "🏗️": "🔑",
+  "name": "auth · UDTs",
+  "owner": "auth/provider.py",
+
+  "types": {
+    "Profile": {
+      "fields": {
+        "provider": "e[discord|github]",
+        "id":       "s",
+        "username": "s",
+        "avatar":   "s"
+      },
+      "desc": "Signed-in user identity as exposed by the OAuth provider."
+    }
+  }
+}

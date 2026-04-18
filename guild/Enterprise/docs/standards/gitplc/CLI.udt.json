@@ -1,0 +1,13 @@
+{"$schema":"konomi/udt/v1","name":"CLI","std":"GitPLC","version":"1.0.0",
+"commands":{
+"init":"gitplc init --vendor ab",
+"import":"gitplc import <file> --vendor <v>",
+"export":"gitplc export --vendor <v> --output <dir>",
+"convert":"gitplc convert <file> --to <vendor>",
+"validate":"gitplc validate --isa-88 --isa-18.2",
+"diff":"gitplc diff HEAD~1 HEAD --udt <name>",
+"merge":"gitplc merge <branch> --resolve=theirs",
+"sim":"gitplc sim <unit>.udt.json",
+"sync":"gitplc sync --target <ip> --vendor <v> --mode upload|download",
+"docs":"gitplc docs --format html --output docs/"
+},"meta":{"desc":"GitPLC CLI surface"}}

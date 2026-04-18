@@ -1,0 +1,16 @@
+{"$schema":"konomi/udt/v1","name":"PullRequest","layer":9,"version":"1.0.0","fields":[
+{"n":"number","t":"DINT"},
+{"n":"title","t":"STRING"},
+{"n":"author","t":"STRING"},
+{"n":"state","t":"ENUM","values":["open","closed","merged","draft"]},
+{"n":"base","t":"STRING","desc":"Base branch (usually main)"},
+{"n":"head","t":"STRING","desc":"Source branch"},
+{"n":"created_at","t":"Timestamp"},
+{"n":"merged_at","t":"Timestamp","nullable":true},
+{"n":"closed_at","t":"Timestamp","nullable":true},
+{"n":"mergeable","t":"BOOL","nullable":true},
+{"n":"reviewers","t":"STRING[]","nullable":true},
+{"n":"labels","t":"STRING[]","nullable":true},
+{"n":"commits","t":"STRING[]","desc":"SHAs included in PR"},
+{"n":"files_changed","t":"DINT","nullable":true}
+],"meta":{"desc":"A GitHub pull request against the repo."}}

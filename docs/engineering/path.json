@@ -1,0 +1,42 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "docs/engineering",
+    "label": "engineering",
+    "parent": "docs",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "docs_engineering",
+    "fs_path": "docs/engineering",
+    "depth": 2,
+    "breadcrumb": [
+      "root",
+      "docs",
+      "docs_engineering"
+    ],
+    "children": [
+      "docs/engineering/architecture",
+      "docs/engineering/component-catalog",
+      "docs/engineering/standards",
+      "docs/engineering/tech-spec",
+      "docs/engineering/urs"
+    ],
+    "siblings": [
+      "docs/api",
+      "docs/templates"
+    ],
+    "descendants": 7,
+    "file_count": 3,
+    "subdir_count": 5,
+    "kinds": {
+      "db": 2,
+      "md": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

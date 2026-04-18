@@ -1,0 +1,34 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "AI Harness: Constraint-Driven Software Development for the Age of AI Agents",
+    "slug": "ai-harness-constraint-driven-software-development-for-the",
+    "kind": "white-paper",
+    "description": "A change architecture layer that constrains autonomous code evolution, prevents specification drift, and keeps AI agents operating inside approved architectural boundaries.",
+    "source_type": "WhitePaper",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents.json",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/ai-harness-constraint-driven-software-development-for-the.data.json"
+    },
+    "route": "/whitepapers/ai-harness-constraint-driven-software-development-for-the",
+    "section": "resources",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "status": "published",
+    "tags": [
+      "ai-harness",
+      "architecture",
+      "governance",
+      "constraint-driven-development"
+    ]
+  },
+  "tags": {
+    "id": "ai-harness-constraint-driven-software-development-for-the",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/ai-harness-constraint-driven-software-development-for-the/",
+    "view_id": "white-paper-app",
+    "ingested_at": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

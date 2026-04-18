@@ -1,0 +1,31 @@
+{
+  "udtType": "Component",
+  "parameters": {
+    "name": "StatusPill",
+    "tag": "span",
+    "cssClass": "status-pill",
+    "atomicLevel": "widget",
+    "description": "PackML / pipeline state indicator pill. The state value is appended as a CSS class (e.g. status-pill--RUNNING) for color coding via CSS custom properties.",
+    "propsToClass": ["state"],
+    "props": {
+      "state": {
+        "type": "String",
+        "required": true,
+        "description": "IDLE | STARTING | EXECUTE | RUNNING | HELD | HOLDING | UNHOLDING | SUSPENDING | UNSUSPENDING | STOPPING | STOPPED | ABORTING | ABORTED | COMPLETE | RESETTING"
+      },
+      "label": {
+        "type": "String",
+        "required": false,
+        "description": "Override display text; defaults to state value"
+      }
+    },
+    "slots": [],
+    "template": "<span class=\"status-pill-dot\"></span>{{ #label }}{{ label }}{{ /label }}{{ ^label }}{{ state }}{{ /label }}"
+  },
+  "tags": {
+    "id": "status-pill",
+    "file_path": "guild/Enterprise/L2/hmi/web/components/udts/instances/widgets/status-pill.json",
+    "embeddable_in": ["Organism", "Template", "Widget"],
+    "schema_version": "1.0.0"
+  }
+}

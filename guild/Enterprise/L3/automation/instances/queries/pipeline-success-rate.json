@@ -1,0 +1,13 @@
+{
+  "udtType": "Query",
+  "parameters": {
+    "id":          "pipelines:success-rate",
+    "name":        "Pipeline success rate (lifetime)",
+    "description": "Ratio of successful pipeline_runs to total, expressed as a percentage. 0-100 integer.",
+    "db":          "state",
+    "sql":         "SELECT CASE WHEN COUNT(*)=0 THEN 100 ELSE CAST(100.0 * SUM(ok) / COUNT(*) AS INTEGER) END FROM pipeline_runs",
+    "output_tag":  "state.pipelines.success_rate_pct",
+    "enabled":     true
+  },
+  "tags": { "id": "query-pipeline-success-rate", "schema_version": "1.0.0" }
+}

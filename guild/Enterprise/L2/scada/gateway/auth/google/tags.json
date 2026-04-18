@@ -1,0 +1,18 @@
+{
+  "§":          "A.Go.TAGS",
+  "🏗️":         "🔎",
+  "name":       "auth.google · tag catalog",
+  "owner":      "auth/google/provider.py",
+  "namespaces": ["auth.google"],
+  "flow":       "OIDC implicit — response_type=id_token — pure browser, no proxy.  Not wired in /js/auth.js yet (stub).",
+  "status":     "scaffold",
+
+  "tags": [
+    { "path": "auth.google.clientId",        "type": "String",             "desc": "OAuth client id (configured in OAUTH.GOOGLE — TODO)" },
+    { "path": "auth.google.profile",         "type": "UDT:GoogleProfile",  "desc": "decoded id_token claims" },
+    { "path": "auth.google.signedIn",        "type": "Boolean" },
+    { "path": "auth.google.signedInAt",      "type": "DateTime" },
+    { "path": "auth.google.tokenExpiresAt",  "type": "DateTime",           "desc": "exp claim from id_token" },
+    { "path": "auth.google.lastError",       "type": "String" }
+  ]
+}

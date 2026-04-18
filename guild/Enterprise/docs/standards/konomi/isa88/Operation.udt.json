@@ -1,0 +1,5 @@
+{"$schema":"konomi/udt/v1","name":"Operation","std":"ISA-88","layer":3,"version":"1.0.0","fields":[
+{"n":"id","t":"STRING"},
+{"n":"phases","t":"Phase","array":true},
+{"n":"ordering","t":"ENUM","values":["Sequential","Parallel"]}
+],"meta":{"desc":"Ordered group of phases"}}

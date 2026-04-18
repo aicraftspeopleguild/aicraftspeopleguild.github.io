@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"AlarmMetrics","std":"ISA-18.2","layer":5,"version":"1.0.0",
+"metrics":{
+"AlarmRate":"alarms/operator/hour",
+"FloodRate":">10 alarms in 10 min",
+"StaleAlarms":"active > 24hr",
+"ChatteringAlarms":"> 3 transitions/min",
+"BadActors":"top 10 most frequent",
+"PercentByPriority":{"P1":"<5%","P2":"<15%","P3":"<25%","P4":"<55%"}
+},"meta":{"desc":"ISA-18.2 alarm performance KPIs"}}

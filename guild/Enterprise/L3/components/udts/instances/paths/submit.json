@@ -1,0 +1,27 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/submit",
+    "label": "Submit an Article",
+    "page": "guild/Enterprise/L1/forms/submit/index.html",
+    "section": "meta",
+    "parent": "home",
+    "order": 90,
+    "dynamic": false,
+    "params": [],
+    "methods": ["GET", "POST"],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "submit",
+    "full_url": "https://aicraftspeopleguild.github.io/guild/Enterprise/L1/forms/submit/",
+    "children": [],
+    "breadcrumb": ["home", "submit"],
+    "depth": 1,
+    "view_id": "",
+    "last_verified": "2026-04-18T00:00:00Z",
+    "schema_version": "1.0.0"
+  }
+}

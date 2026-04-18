@@ -1,0 +1,3 @@
+{"$schema":"konomi/udt/v1","name":"S88_RecipeLevel","std":"ISA-88","layer":3,"version":"1.0.0",
+"hierarchy":["GeneralRecipe","SiteRecipe","MasterRecipe","ControlRecipe"],
+"meta":{"desc":"S88 recipe abstraction levels"}}

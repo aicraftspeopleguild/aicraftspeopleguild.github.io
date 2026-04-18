@@ -1,0 +1,17 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "query:list",
+    "name": "List stored queries",
+    "description": "Enumerate all queries stored in tag.db.queries.",
+    "category": "query",
+    "entry": "guild/Enterprise/L2/lib/query_runner.py:list_queries",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"queries","type":"JSON"}],
+    "adapters": ["CliAdapter","McpAdapter","LoggerWrapper"],
+    "tags": ["query","list","read-only"],
+    "mcp": {"mcp_name":"query_list","input_schema":{"type":"object","properties":{}}}
+  },
+  "tags": { "id": "query-list", "schema_version": "1.0.0" }
+}

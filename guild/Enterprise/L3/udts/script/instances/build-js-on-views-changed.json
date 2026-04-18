@@ -1,0 +1,27 @@
+{
+  "udtType": "StateMachineScript",
+  "instance": "build-js-on-views-changed",
+  "parameters": {
+    "id": "build-js:on-views-changed",
+    "enabled": true,
+    "script_file": "guild/Enterprise/L3/scripts/build.js",
+    "schemaVersion": "1.0.0",
+    "kind": "on_transition",
+    "listens_tag": "views.source.changed",
+    "listens_from": "*",
+    "listens_to": "CHANGED",
+    "interval_s": null,
+    "condition": null,
+    "action_tool_id": null,
+    "reads": [],
+    "writes": [
+      "dist.rendered_at",
+      "dist.page_count"
+    ],
+    "fires": [],
+    "lastFiredAt": null,
+    "fireCount": 0,
+    "lastError": null,
+    "parsed_at": "2026-04-18T10:16:09Z"
+  }
+}

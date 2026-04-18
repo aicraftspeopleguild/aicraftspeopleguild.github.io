@@ -1,0 +1,52 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "state:tick",
+    "name": "State machine tick",
+    "description": "Poll git:state, detect transitions since the last tick, and fire every Script UDT whose on_transition trigger matches. Persists last-seen state in guild/Enterprise/L2/state/sm-last.json.",
+    "category": "automation",
+    "entry": "guild/Enterprise/L2/lib/state_machine.py:tick",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "report",
+        "type": "TickReport",
+        "description": "current_state, prev_state, transitions, fired"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "McpAdapter",
+      "LoggerWrapper",
+      "TestWrapper"
+    ],
+    "tags": [
+      "automation",
+      "state-machine",
+      "scheduler"
+    ],
+    "mcp": {
+      "mcp_name": "state_tick",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    "test_cases": [
+      {
+        "name": "tick completes",
+        "inputs": {},
+        "expect": {
+          "field": "ok",
+          "op": "eq",
+          "value": true
+        }
+      }
+    ]
+  },
+  "tags": {
+    "id": "state-tick",
+    "schema_version": "1.0.0"
+  }
+}

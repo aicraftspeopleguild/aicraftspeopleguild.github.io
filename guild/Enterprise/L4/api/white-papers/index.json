@@ -1,0 +1,358 @@
+{
+  "generated_at": "2026-04-18T05:35:42Z",
+  "schema_version": "1.0.0",
+  "counts": {
+    "sources": 25,
+    "instances": 24,
+    "tags": 4
+  },
+  "files": {
+    "originals/ai-harness.md": {
+      "sha256": "a0f8d3c3b88c4b0ff409268a8e020ff20b085ae8511a51d81ef448674d144683",
+      "produced": [
+        "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/seed-batch.csv": {
+      "sha256": "86dff7466c00d00455dc8ef430fe631f363612a328c4a7207b5eed820f03c858",
+      "produced": [
+        "the-prediction-trap",
+        "the-harm-equation",
+        "you-re-absolutely-wrong"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/acg-peer-reviews.md": {
+      "sha256": "096d1c710e9ed5c30dd0ffd69ba16d9079a039af4dfdad77dee21f735a2211a8",
+      "produced": [
+        "acg-review-forge"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/burnt-toast-scraping-analysis.md": {
+      "sha256": "f245f8bd673449755ea0b097f863e8379550f292c6dd37a5f643cbfcf910d2a7",
+      "produced": [
+        "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate-analysis-of-software-development-s-favorite-messy-divorce"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/burnt-toast-second-look.md": {
+      "sha256": "27af6ecb2a887b9c37b9df5a88fbf42ecc7a4addcc7a5635f462e64ab3988eaa",
+      "produced": [
+        "structural-toast-carbonization-a-failure-mode-distinct-from-voluntary-technical-debt-acquisition"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/decentralized-guild-web.md": {
+      "sha256": "c82f934988c1e6265d4923c2ba2e47b168d23350c709c018312547ece75775ef",
+      "produced": [
+        "acg-net-decentralized-guild-web"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/florence-governance-paper.md": {
+      "sha256": "e12262a3a487af3119a8fa96670779375bf94b540dd8e83d6d5b80a30954f04f",
+      "produced": [
+        "convergent-governance-topologies-in-specialist-networks-a-comparative-analysis-of-medieval-florentine-guild-structure-and-modern-distributed-organizations"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/fractally-wrong.md": {
+      "sha256": "326c16d305deafa76a1b4133ce8a3d3926a362c6f552eb01337f58732697d6ae",
+      "produced": [
+        "avoid-being-fractally-wrong"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/from-correctness-to-integrity.md": {
+      "sha256": "dcc3a8f5ed39d73ab41e2acae1602bab7f39bd6adf1a4044ad578844152decde",
+      "produced": [
+        "from-correctness-to-integrity-measuring-ai-generated-code-through-constraint-satisfaction-mutation-robustness-and-self-articulated-limitations"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/grid-brain.md": {
+      "sha256": "5c7fb1fb8bbadbe580511e8e43f865cb17dff65d91fafcc2ae9cbb67d65b0aac",
+      "produced": [
+        "grid-brain"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/guild-chain.md": {
+      "sha256": "d6fe8edbe7cdcc02f7e344bb69b5f093a99e7aab3314796ba3d7755ad0668274",
+      "produced": [
+        "acg-kcc-guild-chain"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/irrational-universe.md": {
+      "sha256": "3e2f6ea0816a2bdd950ab36eb38863089a150243f0e26354c8fc108504ae1c22",
+      "produced": [
+        "ass-os-bloom-prompt-the-irrational-universe"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/konomi-standard.md": {
+      "sha256": "2a3af71bf4d79f4b275637243379609b231c203ef827592b7eba0e41349f47ea",
+      "produced": [
+        "the-konomi-standard"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/lightning-factory.md": {
+      "sha256": "009213f0a58fb0d4076942fac5a5bada1c4847c65f3d6c568b3b110710f85706",
+      "produced": [
+        "lightning-factory"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/occams-razor.md": {
+      "sha256": "daf7f9e80f0432a320c284af428fd5e8abbe724a3b97fece31346edb00c4cde8",
+      "produced": [
+        "ass-os-bloom-prompt-occam"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/question-reflection-action.md": {
+      "sha256": "df1133307d369edb5c10b31a972c80be045704c53a378a968dcd058d70a60655",
+      "produced": [
+        "ai-that-pisses-you-off-the-surprisingly-effective-path-to-deeper-thinking"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/sad.md": {
+      "sha256": "2810c449fb48dfde0da5d7c8c71639be4a842ef0865bd7f3a573f146ec49f911",
+      "produced": [
+        "s-a-d"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/shield-of-all-knights.md": {
+      "sha256": "dc263712a0150c93f63861d7a0269f6643b62563ae8f9b4d1ac99ee506eccf05",
+      "produced": [
+        "the-shield-of-all-knights-against-bounded-rationality"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md": {
+      "sha256": "31e3da1cdfed4b2d2e00be2b30920d99e42afd3a3c970a107f04ed85776daa4f",
+      "produced": [
+        "the-dog-the-data-scientist-and-the-mrna-vaccine"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/the-harm-equation.md": {
+      "sha256": "f25cb4618f3be1d8318bc94c570692029ba46c066ebcf607054f4695bb4d9231",
+      "produced": [
+        "the-harm-equation"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/the-pattern-that-wasnt-there.md": {
+      "sha256": "112208b63f0ceb1d95ee70b29f8c74a281d20cd7ac31d64c8fe096af4e758cf5",
+      "produced": [
+        "the-pattern-that-wasn-t-there"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/the-prediction-trap.md": {
+      "sha256": "006dc37c248ee62674f7cb165f9a7db9fea4732a02ba71bae8d7bfbe84261962",
+      "produced": [
+        "the-prediction-trap"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/the-rational-empire.md": {
+      "sha256": "8356e4baea3f9f7c8739d2e184356998cb63554e7cbbfed6b0368f21f33bdc51",
+      "produced": [
+        "ass-os-bloom-prompt-the-rational-empire"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/toastmasters-scrapers-guild.md": {
+      "sha256": "ed76dad70dbaf0c261399e6baf851dbb9316cbaa0dcf9dc76d11ed30e8ffa67b",
+      "produced": [
+        "toastmasters-scrapers-guild"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    },
+    "originals/youre-absolutely-wrong.md": {
+      "sha256": "3cacf7416f35bdffc863a4f9b4df9a4892126ad1f0575966ce5c7c3b7ccf9f21",
+      "produced": [
+        "you-re-absolutely-wrong"
+      ],
+      "last_seen": "2026-04-17T20:06:20Z"
+    }
+  },
+  "instances": {
+    "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents": {
+      "path": "udts/instances/ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents.json",
+      "source": "originals/ai-harness.md",
+      "sha256": "a0f8d3c3b88c4b0ff409268a8e020ff20b085ae8511a51d81ef448674d144683",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "AI Harness: Constraint-Driven Software Development for the Age of AI Agents"
+    },
+    "the-prediction-trap": {
+      "path": "udts/instances/the-prediction-trap.json",
+      "source": "originals/the-prediction-trap.md",
+      "sha256": "006dc37c248ee62674f7cb165f9a7db9fea4732a02ba71bae8d7bfbe84261962",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "The Prediction Trap"
+    },
+    "the-harm-equation": {
+      "path": "udts/instances/the-harm-equation.json",
+      "source": "originals/the-harm-equation.md",
+      "sha256": "f25cb4618f3be1d8318bc94c570692029ba46c066ebcf607054f4695bb4d9231",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "The Harm Equation"
+    },
+    "you-re-absolutely-wrong": {
+      "path": "udts/instances/you-re-absolutely-wrong.json",
+      "source": "originals/youre-absolutely-wrong.md",
+      "sha256": "3cacf7416f35bdffc863a4f9b4df9a4892126ad1f0575966ce5c7c3b7ccf9f21",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "\\\"You're Absolutely Wrong!\\"
+    },
+    "acg-review-forge": {
+      "path": "udts/instances/acg-review-forge.json",
+      "source": "originals/acg-peer-reviews.md",
+      "sha256": "096d1c710e9ed5c30dd0ffd69ba16d9079a039af4dfdad77dee21f735a2211a8",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "ACG Review Forge"
+    },
+    "i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate-analysis-of-software-development-s-favorite-messy-divorce": {
+      "path": "udts/instances/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate-analysis-of-software-development-s-favorite-messy-divorce.json",
+      "source": "originals/burnt-toast-scraping-analysis.md",
+      "sha256": "f245f8bd673449755ea0b097f863e8379550f292c6dd37a5f643cbfcf910d2a7",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "\\\"I'll Burn Toast and You Scrape It\\\": A Hilariously Accurate Analysis of Software Development's Favorite Messy Divorce"
+    },
+    "structural-toast-carbonization-a-failure-mode-distinct-from-voluntary-technical-debt-acquisition": {
+      "path": "udts/instances/structural-toast-carbonization-a-failure-mode-distinct-from-voluntary-technical-debt-acquisition.json",
+      "source": "originals/burnt-toast-second-look.md",
+      "sha256": "27af6ecb2a887b9c37b9df5a88fbf42ecc7a4addcc7a5635f462e64ab3988eaa",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "Structural Toast Carbonization: A Failure Mode Distinct from Voluntary Technical Debt Acquisition"
+    },
+    "acg-net-decentralized-guild-web": {
+      "path": "udts/instances/acg-net-decentralized-guild-web.json",
+      "source": "originals/decentralized-guild-web.md",
+      "sha256": "c82f934988c1e6265d4923c2ba2e47b168d23350c709c018312547ece75775ef",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "ACG-NET: Decentralized Guild Web"
+    },
+    "convergent-governance-topologies-in-specialist-networks-a-comparative-analysis-of-medieval-florentine-guild-structure-and-modern-distributed-organizations": {
+      "path": "udts/instances/convergent-governance-topologies-in-specialist-networks-a-comparative-analysis-of-medieval-florentine-guild-structure-and-modern-distributed-organizations.json",
+      "source": "originals/florence-governance-paper.md",
+      "sha256": "e12262a3a487af3119a8fa96670779375bf94b540dd8e83d6d5b80a30954f04f",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "Convergent Governance Topologies in Specialist Networks: A Comparative Analysis of Medieval Florentine Guild Structure and Modern Distributed Organizations"
+    },
+    "avoid-being-fractally-wrong": {
+      "path": "udts/instances/avoid-being-fractally-wrong.json",
+      "source": "originals/fractally-wrong.md",
+      "sha256": "326c16d305deafa76a1b4133ce8a3d3926a362c6f552eb01337f58732697d6ae",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "Avoid Being Fractally Wrong"
+    },
+    "from-correctness-to-integrity-measuring-ai-generated-code-through-constraint-satisfaction-mutation-robustness-and-self-articulated-limitations": {
+      "path": "udts/instances/from-correctness-to-integrity-measuring-ai-generated-code-through-constraint-satisfaction-mutation-robustness-and-self-articulated-limitations.json",
+      "source": "originals/from-correctness-to-integrity.md",
+      "sha256": "dcc3a8f5ed39d73ab41e2acae1602bab7f39bd6adf1a4044ad578844152decde",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "From Correctness to Integrity: Measuring AI-Generated Code Through Constraint Satisfaction, Mutation Robustness, and Self-Articulated Limitations"
+    },
+    "grid-brain": {
+      "path": "udts/instances/grid-brain.json",
+      "source": "originals/grid-brain.md",
+      "sha256": "5c7fb1fb8bbadbe580511e8e43f865cb17dff65d91fafcc2ae9cbb67d65b0aac",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "Grid Brain"
+    },
+    "acg-kcc-guild-chain": {
+      "path": "udts/instances/acg-kcc-guild-chain.json",
+      "source": "originals/guild-chain.md",
+      "sha256": "d6fe8edbe7cdcc02f7e344bb69b5f093a99e7aab3314796ba3d7755ad0668274",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "ACG-KCC: Guild Chain"
+    },
+    "ass-os-bloom-prompt-the-irrational-universe": {
+      "path": "udts/instances/ass-os-bloom-prompt-the-irrational-universe.json",
+      "source": "originals/irrational-universe.md",
+      "sha256": "3e2f6ea0816a2bdd950ab36eb38863089a150243f0e26354c8fc108504ae1c22",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "🌸 ASS-OS BLOOM PROMPT — THE IRRATIONAL UNIVERSE"
+    },
+    "the-konomi-standard": {
+      "path": "udts/instances/the-konomi-standard.json",
+      "source": "originals/konomi-standard.md",
+      "sha256": "2a3af71bf4d79f4b275637243379609b231c203ef827592b7eba0e41349f47ea",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "The Konomi Standard"
+    },
+    "lightning-factory": {
+      "path": "udts/instances/lightning-factory.json",
+      "source": "originals/lightning-factory.md",
+      "sha256": "009213f0a58fb0d4076942fac5a5bada1c4847c65f3d6c568b3b110710f85706",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "Lightning Factory"
+    },
+    "ass-os-bloom-prompt-occam": {
+      "path": "udts/instances/ass-os-bloom-prompt-occam.json",
+      "source": "originals/occams-razor.md",
+      "sha256": "daf7f9e80f0432a320c284af428fd5e8abbe724a3b97fece31346edb00c4cde8",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "🌸 ASS-OS BLOOM PROMPT — OCCAM"
+    },
+    "ai-that-pisses-you-off-the-surprisingly-effective-path-to-deeper-thinking": {
+      "path": "udts/instances/ai-that-pisses-you-off-the-surprisingly-effective-path-to-deeper-thinking.json",
+      "source": "originals/question-reflection-action.md",
+      "sha256": "df1133307d369edb5c10b31a972c80be045704c53a378a968dcd058d70a60655",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "AI That Pisses You Off: The Surprisingly Effective Path to Deeper Thinking"
+    },
+    "s-a-d": {
+      "path": "udts/instances/s-a-d.json",
+      "source": "originals/sad.md",
+      "sha256": "2810c449fb48dfde0da5d7c8c71639be4a842ef0865bd7f3a573f146ec49f911",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "S.A.D."
+    },
+    "the-shield-of-all-knights-against-bounded-rationality": {
+      "path": "udts/instances/the-shield-of-all-knights-against-bounded-rationality.json",
+      "source": "originals/shield-of-all-knights.md",
+      "sha256": "dc263712a0150c93f63861d7a0269f6643b62563ae8f9b4d1ac99ee506eccf05",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "The Shield of All Knights Against Bounded Rationality"
+    },
+    "the-dog-the-data-scientist-and-the-mrna-vaccine": {
+      "path": "udts/instances/the-dog-the-data-scientist-and-the-mrna-vaccine.json",
+      "source": "originals/the-dog-the-data-scientist-and-the-mrna-vaccine.md",
+      "sha256": "31e3da1cdfed4b2d2e00be2b30920d99e42afd3a3c970a107f04ed85776daa4f",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "The Dog, the Data Scientist, and the mRNA Vaccine"
+    },
+    "the-pattern-that-wasn-t-there": {
+      "path": "udts/instances/the-pattern-that-wasn-t-there.json",
+      "source": "originals/the-pattern-that-wasnt-there.md",
+      "sha256": "112208b63f0ceb1d95ee70b29f8c74a281d20cd7ac31d64c8fe096af4e758cf5",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "The Pattern That Wasn't There"
+    },
+    "ass-os-bloom-prompt-the-rational-empire": {
+      "path": "udts/instances/ass-os-bloom-prompt-the-rational-empire.json",
+      "source": "originals/the-rational-empire.md",
+      "sha256": "8356e4baea3f9f7c8739d2e184356998cb63554e7cbbfed6b0368f21f33bdc51",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "🌸 ASS-OS BLOOM PROMPT — THE RATIONAL EMPIRE"
+    },
+    "toastmasters-scrapers-guild": {
+      "path": "udts/instances/toastmasters-scrapers-guild.json",
+      "source": "originals/toastmasters-scrapers-guild.md",
+      "sha256": "ed76dad70dbaf0c261399e6baf851dbb9316cbaa0dcf9dc76d11ed30e8ffa67b",
+      "ingested_at": "2026-04-17T20:06:20Z",
+      "title": "Toastmasters Scrapers Guild"
+    }
+  }
+}

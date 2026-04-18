@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "SvgOrganism",
+  "extends": "Component",
+  "version": "1.0.0",
+  "description": "Full SVG card rendered by a build-*.py generator. Fetches data (gh_tag / /api/*.json / state.db) and composes atoms + molecules into a standalone <svg> file. Emitted on tag changes by the heartbeat workflow. Examples: heartbeat, status-dashboard, tag-grid, pipeline-pulse, readme-hero, readme-controls, readme-api.",
+  "parameters": {
+    "name":         { "dataType": "String",      "required": true },
+    "atomicLevel":  { "dataType": "String",      "required": true, "const": "organism" },
+    "entry":        { "dataType": "String",      "required": true, "description": "Generator script path" },
+    "output":       { "dataType": "String",      "required": true, "description": "SVG path under guild/Enterprise/L2/hmi/web/assets/svg/" },
+    "sources":      { "dataType": "StringArray", "required": false, "description": "Data sources consumed (tag ids, api URLs, db tables)" },
+    "trigger_tag":  { "dataType": "String",      "required": false, "default": "demo.heartbeat",
+                      "description": "Tag whose CHANGED transition regenerates this SVG" },
+    "composes":     { "dataType": "StringArray", "required": false, "description": "SvgAtom/SvgMolecule ids used" },
+    "size":         { "dataType": "JSON",        "required": false, "description": "{w,h} viewBox dimensions" },
+    "description":  { "dataType": "String",      "required": false }
+  },
+  "constraints": {
+    "may_compose": ["SvgAtom", "SvgMolecule", "SvgOrganism"],
+    "requires_generator": true
+  },
+  "tags": {
+    "id":             { "dataType": "String" },
+    "file_path":      { "dataType": "String" },
+    "output_path":    { "dataType": "String" },
+    "trigger":        { "dataType": "String" },
+    "schema_version": { "dataType": "String" }
+  }
+}

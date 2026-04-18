@@ -1,0 +1,14 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "IO_Map",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "plc_addr", "type": "STRING", "length": 20, "desc": "%I0.0,%IW10,..."},
+    {"name": "card", "type": "DINT"},
+    {"name": "channel", "type": "DINT"},
+    {"name": "tag", "type": "STRING", "length": 40},
+    {"name": "desc", "type": "STRING", "length": 80}
+  ],
+  "meta": {"desc": "PLC-address to tag-path mapping record"}
+}

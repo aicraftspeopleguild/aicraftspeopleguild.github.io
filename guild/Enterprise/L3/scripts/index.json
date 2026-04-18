@@ -1,0 +1,172 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-04-18T05:35:43Z",
+  "schema_version": "1.0.0",
+  "counts": {
+    "programs": 23,
+    "categories": 10
+  },
+  "programs": [
+    {
+      "id": "api--build-api_py",
+      "name": "Build Api",
+      "category": "misc",
+      "path": "guild/web/scripts/api/build-api.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "api--build-csv-catalog_py",
+      "name": "Build Csv Catalog",
+      "category": "misc",
+      "path": "guild/web/scripts/api/build-csv-catalog.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "api--build-runtime-tags_py",
+      "name": "Build Runtime Tags",
+      "category": "misc",
+      "path": "guild/web/scripts/api/build-runtime-tags.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "api--build-sitemap_py",
+      "name": "Build Sitemap",
+      "category": "misc",
+      "path": "guild/web/scripts/api/build-sitemap.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "apps--build-whitepaper-apps_py",
+      "name": "Build Whitepaper Apps",
+      "category": "apps-pipeline",
+      "path": "guild/web/scripts/apps/build-whitepaper-apps.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "build_js",
+      "name": "Build",
+      "category": "build-orchestrator",
+      "path": "guild/web/scripts/build.js",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "build_sh",
+      "name": "Build",
+      "category": "build-orchestrator",
+      "path": "guild/web/scripts/build.sh",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "components--build-catalog_py",
+      "name": "Build Catalog",
+      "category": "components-pipeline",
+      "path": "guild/web/scripts/components/build-catalog.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "components--extract_py",
+      "name": "Extract",
+      "category": "components-pipeline",
+      "path": "guild/web/scripts/components/extract.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "db--build-local-tagdbs_py",
+      "name": "Build Local Tagdbs",
+      "category": "misc",
+      "path": "guild/web/scripts/db/build-local-tagdbs.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "docs--split-catalog_py",
+      "name": "Split Catalog",
+      "category": "docs-pipeline",
+      "path": "guild/web/scripts/docs/split-catalog.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "docs--split-udt-spec_py",
+      "name": "Split Udt Spec",
+      "category": "docs-pipeline",
+      "path": "guild/web/scripts/docs/split-udt-spec.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "fix-data-links_py",
+      "name": "Fix Data Links",
+      "category": "fix-orchestrator",
+      "path": "guild/web/scripts/fix-data-links.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "members--extract_py",
+      "name": "Extract",
+      "category": "members-pipeline",
+      "path": "guild/web/scripts/members/extract.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "members--regen-index_py",
+      "name": "Regen Index",
+      "category": "members-pipeline",
+      "path": "guild/web/scripts/members/regen-index.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "pages--build-path-graph_py",
+      "name": "Build Path Graph",
+      "category": "pages-pipeline",
+      "path": "guild/web/scripts/pages/build-path-graph.py",
+      "last_state": "COMPLETE"
+    },
+    {
+      "id": "pages--decompose_py",
+      "name": "Decompose",
+      "category": "pages-pipeline",
+      "path": "guild/web/scripts/pages/decompose.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "perspective-build_js",
+      "name": "Perspective Build",
+      "category": "build-orchestrator",
+      "path": "guild/web/scripts/perspective-build.js",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "test-browser_js",
+      "name": "Test Browser",
+      "category": "test-orchestrator",
+      "path": "guild/web/scripts/test-browser.js",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "test-links_py",
+      "name": "Test Links",
+      "category": "test-orchestrator",
+      "path": "guild/web/scripts/test-links.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "test-nav_js",
+      "name": "Test Nav",
+      "category": "test-orchestrator",
+      "path": "guild/web/scripts/test-nav.js",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "white-papers--extract_py",
+      "name": "Extract",
+      "category": "white-papers-pipeline",
+      "path": "guild/web/scripts/white-papers/extract.py",
+      "last_state": "IDLE"
+    },
+    {
+      "id": "white-papers--regen-index_py",
+      "name": "Regen Index",
+      "category": "white-papers-pipeline",
+      "path": "guild/web/scripts/white-papers/regen-index.py",
+      "last_state": "IDLE"
+    }
+  ]
+}

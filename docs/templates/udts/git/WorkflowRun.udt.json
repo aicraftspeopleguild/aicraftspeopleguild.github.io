@@ -1,0 +1,14 @@
+{"$schema":"konomi/udt/v1","name":"WorkflowRun","layer":9,"version":"1.0.0","fields":[
+{"n":"id","t":"DINT","desc":"GitHub's numeric run id"},
+{"n":"workflow","t":"STRING","desc":"Workflow name"},
+{"n":"event","t":"STRING","desc":"pull_request, push, …"},
+{"n":"status","t":"ENUM","values":["queued","in_progress","completed"]},
+{"n":"conclusion","t":"ENUM","values":["success","failure","cancelled","skipped","timed_out","neutral"],"nullable":true},
+{"n":"branch","t":"STRING"},
+{"n":"head_sha","t":"STRING"},
+{"n":"actor","t":"STRING"},
+{"n":"started_at","t":"Timestamp"},
+{"n":"completed_at","t":"Timestamp","nullable":true},
+{"n":"duration_s","t":"REAL","nullable":true},
+{"n":"jobs","t":"STRING[]","desc":"Job IDs"}
+],"meta":{"desc":"A single execution of a Workflow — what `gh run list` returns."}}

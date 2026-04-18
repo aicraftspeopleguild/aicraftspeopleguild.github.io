@@ -1,0 +1,31 @@
+{
+  "udtType": "WhitePaper",
+  "parameters": {
+    "title": "AI Harness: Constraint-Driven Software Development for the Age of AI Agents",
+    "authors": [
+      "Alex Bunardzic"
+    ],
+    "publication_date": "2026-03-09",
+    "doc_number": "ACG-WP-003-2026",
+    "source_medium": "site-only",
+    "summary": "A change architecture layer that constrains autonomous code evolution, prevents specification drift, and keeps AI agents operating inside approved architectural boundaries.",
+    "tags": [
+      "ai-harness",
+      "architecture",
+      "governance",
+      "constraint-driven-development"
+    ],
+    "status": "published",
+    "site_href": "ai-harness.html"
+  },
+  "tags": {
+    "id": "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents",
+    "original_path": "originals/ai-harness.md",
+    "original_format": "md",
+    "original_hash_sha256": "a0f8d3c3b88c4b0ff409268a8e020ff20b085ae8511a51d81ef448674d144683",
+    "body": "# AI Harness\n\nAI-assisted development changes the problem of architecture itself. When\nagents can produce plausible code at arbitrary speed, the scarce resource\nstops being code production and becomes *constraint enforcement*: keeping\nautonomous change inside the shape the system was designed to have.\n\nThis paper introduces the **AI Harness** as a change architecture layer\nsitting between human intent and AI-generated diffs. It names the\nspecification, enumerates the invariants the system must preserve, and\nrefuses agent output that would violate them. The harness is not a linter\nand not a review checklist — it is an executable description of what the\nsystem is allowed to become.\n\nSee also: `acg-peer-reviews.html`, `ai-rituals.html`, `mob-programming.html`.",
+    "instance_path": "udts/instances/ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents.json",
+    "ingested_at": "2026-04-17T20:06:20Z",
+    "schema_version": "1.0.0"
+  }
+}

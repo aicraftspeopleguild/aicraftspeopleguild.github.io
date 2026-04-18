@@ -1,0 +1,32 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/guild-radar",
+    "label": "Guild Radar",
+    "page": "pages/guild-radar.page.json",
+    "section": "community",
+    "parent": "home",
+    "order": 40,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "guild-radar",
+    "full_url": "https://aicraftspeopleguild.github.io/guild-radar",
+    "children": [],
+    "breadcrumb": [
+      "community",
+      "guild-radar"
+    ],
+    "depth": 1,
+    "view_id": "static-page",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

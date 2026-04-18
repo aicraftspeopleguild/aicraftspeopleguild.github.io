@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:pages:decompose",
+    "name": "script · decompose",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/pages/decompose.py. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/pages/decompose.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "pages"
+    ]
+  },
+  "tags": {
+    "id": "script-pages-decompose",
+    "schema_version": "1.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+{"$schema":"konomi/udt/v1","name":"Batch","std":"ISA-88","layer":3,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"recipe","t":"REF"},
+{"n":"control_recipe","t":"REF"},
+{"n":"state","t":"BatchState"},
+{"n":"start","t":"Timestamp"},
+{"n":"end","t":"Timestamp","nullable":true},
+{"n":"unit_allocs","t":"STRUCT","array":true,"of":{"unit":"STRING","start":"Timestamp","end":"Timestamp"}},
+{"n":"params","t":"MAP"},
+{"n":"events","t":"BatchEvent","array":true}
+],"meta":{"desc":"Running batch instance"}}

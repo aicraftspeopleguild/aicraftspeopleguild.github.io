@@ -1,0 +1,29 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "TagActivity",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-tag-activity.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/tag-activity.svg",
+    "sources": [
+      "state.db.tag_history"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "PulseDot",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1040,
+      "h": "dynamic"
+    },
+    "description": "Rolling feed of the last 12 tag writes pulled from state.db."
+  },
+  "tags": {
+    "id": "tag-activity",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/tag-activity.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/tag-activity.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

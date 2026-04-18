@@ -1,0 +1,41 @@
+{
+  "§": "S.TAGS",
+  "🏗️": "🧪",
+  "name": "sandbox · tag catalog",
+  "owner": "sandbox/provider.py",
+  "namespaces": ["sandbox"],
+  "bridge": {
+    "channel": "BroadcastChannel('acg-mesh')",
+    "envelope": "UDT:MeshEnvelope"
+  },
+
+  "tags": [
+    { "path": "sandbox.bridgeOpen",                         "type": "Boolean",  "desc": "ch is live" },
+    { "path": "sandbox.channel",                            "type": "String",   "desc": "name of the channel" },
+
+    { "pathPattern": "sandbox.<source>.lastEvent",          "cardinality":"many", "type":"String" },
+    { "pathPattern": "sandbox.<source>.lastEventAt",        "cardinality":"many", "type":"DateTime" },
+    { "pathPattern": "sandbox.<source>.<tagPath>",          "cardinality":"many", "type":"any",
+      "desc": "mirror of every tag the sandbox tool publishes (on type==='tag')" },
+    { "pathPattern": "sandbox.<source>.event.<type>",       "cardinality":"many", "type":"UDT:MeshEnvelope",
+      "desc": "non-tag events (tool_call, file_change, init, …)" },
+    { "pathPattern": "sandbox.<source>.events.<type>.count","cardinality":"many", "type":"Counter" }
+  ],
+
+  "tools": [
+    {
+      "id": "web-llm",
+      "owns": [
+        "sandbox.web-llm.sys.*",
+        "sandbox.web-llm.model.*",
+        "sandbox.web-llm.engine.*",
+        "sandbox.web-llm.voice.*",
+        "sandbox.web-llm.emotion.*",
+        "sandbox.web-llm.fs.*",
+        "sandbox.web-llm.git.*",
+        "sandbox.web-llm.chat.*",
+        "sandbox.web-llm.tool.*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 246" width="1010" height="246" role="img" aria-label="ACG members">
+<defs>
+    <linearGradient id="gBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace}
+      .lb{fill:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:1.6px}
+      .va{fill:#e6edf3;font-size:20px;font-weight:700}
+      .vs{fill:#e6edf3;font-size:14px;font-weight:600}
+      .lo{fill:#79c0ff;font-size:11px}
+      .sub{fill:#8b949e;font-size:11px}
+      .g{fill:#3fb950} .a{fill:#e3b341} .r{fill:#f85149}
+      .p{fill:#a371f7} .o{fill:#f0883e}
+      .pulse{animation:plz 1.8s ease-out infinite}
+      @keyframes plz{
+        0%{transform:scale(1);opacity:.85}
+        45%{transform:scale(1.35);opacity:.3}
+        100%{transform:scale(1.8);opacity:0}
+      }
+      .spin{animation:sp 4s linear infinite;transform-origin:center}
+      @keyframes sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+<rect width="1010" height="36" rx="10" fill="url(#gBg)"/>
+  <rect x="0" y="0" width="1010" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="1010" height="10" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <text x="505" y="22" text-anchor="middle" class="t" font-size="12" fill="#8b949e">⚒ members · 8 founding · click to open profile</text>
+<rect y="36" width="1010" height="210" fill="url(#gBg)"/>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members/Alex Bunardzic" target="_blank">
+<rect x="10" y="56" width="240" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:32px 96px">
+    <circle cx="32" cy="96" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="32" cy="96" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="32" cy="96" r="6" class="g"/>
+<text x="52" y="92" class="t vs">Alex Bunardzic</text>
+<text x="52" y="110" class="t sub">4 papers · founding member</text>
+</a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members/Jona Heidsick" target="_blank">
+<rect x="260" y="56" width="240" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:282px 96px">
+    <circle cx="282" cy="96" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="282" cy="96" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="282" cy="96" r="6" class="g"/>
+<text x="302" y="92" class="t vs">Jona Heidsick</text>
+<text x="302" y="110" class="t sub">0 papers · founding member</text>
+</a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members/Kelly T. Hohman" target="_blank">
+<rect x="510" y="56" width="240" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:532px 96px">
+    <circle cx="532" cy="96" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="532" cy="96" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="532" cy="96" r="6" class="g"/>
+<text x="552" y="92" class="t vs">Kelly T. Hohman</text>
+<text x="552" y="110" class="t sub">0 papers · founding member</text>
+</a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members/Laurie Scheepers" target="_blank">
+<rect x="760" y="56" width="240" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:782px 96px">
+    <circle cx="782" cy="96" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="782" cy="96" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="782" cy="96" r="6" class="g"/>
+<text x="802" y="92" class="t vs">Laurie Scheepers</text>
+<text x="802" y="110" class="t sub">1 paper · founding member</text>
+</a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members/Matt Burch" target="_blank">
+<rect x="10" y="146" width="240" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:32px 186px">
+    <circle cx="32" cy="186" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="32" cy="186" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="32" cy="186" r="6" class="g"/>
+<text x="52" y="182" class="t vs">Matt Burch</text>
+<text x="52" y="200" class="t sub">0 papers · founding member</text>
+</a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members/Nicolas Rosado" target="_blank">
+<rect x="260" y="146" width="240" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:282px 186px">
+    <circle cx="282" cy="186" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="282" cy="186" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="282" cy="186" r="6" class="g"/>
+<text x="302" y="182" class="t vs">Nicolas Rosado</text>
+<text x="302" y="200" class="t sub">0 papers · founding member</text>
+</a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members/Thomas Frumkin" target="_blank">
+<rect x="510" y="146" width="240" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:532px 186px">
+    <circle cx="532" cy="186" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="532" cy="186" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="532" cy="186" r="6" class="g"/>
+<text x="552" y="182" class="t vs">Thomas Frumkin</text>
+<text x="552" y="200" class="t sub">1 paper · founding member</text>
+</a>
+<a href="https://teslasolar.github.io/aicraftspeopleguild.github.io/#/members/Tsvetan Tsvetanov" target="_blank">
+<rect x="760" y="146" width="240" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<g style="transform-origin:782px 186px">
+    <circle cx="782" cy="186" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse"/>
+    <circle cx="782" cy="186" r="9" fill="none" stroke="#3fb950" stroke-width="2" opacity=".5" class="pulse" style="animation-delay:.6s"/>
+  </g>
+  <circle cx="782" cy="186" r="6" class="g"/>
+<text x="802" y="182" class="t vs">Tsvetan Tsvetanov</text>
+<text x="802" y="200" class="t sub">0 papers · founding member</text>
+</a>
+</svg>

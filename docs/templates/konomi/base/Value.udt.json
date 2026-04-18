@@ -1,0 +1,6 @@
+{"$schema":"konomi/udt/v1","name":"Value","layer":1,"version":"1.0.0","fields":[
+{"n":"v","t":"ANY"},
+{"n":"q","t":"Quality"},
+{"n":"t","t":"Timestamp"},
+{"n":"unit","t":"STRING","nullable":true}
+],"meta":{"desc":"Value with quality, timestamp, unit"}}

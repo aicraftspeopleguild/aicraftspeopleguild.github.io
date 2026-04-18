@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 28" width="480" height="28" role="img" aria-label="terminal prompt atom">
+  <defs>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,'Liberation Mono','Courier New',monospace;font-size:13px}
+      .cu{animation:bl 1s step-end infinite .2s}
+      @keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+    </style>
+  </defs>
+  <rect width="480" height="28" rx="4" fill="#0d1117"/>
+  <text x="12" y="19" class="t">
+    <tspan fill="#3fb950">guild@acg</tspan><tspan fill="#8b949e">:~$ </tspan><tspan fill="#e6edf3">acg health</tspan><tspan class="cu" fill="#e6edf3">█</tspan>
+  </text>
+</svg>

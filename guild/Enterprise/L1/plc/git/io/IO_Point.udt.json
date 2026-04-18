@@ -1,0 +1,18 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "IO_Point",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "channel", "type": "DINT"},
+    {"name": "tag", "type": "STRING", "length": 40},
+    {"name": "desc", "type": "STRING", "length": 80},
+    {"name": "type", "type": "DINT"},
+    {"name": "raw", "type": "DINT"},
+    {"name": "value", "type": "REAL"},
+    {"name": "quality", "type": "DINT"},
+    {"name": "alarm", "type": "BOOL"},
+    {"name": "wire_fault", "type": "BOOL"}
+  ],
+  "meta": {"desc": "Individual channel point"}
+}

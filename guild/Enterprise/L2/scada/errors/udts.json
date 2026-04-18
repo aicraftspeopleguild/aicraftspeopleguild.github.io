@@ -1,0 +1,20 @@
+{
+  "§": "E.UDT",
+  "🏗️": "⚠",
+  "name": "errors · UDTs",
+  "owner": "L2/scada/errors/provider.py",
+
+  "types": {
+    "LogEntry": {
+      "fields": {
+        "ts":     "ms",
+        "level":  "e[ERROR|WARN|INFO|DEBUG]",
+        "logger": "s",
+        "msg":    "s",
+        "stack":  "s?",
+        "meta":   "o?"
+      },
+      "desc": "Single line in the gateway log ring buffer."
+    }
+  }
+}

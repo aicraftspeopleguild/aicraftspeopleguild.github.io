@@ -1,0 +1,22 @@
+{
+  "§": 1,
+  "🏗️": "ACGP2P",
+  "desc": "master UDT · dense",
+
+  "🔑": {
+    "peerId": "s20",
+    "name":   "s",
+    "emoji":  "s",
+    "room":   "s",
+    "hash":   "s"
+  },
+
+  "🛰️": {
+    "channel": "BroadcastChannel(\"acg-mesh\")",
+    "dir":     "↔"
+  },
+
+  "📦": ["💬 Chat", "🖥️ SCADA", "🧪 Sandbox"],
+
+  "和": "💬 ⊕ 🖥️ ⊕ 🧪"
+}

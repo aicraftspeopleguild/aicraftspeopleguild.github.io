@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "FsPath",
+  "version": "1.0.0",
+  "description": "A filesystem path / directory entry — the addressable unit of repo-on-disk navigation. One FsPath instance is written into each directory as `path.json`. Tag fields (`parent`, `children`, `siblings`, `breadcrumb`, etc.) are auto-computed by `guild/web/scripts/paths/gen-fs-paths.py` so the repo becomes self-describing: every dir knows where it sits, what it contains, and which peers it maps to.",
+  "parameters": {
+    "path":    { "dataType": "String",      "required": true,  "description": "Repo-relative POSIX path of this directory (e.g. `guild/Enterprise/L2/hmi/web/pages`). Root dir uses `.`." },
+    "label":   { "dataType": "String",      "required": true,  "description": "Human-readable directory name (basename)." },
+    "parent":  { "dataType": "String",      "required": false, "description": "Repo-relative POSIX path of the parent directory, or null for the repo root." },
+    "kind":    { "dataType": "String",      "required": false, "default": "filesystem", "description": "Discriminator. Always `filesystem` for this UDT." },
+    "purpose": { "dataType": "String",      "required": false, "description": "Optional one-line description of what the directory holds. Not overwritten on regeneration." },
+    "owners":  { "dataType": "StringArray", "required": false, "description": "Optional list of member IDs responsible for the directory. Not overwritten." }
+  },
+  "tags": {
+    "id":            { "dataType": "String",      "description": "Stable slug id (path with `/` → `_`; root = `root`)." },
+    "fs_path":       { "dataType": "String",      "description": "Repo-relative POSIX directory path." },
+    "depth":         { "dataType": "Int",         "description": "Depth from repo root (0 = root)." },
+    "breadcrumb":    { "dataType": "StringArray", "description": "Ordered ancestor ids from root → self." },
+    "children":      { "dataType": "StringArray", "description": "Immediate subdirectory paths that also contain a `path.json`." },
+    "siblings":      { "dataType": "StringArray", "description": "Peer directories sharing the same parent." },
+    "descendants":   { "dataType": "Int",         "description": "Count of all descendant FsPath instances under this dir." },
+    "file_count":    { "dataType": "Int",         "description": "Number of non-hidden files directly in this dir (excludes `path.json` itself)." },
+    "subdir_count":  { "dataType": "Int",         "description": "Number of non-excluded subdirectories." },
+    "kinds":         { "dataType": "Object",      "description": "File-extension histogram for this dir: { \"json\": 10, \"md\": 1, ... }." },
+    "route_bindings":{ "dataType": "StringArray", "description": "URL-route Path ids (from `guild/Enterprise/L2/hmi/web/components/udts/instances/paths/`) whose `page` target resolves inside this dir. Auto-computed — links fs-tree to site-map." },
+    "last_generated":{ "dataType": "String",      "description": "UTC ISO timestamp of last regeneration." },
+    "schema_version":{ "dataType": "String" }
+  }
+}

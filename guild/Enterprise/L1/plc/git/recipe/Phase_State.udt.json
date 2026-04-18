@@ -1,0 +1,25 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Phase_State",
+  "vendor": null,
+  "version": "1.0.0",
+  "fields": [
+    {"name": "current", "type": "DINT"},
+    {"name": "cmd", "type": "DINT"}
+  ],
+  "enum": {
+    "0": "Idle",
+    "1": "Running",
+    "2": "Complete",
+    "3": "Pausing",
+    "4": "Paused",
+    "5": "Holding",
+    "6": "Held",
+    "7": "Restarting",
+    "8": "Stopping",
+    "9": "Stopped",
+    "10": "Aborting",
+    "11": "Aborted"
+  },
+  "meta": {"desc": "Phase state machine per ISA-88"}
+}

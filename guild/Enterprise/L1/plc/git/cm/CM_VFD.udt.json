@@ -1,0 +1,14 @@
+{"$schema":"gitplc/udt/v1","name":"CM_VFD","base":"CM_Base","version":"1.0.0","fields":[
+{"n":"cmd.run","t":"BOOL"},{"n":"cmd.stop","t":"BOOL"},
+{"n":"cmd.fwd","t":"BOOL"},{"n":"cmd.rev","t":"BOOL"},
+{"n":"cmd.speed_sp","t":"REAL"},{"n":"cmd.reset","t":"BOOL"},
+{"n":"sts.running","t":"BOOL"},{"n":"sts.at_speed","t":"BOOL"},
+{"n":"sts.faulted","t":"BOOL"},{"n":"sts.speed_act","t":"REAL"},
+{"n":"sts.current","t":"REAL"},{"n":"sts.torque","t":"REAL"},
+{"n":"cfg.min_speed","t":"REAL"},{"n":"cfg.max_speed","t":"REAL"},
+{"n":"cfg.accel","t":"TIME"},{"n":"cfg.decel","t":"TIME"},
+{"n":"io.run_cmd","t":"BOOL","d":"out"},
+{"n":"io.speed_sp","t":"INT","d":"out"},
+{"n":"io.speed_act","t":"INT","d":"in"},
+{"n":"io.fault","t":"BOOL","d":"in"}
+],"meta":{"desc":"VFD"}}

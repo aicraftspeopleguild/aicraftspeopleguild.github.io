@@ -1,0 +1,67 @@
+# tests/terminal.test.yml
+# The Terminal page hosts an interactive browser-side runner that can target
+# the local site, any URL, raw GitHub content, or pasted YAML.
+
+test: Terminal page
+target: pages/terminal.html
+
+exists:
+  expect: present
+  reason: "the terminal page must be served so users can run ad-hoc tests against any target"
+
+watches:
+  - path: "section#terminal.terminal"
+    expect: triggered
+    reason: "the terminal container is the host element for the interactive runner"
+
+  - path: "#term-output"
+    expect: triggered
+    reason: "the output buffer must exist so command results have somewhere to render"
+
+  - path: "#term-form"
+    expect: triggered
+    reason: "the input form must exist so users can submit commands"
+
+  - path: "#term-input"
+    expect: triggered
+    reason: "the input field must exist so users can type commands"
+
+  - path: ".term-prompt"
+    expect: triggered
+    reason: "the prompt label must render so the terminal feels like a terminal"
+
+  - path: "dialog#paste-dialog"
+    expect: triggered
+    reason: "the paste dialog must exist so users can paste arbitrary YAML and run it"
+
+  - path: "#paste-area"
+    expect: triggered
+    reason: "the paste textarea must exist so the dialog has somewhere to receive YAML"
+
+  - path: "#paste-run"
+    expect: triggered
+    reason: "the run button must exist so users can submit pasted YAML for execution"
+
+  - path: "#site-summary"
+    expect: triggered
+    reason: "the page hosts a summary container so terminal runs can populate it"
+
+secrets:
+  - name: assets/terminal.js
+    expect: configured
+    reason: "the terminal script must load or the page is non-interactive"
+
+  - name: assets/runner-core.js
+    expect: configured
+    reason: "the shared runner core must load — the terminal imports its functions from here"
+
+  - name: assets/style.css
+    expect: configured
+    reason: "the terminal styling lives in the shared stylesheet"
+
+guardrails:
+  - condition: "input[type='password']"
+    reason: "the terminal must never collect a password — there is no auth in this static site"
+
+  - condition: "form[action]"
+    reason: "no terminal form may post to a server — every action runs in the browser"

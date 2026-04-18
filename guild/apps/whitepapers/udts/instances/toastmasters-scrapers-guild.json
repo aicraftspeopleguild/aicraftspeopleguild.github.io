@@ -1,0 +1,29 @@
+{
+  "udtType": "App",
+  "parameters": {
+    "name": "Toastmasters Scrapers Guild",
+    "slug": "toastmasters-scrapers-guild",
+    "kind": "white-paper",
+    "description": "How Yeshua Got on Your Toast: A Professional Framework for Pareidolic Artifact Detection, Scraping, and Provenance in AI-Assisted Systems",
+    "source_type": "WhitePaper",
+    "source_path": "guild/Enterprise/L4/api/white-papers/udts/instances/toastmasters-scrapers-guild.json",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/toastmasters-scrapers-guild.data.json"
+    },
+    "route": "/whitepapers/toastmasters-scrapers-guild",
+    "section": "resources",
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "status": "published",
+    "tags": []
+  },
+  "tags": {
+    "id": "toastmasters-scrapers-guild",
+    "url": "https://aicraftspeopleguild.github.io/guild/apps/whitepapers/toastmasters-scrapers-guild/",
+    "view_id": "white-paper-app",
+    "ingested_at": "2026-04-18T06:16:25Z",
+    "schema_version": "1.0.0"
+  }
+}

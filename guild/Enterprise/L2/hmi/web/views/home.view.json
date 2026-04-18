@@ -1,0 +1,82 @@
+{
+  "udtType": "View",
+  "parameters": {
+    "name": "home",
+    "description": "Home page — manifesto grid, signature form, site navigation",
+    "root": {
+      "type": "PageShell",
+      "props": {
+        "title": "AI Craftspeople Guild",
+        "subtitle": "A professional guild for software engineers exploring the craft of AI-assisted development.",
+        "bodyClass": "page-home",
+        "stylesheets": ["style/main.css"]
+      },
+      "children": [
+        {
+          "type": "IntroPanel",
+          "props": {
+            "cssVariant": "context-section",
+            "content": "{{ page.context }}"
+          }
+        },
+        {
+          "type": "CardGrid",
+          "props": {
+            "heading": "The Manifesto",
+            "gridClass": "manifesto-grid",
+            "shellClass": "manifesto-section"
+          },
+          "repeat": {
+            "source": "manifestoCards",
+            "as": "card",
+            "template": {
+              "type": "ManifestoCard",
+              "props": {
+                "icon": "{{ card.icon }}",
+                "title": "{{ card.title }}",
+                "content": "{{ card.content }}"
+              }
+            }
+          }
+        },
+        {
+          "type": "CardGrid",
+          "props": {
+            "heading": "Explore the Guild",
+            "gridClass": "manifesto-grid",
+            "shellClass": "cta-nav-section"
+          },
+          "repeat": {
+            "source": "navCards",
+            "as": "nav",
+            "template": {
+              "type": "NavCard",
+              "props": {
+                "title": "{{ nav.title }}",
+                "description": "{{ nav.description }}",
+                "href": "{{ nav.href }}"
+              }
+            }
+          }
+        },
+        {
+          "type": "CTASection",
+          "props": {
+            "heading": "Join the Guild",
+            "description": "Sign the manifesto and become part of a professional community.",
+            "primaryText": "Read the Manifesto",
+            "primaryHref": "#/manifesto",
+            "secondaryText": "View White Papers",
+            "secondaryHref": "#/white-papers"
+          }
+        }
+      ]
+    }
+  },
+  "tags": {
+    "id": "home",
+    "component_ids": ["page-shell", "intro-panel", "card-grid", "cta-section"],
+    "data_sources": ["views/data/home.data.json"],
+    "schema_version": "1.0.0"
+  }
+}

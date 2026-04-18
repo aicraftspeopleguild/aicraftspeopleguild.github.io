@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80" role="img" aria-label="member card">
+  <defs>
+    <style>.t{font-family:'SFMono-Regular',Consolas,monospace}</style>
+    <clipPath id="av"><circle cx="38" cy="40" r="22"/></clipPath>
+  </defs>
+  <rect width="280" height="80" rx="8" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
+
+  <!-- avatar ring + initials -->
+  <circle cx="38" cy="40" r="22" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="38" y="45" class="t" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">AB</text>
+
+  <!-- online indicator -->
+  <circle cx="54" cy="56" r="5" fill="#0d1117"/>
+  <circle cx="54" cy="56" r="4" fill="#3fb950"/>
+
+  <!-- name -->
+  <text x="72" y="32" class="t" font-size="13" font-weight="700" fill="#e6edf3">Alice B.</text>
+
+  <!-- role badge -->
+  <rect x="72" y="38" width="66" height="18" rx="3" fill="#1e1530" stroke="#a371f7" stroke-width="1" stroke-opacity=".5"/>
+  <text x="105" y="51" class="t" font-size="10" fill="#a371f7" text-anchor="middle">Level 2</text>
+
+  <!-- handle + join date -->
+  <text x="72" y="66" class="t" font-size="10" fill="#8b949e">@alice &#xb7; member since 2024</text>
+</svg>

@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"ProductionSchedule","std":"ISA-95","layer":2,"version":"1.0.0","fields":[
+{"n":"id","t":"UUID"},
+{"n":"start","t":"Timestamp"},
+{"n":"end","t":"Timestamp"},
+{"n":"segments","t":"ProcessSegment","array":true},
+{"n":"priority","t":"DINT"},
+{"n":"state","t":"ScheduleState"}
+],"meta":{"desc":"L3 → L2 schedule of process segments"}}

@@ -1,0 +1,21 @@
+{
+  "$schema": "gitplc/udt/v1",
+  "name": "Equipment",
+  "vendor": null,
+  "base": null,
+  "version": "1.0.0",
+  "kind": "isa88",
+  "fields": [
+    {"name": "path", "type": "STRING", "desc": "Area/Line/Cell/Unit"},
+    {"name": "level", "type": "ENUM", "values": ["ProcessCell","Unit","EM","CM"]},
+    {"name": "state", "type": "PackML_State"},
+    {"name": "mode", "type": "PackML_Mode"},
+    {"name": "cmd", "type": "Equipment_Cmd"},
+    {"name": "sts", "type": "Equipment_Sts"},
+    {"name": "cfg", "type": "Equipment_Cfg"},
+    {"name": "hmi", "type": "Equipment_HMI"},
+    {"name": "alarms", "type": "Alarm_Instance", "array": true},
+    {"name": "children", "type": "Equipment", "array": true, "nullable": true}
+  ],
+  "meta": {"desc": "ISA-88 equipment entity with PackML state/mode"}
+}

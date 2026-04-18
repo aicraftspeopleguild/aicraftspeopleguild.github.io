@@ -1,0 +1,16 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:status-dashboard-svg",
+    "name": "Render status-dashboard.svg",
+    "description": "4-panel status card (CATALOG · ENTERPRISE · PIPELINE · HEARTBEAT) pulling live values from /api/health.json, /runtime/tags.json, and the demo.heartbeat GitHub Issue.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-status-dashboard.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"svg","type":"file"}],
+    "adapters": ["CliAdapter","LoggerWrapper"],
+    "tags": ["svg","dashboard","live","render"]
+  },
+  "tags": { "id": "build-status-dashboard-svg", "schema_version": "1.0.0" }
+}

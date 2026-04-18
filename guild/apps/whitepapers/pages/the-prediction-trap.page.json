@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "The Prediction Trap",
+    "slug": "app-the-prediction-trap",
+    "route": "/whitepapers/the-prediction-trap",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/the-prediction-trap.data.json"
+    },
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "section": "resources",
+    "parent_slug": "white-papers",
+    "status": "published"
+  },
+  "tags": {
+    "id": "app-the-prediction-trap",
+    "view_id": "white-paper-app",
+    "schema_version": "1.0.0"
+  }
+}

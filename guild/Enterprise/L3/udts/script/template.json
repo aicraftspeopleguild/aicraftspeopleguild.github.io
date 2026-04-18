@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "udtType": "StateMachineScript",
+  "version": "1.0.0",
+  "description": "A script registered with the state-machine runner via an @tag-event JSON header. One instance per header found by tag_event_parser. Round-trips through the GH-Issues tag DB at path `script.<id>` — editing the UDT in the compressed editor writes individual tag changes (enabled=false, trigger.tag=…) that the runner picks up on its next reload.",
+  "sections": [
+    { "id": "identity",  "title": "Identity",  "fields": ["id", "enabled", "script_file", "schemaVersion"] },
+    { "id": "listens",   "title": "Listens",   "fields": ["kind", "listens_tag", "listens_from", "listens_to", "interval_s"] },
+    { "id": "condition", "title": "Condition", "fields": ["condition"] },
+    { "id": "action",    "title": "Action",    "fields": ["action_tool_id", "reads", "writes", "fires"] },
+    { "id": "runtime",   "title": "Runtime",   "fields": ["lastFiredAt", "fireCount", "lastError", "parsed_at"] }
+  ],
+  "parameters": {
+    "id":             { "dataType": "String",  "required": true,  "description": "stable unique id, typically `<script-basename>:<event-name>`" },
+    "enabled":        { "dataType": "Boolean", "required": true,  "default": true, "description": "Set false to pause without editing source" },
+    "script_file":    { "dataType": "String",  "required": true,  "description": "Repo-relative path to the Python/JS file that owns this trigger" },
+    "schemaVersion":  { "dataType": "String",  "default": "1.0.0" },
+
+    "kind":           { "dataType": "String",  "required": true, "enum": ["on_transition","on_change","on_interval","on_boot"], "default": "on_transition" },
+    "listens_tag":    { "dataType": "String",  "description": "Target tag path (e.g. demo.heartbeat, git:state)" },
+    "listens_from":   { "dataType": "String",  "description": "Prior state (use * for any). Required for on_transition" },
+    "listens_to":     { "dataType": "String",  "description": "Next state. Required for on_transition" },
+    "interval_s":     { "dataType": "Number",  "unit": "s", "description": "Period for on_interval triggers" },
+
+    "condition":      { "dataType": "String",  "description": "Optional gate expression (e.g. branch==main) evaluated against event context" },
+
+    "action_tool_id": { "dataType": "String",  "description": "Optional Tool UDT id to dispatch; defaults to the script wrapper" },
+    "reads":          { "dataType": "JSON",    "description": "Tag paths the script reads" },
+    "writes":         { "dataType": "JSON",    "description": "Tag paths or output files the script writes" },
+    "fires":          { "dataType": "JSON",    "description": "Downstream events this script emits" },
+
+    "lastFiredAt":    { "dataType": "DateTime" },
+    "fireCount":      { "dataType": "Counter" },
+    "lastError":      { "dataType": "String" },
+    "parsed_at":      { "dataType": "DateTime", "description": "Timestamp of the last ingest pass" }
+  },
+  "tagRoot": "script.{id}",
+  "tags": {
+    "id":            { "dataType": "String" },
+    "schemaVersion": { "dataType": "String" }
+  }
+}

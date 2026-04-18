@@ -1,0 +1,8 @@
+{"$schema":"konomi/udt/v1","name":"HMI_Principles","std":"ISA-101","layer":4,"version":"1.0.0",
+"principles":[
+"SITUATIONAL_AWARENESS > aesthetics",
+"CONSISTENCY > novelty",
+"GRAY_BACKGROUND: reduce fatigue",
+"COLOR = meaning, not decoration",
+"LAYERS: progressive detail"
+],"meta":{"desc":"Core ISA-101 HMI design principles"}}

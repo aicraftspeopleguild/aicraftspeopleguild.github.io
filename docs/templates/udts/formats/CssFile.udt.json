@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"CssFile","layer":9,"version":"1.0.0","fields":[
+{"n":"path","t":"STRING"},
+{"n":"ext","t":"ENUM","values":["css"]},
+{"n":"selectors","t":"DINT","desc":"Count of top-level selectors"},
+{"n":"rules","t":"DINT"},
+{"n":"at_rules","t":"STRING[]","desc":"@media, @import, @keyframes etc."},
+{"n":"vars_defined","t":"STRING[]","desc":"Custom properties (--foo) defined"},
+{"n":"sha256","t":"STRING"}
+],"meta":{"desc":"Cascading Style Sheet. ACG uses guild/Enterprise/L2/hmi/web/style/*.css for site theming."}}

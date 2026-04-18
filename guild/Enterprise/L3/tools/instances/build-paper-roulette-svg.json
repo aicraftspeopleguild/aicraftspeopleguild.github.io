@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:paper-roulette-svg",
+    "name": "Render paper-roulette.svg",
+    "description": "Render paper-roulette.svg \u2014 heartbeat-seeded random paper pick.",
+    "category": "build",
+    "entry": "guild/Enterprise/L4/svg/build-paper-roulette.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "svg",
+        "type": "file"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "svg",
+      "readme",
+      "build"
+    ]
+  },
+  "tags": {
+    "id": "build-paper-roulette-svg",
+    "schema_version": "1.0.0"
+  }
+}

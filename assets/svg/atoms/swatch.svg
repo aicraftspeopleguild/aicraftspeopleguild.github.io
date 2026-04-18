@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 70" width="640" height="70" role="img" aria-label="guild color token palette">
+  <defs>
+    <style>.t{font-family:'SFMono-Regular',Consolas,monospace;text-anchor:middle}</style>
+  </defs>
+  <rect width="640" height="70" rx="8" fill="#0d1117"/>
+
+  <!-- bg #0d1117 -->
+  <rect x="4"   y="4" width="72" height="32" rx="4" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="40"  y="46" class="t" font-size="9" fill="#8b949e">bg</text>
+  <text x="40"  y="58" class="t" font-size="8" fill="#484f58">#0d1117</text>
+
+  <!-- surface #161b22 -->
+  <rect x="84"  y="4" width="72" height="32" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="120" y="46" class="t" font-size="9" fill="#8b949e">surface</text>
+  <text x="120" y="58" class="t" font-size="8" fill="#484f58">#161b22</text>
+
+  <!-- green #3fb950 -->
+  <rect x="164" y="4" width="72" height="32" rx="4" fill="#3fb950"/>
+  <text x="200" y="46" class="t" font-size="9" fill="#3fb950">green</text>
+  <text x="200" y="58" class="t" font-size="8" fill="#484f58">#3fb950</text>
+
+  <!-- dim #8b949e -->
+  <rect x="244" y="4" width="72" height="32" rx="4" fill="#8b949e"/>
+  <text x="280" y="46" class="t" font-size="9" fill="#8b949e">dim</text>
+  <text x="280" y="58" class="t" font-size="8" fill="#484f58">#8b949e</text>
+
+  <!-- text #e6edf3 -->
+  <rect x="324" y="4" width="72" height="32" rx="4" fill="#e6edf3"/>
+  <text x="360" y="46" class="t" font-size="9" fill="#e6edf3">text</text>
+  <text x="360" y="58" class="t" font-size="8" fill="#484f58">#e6edf3</text>
+
+  <!-- yellow #e3b341 -->
+  <rect x="404" y="4" width="72" height="32" rx="4" fill="#e3b341"/>
+  <text x="440" y="46" class="t" font-size="9" fill="#e3b341">yellow</text>
+  <text x="440" y="58" class="t" font-size="8" fill="#484f58">#e3b341</text>
+
+  <!-- purple #a371f7 -->
+  <rect x="484" y="4" width="72" height="32" rx="4" fill="#a371f7"/>
+  <text x="520" y="46" class="t" font-size="9" fill="#a371f7">purple</text>
+  <text x="520" y="58" class="t" font-size="8" fill="#484f58">#a371f7</text>
+
+  <!-- blue #79c0ff -->
+  <rect x="564" y="4" width="72" height="32" rx="4" fill="#79c0ff"/>
+  <text x="600" y="46" class="t" font-size="9" fill="#79c0ff">blue</text>
+  <text x="600" y="58" class="t" font-size="8" fill="#484f58">#79c0ff</text>
+</svg>

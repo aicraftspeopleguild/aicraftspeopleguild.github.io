@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "schema": "acg/dense-token · §0",
+    "updatedAt": 1776498901240,
+    "source": "guild/Enterprise/L4/api/scripts/build-runtime-tags.py",
+    "about": "Live runtime state · CATALOG · ENTERPRISE · PIPELINE · IDENTITY"
+  },
+  "catalog": {
+    "papers": {
+      "value": 24,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "members": {
+      "value": 8,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "lastBuild": {
+      "value": "2026-04-18T07:54:54Z",
+      "quality": "good",
+      "type": "DateTime"
+    },
+    "apiVersion": {
+      "value": "1.0",
+      "quality": "good",
+      "type": "String"
+    },
+    "latestPaperDate": {
+      "value": "Medium, 2 February 2026",
+      "quality": "good",
+      "type": "DateTime"
+    },
+    "latestPaperTitle": {
+      "value": "\\\"You're Absolutely Wrong!\\",
+      "quality": "good",
+      "type": "String"
+    }
+  },
+  "enterprise": {
+    "paperCount": {
+      "value": 24,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "memberCount": {
+      "value": 8,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "programCount": {
+      "value": 23,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "runCount": {
+      "value": 8,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "tagEdges": {
+      "value": 4,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "authoredLinks": {
+      "value": 6,
+      "quality": "good",
+      "type": "Counter"
+    }
+  },
+  "pipeline": {
+    "complete": {
+      "value": 1,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "aborted": {
+      "value": 0,
+      "quality": "good",
+      "type": "Counter"
+    },
+    "states": {
+      "value": 31,
+      "quality": "good",
+      "type": "Counter"
+    }
+  },
+  "identity": {
+    "host": {
+      "value": "aicraftspeopleguild.github.io",
+      "quality": "good",
+      "type": "String"
+    },
+    "deployMode": {
+      "value": "github-pages-static",
+      "quality": "good",
+      "type": "String"
+    },
+    "apiVersion": {
+      "value": "1.0",
+      "quality": "good",
+      "type": "String"
+    },
+    "latestPaper": {
+      "value": "\\\"You're Absolutely Wrong!\\",
+      "quality": "good",
+      "type": "String"
+    },
+    "repoUrl": {
+      "value": "github.com/aicraftspeopleguild/aicraftspeopleguild.github.io",
+      "quality": "good",
+      "type": "String"
+    }
+  }
+}

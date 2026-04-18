@@ -1,0 +1,23 @@
+{
+  "udtType": "Page",
+  "parameters": {
+    "title": "\\\"I'll Burn Toast and You Scrape It\\\": A Hilariously Accurate Analysis of Software Development's Favorite Messy Divorce",
+    "slug": "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+    "route": "/whitepapers/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+    "view": "guild/apps/whitepapers/views/white-paper-app.view.json",
+    "data": {
+      "paper": "guild/apps/whitepapers/data/i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate.data.json"
+    },
+    "stylesheets": [
+      "guild/Enterprise/L2/hmi/web/style/main.css"
+    ],
+    "section": "resources",
+    "parent_slug": "white-papers",
+    "status": "published"
+  },
+  "tags": {
+    "id": "app-i-ll-burn-toast-and-you-scrape-it-a-hilariously-accurate",
+    "view_id": "white-paper-app",
+    "schema_version": "1.0.0"
+  }
+}

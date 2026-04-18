@@ -1,0 +1,19 @@
+<!--
+  ═══ NORTH dock ═══
+  Top-of-viewport bar.  Rendered by renderer.js as
+      <header class="dock-n"> … </header>
+  Default contents:
+    · glyph + name logo        (Source Serif, large)
+    · shell links              (home, chat, log, health)
+    · live commit pill (only on the /index.html landing, via
+                         /controls/scada/gateway/scripts/version.js)
+-->
+<header class="dock-n">
+  <div class="dock-n-logo">{{GLYPH}} {{NAME}}<span>· ACG subsystem</span></div>
+  <nav class="dock-n-shell">
+    <a href="{{BASE}}">⚒ home</a>
+    <a href="{{BASE}}controls/hmi/chat/">💬 chat</a>
+    <a href="{{BASE}}controls/scada/gateway/gateway-log.html">⚠ log</a>
+    <a href="{{BASE}}controls/scada/gateway/health.html">⚕ health</a>
+  </nav>
+</header>

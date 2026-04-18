@@ -1,0 +1,17 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:queries",
+    "name": "Ingest Query UDT instances",
+    "description": "Load every Query UDT instance under guild/Enterprise/L3/automation/instances/queries/ and upsert into tag.db.queries. Idempotent.",
+    "category": "build",
+    "entry": "guild/Enterprise/L2/lib/query_runner.py:ingest",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"JSON"}],
+    "adapters": ["CliAdapter","LoggerWrapper","TestWrapper"],
+    "tags": ["build","query","sqlite"],
+    "test_cases": [{"name":"ingest ok","inputs":{},"expect":{"field":"ok","op":"eq","value":true}}]
+  },
+  "tags": { "id": "build-queries", "schema_version": "1.0.0" }
+}

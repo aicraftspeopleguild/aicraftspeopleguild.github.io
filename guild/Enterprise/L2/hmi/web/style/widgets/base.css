@@ -1,0 +1,10 @@
+﻿/* -- Base .widget ---------------------------------------------------- */
+.widget {
+  background:   var(--widget-bg);
+  border:       1px solid var(--widget-border);
+  border-radius:var(--widget-radius);
+  box-shadow:   var(--widget-shadow);
+  padding:      var(--widget-pad);
+  box-sizing:   border-box;
+}
+

@@ -1,0 +1,32 @@
+{
+  "udtType": "Path",
+  "parameters": {
+    "path": "/hall-of-fame",
+    "label": "Hall of Fame",
+    "page": "pages/hall-of-fame.page.json",
+    "section": "recognition",
+    "parent": "home",
+    "order": 10,
+    "dynamic": false,
+    "params": [],
+    "methods": [
+      "GET"
+    ],
+    "status": "published",
+    "visible_in_nav": true,
+    "access": "public"
+  },
+  "tags": {
+    "id": "hall-of-fame",
+    "full_url": "https://aicraftspeopleguild.github.io/hall-of-fame",
+    "children": [],
+    "breadcrumb": [
+      "recognition",
+      "hall-of-fame"
+    ],
+    "depth": 1,
+    "view_id": "static-page",
+    "last_verified": "2026-04-17T19:58:06Z",
+    "schema_version": "1.0.0"
+  }
+}

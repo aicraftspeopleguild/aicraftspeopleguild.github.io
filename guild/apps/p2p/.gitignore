@@ -1,0 +1,19 @@
+# Python (Jython 2.7 source lives in the tree, but cached bytecode does not)
+__pycache__/
+*.pyc
+*.pyo
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / npm (we don't have any, but preempt)
+node_modules/
+package-lock.json

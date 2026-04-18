@@ -1,0 +1,31 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "script:fix-data-links",
+    "name": "script · fix-data-links",
+    "description": "Auto-wrapped script guild/Enterprise/L3/scripts/fix-data-links.py. Invoked via the state-machine pipeline.",
+    "category": "script",
+    "entry": "guild/Enterprise/L3/scripts/fix-data-links.py",
+    "language": "python",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "stdout",
+        "type": "text"
+      }
+    ],
+    "adapters": [
+      "CliAdapter",
+      "LoggerWrapper"
+    ],
+    "tags": [
+      "script",
+      "auto-wrap",
+      "fix-data-links"
+    ]
+  },
+  "tags": {
+    "id": "script-fix-data-links",
+    "schema_version": "1.0.0"
+  }
+}

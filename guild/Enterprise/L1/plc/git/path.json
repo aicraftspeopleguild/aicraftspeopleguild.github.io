@@ -1,0 +1,45 @@
+{
+  "udtType": "FsPath",
+  "parameters": {
+    "path": "guild/Enterprise/L1/plc/git",
+    "label": "git",
+    "parent": "guild/Enterprise/L1/plc",
+    "kind": "filesystem",
+    "purpose": null,
+    "owners": []
+  },
+  "tags": {
+    "id": "guild_Enterprise_L1_plc_git",
+    "fs_path": "guild/Enterprise/L1/plc/git",
+    "depth": 5,
+    "breadcrumb": [
+      "root",
+      "guild",
+      "guild_Enterprise",
+      "guild_Enterprise_L1",
+      "guild_Enterprise_L1_plc",
+      "guild_Enterprise_L1_plc_git"
+    ],
+    "children": [
+      "guild/Enterprise/L1/plc/git/alarms",
+      "guild/Enterprise/L1/plc/git/cm",
+      "guild/Enterprise/L1/plc/git/config",
+      "guild/Enterprise/L1/plc/git/equipment",
+      "guild/Enterprise/L1/plc/git/io",
+      "guild/Enterprise/L1/plc/git/meta",
+      "guild/Enterprise/L1/plc/git/recipe"
+    ],
+    "siblings": [],
+    "descendants": 7,
+    "file_count": 4,
+    "subdir_count": 7,
+    "kinds": {
+      "db": 2,
+      "md": 1,
+      "json": 1
+    },
+    "route_bindings": [],
+    "last_generated": "2026-04-18T06:13:20Z",
+    "schema_version": "1.0.0"
+  }
+}

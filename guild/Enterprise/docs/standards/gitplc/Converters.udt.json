@@ -1,0 +1,9 @@
+{"$schema":"konomi/udt/v1","name":"Converters","std":"GitPLC","version":"1.0.0",
+"converters":{
+"ab":{"fmt":[".L5X",".ACD"],"parse":"XML","map":{"AOI":"Method","UDT":"UDT","Tag":"Field","Program":"NS","Routine":"Method","Rung":"Stmt"}},
+"siemens":{"fmt":[".zap16",".xml"],"parse":"TIA XML","map":{"FB":"Method","DB":"UDT","UDT":"UDT","Tag":"Field","OB":"NS","FC":"Method"}},
+"codesys":{"fmt":[".xml"],"parse":"PLCopen","map":{"FB":"Method","STRUCT":"UDT","VAR":"Field","PROGRAM":"NS"}},
+"beckhoff":{"fmt":[".tsproj"],"parse":"TwinCAT IEC-61131-3"},
+"omron":{"fmt":[".cxp"],"parse":"bin/XML","map":{"FB":"Method","Structure":"UDT","Variable":"Field"}},
+"mitsubishi":{"fmt":[".gx3"],"parse":"GX Works","map":{"FB":"Method","Structure":"UDT","Device":"Field"}}
+},"meta":{"desc":"Vendor parsers / generators"}}

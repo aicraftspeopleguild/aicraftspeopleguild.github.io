@@ -1,0 +1,4 @@
+{"$schema":"konomi/udt/v1","name":"Duration","layer":1,"version":"1.0.0","fields":[
+{"n":"value","t":"REAL"},
+{"n":"unit","t":"ENUM","values":["ms","s","min","hr","day","week","month","year"]}
+],"meta":{"desc":"Scalar duration with unit"}}

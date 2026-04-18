@@ -1,0 +1,19 @@
+{
+  "udtType": "Tool",
+  "parameters": {
+    "id": "build:tag-events",
+    "name": "Ingest @tag-event headers",
+    "description": "Scan every script under guild/Enterprise/L3/scripts for a @tag-event JSON block (delimited by `# @tag-event` / `# @end-tag-event`) and store each declaration as a row in tag.db → script_events. The state-machine runner picks these up on the next fire_event/tick, so no generated Script UDT JSON files are needed.",
+    "category": "build",
+    "entry": "guild/Enterprise/L2/lib/build_tag_events.py:build",
+    "language": "python",
+    "inputs": [],
+    "outputs": [{"name":"report","type":"JSON","description":"scripts_with, events_stored"}],
+    "adapters": ["CliAdapter","LoggerWrapper","TestWrapper"],
+    "tags": ["build","tag-event","state-machine","db"],
+    "test_cases": [
+      {"name":"ingest completes","inputs":{},"expect":{"field":"ok","op":"eq","value":true}}
+    ]
+  },
+  "tags": { "id": "build-tag-events", "schema_version": "1.0.0" }
+}

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360"
+     role="img" aria-label="{{CMD_TITLE}} — terminal session">
+  <!--
+  ═══════════════════════════════════════════════════════════════════
+  ORGANISM: terminal-session.svg
+  Composes: atoms/prompt  atoms/badge  atoms/dot
+  A richer animated terminal — 3 commands, each with multiple output
+  lines, timing offsets, and per-line status colors.
+  ═══════════════════════════════════════════════════════════════════
+  TOKENS (32 total):
+    CMD_TITLE  TAB_LABEL
+
+    Command 1: C1_CMD  C1_O1  C1_O2  C1_O3  C1_CO  (C1_CO = ok/warn/err color)
+    Command 2: C2_CMD  C2_O1  C2_O2  C2_O3  C2_CO
+    Command 3: C3_CMD  C3_O1  C3_O2  C3_O3  C3_CO
+
+    Result rows (C_CO colors): #3fb950 ok · #e3b341 warn · #ff7b72 err · #8b949e dim
+
+    Trailing: FOOTER_TS
+  -->
+  <defs>
+    <style>
+      .t{font-family:'SFMono-Regular',Consolas,monospace;font-size:12px}
+      .pr{fill:#3fb950}.di{fill:#8b949e}.cm{fill:#e6edf3}
+      .ln{opacity:0;animation:si .12s ease-out forwards}
+      /* stagger — 17 lines total */
+      .d0 {animation-delay:.3s}  .d1 {animation-delay:.9s}
+      .d2 {animation-delay:1.2s} .d3 {animation-delay:1.5s}
+      .d4 {animation-delay:1.8s} .d5 {animation-delay:2.5s}
+      .d6 {animation-delay:3.0s} .d7 {animation-delay:3.3s}
+      .d8 {animation-delay:3.6s} .d9 {animation-delay:3.9s}
+      .d10{animation-delay:4.6s} .d11{animation-delay:5.1s}
+      .d12{animation-delay:5.4s} .d13{animation-delay:5.7s}
+      .d14{animation-delay:6.0s}
+      .cu {opacity:0;animation:bl 1s step-end infinite;animation-delay:6.2s}
+      @keyframes si{from{opacity:0}to{opacity:1}}
+      @keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+    </style>
+  </defs>
+
+  <rect width="720" height="360" rx="10" fill="#0d1117"/>
+
+  <!-- ── TITLEBAR ──────────────────────────────────────────────────── -->
+  <rect x="0" y="0"  width="720" height="36" rx="10" fill="#161b22"/>
+  <rect x="0" y="26" width="720" height="10"  fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="18" r="6" fill="#27c93f"/>
+  <!-- tab pill -->
+  <rect x="88" y="7" width="160" height="22" rx="4" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="168" y="22" text-anchor="middle" class="t" font-size="11" fill="#8b949e">{{TAB_LABEL}}</text>
+  <!-- right side session title -->
+  <text x="704" y="22" text-anchor="end" class="t" font-size="11" fill="#484f58">{{CMD_TITLE}}</text>
+
+  <!-- ── TERMINAL BODY ─────────────────────────────────────────────── -->
+  <g class="t" transform="translate(24,50)">
+
+    <!-- ── CMD 1 ──────────────────────────────────────────────────── -->
+    <text class="ln d0" y="0">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cm">{{C1_CMD}}</tspan>
+    </text>
+    <text class="ln d1" y="18" fill="{{C1_CO}}">{{C1_O1}}</text>
+    <text class="ln d2" y="34" fill="{{C1_CO}}">{{C1_O2}}</text>
+    <text class="ln d3" y="50" fill="{{C1_CO}}">{{C1_O3}}</text>
+
+    <!-- ── CMD 2 ──────────────────────────────────────────────────── -->
+    <text class="ln d4" y="78">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cm">{{C2_CMD}}</tspan>
+    </text>
+    <text class="ln d5" y="96"  fill="{{C2_CO}}">{{C2_O1}}</text>
+    <text class="ln d6" y="112" fill="{{C2_CO}}">{{C2_O2}}</text>
+    <text class="ln d7" y="128" fill="{{C2_CO}}">{{C2_O3}}</text>
+
+    <!-- ── CMD 3 ──────────────────────────────────────────────────── -->
+    <text class="ln d8" y="156">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cm">{{C3_CMD}}</tspan>
+    </text>
+    <text class="ln d9"  y="174" fill="{{C3_CO}}">{{C3_O1}}</text>
+    <text class="ln d10" y="190" fill="{{C3_CO}}">{{C3_O2}}</text>
+    <text class="ln d11" y="206" fill="{{C3_CO}}">{{C3_O3}}</text>
+
+    <!-- ── IDLE PROMPT + CURSOR ───────────────────────────────────── -->
+    <text class="ln d14" y="234">
+      <tspan class="pr">guild@acg</tspan><tspan class="di">:~$ </tspan><tspan class="cu cm">&#x2588;</tspan>
+    </text>
+  </g>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+  <line x1="16"  y1="326" x2="704" y2="326" stroke="#21262d" stroke-width="1"/>
+  <text x="16"  y="342" font-family="'SFMono-Regular',Consolas,monospace" font-size="10" fill="#484f58">{{FOOTER_TS}}</text>
+  <text x="704" y="342" font-family="'SFMono-Regular',Consolas,monospace" font-size="10" fill="#484f58" text-anchor="end">exit 0</text>
+</svg>

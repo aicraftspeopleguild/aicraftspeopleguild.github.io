@@ -1,0 +1,31 @@
+{
+  "udtType": "SvgOrganism",
+  "parameters": {
+    "name": "MembersStrip",
+    "atomicLevel": "organism",
+    "entry": "guild/Enterprise/L4/svg/build-members-strip.py",
+    "output": "guild/Enterprise/L2/hmi/web/assets/svg/members-strip.svg",
+    "sources": [
+      "/api/members.json",
+      "/api/papers.json"
+    ],
+    "trigger_tag": "demo.heartbeat",
+    "composes": [
+      "Panel",
+      "PulseDot",
+      "WindowChrome"
+    ],
+    "size": {
+      "w": 1010,
+      "h": "dynamic"
+    },
+    "description": "Horizontal strip of founding members with per-member paper counts."
+  },
+  "tags": {
+    "id": "members-strip",
+    "file_path": "guild/Enterprise/L4/svg/instances/organisms/members-strip.json",
+    "output_path": "guild/Enterprise/L2/hmi/web/assets/svg/members-strip.svg",
+    "trigger": "demo.heartbeat",
+    "schema_version": "1.0.0"
+  }
+}

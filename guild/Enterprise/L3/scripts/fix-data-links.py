@@ -52,7 +52,7 @@ REPLACEMENTS = [
     (re.compile(r'((?:href)\s*=\s*["\'])\.\./white-papers/([a-z][\w-]*?)\.html(["\'])'),
      r'\1#/whitepapers/\2\3'),
     # Absolute prod URLs to deleted paper files -> hash routes
-    (re.compile(r'((?:href)\s*=\s*["\'])https://aicraftspeopleguild\.github\.io/guild/(?:web|Enterprise/L4/api)/white-papers/([\w-]+)\.html(["\'])',
+    (re.compile(r'((?:href)\s*=\s*["\'])https://aicraftspeopleguild\.github\.io/guild/(?:web|Enterprise/L4/api)/white-papers/([\w-]+)\.html(["\'])'),
      r'\1#/whitepapers/\2\3'),
 ]
 

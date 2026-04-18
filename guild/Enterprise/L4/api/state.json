@@ -1,0 +1,53 @@
+{
+  "summary": {
+    "ok": true,
+    "db": "guild/Enterprise/L2/state/state.db",
+    "tag_values": 66,
+    "tag_history": 80,
+    "events": 29,
+    "tool_runs": 16,
+    "tool_failures": 3,
+    "pipeline_runs": 1,
+    "pipeline_failures": 0,
+    "faults_active": 2,
+    "faults_total": 3,
+    "repo_state": 0,
+    "last_event": {
+      "at": "2026-04-18T07:29:36Z",
+      "kind": "on_transition",
+      "tag": "pipeline.build.step.01.status",
+      "from_state": "RUNNING",
+      "to_state": "COMPLETE"
+    },
+    "last_pipeline_run": {
+      "started_at": "2026-04-18T07:29:35Z",
+      "pipeline_id": "build",
+      "ok": 1
+    }
+  },
+  "faults_active": [
+    {
+      "fault_id": 3,
+      "tag": "tool:build:state",
+      "kind": "tool_failure",
+      "severity": "error",
+      "message": "tool build:state failed (rc=1)",
+      "raised_at": "2026-04-18T07:33:01Z",
+      "cleared_at": null,
+      "active": 1,
+      "ack_at": null
+    },
+    {
+      "fault_id": 2,
+      "tag": "tool:script:fix-data-links",
+      "kind": "tool_failure",
+      "severity": "error",
+      "message": "tool script:fix-data-links failed (rc=1)",
+      "raised_at": "2026-04-18T07:29:36Z",
+      "cleared_at": null,
+      "active": 1,
+      "ack_at": null
+    }
+  ],
+  "generated_at": "2026-04-18T07:29:36Z"
+}

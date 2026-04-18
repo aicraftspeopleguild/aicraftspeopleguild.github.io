@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# @tag-event
+# {
+#   "id": "build-runtime-tags:on-state-change",
+#   "listens": {
+#     "kind": "on_transition",
+#     "tag":  "state.db.updated",
+#     "from": "*",
+#     "to":   "CHANGED"
+#   },
+#   "writes": ["runtime.tags.json.rebuilt_at"]
+# }
+# @end-tag-event
 """
 Build guild/Enterprise/L4/runtime/tags.json — Ignition-style live tags reflecting
 current Guild enterprise state. Follows the Konomi Value UDT pattern:

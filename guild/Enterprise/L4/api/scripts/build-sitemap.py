@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# @tag-event
+# {
+#   "id": "build-sitemap:on-paths-changed",
+#   "listens": {
+#     "kind": "on_transition",
+#     "tag":  "paths.graph.rebuilt_at",
+#     "from": "*",
+#     "to":   "CHANGED"
+#   },
+#   "writes": ["sitemap.xml.rebuilt_at"]
+# }
+# @end-tag-event
 """
 Build /sitemap.xml at repo root from Path UDT instances.
 

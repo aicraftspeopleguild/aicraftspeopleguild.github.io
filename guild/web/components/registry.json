@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "description": "Atomic-design component registry. Levels: atoms (primitives), molecules (atom groupings), organisms (semantic regions), templates (page scaffolds), widgets (self-fetching data-driven units).",
+  "description": "Atomic-design component registry.",
   "levels": {
     "atoms": [
       "BackLink",
@@ -37,7 +37,8 @@
     ],
     "widgets": [
       "GitStateBadge",
-      "HealthBadge"
+      "HealthBadge",
+      "ReposStateBadge"
     ]
   },
   "components": {
@@ -147,6 +148,10 @@
     },
     "HealthBadge": {
       "src": "components/udts/instances/widgets/health-badge.json",
+      "atomicLevel": "widget"
+    },
+    "ReposStateBadge": {
+      "src": "components/udts/instances/widgets/repo-state-badge.json",
       "atomicLevel": "widget"
     }
   }

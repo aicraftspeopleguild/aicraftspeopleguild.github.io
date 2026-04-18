@@ -29,7 +29,11 @@ sys.path.insert(0, str(LIB))
 from tag_event_parser import parse_tree  # noqa: E402
 
 REPO        = Path(__file__).resolve().parents[4]
-SCRIPTS_DIR = REPO / "guild" / "Enterprise" / "L3" / "scripts"
+SCAN_DIRS   = [
+    REPO / "guild" / "Enterprise" / "L3" / "scripts",
+    REPO / "guild" / "Enterprise" / "L4" / "api" / "scripts",
+    REPO / "guild" / "Enterprise" / "L2" / "lib",
+]
 TAG_DB      = REPO / "tag.db"
 
 SCHEMA = """
@@ -86,7 +90,11 @@ def build() -> dict:
 
     scripts_with = 0
     events = 0
-    for path, decl in parse_tree(SCRIPTS_DIR):
+    all_hits = []
+    for d in SCAN_DIRS:
+        if d.exists():
+            all_hits.extend(parse_tree(d))
+    for path, decl in all_hits:
         rel  = path.relative_to(REPO).as_posix()
         row  = _norm(decl, rel)
         cols = ",".join(row.keys())

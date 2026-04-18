@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# @tag-event
+# {
+#   "id": "build-csv-catalog:on-api-updated",
+#   "listens": {
+#     "kind": "on_transition",
+#     "tag":  "api.papers.json.updated",
+#     "from": "*",
+#     "to":   "CHANGED"
+#   },
+#   "writes": ["api.csv.rebuilt_at"]
+# }
+# @end-tag-event
 """
 Export dense CSV catalogs of Guild tags and relations to guild/Enterprise/L4/csv/.
 

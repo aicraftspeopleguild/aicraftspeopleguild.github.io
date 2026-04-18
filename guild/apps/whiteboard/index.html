@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🖍 ACG Whiteboard · P2P meeting</title>
+<link rel="stylesheet" href="../../Enterprise/L2/scada/gateway/styles/theme.css">
+<link rel="stylesheet" href="../../Enterprise/L2/scada/gateway/styles/section.css">
+<style>
+  html,body{height:100vh;margin:0;overflow:hidden;display:flex;flex-direction:column;background:var(--bg);color:var(--tx);font-family:var(--ff-body)}
+  .wb-hd{flex:0 0 auto;display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--bd);flex-wrap:wrap}
+  .wb-hd h1{font-family:var(--ff-display);font-size:18px;font-weight:700;color:var(--tx);margin:0}
+  .wb-hd h1 small{font-size:11px;color:var(--dm);font-weight:400;margin-left:6px}
+  .wb-hd .spacer{flex:1}
+  .wb-hd a,.wb-hd button{font-size:11px;font-weight:600;color:var(--tl);text-decoration:none;padding:5px 12px;border-radius:var(--r-sm);border:1px solid transparent;background:transparent;cursor:pointer}
+  .wb-hd a:hover,.wb-hd button:hover{background:var(--tlb);border-color:var(--tl)}
+  .wb-hd input[type=text]{padding:5px 10px;border:1px solid var(--bd);border-radius:var(--r-sm);background:var(--inp);color:var(--tx);font-family:var(--ff-mono);font-size:12px;width:160px}
+  .wb-me{font-family:var(--ff-mono);font-size:11px;color:var(--dm);padding:3px 8px;background:var(--tlb);border-radius:20px}
+
+  .wb-tools{flex:0 0 auto;display:flex;gap:10px;align-items:center;padding:8px 16px;background:var(--card);border-bottom:1px solid var(--bd);flex-wrap:wrap}
+  .wb-tools label{font-size:11px;color:var(--dm);font-weight:600}
+  .wb-tools input[type=color]{width:30px;height:26px;border:1px solid var(--bd);border-radius:var(--r-sm);background:transparent;cursor:pointer;padding:0}
+  .wb-tools input[type=range]{accent-color:var(--tl);width:90px}
+  .wb-tools .wb-size-v{font-family:var(--ff-mono);font-size:11px;color:var(--dm);min-width:22px;text-align:right}
+  .wb-tools button{padding:5px 12px;border:1px solid var(--bd);border-radius:var(--r-sm);background:var(--inp);color:var(--dm);font-family:var(--ff-body);font-size:11px;font-weight:600;cursor:pointer}
+  .wb-tools button:hover{border-color:var(--tl);color:var(--tl)}
+  .wb-tools button.on{background:var(--tlb);border-color:var(--tl);color:var(--tl)}
+  .wb-tools button.danger:hover{border-color:var(--rs);color:var(--rs)}
+  .wb-tools .spacer{flex:1}
+  .wb-tools .st{font-family:var(--ff-mono);font-size:10px;color:var(--ft)}
+  .wb-tools .st b{color:var(--tl)}
+
+  .wb-canvas-host{flex:1;position:relative;overflow:hidden}
+  canvas#wb{position:absolute;inset:0;width:100%;height:100%;background:var(--card);cursor:crosshair;touch-action:none}
+
+  /* hide p2p log — we don't need to show it on this screen */
+  #log,#pList,#msgList{display:none}
+</style>
+</head>
+<body>
+
+<header class="wb-hd">
+  <h1>🖍 ACG Whiteboard<small>· P2P meeting board</small></h1>
+  <span class="spacer"></span>
+  <label>Room</label>
+  <input type="text" id="rIn" value="acg-whiteboard" placeholder="room">
+  <button id="jBtn">Join</button>
+  <span class="wb-me">⚒ <span id="mId">…</span></span>
+  <a href="../p2p/">🛰 mesh</a>
+  <a href="../../../index.html">⚒ guild</a>
+</header>
+
+<div class="wb-tools">
+  <label>Pen</label>
+  <input type="color" id="wb-color" value="#1a5c4c" title="stroke color">
+  <label>Size</label>
+  <input type="range" id="wb-size" min="1" max="20" value="3" title="stroke width">
+  <span class="wb-size-v" id="wb-size-v">3</span>
+  <button id="wb-pen" class="on">✏ pen</button>
+  <button id="wb-erase">🧽 erase</button>
+  <span class="spacer"></span>
+  <span class="st">strokes <b id="wb-n">0</b> · peers <b id="wb-peers">0</b></span>
+  <button id="wb-clear" class="danger">clear</button>
+</div>
+
+<div class="wb-canvas-host">
+  <canvas id="wb"></canvas>
+</div>
+
+<!-- hidden DOM required by the mesh scripts -->
+<div style="display:none">
+  <span id="cIn"></span><button id="sBtn"></button>
+  <ul id="pList"></ul><div id="msgList"></div>
+  <div id="log"></div>
+</div>
+
+<script type="module" src="./whiteboard.js"></script>
+</body>
+</html>

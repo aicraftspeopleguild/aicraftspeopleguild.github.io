@@ -7,6 +7,12 @@ import {mkUDT} from './scada/udt.js';
 
 export const pm=new Map();
 
+// ── Plugin hook: additional apps (whiteboard, etc) can register
+// handlers for custom `t:<type>` messages. Chat already has `hi` + `msg`
+// baked in; plugins receive any *other* type via this dispatch.
+const _extraHandlers=new Map();
+export function registerPeerHandler(type,fn){_extraHandlers.set(type,fn);return()=>_extraHandlers.delete(type)}
+
 function meCard(){
   const p=getProfile();
   return {name:p?.username||myNm,emoji:myEm,avatar:p?.avatar||null};
@@ -68,6 +74,8 @@ export function wire(dc,rid){
       if(pm.has(pid)){pm.get(pid).msgsIn++;pm.get(pid).lastSeen=Date.now();publishPeer(pid)}
       CHAT.inc('msgsIn');CHAT.write('lastMsgAt',Date.now(),{type:'DateTime'});
       addMsg(pid,info.name,info.emoji,m.txt,false,info.avatar);
+    }else if(m.t && _extraHandlers.has(m.t)){
+      try{_extraHandlers.get(m.t)(m,rid)}catch(er){log('plugin('+m.t+') err: '+er.message,'er')}
     }
   }catch(er){log('parse err','er')}};
 }

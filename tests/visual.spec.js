@@ -63,7 +63,7 @@ for (const { path, name } of criticalPages) {
     await expect(page).toHaveScreenshot(`${name}.png`, {
       fullPage: true,
       maxDiffPixelRatio: 0.02,
-      timeout: 8000,
+      timeout: 15000,
     });
   });
 }

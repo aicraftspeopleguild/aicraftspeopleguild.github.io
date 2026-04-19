@@ -144,3 +144,9 @@ npm run test:visual:update
 git add tests/snapshots/
 git commit -m "chore: add snapshot for <page-name>"
 ```
+
+Then regenerate the Linux baselines for CI by triggering the **Update Visual Snapshots** workflow:
+
+1. Go to **Actions** → **Update Visual Snapshots** on GitHub
+2. Click **Run workflow** and select your branch
+3. The workflow will generate the Linux snapshots and commit them to your branch

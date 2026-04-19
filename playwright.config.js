@@ -11,6 +11,5 @@ export default defineConfig({
     { name: 'chromium', use: { browserName: 'chromium' } }
   ],
   snapshotDir: './tests/snapshots',
-  snapshotPathTemplate: '{snapshotDir}/{testFilePath}-snapshots/{arg}{ext}',
   reporter: [['html', { open: 'never' }]],
 });

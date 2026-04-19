@@ -60,8 +60,8 @@ In case of failure, a full Playwright report is uploaded as a GitHub Actions art
 ```
 .
 ├── tests/
-│   ├── unit.spec.js          # Unit tests (HTML structure, CSS, internal links)
-│   ├── functional.spec.js    # Functional tests (HTTP 200, JS errors, nav)
+│   ├── unit.spec.js          # Unit tests (HTML structure)
+│   ├── functional.spec.js    # Functional tests (HTTP 200, JS errors)
 │   ├── visual.spec.js        # Visual regression tests (screenshot diff)
 │   └── snapshots/            # Reference screenshots (committed to the repo)
 ├── .github/

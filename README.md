@@ -23,7 +23,6 @@ The non-regression logic is now clear:
 - **Page deleted** → test fails (404)
 - **Page renamed** → test fails (404 on the old name)
 - **Broken JS** → test fails (console error detected)
-- **Nav disappears** → test fails
 - **New page added** → ignored until explicitly declared in the list
 
 > All page lists are **fixed and explicit**. Adding a new HTML file to the repo does not automatically include it in the test scope — it must be declared manually. This is intentional: it guarantees that only known, reviewed pages are part of the non-regression contract.
@@ -60,8 +59,8 @@ In case of failure, a full Playwright report is uploaded as a GitHub Actions art
 ```
 .
 ├── tests/
-│   ├── unit.spec.js          # Unit tests (HTML structure)
-│   ├── functional.spec.js    # Functional tests (HTTP 200, JS errors)
+│   ├── unit.spec.js          # Unit tests (HTML structure, title exact match for all pages, h1 presence)
+│   ├── functional.spec.js    # Functional tests (HTTP 200 and no JS errors for all known pages)
 │   ├── visual.spec.js        # Visual regression tests (screenshot diff)
 │   └── snapshots/            # Reference screenshots (committed to the repo)
 ├── .github/

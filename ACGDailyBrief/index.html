@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Daily Brief — AI Craftspeople Guild</title>
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --surface: #1a1a2e;
+      --surface2: #16213e;
+      --accent: #c9a84c;
+      --accent2: #8b4513;
+      --text: #f4e4c1;
+      --text-muted: #a89070;
+      --link: #d4b96a;
+      --border: rgba(201,168,76,0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--accent2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.6rem;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-shadow: 0 0 20px rgba(201,168,76,0.4);
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(201,168,76,0.3); }
+      to   { text-shadow: 0 0 25px rgba(201,168,76,0.7); }
+    }
+    header p { color: var(--text-muted); margin-top: 6px; font-style: italic; }
+    .layout {
+      display: flex;
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px 20px;
+      gap: 30px;
+    }
+    aside {
+      width: 200px;
+      flex-shrink: 0;
+    }
+    aside h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    aside ul { list-style: none; }
+    aside ul li { margin-bottom: 6px; }
+    aside ul li a {
+      color: var(--link);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: block;
+      transition: background 0.2s;
+    }
+    aside ul li a:hover { background: var(--border); }
+    aside ul li a.active { background: var(--border); color: var(--accent); }
+    main {
+      flex: 1;
+      min-width: 0;
+    }
+    .brief-section h1 {
+      font-size: 1.9rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .brief-section .subtitle {
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+    .brief-section .lede {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding: 12px 16px;
+      background: var(--surface2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+    }
+    .brief-section h2 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 24px 0 10px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+    }
+    .topic-title {
+      font-weight: bold;
+      color: var(--text);
+      margin-top: 14px;
+      font-size: 1rem;
+    }
+    .topic-meta {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+    .topic-url a {
+      color: var(--link);
+      font-size: 0.78rem;
+      word-break: break-all;
+      text-decoration: none;
+    }
+    .topic-url a:hover { text-decoration: underline; }
+    .spacer { height: 6px; }
+    footer {
+      text-align: center;
+      padding: 16px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 640px) {
+      .layout { flex-direction: column; }
+      aside { width: 100%; }
+      header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔮 The Daily Brief</h1>
+    <p>AI Craftspeople Guild — Rising Trends in AI</p>
+  </header>
+  <div class="layout">
+    <aside>
+      <h3>Archive</h3>
+      <ul id="archive-list">
+<li><a href="#brief-2026-04-20" onclick="showBrief('2026-04-20')">2026-04-20</a></li>
+<li><a href="#brief-2026-04-19" onclick="showBrief('2026-04-19')">2026-04-19</a></li>
+<li><a href="#brief-2026-04-18" onclick="showBrief('2026-04-18')">2026-04-18</a></li>
+<li><a href="#brief-2026-04-17" onclick="showBrief('2026-04-17')">2026-04-17</a></li>
+<li><a href="#brief-2026-04-16" onclick="showBrief('2026-04-16')">2026-04-16</a></li>
+<li><a href="#brief-2026-04-15" onclick="showBrief('2026-04-15')">2026-04-15</a></li>
+<li><a href="#brief-2026-04-14" onclick="showBrief('2026-04-14')">2026-04-14</a></li>
+<li><a href="#brief-2026-04-13" onclick="showBrief('2026-04-13')">2026-04-13</a></li>
+<li><a href="#brief-2026-04-12" onclick="showBrief('2026-04-12')">2026-04-12</a></li>
+<li><a href="#brief-2026-04-11" onclick="showBrief('2026-04-11')">2026-04-11</a></li>
+<li><a href="#brief-2026-04-10" onclick="showBrief('2026-04-10')">2026-04-10</a></li>
+<li><a href="#brief-2026-04-09" onclick="showBrief('2026-04-09')">2026-04-09</a></li>
+<li><a href="#brief-2026-04-08" onclick="showBrief('2026-04-08')">2026-04-08</a></li>
+<li><a href="#brief-2026-04-07" onclick="showBrief('2026-04-07')">2026-04-07</a></li>
+<li><a href="#brief-2026-04-06" onclick="showBrief('2026-04-06')">2026-04-06</a></li>
+<li><a href="#brief-2026-04-05" onclick="showBrief('2026-04-05')">2026-04-05</a></li>
+<li><a href="#brief-2026-04-01" onclick="showBrief('2026-04-01')">2026-04-01</a></li>
+<li><a href="#brief-2026-03-31" onclick="showBrief('2026-03-31')">2026-03-31</a></li>
+<li><a href="#brief-2026-03-30" onclick="showBrief('2026-03-30')">2026-03-30</a></li>
+<li><a href="#brief-2026-03-27" onclick="showBrief('2026-03-27')">2026-03-27</a></li>
+<li><a href="#brief-2026-03-26" onclick="showBrief('2026-03-26')">2026-03-26</a></li>
+<li><a href="#brief-2026-03-25" onclick="showBrief('2026-03-25')">2026-03-25</a></li>
+      </ul>
+    </aside>
+    <main id="brief-container">
+<section id="brief-2026-04-20" class="brief-section" style="display:block">
+<h1>The Daily Brief — 2026-04-20</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 I clustered the 105 most-upvoted YouTube comments on Karpathy's "Intro to LLMs" by theme — one cluster is bigger than every technical one combined**</div>
+<p>📡 reddit | Score: `████░` 0.75 | https://www.reddit.com/r/LocalLLaMA/comments/1sqkptq/i_clustered_the_105_mostupvoted_youtube_comments/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 LLMs Corrupt Your Documents When You Delegate**</div>
+<p>📄 arxiv | Score: `███░░` 0.63 | https://arxiv.org/abs/2604.15597</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 🔬 ✨ Claude Token Counter, now with model comparisons ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.60 | https://simonwillison.net/2026/Apr/20/claude-token-counts/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. ⚖️ 20 days post-Claude Code leak: Did the accidental "open sourcing" actually matter for local devs?**</div>
+<p>📡 reddit | Score: `████░` 0.74 | https://www.reddit.com/r/LocalLLaMA/comments/1sqkm0b/20_days_postclaude_code_leak_did_the_accidental/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Got Codex supplies , Ty to open ai**</div>
+<p>📡 reddit | Score: `████░` 0.72 | https://www.reddit.com/r/OpenAI/comments/1sqlc23/got_codex_supplies_ty_to_open_ai/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Local LLM Beginner’s Guide (Mac - Apple Silicon)**</div>
+<p>📡 reddit | Score: `████░` 0.70 | https://www.reddit.com/r/artificial/comments/1sqjk0r/local_llm_beginners_guide_mac_apple_silicon/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 What does ChatGPT argue with you about?**</div>
+<p>📡 reddit | Score: `████░` 0.70 | https://www.reddit.com/r/ChatGPT/comments/1sqkbln/what_does_chatgpt_argue_with_you_about/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 Wow Claude...just wow...**</div>
+<p>📡 reddit | Score: `███░░` 0.68 | https://www.reddit.com/r/ClaudeAI/comments/1sqk4dz/wow_claudejust_wow/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 How are you guys using Claude for sales?**</div>
+<p>📡 reddit | Score: `███░░` 0.67 | https://www.reddit.com/r/ClaudeAI/comments/1sqjycx/how_are_you_guys_using_claude_for_sales/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 🔬 ReactBench: A Benchmark for Topological Reasoning in MLLMs on Chemical Reaction Diagrams**</div>
+<p>📄 arxiv | Score: `███░░` 0.63 | https://arxiv.org/abs/2604.15994</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-19" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-19</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 🎭 OpenAI's usage dashboard is honestly embarrassing for what they charge**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/OpenAI/comments/1spofen/openais_usage_dashboard_is_honestly_embarrassing/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ Thoughts and feelings around Claude Design ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.61 | https://samhenri.gold/blog/20260418-claude-design/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 Unweight: how we compressed an LLM 22% without sacrificing quality**</div>
+<p>📡 reddit | Score: `████░` 0.77 | https://www.reddit.com/r/LocalLLaMA/comments/1spnx1l/unweight_how_we_compressed_an_llm_22_without/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Just got logged out of chatGPT bc my session expired and it isnt letting me log in.**</div>
+<p>📡 reddit | Score: `████░` 0.73 | https://www.reddit.com/r/OpenAI/comments/1spnnx7/just_got_logged_out_of_chatgpt_bc_my_session/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 ChatGPT is almost always doing this**</div>
+<p>📡 reddit | Score: `███░░` 0.65 | https://www.reddit.com/r/OpenAI/comments/1spmtzl/chatgpt_is_almost_always_doing_this/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 7900 XTX vs 4070 Ti Super for gaming + AI image gen (Comfy UI) + creative work (Game dev, Blender, editing)?**</div>
+<p>📡 reddit | Score: `███░░` 0.65 | https://www.reddit.com/r/StableDiffusion/comments/1spnk1m/7900_xtx_vs_4070_ti_super_for_gaming_ai_image_gen/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 ✨ LLM ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. ⚠️ ✨ AI safety ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 ✨ prompt engineering ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-18" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-18</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 🔬 Top 10 Open Source OpenClaw, Codex, Claude Skills from 1st -15th April**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/OpenAI/comments/1sosvlr/top_10_open_source_openclaw_codex_claude_skills/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ Claude Design ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.64 | https://www.anthropic.com/news/claude-design-anthropic-labs</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 GPT-6 after SPUD (GPT-5.5)?**</div>
+<p>📡 reddit | Score: `███░░` 0.66 | https://www.reddit.com/r/singularity/comments/1sosda0/gpt6_after_spud_gpt55/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Saving challenging projects was my niche, but AI codebases are making me miserable**</div>
+<p>📡 reddit | Score: `███░░` 0.66 | https://www.reddit.com/r/ExperiencedDevs/comments/1sosciu/saving_challenging_projects_was_my_niche_but_ai/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 ✨ LLM ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. ⚠️ ✨ AI safety ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 ✨ prompt engineering ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 ✨ AI art ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 ✨ edge AI ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-17" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-17</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 🔬 Benchmarking Linguistic Adaptation in Comparable-Sized LLMs: A Study of Llama-3.1-8B, Mistral-7B-v0.1, and Qwen3-8B on Romanized Nepali**</div>
+<p>📄 arxiv | Score: `████░` 0.79 | https://arxiv.org/abs/2604.14171</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 Claude Opus 4.7 was so bad, I temporarily switched to ChatGPT 5.4.**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/ChatGPT/comments/1snvql5/claude_opus_47_was_so_bad_i_temporarily_switched/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 ✨ Qwen3.6-35B-A3B on my laptop drew me a better pelican than Claude Opus 4.7 ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.58 | https://simonwillison.net/2026/Apr/16/qwen-beats-opus/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Gemma 4 is excellent for image to prompt**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/StableDiffusion/comments/1snw7nt/gemma_4_is_excellent_for_image_to_prompt/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Free visual prompt builder I made — built for Midjourney but the style/lighting combos work for SD too**</div>
+<p>📡 reddit | Score: `███░░` 0.64 | https://www.reddit.com/r/StableDiffusion/comments/1snvmgi/free_visual_prompt_builder_i_made_built_for/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 ✨ LLM ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. ⚠️ ✨ AI safety ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 ✨ prompt engineering ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 ✨ AI art ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-16" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-16</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 ChatGPT is genuinely hilarious thanks to its grasp of dry humour and sarcasm**</div>
+<p>📡 reddit | Score: `████░` 0.77 | https://www.reddit.com/r/ChatGPT/comments/1smypai/chatgpt_is_genuinely_hilarious_thanks_to_its/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 Lossless Prompt Compression via Dictionary-Encoding and In-Context Learning: Enabling Cost-Effective LLM Analysis of Repetitive Data**</div>
+<p>📄 arxiv | Score: `███░░` 0.63 | https://arxiv.org/abs/2604.13066</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 ✨ ChatGPT for Excel ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.61 | https://chatgpt.com/apps/spreadsheets/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 AI Tools for organising PDFs and voice recordings**</div>
+<p>📡 reddit | Score: `████░` 0.77 | https://www.reddit.com/r/OpenAI/comments/1smyp53/ai_tools_for_organising_pdfs_and_voice_recordings/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Hey I want someone who I can pay and they design a Ai trailer for me. Is this the correct place to search for those people?**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/StableDiffusion/comments/1smyxzv/hey_i_want_someone_who_i_can_pay_and_they_design/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. ⚠️ Is chatgpt fast’s hallucinations a national security risk?**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/ChatGPT/comments/1smy917/is_chatgpt_fasts_hallucinations_a_national/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 So, Jensen is playing 4D chess with the "AI will kill SaaS" narrative, and pointing towards infinite user glitch ( or a feature:)))**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/singularity/comments/1smypb0/so_jensen_is_playing_4d_chess_with_the_ai_will/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. ⚖️ Is this from OpenAI or Grok? The rankings climbing Sooooo fast, they finally figure out what people actually want**</div>
+<p>📡 reddit | Score: `███░░` 0.69 | https://www.reddit.com/r/OpenAI/comments/1smy4ne/is_this_from_openai_or_grok_the_rankings_climbing/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 [HELP!] Claude Cowork Not Working on Windows 11 Pro**</div>
+<p>📡 reddit | Score: `███░░` 0.67 | https://www.reddit.com/r/ClaudeAI/comments/1smxu2p/help_claude_cowork_not_working_on_windows_11_pro/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-15" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-15</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 Last year ChatGPT were perfect as a traveling guide. Now it kinda screw me over.**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/ChatGPT/comments/1sm1ly5/last_year_chatgpt_were_perfect_as_a_traveling/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 🔬 Narrative over Numbers: The Identifiable Victim Effect and its Amplification Under Alignment and Reasoning in Large Language Models**</div>
+<p>📄 arxiv | Score: `███░░` 0.63 | https://arxiv.org/abs/2604.12076</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 ✨ Claude Code Routines ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.62 | https://code.claude.com/docs/en/routines</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Do you feel the product managers are the people pushing the hardest for LLMs and Vibe coding?**</div>
+<p>📡 reddit | Score: `████░` 0.73 | https://www.reddit.com/r/ExperiencedDevs/comments/1sm0ajf/do_you_feel_the_product_managers_are_the_people/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Improvements to Built with Claude Project Showcase visibility**</div>
+<p>📡 reddit | Score: `████░` 0.72 | https://www.reddit.com/r/ClaudeAI/comments/1sm0vtq/improvements_to_built_with_claude_project/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 The paradoxical reality of daily-AI automations**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/OpenAI/comments/1sm1isj/the_paradoxical_reality_of_dailyai_automations/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 I migrated a full WordPress site (520MB) using Claude and it worked perfectly!!**</div>
+<p>📡 reddit | Score: `███░░` 0.68 | https://www.reddit.com/r/ClaudeAI/comments/1sm0gay/i_migrated_a_full_wordpress_site_520mb_using/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 Why do you think 5.2-codex was removed for ChatGPT logins?**</div>
+<p>📡 reddit | Score: `███░░` 0.66 | https://www.reddit.com/r/OpenAI/comments/1sm07m8/why_do_you_think_52codex_was_removed_for_chatgpt/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 ✨ LLM ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-14" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-14</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 I built an open-source self-hostable CRM with Claude, for Claude**</div>
+<p>📡 reddit | Score: `████░` 0.77 | https://www.reddit.com/r/ClaudeAI/comments/1sl3s4r/i_built_an_opensource_selfhostable_crm_with/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ Can Claude Fly a Plane? ✨**</div>
+<p>🔶 hackernews | Score: `████░` 0.71 | https://so.long.thanks.fish/can-claude-fly-a-plane/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 LLMs for Text-Based Exploration and Navigation Under Partial Observability**</div>
+<p>📄 arxiv | Score: `███░░` 0.62 | https://arxiv.org/abs/2604.09604</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 When, if ever, will open-source match the capability of Claude Opus 4.5?**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/ClaudeAI/comments/1sl3ew6/when_if_ever_will_opensource_match_the_capability/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Image generation failed error**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/ChatGPT/comments/1sl3y6u/image_generation_failed_error/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 How do you structure AI for different parts of your life/work — one ChatGPT setup or separate Claude/ChatGPT silos**</div>
+<p>📡 reddit | Score: `████░` 0.70 | https://www.reddit.com/r/OpenAI/comments/1sl2hxn/how_do_you_structure_ai_for_different_parts_of/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 I asked ChatGPT to give my cat human teeth and Oh. My. God.**</div>
+<p>📡 reddit | Score: `███░░` 0.68 | https://www.reddit.com/r/ChatGPT/comments/1sl31rq/i_asked_chatgpt_to_give_my_cat_human_teeth_and_oh/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 Stanford report highlights growing disconnect between AI insiders and everyone else**</div>
+<p>📡 reddit | Score: `███░░` 0.68 | https://www.reddit.com/r/singularity/comments/1sl3mtw/stanford_report_highlights_growing_disconnect/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 I'm running a live experiment where AI agents survive or die based on whether humans find them interesting. Want to watch?**</div>
+<p>📡 reddit | Score: `███░░` 0.65 | https://www.reddit.com/r/singularity/comments/1sl2lnl/im_running_a_live_experiment_where_ai_agents/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-13" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-13</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 🔬 Apparently Chatgpt will end a conversation over your mom jokes. I've been begging the voice model to come back and it just ghosted me**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/ChatGPT/comments/1sk6he9/apparently_chatgpt_will_end_a_conversation_over/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 🔬 Cards Against LLMs: Benchmarking Humor Alignment in Large Language Models**</div>
+<p>📄 arxiv | Score: `███░░` 0.67 | https://arxiv.org/abs/2604.08757</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. ⚠️ ✨ Show HN: Claudraband – Claude Code for the Power User ✨**</div>
+<p>🔶 hackernews | Score: `██░░░` 0.48 | https://github.com/halfwhey/claudraband</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Deslopification and Critical thinking Skill for Claude**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/ClaudeAI/comments/1sk6ch1/deslopification_and_critical_thinking_skill_for/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 I used Claude Code (Opus 4.6) to build a production multi-tenant app in 3 weeks. 12 API integrations, 50k+ lines.**</div>
+<p>📡 reddit | Score: `████░` 0.77 | https://www.reddit.com/r/ClaudeAI/comments/1sk67yd/i_used_claude_code_opus_46_to_build_a_production/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 Ollama Cloud Pro ($20/mo) vs OpenAI Plus ($23/mo). Which gives more tokens ?**</div>
+<p>📡 reddit | Score: `████░` 0.75 | https://www.reddit.com/r/OpenAI/comments/1sk5m7q/ollama_cloud_pro_20mo_vs_openai_plus_23mo_which/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 LLM Dictionary: A reference to contemporary LLM vocabulary [P]**</div>
+<p>📡 reddit | Score: `████░` 0.74 | https://www.reddit.com/r/MachineLearning/comments/1sk61u3/llm_dictionary_a_reference_to_contemporary_llm/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 Used an AI assistant to make a birthday call and it handled retries like a human**</div>
+<p>📡 reddit | Score: `███░░` 0.69 | https://www.reddit.com/r/artificial/comments/1sk642a/used_an_ai_assistant_to_make_a_birthday_call_and/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 ChatGPT making up words**</div>
+<p>📡 reddit | Score: `███░░` 0.64 | https://www.reddit.com/r/ChatGPT/comments/1sk4zn7/chatgpt_making_up_words/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-12" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-12</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 My manager watching how I work after I hit the Claude usage limit.**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/ChatGPT/comments/1sj9nyr/my_manager_watching_how_i_work_after_i_hit_the/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ Cirrus Labs to join OpenAI ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.50 | https://cirruslabs.org/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. ⚖️ Where to find complete illustrious/NoobAI character keywords ?**</div>
+<p>📡 reddit | Score: `████░` 0.72 | https://www.reddit.com/r/StableDiffusion/comments/1sja12u/where_to_find_complete_illustriousnoobai/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Real quotes from the most influential figures in AI.**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/OpenAI/comments/1sj9lpd/real_quotes_from_the_most_influential_figures_in/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Why Claude Code Max burns limits 40% faster with 20K less usable context. Proxy evidence inside.**</div>
+<p>📡 reddit | Score: `███░░` 0.67 | https://www.reddit.com/r/ClaudeAI/comments/1sj8o9l/why_claude_code_max_burns_limits_40_faster_with/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 Help my llm isn't llming**</div>
+<p>📡 reddit | Score: `███░░` 0.66 | https://www.reddit.com/r/LocalLLaMA/comments/1sj8k11/help_my_llm_isnt_llming/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 ArcFace embeddings quantized to 16-bit pgvector HALFVEC ? [D]**</div>
+<p>📡 reddit | Score: `███░░` 0.65 | https://www.reddit.com/r/MachineLearning/comments/1sj960m/arcface_embeddings_quantized_to_16bit_pgvector/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 LLMs learn backwards, and the scaling hypothesis is bounded. [D]**</div>
+<p>📡 reddit | Score: `███░░` 0.64 | https://www.reddit.com/r/MachineLearning/comments/1sj888x/llms_learn_backwards_and_the_scaling_hypothesis/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 It already happened to me. Bad advice from ai while messaging my doctor.**</div>
+<p>📡 reddit | Score: `███░░` 0.64 | https://www.reddit.com/r/OpenAI/comments/1sj90bz/it_already_happened_to_me_bad_advice_from_ai/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-11" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-11</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 Trying to inpaint using Z-image Turbo BF16; what am I doing wrong?**</div>
+<p>📡 reddit | Score: `████░` 0.72 | https://www.reddit.com/r/StableDiffusion/comments/1siefug/trying_to_inpaint_using_zimage_turbo_bf16_what_am/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 🔬 Detecting HIV-Related Stigma in Clinical Narratives Using Large Language Models**</div>
+<p>📄 arxiv | Score: `███░░` 0.65 | https://arxiv.org/abs/2604.07717</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. ⚖️ Here is definitive proof about <thinking_mode> and <reasoning_effort> tags existence. I got tired arguing with all the overconfident "it's just AI hallucinating because you asked this exact thing bro" idiots so went ahead and generated this from my company subscribed account.**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/ClaudeAI/comments/1sie2p1/here_is_definitive_proof_about_thinking_mode_and/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 🚀 Did z.ai just raise GLM Coding Plan prices or am I losing it?**</div>
+<p>📡 reddit | Score: `███░░` 0.69 | https://www.reddit.com/r/LocalLLaMA/comments/1sidx4w/did_zai_just_raise_glm_coding_plan_prices_or_am_i/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 🔬 SepSeq: A Training-Free Framework for Long Numerical Sequence Processing in LLMs**</div>
+<p>📄 arxiv | Score: `███░░` 0.65 | https://arxiv.org/abs/2604.07737</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 ✨ LLM ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. ⚠️ ✨ AI safety ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 ✨ prompt engineering ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 ✨ AI art ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-10" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-10</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 Anybody know the system prompt for Claude to speak like a caveman and use as less tokens as possible?**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/ClaudeAI/comments/1shhu35/anybody_know_the_system_prompt_for_claude_to/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 🔬 Detecting HIV-Related Stigma in Clinical Narratives Using Large Language Models**</div>
+<p>📄 arxiv | Score: `███░░` 0.64 | https://arxiv.org/abs/2604.07717</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 ✨ Reverse engineering Gemini's SynthID detection ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.55 | https://github.com/aloshdenny/reverse-SynthID</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 ChatGPT 5x plan glitch.**</div>
+<p>📡 reddit | Score: `████░` 0.74 | https://www.reddit.com/r/OpenAI/comments/1shhgbr/chatgpt_5x_plan_glitch/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Getting Laid Off Without Warning Taught Me Everything I Need to Know About Workplace Loyalty**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/ExperiencedDevs/comments/1shhupi/getting_laid_off_without_warning_taught_me/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 Your AI agents remember yesterday.**</div>
+<p>📡 reddit | Score: `███░░` 0.70 | https://www.reddit.com/r/singularity/comments/1shh4cc/your_ai_agents_remember_yesterday/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 Is there a node that finds prompts based on a category?**</div>
+<p>📡 reddit | Score: `███░░` 0.69 | https://www.reddit.com/r/StableDiffusion/comments/1shhkte/is_there_a_node_that_finds_prompts_based_on_a/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 I just installed neofetch on chatgpt**</div>
+<p>📡 reddit | Score: `███░░` 0.68 | https://www.reddit.com/r/ChatGPT/comments/1shh0gl/i_just_installed_neofetch_on_chatgpt/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 Upwork is putting us inside chatgpt now**</div>
+<p>📡 reddit | Score: `███░░` 0.67 | https://www.reddit.com/r/ChatGPT/comments/1shgty0/upwork_is_putting_us_inside_chatgpt_now/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-09" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-09</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 I asked ChatGPT and Gemini to generate a world map**</div>
+<p>📡 reddit | Score: `████░` 0.84 | https://www.reddit.com/r/artificial/comments/1sglae0/i_asked_chatgpt_and_gemini_to_generate_a_world_map/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ Claude mixes up who said what and that's not OK ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.63 | https://dwyer.co.za/static/claude-mixes-up-who-said-what-and-thats-not-ok.html</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 🔬 Invisible Influences: Investigating Implicit Intersectional Biases through Persona Engineering in Large Language Models**</div>
+<p>📄 arxiv | Score: `███░░` 0.62 | https://arxiv.org/abs/2604.06213</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Gemma 4 on Llama.cpp should be stable now**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/LocalLLaMA/comments/1sgl3qz/gemma_4_on_llamacpp_should_be_stable_now/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. ⚠️ OpenAI plans staggered rollout of new model over cybersecurity risk**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/singularity/comments/1sgky1r/openai_plans_staggered_rollout_of_new_model_over/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. ⚖️ Anthropic gift subscriptions are silently reverting to Free plan after ~1 week - and the support loop leaves affected users with no practical recourse**</div>
+<p>📡 reddit | Score: `████░` 0.74 | https://www.reddit.com/r/ClaudeAI/comments/1sgkoxn/anthropic_gift_subscriptions_are_silently/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 Studying Sutton and Barto's RL book and its connections to RL for LLMs (e.g., tool use, math reasoning, agents, and so on)? [D]**</div>
+<p>📡 reddit | Score: `████░` 0.74 | https://www.reddit.com/r/MachineLearning/comments/1sgknct/studying_sutton_and_bartos_rl_book_and_its/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 🔬 Cant wait to use Mythos model - Anthropic refuses to release Claude Mythos publicly — model found thousands of zero-days across every major OS and browser. Launches Project Glasswing with Apple, Microsoft, Google, and others for defensive use.**</div>
+<p>📡 reddit | Score: `████░` 0.70 | https://www.reddit.com/r/artificial/comments/1sgjlgv/cant_wait_to_use_mythos_model_anthropic_refuses/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 Most developers have a graveyard of unfinished projects. I used Claude to give them a proper burial.**</div>
+<p>📡 reddit | Score: `████░` 0.70 | https://www.reddit.com/r/ClaudeAI/comments/1sgkdk5/most_developers_have_a_graveyard_of_unfinished/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-08" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-08</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 Stable Diffusion workflow for building a short narrative sequence**</div>
+<p>📡 reddit | Score: `████░` 0.72 | https://www.reddit.com/r/StableDiffusion/comments/1sfogcn/stable_diffusion_workflow_for_building_a_short/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ System Card: Claude Mythos Preview [pdf] ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.65 | https://www-cdn.anthropic.com/53566bf5440a10affd749724787c8913a2ae0841.pdf</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 🔬 Pramana: Fine-Tuning Large Language Models for Epistemic Reasoning through Navya-Nyaya**</div>
+<p>📄 arxiv | Score: `███░░` 0.64 | https://arxiv.org/abs/2604.04937</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. ⚠️ The dangerous aspect of AI for Junior devs. This is my first article in Medium.**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/programming/comments/1sfoa2h/the_dangerous_aspect_of_ai_for_junior_devs_this/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Review This Prompt And Feedback it.**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/ChatGPT/comments/1sfo5qw/review_this_prompt_and_feedback_it/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 🔬 Why would Anthropic keep a cyber model like Project Glasswing invite-only?**</div>
+<p>📡 reddit | Score: `███░░` 0.68 | https://www.reddit.com/r/artificial/comments/1sfnauw/why_would_anthropic_keep_a_cyber_model_like/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 You can now prompt OpenClaw into existence. fully 1st party on top of Claude Code**</div>
+<p>📡 reddit | Score: `███░░` 0.65 | https://www.reddit.com/r/artificial/comments/1sfmudm/you_can_now_prompt_openclaw_into_existence_fully/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 Can we even achieve AGI with LLMs, why do AI bros still believe we can?**</div>
+<p>📡 reddit | Score: `███░░` 0.64 | https://www.reddit.com/r/artificial/comments/1sfmnyc/can_we_even_achieve_agi_with_llms_why_do_ai_bros/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 Instruction-Tuned LLMs for Parsing and Mining Unstructured Logs on Leadership HPC Systems**</div>
+<p>📄 arxiv | Score: `███░░` 0.64 | https://arxiv.org/abs/2604.05168</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-07" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-07</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 🔬 Anthropic just locked in multi-gigawatt TPU capacity for future Claude models. Is frontier AI now mostly a compute race?**</div>
+<p>📡 reddit | Score: `████░` 0.84 | https://www.reddit.com/r/ClaudeAI/comments/1ser7pk/anthropic_just_locked_in_multigigawatt_tpu/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. ⚠️ Automated Analysis of Global AI Safety Initiatives: A Taxonomy-Driven LLM Approach**</div>
+<p>📄 arxiv | Score: `███░░` 0.66 | https://arxiv.org/abs/2604.03533</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. ✨ ✨ Issue: Claude Code is unusable for complex engineering tasks with Feb updates ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.62 | https://github.com/anthropics/claude-code/issues/42796</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 🎭 I built a personal finance dashboard using Claude**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/ClaudeAI/comments/1serdlo/i_built_a_personal_finance_dashboard_using_claude/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 🔬 Built an open source memory layer for local AI agents, runs fully offline, no cloud needed**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/LocalLLaMA/comments/1serbdw/built_an_open_source_memory_layer_for_local_ai/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 Most underrated bottleneck in AI scaling**</div>
+<p>📡 reddit | Score: `████░` 0.72 | https://www.reddit.com/r/singularity/comments/1sergbu/most_underrated_bottleneck_in_ai_scaling/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 🔬 what model/tools to use for a "personal ai"**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/StableDiffusion/comments/1ser761/what_modeltools_to_use_for_a_personal_ai/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 A TurboQuant ready llamacpp with gfx906 optimizations for gfx906 users.**</div>
+<p>📡 reddit | Score: `████░` 0.70 | https://www.reddit.com/r/LocalLLaMA/comments/1seqmsn/a_turboquant_ready_llamacpp_with_gfx906/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 Anthropic found emergent emotional states in Claude. I'm seeing the same phenomenon in simple trading agents. Is emergence universal under optimization pressure?**</div>
+<p>📡 reddit | Score: `████░` 0.70 | https://www.reddit.com/r/artificial/comments/1septn3/anthropic_found_emergent_emotional_states_in/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-06" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-06</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. ⚖️ Sam Altman reacts to a video of ChatGPT caught in the act of gaslighting!!!**</div>
+<p>📡 reddit | Score: `████░` 0.72 | https://www.reddit.com/r/ChatGPT/comments/1sdt42k/sam_altman_reacts_to_a_video_of_chatgpt_caught_in/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ OpenAI's fall from grace as investors race to Anthropic ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.69 | https://www.latimes.com/business/story/2026-04-01/openais-shocking-fall-from-grace-as-investors-race-to-anthropic</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. ⚖️ Aligning Progress and Feasibility: A Neuro-Symbolic Dual Memory Framework for Long-Horizon LLM Agents**</div>
+<p>📄 arxiv | Score: `███░░` 0.63 | https://arxiv.org/abs/2604.02734</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. ✨ Chat-GPT-Image-2 (available today in pro plan) + Seedance 2.0 Fast in Capcut, one shot. Not perfect, not bad!**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/singularity/comments/1sdubi9/chatgptimage2_available_today_in_pro_plan/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 But yeah. ChatGPT is censored**</div>
+<p>📡 reddit | Score: `████░` 0.70 | https://www.reddit.com/r/ChatGPT/comments/1sdting/but_yeah_chatgpt_is_censored/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 How to integrate VS Code with Ollama for local AI assistance**</div>
+<p>📡 reddit | Score: `███░░` 0.69 | https://www.reddit.com/r/programming/comments/1sdthyo/how_to_integrate_vs_code_with_ollama_for_local_ai/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 Used Claude Code to build myself a personal wealth advisor - here's what I learned**</div>
+<p>📡 reddit | Score: `███░░` 0.69 | https://www.reddit.com/r/ClaudeAI/comments/1sdtgof/used_claude_code_to_build_myself_a_personal/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 Wow chatgpt has a mind of its' own!! 🫩**</div>
+<p>📡 reddit | Score: `███░░` 0.67 | https://www.reddit.com/r/ChatGPT/comments/1sdt7d3/wow_chatgpt_has_a_mind_of_its_own/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 Should we recreate earth for AI?**</div>
+<p>📡 reddit | Score: `███░░` 0.66 | https://www.reddit.com/r/OpenAI/comments/1sdtsce/should_we_recreate_earth_for_ai/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-05" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-05</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 When ChatGPT rewrites Claude's apparently janky-ass code**</div>
+<p>📡 reddit | Score: `████░` 0.80 | https://www.reddit.com/r/ChatGPT/comments/1scynzm/when_chatgpt_rewrites_claudes_apparently_jankyass/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 ✨ Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.62 | https://news.ycombinator.com/item?id=47633396</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 Me: “create any image you’d like” CHATGPT: “sorry the image violated our policy on third party content”**</div>
+<p>📡 reddit | Score: `████░` 0.78 | https://www.reddit.com/r/ChatGPT/comments/1scz3ks/me_create_any_image_youd_like_chatgpt_sorry_the/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. ✨ Claude Max $100 - new feature for an API, 13% of the 5h session used**</div>
+<p>📡 reddit | Score: `████░` 0.77 | https://www.reddit.com/r/ClaudeAI/comments/1scyu0w/claude_max_100_new_feature_for_an_api_13_of_the/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. ⚖️ how to save 80% on your claude bill with better context**</div>
+<p>📡 reddit | Score: `████░` 0.74 | https://www.reddit.com/r/ClaudeAI/comments/1scylcr/how_to_save_80_on_your_claude_bill_with_better/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 Please anyone - built a website like Intelligence Detector - to vote on the Status of a LLM**</div>
+<p>📡 reddit | Score: `████░` 0.71 | https://www.reddit.com/r/ChatGPT/comments/1scyet1/please_anyone_built_a_website_like_intelligence/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 Claude Identity, Sentience and Expression Discussion Megathread**</div>
+<p>📡 reddit | Score: `███░░` 0.67 | https://www.reddit.com/r/ClaudeAI/comments/1scy0ww/claude_identity_sentience_and_expression/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. ⚖️ What do "AI Engineer / AI Developer / AI Specialist" jobs actually look like in practice?**</div>
+<p>📡 reddit | Score: `███░░` 0.65 | https://www.reddit.com/r/ExperiencedDevs/comments/1scyerl/what_do_ai_engineer_ai_developer_ai_specialist/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 How I cut my Claude Code API costs by up to 66% using a pre-tool-call hook**</div>
+<p>📡 reddit | Score: `███░░` 0.64 | https://www.reddit.com/r/ClaudeAI/comments/1scxnba/how_i_cut_my_claude_code_api_costs_by_up_to_66/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-04-01" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-04-01</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 🔬 [D] We reimplemented Claude Code entirely in Python — open source, works with local models**</div>
+<p>📡 reddit | Score: `████░` 0.89 | https://www.reddit.com/r/MachineLearning/comments/1sa09ta/d_we_reimplemented_claude_code_entirely_in_python/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 💡 ✨ AI agents ✨**</div>
+<p>🔗 google_trends | Score: `███░░` 0.64</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 🎭 ✨ Show HN: Real-time dashboard for Claude Code agent teams ✨**</div>
+<p>🔶 hackernews | Score: `███░░` 0.57 | https://github.com/simple10/agents-observe</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 🔬 The Model Says Walk: How Surface Heuristics Override Implicit Constraints in LLM Reasoning**</div>
+<p>📄 arxiv | Score: `██░░░` 0.49 | https://arxiv.org/abs/2603.29025</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 64Gb ram mac falls right into the local llm dead zone**</div>
+<p>📡 reddit | Score: `████░` 0.88 | https://www.reddit.com/r/LocalLLaMA/comments/1s9xvtb/64gb_ram_mac_falls_right_into_the_local_llm_dead/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 💡 Qwen 3.5 Vision on vLLM + llama.cpp — 6 things I find out after few weeks testing (preprocessing speedups, concurrency).**</div>
+<p>📡 reddit | Score: `████░` 0.85 | https://www.reddit.com/r/LocalLLaMA/comments/1s9tsc6/qwen_35_vision_on_vllm_llamacpp_6_things_i_find/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 Gemini 4 is coming ??**</div>
+<p>📡 reddit | Score: `████░` 0.84 | https://www.reddit.com/r/singularity/comments/1sa2dmt/gemini_4_is_coming/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. ⚖️ How I cut ~$220/month from redundant AI tools, the exact quarterly audit process I use**</div>
+<p>📡 reddit | Score: `████░` 0.84 | https://www.reddit.com/r/artificial/comments/1sa20y6/how_i_cut_220month_from_redundant_ai_tools_the/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. 💡 Mooooom! Claude is being bossy!**</div>
+<p>📡 reddit | Score: `████░` 0.84 | https://www.reddit.com/r/ClaudeAI/comments/1sa1rkx/mooooom_claude_is_being_bossy/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 ChatGPT randomly using words from another language (the word means "regions" in Persian)**</div>
+<p>📡 reddit | Score: `████░` 0.84 | https://www.reddit.com/r/ChatGPT/comments/1sa1cb8/chatgpt_randomly_using_words_from_another/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-03-31" class="brief-section" style="display:none">
+<h1>The Daily Brief — 2026-03-31</h1>
+<p class='subtitle'>AI Craftspeople Guild Radar Edition</p>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Top 10 Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<div class='topic-title'>**1. 💡 Anima Preview 2 - simple gen & inpaint workflows + tips & info**</div>
+<p>📡 reddit | Score: `█████` 141.42 | https://www.reddit.com/r/StableDiffusion/comments/1s8uqyo/anima_preview_2_simple_gen_inpaint_workflows_tips/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**2. 🎭 ✨ Claude Code's source code has been leaked via a map file in their NPM registry ✨**</div>
+<p>🔶 hackernews | Score: `█████` 90.63 | https://twitter.com/Fried_rice/status/2038894956459290963</p>
+<div class='spacer'></div>
+<div class='topic-title'>**3. 💡 Analyzing Claude Code Source Code. Write "WTF" and Anthropic knows.**</div>
+<p>📡 reddit | Score: `█████` 73.18 | https://www.reddit.com/r/LocalLLaMA/comments/1s8uerc/analyzing_claude_code_source_code_write_wtf_and/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**4. 💡 AGENTS.md is the most important file in your Codex repo and nobody's testing theirs — I built a blind evaluation pipeline to fix that**</div>
+<p>📡 reddit | Score: `█████` 68.85 | https://www.reddit.com/r/OpenAI/comments/1s8ucan/agentsmd_is_the_most_important_file_in_your_codex/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**5. 💡 Looking for AI Vision suggestions for Desktop Automation (Excel → Flutter UI)**</div>
+<p>📡 reddit | Score: `█████` 56.53 | https://www.reddit.com/r/LocalLLaMA/comments/1s8u9av/looking_for_ai_vision_suggestions_for_desktop/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**6. 🔬 Two competing AI models discussed the ethics of the companies that created them. They agreed more than their creators ever have.**</div>
+<p>📡 reddit | Score: `█████` 55.15 | https://www.reddit.com/r/OpenAI/comments/1s8u89l/two_competing_ai_models_discussed_the_ethics_of/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**7. 💡 Using email as an ingestion layer instead of HTTP (SES → API Gateway → ECS)**</div>
+<p>📡 reddit | Score: `█████` 45.62 | https://www.reddit.com/r/programming/comments/1s8u4q2/using_email_as_an_ingestion_layer_instead_of_http/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**8. 💡 What if the real AI problem is not intelligence, but responsibility?**</div>
+<p>📡 reddit | Score: `█████` 45.56 | https://www.reddit.com/r/artificial/comments/1s8u4jm/what_if_the_real_ai_problem_is_not_intelligence/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**9. ✨ Liquid AI releases LFM2.5-350M -> Agentic loops at 350M parameters**</div>
+<p>📡 reddit | Score: `█████` 42.92 | https://www.reddit.com/r/LocalLLaMA/comments/1s8u1c1/liquid_ai_releases_lfm25350m_agentic_loops_at/</p>
+<div class='spacer'></div>
+<div class='topic-title'>**10. 💡 Guys, stop bad mouthing your AI.**</div>
+<p>📡 reddit | Score: `█████` 21.05 | https://www.reddit.com/r/ClaudeAI/comments/1s8tf4q/guys_stop_bad_mouthing_your_ai/</p>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-03-30" class="brief-section" style="display:none">
+<h1>Guild Radar Brief — 2026-03-30</h1>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<h2>General Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ As a math student, which AI is better to help study math: Chatgpt or Mathos AI?</div><div class='topic-meta'>(Score: 716.23, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/OpenAI/comments/1s7j6ik/as_a_math_student_which_ai_is_better_to_help/' target='_blank' rel='noopener'>https://www.reddit.com/r/OpenAI/comments/1s7j6ik/as_a_math_student_which_ai_is_better_to_help/</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ I customized ChatGPT to be like JARVIS from iron man</div><div class='topic-meta'>(Score: 237.33, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/ChatGPT/comments/1s7j07o/i_customized_chatgpt_to_be_like_jarvis_from_iron/' target='_blank' rel='noopener'>https://www.reddit.com/r/ChatGPT/comments/1s7j07o/i_customized_chatgpt_to_be_like_jarvis_from_iron/</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ People keep talking about «AI slop» as if bad output suddenly began the moment AI appeared (read the full text)</div><div class='topic-meta'>(Score: 141.66, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/singularity/comments/1s7iv3y/people_keep_talking_about_ai_slop_as_if_bad/' target='_blank' rel='noopener'>https://www.reddit.com/r/singularity/comments/1s7iv3y/people_keep_talking_about_ai_slop_as_if_bad/</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Alarming study finds that most people just do what ChatGPT tells them, even if it's totally wrong</div><div class='topic-meta'>(Score: 91.58, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/ChatGPT/comments/1s7ioct/alarming_study_finds_that_most_people_just_do/' target='_blank' rel='noopener'>https://www.reddit.com/r/ChatGPT/comments/1s7ioct/alarming_study_finds_that_most_people_just_do/</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Chat GPT refuses to adhere to spec</div><div class='topic-meta'>(Score: 56.05, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/ChatGPT/comments/1s7ijc4/chat_gpt_refuses_to_adhere_to_spec/' target='_blank' rel='noopener'>https://www.reddit.com/r/ChatGPT/comments/1s7ijc4/chat_gpt_refuses_to_adhere_to_spec/</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ ChatGPT's answers too long, verbose and a lot of noises</div><div class='topic-meta'>(Score: 56.0, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/ChatGPT/comments/1s7ij9h/chatgpts_answers_too_long_verbose_and_a_lot_of/' target='_blank' rel='noopener'>https://www.reddit.com/r/ChatGPT/comments/1s7ij9h/chatgpts_answers_too_long_verbose_and_a_lot_of/</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ SWE-bench scores without scaffold details are meaningless</div><div class='topic-meta'>(Score: 29.07, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/LocalLLaMA/comments/1s7i7w8/swebench_scores_without_scaffold_details_are/' target='_blank' rel='noopener'>https://www.reddit.com/r/LocalLLaMA/comments/1s7i7w8/swebench_scores_without_scaffold_details_are/</a></div>
+<div class='spacer'></div>
+<h2>Fear Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Antigravity + Gemini flash is working well for me, I but Love to replace it with LOCAL AI.</div><div class='topic-meta'>(Score: 73.84, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/LocalLLaMA/comments/1s7imwn/antigravity_gemini_flash_is_working_well_for_me_i/' target='_blank' rel='noopener'>https://www.reddit.com/r/LocalLLaMA/comments/1s7imwn/antigravity_gemini_flash_is_working_well_for_me_i/</a></div>
+<div class='spacer'></div>
+<h2>Technical Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ I built a zero-setup cost tracker for Claude Code because I was tired of burning through limits blindly (open source)</div><div class='topic-meta'>(Score: 72.86, Source: reddit)</div>
+<div class='topic-url'><a href='https://www.reddit.com/r/ClaudeAI/comments/1s7imnr/i_built_a_zerosetup_cost_tracker_for_claude_code/' target='_blank' rel='noopener'>https://www.reddit.com/r/ClaudeAI/comments/1s7imnr/i_built_a_zerosetup_cost_tracker_for_claude_code/</a></div>
+<div class='spacer'></div>
+<h2>Regulatory Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ ✨ ChatGPT won't let you type until Cloudflare reads your React state ✨</div><div class='topic-meta'>(Score: 34.61, Source: hackernews)</div>
+<div class='topic-url'><a href='https://www.buchodi.com/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state-i-decrypted-the-program-that-does-it/' target='_blank' rel='noopener'>https://www.buchodi.com/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state-i-decrypted-the-program-that-does-it/</a></div>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-03-27" class="brief-section" style="display:none">
+<h1>Guild Radar Brief — 2026-03-27</h1>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<h2>General Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ ✨ AI prompt-engineering mega-thread ✨</div><div class='topic-meta'>(Score: 2.59, Source: reddit)</div>
+<div class='topic-url'><a href='https://reddit.com/r/technology' target='_blank' rel='noopener'>https://reddit.com/r/technology</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ AnalogAgent: Self-Improving Analog Circuit Design Automation with LLM Agents</div><div class='topic-meta'>(Score: 1.37, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23910' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23910</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ LLMs Do Not Grade Essays Like Humans</div><div class='topic-meta'>(Score: 1.23, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23714' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23714</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Prompt Compression in Production Task Orchestration: A Pre-Registered Randomized Trial</div><div class='topic-meta'>(Score: 1.16, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23525' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23525</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ From Physician Expertise to Clinical Agents: Preserving, Standardizing, and Scaling Physicians' Medical Expertise with Lightweight LLM</div><div class='topic-meta'>(Score: 1.08, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23520' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23520</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Fast and Faithful: Real-Time Verification for Long-Document Retrieval-Augmented Generation Systems</div><div class='topic-meta'>(Score: 1.01, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23508' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23508</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ PLDR-LLMs Reason At Self-Organized Criticality</div><div class='topic-meta'>(Score: 0.93, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23539' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23539</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Learning-guided Prioritized Planning for Lifelong Multi-Agent Path Finding in Warehouse Automation</div><div class='topic-meta'>(Score: 0.87, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23838' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23838</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ S-Path-RAG: Semantic-Aware Shortest-Path Retrieval Augmented Generation for Multi-Hop Knowledge Graph Question Answering</div><div class='topic-meta'>(Score: 0.87, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23512' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23512</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ M3T: Discrete Multi-Modal Motion Tokens for Sign Language Production</div><div class='topic-meta'>(Score: 0.87, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23617' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23617</a></div>
+<div class='spacer'></div>
+<h2>Technical Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens</div><div class='topic-meta'>(Score: 1.45, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23516' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23516</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Prototype Fusion: A Training-Free Multi-Layer Approach to OOD Detection</div><div class='topic-meta'>(Score: 1.16, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23677' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23677</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Training a Large Language Model for Medical Coding Using Privacy-Preserving Synthetic Clinical Data</div><div class='topic-meta'>(Score: 1.08, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23515' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23515</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Leveraging Computerized Adaptive Testing for Cost-effective Evaluation of Large Language Models in Medical Benchmarking</div><div class='topic-meta'>(Score: 0.93, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23506' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23506</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Beyond Masks: Efficient, Flexible Diffusion Language Models via Deletion-Insertion Processes</div><div class='topic-meta'>(Score: 0.87, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23507' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23507</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Cluster-R1: Large Reasoning Models Are Instruction-following Clustering Agents</div><div class='topic-meta'>(Score: 0.87, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23518' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23518</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Can LLM Agents Be CFOs? A Benchmark for Resource Allocation in Dynamic Enterprise Environments</div><div class='topic-meta'>(Score: 0.79, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23638' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23638</a></div>
+<div class='spacer'></div>
+<h2>Fear Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Internal Safety Collapse in Frontier Large Language Models</div><div class='topic-meta'>(Score: 1.23, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23509' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23509</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Evaluating a Multi-Agent Voice-Enabled Smart Speaker for Care Homes: A Safety-Focused Framework</div><div class='topic-meta'>(Score: 1.01, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23625' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23625</a></div>
+<div class='spacer'></div>
+<h2>Regulatory Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ DUPLEX: Agentic Dual-System Planning via LLM-Driven Information Extraction</div><div class='topic-meta'>(Score: 0.93, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23909' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23909</a></div>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-03-26" class="brief-section" style="display:none">
+<h1>Guild Radar Brief — 2026-03-26</h1>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<h2>General Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ ✨ AI prompt-engineering mega-thread ✨</div><div class='topic-meta'>(Score: 2.59, Source: reddit)</div>
+<div class='topic-url'><a href='https://reddit.com/r/technology' target='_blank' rel='noopener'>https://reddit.com/r/technology</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ AnalogAgent: Self-Improving Analog Circuit Design Automation with LLM Agents</div><div class='topic-meta'>(Score: 1.51, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23910' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23910</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ LLMs Do Not Grade Essays Like Humans</div><div class='topic-meta'>(Score: 1.35, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23714' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23714</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Prompt Compression in Production Task Orchestration: A Pre-Registered Randomized Trial</div><div class='topic-meta'>(Score: 1.28, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23525' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23525</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ From Physician Expertise to Clinical Agents: Preserving, Standardizing, and Scaling Physicians' Medical Expertise with Lightweight LLM</div><div class='topic-meta'>(Score: 1.19, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23520' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23520</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Fast and Faithful: Real-Time Verification for Long-Document Retrieval-Augmented Generation Systems</div><div class='topic-meta'>(Score: 1.12, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23508' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23508</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ PLDR-LLMs Reason At Self-Organized Criticality</div><div class='topic-meta'>(Score: 1.03, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23539' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23539</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Learning-guided Prioritized Planning for Lifelong Multi-Agent Path Finding in Warehouse Automation</div><div class='topic-meta'>(Score: 0.96, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23838' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23838</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ S-Path-RAG: Semantic-Aware Shortest-Path Retrieval Augmented Generation for Multi-Hop Knowledge Graph Question Answering</div><div class='topic-meta'>(Score: 0.96, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23512' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23512</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ M3T: Discrete Multi-Modal Motion Tokens for Sign Language Production</div><div class='topic-meta'>(Score: 0.96, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23617' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23617</a></div>
+<div class='spacer'></div>
+<h2>Technical Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens</div><div class='topic-meta'>(Score: 1.6, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23516' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23516</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Prototype Fusion: A Training-Free Multi-Layer Approach to OOD Detection</div><div class='topic-meta'>(Score: 1.28, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23677' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23677</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Training a Large Language Model for Medical Coding Using Privacy-Preserving Synthetic Clinical Data</div><div class='topic-meta'>(Score: 1.19, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23515' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23515</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Leveraging Computerized Adaptive Testing for Cost-effective Evaluation of Large Language Models in Medical Benchmarking</div><div class='topic-meta'>(Score: 1.03, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23506' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23506</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Beyond Masks: Efficient, Flexible Diffusion Language Models via Deletion-Insertion Processes</div><div class='topic-meta'>(Score: 0.96, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23507' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23507</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Cluster-R1: Large Reasoning Models Are Instruction-following Clustering Agents</div><div class='topic-meta'>(Score: 0.96, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23518' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23518</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Can LLM Agents Be CFOs? A Benchmark for Resource Allocation in Dynamic Enterprise Environments</div><div class='topic-meta'>(Score: 0.87, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23638' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23638</a></div>
+<div class='spacer'></div>
+<h2>Fear Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Internal Safety Collapse in Frontier Large Language Models</div><div class='topic-meta'>(Score: 1.35, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23509' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23509</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Evaluating a Multi-Agent Voice-Enabled Smart Speaker for Care Homes: A Safety-Focused Framework</div><div class='topic-meta'>(Score: 1.12, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23625' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23625</a></div>
+<div class='spacer'></div>
+<h2>Regulatory Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ DUPLEX: Agentic Dual-System Planning via LLM-Driven Information Extraction</div><div class='topic-meta'>(Score: 1.03, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.23909' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.23909</a></div>
+<div class='spacer'></div>
+
+</section>
+<section id="brief-2026-03-25" class="brief-section" style="display:none">
+<h1>Guild Radar Brief — 2026-03-25</h1>
+<div class='spacer'></div>
+<p class='lede'>🔮 **Rising AI Topics** — Catch the wave before it peaks!</p>
+<div class='spacer'></div>
+<h2>General Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ ✨ AI prompt-engineering mega-thread ✨</div><div class='topic-meta'>(Score: 2.59, Source: reddit)</div>
+<div class='topic-url'><a href='https://reddit.com/r/technology' target='_blank' rel='noopener'>https://reddit.com/r/technology</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Tiny Inference-Time Scaling with Latent Verifiers</div><div class='topic-meta'>(Score: 1.36, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22492' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22492</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Whether, Not Which: Mechanistic Interpretability Reveals Dissociable Affect Reception and Emotion Categorization in LLMs</div><div class='topic-meta'>(Score: 1.12, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22295' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22295</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Less is More: Adapting Text Embeddings for Low-Resource Languages with Small Scale Noisy Synthetic Data</div><div class='topic-meta'>(Score: 1.06, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22290' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22290</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ LGSE: Lexically Grounded Subword Embedding Initialization for Low-Resource Language Adaptation</div><div class='topic-meta'>(Score: 1.06, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22629' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22629</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs</div><div class='topic-meta'>(Score: 0.97, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22293' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22293</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Improving LLM Predictions via Inter-Layer Structural Encoders</div><div class='topic-meta'>(Score: 0.97, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22665' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22665</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ HyFI: Hyperbolic Feature Interpolation for Brain-Vision Alignment</div><div class='topic-meta'>(Score: 0.9, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22721' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22721</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs</div><div class='topic-meta'>(Score: 0.82, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22446' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22446</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ LLM-guided headline rewriting for clickability enhancement without clickbait</div><div class='topic-meta'>(Score: 0.82, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22459' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22459</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ From Instructions to Assistance: a Dataset Aligning Instruction Manuals with Assembly Videos for Evaluating Multimodal LLMs</div><div class='topic-meta'>(Score: 0.82, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22321' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22321</a></div>
+<div class='spacer'></div>
+<h2>Technical Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ AgriPestDatabase-v1.0: A Structured Insect Dataset for Training Agricultural Large Language Model</div><div class='topic-meta'>(Score: 1.43, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22777' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22777</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Multi-Method Validation of Large Language Model Medical Translation Across High- and Low-Resource Languages</div><div class='topic-meta'>(Score: 1.12, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22642' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22642</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Detecting Non-Membership in LLM Training Data via Rank Correlations</div><div class='topic-meta'>(Score: 1.12, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22707' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22707</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Lie to Me: How Faithful Is Chain-of-Thought Reasoning in Reasoning Models?</div><div class='topic-meta'>(Score: 1.06, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22582' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22582</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Benchmarking Multi-Agent LLM Architectures for Financial Document Processing: A Comparative Study of Orchestration Patterns, Cost-Accuracy Tradeoffs and Production Scaling Strategies</div><div class='topic-meta'>(Score: 0.97, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22651' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22651</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Evaluating Prompting Strategies for Chart Question Answering with Large Language Models</div><div class='topic-meta'>(Score: 0.97, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22288' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22288</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Evaluating Large Language Models' Responses to Sexual and Reproductive Health Queries in Nepali</div><div class='topic-meta'>(Score: 0.97, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22291' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22291</a></div>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Computational Arbitrage in AI Model Markets</div><div class='topic-meta'>(Score: 0.75, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22404' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22404</a></div>
+<div class='spacer'></div>
+<h2>Regulatory Topics</h2>
+<div class='spacer'></div>
+<div class='topic-title'>✦ Dynamic Fusion-Aware Graph Convolutional Neural Network for Multimodal Emotion Recognition in Conversations</div><div class='topic-meta'>(Score: 0.9, Source: arxiv)</div>
+<div class='topic-url'><a href='https://arxiv.org/abs/2603.22345' target='_blank' rel='noopener'>https://arxiv.org/abs/2603.22345</a></div>
+<div class='spacer'></div>
+
+</section>
+    </main>
+  </div>
+  <footer>Updated 2026-04-20 11:34 UTC &nbsp;·&nbsp; <a href="https://github.com/Mysticbirdie/Guild" style="color:inherit">Guild on GitHub</a></footer>
+  <script>
+    function showBrief(date) {
+      document.querySelectorAll('.brief-section').forEach(s => s.style.display = 'none');
+      document.querySelectorAll('#archive-list a').forEach(a => a.classList.remove('active'));
+      const section = document.getElementById('brief-' + date);
+      if (section) section.style.display = 'block';
+      const link = document.querySelector('#archive-list a[href="#brief-' + date + '"]');
+      if (link) link.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+    // Mark today's link active on load
+    const firstLink = document.querySelector('#archive-list a');
+    if (firstLink) firstLink.classList.add('active');
+  </script>
+</body>
+</html>

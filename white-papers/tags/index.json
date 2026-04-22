@@ -1,0 +1,186 @@
+{
+  "generated_at": "2026-04-17T17:41:11Z",
+  "tags": {
+    "ai-harness": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "ai-harness",
+        "label": "ai-harness",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "architecture": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "architecture",
+        "label": "architecture",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "governance": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "governance",
+        "label": "governance",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "constraint-driven-development": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "constraint-driven-development",
+        "label": "constraint-driven-development",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "ethics": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "ethics",
+        "label": "ethics",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "the-harm-equation"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "risk": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "risk",
+        "label": "risk",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "the-harm-equation"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "harm": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "harm",
+        "label": "harm",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "the-harm-equation"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "prediction": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "prediction",
+        "label": "prediction",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "the-prediction-trap"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "uncertainty": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "uncertainty",
+        "label": "uncertainty",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "the-prediction-trap",
+          "you-re-absolutely-wrong"
+        ],
+        "count": 2,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "forecasting": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "forecasting",
+        "label": "forecasting",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "the-prediction-trap"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "training": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "training",
+        "label": "training",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "you-re-absolutely-wrong"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    },
+    "anthropic": {
+      "udtType": "Tag",
+      "parameters": {
+        "name": "anthropic",
+        "label": "anthropic",
+        "description": ""
+      },
+      "tags": {
+        "paper_ids": [
+          "you-re-absolutely-wrong"
+        ],
+        "count": 1,
+        "last_updated": "2026-04-17T17:41:11Z"
+      }
+    }
+  }
+}

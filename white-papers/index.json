@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-04-17T17:41:11Z",
+  "schema_version": "1.0.0",
+  "counts": {
+    "sources": 2,
+    "instances": 4,
+    "tags": 12
+  },
+  "files": {
+    "originals/ai-harness.md": {
+      "sha256": "f900c507db73310cbc22359b3291ac8ca3f055f0716effd82e9d48334a6745ae",
+      "produced": [
+        "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents"
+      ],
+      "last_seen": "2026-04-17T17:41:05Z"
+    },
+    "originals/seed-batch.csv": {
+      "sha256": "58533770288070e2047bcca8b112e9c5157ee15efe242c5b436d053738ff7813",
+      "produced": [
+        "the-prediction-trap",
+        "the-harm-equation",
+        "you-re-absolutely-wrong"
+      ],
+      "last_seen": "2026-04-17T17:41:05Z"
+    }
+  },
+  "instances": {
+    "ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents": {
+      "path": "udts/instances/ai-harness-constraint-driven-software-development-for-the-age-of-ai-agents.json",
+      "source": "originals/ai-harness.md",
+      "sha256": "f900c507db73310cbc22359b3291ac8ca3f055f0716effd82e9d48334a6745ae",
+      "ingested_at": "2026-04-17T17:41:05Z",
+      "title": "AI Harness: Constraint-Driven Software Development for the Age of AI Agents"
+    },
+    "the-prediction-trap": {
+      "path": "udts/instances/the-prediction-trap.json",
+      "source": "originals/seed-batch.csv",
+      "sha256": "58533770288070e2047bcca8b112e9c5157ee15efe242c5b436d053738ff7813",
+      "ingested_at": "2026-04-17T17:41:05Z",
+      "title": "The Prediction Trap"
+    },
+    "the-harm-equation": {
+      "path": "udts/instances/the-harm-equation.json",
+      "source": "originals/seed-batch.csv",
+      "sha256": "58533770288070e2047bcca8b112e9c5157ee15efe242c5b436d053738ff7813",
+      "ingested_at": "2026-04-17T17:41:05Z",
+      "title": "The Harm Equation"
+    },
+    "you-re-absolutely-wrong": {
+      "path": "udts/instances/you-re-absolutely-wrong.json",
+      "source": "originals/seed-batch.csv",
+      "sha256": "58533770288070e2047bcca8b112e9c5157ee15efe242c5b436d053738ff7813",
+      "ingested_at": "2026-04-17T17:41:05Z",
+      "title": "You're Absolutely Wrong!"
+    }
+  }
+}

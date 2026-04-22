@@ -1,0 +1,30 @@
+{
+  "udtType": "WhitePaper",
+  "parameters": {
+    "title": "The Harm Equation",
+    "authors": [
+      "Alex Bunardzic"
+    ],
+    "publication_date": "2026-02-22",
+    "doc_number": "ACG-WP-004-2026",
+    "source_medium": "site-only",
+    "summary": "A working formula for assessing product harm that a Guild review can actually apply.",
+    "tags": [
+      "ethics",
+      "risk",
+      "harm"
+    ],
+    "status": "published",
+    "site_href": "the-harm-equation.html"
+  },
+  "tags": {
+    "id": "the-harm-equation",
+    "original_path": "originals/seed-batch.csv",
+    "original_format": "csv",
+    "original_hash_sha256": "58533770288070e2047bcca8b112e9c5157ee15efe242c5b436d053738ff7813",
+    "body": "",
+    "instance_path": "udts/instances/the-harm-equation.json",
+    "ingested_at": "2026-04-17T17:41:05Z",
+    "schema_version": "1.0.0"
+  }
+}

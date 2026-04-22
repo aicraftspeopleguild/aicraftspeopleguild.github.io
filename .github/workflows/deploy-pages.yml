@@ -1,0 +1,58 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Allows manual trigger from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: false
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          # Publish only the files relevant to the site.
+          # This explicitly excludes: tests/, node_modules/, .github/,
+          # package.json, playwright.config.js, vitest.config.js, etc.
+          path: '.'
+          exclude: |
+            tests/
+            node_modules/
+            package.json
+            package-lock.json
+            playwright.config.js
+            vitest.config.js
+            README.md
+            api-design.md
+            .gitignore
+
+  deploy:
+    if: false
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

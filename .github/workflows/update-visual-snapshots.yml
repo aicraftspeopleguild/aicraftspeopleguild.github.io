@@ -1,0 +1,39 @@
+name: Update Visual Snapshots
+
+on:
+  workflow_dispatch:
+  # pull_request:
+  #   branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-snapshots:
+    name: Regenerate snapshots on Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Regenerate visual snapshots
+        run: npm run test:visual:update
+
+      - name: Commit updated snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tests/snapshots/
+          git commit -m "chore: regenerate visual snapshots on Linux" || echo "No changes to commit"
+          git push origin HEAD:${{ github.head_ref || github.ref_name }}

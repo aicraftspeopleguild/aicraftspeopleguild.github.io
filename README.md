@@ -31,7 +31,7 @@
 <div align="center">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 230">
 <rect width="1040" height="230" fill="#F5F1E8"/>
-<text x="520" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#C84B31">The Manifesto</text><rect x="490" y="34" width="60" height="3" fill="#A67C52"/>
+<text x="520" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#C84B31"></text><rect x="490" y="34" width="60" height="3" fill="#A67C52"/>
 <g transform="translate(25,50)"><rect width="235" height="165" fill="#fff"/><rect width="235" height="4" fill="#C84B31"/><text x="20" y="30" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#2D3436">
   
   I. Embracing Innovation</text><text x="20" y="52" font-family="sans-serif" font-size="10" fill="#2D3436">AI amplifies human capability. We welcome</text><text x="20" y="66" font-family="sans-serif" font-size="10" fill="#2D3436">every tool that makes engineers more</text><text x="20" y="80" font-family="sans-serif" font-size="10" fill="#2D3436">effective — and hold each to rigorous</text><text x="20" y="94" font-family="sans-serif" font-size="10" fill="#2D3436">professional standards.</text><rect x="15" y="108" width="4" height="42" fill="#C84B31"/><text x="28" y="122" font-family="sans-serif" font-size="9" font-style="italic" fill="#A67C52">AI-generated code is not inherently</text><text x="28" y="134" font-family="sans-serif" font-size="9" font-style="italic" fill="#A67C52">good code. The tool does not excuse</text><text x="28" y="146" font-family="sans-serif" font-size="9" font-style="italic" fill="#A67C52">the craftsperson.</text></g>

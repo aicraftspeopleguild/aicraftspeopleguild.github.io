@@ -119,6 +119,8 @@ We hold ourselves to a **high watermark code of ethics** because the industry wo
 
 ---
 
+This work is licensed under a Creative Commons Attribution 1.0 International License."
+
 <div align="center">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 60">
 <defs><linearGradient id="f" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2D3436"/><stop offset="100%" stop-color="#1A1614"/></linearGradient></defs>

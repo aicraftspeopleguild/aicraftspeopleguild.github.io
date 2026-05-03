@@ -6724,6 +6724,14 @@ font-family: 'Courier Prime', monospace;
             text-shadow: 0 2px 20px rgba(166, 124, 82, 0.3);
 }
 
+.page-index .guild-hero-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 2rem 0 0;
+}
+
 .page-index h1 {
 font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 7vw, 5rem);

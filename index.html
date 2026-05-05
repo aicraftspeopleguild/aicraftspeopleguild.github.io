@@ -201,13 +201,6 @@
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
     <script>
-        // Configuration - UPDATE THESE VALUES
-        const CONFIG = {
-            SHEET_ID: '1WldGelJJZUkQc4-r9PaCwpNWcI9sc7Rtif_7XB7x7hc',  // Get this from the Sheet URL
-            SHEET_NAME: 'Form Responses 1',     // Usually this is the default name
-            API_KEY: 'YOUR_GOOGLE_API_KEY'      // Optional - for public sheets you may not need this
-        };
-
         // Handle form submission
         const form = document.getElementById('signatureForm');
         const submitBtn = document.getElementById('submitBtn');
@@ -220,49 +213,46 @@
             // Show success message after a delay (form submits to iframe)
             setTimeout(() => {
                 formStatus.className = 'form-status success';
-                formStatus.textContent = 'Thank you for signing the manifesto! Your signature will appear below shortly.';
+                formStatus.textContent = 'Thank you for signing the manifesto! Your signature will appear once reviewed.';
                 form.reset();
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Sign the Manifesto';
-                
-                // Reload signatures after 2 seconds
-                setTimeout(() => {
-                    loadSignatories();
-                }, 2000);
             }, 1000);
         });
 
-        // Function to load signatories from Google Sheets
+        // Load signatories from the repo data file.
         async function loadSignatories() {
             const signatoriesList = document.getElementById('signatoriesList');
             const signatoriesCount = document.getElementById('signatoriesCount');
-            
+
             try {
-                // For public sheets, you can use the published CSV URL
-                const csvUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(CONFIG.SHEET_NAME)}`;
-                
-                const response = await fetch(csvUrl);
-                const csvText = await response.text();
-                
-                // Parse CSV
-                const rows = parseCSV(csvText);
-                
-                // Skip header row and reverse to show newest first
-                const signatories = rows.slice(1).reverse();
-                
-                // Update count
+                // Cache-bust so edits to signatories.json propagate on next load.
+                const response = await fetch(`signatories.json?_=${Date.now()}`, { cache: 'no-store' });
+                const data = await response.json();
+
+                // Defence-in-depth: drop rows whose display fields contain a URL.
+                const containsUrl = (text) =>
+                    /https?:\/\//i.test(text) ||
+                    /\b[a-z0-9-]+\.[a-z]{2,}\/[a-z0-9]/i.test(text);
+                const isValid = (entry) => {
+                    if (!entry || !entry.name) return false;
+                    const display = [entry.name, entry.title, entry.org].filter(Boolean).join(' ');
+                    return !containsUrl(display);
+                };
+
+                // Show newest first.
+                const signatories = data.filter(isValid).slice().reverse();
+
                 signatoriesCount.textContent = `${signatories.length} ${signatories.length === 1 ? 'signatory' : 'signatories'}`;
-                
-                // Display signatories
+
                 if (signatories.length === 0) {
                     signatoriesList.innerHTML = '<div class="loading">Be the first to sign!</div>';
                 } else {
-                    signatoriesList.innerHTML = signatories.map(row => {
-                        // Assuming columns: Timestamp, Name, Title, Organization, Email
-                        const name = row[1] || 'Anonymous';
-                        const title = row[2] || '';
-                        const org = row[3] || '';
-                        
+                    signatoriesList.innerHTML = signatories.map(entry => {
+                        const name = entry.name || 'Anonymous';
+                        const title = entry.title || '';
+                        const org = entry.org || '';
+
                         return `
                             <div class="signatory-card">
                                 <div class="signatory-name">${escapeHtml(name)}</div>
@@ -277,48 +267,6 @@
                 signatoriesList.innerHTML = '<div class="loading">Unable to load signatories. Please check back later.</div>';
                 signatoriesCount.textContent = '';
             }
-        }
-
-        // Simple CSV parser
-        function parseCSV(csv) {
-            const rows = [];
-            let currentRow = [];
-            let currentField = '';
-            let inQuotes = false;
-            
-            for (let i = 0; i < csv.length; i++) {
-                const char = csv[i];
-                const nextChar = csv[i + 1];
-                
-                if (char === '"') {
-                    if (inQuotes && nextChar === '"') {
-                        currentField += '"';
-                        i++;
-                    } else {
-                        inQuotes = !inQuotes;
-                    }
-                } else if (char === ',' && !inQuotes) {
-                    currentRow.push(currentField);
-                    currentField = '';
-                } else if ((char === '\n' || char === '\r') && !inQuotes) {
-                    if (currentField || currentRow.length > 0) {
-                        currentRow.push(currentField);
-                        rows.push(currentRow);
-                        currentRow = [];
-                        currentField = '';
-                    }
-                    if (char === '\r' && nextChar === '\n') i++;
-                } else {
-                    currentField += char;
-                }
-            }
-            
-            if (currentField || currentRow.length > 0) {
-                currentRow.push(currentField);
-                rows.push(currentRow);
-            }
-            
-            return rows;
         }
 
         // Escape HTML to prevent XSS

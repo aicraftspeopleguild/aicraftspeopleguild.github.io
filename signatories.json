@@ -1,0 +1,344 @@
+[
+  {
+    "name": "Alex Bunardzic",
+    "title": "Business Velocity Architect",
+    "org": "Digital Exprt Ventures Inc.",
+    "signed_at": "2/3/2026 13:34:39"
+  },
+  {
+    "name": "Matt Burch",
+    "title": "Advisor & AI-First Engineer",
+    "org": "4thWAIV / Cascadia Logic",
+    "signed_at": "2/3/2026 15:31:08"
+  },
+  {
+    "name": "Alexander Thurow",
+    "title": "Software Development Culture Consultant",
+    "org": "onmoderndev.de",
+    "signed_at": "2/3/2026 15:49:30"
+  },
+  {
+    "name": "Thomas Frumkin",
+    "title": "CTHOMAS",
+    "org": "Konomi Systems",
+    "signed_at": "2/3/2026 20:31:13"
+  },
+  {
+    "name": " Bart Swierstra",
+    "title": "Lead scrum master",
+    "org": "Optional",
+    "signed_at": "2/3/2026 20:38:17"
+  },
+  {
+    "name": "Simon Revill",
+    "title": "Software Engineer",
+    "org": "",
+    "signed_at": "2/3/2026 22:29:36"
+  },
+  {
+    "name": "Tsvetan Tsvetanov",
+    "title": "Co-Owner and Lead Software Engineer",
+    "org": "Camplight",
+    "signed_at": "2/3/2026 22:54:35"
+  },
+  {
+    "name": "Jake McDonough ",
+    "title": "Founder ",
+    "org": "SAEONYX GLOBAL HOLDINGS, LLC",
+    "signed_at": "2/4/2026 2:11:41"
+  },
+  {
+    "name": "Frank Gerhardt",
+    "title": "",
+    "org": "",
+    "signed_at": "2/4/2026 9:28:41"
+  },
+  {
+    "name": "Alexandre Poitevin",
+    "title": "CTO / CPTO / Tech Lead / Software Engineer",
+    "org": "AlexandreSoftware",
+    "signed_at": "2/4/2026 9:43:36"
+  },
+  {
+    "name": "Marcin Mroczkowski",
+    "title": "Java Developer",
+    "org": "",
+    "signed_at": "2/4/2026 10:28:52"
+  },
+  {
+    "name": "Laurie Scheepers",
+    "title": "Technical Director",
+    "org": "ENTER Konsult",
+    "signed_at": "2/4/2026 13:16:30"
+  },
+  {
+    "name": "Konstantin Ignatyev",
+    "title": "Software Architect",
+    "org": "",
+    "signed_at": "2/4/2026 14:44:47"
+  },
+  {
+    "name": "Johan Schoubben",
+    "title": "Java Developer",
+    "org": "",
+    "signed_at": "2/4/2026 22:50:21"
+  },
+  {
+    "name": "Vitaly Sharovatov",
+    "title": "Developer Advocate",
+    "org": "Qase",
+    "signed_at": "2/4/2026 22:58:25"
+  },
+  {
+    "name": "Frank Ray",
+    "title": "Director",
+    "org": "Better Software UK",
+    "signed_at": "2/5/2026 1:55:38"
+  },
+  {
+    "name": "Thomas Dreyer",
+    "title": "Full Stack Software Engineer",
+    "org": "Independant",
+    "signed_at": "2/5/2026 3:22:40"
+  },
+  {
+    "name": "Brandon Casci",
+    "title": "",
+    "org": "Self",
+    "signed_at": "2/5/2026 10:11:22"
+  },
+  {
+    "name": "Martin Rosén-Lidholm",
+    "title": "VP of Product & Engineering",
+    "org": "ChronosHub",
+    "signed_at": "2/5/2026 13:13:07"
+  },
+  {
+    "name": "Michaeljohn Clement",
+    "title": "programmer, AI researcher",
+    "org": "cmpr.ai",
+    "signed_at": "2/5/2026 21:31:06"
+  },
+  {
+    "name": "James Herr",
+    "title": "Full Stack Engineer",
+    "org": "",
+    "signed_at": "2/6/2026 10:29:37"
+  },
+  {
+    "name": "Raimund Krämer",
+    "title": "Software Developer/Architect/Consultant",
+    "org": "",
+    "signed_at": "2/7/2026 0:40:41"
+  },
+  {
+    "name": "Jonathan Gruber",
+    "title": "Undergraduate Student",
+    "org": "The University of Texas at Dallas",
+    "signed_at": "2/7/2026 9:48:01"
+  },
+  {
+    "name": "István Hegedűs",
+    "title": "Principal Engineer",
+    "org": "",
+    "signed_at": "2/7/2026 10:43:38"
+  },
+  {
+    "name": "Gregor Riegler ",
+    "title": "Technical Coach",
+    "org": "",
+    "signed_at": "2/7/2026 10:54:30"
+  },
+  {
+    "name": "Peter Church",
+    "title": "CTO and Co-Founder ",
+    "org": "Darkhouse Enterprises Ltd",
+    "signed_at": "2/7/2026 11:35:40"
+  },
+  {
+    "name": "Nicolas Rosado",
+    "title": "Senior Software Engineer",
+    "org": "",
+    "signed_at": "2/7/2026 18:42:43"
+  },
+  {
+    "name": "Sergiu Ghita",
+    "title": "Software Quality Engineer",
+    "org": "",
+    "signed_at": "2/8/2026 0:47:10"
+  },
+  {
+    "name": "Sergio Sastre Florez",
+    "title": "Software Engineer",
+    "org": "",
+    "signed_at": "2/8/2026 3:46:11"
+  },
+  {
+    "name": "Lars-Erik Aabech",
+    "title": "Expert Generalist Software Engineer",
+    "org": "Aabech Consulting",
+    "signed_at": "2/8/2026 5:33:18"
+  },
+  {
+    "name": "Garrick West",
+    "title": "XP Coach & Software Developer",
+    "org": "",
+    "signed_at": "2/9/2026 6:35:36"
+  },
+  {
+    "name": "Arash Dorandish",
+    "title": "Solutions Architect ",
+    "org": "",
+    "signed_at": "2/9/2026 18:38:16"
+  },
+  {
+    "name": "Grygorii Kvasha",
+    "title": "Software architect",
+    "org": "",
+    "signed_at": "2/10/2026 14:44:17"
+  },
+  {
+    "name": "Kenneth Keck",
+    "title": "Software Engineer",
+    "org": "",
+    "signed_at": "2/15/2026 0:29:52"
+  },
+  {
+    "name": "Paul Kiat",
+    "title": "Full Stack Engineer",
+    "org": "Systone",
+    "signed_at": "2/25/2026 21:38:02"
+  },
+  {
+    "name": "Shoyeb Inamdar",
+    "title": "Lead Developer",
+    "org": "Dassault Systemes",
+    "signed_at": "2/26/2026 20:09:09"
+  },
+  {
+    "name": "Palash Lambhate",
+    "title": "",
+    "org": "",
+    "signed_at": "2/26/2026 21:29:44"
+  },
+  {
+    "name": "marcel.meyer@m2-consulting.io",
+    "title": "Founder & AI Engineer",
+    "org": "m2-consulting",
+    "signed_at": "3/4/2026 7:41:49"
+  },
+  {
+    "name": "Jona M.J. Heidsick",
+    "title": "",
+    "org": "",
+    "signed_at": "3/5/2026 9:13:36"
+  },
+  {
+    "name": "Martin Zokov",
+    "title": "Senior software engineer and Consultant",
+    "org": "",
+    "signed_at": "3/5/2026 12:25:31"
+  },
+  {
+    "name": "Robin Betts",
+    "title": "Principal Engineer",
+    "org": "",
+    "signed_at": "3/8/2026 23:58:47"
+  },
+  {
+    "name": "Emmz Rendle",
+    "title": "Veteran Software Builder",
+    "org": "",
+    "signed_at": "3/9/2026 4:37:05"
+  },
+  {
+    "name": "Eric Wright (@DiscoPosse)",
+    "title": "Chief Content Officer @ GTM Delta + Systems Architect for 30+years",
+    "org": "GTM Delta",
+    "signed_at": "3/11/2026 9:25:30"
+  },
+  {
+    "name": "Richard Williams ",
+    "title": "AI Engineering Splutions Architect",
+    "org": "Engineer For AI",
+    "signed_at": "3/15/2026 15:47:58"
+  },
+  {
+    "name": "John DuCrest",
+    "title": "Founder",
+    "org": "SYMBEYOND AI LLC",
+    "signed_at": "3/16/2026 13:39:22"
+  },
+  {
+    "name": "Kelly Hohman",
+    "title": "Founder",
+    "org": "Airtrek.ai",
+    "signed_at": "3/16/2026 15:36:26"
+  },
+  {
+    "name": "Simon Gant",
+    "title": "Ai Native",
+    "org": "Ai Native solutions",
+    "signed_at": "3/16/2026 18:05:41"
+  },
+  {
+    "name": "scott gardner",
+    "title": "founder",
+    "org": "ninja.ing",
+    "signed_at": "3/17/2026 10:51:43"
+  },
+  {
+    "name": "Dave Lush",
+    "title": "CTO & Co-Founder",
+    "org": "woti",
+    "signed_at": "3/23/2026 10:32:36"
+  },
+  {
+    "name": "Richard MEyer",
+    "title": "owner",
+    "org": "Similaritywave Technology",
+    "signed_at": "3/25/2026 20:18:08"
+  },
+  {
+    "name": "Craig Miller",
+    "title": "Founder",
+    "org": "ChiefofStaff",
+    "signed_at": "3/26/2026 6:27:14"
+  },
+  {
+    "name": "Shoyeb Inamdar",
+    "title": "Research and Development Manager",
+    "org": "Dassault Systemes",
+    "signed_at": "3/27/2026 9:10:26"
+  },
+  {
+    "name": "David Susanto",
+    "title": "Founder",
+    "org": "DoZe.ninja",
+    "signed_at": "3/28/2026 13:57:02"
+  },
+  {
+    "name": "Kaylee Burch",
+    "title": "Web Developer",
+    "org": "Independent",
+    "signed_at": "4/6/2026 13:16:11"
+  },
+  {
+    "name": "Fabio De Odorico",
+    "title": "Senior Software Engineer",
+    "org": "ENTER Konsult",
+    "signed_at": "4/7/2026 4:48:27"
+  },
+  {
+    "name": "Whit Whitman",
+    "title": "CEO",
+    "org": "PieoSync, LLC",
+    "signed_at": "4/7/2026 9:40:26"
+  },
+  {
+    "name": "Hermann Kuschke",
+    "title": "Tech Lead / Project Manager",
+    "org": "Windhoek Consulting Engineers",
+    "signed_at": "4/8/2026 19:50:40"
+  }
+]

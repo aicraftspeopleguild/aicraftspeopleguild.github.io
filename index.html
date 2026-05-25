@@ -238,17 +238,28 @@
             const signatoriesCount = document.getElementById('signatoriesCount');
             
             try {
-                // For public sheets, you can use the published CSV URL
-                const csvUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(CONFIG.SHEET_NAME)}`;
-                
-                const response = await fetch(csvUrl);
+                // Append a cache-busting timestamp so edits to the sheet
+                // propagate immediately instead of being served from the
+                // gviz cache or the browser cache.
+                const csvUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(CONFIG.SHEET_NAME)}&_=${Date.now()}`;
+
+                const response = await fetch(csvUrl, { cache: 'no-store' });
                 const csvText = await response.text();
-                
+
                 // Parse CSV
                 const rows = parseCSV(csvText);
-                
-                // Skip header row and reverse to show newest first
-                const signatories = rows.slice(1).reverse();
+
+                // Skip header row, drop rows whose display fields contain a
+                // URL (paste artefacts, not real signatories), and reverse to
+                // show newest first.
+                const containsUrl = (text) =>
+                    /https?:\/\//i.test(text) ||
+                    /\b[a-z0-9-]+\.[a-z]{2,}\/[a-z0-9]/i.test(text);
+                const isValidRow = (row) => {
+                    const display = [row[1], row[2], row[3]].filter(Boolean).join(' ');
+                    return !containsUrl(display);
+                };
+                const signatories = rows.slice(1).filter(isValidRow).reverse();
                 
                 // Update count
                 signatoriesCount.textContent = `${signatories.length} ${signatories.length === 1 ? 'signatory' : 'signatories'}`;

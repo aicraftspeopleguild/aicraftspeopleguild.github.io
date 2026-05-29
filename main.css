@@ -7080,6 +7080,13 @@ background: #f8d7da;
             display: block;
 }
 
+.page-index .honeypot-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .page-index .signatories-display {
 margin-top: 3rem;
 }

@@ -130,9 +130,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="entry.1514577890" placeholder="For verification (not displayed publicly)">
-                    <small>Optional - only for preventing spam</small>
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="entry.1514577890" placeholder="For verification (not displayed publicly)" required>
+                    <small>Required - not displayed publicly</small>
                 </div>
 
                 <div class="honeypot-field" aria-hidden="true">
@@ -235,6 +235,7 @@
             const name = document.getElementById('name').value.trim();
             const title = document.getElementById('title').value.trim();
             const org = document.getElementById('organization').value.trim();
+            const email = document.getElementById('email').value.trim();
 
             const hasUrl = /https?:\/\/|www\.|[a-zA-Z0-9-]+\.[a-zA-Z]{2,}/.test(name + ' ' + title + ' ' + org);
             const hasSuspicious = /[<>{}\\|]/.test(name);
@@ -250,6 +251,18 @@
                 e.preventDefault();
                 formStatus.className = 'form-status error';
                 formStatus.textContent = 'Please enter a valid name.';
+                return;
+            }
+            if (!email) {
+                e.preventDefault();
+                formStatus.className = 'form-status error';
+                formStatus.textContent = 'Email is required.';
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                e.preventDefault();
+                formStatus.className = 'form-status error';
+                formStatus.textContent = 'Please enter a valid email address.';
                 return;
             }
 

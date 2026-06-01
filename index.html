@@ -111,7 +111,7 @@
             <h2>Sign the Manifesto</h2>
             <p>Join fellow professionals committed to excellence in AI-assisted development</p>
             
-            <form id="signatureForm" class="signature-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf79pCLYUMfgHUYW2HeJrWZEsJqE4uvt-BVUJter52Dd6RMcw/formResponse" method="POST" target="hidden_iframe">
+            <form id="signatureForm" class="signature-form">
                 <div class="form-group">
                     <label for="name">Name <span class="required">*</span></label>
                     <input type="text" id="name" name="entry.1444049175" required>
@@ -202,16 +202,36 @@
         </p>
     </footer>
 
-    <!-- Hidden iframe for form submission -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
     <script>
-        // Configuration - UPDATE THESE VALUES
         const CONFIG = {
-            SHEET_ID: '1WldGelJJZUkQc4-r9PaCwpNWcI9sc7Rtif_7XB7x7hc',  // Get this from the Sheet URL
-            SHEET_NAME: 'Form Responses 1',     // Usually this is the default name
-            API_KEY: 'YOUR_GOOGLE_API_KEY'      // Optional - for public sheets you may not need this
+            SHEET_ID: '1WldGelJJZUkQc4-r9PaCwpNWcI9sc7Rtif_7XB7x7hc',
+            SHEET_NAME: 'Form Responses 1'
         };
+
+        const FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf79pCLYUMfgHUYW2HeJrWZEsJqE4uvt-BVUJter52Dd6RMcw/formResponse';
+
+        // Offensive-word blocklist (lowercase). Extend this list as needed.
+        const BLOCKED_WORDS = [
+            'shit', 'shitting', 'shitter', 'shitters', 'shitty', 'shitpile', 'bullshit',
+            'fuck', 'fucker', 'fucking', 'fucked',
+            'cunt', 'cunts',
+            'bitch', 'bitches',
+            'bastard', 'bastards',
+            'asshole', 'assholes',
+            'dickhead', 'dickheads',
+            'piss', 'pissing',
+            'poop', 'pooping',
+            'diarrhea',
+            'whore', 'slut',
+            'nigger', 'nigga',
+            'faggot', 'fag'
+        ];
+
+        function containsProfanity(text) {
+            if (!text) return false;
+            const lower = text.toLowerCase();
+            return BLOCKED_WORDS.some(word => lower.includes(word));
+        }
 
         // Handle form submission
         const form = document.getElementById('signatureForm');
@@ -219,69 +239,80 @@
         const formStatus = document.getElementById('formStatus');
         const pageLoadTime = Date.now();
 
-        form.addEventListener('submit', function(e) {
-            // Layer 1: Honeypot — bots fill hidden fields, humans don't
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Honeypot — bots fill hidden fields, humans don't
             if (document.getElementById('website').value) return;
 
-            // Layer 3: Time check — reject submissions within 3 seconds of page load
+            // Time check — reject submissions within 3 seconds of page load
             if (Date.now() - pageLoadTime < 3000) {
-                e.preventDefault();
                 formStatus.className = 'form-status error';
                 formStatus.textContent = 'Please take a moment before signing.';
                 return;
             }
 
-            // Layer 2: Content validation
             const name = document.getElementById('name').value.trim();
             const title = document.getElementById('title').value.trim();
             const org = document.getElementById('organization').value.trim();
             const email = document.getElementById('email').value.trim();
 
-            const hasUrl = /https?:\/\/|www\.|[a-zA-Z0-9-]+\.[a-zA-Z]{2,}/.test(name + ' ' + title + ' ' + org);
-            const hasSuspicious = /[<>{}\\|]/.test(name);
-            const letterCount = name.replace(/[^a-zA-Z\u00C0-\u024F\u4e00-\u9fff]/g, '').length;
-
-            if (hasUrl) {
-                e.preventDefault();
+            // URL check
+            if (/https?:\/\/|www\.|[a-zA-Z0-9-]+\.[a-zA-Z]{2,}/.test(name + ' ' + title + ' ' + org)) {
                 formStatus.className = 'form-status error';
                 formStatus.textContent = 'URLs are not allowed in form fields.';
                 return;
             }
-            if (hasSuspicious || letterCount < 2) {
-                e.preventDefault();
+
+            // Name quality check
+            const letterCount = name.replace(/[^a-zA-Z\u00C0-\u024F\u4e00-\u9fff]/g, '').length;
+            if (/[<>{}\\|]/.test(name) || letterCount < 2) {
                 formStatus.className = 'form-status error';
                 formStatus.textContent = 'Please enter a valid name.';
                 return;
             }
+
+            // Email checks
             if (!email) {
-                e.preventDefault();
                 formStatus.className = 'form-status error';
                 formStatus.textContent = 'Email is required.';
                 return;
             }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                e.preventDefault();
                 formStatus.className = 'form-status error';
                 formStatus.textContent = 'Please enter a valid email address.';
                 return;
             }
 
+            // Profanity check
+            if (containsProfanity(name) || containsProfanity(title) || containsProfanity(org)) {
+                formStatus.className = 'form-status error';
+                formStatus.textContent = 'Your submission contains inappropriate content. Please review your entries.';
+                return;
+            }
+
+            // All checks passed — submit via fetch
             submitBtn.disabled = true;
             submitBtn.textContent = 'Submitting...';
 
-            // Show success message after a delay (form submits to iframe)
-            setTimeout(() => {
-                formStatus.className = 'form-status success';
-                formStatus.textContent = 'Thank you for signing the manifesto! Your signature will appear below shortly.';
-                form.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Sign the Manifesto';
+            try {
+                const formData = new FormData();
+                formData.append('entry.1444049175', name);
+                formData.append('entry.1208485608', title);
+                formData.append('entry.1920033105', org);
+                formData.append('entry.1514577890', email);
+                await fetch(FORMS_URL, { method: 'POST', mode: 'no-cors', body: formData });
+            } catch (err) {
+                console.error('Submission error:', err);
+            }
 
-                // Reload signatures after 2 seconds
-                setTimeout(() => {
-                    loadSignatories();
-                }, 2000);
-            }, 1000);
+            formStatus.className = 'form-status success';
+            formStatus.textContent = 'Thank you for signing the manifesto! Your signature will appear below shortly.';
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Sign the Manifesto';
+
+            setTimeout(() => loadSignatories(), 2000);
         });
 
         // Function to load signatories from Google Sheets
@@ -299,22 +330,25 @@
                 // Parse CSV
                 const rows = parseCSV(csvText);
                 
-                // Skip header row and reverse to show newest first
-                const signatories = rows.slice(1).reverse();
-                
+                // Skip header row, reverse to show newest first, filter offensive content
+                const signatories = rows.slice(1).reverse().filter(row => {
+                    return !containsProfanity(row[1] || '') &&
+                           !containsProfanity(row[2] || '') &&
+                           !containsProfanity(row[3] || '');
+                });
+
                 // Update count
                 signatoriesCount.textContent = `${signatories.length} ${signatories.length === 1 ? 'signatory' : 'signatories'}`;
-                
+
                 // Display signatories
                 if (signatories.length === 0) {
                     signatoriesList.innerHTML = '<div class="loading">Be the first to sign!</div>';
                 } else {
                     signatoriesList.innerHTML = signatories.map(row => {
-                        // Assuming columns: Timestamp, Name, Title, Organization, Email
                         const name = row[1] || 'Anonymous';
                         const title = row[2] || '';
                         const org = row[3] || '';
-                        
+
                         return `
                             <div class="signatory-card">
                                 <div class="signatory-name">${escapeHtml(name)}</div>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACG Audit Services - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="page-white-papers">
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <h1>ACG Audit Services</h1>
+        <p class="subtitle">Independent, expert review of AI-assisted codebases — so costly mistakes surface before they reach production.</p>
+        <div class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro-panel">
+            <p>
+                <strong>Building software with AI agents is fast. Dangerously fast.</strong> Speed hides problems. The AI Craftspeople Guild offers independent audit services to help individuals and organizations find the problems that speed conceals — before those problems become expensive, embarrassing, or irreversible.
+            </p>
+            <p><em>Inspired by a chat with Thomas Frumkin</em></p>
+        </section>
+
+        <section class="papers-shell">
+            <div class="section-heading">
+                <h2>Why an AI-Assisted Codebase Needs a Different Kind of Audit</h2>
+                <p>Traditional code review assumes a human wrote every line with deliberate intent. AI-assisted codebases break that assumption.</p>
+            </div>
+
+            <article class="paper-card">
+                <p>An AI agent may produce code that is syntactically correct, passes linting, and even passes tests — yet contains subtle hallucinations, misapplied patterns, or structural decisions that no experienced engineer would have made. These are not ordinary bugs. They are a new category of failure, and they require a new category of scrutiny.</p>
+                <p>Guild auditors are practitioners who work daily with AI agents in production environments. They know where AI code goes wrong, and they know how to find it.</p>
+            </article>
+        </section>
+
+        <section class="papers-shell">
+            <div class="section-heading">
+                <h2>What an ACG Audit Covers</h2>
+            </div>
+
+            <div class="papers-grid">
+                <article class="paper-card">
+                    <h3>Hallucination Detection</h3>
+                    <p>AI agents frequently invent API methods, library functions, and configuration keys that do not exist. We systematically verify every external call and dependency reference against authoritative sources to surface phantom code before it fails silently in production.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Security Vulnerability Review</h3>
+                    <p>AI-generated code has characteristic security blind spots: inadequate input validation, over-broad permissions, insecure defaults, and boilerplate authentication patterns copied from outdated examples. We audit against the OWASP Top 10 and AI-specific threat patterns.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Test Coverage Integrity</h3>
+                    <p>AI agents write tests prolifically — but often write tests that confirm their own output rather than challenge it. We audit for test theatre: suites that provide coverage numbers without providing genuine verification of behavior, including edge cases the agent never considered.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Dependency and License Audit</h3>
+                    <p>When an AI suggests a dependency, it may reference an outdated version, a package with known vulnerabilities, or a library whose license is incompatible with your commercial use. We review every dependency for currency, security posture, and license risk.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Architecture Coherence Review</h3>
+                    <p>AI agents optimize locally and forget globally. A codebase built incrementally with agent assistance often accumulates contradictory patterns, redundant abstractions, and structural debt that only becomes visible from a whole-system view. We provide that view.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Data Handling and Privacy Audit</h3>
+                    <p>AI-generated data access code is frequently inattentive to the sensitivity of what it touches. We audit for over-fetching, unnecessary logging of sensitive fields, insufficient access control, and data retention practices that create legal and regulatory exposure.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Error Handling and Resilience Audit</h3>
+                    <p>AI agents tend to produce happy-path code. Error handling is often absent, shallow, or copy-pasted. We identify failure modes that are unhandled or silently swallowed, and assess whether the system degrades gracefully under realistic adverse conditions.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Prompt and Agent Configuration Review</h3>
+                    <p>If your system uses AI agents internally, the prompts, tools, and permissions granted to those agents are themselves a security and reliability surface. We review agent configurations for over-permissioning, prompt injection exposure, and runaway autonomy risks.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="papers-shell">
+            <div class="section-heading">
+                <h2>Who Should Request an Audit</h2>
+                <p>An ACG audit is appropriate at any of the following moments.</p>
+            </div>
+
+            <div class="papers-grid">
+                <article class="paper-card research-note">
+                    <div class="paper-type">Moment 1</div>
+                    <h3>Before a Production Launch</h3>
+                    <p>Any system built substantially with AI agent assistance deserves independent scrutiny before it faces real users and real consequences.</p>
+                </article>
+
+                <article class="paper-card research-note">
+                    <div class="paper-type">Moment 2</div>
+                    <h3>Before a Funding Round or Acquisition</h3>
+                    <p>Technical due diligence will examine code quality and security posture. An ACG audit surfaces issues before they surface at the worst possible time.</p>
+                </article>
+
+                <article class="paper-card research-note">
+                    <div class="paper-type">Moment 3</div>
+                    <h3>After a Major AI-Assisted Sprint</h3>
+                    <p>Catching drift before it compounds is far cheaper than untangling it after it has been built upon for months.</p>
+                </article>
+
+                <article class="paper-card research-note">
+                    <div class="paper-type">Moment 4</div>
+                    <h3>When Onboarding a New Team</h3>
+                    <p>A new engineering team inheriting an AI-assisted codebase needs an honest map of the terrain, not inherited assumptions about what was done and why.</p>
+                </article>
+
+                <article class="paper-card research-note">
+                    <div class="paper-type">Moment 5</div>
+                    <h3>After Something Has Gone Wrong</h3>
+                    <p>When a failure has occurred and the root cause is unclear, an ACG audit can distinguish human error, agent error, and structural failure — and prevent recurrence.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="papers-shell">
+            <div class="section-heading">
+                <h2>Guild Commitment</h2>
+            </div>
+
+            <article class="paper-card position-paper">
+                <div class="paper-type">Guild Position</div>
+                <p><strong>We do not tell you what you want to hear. We tell you what your codebase actually contains.</strong></p>
+                <p>A Guild audit is an independent, candid, craft-grounded review. We have no stake in the outcome except the quality of the work. That independence is the service.</p>
+            </article>
+        </section>
+
+        <section class="future-panel">
+            <div class="section-heading">
+                <h2>Explore More Guild Services</h2>
+                <p>Auditing finds problems. Optimization eliminates the conditions that create them.</p>
+            </div>
+            <div class="future-grid">
+                <div class="future-slot">
+                    <h3><a href="acg-optimization-services.html" style="color:inherit;text-decoration:none;">Optimization Services</a></h3>
+                    <p>Reduce token waste, eliminate dead weight, and make your AI-maintained codebase cheaper to run.</p>
+                </div>
+                <div class="future-slot">
+                    <h3><a href="members.html" style="color:inherit;text-decoration:none;">Meet the Guild</a></h3>
+                    <p>The auditors are practitioners. Get to know who would be reviewing your codebase.</p>
+                </div>
+                <div class="future-slot">
+                    <h3><a href="index.html" style="color:inherit;text-decoration:none;">Back to Home</a></h3>
+                    <p>Return to the AI Craftspeople Guild home page.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            &copy; 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

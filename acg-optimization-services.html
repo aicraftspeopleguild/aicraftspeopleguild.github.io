@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACG Optimization Services - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="page-white-papers">
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <h1>ACG Optimization Services</h1>
+        <p class="subtitle">Reducing waste, improving efficiency, and lowering the cost of AI-assisted software — for teams building and maintaining with AI agents.</p>
+        <div class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro-panel">
+            <p>
+                <strong>Every token processed by an AI agent has a cost — in time, money, and cognitive overhead.</strong> A codebase that was built carelessly accumulates token waste the way a leaky building accumulates water damage: slowly, invisibly, and then all at once. The AI Craftspeople Guild offers optimization services to identify and eliminate that waste before it compounds.
+            </p>
+            <p><em>Inspired by a chat with Thomas Frumkin</em></p>
+        </section>
+
+        <section class="papers-shell">
+            <div class="section-heading">
+                <h2>The Token Economy of a Codebase</h2>
+                <p>When an AI agent reads your code, it processes tokens. Every file, every path, every identifier costs tokens.</p>
+            </div>
+
+            <article class="paper-card">
+                <p>A codebase optimized for human readability alone is not optimized for AI-assisted maintenance. The two concerns overlap significantly, but not completely. Guild optimization work targets the gap: places where your codebase imposes unnecessary token overhead on every AI interaction, every day, for the lifetime of the project.</p>
+                <p>Small changes compound. Eliminating waste early is dramatically cheaper than eliminating it later.</p>
+            </article>
+        </section>
+
+        <section class="papers-shell">
+            <div class="section-heading">
+                <h2>Optimization Areas</h2>
+            </div>
+
+            <div class="papers-grid">
+                <article class="paper-card">
+                    <h3>Naming Efficiency</h3>
+                    <p>Excessively long folder, file, and variable names inflate every token count in every context where those names appear. A folder named <code>user-authentication-and-authorization-management-service</code> costs the AI roughly ten times as many tokens as <code>auth</code> — and provides no additional clarity to either human or machine readers familiar with the codebase. We audit naming conventions and propose concise, unambiguous alternatives.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Comment and Documentation Hygiene</h3>
+                    <p>AI agents produce comments compulsively. Over time, a codebase fills with comments that restate what the code already says, describe decisions that have since changed, or document behavior that no longer exists. These are pure token overhead — loaded into context on every AI interaction without contributing useful information. We identify and remove comment noise while preserving genuinely valuable documentation.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Dead Code Elimination</h3>
+                    <p>AI agents leave scaffolding behind. Unused functions, unreachable branches, commented-out blocks, and orphaned modules accumulate silently. Each one is loaded into the AI's context window every time a related file is touched — consuming tokens, introducing confusion, and increasing the chance that the agent responds to stale information. We systematically locate and remove code that is no longer doing work.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>File and Module Size Management</h3>
+                    <p>AI agents tend to append rather than reorganize. Large, monolithic files grow unboundedly as features accumulate. A 3,000-line file forces the AI to load and process far more context than a well-decomposed set of focused modules. We restructure oversized files into coherent, right-sized units that minimize the context required for any individual task.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Directory Structure Flattening</h3>
+                    <p>Deep, baroque directory trees impose path overhead on every file reference. They also obscure the logical structure of the system, forcing the AI agent to traverse more levels to understand what lives where. We analyze directory structures and propose flatter, more semantically clear layouts that reduce navigation cost and improve discoverability.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Dependency Trimming</h3>
+                    <p>Every dependency in a project file is context the AI must reason about. AI agents frequently suggest adding packages to solve problems that could be handled with a few lines of standard library code. We identify dependencies that can be removed or replaced, shrinking the dependency surface and reducing the cognitive load on both agents and human maintainers.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Configuration File Compaction</h3>
+                    <p>AI-generated configuration files are characteristically verbose: every default spelled out, every optional field included, comments explaining choices that are either obvious or obsolete. Configuration files are loaded frequently by AI agents assessing project settings. We compact configurations to carry only non-default, intentional settings — reducing token overhead and making intent immediately legible.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Duplicate Code Consolidation</h3>
+                    <p>AI agents solve the same problem multiple times without noticing they have already solved it. Near-duplicate functions, nearly identical test fixtures, and parallel implementations of the same logic proliferate across AI-assisted codebases. Each duplicate is redundant context. We identify and consolidate duplication into shared, well-named abstractions — reducing size, improving consistency, and making changes cheaper.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Test Suite Efficiency</h3>
+                    <p>AI agents write tests generously but not efficiently. Test files frequently contain repetitive setup, duplicated assertions, and fixtures that are loaded universally but used rarely. A bloated test suite slows CI, consumes unnecessary compute on every agent-assisted run, and buries genuine failures in noise. We restructure test suites for precision: less repetition, faster execution, clearer failure signals.</p>
+                </article>
+
+                <article class="paper-card">
+                    <h3>Prompt and System Message Optimization</h3>
+                    <p>If your system embeds AI agents with custom prompts or system messages, those prompts are processed on every invocation. Verbose, redundant, or poorly structured system prompts waste tokens on every call and can degrade model performance. We review and tighten agent configurations to reduce per-call overhead while preserving or improving behavioral clarity.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="papers-shell">
+            <div class="section-heading">
+                <h2>The Compounding Return on Optimization</h2>
+            </div>
+
+            <article class="paper-card">
+                <p>Optimization work is not a one-time cost reduction. It is an investment that pays returns on every subsequent AI interaction with the codebase. A codebase that has been optimized for token efficiency will cost less to maintain, produce better AI suggestions, and accumulate new waste more slowly — because the habits and structures that create waste have been replaced with ones that resist it.</p>
+                <p>The earlier optimization happens in a project's life, the larger the compounding return. But it is never too late. Even a mature, heavily AI-assisted codebase carries waste that is worth eliminating.</p>
+            </article>
+
+            <article class="paper-card position-paper">
+                <div class="paper-type">Guild Principle</div>
+                <p><strong>Waste is not neutral. Every unnecessary token is a tax on every future interaction with your codebase.</strong></p>
+                <p>Craftsmanship in the age of AI is not just about what you build. It is about how efficiently your codebase can be read, understood, and maintained — by humans and agents alike.</p>
+            </article>
+        </section>
+
+        <section class="future-panel">
+            <div class="section-heading">
+                <h2>Explore More Guild Services</h2>
+                <p>Optimization removes waste. Auditing finds deeper structural and security problems.</p>
+            </div>
+            <div class="future-grid">
+                <div class="future-slot">
+                    <h3><a href="acg-audit-services.html" style="color:inherit;text-decoration:none;">Audit Services</a></h3>
+                    <p>Independent, candid review of AI-assisted codebases for correctness, security, and structural integrity.</p>
+                </div>
+                <div class="future-slot">
+                    <h3><a href="members.html" style="color:inherit;text-decoration:none;">Meet the Guild</a></h3>
+                    <p>The optimizers are practitioners. Get to know who would be working in your codebase.</p>
+                </div>
+                <div class="future-slot">
+                    <h3><a href="index.html" style="color:inherit;text-decoration:none;">Back to Home</a></h3>
+                    <p>Return to the AI Craftspeople Guild home page.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            &copy; 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

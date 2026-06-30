@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI-Assisted Delivery Diagnostic — AI Craftspeople Guild</title>
+<meta property="og:title" content="The AI-Assisted Delivery Diagnostic — a 3-minute self-assessment for engineering leaders">
+<meta property="og:description" content="Find out whether the AI-assisted parts of your codebase are as healthy as your dashboards suggest. No code access required. If your answers say you're fine, that's what we'll tell you.">
+<meta property="og:type" content="website">
+<style>
+  /* ---- Design tokens ---- */
+  :root {
+    --navy: #0f2747;
+    --navy-deep: #0a1c34;
+    --blue: #1f6feb;
+    --blue-soft: #eaf1fc;
+    --ink: #1a2230;
+    --muted: #5a6678;
+    --line: #dde3ec;
+    --line-soft: #eef2f7;
+    --bg: #f6f8fb;
+    --card: #ffffff;
+    --gold: #c9a24b;
+    --ok: #1e8a5a;
+    --radius: 12px;
+    --maxw: 680px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: Georgia, "Times New Roman", serif; }
+
+  /* ---- Header band ---- */
+  .masthead {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    padding: 38px 22px 46px;
+    text-align: center;
+  }
+  .crest {
+    letter-spacing: 5px; font-size: 12px; color: #b9c6da; margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .masthead h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(26px, 5vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+    margin-bottom: 14px;
+  }
+  .masthead .kicker { color: #8fb4ef; }
+  .masthead p {
+    max-width: 540px; margin: 0 auto; color: #cdd8e8; font-size: 15.5px;
+  }
+  .masthead .meta {
+    margin-top: 20px; display: inline-flex; gap: 18px; flex-wrap: wrap;
+    justify-content: center; font-size: 13px; color: #9fb2cc;
+  }
+  .masthead .meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .masthead .meta b { color: #fff; font-weight: 600; }
+
+  /* ---- Progress bar ---- */
+  .progress-wrap {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(246,248,251,0.92); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .progress-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 10px 22px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .progress-track {
+    flex: 1; height: 6px; background: var(--line); border-radius: 99px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; width: 0%; background: var(--blue);
+    border-radius: 99px; transition: width 0.35s ease;
+  }
+  .progress-label { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* ---- Form body ---- */
+  .shell { max-width: var(--maxw); margin: 0 auto; padding: 30px 22px 80px; }
+
+  .q {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 22px 20px;
+    margin-bottom: 16px;
+    scroll-margin-top: 70px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .q.answered { border-color: #cfe0f8; }
+  .q:focus-within { border-color: var(--blue); box-shadow: 0 0 0 4px var(--blue-soft); }
+
+  .q-head { display: flex; gap: 12px; margin-bottom: 14px; }
+  .q-num {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--navy); color: #fff; font-size: 13px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .q.answered .q-num { background: var(--ok); }
+  .q-label { font-size: 16.5px; font-weight: 600; color: var(--ink); padding-top: 2px; }
+  .q-label .req { color: var(--gold); font-weight: 400; }
+  .q-hint { font-size: 13.5px; color: var(--muted); margin: -8px 0 14px 38px; }
+
+  /* options */
+  .opts { display: flex; flex-direction: column; gap: 8px; margin-left: 38px; }
+  .opt {
+    display: flex; align-items: flex-start; gap: 11px;
+    border: 1px solid var(--line); border-radius: 9px;
+    padding: 11px 14px; cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    font-size: 15px;
+  }
+  .opt:hover { background: var(--blue-soft); border-color: #cfe0f8; }
+  .opt input { position: absolute; opacity: 0; pointer-events: none; }
+  .opt .dot {
+    flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%;
+    border: 2px solid #b7c2d2; margin-top: 1px; position: relative;
+    transition: border-color 0.15s ease;
+  }
+  .opt input:checked ~ .dot { border-color: var(--blue); }
+  .opt input:checked ~ .dot::after {
+    content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--blue);
+  }
+  .opt input:checked ~ .opt-text { color: var(--navy); font-weight: 500; }
+  .opt:has(input:checked) { background: var(--blue-soft); border-color: var(--blue); }
+  .opt input:focus-visible ~ .dot { box-shadow: 0 0 0 3px var(--blue-soft); }
+
+  /* text inputs */
+  textarea, input[type="text"], input[type="email"], select {
+    width: calc(100% - 38px); margin-left: 38px;
+    font-family: inherit; font-size: 15px; color: var(--ink);
+    border: 1px solid var(--line); border-radius: 9px;
+    padding: 12px 14px; background: #fcfdff; resize: vertical;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  textarea { min-height: 84px; line-height: 1.5; }
+  textarea:focus, input:focus, select:focus {
+    outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-soft);
+  }
+  select { width: calc(100% - 38px); appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' stroke='%235a6678' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+  }
+
+  /* section divider */
+  .section-break {
+    text-align: center; margin: 34px 0 22px; position: relative;
+  }
+  .section-break span {
+    background: var(--bg); padding: 0 16px; position: relative; z-index: 1;
+    font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); font-weight: 600;
+  }
+  .section-break::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 50%;
+    height: 1px; background: var(--line);
+  }
+
+  /* contact group */
+  .contact-grid { margin-left: 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .contact-grid .full { grid-column: 1 / -1; }
+  .contact-grid input, .contact-grid select { width: 100%; margin-left: 0; }
+  .field-label { font-size: 13.5px; font-weight: 600; color: var(--muted); margin: 0 0 5px 0; display: block; }
+  @media (max-width: 520px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  .promise {
+    margin: 18px 0 26px 0; padding: 16px 18px; border-radius: 10px;
+    background: var(--blue-soft); border: 1px solid #cfe0f8;
+    font-size: 14.5px; color: var(--navy); line-height: 1.5;
+  }
+  .promise b { font-weight: 700; }
+
+  /* submit */
+  .submit-row { margin-left: 0; text-align: center; margin-top: 8px; }
+  button.submit {
+    font-family: inherit; font-size: 16px; font-weight: 600; color: #fff;
+    background: var(--blue); border: none; border-radius: 10px;
+    padding: 15px 38px; cursor: pointer; width: 100%;
+    transition: background 0.18s ease, transform 0.05s ease;
+  }
+  button.submit:hover { background: #1a5fd0; }
+  button.submit:active { transform: translateY(1px); }
+  button.submit:disabled { background: #9db8e6; cursor: not-allowed; }
+  .fineprint { font-size: 12.5px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+
+  .err-banner {
+    display: none; margin: 0 0 16px 0; padding: 12px 16px; border-radius: 9px;
+    background: #fdecea; border: 1px solid #f5c6c0; color: #a3372c; font-size: 14px;
+  }
+  .err-banner.show { display: block; }
+
+  /* thank-you state */
+  .thanks { display: none; text-align: center; padding: 40px 12px; }
+  .thanks.show { display: block; }
+  .thanks .mark {
+    width: 60px; height: 60px; border-radius: 50%; background: var(--ok);
+    color: #fff; font-size: 30px; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 22px;
+  }
+  .thanks h2 { font-family: Georgia, serif; font-size: 26px; color: var(--navy); margin-bottom: 12px; }
+  .thanks p { max-width: 460px; margin: 0 auto 10px; color: var(--muted); font-size: 15.5px; }
+
+  /* footer */
+  .foot {
+    text-align: center; padding: 28px 22px 40px; color: var(--muted);
+    font-size: 12.5px; border-top: 1px solid var(--line); background: #fff;
+  }
+  .foot .crest-sm { letter-spacing: 3px; color: var(--navy); font-weight: 600; margin-bottom: 6px; }
+  .foot a { color: var(--blue); text-decoration: none; }
+  .foot .neutral { font-style: italic; }
+
+  /* band result screen */
+  .result { display: none; padding: 8px 0 20px; }
+  .result.show { display: block; }
+  .result-card {
+    border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+    background: #fff; margin-bottom: 18px;
+  }
+  .result-band {
+    padding: 26px 26px 24px; color: #fff;
+  }
+  .result-band .eyebrow {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    opacity: 0.85; margin-bottom: 8px; font-weight: 600;
+  }
+  .result-band h2 {
+    font-family: Georgia, serif; font-size: 25px; line-height: 1.2; margin-bottom: 4px;
+  }
+  .result-band .score {
+    font-size: 13.5px; opacity: 0.9; margin-top: 8px; font-variant-numeric: tabular-nums;
+  }
+  /* band themes */
+  .band-1 .result-band { background: linear-gradient(150deg,#1e8a5a,#14633f); }
+  .band-2 .result-band { background: linear-gradient(150deg,#2471a3,#16456b); }
+  .band-3 .result-band { background: linear-gradient(150deg,#c97a1e,#9a5610); }
+  .band-4 .result-band { background: linear-gradient(150deg,#b5402f,#7e2a1d); }
+
+  .result-body { padding: 22px 26px 24px; }
+  .result-body p { font-size: 15.5px; color: var(--ink); margin-bottom: 13px; }
+  .result-body .flagged {
+    margin: 4px 0 16px; padding: 14px 16px; background: var(--bg);
+    border-radius: 9px; border: 1px solid var(--line);
+  }
+  .result-body .flagged .h {
+    font-size: 12.5px; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--muted); font-weight: 600; margin-bottom: 8px;
+  }
+  .result-body .flagged ul { list-style: none; margin: 0; padding: 0; }
+  .result-body .flagged li {
+    font-size: 14.5px; color: var(--ink); padding: 4px 0 4px 20px; position: relative;
+  }
+  .result-body .flagged li::before {
+    content: "▸"; position: absolute; left: 2px; color: var(--blue);
+  }
+  .result-next {
+    background: var(--navy); color: #fff; border-radius: 12px;
+    padding: 22px 24px; text-align: center;
+  }
+  .result-next h3 { font-family: Georgia, serif; font-size: 19px; margin-bottom: 8px; }
+  .result-next p { font-size: 14.5px; color: #cdd8e8; margin-bottom: 6px; line-height: 1.5; }
+  .result-next .small { font-size: 12.5px; color: #9fb2cc; margin-top: 12px; }
+  .provisional-note {
+    font-size: 12.5px; color: var(--muted); font-style: italic;
+    text-align: center; margin-top: 16px; line-height: 1.5;
+  }
+
+  /* a11y */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+  }
+  :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="crest">⚒ AI CRAFTSPEOPLE GUILD ⚒</div>
+    <h1>The AI-Assisted Delivery Diagnostic<br><span class="kicker serif">Is your codebase as healthy as your dashboards say?</span></h1>
+    <p>AI agents move fast — and so do the problems they create. Most stay invisible until they're expensive. This short self-assessment helps you find out whether something's quietly drifting. No code access required.</p>
+    <div class="meta">
+      <span>⏱ <b>~3 minutes</b></span>
+      <span>🔒 <b>Private</b> — only you and the Guild see it</span>
+      <span>🎯 For <b>engineering leaders</b></span>
+    </div>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress-inner">
+      <div class="progress-track"><div class="progress-fill" id="bar"></div></div>
+      <div class="progress-label"><span id="answered">0</span> of <span id="total">10</span> answered</div>
+    </div>
+  </div>
+
+  <main class="shell">
+    <div class="err-banner" id="errBanner"></div>
+
+    <!-- ============ FORM ============ -->
+    <form id="diagForm" novalidate>
+
+      <!-- Q1 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">1</div>
+          <div class="q-label">How is your team using AI to build software today? <span class="req">*</span></div>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q1_usage" value="Heavily — agents write a large share"><span class="dot"></span><span class="opt-text">Heavily — agents write a large share of our code</span></label>
+          <label class="opt"><input type="radio" name="q1_usage" value="Moderately — AI assists, humans write most"><span class="dot"></span><span class="opt-text">Moderately — AI assists, humans still write most of it</span></label>
+          <label class="opt"><input type="radio" name="q1_usage" value="Lightly — autocomplete & occasional prompt"><span class="dot"></span><span class="opt-text">Lightly — mostly autocomplete and the occasional prompt</span></label>
+          <label class="opt"><input type="radio" name="q1_usage" value="Scaling up fast right now"><span class="dot"></span><span class="opt-text">We're scaling it up fast right now</span></label>
+          <label class="opt"><input type="radio" name="q1_usage" value="Not sure / varies by team"><span class="dot"></span><span class="opt-text">Not sure / it varies by team</span></label>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">2</div>
+          <div class="q-label">Since adopting AI agents, what has gotten faster — and what has gotten harder? <span class="req">*</span></div>
+        </div>
+        <div class="q-hint">e.g. "shipping is faster, but reviews and incident response feel slower."</div>
+        <textarea name="q2_faster_harder" placeholder="In your own words…"></textarea>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">3</div>
+          <div class="q-label">How long does it take a strong senior hire to become genuinely productive in your codebase? <span class="req">*</span></div>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q3_onboarding" value="A few weeks, as expected"><span class="dot"></span><span class="opt-text">A few weeks, as expected</span></label>
+          <label class="opt"><input type="radio" name="q3_onboarding" value="Noticeably longer than it used to"><span class="dot"></span><span class="opt-text">Noticeably longer than it used to</span></label>
+          <label class="opt"><input type="radio" name="q3_onboarding" value="Months — and not totally sure why"><span class="dot"></span><span class="opt-text">Months — and we're not totally sure why</span></label>
+          <label class="opt"><input type="radio" name="q3_onboarding" value="I don't know"><span class="dot"></span><span class="opt-text">Honestly, I don't know</span></label>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">4</div>
+          <div class="q-label">When was the last time your team refactored something significant — and how did it feel? <span class="req">*</span></div>
+        </div>
+        <div class="q-hint">Was it routine, or risky enough that people avoided it?</div>
+        <textarea name="q4_refactor" placeholder="In your own words…"></textarea>
+      </div>
+
+      <!-- Q5 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">5</div>
+          <div class="q-label">Do you trust that a passing test suite actually means the code is safe? <span class="req">*</span></div>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q5_tests" value="Yes — green means safe, verified"><span class="dot"></span><span class="opt-text">Yes — green means safe, we've verified that</span></label>
+          <label class="opt"><input type="radio" name="q5_tests" value="Mostly, but some doubts"><span class="dot"></span><span class="opt-text">Mostly, but I have some doubts</span></label>
+          <label class="opt"><input type="radio" name="q5_tests" value="Not really — tests pass either way"><span class="dot"></span><span class="opt-text">Not really — tests pass whether the code is right or wrong</span></label>
+          <label class="opt"><input type="radio" name="q5_tests" value="Not sure anyone has checked"><span class="dot"></span><span class="opt-text">I'm not sure anyone has checked</span></label>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">6</div>
+          <div class="q-label">What part of your system do people quietly avoid changing? <span class="req">*</span></div>
+        </div>
+        <div class="q-hint">The area where "if it works, don't touch it" has become the unofficial rule.</div>
+        <textarea name="q6_fragile" placeholder="In your own words…"></textarea>
+      </div>
+
+      <!-- Q7 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">7</div>
+          <div class="q-label">Can you account for what your AI agents are actually permitted to do in production? <span class="req">*</span></div>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q7_permissions" value="Yes — scoped and documented"><span class="dot"></span><span class="opt-text">Yes, fully — scoped and documented</span></label>
+          <label class="opt"><input type="radio" name="q7_permissions" value="Roughly, but not precisely"><span class="dot"></span><span class="opt-text">Roughly, but not precisely</span></label>
+          <label class="opt"><input type="radio" name="q7_permissions" value="No — uncomfortable to admit"><span class="dot"></span><span class="opt-text">No — and that's a little uncomfortable to admit</span></label>
+          <label class="opt"><input type="radio" name="q7_permissions" value="No agents in production yet"><span class="dot"></span><span class="opt-text">We don't run agents in production (yet)</span></label>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">8</div>
+          <div class="q-label">Your security/quality dashboard is green. How confident are you that "green" means actually secure — not just "the tool is happy"? <span class="req">*</span></div>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q8_dashboard" value="Very — independently verified"><span class="dot"></span><span class="opt-text">Very — it's been independently verified</span></label>
+          <label class="opt"><input type="radio" name="q8_dashboard" value="Fairly, but no outside check"><span class="dot"></span><span class="opt-text">Fairly, but no one outside the team has checked</span></label>
+          <label class="opt"><input type="radio" name="q8_dashboard" value="Not very — green just means no alerts"><span class="dot"></span><span class="opt-text">Not very — green mostly means "no alerts"</span></label>
+          <label class="opt"><input type="radio" name="q8_dashboard" value="Relying on the vendor's word"><span class="dot"></span><span class="opt-text">We're relying on the vendor's word</span></label>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">9</div>
+          <div class="q-label">Is your AI token spend something you've looked at closely — or a line item that's quietly climbing? <span class="req">*</span></div>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q9_tokens" value="We watch it — it's efficient"><span class="dot"></span><span class="opt-text">We watch it and it's efficient</span></label>
+          <label class="opt"><input type="radio" name="q9_tokens" value="Climbing and not sure why"><span class="dot"></span><span class="opt-text">It's climbing and I don't fully know why</span></label>
+          <label class="opt"><input type="radio" name="q9_tokens" value="Haven't looked"><span class="dot"></span><span class="opt-text">Haven't looked — should I have?</span></label>
+          <label class="opt"><input type="radio" name="q9_tokens" value="Not applicable"><span class="dot"></span><span class="opt-text">Not applicable to our setup</span></label>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="q" data-q>
+        <div class="q-head">
+          <div class="q-num">10</div>
+          <div class="q-label">Name one quiet worry about your AI-assisted codebase — the thing you suspect but can't yet prove. <span class="req">*</span></div>
+        </div>
+        <div class="q-hint">The hunch you'd want an honest, independent second opinion on.</div>
+        <textarea name="q10_worry" placeholder="In your own words…"></textarea>
+      </div>
+
+      <!-- ===== CONTACT ===== -->
+      <div class="section-break"><span>Almost done — where should we send your results?</span></div>
+
+      <div class="q" data-contact>
+        <div class="contact-grid">
+          <div>
+            <label class="field-label" for="c_name">Your name</label>
+            <input type="text" id="c_name" name="name" autocomplete="name">
+          </div>
+          <div>
+            <label class="field-label" for="c_role">Role</label>
+            <select id="c_role" name="role">
+              <option value="">Select…</option>
+              <option>CTO</option>
+              <option>VP Engineering</option>
+              <option>Head of Engineering</option>
+              <option>Director of Engineering</option>
+              <option>Founder / CEO</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="c_company">Company</label>
+            <input type="text" id="c_company" name="company" autocomplete="organization">
+          </div>
+          <div>
+            <label class="field-label" for="c_size">Engineering team size</label>
+            <select id="c_size" name="team_size">
+              <option value="">Select…</option>
+              <option>1–10</option>
+              <option>11–50</option>
+              <option>51–150</option>
+              <option>151–300</option>
+              <option>300+</option>
+            </select>
+          </div>
+          <div class="full">
+            <label class="field-label" for="c_email">Work email</label>
+            <input type="email" id="c_email" name="email" autocomplete="email">
+          </div>
+        </div>
+      </div>
+
+      <div class="promise">
+        <b>Our promise:</b> we'll send you a short, candid read of what your answers suggest — and whether a deeper look is warranted. No pitch. If your answers say "you're fine," that's exactly what we'll tell you. That's the whole point of the first rung.
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="submit" id="submitBtn">Send my answers &amp; get the read</button>
+        <div class="fineprint">Vendor-neutral by charter. We assure against open standards and sell no proprietary tooling. Your answers are used only to prepare your diagnostic read.</div>
+      </div>
+
+    </form>
+
+    <!-- ===== INSTANT RESULT (populated by JS) ===== -->
+    <div class="result" id="result">
+      <div class="result-card" id="resultCard">
+        <div class="result-band">
+          <div class="eyebrow">Your provisional read</div>
+          <h2 id="bandTitle"></h2>
+          <div class="score" id="bandScore"></div>
+        </div>
+        <div class="result-body">
+          <p id="bandSummary"></p>
+          <div class="flagged" id="flaggedWrap" style="display:none;">
+            <div class="h">What stood out in your answers</div>
+            <ul id="flaggedList"></ul>
+          </div>
+          <p id="bandGuidance"></p>
+        </div>
+      </div>
+
+      <div class="result-next">
+        <h3 id="nextTitle"></h3>
+        <p id="nextBody"></p>
+        <p class="small">We've received your answers. A short, personal read from the Guild — written by a human, referencing what you actually shared — will follow by email, usually within a couple of working days.</p>
+      </div>
+
+      <div class="provisional-note">
+        This instant read is a provisional signal based on your six rated answers, not a diagnosis. The real value is in the open-ended answers you gave and the human read that follows. If your answers say you're in good shape, our email will tell you exactly that — no pitch.
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="crest-sm">⚒ AI CRAFTSPEOPLE GUILD (ACG) ⚒</div>
+    <div>Advocating for professional standards in AI-assisted software development</div>
+    <div class="neutral">Vendor-neutral by charter. We assure against open standards; we sell no proprietary tooling.</div>
+    <div style="margin-top:6px;"><a href="https://aicraftspeopleguild.github.io">aicraftspeopleguild.github.io</a> &nbsp;·&nbsp; © 2026</div>
+  </footer>
+
+<script>
+  /* =========================================================
+     CONFIG — set your form endpoint here.
+     Easiest path: create a free form at https://formspree.io,
+     then paste its endpoint URL below (looks like
+     https://formspree.io/f/abcdwxyz). Works with no backend.
+     Alternatives: Basin, Getform, Web3Forms, or your own URL.
+     Leave as "" to run in demo mode (logs to console, shows
+     the thank-you screen without sending).
+  ========================================================= */
+  const FORM_ENDPOINT = "";
+
+  const form = document.getElementById('diagForm');
+  const bar = document.getElementById('bar');
+  const answeredEl = document.getElementById('answered');
+  const errBanner = document.getElementById('errBanner');
+  const submitBtn = document.getElementById('submitBtn');
+
+  // The 10 required diagnostic questions (contact handled separately)
+  const requiredQuestions = [
+    'q1_usage','q2_faster_harder','q3_onboarding','q4_refactor','q5_tests',
+    'q6_fragile','q7_permissions','q8_dashboard','q9_tokens','q10_worry'
+  ];
+
+  function valueFor(name){
+    const els = form.elements[name];
+    if(!els) return '';
+    if(els.length){ // radio group
+      for(const el of els){ if(el.checked) return el.value; }
+      return '';
+    }
+    return (els.value || '').trim();
+  }
+
+  function answeredCount(){
+    return requiredQuestions.filter(n => valueFor(n) !== '').length;
+  }
+
+  function markBlocks(){
+    document.querySelectorAll('[data-q]').forEach((block, i) => {
+      const name = requiredQuestions[i];
+      if(name && valueFor(name) !== '') block.classList.add('answered');
+      else block.classList.remove('answered');
+    });
+  }
+
+  function updateProgress(){
+    const n = answeredCount();
+    answeredEl.textContent = n;
+    bar.style.width = (n/requiredQuestions.length*100) + '%';
+    markBlocks();
+  }
+
+  form.addEventListener('input', updateProgress);
+  form.addEventListener('change', updateProgress);
+
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  /* =========================================================
+     SCORING ENGINE
+     Six rated questions map to a 0–3 risk score. Q1 is a
+     stakes modifier (not scored, but can escalate the band).
+     The four open-text answers are NOT scored — they drive
+     your personal follow-up. Totals land in one of 4 bands.
+  ========================================================= */
+  const SCORES = {
+    q3_onboarding: {
+      'A few weeks, as expected': 0,
+      'Noticeably longer than it used to': 2,
+      "Months — and not totally sure why": 3,
+      "I don't know": 2
+    },
+    q5_tests: {
+      'Yes — green means safe, verified': 0,
+      'Mostly, but some doubts': 1,
+      'Not really — tests pass either way': 3,
+      'Not sure anyone has checked': 3
+    },
+    q7_permissions: {
+      'Yes — scoped and documented': 0,
+      'Roughly, but not precisely': 2,
+      'No — uncomfortable to admit': 3,
+      'No agents in production yet': 0
+    },
+    q8_dashboard: {
+      'Very — independently verified': 0,
+      'Fairly, but no outside check': 1,
+      'Not very — green just means no alerts': 2,
+      "Relying on the vendor's word": 3
+    },
+    q9_tokens: {
+      "We watch it — it's efficient": 0,
+      'Climbing and not sure why': 2,
+      "Haven't looked": 1,
+      'Not applicable': 0
+    }
+  };
+
+  // Human-readable flag text for the higher-risk answers (score >= 2)
+  const FLAG_TEXT = {
+    q3_onboarding: 'Onboarding a senior hire is taking longer than it should — a classic sign the architecture is getting harder to learn.',
+    q5_tests: "You're not fully confident a passing test suite means safe code — which means your strongest quality signal can't be trusted.",
+    q7_permissions: "You can't fully account for what your agents are permitted to do in production.",
+    q8_dashboard: 'Your security/quality dashboard is largely unverified by anyone independent of the tooling.',
+    q9_tokens: 'Token spend is climbing or unexamined — often the earliest sign a practice has drifted.'
+  };
+
+  const HIGH_USAGE = ['Heavily — agents write a large share', 'Scaling up fast right now'];
+
+  const BANDS = {
+    1: {
+      cls: 'band-1',
+      title: "You're in good shape.",
+      summary: "Based on the answers you rated, your AI-assisted practice looks genuinely healthy. Your tests appear trustworthy, you have a handle on what your agents can do, and you're not showing the warning signs — drifting onboarding, climbing costs, unverified dashboards — that usually mean a problem worth solving.",
+      guidance: "This is the outcome we're always hoping a diagnostic produces: confirmation that you don't need us. The one thing worth doing is re-checking periodically, because AI-assisted codebases can drift fast. But right now, there's nothing here that warrants a deeper audit. Keep your discipline where it is.",
+      nextTitle: "Keep doing what you're doing",
+      nextBody: "Your personal read will confirm this in plain terms. If anything in your open-ended answers is worth a closer look, we'll flag it — but we won't manufacture a problem that isn't there."
+    },
+    2: {
+      cls: 'band-2',
+      title: "Mostly sound — with a couple of things worth a closer look.",
+      summary: "Your answers suggest a fundamentally sound practice with one or two specific soft spots worth attention before they compound. Most of what you shared points to a team in control.",
+      guidance: "You're not in trouble — but you're at the stage where a small, deliberate course-correction keeps a minor drift from becoming a structural problem. A focused 30-minute diagnostic conversation would let us pinpoint whether those areas are isolated or symptoms of something broader.",
+      nextTitle: "Worth a short conversation",
+      nextBody: "Your personal read will name the specific soft spots and whether they're worth acting on now. No obligation beyond an honest assessment."
+    },
+    3: {
+      cls: 'band-3',
+      title: "Several signals are pointing the same direction.",
+      summary: "Reading your rated answers together, a pattern emerges — and it's the one we see most often right before a team realizes their AI-assisted codebase has gotten away from them. These signals tend to appear together because they share a root cause: speed accumulating faster than anyone's keeping a structural hand on it.",
+      guidance: "The good news is you can clearly feel it, which means you're earlier than most teams are when they finally look. The risk is that these patterns harden quietly — the cost of addressing them roughly doubles each quarter they're left alone. A diagnostic conversation would give you a defensible, independent read on the actual scope.",
+      nextTitle: "Worth understanding the scope soon",
+      nextBody: "Your personal read will connect these signals — and respond directly to the quiet worry you described. A diagnostic conversation turns a vague unease into a clear, scoped picture."
+    },
+    4: {
+      cls: 'band-4',
+      title: "This may be further along than it feels.",
+      summary: "I want to be direct, because your answers warrant it. Multiple high-risk signals are present at once — and the way you're using AI amplifies every one of them. This is the configuration where the gap between 'looks fine on the dashboard' and 'is actually fine' tends to be widest, and where the unseen cost has usually been compounding longer than anyone realizes.",
+      guidance: "This isn't cause for panic, but it is cause for a prompt, honest look — ideally before the next post-incident review, a funding round, or an enterprise deal puts your codebase under someone else's scrutiny. A diagnostic conversation is the fastest way to convert this into a clear, scoped picture: how far along it actually is, and the highest-leverage first move.",
+      nextTitle: "Worth an honest look, soon",
+      nextBody: "Your personal read will respond directly to the worry you described and lay out what we'd look at first. Given what you've shared, we'd genuinely encourage booking that conversation."
+    }
+  };
+
+  function computeResult(){
+    let score = 0;
+    const flags = [];
+    for(const q in SCORES){
+      const v = valueFor(q);
+      const s = SCORES[q][v] ?? 0;
+      score += s;
+      if(s >= 2 && FLAG_TEXT[q]) flags.push(FLAG_TEXT[q]);
+    }
+    const heavyUsage = HIGH_USAGE.includes(valueFor('q1_usage'));
+
+    let band;
+    if(score <= 3) band = 1;
+    else if(score <= 7) band = 2;
+    else if(score <= 12) band = 3;
+    else band = 4;
+
+    // Heavy AI usage escalates a borderline Band 3 to Band 4
+    if(heavyUsage && score >= 11) band = 4;
+
+    return { score, band, flags, heavyUsage };
+  }
+
+  function renderResult(){
+    const { score, band, flags } = computeResult();
+    const b = BANDS[band];
+    const card = document.getElementById('resultCard');
+    card.className = 'result-card ' + b.cls;
+    document.getElementById('bandTitle').textContent = b.title;
+    document.getElementById('bandScore').textContent =
+      'Provisional signal level: ' + band + ' of 4';
+    document.getElementById('bandSummary').textContent = b.summary;
+    document.getElementById('bandGuidance').textContent = b.guidance;
+    document.getElementById('nextTitle').textContent = b.nextTitle;
+    document.getElementById('nextBody').textContent = b.nextBody;
+
+    const wrap = document.getElementById('flaggedWrap');
+    const list = document.getElementById('flaggedList');
+    list.innerHTML = '';
+    if(flags.length){
+      flags.forEach(f => { const li = document.createElement('li'); li.textContent = f; list.appendChild(li); });
+      wrap.style.display = 'block';
+    } else {
+      wrap.style.display = 'none';
+    }
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errBanner.classList.remove('show');
+
+    // Validate the 10 diagnostic questions
+    const missing = requiredQuestions.filter(n => valueFor(n) === '');
+    const email = valueFor('email');
+
+    if(missing.length){
+      const firstIdx = requiredQuestions.indexOf(missing[0]);
+      errBanner.textContent = `Please answer all ${requiredQuestions.length} questions — ${missing.length} still need a response.`;
+      errBanner.classList.add('show');
+      document.querySelectorAll('[data-q]')[firstIdx]?.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    if(!email || !validEmail(email)){
+      errBanner.textContent = 'Please enter a valid work email so we can send your results.';
+      errBanner.classList.add('show');
+      document.getElementById('c_email').scrollIntoView({behavior:'smooth', block:'center'});
+      document.getElementById('c_email').focus();
+      return;
+    }
+
+    // Gather payload
+    const data = {};
+    new FormData(form).forEach((v,k) => { data[k] = v; });
+    // Attach the computed band so it arrives in your inbox alongside the answers
+    const result = computeResult();
+    data._provisional_band = result.band;
+    data._risk_score = result.score;
+    data._heavy_usage = result.heavyUsage;
+    data._submittedAt = new Date().toISOString();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      if(FORM_ENDPOINT){
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept':'application/json', 'Content-Type':'application/json' },
+          body: JSON.stringify(data)
+        });
+        if(!res.ok) throw new Error('Network response was not ok');
+      } else {
+        // Demo mode — no endpoint configured
+        console.log('Diagnostic submission (demo mode, not sent):', data);
+        await new Promise(r => setTimeout(r, 600));
+      }
+      renderResult();
+      form.style.display = 'none';
+      document.querySelector('.err-banner')?.classList.remove('show');
+      document.getElementById('result').classList.add('show');
+      document.getElementById('result').scrollIntoView({behavior:'smooth', block:'start'});
+    } catch(err){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send my answers & get the read';
+      errBanner.textContent = 'Something went wrong sending your answers. Please try again, or email us directly.';
+      errBanner.classList.add('show');
+    }
+  });
+
+  updateProgress();
+</script>
+</body>
+</html>

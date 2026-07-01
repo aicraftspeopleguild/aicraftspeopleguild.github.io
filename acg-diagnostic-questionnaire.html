@@ -7,6 +7,17 @@
 <meta property="og:title" content="The AI-Assisted Delivery Diagnostic — a 3-minute self-assessment for engineering leaders">
 <meta property="og:description" content="Find out whether the AI-assisted parts of your codebase are as healthy as your dashboards suggest. No code access required. If your answers say you're fine, that's what we'll tell you.">
 <meta property="og:type" content="website">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z1CEF69ZSH');
+</script>
+<!-- End Google Analytics -->
+
 <style>
   /* ---- Design tokens ---- */
   :root {
@@ -547,6 +558,69 @@
     'q6_fragile','q7_permissions','q8_dashboard','q9_tokens','q10_worry'
   ];
 
+  // Radio inputs vs. free-text (used to decide what to send to GA)
+  const RADIO_QUESTIONS = new Set([
+    'q1_usage','q3_onboarding','q5_tests','q7_permissions','q8_dashboard','q9_tokens'
+  ]);
+
+  /* =========================================================
+     GA4 ANALYTICS — per-question interaction & abandonment
+     Free-text answers are NEVER sent (only their length).
+     Radio answers are pre-defined and safe to send.
+  ========================================================= */
+  function track(eventName, params){
+    if(typeof gtag === 'function'){ gtag('event', eventName, params || {}); }
+  }
+  const answeredState = {};  // question name -> boolean
+  const reachedState = {};   // question number -> boolean
+  let questionnaireStarted = false;
+  let questionnaireSubmitted = false;
+  let abandonmentFired = false;
+  let highestReached = 0;
+  let highestAnswered = 0;
+
+  function trackStart(){
+    if(questionnaireStarted) return;
+    questionnaireStarted = true;
+    track('questionnaire_start', {});
+  }
+
+  function trackAnswerChanges(){
+    requiredQuestions.forEach((name, idx) => {
+      const val = valueFor(name);
+      const wasAnswered = answeredState[name] || false;
+      const isAnswered = val !== '';
+      if(!wasAnswered && isAnswered){
+        const questionNumber = idx + 1;
+        const isRadio = RADIO_QUESTIONS.has(name);
+        const params = {
+          question_number: questionNumber,
+          question_id: name,
+          question_type: isRadio ? 'radio' : 'text'
+        };
+        if(isRadio){
+          params.answer_value = val;
+        } else {
+          params.answer_length = val.length;
+        }
+        track('question_answered', params);
+        if(questionNumber > highestAnswered) highestAnswered = questionNumber;
+      }
+      answeredState[name] = isAnswered;
+    });
+  }
+
+  function trackAbandonment(){
+    if(!questionnaireStarted || questionnaireSubmitted || abandonmentFired) return;
+    abandonmentFired = true;
+    track('questionnaire_abandoned', {
+      last_question_reached: highestReached,
+      last_question_answered: highestAnswered,
+      questions_answered: answeredCount(),
+      transport_type: 'beacon'
+    });
+  }
+
   function valueFor(name){
     const els = form.elements[name];
     if(!els) return '';
@@ -576,8 +650,41 @@
     markBlocks();
   }
 
-  form.addEventListener('input', updateProgress);
-  form.addEventListener('change', updateProgress);
+  function onInteraction(){
+    trackStart();
+    updateProgress();
+    trackAnswerChanges();
+  }
+  form.addEventListener('input', onInteraction);
+  form.addEventListener('change', onInteraction);
+
+  // question_reached — fired when a question first scrolls into view.
+  // Distinguishes "abandoned at Q7" from "never got to Q7."
+  const qBlocks = Array.from(document.querySelectorAll('[data-q]'));
+  if('IntersectionObserver' in window){
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const idx = qBlocks.indexOf(entry.target);
+        const number = idx + 1;
+        if(idx < 0 || idx >= requiredQuestions.length) return;
+        if(reachedState[number]) return;
+        reachedState[number] = true;
+        if(number > highestReached) highestReached = number;
+        track('question_reached', {
+          question_number: number,
+          question_id: requiredQuestions[idx]
+        });
+      });
+    }, { threshold: 0.5 });
+    qBlocks.slice(0, requiredQuestions.length).forEach(b => observer.observe(b));
+  }
+
+  // Abandonment: fire once when the user leaves without submitting.
+  document.addEventListener('visibilitychange', () => {
+    if(document.visibilityState === 'hidden') trackAbandonment();
+  });
+  window.addEventListener('pagehide', trackAbandonment);
 
   function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
 
@@ -724,12 +831,19 @@
 
     if(missing.length){
       const firstIdx = requiredQuestions.indexOf(missing[0]);
+      track('questionnaire_validation_failed', {
+        reason: 'missing_answers',
+        missing_count: missing.length,
+        first_missing_number: firstIdx + 1,
+        first_missing_id: missing[0]
+      });
       errBanner.textContent = `Please answer all ${requiredQuestions.length} questions — ${missing.length} still need a response.`;
       errBanner.classList.add('show');
       document.querySelectorAll('[data-q]')[firstIdx]?.scrollIntoView({behavior:'smooth', block:'center'});
       return;
     }
     if(!email || !validEmail(email)){
+      track('questionnaire_validation_failed', { reason: 'invalid_email' });
       errBanner.textContent = 'Please enter a valid work email so we can send your results.';
       errBanner.classList.add('show');
       document.getElementById('c_email').scrollIntoView({behavior:'smooth', block:'center'});
@@ -763,6 +877,13 @@
         console.log('Diagnostic submission (demo mode, not sent):', data);
         await new Promise(r => setTimeout(r, 600));
       }
+      questionnaireSubmitted = true;
+      track('questionnaire_submitted', {
+        provisional_band: result.band,
+        risk_score: result.score,
+        heavy_usage: result.heavyUsage,
+        questions_answered: answeredCount()
+      });
       renderResult();
       form.style.display = 'none';
       document.querySelector('.err-banner')?.classList.remove('show');

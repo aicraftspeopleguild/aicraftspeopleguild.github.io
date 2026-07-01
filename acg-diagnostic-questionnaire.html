@@ -536,15 +536,17 @@
 
 <script>
   /* =========================================================
-     CONFIG — set your form endpoint here.
-     Easiest path: create a free form at https://formspree.io,
-     then paste its endpoint URL below (looks like
-     https://formspree.io/f/abcdwxyz). Works with no backend.
-     Alternatives: Basin, Getform, Web3Forms, or your own URL.
-     Leave as "" to run in demo mode (logs to console, shows
-     the thank-you screen without sending).
+     CONFIG — Web3Forms integration.
+     Submissions POST to Web3Forms, which emails them to the
+     address VERIFIED on the access key below.
+     Access key: created at https://web3forms.com
+     Destination inbox is bound to the key (verified at signup),
+     not set here — the ACCESS_KEY governs where mail lands.
+     Set FORM_ENDPOINT to "" to run in demo mode (logs to
+     console, shows the result screen without sending).
   ========================================================= */
-  const FORM_ENDPOINT = "";
+  const FORM_ENDPOINT = "https://api.web3forms.com/submit";
+  const WEB3FORMS_ACCESS_KEY = "f18af5fa-2eab-4b3a-8bb4-c57b71516a46";
 
   const form = document.getElementById('diagForm');
   const bar = document.getElementById('bar');
@@ -861,6 +863,15 @@
     data._heavy_usage = result.heavyUsage;
     data._submittedAt = new Date().toISOString();
 
+    // --- Web3Forms fields ---
+    data.access_key = WEB3FORMS_ACCESS_KEY;
+    // Explicit recipient (belt-and-suspenders; the verified email on the
+    // key is what actually governs delivery). Must be a verified address.
+    data.email_to = "alexbunardzic@gmail.com";
+    // Triage-friendly subject: band + company visible before opening.
+    data.subject = `New Diagnostic — Band ${result.band}/4 — ${(data.company || 'unknown company')}`;
+    data.from_name = "ACG Diagnostic Questionnaire";
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
 
@@ -871,7 +882,13 @@
           headers: { 'Accept':'application/json', 'Content-Type':'application/json' },
           body: JSON.stringify(data)
         });
-        if(!res.ok) throw new Error('Network response was not ok');
+        // Web3Forms returns { success: true/false, message: ... }
+        let ok = res.ok;
+        try {
+          const json = await res.json();
+          if(typeof json.success === 'boolean') ok = json.success;
+        } catch(_) { /* non-JSON response; fall back to res.ok */ }
+        if(!ok) throw new Error('Submission was not accepted');
       } else {
         // Demo mode — no endpoint configured
         console.log('Diagnostic submission (demo mode, not sent):', data);

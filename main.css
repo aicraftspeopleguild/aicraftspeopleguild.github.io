@@ -15229,6 +15229,14 @@ width: 100%;
     white-space: nowrap;
 }
 
+@media (max-width: 720px) {
+    .pillars-title {
+        white-space: normal;
+        overflow-wrap: break-word;
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+    }
+}
+
 .pillars-subtitle {
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;

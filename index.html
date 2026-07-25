@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Craftspeople Guild - Professional Code of Conduct</title>
+    <meta name="description" content="A professional code of conduct for engineers using AI to build production systems. Four positions: adopt deliberately, reject unread output, harness the model, disclose to the human.">
+    <link rel="canonical" href="https://aicraftspeopleguild.github.io/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AI Craftspeople Guild">
+    <meta property="og:url" content="https://aicraftspeopleguild.github.io/">
+    <meta property="og:title" content="AI Craftspeople Guild">
+    <meta property="og:description" content="Ethics you can fail a build on. A professional code of conduct for engineers shipping AI-assisted code to production.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AI Craftspeople Guild">
+    <meta name="twitter:description" content="Ethics you can fail a build on. A professional code of conduct for engineers shipping AI-assisted code to production.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -171,16 +182,21 @@
         </section>
 
         <!-- Services CTA Section -->
-        <section class="services-cta">
-            <div class="services-cta-inner">
-                <h2>The Guild also works.</h2>
-                <p>
-                    Independent, vendor-neutral assessment of AI-assisted codebases &mdash; a ladder
-                    from a first-look diagnostic to continuous security assurance. We sell no tooling,
-                    so every recommendation is the one we'd give a friend.
-                </p>
-                <a href="acg-services.html" class="btn btn-primary services-cta-btn">
-                    <span>See the ladder &rarr;</span>
+        <section id="engage" class="cta-section">
+            <h2>The Guild also works.</h2>
+            <p>
+                Independent, vendor-neutral assessment of AI-assisted codebases (a ladder from a first-look diagnostic to continuous security assurance). We sell no tooling,
+                so every recommendation is the one we would give a friend. Start with the
+                self-assessment — it ends with an honest answer, not a sales pitch.
+            </p>
+            <div class="cta-buttons">
+                <a href="acg-diagnostic-questionnaire.html" class="btn btn-primary"
+                   onclick="gtag('event','diagnostic_click',{location:'home_band'});">
+                    <span>Take the Diagnostic</span>
+                </a>
+                <a href="acg-services.html" class="btn btn-secondary"
+                   onclick="gtag('event','services_click',{location:'home_band'});">
+                    <span>Services</span>
                 </a>
             </div>
         </section>
@@ -380,6 +396,7 @@
             }
 
             formStatus.className = 'form-status success';
+            gtag('event', 'manifesto_signed');
             formStatus.textContent = 'Thank you for signing the manifesto! Your signature will appear below shortly.';
             form.reset();
             submitBtn.disabled = false;

@@ -15193,3 +15193,111 @@ width: 100%;
                 max-width: 320px;
     }
 }
+
+/* ===== Four Pillars Section ===== */
+.pillars-section {
+    background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-ink) 100%);
+    padding: 5rem 2rem;
+}
+
+.pillars-header {
+    max-width: 1100px;
+    margin: 0 auto 3.5rem;
+}
+
+.pillars-kicker {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-bronze);
+    text-align: center;
+    margin: 0 0 1rem;
+}
+
+.pillars-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(1.6rem, 4.4vw, 3.5rem);
+    line-height: 1.05;
+    color: var(--color-rust);
+    text-align: center;
+    margin: 0;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid var(--color-bronze);
+    white-space: nowrap;
+}
+
+.pillars-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    line-height: 1.55;
+    color: var(--color-parchment);
+    text-align: center;
+    max-width: 760px;
+    margin: 1.75rem auto 0;
+}
+
+.pillars-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.pillar-card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(166, 124, 82, 0.25);
+    border-top: 3px solid var(--color-bronze);
+    padding: 2rem 1.75rem 2.25rem;
+}
+
+.pillar-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.pillar-label {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-bronze);
+}
+
+.pillar-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--color-bronze);
+    flex-shrink: 0;
+}
+
+.pillar-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--color-parchment);
+    margin: 0 0 1rem;
+}
+
+.pillar-card p {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(245, 241, 232, 0.8);
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+}

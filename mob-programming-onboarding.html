@@ -59,7 +59,7 @@
             <section class="lead" id="before">
                 <p><strong>Arrive with a working environment. The mob is not the place to debug your PATH.</strong></p>
                 <p>
-                    A mob session is a shared keyboard with a rotating typist. Every person in the rotation has to be able to clone the repo, install dependencies, run the tests, run mutation testing, and hand the driver's seat to the next person without ceremony. This page walks through that setup from a clean machine on <strong>Linux</strong> and <strong>Windows</strong>, then covers the handover tool the Guild uses, <strong>mob.sh</strong>.
+                    A mob session is a shared keyboard with a rotating typist. Every person in the rotation has to be able to clone the repo, install dependencies, run the tests, run mutation testing, and hand the driver's seat to the next person without ceremony. This page walks through that setup from a clean machine on <strong>Linux</strong>, <strong>macOS</strong>, and <strong>Windows</strong>, then covers the handover tool the Guild uses, <strong>mob.sh</strong>.
                 </p>
                 <p>
                     Budget about thirty minutes the first time. Do it a day before the session, not five minutes before it.
@@ -90,6 +90,25 @@ sudo pacman -S git
 
 git --version</code></pre>
 
+                <h3>macOS</h3>
+                <p>
+                    Nearly everything on this page installs through <strong>Homebrew</strong> on a Mac, so install that first if you do not already have it. It also pulls in the Xcode Command Line Tools, which is where macOS keeps Git and the compilers that native npm packages need.
+                </p>
+                <pre><code># Homebrew — skip if `brew --version` already works
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# on Apple Silicon, add brew to your PATH as the installer instructs
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' &gt;&gt; ~/.zprofile
+source ~/.zprofile
+
+# Xcode Command Line Tools, if the Homebrew install did not already trigger them
+xcode-select --install
+
+# macOS ships an Apple-built Git; a current Homebrew one is better
+brew install git
+
+git --version</code></pre>
+
                 <h3>Windows</h3>
                 <p>
                     Install Git for Windows, which also gives you the <strong>Git Bash</strong> shell. Several commands on this page are friendliest there.
@@ -108,11 +127,15 @@ git --version</code></pre>
                 <pre><code>git config --global user.name  "Your Name"
 git config --global user.email "you@example.com"
 
-# Linux
+# Linux and macOS
 git config --global core.autocrlf input
 
 # Windows
 git config --global core.autocrlf false</code></pre>
+                <p>
+                    macOS has one extra Git wrinkle worth settling before the session: the default filesystem is case-insensitive, so <code>Button.ts</code> and <code>button.ts</code> are the same file to your Mac but two different files to your Linux teammates and to CI. If a rename only changes capitalization, make Git notice it:
+                </p>
+                <pre><code>git config --global core.ignorecase false</code></pre>
 
                 <h3>Authentication</h3>
                 <p>
@@ -135,9 +158,9 @@ git checkout main</code></pre>
                     Install Node through a <strong>version manager</strong>, not from a system package. Mob repos pin a Node version, members join from different machines, and you will want to switch versions without a reinstall.
                 </p>
 
-                <h3>Linux — nvm</h3>
+                <h3>Linux and macOS — nvm</h3>
                 <p>
-                    Take the current install command from the <code>nvm-sh/nvm</code> README rather than copying a version number that ages out. It looks like this:
+                    The same tool covers both. Take the current install command from the <code>nvm-sh/nvm</code> README rather than copying a version number that ages out. It looks like this:
                 </p>
                 <pre><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
@@ -147,6 +170,9 @@ nvm use --lts
 nvm alias default lts/*</code></pre>
                 <p>
                     If <code>nvm</code> is not found after installing, your shell startup file was not reloaded. Open a new terminal, or source <code>~/.bashrc</code> / <code>~/.zshrc</code>.
+                </p>
+                <p>
+                    macOS specifics: the default shell is <strong>zsh</strong>, so the installer appends to <code>~/.zshrc</code> — if you keep your PATH in <code>~/.zprofile</code> instead, move the nvm block there yourself. And do not install Node with <code>brew install node</code> alongside nvm. Two Node installations racing for the same PATH entry is a class of bug that eats a whole rotation.
                 </p>
 
                 <h3>Windows — nvm-windows</h3>
@@ -163,7 +189,7 @@ nvm use lts</code></pre>
                 <p>
                     If the repo has an <code>.nvmrc</code>, use it. That is the version the mob is running.
                 </p>
-                <pre><code># Linux
+                <pre><code># Linux and macOS
 nvm install &amp;&amp; nvm use
 
 # Windows (nvm-windows has no .nvmrc support — read it and install that version)
@@ -306,6 +332,12 @@ npx stryker run --concurrency 4</code></pre>
                 <p>
                     Windows note: Stryker spawns many worker processes and writes into a temporary sandbox directory. If a run crawls or fails oddly, an on-access antivirus scanner is the usual culprit; excluding the repo directory fixes it.
                 </p>
+                <p>
+                    macOS note: Stryker copies the project into a sandbox per worker and opens a lot of files at once. On a many-core Mac this can hit the default open-file limit and surface as <code>EMFILE</code> or spurious test failures. Raise the limit for the current shell, or simply run with fewer workers:
+                </p>
+                <pre><code>ulimit -n 4096
+# or
+npx stryker run --concurrency 4</code></pre>
             </section>
 
             <section class="section" id="mobsh">
@@ -319,6 +351,19 @@ npx stryker run --concurrency 4</code></pre>
 
 # or, if you use Homebrew on Linux
 brew install remotemobprogramming/brew/mob</code></pre>
+
+                <h3>Install — macOS</h3>
+                <p>
+                    Homebrew is the path of least resistance and keeps mob updated with everything else:
+                </p>
+                <pre><code>brew install remotemobprogramming/brew/mob
+
+# the install script also works
+curl -sL install.mob.sh | sudo sh</code></pre>
+                <p>
+                    If you download the binary by hand instead, macOS will quarantine it and refuse to run it the first time. Clear the quarantine attribute rather than clicking through System Settings each time:
+                </p>
+                <pre><code>xattr -d com.apple.quarantine /usr/local/bin/mob</code></pre>
 
                 <h3>Install — Windows</h3>
                 <pre><code># Scoop
@@ -353,6 +398,13 @@ MOB_WIP_BRANCH_PREFIX="mob/"
 MOB_DONE_SQUASH=squash          # squash the WIP commits when the session ends</code></pre>
                 <p>
                     On Windows, use Git Bash or PowerShell — both work. If you use WSL, install mob <em>inside</em> WSL and keep the repository on the Linux filesystem, or Git will fight you over permissions and line endings.
+                </p>
+                <p>
+                    On macOS, the rotation timer announces itself out loud through the built-in <code>say</code> command, so it works with no extra setup — but it will also talk over you in a shared call. Silence it if that is not what you want:
+                </p>
+                <pre><code>MOB_TIMER_SOUND=false</code></pre>
+                <p>
+                    macOS may also ask for permission the first time mob triggers a notification. Grant it once, in advance, rather than in the middle of a handover.
                 </p>
             </section>
 
@@ -436,6 +488,26 @@ git reset                     # undo the staged no-op from the dry run</code></p
                     nvm-windows creates a symlink and needs an elevated shell. Run it from an Administrator terminal.
                 </p>
 
+                <h3>macOS: "mob cannot be opened because the developer cannot be verified"</h3>
+                <p>
+                    Gatekeeper is blocking a binary you downloaded manually. Remove the quarantine flag with <code>xattr -d com.apple.quarantine /usr/local/bin/mob</code>, or install through Homebrew and avoid the problem entirely.
+                </p>
+
+                <h3>macOS: <code>nvm: command not found</code> in a new terminal</h3>
+                <p>
+                    The nvm block landed in a shell startup file zsh is not reading for this kind of session. Make sure it is in <code>~/.zshrc</code>, and that nothing later in the file overwrites <code>PATH</code>.
+                </p>
+
+                <h3>macOS: native npm packages fail to build</h3>
+                <p>
+                    Errors mentioning <code>node-gyp</code>, <code>gyp: No Xcode</code>, or a missing compiler mean the Command Line Tools are absent or stale. Run <code>xcode-select --install</code>. If they are installed but still broken after a macOS upgrade, <code>sudo xcode-select --reset</code> usually settles it.
+                </p>
+
+                <h3>macOS: a rename only the Mac ignores</h3>
+                <p>
+                    You renamed a file's capitalization and Git saw nothing, so CI and your Linux teammates still have the old name. Set <code>core.ignorecase false</code> as in section 1, or force the rename with <code>git mv --force old.ts Old.ts</code>.
+                </p>
+
                 <h3><code>mob start</code> refuses: uncommitted changes</h3>
                 <p>
                     Commit them, stash them, or pass <code>--include-uncommitted-changes</code>. Do not fight it — the check exists so one person's stray experiment does not ride into the mob's branch unannounced.
@@ -458,7 +530,7 @@ git reset                     # undo the staged no-op from the dry run</code></p
 
                 <h3>Stryker takes forever</h3>
                 <p>
-                    Scope it with <code>--mutate</code> to the files under discussion, raise <code>--concurrency</code>, and on Windows exclude the repo directory from real-time antivirus scanning.
+                    Scope it with <code>--mutate</code> to the files under discussion, and tune <code>--concurrency</code>. On Windows, exclude the repo directory from real-time antivirus scanning; on macOS, raise <code>ulimit -n</code> or lower the worker count if you see <code>EMFILE</code>.
                 </p>
             </section>
 

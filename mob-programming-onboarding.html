@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mob Programming Onboarding - AI Craftspeople Guild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body class="page-mob-onboarding">
+    <header>
+        <div class="guild-mark">
+            <div class="emblem">⚒ ACG ⚒</div>
+        </div>
+        <div class="eyebrow">Guild Onboarding</div>
+        <h1>Mob Programming Environment Setup</h1>
+        <p class="subtitle">Everything a newcomer needs installed, configured, and verified before joining an ACG mob programming session on the Guild Rubric and Guild ACG Badge.</p>
+        <div class="article-meta">
+            <span>Node.js</span>
+            <span>TypeScript</span>
+            <span>Jest &amp; Vitest</span>
+            <span>Stryker</span>
+            <span>mob.sh</span>
+        </div>
+        <div class="back-link">
+            <a href="showcases.html">&larr; Back to Showcases</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article-shell">
+            <nav class="article-nav" aria-label="Page sections">
+                <a href="#before">Before You Start</a>
+                <a href="#git">Git</a>
+                <a href="#node">Node.js</a>
+                <a href="#typescript">TypeScript</a>
+                <a href="#jest">Jest</a>
+                <a href="#vitest">Vitest</a>
+                <a href="#stryker">Stryker</a>
+                <a href="#mobsh">mob.sh</a>
+                <a href="#session">Session Flow</a>
+                <a href="#checklist">Checklist</a>
+                <a href="#troubleshooting">Troubleshooting</a>
+            </nav>
+
+            <section class="lead" id="before">
+                <p><strong>Arrive with a working environment. The mob is not the place to debug your PATH.</strong></p>
+                <p>
+                    A mob session is a shared keyboard with a rotating typist. Every person in the rotation has to be able to clone the repo, install dependencies, run the tests, run mutation testing, and hand the driver's seat to the next person without ceremony. This page walks through that setup from a clean machine on <strong>Linux</strong> and <strong>Windows</strong>, then covers the handover tool the Guild uses, <strong>mob.sh</strong>.
+                </p>
+                <p>
+                    Budget about thirty minutes the first time. Do it a day before the session, not five minutes before it.
+                </p>
+            </section>
+
+            <section class="callout">
+                <p>
+                    Throughout this page, <code>&lt;repo-url&gt;</code> stands for the Git URL of the Guild sample repository you were given, and <code>&lt;repo&gt;</code> for the directory it clones into. The setup below is deliberately generic: it works for any Node.js and TypeScript repository the Guild mobs on.
+                </p>
+            </section>
+
+            <section class="section" id="git">
+                <h2>1. Git and Repository Access</h2>
+                <p>
+                    mob.sh is a thin layer over Git. If Git is not working, nothing else on this page will work either. You need Git 2.30 or newer and <strong>push access</strong> to the sample repo — mob handovers push a work-in-progress branch to the shared remote, so read-only access is not enough.
+                </p>
+
+                <h3>Linux</h3>
+                <pre><code># Debian / Ubuntu
+sudo apt update &amp;&amp; sudo apt install -y git
+
+# Fedora / RHEL
+sudo dnf install -y git
+
+# Arch
+sudo pacman -S git
+
+git --version</code></pre>
+
+                <h3>Windows</h3>
+                <p>
+                    Install Git for Windows, which also gives you the <strong>Git Bash</strong> shell. Several commands on this page are friendliest there.
+                </p>
+                <pre><code>winget install --id Git.Git -e
+
+# or with Chocolatey
+choco install git
+
+git --version</code></pre>
+
+                <h3>Identity and line endings</h3>
+                <p>
+                    Set your identity before the session, because mob commits carry it. On a cross-platform mob, line endings cause noisy diffs unless everyone agrees, so keep the repository's <code>.gitattributes</code> authoritative and stop Git from rewriting endings behind your back.
+                </p>
+                <pre><code>git config --global user.name  "Your Name"
+git config --global user.email "you@example.com"
+
+# Linux
+git config --global core.autocrlf input
+
+# Windows
+git config --global core.autocrlf false</code></pre>
+
+                <h3>Authentication</h3>
+                <p>
+                    Set up SSH keys or a credential helper so pushes do not prompt for a password mid-handover. Verify by cloning and pushing a throwaway branch <em>before</em> the session:
+                </p>
+                <pre><code>git clone &lt;repo-url&gt;
+cd &lt;repo&gt;
+git checkout -b access-check-&lt;your-name&gt;
+git push -u origin access-check-&lt;your-name&gt;
+git push origin --delete access-check-&lt;your-name&gt;
+git checkout main</code></pre>
+                <p>
+                    If that round trip works, you are cleared for handovers.
+                </p>
+            </section>
+
+            <section class="section" id="node">
+                <h2>2. Node.js</h2>
+                <p>
+                    Install Node through a <strong>version manager</strong>, not from a system package. Mob repos pin a Node version, members join from different machines, and you will want to switch versions without a reinstall.
+                </p>
+
+                <h3>Linux — nvm</h3>
+                <p>
+                    Take the current install command from the <code>nvm-sh/nvm</code> README rather than copying a version number that ages out. It looks like this:
+                </p>
+                <pre><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+
+# reload your shell, then
+nvm install --lts
+nvm use --lts
+nvm alias default lts/*</code></pre>
+                <p>
+                    If <code>nvm</code> is not found after installing, your shell startup file was not reloaded. Open a new terminal, or source <code>~/.bashrc</code> / <code>~/.zshrc</code>.
+                </p>
+
+                <h3>Windows — nvm-windows</h3>
+                <p>
+                    <code>nvm-windows</code> is a separate project from Linux nvm, with slightly different commands. Install it, then run the version commands from an <strong>Administrator</strong> shell — it creates a symlink, which needs elevation.
+                </p>
+                <pre><code>winget install --id CoreyButler.NVMforWindows -e
+
+# in an Administrator PowerShell, after reopening the terminal
+nvm install lts
+nvm use lts</code></pre>
+
+                <h3>Respecting the repo's pinned version</h3>
+                <p>
+                    If the repo has an <code>.nvmrc</code>, use it. That is the version the mob is running.
+                </p>
+                <pre><code># Linux
+nvm install &amp;&amp; nvm use
+
+# Windows (nvm-windows has no .nvmrc support — read it and install that version)
+type .nvmrc
+nvm install 22.11.0
+nvm use 22.11.0</code></pre>
+
+                <h3>Verify and install project dependencies</h3>
+                <pre><code>node --version
+npm --version
+
+cd &lt;repo&gt;
+npm ci</code></pre>
+                <p>
+                    Use <code>npm ci</code>, not <code>npm install</code>. It installs exactly what the lockfile says and fails loudly if the lockfile and <code>package.json</code> disagree — which is what you want when the whole mob must be running identical dependencies. If the repo uses pnpm or Yarn, enable Corepack instead and let the repo's <code>packageManager</code> field decide:
+                </p>
+                <pre><code>corepack enable</code></pre>
+            </section>
+
+            <section class="section" id="typescript">
+                <h2>3. TypeScript</h2>
+                <p>
+                    <strong>Do not install TypeScript globally.</strong> A global <code>tsc</code> that differs from the project's version produces errors nobody else in the mob can reproduce. TypeScript belongs in the repo as a dev dependency, and you invoke it through <code>npx</code> or an npm script.
+                </p>
+                <p>
+                    In a Guild repo it is already declared, so <code>npm ci</code> installed it. Confirm the project-local version:
+                </p>
+                <pre><code>npx tsc --version
+npx tsc --noEmit        # type-check the whole project without emitting files</code></pre>
+                <p>
+                    If you are setting up a fresh repo during a session, this is the whole of it:
+                </p>
+                <pre><code>npm install --save-dev typescript @types/node
+npx tsc --init</code></pre>
+                <p>
+                    Editor note: in VS Code, run <em>TypeScript: Select TypeScript Version</em> and choose <strong>Use Workspace Version</strong>. Otherwise your editor lints against a different compiler than CI does, and you will chase phantom errors on the shared screen.
+                </p>
+            </section>
+
+            <section class="section" id="jest">
+                <h2>4. Jest</h2>
+                <p>
+                    Jest is one of the two test runners you will meet in Guild repos. It is a dev dependency like everything else — there is nothing to install system-wide.
+                </p>
+                <pre><code># already present in a Guild repo; this is for a fresh one
+npm install --save-dev jest ts-jest @types/jest
+npx ts-jest config:init</code></pre>
+                <p>
+                    Running it:
+                </p>
+                <pre><code>npx jest                      # run everything once
+npx jest --watch              # re-run on change (needs a Git working tree)
+npx jest path/to/file.test.ts # run one file
+npx jest --coverage           # with coverage report</code></pre>
+                <p>
+                    Most repos wrap this in a script, so <code>npm test</code> is the command you will actually type in a session. Check <code>package.json</code> for the exact names before the mob starts.
+                </p>
+                <p>
+                    On Windows, <code>--watch</code> mode inside WSL watching a Windows-mounted directory is unreliable. Keep the repo inside the Linux filesystem if you use WSL, or run natively on Windows.
+                </p>
+            </section>
+
+            <section class="section" id="vitest">
+                <h2>5. Vitest</h2>
+                <p>
+                    Vitest is the other runner. Its API is close enough to Jest's that the assertions read the same, but it is faster and handles TypeScript and ES modules without extra transform configuration.
+                </p>
+                <pre><code># already present in a Guild repo; this is for a fresh one
+npm install --save-dev vitest</code></pre>
+                <pre><code>npx vitest run                # run everything once, then exit
+npx vitest                    # watch mode (this is the default)
+npx vitest run src/foo.test.ts
+npx vitest run --coverage     # needs @vitest/coverage-v8 installed</code></pre>
+                <p>
+                    The trap worth knowing: <strong>bare <code>vitest</code> stays in watch mode.</strong> In CI, or when you just want a verdict, always write <code>vitest run</code>. A mob session that appears to hang after the tests pass is usually a watcher nobody noticed.
+                </p>
+                <p>
+                    Configuration lives in <code>vitest.config.ts</code> — or in the <code>test</code> block of <code>vite.config.ts</code> if the repo is already a Vite project.
+                </p>
+            </section>
+
+            <section class="section" id="stryker">
+                <h2>6. Stryker — Mutation Testing</h2>
+                <p>
+                    Stryker is the tool that answers the question the Guild actually cares about: <em>do these tests detect a defect, or do they just execute the code?</em> It deliberately corrupts your source — flips a comparison, drops a statement, swaps a boolean — and reruns the suite for each change. A mutant that <strong>survives</strong> is a change to your code that no test complained about.
+                </p>
+                <p>
+                    Coverage tells you what was executed. Mutation score tells you what was verified. That distinction is the reason it is on this page.
+                </p>
+
+                <h3>Install</h3>
+                <p>
+                    Stryker needs a runner plugin matching the test framework the repo uses. Install the core plus <em>one</em> of the runners:
+                </p>
+                <pre><code>npm install --save-dev @stryker-mutator/core
+
+# with Jest
+npm install --save-dev @stryker-mutator/jest-runner
+
+# with Vitest
+npm install --save-dev @stryker-mutator/vitest-runner
+
+# optional but recommended on TypeScript projects:
+# discards mutants that do not even compile, which speeds up the run
+npm install --save-dev @stryker-mutator/typescript-checker</code></pre>
+                <p>
+                    On a fresh repo, the interactive initializer writes the config and picks the plugins for you:
+                </p>
+                <pre><code>npx stryker init</code></pre>
+
+                <h3>Run</h3>
+                <pre><code>npx stryker run</code></pre>
+                <p>
+                    The run ends with a mutation score and writes an HTML report — typically <code>reports/mutation/mutation.html</code> — that you open in a browser to see exactly which mutants survived and where.
+                </p>
+
+                <h3>Expect it to be slow</h3>
+                <p>
+                    Stryker runs your test suite once per mutant. On a real codebase that is minutes, not seconds. Two things make it usable in a session:
+                </p>
+                <pre><code># restrict to the files the mob is working on
+npx stryker run --mutate "src/checkout/**/*.ts"
+
+# use more workers (defaults to roughly half your cores)
+npx stryker run --concurrency 4</code></pre>
+                <p>
+                    Do not launch a full mutation run in the middle of a five-minute rotation. Run it scoped while you work, and run it whole at a natural break.
+                </p>
+
+                <h3>Thresholds</h3>
+                <p>
+                    <code>stryker.config.json</code> carries the thresholds that decide whether a run passes:
+                </p>
+                <pre><code>{
+  "thresholds": { "high": 80, "low": 60, "break": 60 }
+}</code></pre>
+                <p>
+                    <code>break</code> is the one with teeth — a score below it fails the command. The other two only colour the report.
+                </p>
+                <p>
+                    Windows note: Stryker spawns many worker processes and writes into a temporary sandbox directory. If a run crawls or fails oddly, an on-access antivirus scanner is the usual culprit; excluding the repo directory fixes it.
+                </p>
+            </section>
+
+            <section class="section" id="mobsh">
+                <h2>7. mob.sh — The Handover Tool</h2>
+                <p>
+                    <a href="https://mob.sh">mob.sh</a> is a small command-line tool that automates the one mechanical chore in remote mob programming: moving the work-in-progress from the current typist's machine to the next one. It does this through Git, on a dedicated WIP branch, so nothing depends on screen-sharing control handoff or copying files around.
+                </p>
+
+                <h3>Install — Linux</h3>
+                <pre><code>curl -sL install.mob.sh | sudo sh
+
+# or, if you use Homebrew on Linux
+brew install remotemobprogramming/brew/mob</code></pre>
+
+                <h3>Install — Windows</h3>
+                <pre><code># Scoop
+scoop install mob
+
+# Chocolatey
+choco install mobsh</code></pre>
+                <p>
+                    Without a package manager, download the Windows binary from the <a href="https://github.com/remotemobprogramming/mob/releases">releases page</a>, unzip it, and put <code>mob.exe</code> in a directory that is on your <code>PATH</code>.
+                </p>
+
+                <h3>Verify</h3>
+                <pre><code>mob help</code></pre>
+                <p>
+                    If that prints usage text, mob is installed and on your PATH. If it does not, the binary landed somewhere your shell does not search — fix the PATH now rather than during the session.
+                </p>
+
+                <h3>Configure</h3>
+                <p>
+                    Show the current configuration, including which environment variables mob honours:
+                </p>
+                <pre><code>mob config</code></pre>
+                <p>
+                    Settings can go in a <code>.mob</code> file in your home directory (personal preferences) or in the repository (team conventions the whole mob shares). The ones that matter most:
+                </p>
+                <pre><code># ~/.mob  — personal
+MOB_TIMER_ROOM="acg-mob"        # shared timer room, so everyone sees the countdown
+MOB_TIMER_ROOM_USE_WIP_BRANCH_QUALIFIER=true
+
+# .mob in the repo — team-wide
+MOB_WIP_BRANCH_PREFIX="mob/"
+MOB_DONE_SQUASH=squash          # squash the WIP commits when the session ends</code></pre>
+                <p>
+                    On Windows, use Git Bash or PowerShell — both work. If you use WSL, install mob <em>inside</em> WSL and keep the repository on the Linux filesystem, or Git will fight you over permissions and line endings.
+                </p>
+            </section>
+
+            <section class="section" id="session">
+                <h2>8. Running a Session</h2>
+                <p>
+                    The whole tool is four commands. Everyone starts from the same base branch, freshly pulled.
+                </p>
+                <pre><code>git checkout main
+git pull</code></pre>
+
+                <h3>Take the keyboard</h3>
+                <pre><code>mob start            # create or join the WIP branch and pull the latest work
+mob start 10         # same, with a 10-minute rotation timer</code></pre>
+                <p>
+                    <code>mob start</code> creates a WIP branch off your current branch, or joins the existing one if the mob is already running. If you have uncommitted local changes it will refuse — that is deliberate. Deal with them, or pass <code>--include-uncommitted-changes</code> if you truly want them carried in.
+                </p>
+
+                <h3>Hand it over</h3>
+                <pre><code>mob next</code></pre>
+                <p>
+                    This commits whatever is in the working tree as a WIP commit, pushes it, and — by default — returns you to the base branch so you are back in the mob rather than holding the keyboard. The next typist runs <code>mob start</code> and picks up exactly where you stopped, mid-thought and mid-line if that is where the timer caught you. <strong>Incomplete work is normal here.</strong> These are not commits meant to be reviewed; they are a conveyor belt.
+                </p>
+
+                <h3>End the session</h3>
+                <pre><code>mob done</code></pre>
+                <p>
+                    This collapses the WIP branch back onto the base branch and leaves all the changes <em>staged but uncommitted</em> on your machine. The mob then writes one real commit message together:
+                </p>
+                <pre><code>git commit -m "Add checkout total calculation with mutation-tested edge cases"
+git push</code></pre>
+
+                <h3>Other commands worth knowing</h3>
+                <pre><code>mob status           # what branch am I on, is a mob running
+mob timer 5          # start a timer without changing branches
+mob reset            # delete the WIP branch locally and on the remote</code></pre>
+                <p>
+                    <code>mob reset</code> is the escape hatch when the WIP branch gets into a state nobody wants to untangle. It discards WIP work, so say it out loud before you run it.
+                </p>
+
+                <h3>The rule the tooling exists to serve</h3>
+                <p>
+                    Llewellyn Falco's phrasing is the one the Guild uses: <em>for an idea to go from your head into the computer, it must go through someone else's hands.</em> The typist types; they do not decide. mob.sh only automates the rotation — the discipline is yours.
+                </p>
+            </section>
+
+            <section class="section" id="checklist">
+                <h2>9. Pre-Session Checklist</h2>
+                <p>
+                    Run this end to end on your own machine before the session. Every line should succeed without prompting you for anything.
+                </p>
+                <pre><code>git --version                 # 2.30+
+node --version                # matches the repo's .nvmrc
+npm --version
+mob help                      # mob is on PATH
+
+git clone &lt;repo-url&gt; &amp;&amp; cd &lt;repo&gt;
+npm ci                        # dependencies install clean
+npx tsc --noEmit              # project type-checks
+npm test                      # test suite passes
+npx stryker run --mutate "src/**/*.ts"   # mutation run completes
+
+mob start &amp;&amp; mob next &amp;&amp; mob start &amp;&amp; mob done   # handover round trip works
+git reset                     # undo the staged no-op from the dry run</code></pre>
+                <p>
+                    Also worth having ready: a working microphone, a second monitor if you have one, and your editor's font size raised enough that the rest of the mob can read your screen when you share it.
+                </p>
+            </section>
+
+            <section class="section" id="troubleshooting">
+                <h2>10. Troubleshooting</h2>
+
+                <h3>Windows: "npm.ps1 cannot be loaded because running scripts is disabled"</h3>
+                <p>
+                    PowerShell's execution policy is blocking npm's shim. Fix it for your user account only:
+                </p>
+                <pre><code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code></pre>
+
+                <h3>Windows: <code>nvm use</code> fails or does nothing</h3>
+                <p>
+                    nvm-windows creates a symlink and needs an elevated shell. Run it from an Administrator terminal.
+                </p>
+
+                <h3><code>mob start</code> refuses: uncommitted changes</h3>
+                <p>
+                    Commit them, stash them, or pass <code>--include-uncommitted-changes</code>. Do not fight it — the check exists so one person's stray experiment does not ride into the mob's branch unannounced.
+                </p>
+
+                <h3><code>mob next</code> fails to push</h3>
+                <p>
+                    Almost always missing push access to the remote, or expired credentials. This is why the access round trip in section 1 belongs in your preparation and not in the session.
+                </p>
+
+                <h3>Tests pass locally, fail for everyone else</h3>
+                <p>
+                    Different Node version. Check <code>node --version</code> against the repo's <code>.nvmrc</code>, and confirm your editor is using the workspace TypeScript rather than its own bundled copy.
+                </p>
+
+                <h3>Vitest never exits</h3>
+                <p>
+                    You ran <code>vitest</code> instead of <code>vitest run</code>. It is watching, not hanging.
+                </p>
+
+                <h3>Stryker takes forever</h3>
+                <p>
+                    Scope it with <code>--mutate</code> to the files under discussion, raise <code>--concurrency</code>, and on Windows exclude the repo directory from real-time antivirus scanning.
+                </p>
+            </section>
+
+            <section class="closing-statement">
+                <p>
+                    Every tool on this page exists to remove a reason to stop. The version manager removes "it works on my machine". The test runners remove "I think this is right". Stryker removes "the tests are green, so we are fine". mob.sh removes the friction of passing the keyboard.
+                </p>
+                <p>
+                    What is left is the part no tool can do for you: thinking out loud, in a group, while someone else types.
+                </p>
+            </section>
+
+            <section class="cta-section">
+                <h2>Ready For The Mob</h2>
+                <p>Environment prepared? Read what the sessions themselves look like, and who you will be sitting with.</p>
+                <div class="cta-buttons">
+                    <a href="showcases.html" class="btn btn-primary">The Mob Session Format</a>
+                    <a href="the-team.html" class="btn btn-secondary">The Team</a>
+                    <a href="index.html" class="btn btn-secondary">Back To Home</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>AI Craftspeople Guild (ACG)</p>
+        <p>Advocating for professional standards in AI-assisted software development</p>
+        <a href="https://github.com/aicraftspeopleguild" class="github-link">
+            <span>⚡</span>
+            <span>github.com/aicraftspeopleguild</span>
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+            &copy; 2026 AI Craftspeople Guild. Committed to quality, integrity, and human-centered AI.
+        </p>
+    </footer>
+</body>
+</html>

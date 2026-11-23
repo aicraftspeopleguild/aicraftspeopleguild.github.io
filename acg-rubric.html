@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubric - AI Craftspeople Guild</title>
+    <meta name="description" content="The ACG rubric: a versioned, openly-licensed document that states what a codebase and a practice must demonstrate to be trustworthy when built with AI agents.">
+    <link rel="canonical" href="https://aicraftspeopleguild.github.io/acg-rubric.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="AI Craftspeople Guild">
+    <meta property="og:url" content="https://aicraftspeopleguild.github.io/acg-rubric.html">
+    <meta property="og:title" content="Rubric - AI Craftspeople Guild">
+    <meta property="og:description" content="What does good look like when you build software with AI agents? Criteria precise enough that two independent assessors reach the same verdict.">
+    <meta property="og:image" content="https://aicraftspeopleguild.github.io/acg-og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AI Craftspeople Guild — Ethics you can fail a build on.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rubric - AI Craftspeople Guild">
+    <meta name="twitter:description" content="What does good look like when you build software with AI agents? Criteria precise enough that two independent assessors reach the same verdict.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Work+Sans:wght@300;400;600&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1CEF69ZSH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z1CEF69ZSH');
+    </script>
+    <!-- End Google Analytics -->
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body class="page-mission-statement page-acg-rubric">
+    <header>
+        <div class="guild-mark">⚒ ACG ⚒</div>
+        <h1>Rubric</h1>
+        <p class="subtitle">What does good look like when you build software with AI agents?</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="intro-panel">
+                <div class="section-heading">
+                    <h2>What it is</h2>
+                </div>
+                <p>The rubric is the written answer to the question "what does good look like when you build software with AI agents?"</p>
+                <p>Concretely: a versioned, openly-licensed document that lists the things a codebase and a practice must demonstrate in order to be trustworthy, stated precisely enough that two independent assessors examining the same repository would reach substantially the same verdict.</p>
+                <p>That last clause is the whole test. If two of our practitioners could look at the same codebase and disagree about whether it passes, we don't have a rubric — we have opinions with a logo on them. A rubric is a device for making judgment reproducible. Everything about how we author it follows from that.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>What it is not</h2>
+                </div>
+                <p>Worth naming, because the failure modes are all drift toward one of these:</p>
+                <ul>
+                    <li><strong>Not a manifesto.</strong> We already have one. A manifesto says we believe systems should be verifiable. A rubric says the test suite must fail when the implementation is broken, and here is how we check that it does. The Manifesto is the "why"; the rubric is the "how do we know."</li>
+                    <li><strong>Not a checklist of tools.</strong> "Uses Stryker" is not a criterion; "mutation coverage is measured and acted upon" is. The moment we name vendors, we've lost independence and we've dated the document.</li>
+                    <li><strong>Not a maturity model.</strong> We must resist the five-level ladder. Nobody's actual codebase sits cleanly on a level, and the format invites vendors to claim Level 4 in a slide.</li>
+                    <li><strong>Not a security standard.</strong> This is the boundary that matters most for our liability and our positioning: we assess how code is built with agents — the practice, the workflow, the integrity of the specification surface. We are not a pen test, not a vulnerability scan, not a compliance certification. We must say so in the rubric itself, not just in the contract, because the rubric is what a client's counsel will read.</li>
+                </ul>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Why it's the highest-leverage thing we own</h2>
+                </div>
+                <p>Three functions, and it does all three simultaneously:</p>
+                <ul>
+                    <li><strong>It is the moat.</strong> If others adopt it, we authored the standard — and authorship is what makes the badge coveted rather than merely available. Standards bodies don't get their power from enforcement; they get it from being the thing everyone references. OWASP has no enforcement power at all. It has authorship.</li>
+                    <li><strong>It is the marketing.</strong> It is the artifact that proves we know the craft, and it does that proving in a way no amount of thought-leadership content can. Anyone can post an opinion about AI slop. Publishing a rubric says: we have thought about this precisely enough to be wrong in public.</li>
+                    <li><strong>It is the badge's foundation.</strong> "Vetted by ACG" is meaningless unless there's a published thing we were vetted against. The rubric is what makes the badge a claim rather than a sticker. And crucially: it's what makes the badge revocable, because we can point at the specific criterion that is no longer met.</li>
+                </ul>
+            </section>
+
+            <section class="directive-shell">
+                <div class="directive-label">Method</div>
+                <h2>How to author it</h2>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Start from our own scar tissue, not from a literature review</h2>
+                </div>
+                <p>The temptation will be to survey the frameworks and synthesize. We do not lead with that. The rubric's credibility comes from it being demonstrably field-derived — from the fact that every criterion exists because someone got burned.</p>
+                <p>We must do that for every failure the core team has personally witnessed. Half a dozen experienced practitioners in the Guild with heavy agentic-development mileage should have at least a dozen of these between them. That's our v0.1. Not a synthesis of other people's frameworks — a catalogue of things we have watched go wrong.</p>
+                <p>This is also, incidentally, the best possible first mob session: we get all members in a room and ask "what have you seen an agent do that a human wouldn't have?"</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Structure: criteria, not chapters</h2>
+                </div>
+                <p>The unit of the rubric is the criterion, and each one should be a small, self-contained, testable claim. A workable shape:</p>
+                <ul>
+                    <li><strong>ID</strong> — stable, permanent, never reused (e.g. SPEC-03). This matters more than it sounds: assessors, clients, and downstream adopters will cite these by ID for years.</li>
+                    <li><strong>Criterion</strong> — one sentence, stated as an observable property. Not "the team should consider…" — that's unassessable.</li>
+                    <li><strong>Why it matters</strong> — two or three sentences, ideally grounded in an actual observed failure. This is what makes it defensible when a client argues.</li>
+                    <li><strong>How it's assessed</strong> — what an assessor actually looks at. A repo? A commit history? An interview? A live session? Needs to be specific enough that two assessors converge.</li>
+                    <li><strong>What passing looks like / what failing looks like</strong> — concrete, both sides. Failing examples are more useful than passing ones and almost everyone omits them.</li>
+                    <li><strong>Scope note</strong> — where this criterion does not apply.</li>
+                </ul>
+                <p>After that, group the criteria into a small number of domains. Something like: specification integrity, verification integrity, agent boundaries, human accountability, evolvability, provenance. Six-ish domains, five-ish criteria each — thirty total is a real, usable document. A hundred criteria is a compliance regime nobody will read and we cannot assess against in a week.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>The hardest design decision: how it scores</h2>
+                </div>
+                <p>We have three options and they trade off badly.</p>
+                <ul>
+                    <li><strong>Binary pass/fail per criterion.</strong> Reproducible, brutal, and honest. Nearly everyone fails at first, which is correct but makes the badge unsellable early.</li>
+                    <li><strong>Graded (0–3 per criterion).</strong> Nuanced, feels fair, and destroys inter-assessor reliability — this is where rubrics go to die. The moment "partially meets" exists, two assessors diverge, and our reproducibility claim is gone.</li>
+                    <li><strong>Binary with explicit "not applicable" and a stated threshold for the badge.</strong></li>
+                </ul>
+                <p>We should take the third. Each criterion is met or not met, with N/A available and justified in writing. The badge requires meeting all criteria in a defined core set, plus some proportion of the rest. This keeps assessment reproducible while making the badge attainable — and it lets us tighten the threshold over time as the field matures, which is exactly what a standards body should do.</p>
+                <p>After that, we publish the threshold. The threshold being public is what makes the badge feel earnable rather than arbitrary.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Next: map to the existing frameworks — after we've written it, not before</h2>
+                </div>
+                <p>Once v0.1 exists in our own words, we map each criterion to the recognised frameworks where an equivalent exists. This is the step that makes it legible to procurement, and it's how a CTO justifies us internally.</p>
+                <p>We should do it in that order, though. Write from experience, then map. If we map first, we'll produce a derivative document, and the gaps — which are the entire reason the Guild exists — will be invisible. The gaps are the point. Where our criterion has no equivalent in any existing framework, we must mark it. Those unmapped criteria are our First Mover advantage made visible on the page.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Next: version it in public, in the open, like code</h2>
+                </div>
+                <p>rubric-v0.1, tagged, on GitHub. Every change through a PR with a rationale. Issues open to anyone. Changelog that says why, not just what.</p>
+                <p>This is not administrative hygiene — it's the marketing. A rubric that visibly changes because it met a real codebase and lost is infinitely more credible than one that arrived complete. Every revision is evidence that we're doing the thing rather than claiming it. Always publish the revision and the engagement that caused it (sanitized).</p>
+                <p>Practical cadence:</p>
+                <ul>
+                    <li><strong>v0.1</strong> — the core team's scar tissue. Published fast, explicitly labeled as untested.</li>
+                    <li><strong>v0.2</strong> — revised by the first real engagements, then sent to a small number of respected external practitioners for credited comment. Not endorsement — comment. Asking someone to review our standard is a genuinely better invitation than asking them to endorse us, and it's the honest path back to the people who attended our early roundtables.</li>
+                    <li><strong>v1.0</strong> — declared only when it has survived enough engagements that we'd defend every criterion in front of a hostile client. Named external reviewers on the front page.</li>
+                </ul>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>License it so it can be taken</h2>
+                </div>
+                <p>Openly licensed — a permissive content license, not a restrictive one. It should be forkable, quotable, adoptable by people who never speak to the Guild.</p>
+                <p>This will feel wrong. It is the correct move. We are not trying to control the rubric; we are trying to be its author. A standard that others cannot adopt is not a standard, and the entire value of authorship is realized only when adoption is friction-free. If a competitor audits against our rubric, we have won — they are now operating inside a frame we defined, and the badge that references it is ours.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>Submit to it ourselves, publicly, from day one</h2>
+                </div>
+                <p>Assess our own repositories — ACG-API, the PoC repos, whatever else we ship — against the rubric, and publish the results including the failures.</p>
+                <p>This is the most important single act in the entire strategy and almost nobody will do it. A standard its authors are exempt from is a marketing asset. A standard its authors submit to is a standard. And practically: it's the fastest way to discover that a criterion is unassessable, badly worded, or wrong — because we'll try to assess against it and find we can't.</p>
+            </section>
+
+            <section class="section-shell">
+                <div class="section-heading">
+                    <h2>The failure modes, named</h2>
+                </div>
+                <ul>
+                    <li><strong>It becomes a manifesto.</strong> Watch for criteria that can't be checked. Every time someone writes "the team should value…", cut it. The test: could an assessor be wrong about whether this is met? If not, it's not a criterion.</li>
+                    <li><strong>It becomes a tool list.</strong> The moment a vendor name appears, independence is compromised and the document has an expiry date.</li>
+                    <li><strong>It never ships.</strong> Half a dozen experienced people can polish a rubric forever. v0.1 should be published while it's still embarrassing. The whole method depends on it being revised by contact with reality, and it cannot make contact from a Google Doc.</li>
+                    <li><strong>It's assessable only by its authors.</strong> If the rubric requires our judgment to apply, we cannot ever credential practitioners, and without practitioners the badge is a consultancy's logo. Write it for a stranger. Test it by handing it to someone outside the core team and seeing whether their verdict matches ours. Inter-assessor agreement is the metric that determines whether the Guild can ever become a guild.</li>
+                    <li><strong>It's captured.</strong> Once it has any adoption, vendors will want to influence it. The governance for how criteria change — who can propose, who decides, what's disclosed — is worth writing before we need it, while nothing is at stake.</li>
+                </ul>
+            </section>
+
+            <section class="closing-shell">
+                <div class="section-heading">
+                    <h2>Caveats and push backs</h2>
+                </div>
+                <p>One thing worth sitting with: the rubric is where the Guild's strategy either becomes real or is quietly revealed as decoration.</p>
+                <p>The strategy claims the badge will be coveted, revocable, and applied to the core team too. All three of those cash out entirely in the rubric. If the rubric is vague, the badge can't be revoked (nothing specific was breached). If it's unassessable by outsiders, no practitioners can be credentialed. If we don't submit to it, the exemption is visible and the independence claim is hollow.</p>
+                <p>So the rubric isn't the first deliverable of the strategy. It's the strategy, in a form that can be checked. Which is an argument for writing it now, badly, with six-seven people in a room, rather than well, later, alone.</p>
+            </section>
+
+            <section class="cta-section">
+                <div class="cta-buttons">
+                    <a href="index.html" class="btn btn-primary">Home</a>
+                    <a href="aicraftspeopleguild-manifesto.html" class="btn btn-secondary">Read the Manifesto</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
